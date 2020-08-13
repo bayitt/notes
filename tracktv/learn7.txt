@@ -1,0 +1,28 @@
+Breaking down the process of creating an auto search option
+
+1) First off we need to import the debounceTime, distinctUntilChanged and switchMap symbols from the rxjs/operators library
+2) Then we also need to import the Observable and Subject symbols from the rxjs library
+3) Subjects are Observable like variables that can receive streams of variables, much like an array and can also be subscribed to
+4) First off we need to create a Subject object as a property in the component
+5) Then we need to create the event binding for the input element to trigger the search when the user types in the input element
+6) In the event handler, that is the method in the component, we add the recently typed value in the input element to the subject "array" by making use of the
+next method
+7) Then we need to pipe the subject and ask it to always wait 300 milliseconds after the user types. We also need to specify distinctUntilChanged() and this means
+that if after 300 milliseconds and the function is ready to proceed, if the current value is the same as the previous value, then the function should not be 
+executed
+8) If the current value is different, then we need to make use of the switchMap() method and pass in as parameter, what we want to pass to our service to fetch 
+the data
+9) Then we can subscribe to the subject as would normally subscribe
+
+Breaking down the Explore Component
+
+I think that when piping observable streams, we have catchError() - This taps into the observable stream when it fails, tap()- This taps into the observable
+stream when it is successful. Then we have map() - This taps into the observable stream as it is ongoing
+
+Leke, you need to remember that with forms, you are sending in the image to the backend and the 
+
+Leek you know that Request essentially is everything that you are sending in to the backend
+
+Leke take note we have HttpEventType.UploadProgress and we also have HttpEventType.Response
+
+So wait what settings do I want  

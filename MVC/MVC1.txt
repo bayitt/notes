@@ -1,0 +1,31 @@
+The public folder is the only folder publicly accessible to the web 
+
+So Leke,we need to change the documentroot in the http.conf file top point to the public folder
+in our app so that none of our sensitive information will be available outside
+
+Making use of a front controller in which every url goes thru the same file, rather than having a url mapping to a file location, we can make use of a 
+front controller. Instead of having urls mapping to scripts,we can have urls mapping to actions in our front controller
+
+The request is in the query string and the query string is the part of the url after the first question mark, like the GET Variable
+
+
+The MVC framewroek makes use of the front controller, so instead of a url mapping to a particular file, the query string is taken to the front controller and from that
+an action is executed, so essentially they are not urls, they are actions. And umm with the MVC framework , we can prevent files containing important information to 
+be hidden, like database passwords and such by reconfiguring our http.conf file
+
+The $_SERVER['QUERY_STRING'] is used to access our query string
+
+The router is what takes the query string and decides what to do with it
+
+In php,it is advantageous to have specific classes in separate files, in that it makes it easier to find specific classes and it makes it easier to load 
+classes automatically
+
+The router is what determines the controller and action to run
+
+Leke, arrays in php classes are usually protected in their array declaration. Also, when we are accessing arrays, we need to make use of the $this keyword
+
+We create objects in php by making use of the new keyword
+
+In order to access the functions from our classes we need to make use of the -> symbol
+
+Leke take note that the return false statement should be located outside of the foreach loop and not inside

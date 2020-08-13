@@ -1,0 +1,37 @@
+Texture Mapping
+
+This can be defined as a method of defining high frequency detail, surface texture or color information on a computer generated graphic or 3D model
+
+UV Mapping
+
+Stretching a 2D surface over a 3D surface
+
+An Image is a 2D picture designed to be viewed by a human while a texture  specially prepared data used for various purposes in 3D graphics
+
+When we add a texture to a material , we say we are assigning a texture to a map slot on a material
+
+
+TextureLoader.load(url) returns an instance of texture that we can immediately use in our material and it loads it asynchronously
+
+There are two ways that textures can be used
+
+- either as colors designed to be seen by the human eye
+- the texture represents something else, such as bumps on a human surface
+
+When we deal with textures, we call pixels, texels
+
+In 3D Rendering, we generally have to deal with two different color spaces, The first is sRGB and it is the color space used by colors that end up on the screen.
+The second is linear space and it is the color space used inside the renderer
+
+By default, textures are encoded in linear space, so we need to tell the renderer that this texture is encoded in sRGB space
+
+There are also several other important map slots
+
+Our OrbitControls property needs to take two parameters, the camera and the container
+
+Light shining from only one direction is known as direct illumination while reflected light is called indirect illumination. Directional light + reflected light
+is known as global illumination
+
+Ambient light is a light that shines equally on all objects but without any direction
+
+Generally, ambient lighting is used for artistic control rather than for strong lighting

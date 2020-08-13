@@ -1,0 +1,5 @@
+Leke take note that static methods in Javascript are created making use of the static keyword. Also, in order to create class methods, don't make use of the'
+function keyword
+
+The readFile() method of the fs module takes in two parameters, the file path and an arrow function with the error and filecontent as parameters.
+The writeFile() method of the fs module also takes in two parameters, the file path and the content of what we are writing to the file

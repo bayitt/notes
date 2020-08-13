@@ -1,0 +1,36 @@
+If you want to restrict the .w-100 class to a particular breakpoint just add the .d-none and .d-md-block classes and it will remove the .w-100 class below this
+breakpoint
+
+Leke take note that there are also order-first and order-last classes that we can use to order content irrespective of how it is programmed on the HTML page
+
+Take note that it is order-first and order-last classes. There is nothing like order-second or order-third
+
+I have found that with almost every Bootstrap class, you can chain a Bootstrap breakpoint class to it
+
+Leke essentially in order to add margin-left to your columns, you need to add the offset class to the column , say offset-4 will shift your column to the
+right by 4 columns
+
+You may need to reset offsets because say you say offset-sm-2. This means that from 576px upwards that element will always have a margin left of 2 columns.
+This may cause a problem in your design, so say from your lg breakpoint, you say offset-lg-0
+
+ml- margin left
+mr-margin right
+
+What I have seen is that anytime you say ml or mr-auto, what it does is that it sets the margin right or margin-bottom value to the remainder of the space
+
+The media object is used to construct like highly repetitive media components that typically consist of an image and some text
+
+Just enclose the overall div in a div class of media. Then put the image and the remaining content in a .media-body
+
+Media objects can also be nested
+
+Leke take note that on your list elements like your ul or ol. Just add .list-unstyled to remove any browser default styles
+
+It is really easy to apply utilities to our code to toggle disaply values at certain breakpoints
+
+It takes the same properties as the normal values of the display property which are inline inline-block block table table-cell table-row flex inline-flex
+
+What I have seen is that the breakpoint comes before whatever value for the property that we specify
+
+Giving a div a display property of inline-flex causes the div to become an inline flex-container. Instead of being a block element and taking up the full space, 
+what happens now is that it becomes an inline flex container

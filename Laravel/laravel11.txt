@@ -1,0 +1,27 @@
+Laravel by default loads jquery
+
+We don't always have to pass in the Request object as a parameter because Laravel has a request() helper method
+
+The static first() method called on a model returns the first row in a table composed in an object
+
+Middleware can be called in two different ways, either we call the middleware on the particular route or we can call the middleware in the constructor of the class
+to safeguard all the methods in the class/controller
+
+
+In order to access the data, all we need to do is to call the request()->all() method
+
+Essentially welcome.blade.php is the view that the user sees when the page first loads
+
+Laravel has a helper method called take() which works like a limit on the number of objects that should be fetched from the database
+
+I think that the take() method is a query builder method
+
+There is another helper method called orderBy() and it takes two parameters, the field that we are ordering the data by and whether asc or desc
+
+Carbon is a PHP Package that helps us to format our timestamps in a very beautiful way
+
+When we call the Carbon diffForHumans() method, what this does is that it formats it into an ago field
+
+I think I understand it, the take() method is a queryBuilder method and in order to access the post data contained in it, we need to make use of the get() method
+
+Another method that exists on the Carbon class is the toFormattedDateString()

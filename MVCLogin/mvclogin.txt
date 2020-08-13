@@ -1,0 +1,39 @@
+Breaking down the Process of Logging In MVC
+
+1) When the user clicks the login button, the form data is passed to the create action in the login controller
+2) Then with the post data, we need to call the authenticate method
+3) In the authenticate method which takes two parameters, the email and the password
+4) Then in the authenticate method, we need to call the findUserByEmail method and if an object is returned
+5) All, we have done so far is to confirm that the email the user entered is correct
+6) Then, we need to call the password_verify() function , passing in the password the user entered and the password hash from the database
+7) If the password is correct, then we return the user object
+8) In the create action, if a user object is returned,then we need to call the static login method in the Auth class in which the
+session id is regenerated to prevent session fixation attacks and also to create the session id
+9)Then we need to call the core redirect method to wherever we want to login to
+
+Breaking down the process of confirming if the user is logged in
+1) We need to create a static method getUser() in the Auth class in which if the session id is present, then a call  needs to be made
+to a static method in the User Model to return a user object if the id is present in the database
+2) If the user object is present, then it is returned
+3) Then we need to add the result of this static method [an array] as a global variable making use of the twig->addGlobal() method
+4) Then in our views, if the array is present, then that means that the user is logged in
+
+Things to Note as regards MVC:
+1) Leke, ALWAYS think in terms of objects and classes
+2) Always stick to separation of concerns, anything that has to do with the database should be in a model
+3) Anything HTML or Javascript should be in a view
+4) Anything handling user action should be in a controller
+
+Leke take note that our remembered_logins table has three columns, token_hash which is the primary key, user_id which is a foreign key with id in the user's table
+And finally, the last column is expires_at
+
+Leke ALWAYS REMEMBER that if you want to be able to extend a class, the class needs to be an abstract class
+
+Leke take note that the hash_hmac() function takes three paramters, the encryption algorithm we are making use of, usually 'sha256', what we are encrypting, 
+and finally the encryption key that we are making use of
+
+LEKE NEVER FORGET THE POSITIONING
+
+Leke take note to always include the user
+
+Leke take note of properties

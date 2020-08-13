@@ -1,0 +1,37 @@
+In Bootstrap 4, inputs and labels are sibling elements rather than having inputs inside of labels. One must also make use of the for and id attributes to
+relate the two together	
+
+Just like we can make use of the .form-inline class to get our form elements to be on the same line, we can also make use of the .form-check-inline class
+to get our checkboxes and radios to align horizontally
+
+Since Bootstrap applies display:block and width:100% to all form-controls,by default form elements stack vertically
+
+Instead of making use of .row, we can make use of .form-row, a variation of the standard grid row that overrides the default column gutters for tighter 
+and more compact layouts
+
+Typically, only use .row when you intend to partition form elements. If not, just make use of the default .form-group because this will take up all the space
+because of display:block and width:100%
+
+Whenever you want to create horizontal forms, you need to add the .col-form-label class to your label to center it vertically
+
+Take note of the .custom-select class to style select elements instead of using .form-control
+
+There are two different situations with forms, either we enclose the .form-group classes inside the .form-row class so that we can have as many 
+different form groups inside of a row, or we add the .row class to the .form-group class so that instead of having our labels on top of our inputs, we can have
+them side by side
+
+Anytime we are creating horizontal forms, we need to make sure that we use the .col-form-label class to make sure that our labels are properly vertically centered
+with their associated form controls, also we can make use of the .col-form-label-sm or the .col-form-label-lg classes to create smaller and larger 
+form labels respectively
+
+Apparently, the .row and the .form-row classes are by default flex elements meaning that we can make use of the flexbox utilities with them automatically
+
+Also, take note that the .form-inline class only applies from the sm breakpoint and above, meaning that below 576px, the form elements default to stacking on top
+of one another
+
+The .custom-select class, will add a different kind of styling for the select element
+
+Block level help text in forms can be created using .form-text
+
+Just like we can make use of the .col-form-label-sm or .col-form-label-lg we can also set sizes for custom selects, such as .custom-select-sm or 
+.custom-select-lg for smaller and larger select elements respectively 

@@ -1,0 +1,41 @@
+With databases, the collation is what determines how text columns are saved and searched. utf_general_ci is generally preferred because it makes it easier
+to sort by fields that contain accented characters
+
+When developing locally we can make use of the root user
+It is better to use email-addresses to uniquely identify users rather than making use of usernames
+
+A hash function takes some data and transforms it into something unintelligible. This is called a hash. It is similar to encryption except that it is one way. 
+There is no way to get back to the original data if all you have are the hashes. But hashes are not totally safe, hackers can make use of a rainbow table to determine
+the true password. To get around this, one way is to add a random string of values before the hash. This is known as a salt value and the resulting value
+is called a salted hash. We can get around this by generating a new salt value for every password in the database.
+
+We need to choose which hash function we are going to make use of, there are several including md5 and sah1
+For a time, md5 was very popular  but it is now considered insecure
+sha1 is also considered insecure
+sha256 is much better but its problem is that it is very fast and hackers can get its real value making use of a brute force attack
+Brute Force Attack- An attck in which the program tries every single combination of letters and values very quickly
+
+The crypt() function is deliberately slower and as such is a good choice for the hash function
+The uniqid() function is good but is not recommended for cryptographic purposes,rather the random_bytes() function
+
+We can bypass all this and make use of the password_hash() function
+
+Shoulder Surfine- People looking over your shoulder as you enter the password
+
+To associate a label tag with an input, the for attribute of a label must match the id attribute of the input tag
+
+Leke, take note that any interaction with the database takes place in the Model, all the controller does is to pass tjhe data to the Model
+
+SQL Injections occur when users try to insert malicious code into one of the input boxes
+
+Creating an sql statment by concatenating string and inserting variables from html statemements can lead to sql injections
+
+In SQL, anything in quotes connotes a literal value
+
+The solution to this is to escape a quote character by putting a \
+
+The sumplest way to fix this is to replace anyquote character with an escaped quoute character
+
+Making use of the PDO data library, we can make use of a method quote that escapes the stmt automatically  
+
+The best way to avoid SQL injections is to use PDO prepare statements

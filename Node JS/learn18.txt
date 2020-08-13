@@ -1,0 +1,13 @@
+There are two keys in the object that we pass in to the express-session() function,the first is the secret key, which represents the key that will be used
+to encrpyt the data. The second is the resave option, which indicates that the session should only be resaved if something changes in it, which is why we set it
+to false. Finally, we have the saveUnitialized key
+The whole idea is that the session object is added to the request object by defauly by the express-session middleware
+
+In order to store session data in the database, we need to make use of the connect-mongodb-session package.
+Then we need to import the connect-mongodb-session package. The whole idea is that it returns a function, to which we are going to pass in the session variable
+which refers to the express-session package. This is then going to return a class to which we are going to create a store object. To the constructor, we are
+going to pass in an object, with several important keys. These keys include uri: which represents the connection string to our mongodb database and a collection
+which refers to the name of the session collection
+
+The express session middeware also provides a convenient destroy() method that we can use to clear the session
+Session cookies are cookies that expire when the user closes the browser

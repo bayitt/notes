@@ -1,0 +1,45 @@
+With backticks, we can have a string on multiple lines
+
+With $(variable), we can insert a variable or inject it directly into another string without concatenating it
+
+With string templating, we can even call functions in the string literal
+
+`My name is $(toUpperCase('Fambegbe ') and I am a $(gender))
+
+For the latest string methods introduced in ES6 include startsWith(), endsWith() and includes() The above methods are self-explanatory and are called
+on the string variable
+
+Javascript ES6, also has various Number methods. For example, passing in  a hexadecimal value into a console.log() function will give us the same 
+value in numbers. Also, passing in the binary value into a console.log() method will return its corresponding value in numbers
+
+Leke remember the startsWith(), endsWith() and includes() methods. 
+
+For the number methods, we have isFinite(), isNaN(Not a Number). The funny deal about the Number methods is that revert to more typical calling sequences.
+Unlike the string methods and array methods that are called directly on their respective objects, the particular number is passed as a parameter 
+to the Number.method($var)
+
+Finally, we have the Number.isInteger()
+
+Apparently, Javascript methods are case sensitive
+
+The set object enables us to store unique values of each type
+
+Synchronous code is essentially sequential code
+
+So Javascript is asynchronouse because we do not want our whole script to stop executing because of a delay or something. 
+
+To resolve a promise means what action should be executed after the Promise finishes computation
+
+A promise represents the eventual result of an asynchronous operation. They are essentially alternatives to using callbacks/closures when determining the response
+to an async operation
+
+A promise can be in three states
+Pending - The asynchronous operation has that will determine the value of the promise has not been completed yet 
+Fulfilled - The asynchronous operation completed successfully and the promise has a value
+Rejected - The asynchronous operation failed and the promise does not have a value. In this state the promise has a reason for its failure,much like a stack trace
+
+
+The primary means for interacting and making use of promises is their then() function
+
+The then() method can take two callbacks, the first callback takes as a parameter the successful result of the async operation while the second callback
+takes as a parameter the error or reason for the promises failure

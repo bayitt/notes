@@ -1,0 +1,21 @@
+
+In a neural network, we do not tell the computer what to do. Instead it figures out from observational data, figuring out its own solution to the problem 
+at hand. The basic idea with neural networks is to a large number of handwritten digits, known as training samples and then develop a system which can learn 
+from those training examples.
+
+Perceptrons
+
+These were developed in the 1950s and 1960s by the scientisst Frank Rosenblatt. They are a type of artificial neuron. In modern times, the main neuron model used
+is called the signoid neuron. Perceptrons take several binary inputs x1,x2,x3... and produce a single binary output. Rosenblatt introduced a simple concept to 
+compute the output. He introduced weights, w1, w2, w3, real numbers expressing the importance of the respective inputs to the outputs. The neuron's output, 0 or 1
+is determined by whether the weighted sum is less than or greater than some threshold value. Just like the weights, the threshold is a real number which is a parameter
+of the neuron
+
+bias=-threshold
+
+We can think of the bias as how easy it is to get the perceptron to fire, a perceptron with a large bias 
+
+We can also make use of perceptrons to compute simple logical functions. The reason is that since perceptrons implement a NAND gate, and NAND gates are
+universal for computation
+
+Input perceptrons are not really perceptrons

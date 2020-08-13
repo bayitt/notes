@@ -1,0 +1,37 @@
+The basic format of jquery is $("selector");.
+
+We put all our Jquery code into a wrapper function called ready and its purpose is that it waits for the whole webpage to be loaded 
+before executing any of the Jquery code. To call the Jquery Library, you always start out with a dollar sign.
+Whenever we call the Jquery Library, Jquery create an object for us to use
+
+The hide method, like it says is used to hide content, just access your HTML element and call the hide method. We can select multiple DOM objects by making use 
+of the comma','. The format for Jquery is $ (css selector).method(closure)
+
+The difference between a method and an object is that a method is called from/on our Jquery object while a function is not.
+Leke, also remember that css properties do not have quotes around them
+
+Jquery also provides its own selectors. They typically begin with a colon
+div:first
+div:last
+
+Incase we want to exclude a child element of an HTML element from being selected in JQuery, we make use of the not keyword, like
+$("div:not(#button)"). Jquery selectors always begin with a :
+
+Jquery Selectors include first,not,last
+We can also access all the even numbered elements with the even Jquery selector, we can also access all the odd numbered elements with the odd Jquery selecor
+
+JQuery provides a way to select the text contained in an element via the contains selector
+The has selector provides a way for use to select nested elements on our DOM
+The nth-child selector also enables us to target a particular child element via its index. The nth-child selector does not start from zero
+The way the nth-child selector works is that you can't just have a general element, you have to specify what element you want to look for
+The empty JQuery selector is used to hide empty elements
+
+The JQuery CSS method is how we edit the css on our page. It takes two parameters, the css property and then the value that we want to set it to
+
+The html() method is used to set the HTML content of selectors
+The text() method is used to set the text content of selectors
+
+We can chain JQuery methods, so that instead of typing in multiple commands, we can just use the . to add the commands
+
+In JQuery,we can add classes to our HTML by making use of the addClass() method, just like in Javascript when you are trying to set the className property of the
+HTML Element

@@ -1,0 +1,27 @@
+A date in Python is not a data type of its own, but we can import a module called datetime to work with dates
+
+In order to access the current datetime in Python, what we need to do is to call datetime.datetime.now()
+
+In order to create a date object to work with, we need to use the datetime class constructor of the datetime module.
+The constructor takes three parameters, year, montjhj, day 
+
+The datetime object has a method for formatting date objects into readable strings
+
+Python has a built in package called json, which can be used for working with JSON data
+
+The json.loads() method is used to convert json to a Python dictionary
+
+In order to do the opposite, convert a Python dictionary to json, use the json.dumps() method
+
+Anytime you convert from Python to JSON, all Python objects are converted into their JSON(Javascript) equivalents
+
+Use the additional indent parameter to define the number of indents in a JSON conversion
+
+We can also specify the sort_keys method to sort alphabetically the result of json.dumps()
+
+pip install package
+pip uninstall package
+pip list
+
+try except else
+try except finally

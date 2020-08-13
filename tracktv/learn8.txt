@@ -1,0 +1,11 @@
+
+My backend is essentially predicated on three tables. The default users table, a tv_shows table containing all the tv shows that users in the Track Tv app
+have subscribed to. Then I have a subscriptions table that contains a relationships between the users and the tv shows. 
+
+Essentially, there is a many-to-many relationship between users and tv shows. This is because users can subscribe to many tv shows while a single show can
+be subscribed to by many users
+
+
+Leke take note that in order to edit a field in your table and make it nullable, all you have to do is do as if you want to create it anew and add the ->nullable()
+extension and then call ->change() on it, meaning that the field has been created already and you want to change it. If you want to change the field from nullable 
+to non-nullable, in the ->nullable() call, just pass in a false parameter

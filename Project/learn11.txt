@@ -1,0 +1,32 @@
+Linear Regression is one of the most well known and well understood algorithms in statistics and machine learning. Linear Regression is both a statistical
+algorithm and a machine learning algorithm
+
+Linear Regression is a linear model e.g a model that assumes a linear relationship betwen the input variables and the output variable. More specificaly, the
+y can be calculated from a linear combination of the input variables x.
+
+When there is a single input variable, the method is referred ti as simple linear regression. When there are multiple input variables, it is called multiple
+linear regression
+
+Different techniques can be used to prepare or train the linear regression equation from data, the most common of which is called Ordinary Least Squares.
+
+It is therefore common to refer to a model prepared this way as Ordinary Least Squares Regression or Least Squares Regression
+
+The complexity of a linear regression model can be ascertained from the number of coefficients used in the model.
+
+The linear regression model assigns a scale factor or coefficient to each column, this coefficient is commonly represented by Beta. One additional coefficient is
+also added giving the line an additional degree of freedom
+
+In multiple linear regression models, the line becomes a plane
+
+Learning a linear regression model means estimating the values of the coefficients used in the representation with the data we have available
+
+Ordinary Least Squares method is the method most used generally with the Linear Regression model while generally in machine learning, the method most used
+is the Gradient Descent
+
+When we say error, we mean cost
+
+In the Gradient Descent method, we start with zero as the value of each coefficient
+
+Regularized Linear Regression
+
+This is effective to use when there is collinearity in your input value and ordinary least squares would overfit your training data.

@@ -1,0 +1,38 @@
+Transformation
+Anything that changes the position, shape, rotation or anything else about the geometry of an object
+
+Affine Transformation
+Any transformation that preserves points, straught lines and planes is called affine transformation
+
+Groups occupy a position in the scene graph but are invisible. They are special objects that we can use to organize our scene
+
+When we move a group around, all of its children will move also. Likewise, if we rotate or scale it, all its children will be rotated or scaled too
+
+Group also has add() and remove() methods
+
+The flatShading parameter is used to give a material a faceted look
+
+convertSRGBToLinear()
+
+cylinderBufferGeometry
+
+The first parameter represents the radius of the top of the cylinder
+The second parameter represents the radius of the bottom of the cylinder
+The third parameter represents the height of the cylinder
+The last parameter is the radialSegments which specifies the level of detail of the outer curve of the cylinder
+
+Angles in three js are specified in radians, not degrees
+
+Three Js has helper methods for converting degrees and radians and vice versa Three.Math.degToRad() and Three.Math.radToDeg()
+
+In ThreeJS, we can either set our positions individually using nose.position.x or we can set everything using shorthand like nose.position.set()
+
+Rotations in ThreeJS go anti-clockwise
+
+We can also clone meshes by making use of the Mesh.clone() method
+
+When we are rotating geometries, we make use of the rotateX(), rotateY() or rotateZ() methods 
+
+The Mesh.scale() method is also used to scale 
+
+Leke ALWAYS remember to set the position of the camera

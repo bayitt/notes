@@ -1,0 +1,5 @@
+There is a key difference between the session and the g object in Flask. The session dict stores data across requests while the g object stores data for
+the duration of a single request
+
+the abort() method is contained in werkzeug.exceptions
+

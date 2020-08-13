@@ -1,0 +1,36 @@
+In Reactive forms, the source of truth is the form model, and the form model is usually the form control instance that was linked by the Form Model directive
+to the form input
+
+In order to access the value of a formcontrol linked to an input element, access the value property on it
+
+Just like we can access the value through the value property, we can set the value of a form control instance using the setValue() method
+
+You know how a formcontrol tracks the value and state for its particular input element. A form group tracks the status and changes for each of its controls,
+so if one of the control changes , the parent form group also emits a new status or value change
+
+The (ngSubmit) event emits the native DOM event for when the form is submitted. It is emitted when a button of type submit is clicked in the form
+
+With formGroups, the value is becomes an object whose keys are the formControl instances in the group while the values are the input elements that correspond
+to have been bound to the formControl instances
+
+ngSubmit is the event that we use to submit forms, just like we have click and input events 
+
+I think that essentially with nested forn controls and form groups, you add the Name suffix
+
+There are two ways to update values in a reactive form group
+- Either we use the setValue() method
+
+Angular provides a way for generating form controls with the FormBuilder symbol, simply import 
+
+The FormBuilder symbol has three methods, control(), group() and array()
+
+Essentially, the FormBuilder is useful for creating form control instances, it is injected as a dependency, the group() property on it used to create
+Form groups, while to create individual form instances, we make use of an array, with the first value in the array being the value of the formcontrol instance
+
+while the other values in the array represent the various validators
+
+Validators.required is used to validate the required field too 
+
+Use HTML5 Validation attributes with Angular's native validators
+
+We can access the current status of a form group by accessing its staus property while to receive the same value in boolean we make use of the valid propery

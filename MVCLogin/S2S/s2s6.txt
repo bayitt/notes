@@ -1,0 +1,25 @@
+Leke remember that the z-index property only works on elements that have their position specified like relative, fixed, or absolute
+The problem was that I needed to find a way to position the button at the extreme right of the input all the time. So I solved it by giving the button's margin 
+property a negative value to get the button to come up. Then I floated it to the right and because the input was taking up 100% of the parent div, it floats 
+to the right 
+
+The filter_var parameter takes two parameter. The value that it is checking and the FILTER_VALIDATE_EMAIL
+
+Leke take note when you making use of the PHP filter_var() function, always check it against false instead of true
+
+Leke rememeber that the str_replace()method takes three parameters, what we are looking for, what we want to replace it with and the string rhat we are checking it
+for
+
+
+Essentially the whole idea behind fetching more posts is that what we need really is the html constrcuted in the same format as we have it in the home page.
+But to construct it in that format , we need the various parameters, like the post title, dispcontent, image and all that, so we need to loop thru all
+the posts that we fetched and concatenate the text in that format
+
+The whole idea behind the loader animation is that because we dont specify the color, it defaults to the color of the parent element, and then we specify
+the border to be transparent, then we override it by specifying the border top to be white so that it stands out
+
+Leke take note that in order to make use of the replace string method in Javascript, that we don't need to quote the regex and to match all instances of the
+searched string, we just add the global identifier g for that
+
+The focus event occurs when a HTML form element is focused on, when it loses focus, the event fired is blur
+

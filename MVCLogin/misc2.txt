@@ -1,0 +1,17 @@
+The inline block property is very useful because it works just like inline, but you can edit the 
+width and height
+
+Leke take note of the children property of a class selector that enables us to select its child elements, 
+We can also make use of the find() method to access deepeer elements on the DOM Tree
+
+In order to obtain the number of css selectors on a page, we make use of the length property
+
+Breaking down the process of converting an array to a javascript object
+
+In our ajax call, the dataType to be returned has to be json
+
+Then in our action, we need to set the header() to be "Content-Type:application/json"
+
+We also need to echo out json_encode() with whatever we want to convert
+
+Tip: Leke, learn to calm down and go over it thoroughly

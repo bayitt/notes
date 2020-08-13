@@ -1,0 +1,33 @@
+Leke, have in mind that badges can also take on the contextual classes like badge bade-secondary, badge badge-primary
+
+Leke take note that you dont use badges on their own. Instead, you make use of badges inside of other HTML elements
+
+Use the .badge-pill class to make badges more rounded
+
+The way breadcrumbs work is that you give the nav an aria-label of breadcrumb and then you give the ordered list or unordered list a class of breadcrumb-item.
+
+The active class is given to the present page that is opened. The current opened page is also given an aria-current attribute of page
+
+It's an ordered link, not an unordered link
+
+Buttons, much like alerts and badges can also take on the various contextual classes
+
+While the .btn classes are designed to be used with buttons, however they can also be made use of with anchor and input elements. When making use of the .btn
+classes with anchor tags designed to trigger in-page functionality, these anchor tags should be given a role of button
+
+In order to remove the background color on buttons, insread of making use of like btn btn-primary or btn btn-info, what you should use should be
+btn btn-outline-primary or btn btn-outline-info. What this does is to set the color and border of the button appropriately
+
+.btn-sm for smaller buttons, .btn-lg for larger buttons
+
+Create block level buttons, that occupy 100% of their parent element by adding .btn-block class
+
+Buttons have a darker look when they are clicked. This look can be replicated by adding a class of .active and setting the aria-pressed attribute to true
+
+Make buttons appear inactive by adding the disabled attribute to a button
+
+<button type='button' class='close' data-dismiss='alert'>
+	<span aria-hidden="true">&times;</span>
+</button>
+
+Set the data-toggle attribute to button to toggle a button

@@ -1,0 +1,35 @@
+The whole idea with routing in express JS is that instead of putting all our routes in our root app file. We can split our routing logic into several
+different files and group related files together
+
+Leke, if you want to do exact route matching, then make use of the respective GET and POST methods instead of using the more generic use
+
+In order to send a 404 error page in express, all we have to do is to add a catch all middleware at the bottom
+
+Before calling the utility method send(), we can always make use of the status() method to set the status code of the response, or the setHeader() method
+
+Also, the redirect() method does as it says
+
+In situations in which we have common routes, we can add a common prefix to it 
+
+For returning or rendering files, instead of making use of the send() utiity, we make use of the sendFile() utility
+
+process.mainModule.filename returns the name of the root file
+
+In order to be able to serve files statically, we need to call the static() method on the express package and pass in the folder that we want to be able
+to have read access
+
+Doing that  also sets thr root of the appli
+
+With express, there are three different templating engines which are available, we have pug, ejs and handlebars
+
+The wayI see it, app.set() is used to set global environment variables, which we can obtain back with app.get()
+
+The syntax in EJS to output stuff is <%=%>
+
+Also in order to make use of templating engines, we need to make use of the render() method to return content, instead of making use of sendFile() as before
+with html content.
+
+The cool thing about ejs is that for the if statements we can make use of normal Javascript syntax
+
+With ejs, the difference between making use of <%= %> and <%- %> is that with the first option, we want it to be escaped, meaning that even if we enter html,
+it interpretes it as string. While, for the second one, if we enter html, it interpretes it as html

@@ -1,0 +1,10 @@
+Leke take note that when we are specifying the methods for the mousenter and mouseleave events we do not need to include the ()
+
+Leke seek to find how you can reuse methods
+
+Breaking down the setInterval() method in Javascript, 
+
+The setInterval method, takes two parameters, a function containing what needs to be executed and a time in between the function execution
+
+The animate() method also takes two parameters, a first object containing what needs to be executed, then an animation speed and another callback specifyting
+what needs to be executed after the animation

@@ -1,0 +1,54 @@
+navigator.serviceWorker.register()
+
+Register our service worker so that the application works even when we are offline
+
+A core feature when building progressive web applications are Service Workers
+
+They are basically Javascript running in a background process, even when your application is closed.
+They enable us to get offline access and also other PWA features like background sync
+
+Syncing User data in the background and accessing push notifications
+
+The application manfest is another important building block of PWA's. They enable us to add the application to the homescreen
+
+Responsive design is another core building block of PWA's
+
+Geolocation API for accessing the user's location
+Media API for accessing the user's Camera
+
+SPA != PWA
+
+PWA is essentially a collection of technologies that are 
+
+We can turn any SPA into a PWA
+
+The Application Manifest is a document that tells the browser more about your application
+
+Service Workers and a lot of PWA features make use of promises and the fetch API4:30 PM 9/5/2019
+
+The manifest file is added to our root web folder
+
+We must link to our manifest.json file to in every page in our application. If you are using an SPA, good for you
+
+Various Manifest Properties
+- name
+- short_name
+- start_url - page that should be loaded on startt up
+- scope - which pages in our app should be included in the PWA. Typicaly, it is set to . meaning all
+- display - how the app should look when we tap on it. We can set it to 'standalone' to prevent the browser controls from appearning so that it really looks like
+a native app
+- background_color - This sets tehe background color of the application when it is loading or on the splashscreen. Only shows for a split second
+- theme_color - theme color e.g in the task switcher
+- description - extra information about the app e.g when you favorite it in the browser
+- dir - This refers to the read direction of your application
+- lang - language
+- orientation - This refers to how you can force the orientation of your web application when it is opened
+- icons - This represents an array of icons out of which the browser is going to select one to use to display say on the homescreen.
+	It is actually an array of objects with common properties. These properties include src, type, sizes
+- related_applications- This refers to a set of related native applications to your app. It is another array of objects with common properties of
+platform, url and id
+
+
+The various display options are standalone, fullscreen, minimal-ui and browser
+The various orientation options are any, portrait, landscape. portrait-primary ensures that the screen does not rotate when the user turns the screen
+upside down

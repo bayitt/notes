@@ -1,0 +1,41 @@
+
+There are four collection data types in Python
+
+List- A collection which is ordered and changeable. Allows for duplicate members
+Tuple- A collection which is ordered and unchangeable. Allows duplicate members
+Set- A collection which is unordered and unindexed. Does not allow for duplicate members
+Dictionary- Unordered, changeable and indexed. No duplicate members
+
+Lists
+
+In order to add an item at the specified index, we need to make use of the insert() method 
+
+There are several ways of removing ites from lists
+
+the remove() method removes the particular item passed in as a parameter
+
+the pop() method removes the specified index or if no index is not specified. It removes the last item
+
+the del keyword removes the specified index and can also be used to delete the whole list 
+
+the clear() method empties the list completely
+
+Apparently in Python, you cannot just assign a new list to an old list because the new list is a reference to the old list and as such any changes made in
+the old list will reflect in the new list
+
+Instead of doing it the above way which will cause trouble what we can do is to use the built in copy() method of the list or we can make use of the list()
+constructor
+
+We can also make use of the list() constructor to create a new list
+
+the sort() method sorts a list
+the reverse() method like it sounds, reverses the list 
+the extends() method more or less appends an entire list to the new list
+the count() method returns the number of times that an item appears in the list
+the index() method returns the index of the first time an item appears in the list
+
+Lists make use of the [] notation while tuples make use of () notation.
+
+Tuples are immutable meaning that once they are created they cannot be changed 
+
+It is also possible to make use of the tuple constructor to create a new tuple

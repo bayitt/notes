@@ -1,0 +1,5 @@
+CORS Stands Cross-Origin-Resource-Sharing. Same Origin policy allows the same origins to share data for example an ajax request from a page on the server to fetch
+data on the same server
+
+So to enable resource sharing between two different origins, we use CORS mechanism by setting a special header. By setting a special origin in the header
+, you are allowing only those origins to load resources from the API server.

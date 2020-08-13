@@ -1,0 +1,35 @@
+Laravel's authentication facilities are made up of guards and providers
+
+Guards define how users are authenticated for each request
+
+Providers define how users are retreived from your persistent storage
+
+Laravel ships with several pre-built authentication controllers which are located in the Controllers\Auth namespace
+
+The RegisterController handles new User Registration
+
+The LoginController handles authentication
+
+The ForgotPasswordController handles emailing links for resetting passwords
+
+The ResetPasswordController contains links for reseting Passwords
+
+Illuminate\Http\Request
+
+Illumainate\Support\Facades\Auth
+
+With Laravel, if we have custom generation loginc, we can make use of a redirectTo() method and this will take precedence over the redirectTo property
+
+The Auth::logout() method is used to logout users
+
+I refuse to accept that I am not good enough. Those guys that are very good at this do not have two brains
+
+In order to grab our errors, we need to loop through the $errors->all() method and
+
+Essentially, the sendFailedLoginResponse() method is what is called if the user does not authenticate successfully
+
+Placeholders are similar to mixins in that, they are like reusable chunks of code that we can extend
+
+There is a reason why they are called placeholder selectors, 
+
+I think that the placeholder is to be used in like situations where we have two different classes that will take the same styles

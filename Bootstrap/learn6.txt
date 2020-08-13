@@ -1,0 +1,37 @@
+We make use of the .table-bordered class to create borders on all sides of the table and the cells
+
+We also make use tof the .table-borderless class to create a table without borders
+
+The .table-hover class is used to enable a hover state on all table rows within a <tbody>
+
+Add the .table-sm class to make tables more compact by cutting cell padding in half
+
+We can even make sue of contextual classes to color individual table rows or indvidual cells
+
+Create Responsive tables by making use of the .table-responsive class
+
+Apparently with responsive tables and the breakpoints, its like Bootstrap 4 makes use of maximum width because the tables are responsive up to a 
+certain breakpoint
+
+Anytime we need to display a piece of content - like an image with an optional caption, conside using a <figure> tag
+
+Essentially, the <figure> element contains  <img> tag and a <figcaption> tag. Apply the correspoding .figure, .figure-img and .figure-caption classes. Also
+don't forget to add the .img-fluid class to the image to make it responsive and the .rounded class if you intend for the image to have a border radius
+
+When creating alerts, don't forget to make use of the role attribute
+
+We have alerts for all of the contextual classes
+
+Whenever you have a link inside of your alert, make use of the .alert-link class to quickly provide matching colored links within any alert
+
+Use .alert-heading to create a heading inside of your alerts
+
+Leke ALWAYS remember that Bootstrap makes use of jquery
+
+In order to dismiss a Javascript alert, you need to make use of the Bootstrap js file
+
+I think it is preferable to close an alert with the data attributes
+
+<button type='button' class='close' data-dismiss='alert' aria-label='close'>
+	<span aria-hidden='true'>&times;</span>
+</button>

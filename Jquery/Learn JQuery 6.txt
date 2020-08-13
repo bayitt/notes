@@ -1,0 +1,25 @@
+Leke, in order to create a vertical menu, we create an unordered list with an id of our choosing. Then we create our unordered list and then we acces it in JQueryánd
+give it a method of menu. Just like with the accordion in which we can specify the icons to display for the header and aciveHeaders we can specify the icon to display
+with the icons:submenu property and an example is the ui-icon-cirlce-triangle-e icon. Leke, in order to separate the various items in our vertical menu, we can just
+insert <li>-</li> between the list elements. Then, in order to display all our elements underneath each other, we canmakeuse of the menus property which we will give a 
+value of "div". The menu options include icons(submenu), <li>-</li> and menus:"div"
+
+With JQuery message boxes, we can display any kind of content that we want in them, by accessing the element via its css selector and then calling the dialog methid
+on it. We can use the title property to display the header in the message box, We can set the autoOpen property to false to disable the dialog box. 
+To prevent the user from being able to drag the messagebox around, just set the draggable property to false. To prevent the user from being able to
+resize the messagebox, just set the resizable property to false. We can also set the height and width properties. We can also make use of the show and hide
+properties to specify the amount of time in milliseconds that it will take for the messagebox to open and close.
+The show and hide properties can alse be used to specify the effects that should happen when the messagebox appears and when it is closed
+
+IF we want to prevent the user from making use of certain keys on the keyboard, we can do so by making use of the closeOnEscape property and setting it to false
+
+If we want to prevent the user from doing other things on our webpage and force them to attend to the messagebox, we can do so by making use  of the modal property
+and setting it to true.
+Messagebox properties
+height,width
+resizable
+closeOnEscape
+modal
+draggable
+show,hide to specify time
+show,hide to specify effects

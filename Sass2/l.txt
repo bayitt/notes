@@ -1,0 +1,9 @@
+Leke take note that in order to get the date from a date object in Javascript, we use the getDate() method, to get the current month, we use tghe getMonth() method
+and this returns the index of the current month, remember that the indexing starts from 0, 0-11. Then in order to get the current year, we make use of the getFullYear()
+method. Then for the hours, minutes and seconds, it is getHours(), getMinutes() and getSeconds().
+
+The element.off() method is used to remove all the event handlers associated with an element
+
+CSS Pseudoclasses are used to determine the special state of elements
+
+The appearance property enables us to make a HTML element look like a standard interface element

@@ -1,0 +1,10 @@
+Sort Algorithm
+
+We have several important parameters by which we intend to sort the various stewards
+
+- Ideally, we want male steward + female steward
+- Then we also want old steward + new steward
+- We also want new stewards in A and B so that they can gain experience
+
+
+

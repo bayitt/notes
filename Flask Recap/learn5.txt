@@ -1,0 +1,33 @@
+Observables provide support for passing messages between publishers and subsribers in your application. Observables offer significant benefits over other 
+techniques for event handling, asynchronous programming and handling multiple values.  
+
+Observables are declarative, meaning that we define a function for publishing values but this function is not executed until a consumer subscribes to it.
+The subscribed consumer then receives notifications until the function completes, or until they unsubscribe.
+
+An observable can deliver multiple values of any type - literals, messages, or events, depending on the context
+
+As a publisher, you create an observable instance that defines a subscriber function. This is the function that is executed when when the consumer calls the
+subscribe() method
+
+The subscribe() call returns a subscription object that has an unsubscribe() method, which you call to stop receiving notifications
+
+A handler for receiving observable notifications implements the Observer interface. The three types of notifications that an observable can send are
+next - This is required and it is a handler for each delivered value. It is called zero or more times after execution starts
+error - optional, a handler for an error notification
+complete - optional. a handler for the execution complete notification
+
+of(..items) - This returns an observable instance that synchronously delivers the values provided as arguments
+
+With observers, its either we define the observer separately and pass it into the subscribe() method of the observable instance. Or we can define the individual
+observer handlers
+
+Data published by an observable is a stream
+
+Observables can be created making use of the Observable class. When creating observables manually like this, we need to pass in the subscriber function 
+to the Observable constructor
+
+HttpClient is Angular's mechanism for communicating with a remote server via Http
+
+All HttpClient methods return an RxJS observable of something. HTTP is a request/response protocol. You make a request, it returns a response.
+
+An observable from HttpClient always emits a single value and then completes,never to emit again. In order to get errors, you need to pipe the result	

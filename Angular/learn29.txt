@@ -1,0 +1,29 @@
+Reactive Forms Data Flow from View to Model
+
+- The user types a value into the input element
+- The form input element emits an input event with the latest value
+- The control value accessor listening for events on the input element immediately relays the new value to the formcontrol instance
+- The FormControl instance emits the new value through the valueChanges Observable
+- Any subscribers to the valueChanges Observable receive the new value
+
+Im guessing that is why the ControlValue Accessor is called the bridge that links form control instances with native DOM elements
+
+formControlIntance.setValue() method
+
+What I can see is that both reactive and template driven forms execute the same sequence of processes to match form input but with template driven forms, the
+NGMODELDIRECTIVE takes over the process
+
+Form Validation
+
+Reactive forms define custom validators as functions that receive a control to validate
+Template driven forms are tied to template directives
+
+Reactive forms can be tested without rendering the UI, becausse for them,their source of truth is the form model which is the form control instance
+
+Mutability
+Reactive forms keep the data model pure by providing it as an immutable data structure. each time a change is triggered on the data model,the FormControl instance
+returns a new data model rather than updating the existing data model
+
+With template driven forms,instead of returning new data models, it just modifies the current property
+
+Reactive forms use an explicit and immutable approach to managing the state of a form at any given time

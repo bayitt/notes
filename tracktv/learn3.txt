@@ -1,0 +1,11 @@
+Leke, you know how, if you want to have dynamic routes in Laravel, you do something like /path-to-route/{id} where id is the dynamic aspect of the route
+and in your action in your controller, you pass in the variable to the action as a parameter like action($id).
+
+Well, in Angular, in order to have dynamic routes, we do /:id
+
+Leke remember that it is bin2hex(openssl_random_pseudo_bytes(16))
+
+Also, remember that the encryption algorithm is hash_hmac(), the first parameter is the encryption algorithm, the second parameter is what we are encrypting
+while the final paramter is the secret key that we are using
+
+Leke remember the $table->dropColumn() method for rollong back column migrations

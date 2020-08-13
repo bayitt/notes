@@ -1,0 +1,31 @@
+Placeholder selectors are like for from containers, tpo sub-containers to content
+
+Leke #main div%blue
+
+.sign
+{	
+    extend %blue;
+}
+
+Placeholders are like classes, reusable code
+
+The @content keyword enables us to create a mixin that accepts a block of code. With normal mixins we will be calling the function with a parameter but
+with this mixin we will call it with a block of code
+
+We can also extend our sass and tell it where to create files
+
+Breaking down the entire process, With Compass, we don;t have to manually say sass-watch, All we need is our config.rb file and we can then say compass watch and it
+will create the file in our css folder
+
+Sass globbing enables us to grab all the files contained in a folder
+
+In order to install singularity grid system just type gem install singularitygs while to install globbing just type gem install sass-globbing
+
+The same way that I would link to the bootstrap css or js file is the same way that I would just @import 'singularitygs'
+
+Gutters are like the margin or space we have between the grid items
+
+For singularity we need to import the file and then we need to include the mixin grid-span() which is built in and comes with singularity
+grid-span() takes two attributes. The first value represents the number of grids while the second value represents where it should start from
+
+Asymmetric grids enable us to build grids only the things that we need and we do it proportionally

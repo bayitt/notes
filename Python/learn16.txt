@@ -1,0 +1,15 @@
+Batch Gradient descent is the most common form of gradient descent used in machine learning. In it, the cost is calculated for a machine learning algorithm 
+over the entire dataset.
+
+Batch gradient descent can be slow to run on very large datasets. In situations in which we have large datasets we can use a variation of gradient descent 
+called stochastic gradient descent
+
+The deal with stochastic gradient descent is that instead of batch gradient descent that adds up the cost for all the training instances, gets to the end
+of the batch, adds it up and averages it before updating the coefficient.
+
+Rather, with stochastic gradient, the update is made after each training instance. Also, the training dataset is randomizeed
+
+The learning rate value is a small real value such as 0.1, 0.001, 0.001
+
+The algorithm will reach the minimum cost faster if the cost function is not skewed or distorted. You can achieve this by rescaling all of the input variables
+to the same range, such as between 0 and 1

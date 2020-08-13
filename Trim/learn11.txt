@@ -1,0 +1,11 @@
+Time To First Byte - is the number of milliseconds it takes for the browser to receive the first byte of the response from your web server
+Search Engine Optimization - the process of optimizing your website to get a higher rank on the search engine
+
+With client side rendering, when the user tries to access the application, the client makes the request to the server, the server returns the js which the 
+browser downlads, then the browser executes the react/angular/vue from which it then makes say the http requests to your backend which returns the data and
+the page is then rendered.
+
+With a server side rendered application, what happens is that is the server that returns the html. First, the application will be rendered to the user as just
+HTML/CSS, to render the first view to the user. Then, while the DOM is being rendered, the app will be parsed and rendered 
+
+In order for Heroku to recognize an app as a Python app, it needs the bot.pt, procfile and requirements.txt file

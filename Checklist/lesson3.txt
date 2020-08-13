@@ -1,0 +1,35 @@
+What Exactlty Have I learnt in Sass
+
+1) Nesting Sass
+2) @import statement for partials
+3) The parent reference
+4) Lists in Sass
+5) The nth function()
+6) Creating mixins in Sass making use of the @mixin statement
+7) Making use of mixins in Sass making use of the @include statement
+8) Making use of Sass's built in functions such as rgba() by which we can get the rgba values of hexes
+9) We also have the lighten() and darken() built in functions
+10) Then we have the @each keyword
+11) Sass also has while and for loops
+12) We can also carry out inheritance in Sass by making use of the @extend keyword
+13) We also have placeholder selectors which we can create by making use of the %sign
+14) Then finally, we can make use of the @content keyword to create mixins that take parameters
+
+Revising CSS Animations
+For CSS Animations we have the animation-name, animation-duration, animation-delay. Take note that the second time that we specify is always the delay both 
+for transitions, animations. Then we have the animation-iteration-count which is the number of times that we want the animationn to run for. It can
+also have a value of infinite which means that the animation is going to repeat infinitely. We also have animation-fill-mode which represents the state
+that we want the animated elements to return to . If we set it to a value of before, then the animation is going to return to its previous state
+. If we set it to a value of after, the animated elements is going to maintain its state after the animation. Then we can set it to both. Then we have 
+animation-direction which can be set to normal, which is the default value. We can also set it to reverse, then we have alternate-reverse or alternate.
+
+Then we have the css transform property. It can take a value of translate(), the first value represents its mivement along the x-axis. The second value
+represents its movement along the y-axis. Then the transform property can also take a value of scaleX() or scaleY(). If we set it to a value above 1 or below
+-1. The element is going to widen. Then finally the transform property can take a value of rotate(). The element can either rotateX or rotateY. rotateZ() and
+rotate() are the two one that we need because with them we can proper rotate the elements in terms of degrees.
+
+CSS Box Shadows
+The first value of the box shadow is the horizontal offest of the shadow
+The second value of the box shadow is the vertical offset of the shadow
+The third value is the blur radius. The higher the value, the more blurred the shadow will be
+The fourth value is the spread radius. The higher the value, the wider the shadow will be 

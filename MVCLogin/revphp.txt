@@ -1,0 +1,10 @@
+Leke take note that to PHP, there is a difference between empty and null
+Leke seek to get all the computations done before using the value in the declaration
+
+Take note of the class_exists() and is_callable() methods, the is_callable() method takes an array as its parameter
+
+Leke take note that in the dispatch() method, what we call is is_callable(), taking the controller object and the action as parameters
+
+While in the Core controller what we call is method_exists, taking the calling object and the method
+
+Leke remember that when we are creating the error handler , we have Fatal Error, then Uncaught exception, then Message, Stack trace and the file and lines

@@ -1,0 +1,34 @@
+Default Flask dependencies are
+- Werkzeug - This implements WSGI, the standard Python interface between applications and servers
+- Jinja is a template language that renders the pages your application serves
+- MarkupSafe comes with Jinja. It escapes untrusted input when rendering templates to avoid injection attacks
+- ItsDangerous securely signs data to ensure its integrity. This is used to protect Flask's session cookie
+- Click is a framework for writing command line applications
+
+Important optional dependencies
+- python-dotenv
+- Watchdog 
+- Blinker
+- SimpleJSON
+
+The whole idea is that with Flask, your entire application is an object of the Flask class
+
+We make use of the route() decorator to bind a function to a URL
+We can add variable sections to a URL by marking sections with <variable_name>. Your function then receives the <variable_name> as a keyword argument.
+Optionally, we can make use of a converter to specify the type of the argument like <converter:variable_name>
+
+Types of Flask converters
+string - accepts any text without a slash
+int - accepts positive integers
+float - accepts positive floating point values
+path - like string but also accepts slashes
+uuid - accepts UUID strings
+
+We can access the escape method from markupsafe and make use of it to escape the variable names passed in to the route() decorator
+
+To build a url to a specific function, we make use of the url_for() method. It accepts the name of the function as its first argument and any number of keyword
+arguments, each corresponding to a variable part of the url rule. Unknwon variable parts are appended to the url as query parameters
+
+By default, routes in Flask only answer to GET requests. We can make use of the methods argument of the route() decorator to handle diffeent HTTP mthods.
+We can access the method used to access the request by making use of the request.method field
+

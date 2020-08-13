@@ -1,0 +1,36 @@
+Superglobals are available in all scopes
+
+Convert the array of values to properties of the object
+
+Leke, try to stick strictly to the MVC separation of concerns, we dont output HTML from a mdoel
+Leke take note that when making use of named parameters, that they are parameters and as such shoulddnt be quoted
+
+Leke, note that in order to add a value to the array, just go like $this->error[]
+
+PDO::PARAM_STR
+PASSWORD_DEFAULT
+
+Learn to think in terms of mvc and separation of concerns, they all exist for a reason
+
+Leke, take note of the filer_var() function and the FILTER_VALIDATE_EMAIL parameter
+
+The PDO execute statement returns true or false on executio of the query
+
+Leke, learn to think differently!
+
+Umm, with the same view we can cater to different scenarios in our code
+
+If we are not making use of SSL in our code, data is transmitted as clear text
+
+The Post/Redirect/Get Pattern
+By issuing a redirect to another page immediately after a form submission, we can avoid the problem of double interaction with the database
+It's common to use a redirect to another page after logging in or after submitting a form
+To be on the safe side, it is better to redirect to an absolute URL
+
+The HTTP_HOST parameter returns the server on which the website is hosted upon
+
+Make sure that the header function is called before anything is written to the browser
+It is also important to immediately exit the file after calling the header() function
+The default status code sent with a header redirect is a 302
+However, a 303 status code should be used with a Post/Redirect/Get Pattern
+We can specify which status code should be sent. The status code is the third parameter with the second parameter being a boolean true value

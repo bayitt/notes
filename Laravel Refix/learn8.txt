@@ -1,0 +1,34 @@
+Laravel ships with several pre build authentication controllers. The RegisterController handles new user registration, the LoginController handles 
+authentication, the ForgotPassword controller handles emailing lniks for resetting passwords
+
+The Laravel/ui package provides a quick qay way to scaffold all the routes and views you need for authentication using a few simple commands
+
+composer require laravel/ui --dev php artisan ui vue --auth
+
+The current authenticated user may be accessed via the Auth facade, Auth::user(), Auth::id()
+To determine if the current user is authenticated, we make use of the Auth::check() command
+
+When specifying the auth middleware, we can also specify the guard to make use of
+
+Laravel provides several helpers to assist you in generaing URLS for your application
+
+The url helper may be used to generate arbitrary URLs for your application. The generated URL wil automatically use the scheme (http or https)
+
+url()->current() will return the current url without the query string, url()->full() will return the full url.
+
+Stateful means the computer or program keeps track of the state of interaction, usually by setting values in a storage field designated for that purpose.
+Stateless means there is no record of previous interactions and interaction request has to be handled based entirely on information that comes with it.
+
+The session may be accessed either by the session() method on the request instance or by making use of the global session() helper method. 
+
+In order to retrieve a piece of data from the session, we need to pass in a string parameter to the session() helper, we can also pass in a second default
+argument that is returned if the key does not exist. Also, in order to store a piece of data in the session, we need to pass in an array to the session() helper
+
+
+We make use of the has() method to check if a certain key exists on the session. The exists() method is used to check if the value is present in the session, 
+even if it is null
+
+If we intend to store items in the session only for the next request, we need to make use of the flash() method
+
+If you intend to remove a particular key from the session, make use of the session::forget() method. If we intend to empty the session, we can make use
+of the session::flush() method

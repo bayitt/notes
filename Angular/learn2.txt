@@ -1,0 +1,38 @@
+Angular makes use of components which are used to display data, listen for user interactions and carry out actions based on this interactions
+
+By default, Angular creates an app component which serves as the root component. 
+
+Libraries and packages in Angular have to be imported.
+
+The [(ngModel)] is used for two way data binding and also events in Angular are targeted by (), such as (click) and (focusOut). Then event handler methods
+are assigned to these events which are created in the component class. 
+
+{{}} - Thsi represents Angular's interpolation binding syntax
+
+The @Component decorator is used to specify metadata for the Component
+
+In Typescript, the : operator is used to indicate the datatype
+
+Know how in C we can have a function like void Function(int x, int y)
+
+In Typescript, it will be onSelect(id:number)
+
+Also, Leke remember TypeScript's pipes
+
+The [class.class] is used to add a class to a html element based on a particular condition
+
+The @input() decorator means that the particular property can be injected in from another component 
+
+So with this essentially, we can have sub-components nested inside components. The important thing really is that we use the @Input decorator to
+specify that the property can be injected in by another template. 
+Then when we are creating the property we can use <app-hero-detail [hero]="selectedHero"></app-hero-
+
+We can have parent-child relationships in Angular
+
+[hero]="selectedHero" -  Angular property binding 
+
+Components essentially should focus on presenting data and should leave the process of grabbing or getting the data to a service
+
+ng generate service is used to create an Angular service
+
+Leke do not forget the @Input() decorator 

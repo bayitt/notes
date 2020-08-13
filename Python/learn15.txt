@@ -1,0 +1,35 @@
+Techniques to use when evaluating machine learning algorithms to limit overfitting
+
+- Use a resampling technique to estimate model accuracy
+- Hold back a validation dataset
+
+The most popular resampling technique is the k-fold cross validation. It allows you to train and test your model k times on different subsets of training data
+and build up an estimate of a machine learning model on unseen data. 
+
+Gradient Descent for Machine Learning
+Optimization is a big part of machine learning. Almost every machine learning algorithm has an optimization algorithm at its core.
+
+Gradient descent is an optimization algorithm used to find the values of parameters (coefficients) of a function (f) that minimizes a cost function. Gradient descent
+is best used when the parameters cannot be calculated analytically and must be searched for by an optimization algorithm
+
+The goal is to get the values of the coefficients that result in the lowest cost
+
+The procedure starts off with initial values for the coefficient or coefficients for the function. This could be 0.0 or a small random value
+
+There is a cost function f() to which we pass in our coefficients as parameters and they return the cost.
+
+After getting the cost, we need to obtain the derivative of the cost. The derivative refers to the slope of the function at a given point.
+We need the derivative to know the direction to move the coefficient values in order to get a lower cost on the next iteration
+
+delta=derivative(cost) 
+
+After knowing the direction to move so as to reduce the cost, we can now update the coefficient values. A learning rate parameter (alpha) must be specified
+that controls how much the coefficients can change on each update. A learning rate parameter (alpha) must be specified that controls how much the coefficients can 
+change on each update.
+
+coefficient=coefficient - (alpha * delta)
+
+The process is repeated until the cost of the coefficients is 0.0 or no further improvement in cost can be achieved
+
+Essentially, the cost function is what estimates how far away the function is from the answer
+

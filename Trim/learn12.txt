@@ -1,0 +1,31 @@
+Important things to note when creating REST APIs with node. We make use of the body-parser.json() method to parse the request bodies seeing as we are dealing
+with json data instead of x-www-form-encoded data in which case we would make use of body-parser.urlencoded({ extended:true }). Then, we also need to enable
+cors on the response by setting the appropriate headers. We can do this in a middleware we can by making use of the setHeader() method on the response. We set the
+Access-Control-Allow-Origin, Access-Control-Allow-Headers, Access-Control-Allow-Methods.
+
+Routing still works the same except that this time, we have access to several other methods such as PUT, DELETE, OPTIONS and PATCH. We can also create our
+controllers though I'll be making use of resources in this case. Another thing to note is when creating errors. We can do this by creating an error object and setting
+the statusCode and then throwing the error. This would pass the error to the catch block from which we can call next() on it to pass it on to the next middleware
+on the chain. 
+
+We can create a special middleware, which would take four parameters instead of three. The first parameter would be the error itself. 
+
+Express provides a special json() helper method to which we can pass in Javascript objects and then Express would convert it into json. There is also a status() 
+method to which we can specify the status of the response and then chain the json() method.
+
+For jwts, there is an npm package called jsonwebtoken. It provides a sign() method to which we can pass in an object containing what we want to store.
+The second parameter is the secret that we want to use to sign the data. Finally, we can pass in another object containing configurations such as expiresIn.
+
+Conversely, we can make use of the verify() method to which we can pass in the token, and a second parameter representing the secret. 
+
+Relevant Terminology
+SSR - Rendering a client side or universal app to HTML on the server
+CSR - Rendering an app in a browser, generally using the DOM
+Rehydration - booting up Javascript views on the client such that they reuse the server rendered DOM tree and data
+Prerendering - running a client side application at build time to capture its initial state as static HTML
+
+TTFB - Time To First Byte - seen as the time between clicking a link and the first bit of content coming in
+FP - First Paint - The first time any pixel becomes visible to the user
+FCP - First Contentful Paint - The first time when requested content becomes visible
+TTI - Time To Interactive - The time at which a a page becomes interactive
+ 

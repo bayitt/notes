@@ -1,0 +1,37 @@
+Context Locals
+
+Certain objects in Flask are global objects. These objects are usually proxies to objects that are local to a specific context
+
+Also Leke take note that form data is sent in as an array via the form attribute on the request object
+
+The way I have seen it, is that every thing in flask is broken up into small, single methods. That is the only way that it can be done and make sense
+
+In order to access query parameters, we need to use request.args.get()
+
+If a key does not exist in the form attribute, a keyError is raised. Apparently any data sent in via POST or PUT is sent in to the form dictionary
+in the request object
+
+We can access uploaded files by accessing the files attribute on the request object. It also has a save() method that we can use to save 
+
+By default the render_templates() method looks in the templates folder for the views
+
+In order to access the form data sent in the request, access it via the form dictionary in the request object
+
+In order to access query parameters sent in the request, we need to access it via the request.args.get
+
+Uploaded files are stored in the files dictionary on the request object
+
+The uploaded files behave like typical file objects
+
+If you intend to use the filename that the user used to upload the file on the client, we can access it via the filename attribute on the file. 
+But for security purposes, we need to pass it through the secure_filename() method from werkzeug.utils
+
+In order to access cookies, we can make use of the cookies.get() method on the request object
+
+KeyError - This error is thrown if a key is not found in a dictionary. In order to set cookies we can make use of the set_cookie() method on response objects
+
+Make use of the make_response() method and then use the set_cookie()  method
+
+In order to redirect a user to another endpoint, use the redirect() method
+
+In order to abort a request with an error code, make use of the abort() method

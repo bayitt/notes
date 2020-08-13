@@ -1,0 +1,24 @@
+Keyframes are the powerhouse of css animations
+
+For animations the parameters are animation-name, animation-duration
+
+animation-fill-mode can take four values, none, which is the default value, forwards, backwards and both
+
+There is also an animation-delay property, like transition delay
+
+With backward, you tell the elements in the animation to have the properties from the start, with forward you tell it to maintain the 
+properties at the end. With both, you tell it to maintain both
+
+We use the animation-iteration-count to control how many times we want the animation to repeat
+
+The animation-direction property can be various values among which are alternate, alternate-reverse, normal and reverse
+
+Essentially normal is the default way, reverse, means go in the opposite direction, alternate means go forward first, then backward
+alternate-reverse means go backward first then forward and continue like that
+
+The default value of animation-timing-function is ease
+
+Apart from making use of all those default timing functions, we can also pass in our default timing function making use of a cubic bezier function
+
+The animation order is animation-name time animation-timing-function animation-iteration-count animation-direction
+

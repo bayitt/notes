@@ -1,0 +1,36 @@
+Client side validation can easily be bypassed.
+It is important to carry out both client and server side validation. Always validate data on the server
+
+Leke, take note that if we change the required type to email, it will validate the email. We can also check passwords against a particular pattern
+by setting the required pattern attribute, We can also edit the message displayed making use of the title attrribute.
+
+Making use of the jquery validate plugin we need to specify the name in the object
+
+To make use of the JQuery validation library, we need to specify a rules object and we need to make use of the names that we named them in our form.
+The validate method needs to take an object itself as a parameter
+
+In Javascript, if a value does not match a regular expression, the match function returns null
+
+With the addMethod() of the jquery validation library, we can add custom methods to create and carry out more complex validations.
+
+The MVC framework does not differentiate between full page requestsa nd ajax requests, they both require controllers and actions
+
+Making a method static means that we can call it without creating an object
+
+We need to make use of the header function to set Content-Type to application/json
+We also need to encode it in json format making use of the json_encode() function
+
+The JQuery plugin echoes a message if the false is returned
+
+For loginning in, we need to create the controller and the method, then the thing is that by default PDO returns an array so we need to change the fetch mode
+to return a class. That is PDO::FETCH_CLASS, and we need to pass the namespace as the second parameter
+
+The password_verify() function is used to check if a password matches a hash
+
+As far as the web server is concerned, each request is unrelated to previous requests. This is because HTTP is stateless.
+We can add states using sessions
+
+When the session_start() function is called, a session id is generated, and a file to store the session information is created identified by the session id.
+When the server sends a response back to the browser, it sets a cookie in the browser containing the session id. A cookie is a text srring stored in the browser
+
+We must call the session_start() function before any content is sent to the browser 

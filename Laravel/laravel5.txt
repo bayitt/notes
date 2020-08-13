@@ -1,0 +1,42 @@
+Leke remember that the database configuration files in laravel are in the .env file
+
+We make use of the laravel command make:auth command to create default authentication
+
+The has() static method is used to check if a method exists in the Route Controller. Just like it is also used to check if a flash message exists in the session
+
+php artisan route:list returns a list of all the routes in our application
+
+The whole idea is essentially that whenever we run php artisan make:auth, php creates like a base layer of authentication for us.
+It registers routes for us in web.php, Auth::routes()
+
+Leke take note that with migrations, string represents varchar while text represents text
+
+When creating foreign keys, we need to use the name of the model_id
+
+Relationships in Laravel refer to interactions between database tables
+
+One-To-Many Relationships
+
+Relationships are created in Models via methods
+
+We name the relevant methods depending on the type of relationship that exists between it and the other table. If it is many, then the name is plural but if it is
+singular then the name of the method is singular. If it is many, we return $this->hasMany, but if it is one, we return $this->belongsTo
+
+When creating controllers ,we can specify --resource at the end and what that does is that it creates crud methods for us to get to work straightaway
+
+Whenever we want to extend a file found in a folder, make use of the .notation instead of /. Like layouts.app instead of layouts/app
+
+Note the / and . notation can be used together
+
+It's good practice to put common routes in a route group
+
+Route groups are created in Laravel by calling the static group() method in the Route class. Then we declare the routes in the callback which is the second paramter
+of the static group() method of the Route class, with the first parameter being an array
+
+Middleware essentially in Laravel are filters
+
+Anytime a request is sent to the server, Middleware filters it and checks to see if the application is doing what it should be doing
+
+Apparently there are different types of middleware or filters. An example of one such filter is the Authentication filter
+
+The Auth class has a static check() method which checks if the user is authenticated or not

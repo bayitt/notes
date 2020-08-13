@@ -1,0 +1,11 @@
+With font size in Tailwind, it works in increments of .125 rem, we have .text-xs, we have .text-sm which is .875rem, we have .text-base which is
+1rem. From there we have .text-lg, .text-xl to .text-6xl
+
+For font weight in Tailwind, .font-hairline, .font-thin, .font-light, .font-normal, .font-medium, .font-semibold, .font-extrabold, .font
+
+Tailwind letter spacing utilities
+.tracking-tighter, .tracking-tight, .tracking-normal, .tracking-wide, .tracking-wider, .tracking-widest
+
+Tailwind Line Height Utilities
+.leading-none, .leading-tithgt, .leading-snug, .leading-normal, .leading-relaxed, .leading-loose.
+.leading-3 to .leading-8

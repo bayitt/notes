@@ -1,0 +1,9 @@
+Sort
+
+This is a simple application to make sortings and postings possible.
+
+Important parameters
+- Sections
+- Group Leaders
+- Stewards per group
+- Name

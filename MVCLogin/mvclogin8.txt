@@ -1,0 +1,11 @@
+We need to add a class to send email. Inside the class we have a static method that takes 4 paramters, to, subject, text and html
+
+We need to send the same content as text and html because some email servers do not recognize only text and also to avoid spam filters
+
+Breaking down the process of using composer in our PHP projects
+1) First we need to download the composer installer and after installing , we need to paste code to install in the command line after navigating to the php directory
+in our php folder
+2) Then we need to get the code for the install and paste it in the command line in the required directory
+
+Leke try to keep all your configuration settings separate.
+

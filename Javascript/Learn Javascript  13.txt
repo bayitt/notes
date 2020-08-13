@@ -1,0 +1,29 @@
+Javascript Event
+
+On the window object,we have the load event and we can add the onload handler to this event
+
+We also have the onclick event handler
+
+Rather than makin use of event handlers, we can make use of event listeners to add multiple functions to an event
+Just like we have the addEventListener(), we can also have the removeEventListener()
+
+Leke remember that closures are assigned to the event handlers
+
+Javascript Behaviours
+
+Leke remember that it is addEventListener(), or removeEventListener()
+
+Javascript passes the event object automatically to your listeners
+Events by default in Javascript propagate
+
+If we have nested elements and we assign listeners to both of them, If we want to stop propagation, we can just make use of the stopPropagation() method
+of the event object
+
+We can make use of event.bubbles to check if the event has the goal of bubbling,  that is propagating all the listeners of the parent elements;
+
+event.target is used to access the target of the listener, that is the HTML element that it is going to act upon
+
+Leke remember that the event.target returns an object
+We can also access the position of the click by calling the clientX method on the event object
+
+In order to change the propagation order, like to execute the outer method instead of the inner method we can add a true parameter to the outerEventListene

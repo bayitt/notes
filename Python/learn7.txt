@@ -1,0 +1,37 @@
+Unpacking an argument list is the process of setting a list as the parameter to a function that takes several arguments and 
+Python is going to 'unpack' that list meaning that Python will fill in the arguments with the list parameters
+
+Leke take note that in order to loop through all the keys and values in a dictionary, we need to make use of the items() method on the dictionary
+
+There are four collection data types in Python
+
+1) List is a collection which is ordered and changeable. It allows duplicate members
+2) Tuple is a collection which is ordered and unchangeable. Allows duplicate members
+3) Set is a collection which is unordered and unindexed.No duplicate members
+4) Dictionary is a collection which is unordered, changeable and indexed. No duplicate members
+
+List
+To add an item to the end of the list, use the append() method
+
+In order to add an item at the specified index, make use of the insert() method
+
+There are several methods to remove items from a list
+
+The remove() method removes the specified item
+
+The pop() method removes the specified index, or the last item if no index is specified
+
+The difference is that with remove(), we pass in the item itself while with pop() we pass in the index
+
+Then, the del keyword removes the specified index
+
+The del keyword can also remove the list completely
+
+The clear() method empties the list completely
+
+One cannot also automatically copy a list by assigning list2=list1. List2 is only going to contain a reference to list 1 and as such any changes in list1 are
+going to be reflected in list 2. The way to go about is by either making use of the in build copy() method or to make use of the list() constructor and method
+
+The count() method returns the number of instances an element is found in the list
+
+Also, take note of the sort() and reverse() methods

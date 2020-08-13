@@ -1,0 +1,30 @@
+@import enables us to reference another stylesheet. The way that I was trying to combine stylesheets that time from adminbase.
+I could have just said @import 'newpostresponsive'. Leke take note that the file extension is not included
+
+You know we have pseudo elements in css. With sass rather than saying .circle:hover. Inside the css for .circle We can just say &:hover{ }.
+Its much like nesting your sass essentially
+
+Sass also has an each function
+
+With sass, we can create arrays and loop through them much like we would do in any other language
+
+Just like all the other sass keywords, we make use of the @prefix
+
+like @each $social in $icons
+{
+   .#{$social}
+   {
+
+	background:url('Icons/#{$social}.png') no-repeeat;
+   }
+
+}
+
+What the nth function in lists does is that it grabs the particular list item that you want 
+
+Sass also has a built in rgba() function that enables us obtain the rgba value of a hex which is not possible with css
+It also has a fade-out function that essentially makes the element transparent or sets the color to transparent
+
+There is also a built in percentage function that we can make use of to like find relative values 
+
+Another one is round and what it does is that it rounds a value to the nearest whole number

@@ -1,0 +1,3 @@
+Leke take note that the values for flex justify-content and align-items are flex-start, flex-end, space-around, space-between, center and space-evenly
+
+In order to make the before and after pseudo elements of an HTML element, we have to set their content to ''

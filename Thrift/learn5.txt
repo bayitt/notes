@@ -1,0 +1,18 @@
+Breaking down the process of using Interceptors
+
+First we need to create a service, say loader service, Then we need to create a Subject object, which is of type boolean, subjects are
+similar to observables, but dont need unsubcribing from
+
+We need to create show() and hide() methods in which the subject value is toggled between true and false
+
+Then we need to create our interceptor in the interceptors folder, in doing this, we first need to import the @Injectable() decorator because it is a service
+Then we need to import HttpRequest, HttpEvent, HttpHandler, Observables and what not. Then we need to create a class decorated by @Injectable() and which
+implements the intercept() method of the HttpInterceptor interface. This intercept() method takes two parameters, the req which is of type HttpEvent<any> and
+next which is of type HttpHandler. The intercept() method returns an Observable of type HttpEvent which eventually returns the HttpResponse from the backend
+
+Then before, we call the next.handle(req) method which will send the request to our backend, we need to call the show() method on our loader component.
+
+After this, we need to pipe() the next.handle(req) with the finalize() operation, which is called aftte the http request is made. After this, we need to call the 
+hide() method on our service component
+
+If Http request contains nested paramters, we may specify it using dot notation

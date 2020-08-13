@@ -1,0 +1,27 @@
+PWA Recap
+
+The whole logic is that not every browser supports the web app mnaifest through which our application can become installable on the home screen. As such we need to
+provide fallbacks for when the web app manifest is not supported. These fallbacks are first for safari
+
+- apple-mobile-web-app-capable
+- apple-mobile-web-app-title
+- apple-mobile-web-app-status-style
+- apple-touch-icon
+
+Then we also have for internet explorer, msapplication-tileImage and ms-application-tileColor
+
+We need to include these fallbacks and link to our manifest json file in every page in our application
+
+Then we also need to register our service worker in our root js file and have it on every page in our application
+
+if('serviceWorker' in navigator) {
+	
+    navigator.serviceWorker.register().then(function() { console.log("Alert my name is leke") })
+}
+
+
+Breaking down the process of testing on Local
+- First we need to enable developer tools on our android device
+- Then we need to enable USB debugging
+- Then we need to access Remote Devices in ouir Developer tools 
+- Enable Port forwarding and specify a port to listen on our android device

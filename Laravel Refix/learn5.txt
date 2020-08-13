@@ -1,0 +1,12 @@
+It is more convenient to call the middleware in the controller's constructor. We may even restrict the middleware to certain actions in the controller
+using the only() and except() methods
+
+Controllers also allow you to define middleware making use of a closure.This is especially relevant so as to avoid creating a custom middleware 
+
+Laravel resource routing assigns the typical CRUD routes by making use of the --resource flag
+
+The whole idea with resource controllers is that instead of having to define routes for each of the HTTP verbs, we can 
+
+resource(), resources(), apiResource(), apiResources() methods
+
+If the application is exclusively using controller based routes, we should take advantage of Laravel's route cache

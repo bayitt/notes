@@ -1,0 +1,21 @@
+Angular's route guards are interfaces which can tell Angular whether to allow access to a route or not
+
+Angular's guard are
+
+-canActivate
+-canActivateChild
+-canDeactivate
+-canLoad
+-resolve
+
+Angular guards work by looking for a true or false return value from a class which implements the given guard interface
+
+I think separating concerns like this needs to result in a shift in thinking, The Front End and Backend are essentially two separate entities working together
+to serve the complete application
+
+Breaking down the process of sending mails in Laravel
+
+- Create a new mail class making use of the command php artisan make:mail Name
+- In whatever class where the mail is to be sent, use Illuminate\Support\Facades\Mail
+- You also need to make use of the mail class that you created earlier
+- Call the static to() method on the Mail class and call the send() method on it and pass in an object of the created mail class

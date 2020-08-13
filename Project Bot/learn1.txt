@@ -1,0 +1,35 @@
+Tweepy is a package that provides a very convenient way to use the Twitter API
+
+The four steps common to all Tweepy programs
+- Import the Tweepy package
+- Set the authentication credentials
+- Create a new tweepy.API object
+- Use the api object to call the Twitter API
+
+Objects belonging to the tweepy.API class offer a vast set of methods that you can use to access almost all of Twitter's functionality
+
+The Twitter API uses OAuth, a widely used open authorization tool, to authenticate all requests
+
+Since the Twitter API uses OAuth, we need particular authentication credentials to be able to use the API. These credentials are
+- Consumer Key
+- Consumer Secret
+- Access Token
+- Access Secret
+
+When dealing with Tweepy - 
+A status refers to a tweet
+A friendship is a follower-follower relationship
+A favorite is a like
+
+Tweepy's functionality can be divided into the following groups
+- OAuth
+- The API class
+- Models
+- Cursors
+- Streams 
+
+Tweepy uses its own model classes to encapsulate the responses from various Twitter API methods. The various model classes are
+- User
+- Status
+- Friendship
+- SearchResults

@@ -1,0 +1,22 @@
+The two different types of layouts are the Fixed/Frozen Layout and the Fluid Layout
+
+Fluid Layout will expand/reduce according to the size that the browser specifies like responsiveness
+Fluid layouts are good for user experience but their disadvantage is that you lose control of the HTML Elements and may get some 
+unexpected results
+
+Fixed layouts make use of absolute positioning and as such you are in control of your HTML elements but their disadvantage is that it does not resize
+
+We can place multiple fonts so that if the web browser cannot load a particular font, it loads the next font
+Leke, you can set font-size as small, medium and large
+
+Leke, if you do not specify width, it results in a liquid layout, because the contents will resize
+
+Gutters are spaces used to separate elements making use of the margin
+
+In our main sections, it is not advisable to set a width or a height, because we want the main area to size according to the content so that as we are adding
+more content, the size is increasing more and more
+
+If we want to insert our sidebar, we need to put our sidebar before the main area in our HTML code so that the sidebar can be inserted first and then the main
+area is rendered
+
+When two elements are stacked on top of each other and are both in the flow, their properties like their margin are halved 

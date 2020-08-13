@@ -1,0 +1,34 @@
+In a property binding, what is enclosed in the square brackets is the target property that we are setting
+
+Like for example, when we want to bind to img's src property like [src], we can use bind-src
+
+Property binding is not necessarily the properties of only like HTML elements, it can also mean binding to the properties of directives like [ngClass] and
+[ngStyle]. It can also mean binding to the properties of child components. As far as they are properties
+
+Also, Leke rmemeber that with property bindings, what is in the quotes represents a temolate expression
+
+You can only omit the brackets or bind- prefix, when the property that you are binding to expects a string value that will not be changed because then Angular does
+not need to evaluate the template expression
+
+Interpolation is a convenient alternative to property binding
+
+Interpolation and property binding can set only properties and not attributes
+
+However, Angular has a property called attribute binding that enables us to bind to attributes because things like colspan, aria, svg are pure attributes
+and not properties [attr.colspan]
+
+Style binding resembles attribute binding, like [style.color]='red'
+
+Also, style properties can be written in either dash-case or camelCase
+
+Template Expressions - Property binding
+Template Statements - Event binding
+
+Just like we can use the bind prefix with property bindings, we can use the on prefix with event bindings
+
+In an event binding, Angular sets up an event handler for the target event
+
+Seeing as components themselves are directives, that means that components can also emit their own custome events
+
+There are three different ways to convert Javascript objects into arrays, we can make use of either the object.keys() function to create an arry of all the keys
+in the object, or we can make use of Object.values() to create an array of all the values in the object. The final way is by making use of Object.entries()

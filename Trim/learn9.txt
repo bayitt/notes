@@ -1,0 +1,3 @@
+To work with the models, we can make use of a package called flask_migrate and flask_script
+
+We need to create a manager object and pass in the application factory and then call the add_command() method on the manager object

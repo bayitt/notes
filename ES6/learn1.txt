@@ -1,0 +1,41 @@
+Some of the new Features in ES6 include
+Javscript let
+Javascript const
+Exponentiation(**)
+Default parameter values
+Array.find()
+Array.findIndexOf()
+
+let I think, is similar or a better way of declaring variables, much like I would use var now
+
+const, essentially is similar to let except that with const the value cannot be changed, const like CONSTANT 
+
+Exponentiation essentially refers to powers , instead of calling a pow(3,2) function like we would do normally, with exponentiation we can go directly
+and call 3 ** 2. Like Python or so
+
+With array.find(), array: This represents a generic name for the array, Essentially the find() method is called on the array and we pass a function to it.
+
+The find() method is going to return the first element in the array that satisfies the function
+
+Array.findIndexOf()
+This is similar to the find() method except that instead of returning the first values that satisfies the function, it returns the index
+
+
+Arrow functions essentially are a better way of writing functions
+
+ES5
+
+function Add(x,y)
+{
+	return x * y;
+}
+
+E6 Arrow functions
+
+const Add=(x,y)=> x * y;
+
+Leke take note that arrow functions do not have the implicit parameter this as we commonly have in Javascript
+
+Also, much like typical functions, arrow functions must be defined before they are used
+
+Leke look at like this, we have the Arrow name = parameters => return statement

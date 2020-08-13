@@ -1,0 +1,38 @@
+Introduction to CSS Flexbox
+Flexbox is a CSS Display type designed to help us craft CSS Layouts much easier
+
+Flexbox is not fully supported in all browsers, it has issues especially in IE.In order toget around this, we need to provide fall back
+options. This is where modernizr comes in
+
+What modernizr does is detect which browser your webpage is being viewed n
+
+The default behaviour of flex items is to stack fromleft toright
+
+in order to make the flex items fill up the entirety of the parent container, we need to set their flex-growth property to 1 value
+Remember that bthe flex-growth property is set on the flex items not the flex container
+
+What flex-grow does is that it splits the items according to the values that we specified
+Flex grow is splitting the extra space
+
+flex-shrink is the opposite such that as we shrink the element, the one with the largest value for the flex-shrink is shrunk the most
+
+we use flex-wrap when we have flex items that like have a minimum width that they cannot go below, so when it reaches the minimum width, it wrapsand
+goes to the next line
+
+flex-wrap is applied to the flex container
+
+The difference between wrap and wrap-reverse is that with wrap the wrapped flex item goes below while with wrap, the wrapped flex item goes above
+
+Another option for the flex-wrap property is nowrap which is the default behaviour
+
+flex-basis is similar to the min-width property in that it specifies a base point for the width
+
+The difference between min-width and flex-basis is that min-width, when the browser reaches the width it doesnt care, it leaves it
+while flex-basis makes it responsive
+
+flex-grow, flex-shrink and flex-basis can be combined into a single flex property. The first value represents the flex-grow, the second value represents the
+flex-shrink while the last value represents the flex-basis
+
+Leke take note that whenever you specify max-width, the width that you specify is the percentage of that max-width
+
+Leke take note that any constants that you declare has to be inside the class

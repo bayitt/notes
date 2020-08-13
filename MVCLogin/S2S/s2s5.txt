@@ -1,0 +1,28 @@
+Breaking down the process of uploading Images
+
+1) We need to add the multiple keyword to the input type of file to enable us to upload multiple files
+2) We need to add the enctype=multipart/form-data attribute to the form
+3) Then in our Jquery code, we need to add a function for the submit action of the form
+4) We need to set contentType and processData both to false
+5) Then the data that we are sending is going to be a FormData() object
+6) Then in our server side, we need to specify that if the $_FILES array is not empty
+7) Then we need to create an empty output string
+8) Then we need to loop through the $_FILES['files']['name']
+9) Then we need to call the explode() method on the name of the image to split it into its file name and file extension
+10) Then we need to call the in_array() method to check if the extension format is permitted
+11) Then we need to obtain the sourcepath variable by making use of the 'tmp_name' offset in the array
+12) We also need to create a target path variable which represents where the image is to be transferred to
+13) Then we need to call move_uploaded_file() which takes two paramters , the sourcepath and the target path
+
+Because I could not send the entire props array, what I did was that I looped through the images props and added it individually to the FormData object
+
+Leke take note of the is_array() and in_array() methods
+
+The problem was that I needed an Admin Controller to render all the views but I also needed some controllers inside an admin folder to carry out all the
+computations involved in the admin. So I solved this by creating a getNameSpace() method that is called in the dispatch() method in the router.
+What the getNameSpace() method does is that it checks if the query string in the route can be split into three different values. What this means is that I have 
+entered a value of potentially admin/posts/create and we know that this means that it should check the posts controller in the admin parent folder in
+the controller folder. So if this condition is met, then I add 'Admin' to the controller route for the autoloader and if not then that means that it is
+just our regular admin/posts or blog/view route that I entered and it should require the class just like that.
+
+Leke remember that if we create properties, we need to specify access specifiers like $public and $protected

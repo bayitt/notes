@@ -1,0 +1,17 @@
+Revision
+
+Leke take note that the errorHandler() method needs to take the level,message,file and line parameters while the thrown exception needs to take message,0, level,file
+and line. Also, take note of the error_reporting() method
+
+Leke REMEMBER that the error.php file goes in the CORE folder. It is NOT  a Controller. Leke, remember the getMessage() method called on the exception
+
+Leke take note that twig syntax takes beginning and closing %% for everything except variables which take double {{}}
+
+Leke,take note that $_SERVER['REQUEST_URI'] returns the last webpage that was accessed
+
+In situations in which we need to check if the user is logged in for every method in the controller we can create a before action filter and it
+works for us automatically
+
+Leke with classes in which all actions need authentication we can create an authenticated class and get the class to extend it 
+
+We can add the data about the user as a global variable making use of the addGlobal() method

@@ -1,0 +1,37 @@
+The Observable package can be imported from 'rxjs'. So is the of() function
+
+Most of the time, we will be trying to fetch data from a remote server and this operation is carried out asynchronously. This means that if the data is not
+fetched immediately, the browser will be blocked and the UI will not load until the operation is carried out. As such, we need a way for the UI to continue
+loading and the async operation will still be executing in the background. This is where Observables come in.
+
+But the deal is that to obtain the data from the aync operation, we need to call subscribe() on the obseervable. It is inside this subscribe() method
+that we will grab the data from the async operation.
+
+For routing, in Angular, the best practice is to load and configure the router in a separate, top-level module that is dedicated to routing and imported by the
+AppModule
+
+The default name of the routing module in Angular is the AppRouting module
+
+the -- flat suffix tells the Angular CLI to put the generated module in the app/src folder while
+
+--module=app tells the appmodule to register it in the imports array of the AppModule file
+
+The Routes and Router packages are container in '@angular/router'
+
+Components are typically not declared in the AppRouting module
+
+ng generate module app--routing --flat --module=app
+
+Apparently, there is an @NgModule decoratorm, which is used in the App Routing Module to export the Router Module
+
+A typical Angular route has two parts, it has a path, which matches to the string in the browser while component refers to the component should
+use when navigating to the route.
+
+I think component here essentially refers to the Controller@action, essentially, what is going to render the view
+
+Remember how the : operator is used for assigning dataTypes or for Type Assignment in Typescript
+
+After creating the const array, we need to set up the router and have it looking for browser location changes and we do this by specifying the 
+imports array, imports:[RouterModule.forRoot(routes)]
+  
+The method is called forRoot() because we configure the router at the application's root level

@@ -1,0 +1,35 @@
+Lists
+In order to add an item at the specified index, we make use of the insert() method
+There are several ways of removing items from lists
+
+The remove() method removes the particular item passed in as a parameter
+The pop() method removes the specified index or if no index is not specified, it removes the last item
+The del keyword removes the specified index or can be used to delete the entire list completely
+
+The clear() list empties the list completely
+
+The pop() method returns the deleted item
+
+In Python, we cannot just assign a new list to an old list. This is because the new list would simply become a reference to the old list, a shallow copy in essence.
+
+In order to do this rather, we are advised to either make use of the built in copy method of lists or make use of the list constructor
+
+The sort() method like it sounds sorts a list
+The reverse() method like it sounds also, reverses the list
+The extends() method, is like the append() method for lists
+The count() method returns the number of times that an item appears in a list
+The index() method returns the index of the first time an item appears in a list
+
+Python works in a different way to Javascript, with Javascript I can easily mutate a data structure one time. But with Python, I actually have to mutate
+the data structure itself
+
+With dictionaries, we can either make use of the index to obtain values from the dictionary or we can make use of the get() method and pass in the key
+
+If we loop through the dictionary normally, it would loop through all the keys. If we want to loop through the dictionary values, we loop through
+dictionary.values(), if we loop through dictionary.items(), we can get the keys and values
+
+Also, in order to copy dictionaries, we make use of the built in copy method on the dictionary or the dict constructor. Finally, we make use of the
+pop() method to delete items from the dictionaries
+
+Classes in Python are created with the class keyword. In order to create objects in Python, just create a variable and assign it to the class, but unlike in
+PHP and Javascript, there is no new keyword before the class name

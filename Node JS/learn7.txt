@@ -1,0 +1,35 @@
+fs.writeFile() is async while fs.writeFile() is synchronous
+
+Like I said before, node JS, uses a single Javascript thread. A thread is basically a process in your operating system, you could say.
+
+The Event Loop in Node js will only handle callbacks that finish quickly
+The worker pool is responsible for all the heavy lifting
+
+The order of callback execution in the Event Loop is as follows
+- setTimeout, setInterval callbacks
+- Pending callbacks such as from I/O operations
+- Poll phase - Node JS will look for new I/O events and execute their callbacks
+- Check phase - setImmediate() callbacks are executed
+- Close phase - Executes all close callbacks
+
+For normal scripts we have to make use of the extra run keyword
+
+Types of Errors in Node
+- Syntax errors
+- Logical errors
+- Runtime errors
+
+The whole idea is that the express package contains a function that we can run and store in app variable. This app variable is also a valid request handler
+
+Express JS is all about middeware. An incoming request is funneled through a series of functions (middlewares)
+
+The use() method on the app object allows us to add a new middleware function. In order to make sure that our request proceeds to the next middleware in line, we
+have to make sure that we always call the next() method.
+
+Express Js does not send a default response or anything like that. Express provides several utilities for dealing with responses. For example we have the send()
+method on the response object
+
+With the app.use() method, we can pass in an optional first parameter which is a string. This string represent the route for which we want to execute the 
+code in the callback
+
+The way I see it is that with the routes, we need to match the specific routes first before going more general. Much like with the telegram bots

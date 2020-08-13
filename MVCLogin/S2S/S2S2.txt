@@ -1,0 +1,30 @@
+With the animate on scroll library, all we have to do is to add the data-aos attribute tothe html element and the data-aos attribute takes the name of
+the animation.
+
+In order to make use of the aos library, we need to add the css file, the js file and after adding the js file, we need to create an AOS object, by calling
+AOS.init()
+
+We can make use of the data-aos-duration to specify the duration of the animation
+We also use data-aos-easing to specify the easing of the animation. Its default value is ease
+We can use data-aos-delay to specify a delay for the animation
+data-aos-once determines if the animation should fire once or everytime you scroll up/down on the element
+
+Instead of setting the animation properties of each div, we can set it in the AOS object when we initialize it
+
+There are also some properties that can only be included with the AOS object and cannot be set in the individual html ement such as disable and event
+
+In CSS, there are two types of font-family names
+generic family-a group of font families with a similar name like serif or monospace
+font-family- a specific font family like Times New Roman or Arial
+
+Examples of generic families are serif, sans-serif and monospace
+
+serif character have small lines at the ends of the characters
+sanserif do not have the small lines at the ends of the characters
+
+The font-family should have several fonts as a fallback system, if the browser does not have the first font, it loads the next font in line
+
+It is recommended to start with the font that you want and end with a generic family that the browser can pick from if the font that you want 
+is not available.
+
+The overflow property specifies what should happen if content overflows an element's box

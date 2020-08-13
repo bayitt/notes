@@ -1,0 +1,29 @@
+Promises and the Fetch API
+
+Javasacript is single threaded!	
+
+We create promises in Javascript by creating a promise object and passing in a callback to it. The Promise constructor takes in a callback which will be
+executed immediately. The callback takes in two paramters, resolve and reject methods. Esentially, a promise can either succeed or fail
+
+The real value of promises shines when we have to chain multiple asynchronous calls
+
+.then() is for when the promise is resolved or it is successful
+
+There are two differetnt ways for catching errors in our project. We can either pass in a second callback to the then() method, which is going to catch the error
+or we can make use of the catch() method
+
+fetch() is a method provided by Javascript in your browser, it allows you to send http requests, ajax behind the scenes enables you to use the new XMLHttpRequest()
+object
+
+json() is a utility method provided by the fetch() api on the response() object to convert the data and convert to json
+
+The fetch api returns promises
+
+With the fetch api, Leke always remember that you need to parse the data before you can use it in a separate step
+
+We can also pass in a second object parameter to the fetch() method, some of the object properties are method
+
+Leke you need to realize that Javascript objects json are two entirely different things
+
+The whole logic of what I was doing yesterday is that the fetch api returns promises,we can then access these promises in the with the .then() method and
+execute a callback for it. Then we also have a .catch() method

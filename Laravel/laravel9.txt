@@ -1,0 +1,28 @@
+Pivot Tables help us to identify relationships that exist between models/tables
+
+In order to create migrations singly we make use of the command php artisan make:migration
+
+Fo pivot tables, the naming convention is that we take the names of the two tables and select the one that goes alphabetically first and name it
+like create_posts_tags_table
+
+In order to create our tables ourselves in the up() method in the migrations, we need to call the static create() method on the Schema class, and then pass in as the
+two parameters, the first being the name of the table such as 'post_tag' while the second paramter is a callback which takes in a buleprint object as its 
+parameter
+
+Then in the down() method of the migration we need to call the static drop() method on the schema and pass in the name of the table as the parameter 
+
+Another way to delete data from the database is by making use of the static delete() method to which we pass the id of the row that we want to delete
+
+Leke take note that whenever we are creating one-to-man relationships, we need to include a foreign key field
+
+Take note, in order to obtain multiple values as an array, all we need to do is to add an [] after the name of the field
+
+The attach() method is a method that is available once we have our pivot table set up
+
+In order to fill in the values we need to make use of the .
+
+The idea essentially is that for many-to-many relationships we can access them as methods 
+
+Also, for many to many relationships, we can access them simply by calling them as objects
+
+With tags, just like we have the attach() method to create new items in our pivot table, we have the sync() method to update the relationship in the pivot table

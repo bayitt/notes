@@ -1,0 +1,30 @@
+The first thing to do after installing a new Laravel application is to set your application key to a random 32 character string. Also,
+take note to rename the env.example file to .env. It is important to set your application key to this unique string because if you don't, all your application's
+data will be unencrypted
+
+All the configuration options for the Lumen framework are in the .env file
+
+We may easily access configuration values using the global config helper function from anywhere in your application. The configuration values may be accessed
+using dot syntax, which includes the name of the file and the option that you intend to access
+
+In order to set configuration files of the application at runtime, pass in an array into the config() method with the key being the option and the value
+the value that you want to set it to
+
+We can also determine the current environment that we are working in by calling the environment() method on the app() instance
+
+Also, we may pass values to the environment() method called on the app() instance and see it return true or false depending on the condition. We may also pass in 
+multiple values in to the environment() method and have it return true if the current envivronment in our .env file matches 
+
+All the routes in our application are defined in the routes/web.php file. The most basic Lumen routes simply accept a URi and a closure 
+
+The router allows us to register routes that correspond to any HTTP verb. That includes get, put, post,patch, delete, options
+
+We can also define parameters in our routes by making use of the {} enclosures. That is like {id}
+
+Just like with the actions in our controllers, we can pass in the route parameters to our closures
+
+We may also specify optional parameters in our routes by making use of the []. However take note that optional parameters can only be placed at the end of a route
+
+Leke take note that in order to run Lumen, we are going to make use of the command php -S localhost:8000 -t public
+
+We may also make use of named routes, by making use of the 'as' in the router array

@@ -1,0 +1,35 @@
+Leke take note that when trying to upload images it is the $input.prop('files')[0] that we make use of
+
+An alternative way to include css and javascript files is via the asset() method and it loads the specified file irrespective of whether it is a http or https 
+request. We pass in the route of the file that we are trying to include into the asset() method
+
+What I have seen about Laravel is that anytime that we are outputting something, we put it inside {{ }}
+
+getClientOriginalName() is a function that returns the name of a file
+
+In order to move files to the uploads folder, we need to call move on the file and its first parameter is the path that we are moving the file to
+
+We can also insert new content into the database via the static method create that takes an array as a parameter, in which we match up the fields in the database
+to the request fields
+
+MassAssignmentException is the exception that is thrown whenever we try to assign values to fields that are meant to be edited
+
+In order to prevent the MassAssignmentException, we need to specify a fillable property in the table model which is an array specifying the fields that we can
+fill in at once
+
+Calling the first() method on a model returns the first item in the table
+
+WE have several php artisan commands. For example we have php artisan reset which rollbacks all databae migrations
+php artisan migrate:rollback rollbacks the last database migration
+php artisan migrate:refresh resets and re-runs all database migrations
+
+The SoftDeletes functionality essentially means that if a post is deleted that we just want it to be moved into the trash, not necessarily deleted 
+straightaways
+
+When call softDeletes() on the blueprint $table, what it does is that it creates a deleted at field in our table and by default it is null. When the post is
+deleted, it is not straightaway deleted but rather the deleted field changes to reflect when the user tried to delete it
+
+Also, whenever we insert new date fields into our table/database, we need to add a new dates property to the model so that when eloquent is 
+retrieving it from the database, it makes use of a package called Carbon to parse it into a timestamp
+
+

@@ -1,0 +1,39 @@
+HttpClient is Angular's mechanism for communicating with a remote server over Http
+
+To make HttpClient available everywhere in our application, we need to import the HttpClientModule from @angular/common/http
+and add it to the Ngmodule.imports array
+
+Leke remember that in order to make use of services, you need to make it available in the providers array
+
+Apparently, the service InMemoryData is a special kind of service with preconfigured information
+
+Leke remember that in order to access the data contained in Observables, we  need to subscribe to the data, and all this is done in order
+to ensure asynchronous loading
+
+All HttpClient methods return an RxJS Observable of something 
+
+Generally, Observables can return multiple values over time. An observable from HttpClient always emits a single value and then completes, never
+to emit any value again
+
+By default HttpClient.get returns the body of the response as an untyped JSON object by default.
+
+When fetching data, from remote servers,erros are bound to occur. Much like exceptionhandling. In order to catch errors, we need to pipe the observable
+result from HttpClient.get and pass in a catchError() operator, 
+
+We import catchError(), map and tap from the rxjs/operator library 
+
+Essentially, thr catchError() method intercepts an Observable that failed and passes in a native method to the class as an error handler
+
+Apparently, for a return value in Typescript, we do not need to specify like an actual type, we can even specify a parameter
+
+I think that essentially, the tap() method specifies like an action to be performed when the request is successful and a successful Observable response
+is returned
+
+while catchError() specifies what is to be performed 
+
+I think error is the default object generated whenever there is an error, much like Exception $e
+
+In order to update data, we are going to use the HttpClient.put() method. The put() method takes in three parameters, the URL, the updated data object
+and options
+
+The heroesWEBAPI expects a special header in HTTP save() requests

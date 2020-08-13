@@ -1,0 +1,36 @@
+Ratherthan making use of the addClass()and removeClass() methods, we can toggle them on and off by making use of the toggleClass() method.
+
+The fadeIn() method can take three different types of parameters, we can specify whether we want it to be slow,fast and we can also specify the time in milliseconds
+The same thing also applies to the fadeOut() method
+To hide elements in HTML, just add the hidden keywod, like how you will add the required keyword. We can also chain the fadeIn() and fadeOut() methods
+
+The fadeTo() method allows us to set the opacity setting to anywhere we want between 0 and 1. So that means that the fadeTo() method enables us to make elements
+opaque.fadeTo() is used like fadeIn(), just that fadeTo() can reduce opacity
+
+The append() method is the JQuery equivalent of the appenfChild()in Javascript. It takes a HTML Element as a parameter.
+The prepend() method will insert it at the beginning of the element
+The after() method will insert the HTML element after the element we select witj JQuery. 
+The replaceWith() method is used to change the HTML content of the selectors
+The remove() method is used to remove HTML tags
+
+
+We can make use of the attribute method to set the attribute of an HTML element, it takes two parameters, the first being the name of the attribute and the 
+secomnd being the name of the attribute, like leke.jpg
+
+Just like how we can remove HTML elements with the remove() method, we can also remove attributes with the removeattr() method.
+
+Leke, keep in mind that the attr and removeAttr() methods can be used with any HTML attribute not just src, it can also be used with href, lang anything
+
+It is a three step process for dealing with events in JQuery, similarly to Javascript, we need to seleect the element, add an Event method to it and
+then we add the code for the action. The hover method takes two closures as parameters, one for when the element is hovered on and the second one for when it
+is hovered off
+
+The difference between the ready event and the load event is that the ready event is triggered when the DOM has been loaded
+
+While the load() event is triggered when the entire webpage has loaded meaning the DOM + eveything else on the webpage including the location object and every other
+thing
+
+The each keyword is used to loop through elements and we can make use of the this keyword to refer to each iteration
+
+The slideUp() and slideDown() methods are used to slide HTML element up and down on our webpage
+Just like the fadeToggle() method, we also have the slideToggle() method

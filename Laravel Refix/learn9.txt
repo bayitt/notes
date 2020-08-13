@@ -1,0 +1,33 @@
+For validation, we make use of the validate() method on the request instance. If there is an error, then if its a HTTP application, then the app
+will be redirected back and all the errors will be stored in an $errors variable
+
+If we have optional fields, then we need to add the optional field to the validation rules so that Laravel will not mark it as invalid.
+
+If our validation logic is too complicated, we may make use of the php artisan make:request command to generate a custom request. In this request, we may
+return our validation rules. We can then typehint this form request on our controller action. This 
+
+When you start a new Laravel project, error and exception handling is already configured for us. The App\Exceptions\Handler class is where all exceptions 
+triggered by your application are logged and then rendered back to the user
+
+All exceptions are handled by the App\Exceptions\Handler class, this class contains two methods, the report() and render() method, the report() method is used
+to log exceptions or send them to an external service
+
+
+Laravel makes interacting with databases very easy through either raw SQL, the query builder or the Eloquent ORM. 
+
+The database configuration for the application is located at config/database.php
+
+We may run queries using the DB facade. The first argument passed into the select method is the raw sql query, while the second argument is any parameter
+bindings
+
+The whole idea is that it is a query builder. You build a query
+
+We may use the table() method on the DB facade to begin a query. The table() method returns a fluent query builder instance for the given table, 
+allowing you to chain more constraints onto the query and then finally get the results using the get() method
+
+If we just need to retrieve a single row from the database table, we may use the first() method. If we do not need the entire row, we may make use of the
+value() method to retrieve a single field from the row
+
+In order to retrieve a single row by its id column value, we may make use of the find() method
+
+If we want to retrieve a collection containing the values of a single column we may make use of the pluck() method

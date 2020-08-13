@@ -1,0 +1,29 @@
+Revising Animations
+
+For animations the key parameter first is the animation-name and animation-duration
+
+We also have the animation-duration property which is always the first time specified in the animation shorthand if there are two values specified for the animation
+
+We also have the animation-fill-mode property which can take two properties which are the default value none, forward, backward or both, 
+Specifying backwards means that at the end of the animation, the animated element should revert to the properties that it had the beginning of the 
+animation. Specifying forwards means that it should retain the properties that it had at the end of the animation
+
+animation-iteration-count refers to the number of times that we want the animation to occur, its default value is 1. We can also set it to infinite, if
+we want the animation to run infinitely
+
+animation-timing-function means how we want the animation to proceed. It can be ease-in, which means that the animation should begin slowly. ease-out means that
+the animation begins normally and slows down at the end, then we have ease-in-out which means that the animation should begin and end slowly and in the middle
+should have normal speed
+
+C:\Xampp\htdocs\PHP\Checklist\Public\css\Project
+
+Apparently, the first time value is the animation-duration while the second time value represents the animation-delay
+
+Breaking down the process of using Token.php
+
+In the constructor, we set a null parameter, 
+In the token class, we have a $token property, if the constructor is set, the $token property is set to the value of the parameter,
+If not, a new token is created by calling the openssl_pseudo_random_bytes and this generates a token for us
+Then we have a getToken() method that returns the $token property
+Finally, we have a getHash() method that returns an encrypted value representing the token and it does this via hash_hmac() function whose first parameter
+is the algorithm by which we are encrypting the token,which is 'sha256', the second paramter is the token and the third parameter is the secret key for the algorithm

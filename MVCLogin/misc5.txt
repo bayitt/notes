@@ -1,0 +1,9 @@
+
+When an animation is created in the @keyframe rule, we need to bind it to a selector, else the animation will have no effect
+
+We bind the animation to a selector by specifying atleast two properties, the name and the duration of the selector
+
+We can specify when the animation will happen in percentage or we can make use of from and to which means 0% and 100%
+
+Animations also have several sub properties which are animation-name,animation-duration, animation-timing-function,animation-delay, 
+animation-iteration count, animation-direction, animation-play state

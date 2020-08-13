@@ -1,0 +1,34 @@
+If I want my background Image to fit the entirety of the page, i need to make use of 100vh or 100vw
+
+In order to apply rgba to a background image, you need to specify the linear-gradient to bottom, and two rgba values and then specify the url
+
+Breaking down the process of creating a sticky navbar 
+First we need to make use of the $(window),scroll() method and check if the user is scrolling at any given time. Then we need to check if
+$(this).scrollTop(), I guess that means the distance from the top is greater than the height of the header, and if it is we can add the sticky class
+in which we are setting its position to be fixed and top and left to be 0, if the scrollTop() is not less than the height if the header we can remove the 
+sticky class.
+
+Breaking down the process of making the navbar appear only when scrolling up
+1) We need to set the position of the navbar to fixed always
+2) When the page initially loads, the top property of the navbar is set to 0
+3) Then we need to make use of the window.scroll() method to carry out our computations
+4) When the page first loads , we need to set the window.pageYOffset in a prevPosition variable which is going to be 0
+5) Then when the user scrolls, we need to set the window.pageYOffset in a currentPosition variable which records our current position on the page
+6) Then when need to check if the current is > than the current, if it is, that means that we are scrolling down and we make use of the css method to
+set the top property of the navbar to a negative value thus hiding it
+7) But if the prev is greater then that means that we are scrolling up and we use the css method to set the top property of the header to 0
+8) Then at the end of our computation , we always need to set prevposition to currentposition, so that it can always keep up whenever we scroll up again
+
+Leke, ALWAYS rememeber to set the padding and margin in the body to 0
+Also,when creating the navbar, always rememebr to set the padding in the ul to 0
+
+The problem was that if I specified the height of the aboutdiv, it was OK,for the responsive side but there was too much space
+in the laptop view. So I specified a height from the laptop but when the height dropped below 1000, like a tab, the height increased
+
+Leke, it is always better not to specify the height explicitly so that it is a fluid layout
+
+When you set an element's left property to be 50%, it starts its position from 50%, so if we really want it to be positioned in the center, we need
+to set its position to be before 50%, like at 45%
+The scrollTop method is used t specify the distance that we want from the top of the screen
+
+We carry out typecasting in Javascript, making use of the Numver() function

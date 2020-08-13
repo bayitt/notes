@@ -1,0 +1,41 @@
+Angular Recap
+
+The basic building block of Angular applications are NgModules, NgModules are similar to normal Javascript modules and they can be said to be like collections of 
+components. The whole deal is that components, classes and services in Angular are normal classes. What makes them components, classes and services respectively
+are decorators. Decorators are functions that modify Javascript classes. For NgModules, they need to be decorated by the @NgModule decorator.
+
+The @NgModule decorator takes a metadata object with several important properties among which are
+
+declarations - This contains all the components in the particular NgModule
+imports - This contains whatever modules the components in the NgModule need
+providers- Here, the services needed by the components are registered
+bootstrap- This is only declared in the root app module and it contains the root application component
+exports- Whatever the NgModule wants to make available to the modules that import it
+
+Then we have components, everything in Angular is based around components. They are responsible for patches of screens called views. Views essentially are composed
+of components and their templates. Components to provide the application data and templates to render the data. Just like NgModules, components are made components
+by the @Component decorator which has a metadata object with properties such as 
+
+selector- a html -tag like in which where everywhere sees this selector it replaces it with an instance of the component
+templateURL- could be a link to the component's html or inline-html
+stylesURL- an array containing links to all the relevant style sheets needed by the component's template
+
+Decorators must be immediately followed by the class that they are decorating
+
+Then, we have services, ideally Components should only be concerned with rendering data and should not be concerned with fetching data. That is the work of services.
+
+Just like we have the @Component decorator and we have the @NgModule decorator. Services are decorated by the @Injectable decorator. This enables them to be 
+provided to the components as dependencies via dependency injections. Services can be made available to components in three different ways.
+
+- In the Injector metadata object, we can set the providedIn property to root. This makes a single instance of the service available to all the components that ask for it
+- In the root app module NgModule decorator metadata object, we can register the service in the providers array. This also makes a single instance of the
+service available to all the components that ask for it
+- Or in the particular components decorator metadata object, we can register the service in the providers array. This creates a new instance of the service
+everytime the component is created
+
+During the bootstrap process of the application. Angular creates an application wide injector that will be used for injecting services as required.
+
+Whenever Angular is about to create a component, it checks if the component has any dependencies. If it does, Angular checks the injector for already
+created instances of the service and if they exist already, it returns the particular instance but if not, the injector creates a new onstance. This works
+because not only does the Injector create service dependencies, It also stores already created instances of the dependency. I think this is called
+the Singleton design pattern

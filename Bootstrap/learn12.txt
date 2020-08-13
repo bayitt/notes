@@ -1,0 +1,27 @@
+Navbars in Bootstrap are fluid by default, meaning that they are always 100%
+
+Also, whatever breakpoint you specify for .navbar-expand- is the breakpoint at which the navbar becomes responsive
+
+The .navbar-brand class is used to specify like the company brand name
+
+The .navbar-light class is the equivalent of the default .table class with a light background
+
+The .navbar-toggler is the hamburger that will be clicked to display the additional content when the navbar becomes responsive
+
+while the .navbar-toggler-icon is the hamburger that is going to be displayed
+
+Also while the div that will be displayed containing the div content on a responsive device will also take the class of .collapse, it also needs to take a class
+of .navbar-collapse
+
+You know how we typically  make use of ul to display the items in the navbar, so the ul in the navbar will take a class of .navbar-nav
+
+the li's inside of the ul will take a class of .nav-item, while the anchor tags inside of the li, will take a class of nav-link
+
+The .navbar-brand class can be applied to most elements but works best on an anchor element
+
+.dropdown-toggle, .dropdown-menu, .dropdown-item, .dropdown-divider
+
+.navbar-text
+
+What I am seeing is that really, the position of the toggler and the brand name(.navbar-brand class) is determined by the way we position the elements respectively
+in our markup

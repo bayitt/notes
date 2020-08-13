@@ -1,0 +1,24 @@
+Breaking down the process of sending Mails with Laravel
+
+We need to create the particular Mail class by making use of the php artisan make:mail command
+
+Then we need to  make use of the Illuminate\Support\Facades\Mail facade
+
+Then we need to call the Mail::to($user)->send(new Provider($uss))
+
+Leke you can call the from() method on the Mail method refers to the from() that will appear in the email
+Then the view() method refers to the html while the text() method refers to the plain text. Then we can make use of the with() method to pass in data
+.Finally, the attach() method is used to attach files
+
+The attach() method takes two parameters which are the path to the file and an array specifying the name of the file
+
+The parameter that we pass into the constructor has to be a property
+
+Essentially, in Laravel, the Auth::login() method is used to log a user in. Essentially, it is the login functionality
+
+In the LoginController, Laravel makes use of a trait, the AuthenticatesUsers trait and this loads some functions into the class and it's a part of 
+Illuminate\Foundation
+
+Essentially the credentials() function is contained in the AuthenticatesUsers trait and it returns what should be checked to confirm if it is a registered user.
+By default, it is just the email and password, but making use of the array_add() function, we can add more conditions.
+

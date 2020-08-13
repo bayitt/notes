@@ -1,0 +1,16 @@
+Mongoose Recap
+The whole idea with Mongoose is that it is an Object Document Mapper that we can use in a simiar manner to Eloquent which is an Object Relational Mapper.
+Mongoose handles the whole business of connecting to the database and carrying out CRUD operations. We can connect to the database by simply 
+calling mongoose.connect() instead of the whole shebang of importing mongodb, accessing the MongoClient property on it and connecting via the connect() method.
+
+In Mongoose, just as in Laravel, when filling in the $fillable property in the model, we can define a schema which we can use to specify the 
+structure of our collection. We do this by requiring mongoose and accessing the Schema property on it. We then create a schema object in which we are going
+to pass in a config object to the constructor. In the constructor, the properties represent the fields in the collection. We can also pass in nested objects
+as the values to the key. These nested objects contain the type of the field. These types can be Strings, Numbers, Objects. Essentially,native data types. 
+We can also specify if we want the field to  be required or not. Other types exist in the Types property on the Schema instance.
+For example, we have Schema.Types.ObjectId. 
+
+If we set a field as a reference to another collection, it is important to set the ref property to the corresponding collection. This will help when we call the 
+populate() method, to access all the fields from that particular document in the collection instead of just the field.
+
+We can several methods on the model objects, such as save, find(), findByID(), findByIDAndRemove(), populate().

@@ -1,0 +1,32 @@
+There are three different situations
+
+- Make everything lowercase
+- Make it title case
+
+In order to add classes in Javascript, we would need to make use of [className]=class. This is equivalent to using the normal class=
+
+We can even do [className]="condition ? 'class1' : 'class2'". This essentially is the ternary operator
+
+Leke take note that anytime we make use of Angular to insert classes, the class names themselves must be enclosed in single curly braces
+
+Instead of using [className], we can make use of [ngClass] to add static classes, we can also make use of an array of classes to assign multiple clases
+
+The whole idea with Angular classes, is that it is not like normal HTML classes, in which we can just assign a random class to any element. The class in the
+CSS has to be specific on the element
+
+Components control a patch of screen called a view
+
+Angular creates, updates and deletes components as the user moves throught the application
+
+Leke take note that the @Component decorator must always be followed by the Component's classs
+
+It is the @Component decorator that marks a class as a component 
+
+Together a component and its template defines a view
+
+Leke remember tha you can specify services as pertaining to only particular components but this is not recommened practice. Instead =, it is recommended to
+register all our services in the root app module in the providers array
+
+Angular pipes are used to transform data before it is displayed. Directives are used to apply logic to what is displayed
+
+Angular supports two way data binding, a mechanism for coordinating the parts of a template with the parts of a component.

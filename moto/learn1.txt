@@ -1,0 +1,48 @@
+Moto
+
+An application to enable vehicle requests and allocations. We will have normal users/drivers and a single admin user.
+The admin user can add vehicles, add routes, can approve vehicle requests, view and approve maintenance request.
+
+Normal users/drivers can request for vehicles and add maintenance requests
+
+user -                                             maintenance
+_id                                                _id
+name - string                                      user - 
+email - string | unique                                 _id
+password - string                                       name - string
+admin - boolean                                         picture - string
+avatar - string                                    vehicle - 
+activation_token - string | nullable                    _id
+created_at - datetime                                   plate_number - string
+                                                        model - string
+vehicle -                                               picture - string
+_id                                                picture - string
+model - string                                     fixed - boolean
+plate_number -string                               created_at - datetime
+requests - integer                                 fixed_at - datetime
+picture - string
+created_at - datetime
+
+routes - 
+_id
+name - string
+requests - number
+created_at - datetime
+
+requests - 
+_id
+user -
+     _id
+     name - string
+     picture - string
+vehicle - 
+     _id
+     model - string
+     plate_number - string
+     picture - string
+route - 
+     _id
+     name - string
+approved - boolean
+created_at - datetime
+expires_at - datetime

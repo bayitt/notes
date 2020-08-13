@@ -1,0 +1,6 @@
+JQuery Selectors include odd, even,first,last, nth-child,contains,has,empty
+
+Leke take note that the nth-child's method indexing is with a () not a []
+
+The has JQuery Selector is similar to the contains selector except that the has selector is used for HTML elements while the contains selector is used
+for common text

@@ -1,0 +1,22 @@
+Laravel API Recap
+
+REST(Representational State Transfer) is an architectural style for communication between different protocols. Typically, REST is accessed by a stateless protocol,
+usually HTTP. HTTP verbs represent actions which can be carried out using HTTP
+
+POST - creating and 'posting' new data to the server
+GET - Fetching data
+PUT- Updating data
+DELETE - deleting data
+
+I think essentially, you know how normal Laravel authentication is carried out making use of session information. But when using Laravel as a restful backend,
+authentication is predicated on an api token. Just like you would add an apiKey query string parameter to a request when accessing mainstream apis, 
+with Laravel, you must add an api_token query string parameter to all your requests made to the backend. 
+
+Then, unlike when Laravel is used as a typical backend, when the default authentication middleware is auth, with the Laravel restful backend, 
+the authentication middleware to use is auth:api, with the auth:api, the authentication driver is the api token like I said earlier. Also, just like how I would
+access the currently logged in user by Auth::user(), with a restful Laravel backend, it would be Auth::guard('api')->user, to return the currently logged in user.
+
+Also, additional configuration has to be done to cause Laravel to use the api token for authentication, we have to add a new Token Guard in AuthServiceProvider.php
+
+
+Also, all the routes have to be placed in api.php, not in web.php

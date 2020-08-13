@@ -1,0 +1,15 @@
+Common HTTP Status Codes
+- 400 - bad request essentially. Requested information is incomplete or malformed
+- 422 - Validation failed
+- 404 - does not exist
+- 409 - Data conflict exists
+
+
+Auth Errors
+- 401 - Authentication failed
+- 403 - Authentication succesaful but user is not authorized
+
+Standard errors
+- 200 - when everything is okay
+- 304 - everything is okay but there's no content to return
+- 500

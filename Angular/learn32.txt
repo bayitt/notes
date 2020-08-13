@@ -1,0 +1,10 @@
+We can make use of the ngModel directive to keep track of the input elements because An
+
+If the control has been visited, it has a class of ng-touched, if it has not, it has a class of ng-untouched
+
+If the control's value has changed, it has a class of ng-dirty, if it has not, it has a class of ng-pristine
+
+If the control's value is valid, it has a class of ng-valid, if it has not, it has a class of ng-invalid
+
+
+the reset() method is used to clear the form

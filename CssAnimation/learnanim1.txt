@@ -1,0 +1,38 @@
+Css Animations make animating web elements much easier. It eliminates the need for Javascript/Jquery for animation effects. 
+
+Css Transforms transform web elements in all kind of weird and wonderful ways
+Apparently the text-align property works on img elements too
+
+The transform property can take various values 
+translate - This means move the element from one position to the other on the webpage
+translateX- Move the element along the X-axis
+translateY - Move the element along the Y-axis
+
+Essentially its like the position property
+
+There is also a shorthand for the translate() property which is two parameters, the first value represents the translateX, while the second values
+represents the translateY
+
+The next value of the transform property is scale
+What scale does is that scales the element larger or smaller across the X or Y axis. 1, is the default scale value, so setting it to 1 does nothing
+But if the value is above 1, it is going to stretch the element, but if it is below 1, it is going to shrink the element
+If you set the value to -1, it flips the element.
+
+If we use just scale(), whatever value it is it sets it along the X and Y axis
+
+The next value that transform takes is rotate- We have rotateX() and it takes the value in degrees. Now , the thing about rotate is that it makes
+the element smaller, because we are looking at it in 3D. There is also a third value which is rotateZ(). What that does is that it flips it more
+traditionally along the X and Y axis in that it is a change that we can actually see. 
+We can also chain all the commands by putting them on the same line. like rotate() translate() scale()
+
+Leke take note that the transform property works depending on the top of the image. It does that because the Z-axis has flipped it
+
+Transitions are the best way to perform animations on the webpage
+I think rotateZ is the same thing as rotate. Its even possible to chain transitions 
+
+We can even delay transitions. The first time that we supply is the transition time while the second value is the transition delay
+
+Transition timing functions
+linear- The transition takes place at the same speed
+ease-in- The transiton starts of slower and becomes faster
+ease-out(ease)- The transition starts off faster and becomes slower

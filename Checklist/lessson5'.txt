@@ -1,0 +1,8 @@
+With CSS Animations, we have the animation-name, the animation-duration, animation-delay, animation-iteration-count which represents the number of times
+that we want the animation to run for. We can also set it to infinite to get the animation to run infinitely. Then we have the animation-fill-mode which specifies the
+state that we want the animation to return to, either before, after or both
+
+With phpmailer() we need to set the constructor when we are making use of the object to enable the use of exceptions
+
+We can make use of SMTPServers to send our mails, to do this we need to set $mail->isSMTP() to set SMTP usage to true. Then we need to set our smtp host, then
+we need to set $MAIL->smtpAUTH to true/

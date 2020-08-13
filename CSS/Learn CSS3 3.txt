@@ -1,0 +1,7 @@
+Leke, keep in mind that Century Gothic is a good font-color to use for your header
+
+Leke, remember how the relative position property works, it positions the element in terms of the last element in the flow of execution
+
+Leke, usually your footer text should be the smallest in your website
+
+In order to create that copyright symbol, we need to type &copy;

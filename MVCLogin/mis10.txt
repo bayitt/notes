@@ -1,0 +1,13 @@
+Leke take note of the length property which is used to access the length of either an array or the number of selectors on a page
+
+CSS3 defines two types of gradients, linear and radial
+
+To create a linear gradient, we must define at least two color stops. The default configuration of the linear gradient is from top to bottom, with at least
+two color stops. If we want to change it to go from left to right, we need to specify the first parameter to be to right
+
+Things to take note of
+
+When decalring constant variables, ALWAYS makes sure that you declare them inside the class
+Also, when making use of PDOs, always declare the namespace
+
+Leke,when you are making use of TWIG, try to output other variables and see if they output

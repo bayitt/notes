@@ -1,0 +1,2 @@
+Ohh. The whole idea with using <%= %> in our template is that if we want to escape or sanitize the content since we are not sure what may be coming in.
+We make use of <%- %> if we are sure that what is coming in is HTML.

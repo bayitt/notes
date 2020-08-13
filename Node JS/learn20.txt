@@ -1,0 +1,17 @@
+CSRF - This stands for Cross Site Request Forgery. It is a type of attack in which hackers can abuse your sessions and trick users of your application 
+to execute malicious code.
+
+The node package used to avoid and prevent csrf attacks is called csurf
+The way to use csurf is that we first need to import it, after which we need to create an object of it. We will then make use of this object in an express object
+middleware
+
+Any non GET requests, the csurf package will look for the existence of a csrf token
+The csurf package automatically appends a csrfToken() method to every request object.
+
+When storing the csrf token in our view in a hidden input, the name of the input must compulsorily be _csrf
+Express provides a locals field on the response object which we can used to set local variables on the response much like the data we send in to the view
+in the second parameter of the render() method
+
+The package that we can make use of to store temporary messages in the session is connect-flash
+
+Almost everything done in Node is via and with the help of the request object. 

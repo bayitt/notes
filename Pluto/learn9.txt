@@ -1,0 +1,9 @@
+What exactly do I want to do?
+
+The initial Dashboard is going to containing all the ongoing projects
+Then there needs to be an add tab for adding new ideas and projects
+Then there is a view tab for viewing all the projects and ideas
+
+Creating Authentication middleware in Flask involves making use of the functools middleware. We are going to call a method in which which the @functools.wraps(view)
+decorator is applied. This decorator takes in the view to which the decorator is applied to and checks if the user id loaded. If it s not it redirects to the
+home page. If it is, it continues normally

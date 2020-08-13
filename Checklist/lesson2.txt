@@ -1,0 +1,18 @@
+Some important things to take note of
+1) The method_exists() method takes two parameters, $this and $action and is used in the __call magic method in the core controller
+2) The is_callable() method takes an array as a parameter, containing $this and $actiom, it is used in the router 
+3) The call_user_func_array() method takes two parameter, an array containing $this and $action, and $args
+
+The whole idea behind error.php is that there needs to be an error handler for when there are errors in normal procedural code and there needs to be an 
+exception handler for when errors are thrown in oop. The error handler converts whatever error it receives into an exception by throwing an object of
+ErrorEcxeption.
+
+Via Error.php, we can configure how we want error messages to be displayed in our mvc framework
+
+Take note of the following important methods
+$exception->getMessage()
+$exception->getTraceAsString()
+$exception->getFile()
+$exception->getLine()
+
+The whole idea is that we are setting the error logs in the errorfile that we specify

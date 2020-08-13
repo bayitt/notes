@@ -1,0 +1,19 @@
+Variables are very powerful because they allow us to change things really quickly
+
+Leke take note that with Sass, when you minuse values from colors, they become darker but when you add them become lighter
+
+The whole aim of Sass is to make writing CSS faster, that is to improve productivity
+
+Mixins are ways of like using reusable code
+
+We have the option of passing in parameters to mixins or just making use of static or parameter less mixins that we can just reuse over and over again
+
+Leke take note that in the same way that we use = for assignment in normal programming, Leke in Sass always use :
+
+Leke note that you can even execute conditional statements with Sass
+
+The @import command enables us to reference a whole other style sheet 
+
+Just do @import 'style';
+
+Note: Ignore the. scss file extension

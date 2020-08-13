@@ -1,0 +1,36 @@
+For most controllers and objects, you will be returning a full Illuminate\Http\Response instance. Returning a full Response instance allows you to customize
+the response's HTTP status code and headers
+
+There is also a response() helper method
+
+HTTP Response Method
+This refers to the information, in the form of a text record, that a Web Server sends back to a client's web browser in response to receiving an HTTP request. 
+The response header contains the date, size and type of file that the server is sending to the client
+
+When the response() helper is called without arguments, an implementation of the Laravel\Lumen\Http\ResponseFactory class is returned. This class provides
+several helpful methods for generating responses
+
+The json() method called on the response() helper will automaticaly set the Content-Type header to application/json, as well as convert the specified array
+into json using jsin_encode() method
+
+The download method may be used to generate a response that forces the user's browser to download the file at the given path. The download method accepts a file
+name as the second argument to the method meaning the file name that is seen by the user when when he downloads the file
+
+Lumen does not support session state, and as such incoming requests must be authenticated via a stateless mechanism such as API tokens
+
+Before making use of Lumen's authentication features, you should uncomment the call to register the AuthService Provider in your bootstrap/app.php
+
+The Eloquent ORM included with Laravel provides a simple, ActiveRecord implementation for working with your database. Each database table has a corresponding
+model which is used to interact with that table . Models allow you to query for data in your table as well as insert new records into your table
+
+Just like in Laravel, we may make use of the Auth::user() method to retrieve the current user. Alternatively, we may make use of the $request->user() method
+to access the currently authenticated user
+
+Eloquent essentially means Model Interaction with our DB
+
+The Facade pattern is a software design pattern which is often used in object oriented programming. It is in fact, a class wrapping a complex library to 'provide 
+a simpler and more readeable interface to it
+
+Inversion of Control / Hollywood Principle is simply a principle in which rather than application components having to fetch all the required elements 
+and essentially being in control everything, rather we delegate control to the environment in which the environment fetches all the dependencies and
+elements required by the application and makes it available to the app 

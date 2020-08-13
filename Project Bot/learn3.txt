@@ -1,0 +1,35 @@
+The telegram.ext submodule is built on top of the pure API implementation. It consists of several classes but the most important ones are the 
+telegram.ext.Updater and telegram.ext.Dispatcher
+
+The Updater class constantly fetches new updates from telegram and passes them on to the Dispatcher class If you create an Updater object, it will create a 
+Dispatcher for you and link them together with a Queue. You can then register handlers of different types in the Dispatcher, which will sort the updates
+fetched by the Updater according to the handlers you registered, and deliver them to a callback function tat
+
+1145721942:AAFBgDYEITnU3UC6tGCO_WJmRDVowU87bwc
+
+The logging module is used for logging errors
+
+The Updater constructor takes in two parameters, the token and the use_content parameter
+
+Just like we have the CommandHandler, we also have the MessageHandler
+
+The Filters class contains a number of functions that filter incoming messages for text, images, status updates and more
+
+Apparently, we can also pass in arguments with the commands that we pass in
+
+The whole idea with inline functionality is that we can make use of the bot's functionality from the message line, without having to access the bot
+
+InlineQueryHandler, InputTextMessageContext, InlineQueryResultArticle
+
+Once an update is handled in the bot, all other handlers are igniored
+
+The extension class telegram.ext.JobQueue allows you to perform tasks with a delay or even periodically, at a set interval
+
+Just like with the dispatcher, we can access the jobqueue on an instance of the updater
+
+From the context parameter, passed in to the job queue function, we can access context.job which is the job instance of the task that triggered the callback
+
+There are three different methods to create jobs with different frequency and time, job_queue.run_once, job_queue.run_repeating, job_queue.run_daily
+
+The return values of these functions are job objects which we are going to make use of
+The run_once() method takes in a first parameter which represents the method we want to be executed, while the second parameter represents the delay in executing it

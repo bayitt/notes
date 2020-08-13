@@ -1,0 +1,23 @@
+With animations we have animation-name, animation-duration, animation-delay, animation-iteration count which is the number of times that
+you want the animation to take place. We also have animation-fill mode which refers to the state that you want the animation to be at the end of the animation.
+Its value can be before, after or both.
+
+We also have the animation-direction, the default value is normal, it can also be reverse. Then the value can also be alternate-normal, or alternate-reverse.
+
+Then we also have the animation-timing-function whose default value is ease, it can also be ease-in which means it starts out a bit slower, then gets slower
+Then it can also be ease-out which means it begins and goes normally, then ends slower. Then finally we have ease-in-out which means it starts slowly, gets slower 
+and ends slower. We can also use a cubi bezier function to get the particular curve that we want
+
+Also, Leke take note that the first time value that you specify is always the duration of either the transition/animation while the second value is always the
+delay. 
+
+It's not all the time that we have to make use of from and to to represent animation states. We can also make use of percentages to represent 
+animation states
+
+We can chain animations by placing a comma.
+
+What the transform origin property does is that it sets from where all transformations are to occur
+
+Core Backend Code
+1) Create the Router
+2) Create the Autoloader

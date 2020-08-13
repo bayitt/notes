@@ -1,0 +1,32 @@
+Things to take note when uploading images with PHP
+
+The Form method must be POST
+The Form must have an attribute enctype="multipart/form-data"
+
+We first need to check if the image in the files array is not empty
+If it is not empty, then we can get to work creating the image details
+$Imagename has a suffix of name in the files array
+$imagetemp has a suffix of tmp_name
+$imagesize has a suffix of size
+For the image extension we need the pathinfo() function which takes $imagename and PATHINF0_EXTENSII
+Then we need to construct the image path
+
+What actually moves the images to the folder is the move_uploaded_file() method which takes the image's temporary name and its $Imagepath variable
+
+Leke take note that when you include an access specifier in a variable declaration that that means that the varible or array can only be accessed from an object
+
+The JQuery $.ajax() method is used to perform an asynchronous HTTP Request. The $.ajax() method takes two parameters, the first is a url specifying where we want the
+ajax request to go to, while the second is a Javascript object containing the configurations
+
+The various options which can be accepted in the options parameter include
+accepts
+complete-A method to specify a function that is executed after the request is completed
+data-The data to send to the server when performing the request
+error-a function to be called if the callback fails
+success- a function to be called if the request is successful
+type-The type of request to be made, either GET or POST
+url- a string containing the URL to which the request is made to the server
+
+Leke take note that in order for the form not to close when making use of JQUery, you must not set the action and the button type must be set
+
+Leke take note that you cannot return anything from a function that is asychronous

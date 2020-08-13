@@ -1,0 +1,31 @@
+Leke take note that the Route class has two static methods, get and post for the different types of request. Most types of requests are get
+
+When we are making POST requests, obviously we will need to grab the data like how we would do $_POST but with Laravel, all we need to do is to
+create an object of Request. Request $request
+
+Laravel has a concept called csrf. Cross Site Request Forgery.
+Due to the fact the Larael does not want requests which are not part of the application to access the application. So essentially, with each and every one of
+our POST requests, we need to send in a csrf token
+
+Getting all the form data that we passed in the request is by calling all() on the request  object that we pass in as the request
+
+Laravel is so frickin easy man, In order to save data in the database. All we have to do is to create an instance of the model and set the field to the field
+in the table and then call save() on the created object
+In order to go back to the last route. Laravel provides the return redirect()->back()
+
+Route Parameters
+
+In the array parameter when defining our routes. The 'as' parameter refers to like what we call our route
+
+route() method is a global method that enables us to access particular routes. The first parameter that the route() method takes is the 'as' parameter that we name
+the route in the array.
+
+Laravel has a find() method in which we pass in the id of the row and it returns the row stored in a variable and then we can call the delete() method on
+the row(vari)
+
+Leke note that whenever we are al
+
+php artisan tinker is a way to manipulate our database from the commandline
+
+We have the Session::flash() method takes two parameters. The key that refers to the message that we specify as the second parameter
+Then we have the Session::has() method that we can use to check if a key exists

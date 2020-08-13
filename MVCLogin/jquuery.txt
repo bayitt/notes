@@ -1,0 +1,18 @@
+The JQuery animate() method is used to create custom animations
+
+It takes three paramters, a required params object which contains the properties which are to be animated, speed and a callback or closure method to be
+executed.The speed paramter can also take values such as slow, fast or milliseconds
+
+One thing to take note is that when making use of the animate() method all properties must be camelCased
+
+Leke, take note that with the Flash, getMessages() class, we always need to include the if statement for the flash notifications array. This is because it is not all
+the time that the notifs will be available
+
+Leke, take note that it is always best to just go straight to signup/index or login/index straight to prevent confusion
+
+Leke, take note that in order to access the errors array, it needs to be have a public access specifier
+
+With logging in the findUserByEmail method is extremely important
+
+Leke, try as much as possible to avoid code duplication and unnecessary spaghetti code. If you can modify a existing method to do what you want to do,
+do so.

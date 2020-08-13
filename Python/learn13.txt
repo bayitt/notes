@@ -1,0 +1,34 @@
+More examples of Non Paramteric Machine Learning Algorithms are 
+- Decision Trees like CART and C4.5
+- Naive Bayes
+- Support Vector Machines
+- Neural Networks
+
+
+Benefits of Non Parametric Machine Learning Algorithms
+- Flexibility 
+- Power - No assumptions about the underlying function
+- Performance - Can result in higher performance models for prediction
+
+Limitations
+More data - Requires a lot more training data
+Slower -
+Overfitting
+
+The types of supervised learning problems are classification and regression problems
+
+Some common types of problems built on top of classification and regression include recommendation and time series prediction
+
+Linear Regression
+Random Forest for classification and regression
+Support Vector Machines for classification problems
+
+Unsupervised learning is where you have only one input data (X) and no corresponding output variables. The goal for unsupervised learning is to model the
+underlying structure or distribution of the data in order to learn more about the data. It is divided into clustering and association.
+
+Clustering is where you want to discover the inherent groupings in the data, such as grouping customers by purchasing behaviour
+Assoication is where we want to discover rules that govern large portions of our data, such as people that buy A also tend to buy B
+
+K-means algorithm for clustering problems
+Apriori algorithm for association rule learning problems
+

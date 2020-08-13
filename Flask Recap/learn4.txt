@@ -1,0 +1,34 @@
+backref refers to how we are going to reference the class from the related class
+
+sqlalchemy has 4 different ways of loading data in a relationship
+
+- 'select', True, this is the default, this means that SQLAlchemy will load the data as necessary in one go using a select statement
+- 'joined', False, This tells SQLAlchemy to load the relationship in the same query as the parent using a 'JOIN' statement
+- 'subquery - works like 'joined' but instead SQLAlchemy will use a subquery
+- 'dynamic'
+
+We can also define the loading status for backrefs by making use of the backref() function
+
+We can also specify default values, making use of the default keyword argument
+
+Inserting data into the database is a three step process
+- Create the Python object
+- Add it to the session 
+- Commit the session
+
+
+db.session.delete()
+
+In order to get data back from the database. For this purpose, Flask-Sqlachemy provides a query attribute on our Model class. When you access it,
+you will get a new query object over all records. You can then use methods like filter() to filter the records before we fire the select with all() or first().
+
+If we want to go by primary key, we use the get() method.'
+
+With filter_by(), we can make use of keyword arguments with the arguments being the columns in the model table
+
+We can order the users making use of the order_by() method, We can also use the limit() method to limit results from our queries.
+
+Then, we need to run the init_app() on the sqlalchemy object and pass in the created app object
+
+Then we also need to create the migrate object from the Migrate class. Then we also need to run the init_app() method on it and pass in the created app object
+and the db object. 

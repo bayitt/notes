@@ -1,0 +1,35 @@
+In situations in which we want to filter by a field of a nested object, we need to quote the field. Unlike with a native property in which we use
+._id, we would do something like 'user._id'
+
+Mongoose is the orm for mongodb just like sequelize and eloquent.
+Sorry, Mongoose is an ODM. An Object Document Mapping Library
+
+With Mongoose, we actually do not need to write the code to connect to our database by ourselves because Mongoose will handle that for us
+
+To connect to our database, all we have to do is to call the connect method on the mongoose package
+
+In order to make use of mongoose for schema definition, we need to import mongosse and make use of the Schema property on mongoose,
+then to define our schema, we are going to create an object of the schema, to whose constructor we are going to pass in a Javascript object.
+
+The whole idea is that in the config object we pass in to the Schema constructor, we can pass in different field and their data types.
+Seeing as Mongodv does not have a defined data structure, we can pass in a config object to the field, in which we specify its type and whether
+it is required or not.
+
+When defininfg schemas with mongoose, we dont need to specify an id seeing as mongodb is going to specify it automatically.
+
+Mongoose also works with models. a model() method is available on the mongoose package
+The model method takes in two properties, the first of which is a string representing the name of the model, while the second property is the corresponding
+schema that we created earlier.
+
+We can also make use of a find() method to obtain all the documents in our collection
+Conveniently, Mongoose also has a findById() method and we can pass in the id as a string and mongoose will automatically parse it into an object id.
+
+Mongoose provides several convenient methods like findByIdAndRemove() findByIdAndUpdate(), findOneAndRemove(), findOneAndUpdate()
+
+The findOne() method is always going to return the first document that it finds in the collection.
+When defining our schemas in Mongoose, we can make use of our special ref property to specify which model a relations id belongs to
+
+Mongoose also has a useful utility method called populate() which we can use to tell mongoose to populate a field with particular details
+rather than the related data
+The select() utility method is used to select the particular fields we want to select from the collection
+The same can be done on populate by adding a second argument

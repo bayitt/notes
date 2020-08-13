@@ -1,0 +1,21 @@
+List of Things I need to Learn
+CSS Transitions
+Scrollspy
+CSS Parallax Effect
+How to style input boxes
+
+CSS Transitions enable us to change property values smoothly over a given duration
+To create a CSS Transition, we need to specify the property that we want to add an effect to and the duration of the effect
+
+Leke, essentially the things with transitions is that we need to have two states for the element
+
+There are different transition timing functions that we have and they include linear, ease,ease-in,ease-out,ease-in-out
+
+We can even specify a delay in the transition property by making use of the transition-delay property
+
+We create animations in CSS making use of the @keyframes property
+
+To get the animation to work, we must bind it to an HTML element
+Keyframes do not necessarily need to contain the 0%,25% like for rotations, they can be simple from and to
+
+We can make use of the animation name and the animation duration properties in the binded element to bind the element to it

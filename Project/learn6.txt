@@ -1,0 +1,6 @@
+Association
+
+Association rules enable us to establish associations amongst data objects inside large databases. This technique is about discovering 
+interesting relationships between variables in large databases.
+
+Supervised learning is usually more accurate than unsupervised learning while unsupervised learning can usually solve more complex and complicated problems

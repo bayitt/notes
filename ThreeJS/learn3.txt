@@ -1,0 +1,33 @@
+We create meshes by making use of the Mesh() constructor. The Mesh constructor takes in two parameters, the geometry and the material
+
+The renderer object that we create has a canvas element whose width and height is set by the browser. Currently, that value in Chrome is 150px by 300px. This
+is admittedly small. As such we can make use of the renderer.setSize() method to set the size of the canvas element where the scene will be displayed to the
+size of the container
+
+After setting the size of the renderer, then we need to set the pixel ratio of the renderer/canvas element 
+
+window.devicePixelRatio()
+
+The window.requestAnimationFrame() method tells the browser that you wish to perform an animation and requests that the browser call a specified function 
+to update an animation before the next repaint. The method takes a callback as an argument to be invoked before the next repaint
+
+In Javascript, a hexadecimal value is denoted by 0x
+
+Instead of calling background on the mesh object, we can set the color in the constructor object parameter
+
+Color.set
+
+The MeshBasicMaterial does not react to lights well while the MeshStandardMaterial is a physically correct material, meaning that it reacts to light much 
+in the same way that object in the real world does
+
+We need light to shine upon our object
+
+Directional lights mimic light from a distant source such as the sun and shine from a position towards a target
+
+The issue with requestAnimationFrame() is that it essentially restricts the application to work in a web environment. What if we intend to render the application 
+in a VR app. As such, we need to make use of the setAnimationLoop() method of the renderer instead of requestAnimationFrame()
+
+For us to stop animation execution, all we need to do is to pass in null to the setAnimationLoop() method
+
+Leke take note that anytime you change any of the parameters that define the camera's frustrum, such as changing the field of view , aspect ratio or camera.near
+and camera.far we need to call camera.updateProjectionMatrix()

@@ -1,0 +1,31 @@
+Javascript is a weakly types programming language. It is an object oriented programming language and it is also very verstile.
+When we say weakly typed, essentially, we mean it is dynamically typed.
+
+Anonymous functions refer to functions that are stored in variable names 
+
+Essentially arrow functions are like normal functions but without the function names and the => symbol
+
+If we have only one argument for our arrow function, we do not need to include the parentheses
+
+The map() method on arrays is used to edit the elements of the array
+
+Essentially, the whole idea behind this is that this refers to whoever called the code that it is using it
+
+reference types essentially store a reference(pointer) to the place in memory where the data structure is stored
+
+The spread operator refers to an operator that takes all the elements or properties of an array/data structure and outlines them out as single elements
+
+The rest operator and the spread operator are essentially the same thing. Where they differ is in where they are used. The spread operator is used to
+pull out the elements from the array or data structure, while the rest operator is used to construct an array from the elements
+
+Object destructuring is a concept that enables us to obtain properties from objects
+
+Javascript will execute all your synchronous code and then execute your async code,
+
+Arrow functions can even be passed in as function parameters
+
+With promises, resolve means that it should return a value. That it has finished computation
+
+Just like how we have an index.php file or index.html file, with node js, it is an app.js file 
+
+Most functionalities in node js are not available by default 

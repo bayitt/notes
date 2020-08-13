@@ -1,0 +1,33 @@
+Unlimited Urls
+With trim, there are no limits on the number of shortened urls you can create. As a free service, Trim is committed to providing 
+you the best shortening services at no cost.
+
+Validator functions with Reactive forms can either be synchronous or asynchronous. Like it says synchronous validators immediately return a set of validation
+errors while async validators will return either a promise or observable later.
+
+In Angular, input fields have the following states
+- untouched - the field has not been touched yet
+- touched - the field has been touched
+- pristine - the field has not been modified yet
+- dirty - the field has been modified
+- invalid - the field content is not valid
+- valid - the field content is valid
+
+REST API Design Tips
+It is advisable to provide a version namespace for your RESTFUL API
+
+- Use plurals for your routes
+Essentially your endpoint names need to be descriptive
+Query strings should be used for further filtering of results beyond the initial grouping of a logical set offered by a relationship
+Try as much as possible to keep your core routing logic in the initial endpoint name
+
+- Try as much as possible to provide flat routes for update and delete operations. Essentially, longer paths for creating/fetching nested resources.
+Shorter paths for updating/deleting resources
+
+Pagination is an important thing to do, the various ways of doing this include making use of the from query parameter
+
+Envelope your api responses, with either data or error
+When dealing with JSON, it is essential that we include an application/json Content-Type header
+
+- When updating a resource, it is good practice to return the updated resource in response to a successful POST, PUT or PATCH request
+

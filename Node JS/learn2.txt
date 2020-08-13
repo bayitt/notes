@@ -1,0 +1,39 @@
+There are a handful of core modules in Node JS. Among which are http, https, fs, path, os and more
+
+The http module helps us with core things like launching a server and sending requests
+The https module is useful when we want to launch an SSL encoded server
+
+Files are imported i nodejs by making use of the require keyword. require() either takes a path to a file or a core module name
+
+/ - absolute path
+./ - relative path
+
+a requestListener() is simply a function that will execute for every incoming request
+
+The request Listener takes two arguments.The first is a request argument which is of type incoming request and response
+
+The createServer() method returns a server which we can store in a variable
+
+We can then call a listen() method on the returned server object to listen for incoming requests.
+
+The listen() method takes in a number of optional arguments. The first of which is the port number, the second argument is the hostname but since we are working
+on our localhost, the default hostname is local
+
+The event loop in node js is a loop process that keeps on running as long as there are event listeners to listen to in node js
+
+Node js executes single threaded Javascript
+
+The whole idea is that createServer() creates an event listener so that the event loop in node js is always running. The event loop can be deactivated by executing
+process.exit()
+
+req.url refers to the url that was used to access the server
+req.method does the same thing but for the http method
+req.headers returns all the headers and meta information
+
+We can make use of the setHeader() method on the response object to set headers
+
+The write() method enables us to write data to our response 
+
+Finally, we can make use of the end() method called on our response object to end writing to our response object
+
+I feel like everytime that we edit the response object, we need to call res.end()																				

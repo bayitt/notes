@@ -1,0 +1,38 @@
+Running python manage.py db init is going to create our migrations folder
+
+python manage.py db migrate is going to inspect our models.py file and generate a migration with the changes represented
+
+python manage.py db upgrade is going to run the migrations on our db schema
+
+We can add variable sections to URL by marking them with closed angled braces like <>
+
+We can also go further and make use of converters to be really explicit and specify the kind of value we expect in the variable parts of our route
+
+The different converter types are
+- string(default) - accepts any text without a slash
+- int - accepts positive integers
+- float - accepts positive floating point values
+- path - like string but accepts slashes
+- uuid
+
+Unique URLS
+
+The way Flask works is that if we have a route /projects/ and we access /projects, we are going to be redirected to /projects/
+But if we have a route /about and if we access /about/ it is going to give us a 404 not found error
+
+The whole reasoning behind using the url_for() method to output urls is that through it we can build our urls easily
+
+By default routes in Flask respond to only GET requests
+
+We can access the method that was used to access a particular route by accessing the method property on the request object
+
+Also Leke, remember that anytime you have variable sections of your route, you need to pass it into your view function to access it
+
+Inside of our templates, we also have access to the request, session, g objects and also the get_flashed_messages() function
+
+In order to access form data sent in the request, we need to make use of the form attribute on the request object. The form attribute is a dictionary
+
+In order to access data sent in as query parameters we are going to make use of request.args.get('key')
+
+Uploaded files are stored in the files attibute on the request object. It behaves like a standard Python file object but also has a save() method that allows
+you to store that file on the filesystem on the server

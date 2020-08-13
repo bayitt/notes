@@ -1,0 +1,14 @@
+Instead of rewriting arguments, we can create a parent parser and then extend the parser making use of the copy() method. You can also overwrite any argument
+mkaing use of the replace_argument() method or remove it making use of the remove_argument() method
+
+The default way errors are handled by the RequestParser is to abort on the first error that occurred. However, often it is nice to have the errors bundled
+together and sent back to the client at once. This behvaiour can be specified either at the Flask application level or on the specific RequestParser instance.
+To invoke a request parser with this behavior, simply set bundle_errors=True in the RequestParser constructor
+
+With the marshal_with() decorator, we can pass in a envelope keyword argument that "envelopes" the data response
+
+We can also specify a default keyword argument to return incase, whatever we return does not contain that particular field.
+
+If we want to customize the data, we can make use of the marshal() method, instead of the marshal_with() decorator
+
+Flask-Restful includes a special field, fields.Url, that synthesizes a uri for the resource that's being requested

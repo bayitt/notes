@@ -1,0 +1,33 @@
+Heroku lets you deploy, run and manage applications written in Ruby, Node js, Java, Python, Scala, Go and php
+
+An application is a collection of source code written in one of these languages, perhaps a description, and some dependency description that instructs a build
+system as to which additional dependencies are needed in order to build and run the application.
+
+One requirement is that you need to inform the platform which parts of your applicatio are runnable. I think this refers to the command that your application needs
+to run in order to execute. For other applications, you may need to explicitly declare what can be executed. We do this in a text file that accompanies the source code,
+this file is called a procfile. Each line declares a process type, a named command that can be executed against your built application
+
+The Heroku platform uses Git as the primary means for deploying applications. When you create an application on heroku, it associates a new Git remote, typically
+named heroku with the local Git repository for your application. As a result, deploying code is the same as git push but instead pushing to the heroku remote repo.
+Deploying applications involves sending the application to Heroku using either Git, Github or via an API.
+
+When the Heroku platform receives the application source, it initiates a build of the source application. The build mechanism is typically language specific, but
+it follows the same pattern, typically retrieving the specified dependencies and creating any necessary assets.
+
+The source code for your application, together with the fetched dependencies and output of the build phase such as generated assets or compiled code, as well as the
+language or framework are assembled into a slug.
+
+A slug is a bundle of your source, fetched dependencies , the language runtime, and the compiled/generated outputof the build system, ready for execution
+
+Heroku executes applications by running a command you specified in the procfile, on a dyno thats been preloaded with your prepared slug.
+
+Think of a running dyno as a lightweight, secure virtualized Unix container that contains your application's slug in its file system.
+If you deploy an application for the first time, Heroku will run 1 web dyno automatically. In other words, it will boot a dyno, load it with your slug and execute
+the command you have associated with the web process type in your procfile.
+
+Your application's dyno formationis the total number of currently executing dynos, divided between the various process types you have scaled
+
+The 'heroku ps' command will give you a list of all your executing dynos.
+
+An application's configuration is everything that is likely to vary between environments(staging, production, developer environments). This includes backing services
+such as databases, credentials or environment variables that provide some specific information to your application.

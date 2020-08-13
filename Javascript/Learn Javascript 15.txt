@@ -1,0 +1,6 @@
+Project
+
+In Javascript, the order o your imports matters. Like you initialize all the elements in one file, and access them in another
+The value method is used to return the value contained in an HTML Element
+
+Leke, in constructor functions, even the behaviours take the this prefix

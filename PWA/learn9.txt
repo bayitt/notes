@@ -1,0 +1,33 @@
+The whole idea behind caches.open() is that if the cache already exists it opens it, if not, it creates it afresh
+
+Remember how the service worker depends on async events, if we just put caches.open() the install eve
+
+Available Methods in the Cache API
+
+- Cache.match(request, options)
+
+This returns a promise that resolves to a response associated with the first matching request in the Cache object
+
+-Cache.matchAll(request, options)
+
+This returns a promise that resolves to an array of all matching requests in the Cache object
+
+-Cache.add(request)
+
+This tasks a URL, resolves it and adds the resulting response object to the given cache
+
+- Cache.put(request, response)
+
+This takes both a request and response and adds them to the cache
+
+-Cache.delete(request)
+
+Finds the cache entry whose key is the request and if found deletes the cache entry and returns a promise that resolves to true, if no cache entry is found, 
+it resolves to false
+
+- Cache.keys(request, options)
+
+This returns a Promise that resolves to an array of cache keys
+
+- Cache.addAll
+

@@ -1,0 +1,31 @@
+Instead of preopinionated design components. Tailwind provides low level utility classes that lets you build completely custom designs without ever leaving 
+your HTML.
+
+In Tailwind, we make use of the @tailwind directive to inject Tailwind's base, components and utilities into your css. Tailwind will swap these directives out
+at build time with all of its generated css.
+
+Tailwind's four breakpoints are
+- sm - 640px
+- md - 768px
+- lg - 1024px
+- xl - 1280px
+
+Just like how Tailwind achieves responsive design with its :. Styling elements on hover, focus and more can be achieved by prefixing utilties with the appropriate
+pseudo class.
+
+In order to run Tailwind css, we first need to run npx tailwind init to create the tailwind.config.js file. Then we need to create a stylesheet in which 
+we are going to add the tailwind base, component and utilities directives. Then we need to build our css, this is done by running npx tailwind build index.css -o
+styles.css
+
+We make use of the first: utility and apply it when an element is the first of its children. We also apply the :last utility to only apply a utility
+when an element is the last child. 
+
+We make use of the odd: prefix to only apply a utility when it is an odd child of its parents. 
+While the even: prefix is used to apply a utility when it is an even child of its parents.
+
+If we need to style a child element when hovering over the parent element, we need to give the parent element a class of group and make use of the
+group-hover: prefix instead of the typical hover
+
+We can also combine pseudo variants with responsive prefixes. Just make sure that the responsive prefix comes first.
+
+Base or global styles are the styles at the beginning of a stylesheet that set useful defaults for basic HTML elements 

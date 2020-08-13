@@ -1,0 +1,37 @@
+Revising the Process of Seeding
+We need to call the define() method on a factory object in which we specify the model whose table we are trying to seed. We also need to create a seeder in which
+we call the run method in which we call fac
+
+Laravel by default provides the bcrypt() method to encrypt passwords
+
+The count() method in Laravel is used to return the number of objects or rows returned from a query
+
+Essentially slugs are like the routes that I have creating all along
+
+Laravel provides us with the str_slug() method to generate slugs from post names
+
+The whole idea behind accessors is that instead of getting the returned data from the database and then editing it, with accessors we can mutate or edit the 
+data from the database as we want 
+
+Accessors are essentially features, and the way they are named is that we use get.The name of the field.Attribute and it takes in the name of the attributes 
+as the parameter and then we call whatever function we want to call and return the data
+
+
+Essentially accessors help us to mutate or change the data from the database rather than getting the data and then editing it
+
+The static method onlyTrashed() returns all the trashed data items, meaning that it checks for rhe deleted_at field and returns the rows that have
+timestamp values for the deleted_at field and the result of this is a query builder instance and inorder to obtain the proper data from this, we need to call the 
+get() method on the returned query builder. We can also call the first() method on the querybuilder instance to get only the post data
+
+Then finally to delete it permanently, we need to call the forceDelete() method on the $post object
+
+We can attach as many with() methods as possible to the data to 
+
+Laravel has a hasFile() method which we use to check if a request contains a file
+
+Apparently, the way the validate method works is that if the validation fails, it returns it back and stops execution
+
+
+Leke, take note that the @if, @endif selection control structures in Laravel do not have {}, that is the curly braces
+
+Leke remember that the naming convention for actions are pascalCase

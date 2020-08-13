@@ -1,0 +1,37 @@
+Many Bootstrap components require the use of Javascript to function. Specifically, they require jQuery, popper.js and Bootstrap's own unique plugins
+
+Containers
+
+Containers are the most basic layout element in Bootstrap and re required when using the default grid system.
+We can choose from a responsive fixed width container meaning that its max-width changes at each breakpoint or fluid-width meaning that is 100 % wide at all times
+
+Bootstrap Breakpoints
+- xl - 1200px
+- lg - 992px
+- md - 768px
+- sm - 57px
+
+Since Bootstrap is mobile-first by default, its media queries are by default make use of min-width, meaning that it is going upwards. Bootstrap also has provisions
+for going down using max-width which is what I am used to
+
+Containers provide a means to center and horizontally pad your content
+Each column has horizontal padding
+
+In a grid layout, content must be placed inside of columns only and only columns may be immeditate children of rows
+
+Grid columns without a specified width will automatically layout as equal width columns
+
+Columns have horizontal padding on both sides so as to create the gutters between the different columns. We can remove these gutters with a .no-gutters on the row
+
+You can make use of col-breakpoint-auto to size columns based on thheir content instead of using like the col-md-6. Like fixed content
+
+We can also make use of the justify-content class and specify the breakpoint and what direction you want to center the content in
+
+We can create equal width columns by inserting a .w-100 where we want the columns to break to a new line
+
+In Bootstrap4, in order to place items vertically, items in the row, you are going to make use of align-items-start, align-items-center or align-items-end
+
+While if you want to align the particular column, make use of align-self-start, align-self-center, align-self-end
+
+Leke take note that the w-100 class, its not like it sets the width of the elements to 100. Bootstrap will still display the elements either according to the
+widths that you have given it or according to the number of rows. Using .w-100 just forces the row to go the next line

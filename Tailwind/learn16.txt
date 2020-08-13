@@ -1,0 +1,11 @@
+With border-color in Tailwind, we simply work with the same colors that we use for our text color and background color. For example, .border-transparent,
+.border-white, .border-black, .border-gray
+
+Border Style are utilities for controlling the style of an element's borders.
+We have .border-solid, .border-dashed, .border-dotted, .border-double, .border-none
+
+For border width, we make use of the .border, .border-0. .border-2, .border-4, .border-8 to set the border width for all sides of an element.
+We also have .border-t, .border-b, .border-l, .border-r variants.
+
+Border Radius
+.rounded-none, .rounded-sm, .rounded, .rounded-md .rounded-lg .rounded-full, .rounded-full1:48 PM 4/13/20201:48 PM 4/13/2020

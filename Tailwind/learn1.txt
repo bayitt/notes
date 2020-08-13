@@ -1,0 +1,27 @@
+Instead of opinionated predesigned components, Tailwind provides low level utility classes that lets you build completely custom designs without ever
+leaving your HTML.
+
+Every utility class in Tailwind can be applied conditionally at different breakpoints. Just like in Bootstrap
+
+The four breakpoints in Tailwind include 
+sm - 640px
+md - 768px
+lg - 1024px
+xl - 1280px
+
+In order to have responsive utilities, unlike with bootstrap in which we say something like d-md-inline. In tailwind we will say something like md:d-inline
+
+Just like Tailwind handles responsive design by making use of the : syntax, pseudo class variants can be styled in a similar manner
+
+Tailwind includes first class support for styling elements n hover, focus, active, disabled, visited, first-child, last-child, odd-child, even-child, group-hover
+and focus-within
+
+Add the first: prefix to only apply a utility when it is the first child of its parent
+Similarly, the last: prefix does the same for the last child of its parent 
+The odd: prefix is also only used for odd children od the parent 
+
+If you need to style a child element when hovering over the parent element, simply add the .group class to the parent 
+
+We can also make use of focus:within to only focus when a child element is in focus
+
+We can also chain pseudo variants and responsive classes, something like sm:hover:

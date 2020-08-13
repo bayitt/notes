@@ -1,0 +1,36 @@
+Javascript files run on the same thread
+
+You know how typically Javascript files run on the same thread and they can access the DOM on their pages.
+Well, service workers are Javascript files that run on a separate thread and in the background.
+
+They are also decoupled from your HTML pages meaning that they do not have access to the DOM	
+
+Service workers are not restricted to only a single page in your application. Instead, they are availble to all the pages in your application 
+
+Service workers also live on even after you have closed all the pages in your browser. It is a BACKGROUND process
+
+Since they run in the background, they are really good at listening to events
+
+Events which Service Workers can listen out for
+- Fetch - Browser or Page related Javascript initiates a Fetch(Http GET request)
+
+The Fetch request is not triggered if you use ajax but is triggered if you use the FETCH API
+
+Since FETCH requests go through the service worker, you can manipulate them, you can block them, 
+
+- Push Notifications (from Web Push Server). Essentially, every browser has a web push server, you can send notifications from your server to the web push
+server, this then sends it your client and you can listen for it in your service worker
+
+- Notification Interaction
+
+- Background Sync
+
+- Service Worker Lifecycle events
+install event - when the service worker is being installed in the browser
+activate event - when the service worker is activated
+
+Service workers will only be activated if there is no old service worker running. So typically, you have to close the tab so that the new service worker 
+can be registerd
+
+The way service workers work each time you reload the page is that the service worker is always registered but it is only installed if the service worker file
+changes 

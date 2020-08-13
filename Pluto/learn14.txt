@@ -1,0 +1,13 @@
+*args and **kwargs are mostly used in function definitions. *args and **kwargs allow you to pass a variable number of arguments to a function
+
+*args-arguments
+*kwargs-keyword arguments
+
+*args enables you to pass in non keyworded arguments to a function
+**kwargs enables you to pass in keyword arguments to a function
+
+FLASK SQLALCHEMY
+The difference between filter_by() and filter(). The difference between them is that with filter_by() we can make use of regular keyword arguments
+for queries on the model, while with filter, we need to make use of the equality operator because it has been overloaded on the columns
+
+Also, with filter(), we can write more powerful queries

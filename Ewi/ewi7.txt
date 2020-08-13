@@ -1,0 +1,36 @@
+Working with Request Data in Laravel
+
+The $request->path() method is used to return the Request URI that was used to access the route
+
+Apparently, $request->path() returns the relative URL while $request->url() returns the full URL
+
+$request->method() returns the type of request that was used to access the route
+
+while $request->isMethod() checks if the type of request is a particular one
+
+Apparently, with the input() method on the Request instance, we can access particular items sent along with the Request
+
+like $name=$request->input('name')
+
+The $request->has() method is used to check if an item is present in the request
+
+In order to retrieve a portion of the input data, we can use the $request->only() or $request->except() methods.
+
+With these $request->only() and $request->except() methods, we can pass in either an array or a dynamic list of arguments
+
+Apparently, we can only use the withInput() method to flash data if we are redirecting to another route. 
+
+Since I am essentially returning a view, I need to call $request->flash() to make the request data available
+
+
+Revising what I have learnt
+
+With the $request->path() method, we can return the relative url, while with the $request->url() method, we can return the full url
+
+The $request->method() can be used to return the type of request while the $request->isMethod() is used to check the type of method used
+
+The $request->has() method is used to check if an item exists in the request
+
+$request->flash() is used to flash the request data to the session so that it is available in the next request to the application
+
+$request->only(), $request->except()

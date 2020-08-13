@@ -1,0 +1,3 @@
+Things to note
+It is easire fot the tooltip to change values if it already has the requisite styling
+Also, it is better for the tooltip to be set when the page loads, rather than on a mouseover

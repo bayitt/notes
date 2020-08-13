@@ -1,0 +1,30 @@
+NGRX is a group of libraries inspired by the Redux pattern which in turn is inspired by the Flux pattern. ngrx works using observables and the different 
+observable operators provided by rxjs
+
+The main purpose of this pattern is to provide a predictable state container, based on three main principles
+
+Single source of truth
+What this means is that the state of your whole application is stored in an object tree within a single store. Stores generally have the responsiblity of holding
+the state and applying changes 
+
+You are never going to change the state directly instead you are going to dispatch actions. These actions describe what is happening, things like getting,
+adding, removing and updating the state.
+
+Generally, actions are identifiers of an operation on your application and they can be triggered (dispatched) to tell the application to execute the operation
+that the action represents.
+
+The operation triggered by dispatching an action is going to be a pure function called, within the redux architecture called reducers.
+These reducers receive an action and the state, depending on the action dispatched (usually with a switch statement) they execute an operation and return a new
+state object
+
+State is immutable, so when a reducer changes something in the state, it returns a new state object
+
+In the store object, you have a function to dispatch(trigger) actions. Actions are classes that implements the NGRX interface. These action classes 
+have two properties, type: it is a read only string describing what the action stand for. payload: the type of this property depends on what type of data
+this action needs to be sent to the reducer
+
+If this action does not trigger an effect then a reducer is going to analyze the action(usually using a switch statement) and return a new statement that is
+going to be as a result of merging the old state with the value that changed by calling the action.
+
+When an action is dispatched ngrx goes through all the reducers passing as arguments the previous state and the action, in the order that the reducers were created,
+until it finds a case for that action

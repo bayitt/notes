@@ -1,0 +1,21 @@
+Leke take note that after changing the PDO fetch mode, we need to return the fetch() method call on the PDO, rather than the execute() method.
+
+Breaking down the process of creating remembered me functionality
+1) We need to create a method to call if the session's user_id variable is not present
+2) Then we need to specify that if the cookie variable is present that a call needs to be made to the findByToken() method of the rememberedLogin Model.
+3) Then we need to specify that if the appropriate object is returned that a call then needs to be madde to the findByUserId() method of the User Model via the 
+rememberedLogin Model, Then we need to call the static loggedIn() method, passing the object as the required parameter
+
+
+Breaking down the process of logging out after making use of a cookie to stay logged in
+We need to create a statcic method that calls a delete method in the rememberedLogin Model. This method specifies that if the remember cookis is present, that 
+a remembered login object is created and this object calls the delete() method
+
+In order to reset the password securely, what we need to do is to send the user an email containing a link with a unique token and this link takes them to
+a reset form and the user is uniquely identified by the token
+
+We have several options for sending emails
+1) We can make use of an smtp server
+To send email using smtp, we need to install a package such as phpmailer
+
+2) We make use of an email API. Examples include MailGun or SendGrid

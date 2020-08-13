@@ -1,0 +1,32 @@
+Recap
+We connect in MongoDB by calling the connect() method on the MongoClient property on the MongoDB package. Also, in Mongodb, by connecting to the database for the
+first time, we create it
+
+In Mongodb, we can call collecion() on the db instance to access or work in a particular collection or table.
+Just like the database, the collection would be created if it does not exist. If we want to insert a single object into the database, we make use of the
+insert() method on the collections() method. If we want to insert multiple objects, e are going to make use of the insertMany() method and pass in an array of
+objects.
+
+Compass is like the MongoDB version of Mysql workbench
+MongoDB provides a find() method for obtaining all of the documents in a collection. We could pass in filters to the find() method or call it like that, in
+which case it would return all the documents in the collection. The find() method returns a collection. There is also a toArray() method which we can call to 
+transform the documents into an array
+
+find() ALWAYS returns a cursor
+
+Remember, MongoDB stores data in BSON format.
+
+Just like we have insertOne() and insertMany() methods, we also have updateOne() and updateMany() methods
+If we want to make use of the updateOne() method, we need to pass in at least three parameters, the first parameter is the id that we are looking for,
+while the second parameter is another object to which we make use of the $set property
+
+Again, we also have deleteOne and deleteMany commands.
+
+Leke take note of the findOne() method that we can use to extract a single document from the collection as opposed chaining next() on find().
+Then, take note that when we obtain documents from the collection, it is all parsed into string
+
+Seeing as the ids in Mongodb are stored as an Object Id, in order to work with in Javascript, we need to call the toString() method
+
+Just like we have the same special $set property for updating, we can make use of the special $in property for retrieving documents that match a particular
+field.
+

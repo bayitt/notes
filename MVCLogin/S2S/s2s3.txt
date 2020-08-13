@@ -1,0 +1,32 @@
+Leke take note that the offset().top returns the beginning of a HTML element
+
+Essentially, what is happening here is that I am making use of the pseudo classes
+Essentially, it is the height that determines how thick it is
+
+The getMonth() method which is called on an object of date returns the current month. It returns a number from 0-11 which represents an array
+from January to December
+
+In order to get the current year, we call getFullYear() on the object of date
+
+Breaking down the process of obtaining the calendar
+1) We need to create a date object
+2) Then we need to call getMonth() on the date object to obtain a number from 0-11 representing January to December
+3) Then we need to call getFullYear() on the date object to obtain the current year
+4) Then we need to construct a string to pass as the constructor to another date object and we call the toDateString() method on it. This returns the date in
+string format like Mon Sep 2 2014
+5) Then we need to call substring on the returned string to obtain the first day of the current month
+6) Then we need to get the index of the first day of the current month
+7) We do this by calling indexOf 
+8) Then we need to get how many days are in the current month by passing the current year, month +1  and 0 as constructors and calling rhe getDate() method on it
+
+The reason why the animation was not working when I tried it wuth the left background position was because it was already displaying the full width of
+the image, there was nothing to display anymore. But when I tried it with the top background property it worked because there was still something to display
+So essentially what I need to play around with is the background-position property
+
+The whole idea behind css is that you style the elements with the general styling first before going on to style the individual elements
+We can set the border of the table, td and th but thos creates multiple borders so we can get rid of this by setting the border-collapse property to collapse
+to collapse it all into a signle border
+
+Apparently, I cannot set padding on the thead element, but I can create padding on the th and td
+
+Leke, note that if I want to put an empty div,all I need to do is to specify the width and the height

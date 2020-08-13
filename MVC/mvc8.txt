@@ -1,0 +1,19 @@
+Templating Engines refer to tools that help us to separate the application code from the presentation code
+Templates contain no php at all, Just HTML and simple tags to show the data
+
+Variables in Templating Engines are automaticaclly escaped
+
+Twig makes use of a loader to locate templates and an environment to store the configuration.The render method loads the template passed as  the first argument
+and any other variables as the second argument.
+
+Leke, remember that in Twig, after opening our loops, we need to close them with an endfor command
+
+To make use of Twig, we first need to require the autoloader.php file
+and the we need to call the autoloader function in the twig_autoloader file
+
+Breaking down the Process of making use of the Twig Templating Engine
+First we need to require the twig autoloader file
+Then we need to call the Twig_autoloader register function
+Then we need to create our function and in it we need to specify that if $twig===nullwe create our loader
+which is what will search for our template making use of the Twig_Loader_FileSystem and then we need to create the Environment to store the configuration
+Then we need to echo the twig render function taking the template and the optional variables as parameters.

@@ -1,0 +1,24 @@
+RxJS aka Observables is a new technology in the front end space
+
+We can think of RxJS Observables as a potentially infinite async array with all the conveniences like filter, map and all
+
+A Cold Observable is an Observable that will do nothing by itself. Somebody has to subscribe to it, to start its execution.
+
+With this, although it looks good, but everytime the component gets destroyed, the subscription lives on
+
+It is ok to subscribe in components such as AppComponent 
+
+Subscribing to an observable yields a subscription object which has an unsubscribe() method
+
+Memory leaks are created when we destroy and recreate our components but we don't clean up existing subscriptions
+
+The first way to unsubscribe from observables is that since, observables yield a subscription object, we can push this subscription into a subscriptions array
+and when the component is being destroyed unsubscribe from the component. We can also create a subscription object in it self instead of creating an
+array of subscriptions
+
+The way I understand takeUntil() is that it emits the same value as the original observable but once the observable is done, it unsubscribed the original 
+observable, so instead of us having to do it by ourselves, it does it for us
+
+We can also use take(n) which will automatically unsubscribe to the observable after it emits n number of times
+
+The async pipe | automatically unsubscribes from all active subscriptions when the component is destroyed

@@ -1,0 +1,38 @@
+
+All standard DOM events have a target property, a reference to the elemnt that raised the event
+
+Leke remember that the $event object contains a whole payload of information about the DOM event, just like $event.target returns the html element that had the
+event, $event.key returns the key on the keyboard that was clicked
+
+REST stands for Representational State Transfer and is an architectural style of communication between applications which relies on a stateless protocol (usually http)
+for interaction
+
+With REST, we use the HTTP verbs as actions , and the endpoints are the resources acted upon
+
+get: retrieve resources
+post:create resources
+put:update resources
+delete:delete resources
+
+Resources are the targets of the actions 
+
+The urls for your api should not contain verbs
+
+Leke, when migrating you can add the --step option to run the migrations individually, this is done when you have more than 1 migration obviously
+
+Leke take note that in order to create a faker object the full namespace is \Faker\Factory::create()
+
+Leke take note that you can even seed the database individually, just add a --class extension to your db:seed command and specify the seeder to run
+
+HTTP Status Codes
+
+200- The standard success code and default option
+201- Object created, mostly used for posting or creating new daat
+204- When an action was executed successfully but there is no content to return
+400- Bad requests. The standard option for requets that fail to  pass validation
+401- Unauthorized, the user needs to be authenticated
+403- The user is authenticated but does not have the permission to perform such an action
+404- This will be automatically returned by Laravel when the requested for resource is noy found
+500- Internsal server error
+
+And Leke remember that resources are the targets of the http actions

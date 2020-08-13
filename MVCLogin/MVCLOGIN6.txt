@@ -1,0 +1,43 @@
+We can implement the remember me functionality in several ways. We can make use of the session.cookie_lifetime and specify the time in seconds.
+However, this is not advisable due to the fact that it is not optional
+
+The random_bye function is cryptographically secure
+
+HMAC() is similar to the password_hash() method which combines the hash with a secret keySECR
+
+We can also create tokens from exisitng tokens
+
+We are going to store the token in the cookie and the hash of the cookie in the database
+
+Leke note that when inserting a date in sql, we need to make use of the date format
+
+Breaking down the process of creating the token and storing the hashed token in the database
+We need to create a class and in the constructor we need to specify that if a token value is not provided a token should be generated making use of the
+bin2hex() and random_bytes methods
+Then we need to create a getValue() method that returns the token that we have generated
+Then we need to create a getHash() method that return the hashed value of the token making use of the hash_hmac() function takes three parameters
+The first parameter being the encryption algorithm that will be made use of , in this case sha256, then the second parameter is the token, while the
+third parameter is the encryption key which we are recommended to store in an outside file, probably config.php
+
+When making use of dates in mysql or mariadb we need to send them in the format date("Y-m-d h:i:s")
+
+Leke take note of the openssl_random_pseudo_bytes()
+
+Cookies are small strings of text that a website can store in a web browser. Cookies are specific to a website or a web domain
+Don't store sensitive stuff like email addresses or passwords in a cookie
+
+To set a cookie in PHP, we make use of the set_cookie() function and to read the cookie we make use of the $_COOKIE array
+
+The first parameter in the setcookie() method is the name of the cookie while the second paramter is the value of the cookie
+
+The third argument of setcookie() is the time that we want the cookie to expire. The value is in unix timestamp
+
+In order to delete a cookie, we need to set the expiry to a time in the past
+
+Cookies also have a path attribute
+
+Cookies are available relative to the directories where they are set
+
+The fourth argument of the setcookie() function is the path, with this argument we can specify whatever directories we want to set our cookies in
+
+One thing to take note of is that we have to be careful not to send any other content before the setcookie()function is called

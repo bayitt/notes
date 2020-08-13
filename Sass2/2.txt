@@ -1,0 +1,12 @@
+Breaking down the process of Implementing the Remember Me Functionality
+1) First, there needs to be a remember me checkbox in the Login Form
+2) Then, in the Login Controller we need to grab the boolean value of if the checkbox is checked or not
+3) Then we need to pass whatever boolean value that it is, to the Auth class where the whole process of logging out is carried out
+4) In the Auth class, if the remember me checkbox is checked, then we need to make a call to the rememberLogin() method in the User Model
+5) In the User Model, we create a token, set it to the value of the user->token property
+6) Then we need to hash the token and insert a new entry into the rememberedLogins Table which has three fields, the remembered_token , user_id and the expiry
+7) You know how the whole login process is predicated on creating/having a user object which is obtained from the username and email
+8) But we can also have a user object based on the Remember Me functionality 
+9) Whenever the getUser() method is called, if it doesnt find a user object via the conventional means, then it needs to call a static rememberedLogin
+10) This method checks if a cookies exists in the browser, If it does, it passes it to a method in the rememberedLogin model which checks to see if a hashed token
+exists which corresponds to the cookies set in the browser

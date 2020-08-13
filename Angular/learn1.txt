@@ -1,0 +1,34 @@
+Components are the fundamental building blocks of Angular Applications. They display data on the screen, listen for input and take action based on that input
+
+As part of the initial app, the CLI created the first component by default called the root component and it is located in the src\app\app.component.ts
+
+Essentially, the data is more or less generated in the component and then displayed in the html 'view' and it must be escaped
+
+{{}} - Angular's interpolation binding syntax
+
+ng generate component -  This is used to create new components
+
+What this does is it creates a heroes folder in the src/app folder. It looks like each component will have its folder in the .src/app folder
+
+Components have three files, its html file, css file and typescript file
+
+@Component is a decorator function that specifies the metadata for the Angular component
+
+the metadata that the CLI generates for the component is selector, templateURL and styleURLs
+
+The styleURLs is an array because you can have multiple styles for the same HTML page
+
+ngOnInit() is a lifcycle hook, Angular calls ngOnInit() shortly after creating a component 
+
+You know how components are seperate, so you can take them as like tags with the selector that you specified in the @Component decorator
+that we used to  specify the metadata for the Angular component
+
+Angular uses the . operator to grab properties in objects, much like twig
+
+Pipes are a good way to format strings, currency amounts , dates and all that
+
+[(ngModel)] is Angular's two way data binding syntax
+
+Know how some of our Component MetaData is specified in the @Component decorator.
+
+Another place where crucial metadata is stored is in the @NgModules decorator

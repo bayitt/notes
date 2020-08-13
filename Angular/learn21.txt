@@ -1,0 +1,37 @@
+The @NgModule decorator takes a single metadata object whose properties describe the module.
+
+Its most important properties are as follows
+
+declarations- The components, directives and pipes that belong to this module
+exports- This refers to the subset of declarations that should be visible and usable in the component templates of other NgModules
+imports-Other modules whose exported classes are required by components in this module (in the declarations)\
+bootstrap- The main application view, called the root component , which hosts all other app views. Only the root NgModule should set this propert
+
+Leke remember that Angular routes consist of a path to match and a component to display
+
+When components are created, they are associated with a single view called the host view. This host view can be the root view of a view hierachy
+
+Angular loads as a collection of Javascript modules
+
+Everything being imported in Angular is being imported from libraries
+
+A component controls a patch of screen called a view
+
+Leke take note that instead of always specifying services globally, in the app-module.ts file, we can also specify services for a particular component by
+making use of the same providers property of the metadat object
+
+Directives are classes with the @Directive decorator
+
+Components are technically directives becasue they transform the DOM and as such they extend the @Directive decorator
+
+Two types of directives in Angular
+- Structural directives
+- Attribute directives
+
+We can also define our custom directives by decorating a class with the @Directive decorator. Just like with the selector property of the metadata object of 
+the Component decorator, the selector property of the metadata object of the @Directive drecorator specifies how we can insert it as an attribute in our
+template
+
+Structural directives alter the layout by adding, removing and replacing elements to the DOM. Examples are *ngFor and *ngIf
+
+Attribute directives alter the appearance and behaviour of a particular element 

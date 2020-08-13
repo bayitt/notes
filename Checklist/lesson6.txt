@@ -1,0 +1,21 @@
+
+The whole idea behind making use of smtp is that we call $mail->isSMTP(), then we specify $mail->Username, $mail->Password, then we specify $mail->Port 
+and finally call $mail->send
+
+The $mail->AddEmbeddedImage() method takes two parameters,the name of the image and the cid of the image so that in our HTML body
+in our img we can just set src to cid to whatever the cid that we specified
+
+Breaking Down The Login Process
+1) In our login controller, we have a create method that calls an authenticate method in our model
+2) We pass the entered email and password as parameters to the authenticate method
+3) In the authenticate method, we call a findUserByEmail() method which verifies that the email which the user enters is correct or not
+4) If the email is correct, then it returns a user object
+5) Then we call the password_verify() function which takes two paramters, the passed in password and the hashed password from the database
+
+The whole idea of login is predicated on the fact that there exists a session variable called user_id that is set to the user's unique id.
+We also need to call session_regenerate_id(true) to prevent session fixation attacks
+
+6) Then we need to have a logout method in the auth class that destroys the session
+7) We also need to have a getUser() method that checks if the user is currently logged in. It does this by checking if the session user_id variable is set
+8) Then in our home controller for the home page, it checks if the user is currently logged in by calling the getUser() method of the Auth class.
+9) If the user is logged in it displays a different view

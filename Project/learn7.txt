@@ -1,0 +1,3 @@
+Leke remember that the command to create a virtual environment in Python on windows is py -3 -m venv venv. Take note that this is done after creating the venv folder
+
+pip install -u scikit-learn

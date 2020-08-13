@@ -1,0 +1,19 @@
+By default, the inserted or edited HTML in Angular, does not take the css styling the way jquery does it automatically.
+
+In order to get it to work, you need to set encapsulation to ViewEncapsulation.none in the @Component decorator, 
+
+ViewEncapsulation can be imported from the angular core library
+
+Breaking down what I am doing
+- I needed a way to reference the citybody parent div so that I could set its html content to a message, if we failed to grab the data from the api
+- Angular, has various abstractions of referencing DOM elements, amongst which include ElementRef, TemplateRef, ViewContainerRef, ComponentRef and ViewRef
+- In order to make use of ElementRef, we need to import ElementRef from the Angular Core Library
+- Then I need to reference the citybody div by making use of a template reference variable #citybody
+- @ViewChild("citybody", {read:ElementRef}) citybody:ElementRef;
+- The whole idea is that I am using a tracker of how many requests to the API have failed 
+- In the nested catchError() of the pipe() method which is called after the request to the API failed, I am calling a handleError() method
+- In this handleError() method, I will be incrementing a property 
+- Then I will call another displayError() method, in which I check if the number of failed requests is equal to 10 and then we set the innerHTML
+of the citybody
+- Then by default, Angular shields any inserted or changed HTML into the DOM and does not allow it to access the css styling.
+To get rid of this, in the @Component decorator, we need to specify that the Encapsulation property is set the ViewEncapsulation.None

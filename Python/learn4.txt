@@ -1,0 +1,26 @@
+I think that essentially the fact that a collection can be indexed means that it is ordered
+
+Unlike tuples which are rigid meaning that they cannot be changed and they cannot be added to. With sets, its values cannot be changed but it can be 
+added to 
+
+In order to add a single item to the list, we need to make use of the add() method, but in order to add multiple items, we need to make use of the 
+update() method 
+
+And when we are adding multiple items to the list via the update() method we need to add the items that we intend to add to it inside an array
+
+We can also remove items from lists making use of the remove() method and also the discard() method. The difference between them is that if the 
+item specified to delete is not contained in the set does not exist. remove() will throw an error while discard() will not throw an error
+
+Also, Leke remember that the pop() method returns the item that it deleted from the set 
+
+Dictionaries
+
+Instead of using the key as an index in Python, you can just call the get() method on the dictionary and pass in the key whose value you want much like 
+localStorage and sessionStorage in Javascript
+
+If you loop through the dictionary normally, it would print out the keys of the dictionary but if you loop through dictionary.values(), it would print out the
+values of the dictionary. Also, if you loop through dictionary.items(), it would print out the key and values of the dictionary
+
+We can use the pop() method to delete items from the dictionary except that instead of passing in the numbered index, we pass in the string index
+
+Apparently, in order to copy dictionaries, Just like lists we can make use of the copy() method or the dict() constructor

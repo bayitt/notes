@@ -1,0 +1,17 @@
+A Laravel Facade is a class which provides a static like interface to services inside the container. These facades, serve as a proxy for accessing the underlying 
+implementation of the container's services
+
+In Laravel, asll services have a facade class
+
+Leke take note that if the id field is bigIncrements, the corresponding foreign key must be bigInteger
+
+Working with Mail in Lumen
+
+Before using Laravel's mail drivers in Lumen, you will need to install the illuminate/mail package via Composer
+
+Then you need to register the Illuminate\Mail\MailServiceProvider class in bootstrap/app.php
+
+CORS refers simply to Cross Origin Resource Sharing. This is a technique that uses HTTP requests to let a browser on one origin(domain)
+gain access to resources on a different origin
+
+By default, Same Origin Policy is used to prevent your javascript code from making ajax requests to a different domain

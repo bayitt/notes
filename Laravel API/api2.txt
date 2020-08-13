@@ -1,0 +1,16 @@
+Apparently, Laravel has a firstOrCreate() method that checks if an object exists already in the model and if it does not it inserts a new instance into the db
+
+Laravel API Creation Recap
+
+Resources essentially represent an interface between an Eloquent model and a json structure. Resources essentially consist of Resource classes and Resource 
+collections
+
+Resource classes represent a single model object represented as json while Resource collections represent multiple model objects represented as json
+
+After creating all our models and requisite relationships, we need to composer require a package to enable jwt authentication on every call to our api.
+
+After composer requiring the package, we need to register its service provider to create the config/jwt.php file by which we can modify the jwt package.
+
+Then we need to run php artisan jwt:secret which creates a secret key for us, which is automatially registered for us in our env file.
+
+After doing all this, we can get started creating o

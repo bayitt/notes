@@ -1,0 +1,47 @@
+The last time I learnt about middlewares in Laravel. Middlewares are created with the php artisan make:middleware command. The whole idea
+with the middewares is that it takes two parameters, the request object and the closure. Middlewares can be executed in two different ways
+Either we perform our computations before or after. return $next($request). 
+
+Then middlewares are registered in our kernel.php file. If we want the middleware to be run on every request to our application in which case we register it
+in our $middlewares array, else we want it to be executed on particular routes to our application. In that case, we register it in the $routeMiddlewares array.
+
+Then we have the concept of controllers. Controllers are used to group associated logic, controllers with a single action are called invokable controllers
+and the action is named __invoke. The controller can also be generated with the command php artisan make:controller --invokable.
+
+It is also advisable to define middlewares in the constructors of the controllers. We can also define middlewares with the closure instead of having
+to create a custom middleware for a single cpntroller
+
+To obtain an instance of the current HTTP request via dependency injection, we should type hint the Illuminate\Http\Request class on your controller method
+
+The path() method returns the requests path information. 
+
+The is() method is used to check if the request path matches a given patten
+
+To retrieve the full URL for the incoming request we may use the url or fullUrl method. The url() method returns the URL without the query string,
+while the fullUrl method includes the query string
+
+The $request->method() returns the HTTP verb that was used for the request. We may also use the isMethod() method to verify that the HTTP verb matches a given
+string
+
+The PSR-7 standard specifies interfaces for HTTP messages, including requests and responses. If you would like to obtain an instance of a PSR-7 request
+instead of a Laravel request you will first need to install a few libraries
+
+We can retrieve all of the input data as an array by making use of the $request->all() method
+
+$request->input()
+
+We may pass in a second default value to the input() method. This value will be returned if the requested input value is not present on the request
+
+Call the $request->input() method to return all the inputs as an associative array
+
+The $request->query() method only retrieves values from the query string while $request->input() retrieves from both the query string and the request payload
+
+We may also call the query method without any arguments to return all the contents of the query string as an associative array
+
+We use the has() method to check if a value is present on the request
+
+We can also make use of the hasAny() method to check if any value
+
+If you want to check if a value is present on the request and is not empty, we may nake use of the filled() method
+
+To determine if a given key is absent from the request, we may make use of the missing() methpod

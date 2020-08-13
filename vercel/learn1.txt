@@ -1,0 +1,12 @@
+Breaking down the process of deploying a serverless node js app to vercel
+- we first need to install the now cli making use of npm install -g now which installs the cli globally.
+- Then we need to login to the CLI by making use of the command now login
+- Then we need to add  the now.json file to our app root. If we deploy without the now.json file telling vercel how to build the app, all that will happen
+is that the folders will simply be uploaded
+- In the now.json file, we will specify the version of now we want to use to deploy the app and this will be 2. Then, we need to specify the builds key and
+this will be an array containing a single object with the src and use keys. The src key corresponds to the entry point to the app, in this case which is app.js.
+Then we need to specify the use key which will be @node/now. Then we need to specify the routes to our application, this routes is an array of objects. 
+Each object contains the src or route and the dest which means the destintion. Seeing as everything in the application is routed through app.js, the dest will be
+app.js. The deal is that if we leave it like that, it will only match those exact routes. For dynamic routes, Vercel provides regular expressions to match them.
+
+After specifying everything in the now.json file, all we have to do is run now from the command line and the application will  be deployed. 

@@ -1,0 +1,32 @@
+
+What exactly have I learnt today?
+
+Whatever Angular version that you use Leke must match the packages that you are downloading
+
+ChartJS is a popular open source library that helps us to plot data in web applications
+In order to make use of Chart JS, we need to have a canvas element on the page which we are going to target in ChartJS
+
+So apparently, in order to create charts with ChartJS, we need datasets and labels. Datasets represent the data that is being plotted on the y-axis. While
+labels represent the data that is being plotted on the x-axis
+
+Also, whenever we select the canvas element that we want to use to render the graph in, we need to call the getContext() method. This getContext() method
+specifies whether the graph that we want to render is either 2D or 3d
+
+Then, in order to create the chart we need to create a Chart object whose first parameter is the DOM element that we selected, the second parameter is an
+object representing the configuration options for the chart. The first key in the object is type and it represents the type of chart, for me, I prefer line.
+
+The second key in the object represents a subobject in which we pass in the labels, and also a subject that contains the label of the graph and the data
+
+There is also a third options property
+
+Chart JS Recap
+
+The charts in ChartJS need to be rendered on a canvas element. The whole gist about it is that for the chart we need the datasets and the labels. The datasets
+are plotted on the y-axis while the labels are plotted on the x axis
+
+With the datepicker that I am using, it needs a day object in which we have a date sub object and a formatted property that represents the textual value
+
+Apparently, there is an ng2-chart open source library that we can use in conjunction with Chart Js	
+
+Leke tae note that an alternative way to add scripts to your angular application is by adding it to the scripts array in angular.json so that it gets bundled along
+with the rest of the app at runtime

@@ -1,0 +1,6 @@
+Angular Recap
+
+Leke take note that the command to generate the app routing module in Angular is ng generate module app-routing --flat --module=app
+
+--flat puts the file in src/app instead of its own root folder
+--module-app tells the CLI to register it in the imports array of the AppModule

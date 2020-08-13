@@ -1,0 +1,31 @@
+Leke take note that anytime you use 2 slashes in division, it rounds down the result
+
+The pow() method is also used to find a number and its exponent
+
+Using the r flag in the print() function means that the interpreter should ignore any special notations in the string 
+
+Also, Leke take note that you can also multiply strings in Python
+
+You can access substrings from a string by making use of the [] notation much like accessing array indexes
+
+Python also has something called negative indexes, with the index -1, you an access the last character in a string 
+
+You can access a substring by using [f:e] index. If you name[2:6]. It will start from the character with index 2 and stop at the character with index 5k
+
+The len() method is used to get the length of a string  
+
+I think lists are the Python equivalent of arrays
+
+Much in the same way that we concatenate strings, we can also concatenate lists
+
+The append() method is the Python equivalent to push() in PHP and Javascript
+
+Leek drum it into your head that Python uses : for blocks of code
+
+Leke REMEMBER that with Python, you can just use the 'or' and 'and' keywords like that
+
+I think that with Python, you need to get rid of the normal notation that you use with other languages like ==, || and &&
+
+Instead, you need to use is, or and and
+
+Also, the in keyword is used to check if a value is present in a list

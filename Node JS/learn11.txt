@@ -1,0 +1,36 @@
+NoSQL also uses a different query language but instead of having schemas and relations, NoSQL has other focuses.
+
+In NoSQL, tables are called collections. Collections provide documents that look a lot like Javascript objects.
+NoSQL does not have a strict schema. Different rows can have different information.
+
+Also, in NoSQL does not have relationships between collections. Instead of having collections what we have is nested data.
+
+Horizontal and vertical scaling are the two approaches we can use to scale our database. In Horizontal scaling, we simply add more servers and merge all the data
+into one database.
+
+With vertical scaling, we make our exising server stronger. We improve our capacity and hardware.
+
+Horizontal scaling is often very difficult with sql databases while vertical scaling is possible
+
+With NoSql, both horizontal and vertical scaling is possible. It also has great performance for mass read and write requests.
+
+Sql has limitations for lots of read and write queries per second
+
+In order to make use of mysql in our application, we need to install a package. mysql2 
+
+There are two ways of making connections with sql databases. The first one is to set up one connection and close if after every query.
+A better way is to create a connection pool
+
+We create the connection pool object by calling the pool() method on the mysql2 core package. We pass in an object to the pool method, this object
+has severa keys namely host, user, database and password.
+
+Sequelize is an ORM. An Object Relational Mapping Library
+
+Sequelize has mysql2 as a dependency
+
+In order to connect to the database with Sequelize, we need to create an object of the Sequelize class. In the constructor, we pass in the name of our database,
+the username and the password. We can also pass in an optional fourth para
+
+My name is Fambegbe Olamileke and I am a boy and I am in ss3 and I want to be a world class developer and I am a believer and I believe in the Lord Jesus Christ.
+I am a student of Covenant University and I study Computer science, I love meeting new people and making them happy.
+I also love my Daddy. God.

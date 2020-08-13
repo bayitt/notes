@@ -1,0 +1,44 @@
+Trim Backend Schema
+
+Users                                
+- id - Integer
+- name - string
+- email - string
+- password - string
+- avatar - string ? nullable
+- created_at - DateTime
+
+Groups
+- id - Integer
+- path - string
+- user_id - integer
+- created_at - DateTime
+
+Urls
+- id - Integer
+- group_id - Integer ? nullable
+- user_id - Integer
+- path - string
+- short_path - string
+- created_at - DateTime
+
+Redirects
+- id - integer
+- user_id - Integer
+- url_id - Integer
+- group_id - Integer ? nullable
+- source - string
+- created_at - DateTime
+
+PasswordResets
+- id - Integer
+- user_id - Integer
+- token - String
+- expires_at - DateTime
+- created_at - DatetTime
+
+Resources
+users
+groups
+urls
+ 

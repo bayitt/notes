@@ -1,0 +1,34 @@
+Route::get('', function() {})
+
+Route::redirect()
+
+If your route only needs to return a view we can make use of Route::view()
+
+Route parameters are always enclosed within curly braces
+
+Route parameters may be optional, in this case, we need to add a question mark at the end of the param name like {id?}. Then, must not forget to 
+set its default value
+
+We may specify a name for a route by chaining the name method onto the route definition. We may also do the same for controller actions
+
+redirect()->route('')
+
+Just as we can route directly by making use of the global route() method, we can check if a request was routed directly to that route by making
+use of the $request->route()->named() methiod
+
+In order to assign middleware and namespaces to common groups, 
+
+Implicit Binding
+Laravel automatically resolves Eloquent models defined in routes or controller actions whose type hinted variable names match route segments
+
+Using the Route::fallback() method, we may define aroute that will be executed when other route matches the incoming request
+
+
+HTML forms do not support PUT, PATCH or DELETE options
+
+@method('PUT')
+@csrf
+
+Route::current()
+Route::currentRouteName();
+Route::currentRouteAction():

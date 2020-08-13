@@ -1,0 +1,8 @@
+The namespace for Angular's HttpClient is '@angular/common/http', The HttpHeaders symbol can also be found in the same namespace
+
+All HttpClient methods return an RxJs Observable of something
+
+HTTP is a request/response protocol. You make a request and it returns a single response. An Observable from HttpClient emits a single value and then completes
+
+In order to catch errors from a httpclient request we need to pipe the response of the result and in the pipe specify a catchError() method which will catch
+an Observable that failed

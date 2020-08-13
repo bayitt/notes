@@ -1,0 +1,28 @@
+Tailwind provides certain utilities for controlling which css properties transition
+
+.transition-none - transition-property :none
+.transition-all
+.transition - transition-property:background-color, border-color, color, fill, stroke, opacity, box-shadow, transform
+.transition-colors - transition-property:background-color, border-color, color, fill, stroke
+.transition-opacity - transition-property:opacity
+.transition-shadow - transition-property:box-shadow
+.transition-transform - transition-property:transform
+
+In Tailwind, only responsive variants are generated for transition properties, of course we can change it by editing the
+
+Tailwind also provides utilities for controlling the duration of css transitions
+-.duration-75
+-.duration-100
+-.duration-150
+-.duration-200
+-.duration-300
+-.duration-500
+-.duration-700
+-.duration-1000
+
+Tailwind also has several Transition timing utilities
+-.ease-linear
+-.ease-in
+-.ease-out
+-.ease-in-out4:55 PM 4/24/2020
+

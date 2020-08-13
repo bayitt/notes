@@ -1,0 +1,38 @@
+Route Groups allow you to share route attributes, such as middleware or namespaces. Shared attributes are specified in an array format as the first parameter 
+to the $router->group() method
+
+We may use it to specify things like middleware, namespaces or prefixes
+
+When specifying prefixes in our router group() method, we can even have dynamic route parameters
+
+HTTP Middleware procvides a convenient mechanism for filtering HTTP requests coming into your application
+
+All middleware should be stored in the App\Http\Middleware directory
+
+Also, Leke take note, its like to grab values contained in requests made to our application, we need to call the input() method on the request dependency
+
+To pass the request deeper into the application, simply call the $next callback with the $request
+
+Apparently, take especial note of the bootstrap/app.php file. That is where stuff goes down
+
+If you want your middleware to be global meaning that it will be run on every request to your application, Simply put it in the array passed in to
+the middleware method called on the $app() instance
+
+If your middleware is not global and is only for a few routes then, you need to register it in the array passed to the routeMiddleware() method of the 
+$app instance
+
+Also, Leke, use an array to assign multiple middleware to a route group
+
+We can also pass in parameters into our middleware. Say role:editor
+
+Sometimes middleware may need to do work after the response has been sent to the browser already. To accomplish this,we need to define the middleware as terminable
+by adding a terminate() method to the middleware
+
+Once you have defined a terminable middleware, you should add it to the list of global middleware in your app
+
+If you think about it, much in the same way that the route() method is global, the config() helper method too is global, meaning that we can access it from 
+anywhere in our app
+
+You know how you can call middleware inside of the constrcutor of your controller?, well you can specify the middleware on only particular methods
+or actions of your controller, by passing in an array as the second parameter and specifying the key of the array as either only or except to specify the
+particular methods that you want to use 

@@ -1,0 +1,30 @@
+Process of making use of the Twig Templating Engine
+
+First we need to require the twig autoloader file
+Then we need to call the register function on the autoloader file
+Then we need to create the static function in the view
+We need to speicfy that if $twig === null
+The loader object should be created to locate the template
+Then we need to create the environment object to store the configuration
+
+Then we need to echo the render function on the twig object
+
+Models are where an application's data
+Models commonly store data in the database
+A single model often corresponds to a single table in the database
+
+To connect to a database in code, we need four things, a host,database name,username and password
+
+PDO (PHP Data Objects is a code library for accessing databases)
+
+Its advantages are that it is not specific to any database platform,Named parameters in SQL Statements,Exceptions are used in error handling
+
+In order to create a connection to the database making use of PDOs,we need to create a PDO object, taking three parameters, host name and db name together and
+then the database name and password.
+This code should be enclosed in a try block and then in the catch block, we need to create an object of the exception and then call the getMessage() function on it
+
+With SQL statements that do not return a result, we make use of the exec() function, but with SQL statements that return results we make use of the query() function
+
+The exec() function returns the number of affected rows
+
+We can make use of the prepare() function for complex SQL statements, with names SQL Parameters

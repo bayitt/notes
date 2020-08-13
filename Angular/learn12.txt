@@ -1,0 +1,33 @@
+For DOM Manipulation in Angular, a number of reference types can be used for this and they include 
+
+ElementRef
+TemplateRef
+ViewRef
+ComponentRef
+ViewContainerRef
+
+These Abstractions are accessed by means of a mechanism called DOM queries which include @ViewChild and @ViewChildren 
+
+They are basically the same except that @ViewChild returns a single reference, while @ViewChildren returns multiple references in a Querylist object
+
+Usually, these references work with template reference variables 
+
+We have the ElementRef, TemplateRef, ComponentRef, ViewRef, ViewContainerRef
+
+Template Referencing Variables => #tref
+
+Basic syntax to a @ViewChild Decorator
+
+@ViewChild([reference from template], {read:[reference type]});
+
+Apparently, the second parameter read is not always required because Angular can infer what kind of varible we are referring to.
+
+ElementRef is a type of DOM element, essentially normal HTML element like span or div
+
+
+@ViewChild([div], {read:[ElementRef
+
+]})
+
+There is a reason why we need the ngAfterViewInit() method because it specifies that whatever function that we put inside it should only be executed
+after the the view has finished loading

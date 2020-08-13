@@ -1,0 +1,37 @@
+The whole idea with using takeUntil() is that it returns the values produced by the source observable sequence until the other observable returns a value
+at which point it unsubscribes
+
+A JSON Web Token is a json object that is defined in RFC 7519 as a safe way to represent data between two parties. The token is composed of a token, a payload
+and a signature
+
+The header is a JSON object in the following format, typ and alg representing type and algorithm respectively
+
+We can put as many claims as we want inside of the JWT payload
+
+Leke, you know how the whole idea of guards is to restrict access to particular views. In order to implement guards in Angular, we are going to make use of the
+canActivate method of the canActivate interface. The whole idea of it is that if the canActivate method() returns true, it grants access and if it
+returns false, it can be customized to do what you want it to do
+
+Laravel's resource classes allow you to expressively and easily transform your models and model collections into JSON
+
+Resources extend the Illuminate\Http\Resources\JSON\JsonResource class
+
+In addition to generating resources that transform individual models, we may also generate resources that are responsible for transforming collections of models.
+This allows your response to include links and other meta information that is relevant to an entire collection of a given resource
+
+A resource class represents a single model that needs to be transformed into a JSON structure. I see this to mean a single table row that needs to be transformed
+into a JSON structure
+
+Every resource class defines a toArray() method which returns the array of attributes that should be converted to JSON when sending the response
+
+If you are returning a collection of resources, you may use the collection method when creating the resource instance in your route or controller
+
+This method however does not allow for the addition of any metadata that may need to be returned with the collection. If you would like to customize the collection
+response, you need to create a dedicated resource to represent this collection
+
+Laravel Relationships Recap
+
+There are three different types of relationships in Laravel
+- We have the one-one relationship
+- One-Many Relationship
+- Many-Many Relationship 

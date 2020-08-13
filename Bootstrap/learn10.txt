@@ -1,0 +1,36 @@
+Bootstrap Recap
+
+Take note of the following classes as regard Bootstrap cards. Cards are the replacement for panels in Bootstrap 3
+
+.card, .card-img-top, .card-img-bottom, .card-body, .card-title, .card-subtitle, .card-text, .card-img, .card-overlay, .card-link
+
+Also, when making use of the collapse plugin, if you are making use of an anchor tag, you want to use the href attribute to target the collapse div. If you are 
+making use of a button, you want to make use of the data-target property. With both, never forget to set the data-toggle property to collapse
+
+When making use of accordions, always set the collapsed div's data-parent property to the id of the accordion
+
+With Bootstrap forms, Leke remember .form-group to separate form elements
+Then we have the label whose for attribute we use to specify the input of the form
+
+Then we have the inputs that take the .form-control class
+
+There is also .form-text class we can use for text contained in the form
+
+Whenever you have checkboxes, give the .form-group div an additional class of .form-check and then give the checkbox a class of .form-check-input
+
+The corresponding label must have a class of .form-check-label
+
+Textual form elements, like inputs, selects and textareas are styled with the .form-control class
+
+For file inputs, instead of .form-control, give it a class of .form-control-file
+
+You can also set the heights of the inputs, by giving it a class of .form-control-sm or .form-control-lg. Note that this classes are added after giving the 
+form element the initial class of .form-control
+
+Add the readonly attribute to the input to prevent the modification of the input's value
+
+If you want to preserve the default styling and still have the form element as rreadonly , make use of the .form-control-plaintext class
+
+The .form-inline class works just like the .list-inline class does
+
+Default checkboxes and radios are improved upon in Bootstrap 4 with the help of a single class, .form-check	

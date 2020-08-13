@@ -1,0 +1,1 @@
+Leke take note that blueprint objects have a before_app_request decorator that can be used to carry out activities before rrequests

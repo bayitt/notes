@@ -1,0 +1,38 @@
+Common JS is the module pattern that is supported by all versions of Node JS. Common JS does not support use of the import statement. Instead, modules 
+are imported making use of require() method
+More complex functions, called higher order functions can manipulate functions and use them either as arguments or results or both
+A function is considered a first class member when it can be declared as a variable and sent to functions as an argument. These functions can even be returned 
+from functions
+
+In Javascript, functions are first class citizens or first class members. Since functions are variables, we can add them to objects. We can also add functions
+to arrays in Javascript. Functions an act like variables in Javascript. Again, functions are first class citizens
+
+Higher order functions are functions that take other functions as parameters or return them
+
+Pay attention to the number of arrows used during function declaration. Multiple arrows means that we have a higher order function with arrows
+Functions are data
+
+Functional programming is part of a larger style of programming called declarative programming. Declarative programming is a style of programming where
+applications are structured in such a way that prioritizes describing what should happen over defining how it should happen
+
+The way I understand this is that imperative programming is most concerned with doing the task while declarative projgramming is concerned with describing the 
+process of getting it done
+
+Core concepts of functional programming
+- Immutability - In a functional program, data is immutable, it never changes. Instead of changing the original data structures, we build changed copies
+of these data structures and use them instead
+
+In Javascript, function references are references to the actual data
+
+- Pure Functions
+a pure function is a function that returns a value that is computed based on its arguments. Pure functions take at least one argument and always return a value
+or another function. They do not cause side effects, set global variables, or change anything about application state. They treat their arguments
+as immutable data. I see it like this enclosed bubble in which it carries out its operations and stops
+In React, the UI is expressed with pure functions
+
+When writing functions try to follow these simple rules
+- The function should take in at least one argument
+- The function should return a value or at least another function
+- The function should not change or mutate any of its arguments  
+
+

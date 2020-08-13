@@ -1,0 +1,39 @@
+By default the Laravel User Model comes with Name, Email and Password fields
+
+Essentially, all I have to do is to know the routes that Laravel has been preprogrammed to register new users in
+
+In order to create database tables in Laravel, we make use of the static create() method called on the Schema class, which takes two parameters, the first of
+which is the name of the table while the second parameter that it takes is a blueprint object.
+
+The Schema class also has a rename method which takes two parameters, the first parameter is the old name of the table while hthe second parameter is the
+name that we are naming it to
+
+In order to delete tables, we can make use of the Schema::drop() method which takes a single parameter which is the name of the table while we also have the\
+Schema::dropIfExists() method
+
+While to update an existing table, we make use of the Schema::table() method, which is essentially similar to the Schema::create()
+
+Table builder methods
+
+$table->boolean()
+$table->char('name',4)
+$table->date('created_at')
+$table->dateTime('created_at')
+$table->double()
+$table->float()
+$table->increments('id')
+$table->integer()
+$table->softDeletes()
+$table->string() - VARCHAR
+$table->string('name',4) - VARCHAR WITH A LENGTH
+$table->text()
+
+
+$table->timestamps() adds created_at and updated_at fields to the table
+
+In order to avoid the specified key length error with Laravel migrations. In the AppServiceProvider class, you have to call the static defaultStringLength() method
+on the Schema class
+
+So essentially, the whole idea with the auth route lists, is that by default, the routes and what they display are defined in a facade
+
+Leke take note that the Request Facade is present in the Illuminate\Http\Request namespace

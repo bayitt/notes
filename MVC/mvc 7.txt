@@ -1,0 +1,17 @@
+Views are what the User sees in the Browser 
+
+Leke take note that the first \ backslash in namespace addresses is like the .. in file paths
+
+Leke it is a good idea for your grouped View files to match the names of the Controllers
+
+Leke, to write special commands that make use of special symbols,we need to make use of HTML Entity codes
+<-&lt
+>-&gt
+&-&amp
+"-&quot
+
+Output Escaping can be defined as the process of converting strings that could contain special characters into HTML entity characters
+
+The extract method is used to split the data sent in from the controller into variables.
+
+Leke take note that when making use of the action filters that it is !== not !=

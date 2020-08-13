@@ -1,0 +1,36 @@
+The Laravel service container is a powerful tool for managing class dependencies and performing dependency injection. Almost all our service container bindings will
+be registered within service providers. Within service providers, we have access to the container via the $this->app property. We can register bindings via the 
+bind() method, passing in the class or interface name that we wish to register along with a closure that returns an instance of the class
+
+Essentially, what is happening here with the service containers and providers is that Laravel is providing us access to the mechanism that injects our dependencies
+
+Many of the service providers in Laravel are deferred providers, meaning that they will not be loaded on every request, but only when the services they provide
+are actually needed.
+
+All ServiceProviders extend the Illuminate\Support\ServiceProvider class. They also typically only have register() and boot() methods. Within the register()
+method you should only bind things into the service container
+
+php artisan make:provider
+
+The boot() method is called after all other service providers have been registered
+
+Facades provide a static interface to classes that are available in the application's service container. The whole idea is that instead of making use
+of dependency injections and typehinting dependencies upandan, we can make use of facades. All Facades are defined in the Illuminate\Support\Facades namespace
+
+Be careful when making use of facades, the primary danger with them is class scope creep
+
+Absolutely no difference with facades and helper functions
+
+The most basic Laravel routes accept a URI and a Closure. Laravel makes use of the Route class to define routes, 
+
+The routes/web.php file define routes that are for your web interface. These routes are assigned the web middleware group which provides features
+like session state and CSRF protection The routes in routes/api.php are stateless and are assigned the api middleware group
+
+The router allows you to register routes that respond to any HTTP verb, get, post, put, patch, delete, options
+
+If our route responds to multiple verbs, we can do so making use of the static match() method on the Route class, or we can even register a route
+that responds to any verb making use of the any() method
+
+With the match() method, we pass in an array containing the various verbs that respond
+
+If we are defining a route that redirects to another URI, we can do so making use of the static redirect() method, Route::redirect('here','there)

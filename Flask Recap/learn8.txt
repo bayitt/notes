@@ -1,0 +1,35 @@
+If you return a dict from a view, it will be converted into a JSON response
+In order to make use of sessions, we need to have a secret_key set
+
+The way I understand this is that what is stored in your cookie is what is stored in your session just that it is hashed with the secret_key that you set
+
+To flash a message in Flask, we make use of the flash() method, to get hold of the messages you can make use of get_flashed_messages() which is also available
+in the templates
+
+It is possible to provide categories when flashing a message. The default category if not provided is 'message'. To flash a message with a different category,
+just make use of the second argument to the flash() function
+
+Flask Recap
+Flask has several default dependencies, among which are Jinja - templating engine, MarkupSafe for escaping content, ItsDangerous for the session. It 
+also has some other dependencies which when installed, flask knows to work automatically with them. Among these dependencies are python-dotenv.
+
+With flask, variable parts of routes are specified with <>. We can also specify converters to indicate the type of the variable part. Among these types include
+string:, int:, path:, float:. By default, routes in Flask are only enabled for GET routes, if we want to change that, we can edit the methods keyword argument
+of the route() decorator and specify a list containing the HTTP verbs allowed for that route.
+
+The http method used to access a route can be accessed in the request.method attribute.
+
+For POST, data we can access it in the form attribute on the request object. Then for files, they can be accessed in the files dictionary on the request object.
+The files act just ike normal files and they have a save() method on it. We can access the name with which the file was named on the client, by accessing
+the filename property on it. 
+
+Cookies can also be accessed in flask by accessing the cookies dictionary on the request object. In order to set cookies we can make use of the set_cookie()
+method on the response. The response can be obtained by calling the make_response() method on the response we wanted to have returned. Data in different formats
+can be returned from our views. Then, flask also has a url_for() method which can serve as a url building mechanism. To the first parameter, we pass in the
+name of the view function and subsequent parameters are either the variable parts of the route or the query parameters.
+
+We can also make use of the url_for() method to build the paths to static assets, this is done by passing in a special static keyword to the first parameter
+of the url_for() method and then pass in the relative path of the static file relative to the static folder. 
+
+We also make use of the secure_filename() method obtained from the werkzeug.utils subclass
+

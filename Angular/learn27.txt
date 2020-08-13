@@ -1,0 +1,27 @@
+Angular Recap
+The two types of data bindings in Angular are property bindings and event bindings
+
+With property bindings, we are binding from a component's property to either a DOM element, a component's property or a directive's property
+
+So in Angular, with interpolation bindings, what is being binded is called a template expression, it is this template expression that will be evaluated
+
+Then we have things called template reference variable, and we use it to reference DOM elements in Angular, and we also have things called template input
+variables which are the variables in things like an *ngFor, when we have let hero of heroes, hero there is a template input variable
+
+Then with variables, there is an order of precedence with template variables taking the most precedence, directive variables and component variables having the
+last order of precedence
+
+Then, with event bindings, the expression on the right hand side is called a template statement and there is an expression context for both template variables
+and template statements, and that is the instance of the component class.
+
+Also, Angular deals with DOM properties and not attributes
+
+Template statement side effects re expected
+
+this.route.snapshot.param.get
+
+Leke you know that the whole idea behind Laravel relationships is that there are three types of relationships
+
+One-One
+One-Many
+Many-Many

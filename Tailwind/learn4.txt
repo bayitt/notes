@@ -1,0 +1,2 @@
+Use the theme() function to access your Tailwing config values using dot notation.
+

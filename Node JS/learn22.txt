@@ -1,0 +1,6 @@
+We can even specify the error message that we want to be displayed, by chaining a withMessage() method to the validation function
+The check() method checks the entire request, the body, the params, the query, everything. Alternatively, we can make use of body() to check the
+request body, header() for headers, cookie() cookies, params() for params. Also, if we want to repeat the same error message, instead of chaining different
+withMessage() methods to the validation checks, we can just pass in the validation message as a second parameter to the body() method.
+
+Available validation methods include isLength(), isAlphanumeric()

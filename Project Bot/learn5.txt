@@ -1,0 +1,21 @@
+Final Year Project Plan
+
+The idea is to have three different bots. The first two bots will be used to test out the main bot. 
+
+The first bot, politicalfactsbot will send the user a new political article every hour. 
+The second bot, will send the user various posts from my sample.
+
+The third bot, and the most important one is the FactsOnlyBot. 
+You can send this bot various quotes or facts and it will fact check them. You can also add it to groups and it will try to moderate content being said in the 
+group. 
+
+It will look out for various keywords such as politics, government and upon spotting them. Apply its fact check mechanism to them
+
+TfidfVectorizer
+
+Term Frequency - The number of times a word appears in a document is its Term Frequency.
+Inverse Document Frequency - This is a measure of how significant a term is in the entire corpus
+
+The TfidfVectorizer converts a collection of raw documents into a matrix of TF-IDF features
+
+Stop words are the most common words in a Language that are to be filtered out before processing the natural language data

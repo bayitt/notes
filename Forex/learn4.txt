@@ -1,0 +1,39 @@
+The average minimum deposit for trading with leverage is 1 percent	
+
+The purpose of a broker is to facilitate the trade. After you open a trading account, the broker gives a trader the right to execute certain transactions, which
+includes certain rights and privileges
+
+Bulls resemble a buying market because they believe that prices will continue to move upward or rise
+Bears resemble a selling market because they believe that prices will drop
+
+Bulls enter the market buying and exit the market selling while bears enter the market selling 
+
+To make a profit in the market, you must always buy low and sell high
+
+Traders buy on the ask price and sell on the bid price
+
+Traders buy on the ask price and sell on the bid price
+
+Types of Orders
+
+- Market Orders
+
+The current ask/bid price is the market price and entering at one of those prices is called a market order
+
+- Limit Orders
+
+Orders which are used to enter/exit the market at a predetermined price. They can be defined as orders placed to get out of the market for a profit after you enter
+
+- Stop Orders
+
+These are similar to limit orders except that. They are known as the orders used 
+
+When you place a buy order above the market price 
+
+- OCO Orders
+
+Every trade should have an entry point, a predetermined exit point for profit and a well thought out exit point for minimal loss should the market not go your way
+
+Every buy order should have two sells. A sell limit order for profit and a sell stop order for loss protection.
+
+Every sell order should have two buys, A buy limit order for profit and a buy stop order for loss protection

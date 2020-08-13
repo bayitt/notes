@@ -1,0 +1,1 @@
+The getTime() method returns the time in epoch of a date, much like php

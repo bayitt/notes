@@ -1,0 +1,36 @@
+Leke when trying to toggle the slide effect, take note that it is slideToggle() not toggleSlide()
+
+The replaceWith() and replace() methods in JQuery
+
+The JQuery UI is a library built on top of JQuery that enables us to add custom widgets to our webpage, we need to download the JQuery UI and then add
+the javascript and css files
+
+We can add a datepicker widget to our webpage through a couple of ways, either by adding it directly to the div or by creating an input element.
+We can add the datepicker widget to our webpage by calling the datepicker() method onour selected HTML Element
+The datepicker() method can take several arguments which we can change by making use of css like styling, for example {numberOfmonths:3}. This is used to 
+specify the number of months that we want to appear at a time in the datepicker widget.
+To add a dropdown of months in our datepicker() widget, we just add changeMonth:true. We can also create a dropdown for years too by making use of the changeYear property
+changeYear:true. The showWeek property also displays all the weeks of the year by the side. We can also add a header for the week, by making use of the weekHeader 
+property. We can also display other months of the year with the showOtherMonths property which we can set to true. Leke, keep in mind that with the datepicker method,
+none of the css like methods are quoted. We can specify the minimum date that we want the datePicker() not to be able to access and it takes as a parameter, a 
+date object. We can also do the same for maximum date with the maxDate:. We can display buttons with the showButtonPanel property and set it to true.
+
+We can edit the text of the button with the closeText property and set it to whatever text we want to set it to. We can also change the text of the first button 
+by making use of the currentText property. If we want to add a suffix to the year in the datepicker we can make use of the yearSuffix property 
+
+Datepicker methods
+numberOfMonths
+changeMonth
+changeYear
+showWeek
+weekHeader
+showOtherMonths
+showButtonPanel
+closeText
+currentText
+minDate
+maxDate
+yearSuffix
+
+With the theme roller, we can make use of different JQuery UI themes without having to edit our html code, we can make use of themes that fit our color scheme
+across the website

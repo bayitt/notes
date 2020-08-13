@@ -1,0 +1,39 @@
+.A tuple is a collection which is ordered and unchangeable. In Python, tuples are written with ()
+
+Since, tuples are unchangeable, we cannot append(), extend(), remove() or pop() like we can do with lists. Instead, the only thing we can do is to
+delete the tuple completely by making use of the del operator
+
+Then, we can also make use of the tuple() constructor to make a tuple
+
+A dictionary is a collection which is unordered, changeable and indexed
+
+We can also make use of the get() method called on a dictionary and pasing in the key, to return its value
+
+We can make use of the values() method. Then, we can make use of the items() method, to return both keys and values in the dictionary
+
+We can make use of the pop() method to remove an item from a dictionary
+
+popitem() removes the last inserted item
+
+Much in the same way that clear() and del work with lists, we can make use of it with dictionaries
+
+Rememeber Leke, dict() method != dict() constructor
+
+A lambda function is a small, anonymous function. A lambda function can take a number of arguments, but can have only one expression.
+
+By default, the expression is returned
+
+Almost everything in Python is an object, with its properties and methods
+
+Classes in Python are created with the class keyword
+
+In order to create objects in Python, just create a variable and assign it to the class, but unlike in PHP and Javascript, there is no new keyword before
+the class name
+
+All classes have a function called __init__(), which is always executed when the class is being initiated
+
+Note: When creating the __init__() method. ALWAYS make sure to put self, as the first parameter
+
+Leke in every method in which you want to access the current class instance, you need to manually pass in the self instance
+
+We can also delete objects by making use of the del keyword

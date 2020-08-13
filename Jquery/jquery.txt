@@ -1,0 +1,14 @@
+We can make use of padding to add some space inside the inputs
+We can also make use of margin to add space after the inputs
+
+Leke, we can even specify background-color or color properties
+
+We can make use of the focus property to specify something happening to the input when it is clicked
+
+The animate method in Jquery is used to change the value of numeric css properties
+
+The animate method changes an element from one state to another gradually
+The property names must be camel-cased when used with the animate method
+
+Leke, remember that when working with the animate method the properties have to be camelcased,and that it takes two objects as parameters,
+The first object specifies which properties we want

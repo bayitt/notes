@@ -1,0 +1,27 @@
+We can make use of the Root Mean Square Error, to determine how far away our predictions are from the avtual error
+
+There is a shortcut for calculating our slope. This shortcut is 
+
+B1=corr(x,y) * stdev(y)/stdev(x)
+
+Where corr(x,y) is the correlation between x and y and stdev refers to the standard deviation for a variable.
+Correlation, also referred to as Pearson's correlation coefficient is a measure of how related two variables are in the range of -1 to 1.
+
+A value of 1 indicates that the two variables are perfectly positively correlated meaning that they both move in the same direction and a value of -1 indicated
+that they are both perfectly negatively correlated, when one moves the other moves in the other direction.
+
+Standard deviation is a measure of how much on average the data is spread out from the mean
+
+In machine learning, the coefficients are called costs. 
+
+With gradient descent, each stage, the coefficients are updated using the equation
+
+w = w - alpha * delta
+
+w=weight/coefficient
+alpha=learning rate
+delta=
+
+One pass through the training dataset in machine learning is called an epoch
+
+Logistic Regression is the go to method for binary classification problems

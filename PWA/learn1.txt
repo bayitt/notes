@@ -1,0 +1,13 @@
+Progressive Web Apps refer to a set of features that you add to your existing web applications to turn them into native applications. Some of these features include
+
+- Install on Homescreen
+- Offline Accessibility
+- Push Notifications
+- Access Device Camera
+- Background Sync
+
+PWA's essentially are about progressively enhancing your web app to look and feel like a native application. There are three main components to a PWA
+
+- Reliability - Load fast and provide offline functionality
+- Fast - Respond quickly to user actions
+- Engaging - Feel like a native app on mobile devices

@@ -1,0 +1,16 @@
+Leke, in order to position HTML Elements in the center of the page, we need to give it a margin property of auto and a specify the width
+
+Leke, the background-image property can be set in css with background-image:url("Leke.jpg")
+Also, background-repeat can also be set in CSS with background-repeat:no-repeat, or repeat-x to tile it horizontally or repeat-y to tile it vertically.
+
+
+background-image:url("My name is Leke.jpg")
+background-repeat:none;
+Leke, note that when working with input-group-addon, you can place it at the beginning, by just shifting the div or span tag containing the i tag.
+You can also make use of any symbol in your addon, by giving it an id, and then in your input, you include ariadescribedby=id
+
+Leke, remember that the data has to be physically sent to the page, either by Javascript thru AJax or by php thru the action parameter.
+All HTML Elements are Element Nodes
+All HTML Attributes are attribute nodes
+
+Leke you need to realize that even if you do not get any returned text, the http object just returns the entire DOM as the response text

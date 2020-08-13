@@ -1,0 +1,10 @@
+Then array_pop() function  is used to delete the last element in an array
+
+The array_push() funcion is used to add elements to the end of an array
+
+array_shift() is used to remove the first element in an array
+
+array_unshift() is used to add elements to the beginning of an array
+
+The size() function  returns the length of an array
+

@@ -1,0 +1,23 @@
+__call is a PHP magic method that is called whenever a nonexistent or nonpublic method is called from the class
+
+The __call method takes the name of the method as the first parameter and the second parameter is the arguments
+
+Actions will generally redirect to another action or they will output HTML
+
+Action filters refer to code that is executed before or after an action
+
+We can extend the functionality of the before action filter because if it returns false, then the method will not be called
+
+The method_exists() function takes two parameters, the $this and the $method
+The __call() method takes two parameters, the $name and $the args
+
+The array_key_exists() function is used to check if a key exists in the array. It takes two parameters, the first parameter is the key while the second 
+paramter is the array that it is checking
+
+Breaking down the process of making use of the __call magic method for unavailable or non-public methods
+We create the public function __call method and it takes two parameters, the $name and the $args
+Then we create the method variable by concatenating the $name and 'Action'
+Then we need to call the method_exists function and it takes two parameters, an array containing $this and the method name and the $args
+
+Then we need to specify that the protected before method did not return false, after which the method can be called
+Then we can call the protected after method

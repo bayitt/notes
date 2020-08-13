@@ -1,0 +1,32 @@
+Debugging in Javascript
+
+Open Chrome DeveloperTools by clicking Ctrl +Shift + I
+
+After creaing our HTML and linking it to our Javascript file. We can load the file and access it using Developer Tools
+
+We can set breakpoints in the code
+
+When the breakpoint stops code execution, we have several options, we can either resume code execution or we can skip the next function or we can execute the next functionn
+
+In Javascript Exception handling is carried out by means of the try,catch and throw keywords
+In the try black, you try to execute a particular block of code, If it is unsuccessful, you execute the code block in the catch block.
+Then we have the finally bloack and the code in the finally block is executed no matter if the code is successful or not.
+
+Remember that the catch block must take a parameter to represent the error
+
+Javascript Functions
+
+Closures refer to nested functions that are aware of their environment and are able to access the local variables within the function. Closures are always
+anonymous
+
+Built in Function Properties
+It is possible to log function arguments and it returns an object containing the arguments
+The name property returns the name of the function and it doesnt return the name of a copy function but rather it returns the name of the variable that it was bound to
+The length property returns the number of arguments that the function expects
+
+Leke with splice ands slice in Javascript, Your result starts after the first index and ends before the last index
+Leke do not forget that closures are anonymous functions
+
+Immediately Invoked Function Executions are functions that run immediately we run our code(IIFE's). They are created by enclosing the function declaration 
+within parentheses and placing a pair of braces round it as if it is a function call. Its major function is to ensure that you are not polluting the global scope'
+with variables

@@ -1,0 +1,28 @@
+
+Breaking down the process of Putting(Updating) data on the server
+1) In the hero detail view, we need to put a save() button
+2) When the save button is clicked, a save() method in the detail component class is called and inside this save() method, an updateHero() method is
+called from the heroService property of the detail component,
+3) We are going to pass the detail's component's current hero property to the updateHero() property because it is the current hero that we are viewing.
+4) The good thing about Angular is that we are not limited to passing in or having variables among the traditional types like number, string. We can specify that 
+variables must be of a particular class or dataType.
+5) In the updateHero() method, we are going to return HttpClient.put() and pass in three parameters, the normal URL, the editd Hero object and a final 
+HttpOptions array. The deal is that Angular expects some form of information to be passed in with the put() request. To create this HttpOptions 
+array, we need to create the HttpOptions array, 
+
+Leke, take note that in Angular, we can name elements with the # operator, like <input >
+
+In order to add a new item to the api, you call HttpClient.post()
+
+Essentially, tap() is what is called if the Observable is successful and resolves to a data object
+
+Essentially, we can have actions that occur whenever the aynchronous http request finishes. We have the tap() method that occurs whenever the http request
+is successful. It taps into the Observable which is returned when the operation is successful. Then we also have a catchError() method that is
+called whenever the http request fails. Take note that the catchError, map and tap methods are imported from 'rxjs/operators
+'
+
+This ?: in Typescript means that the  variable is optional in the interface
+
+What exactly do I want to do?
+
+I want to add error handling, if the http request fails and no successful Observable is returned

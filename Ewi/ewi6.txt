@@ -1,0 +1,11 @@
+
+You know how with Laravel, we always need to send a csrf token with our POST data so that Laravel can confir that the request is being made from inside our application.
+So essentially when making ajax requests, the challenge is how to include the csrf token, and this is solved by putting the token as a meta tag and then
+passing it in the headers object in our ajax request
+
+headers:{'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr("content")}
+
+Leke take note that the trick to creatign X's is to set the element background to none
+
+Essentially the trick to creating X's is by setting the span's background to none. And also make sure to set its position to relative to be able to
+manipulate it

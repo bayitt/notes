@@ -1,0 +1,30 @@
+Machine learning is enabling computers to perform tasks that until now have only been performed by computers. It is the process of teaching a computer system how
+to make accurate predictions when fed data. It is all about machine learning models.
+
+Data and lots of it is the key to making machine learning possible
+
+Machine learning is just one way of achieving artificial intelligence. Alongside machine learning, there are other approaches used to build AI systems, including
+evolutionary computation
+
+Machine learning is generally split into two main categories: supervised and unsupervised learning
+
+Supervised learning basically teaches machines by example. During training for machine learning, systems are exposed to large amounts of labelled data, for 
+example images of handwritten figures
+
+These systems typically require large amounts of data
+
+Unsupervised learning tasks algorithms with identifying patterns in data, trying to spot similarities that split data into categories.
+Airbnb clustering houses available to rent by neughborhood, Google News grouping together stories on similar topics each day
+
+This algorithm is not looking for specific things, but for data that can be grouped by its similarities
+
+Semi Supervised Learning seeks to combine both techniques. It makes use of a small amount of labeled data and a small amount of unlabelled data
+
+The labelled data is used to partially train a machine learning model, and then that partially trained model is used to label the unlabelled data, a process
+called pseudo modelling, the model is then trained on the mix of the labelled and pseudo labelled data
+
+Generative Adversarial Networks, machine learning systems that can use labelled data to generate completely new data
+
+Reinforcement Learning
+
+Like the name suggests it learns from its actions and this reinforces its knowledge over time

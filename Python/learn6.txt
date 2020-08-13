@@ -1,0 +1,35 @@
+Anytime you are dividing in Python, and you make use of // instead of a single /, the result gets rounded down to the nearest whole number
+
+Also, in Python, if you want to find the exponent of a value, all you need to do is do 5 ** 2
+
+We can also make use of the r flag to print out a string as a raw string meaning that Python should not read into any special meaning when printing the string
+
+Leke take note that concatenation in Python is performed via the + operator much like in Javascript
+
+In order to get the last item in a string or array in Python, simply make use of the [-1] index
+
+We can also always slice characters and items by making use of : notation, like 1:3
+
+Make use of the len() function to find the length of strings and arrays
+
+We can even concatenate lists much like with strings
+
+The append() method is used to add new items to lists
+
+The way Pythin works, we can even assign a sliced portion of the list to a new list
+
+We can also set the entire subset of the list to an empty list
+
+Instead of using ==, we can also make use of is for comparisons
+
+Commenting in Python is carried out via #
+
+In order to add a multi line comment in Python, make use of the ***
+
+The + operator in Python is used to add two values that are of the same data type. Either concatenation or more typical math additions.
+
+If we intend to print two values of different data types. What we need to do is to make use of the , in print()
+
+The in operator is used to check if a value is contained in like an array
+
+In order to have flexible number of arguments in Python, we make use of the *args operator

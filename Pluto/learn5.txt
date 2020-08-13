@@ -1,0 +1,16 @@
+Breaking it down
+
+Instead of manually setting our environment variables, we can make use of the python-dotenv variable to automatically set our environment variables 
+anytime we set up our dev server by placing our environment variables in a .env file
+
+Flask has 4 different means of setting up configuration
+- By instance folder
+- Object Configuration from_object
+- File Based Configuration from_pyfile
+- Environment Based Configuration from_envvar
+
+python manage.py db init is going to create the migrations folder
+
+The python manage.py db migrate command is going to examine the current state of your models and generate a migration based on what is different
+
+python manage.py db upgrade command runs the migrationsL 

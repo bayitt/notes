@@ -1,0 +1,29 @@
+
+Breaking down the Signup Process
+
+When the Signup Button is clicked, the create action in the signup controller is called.
+In the create action, an object of the users model is called and we pass the entire POST super global array is passed as a parameter.
+In the users controller, in the constructor making use of a foreach loop to loop through the items in the POST super global and 
+we create properties based on the contents of the POST super global.
+Then, in the create action in the signup controller, we call the save() method on the $user object that we created. In the save method, we first call the validate()
+method in which we make sure that the user inputs are correct.
+
+If the validate() method returns true, then we can get about saving the items in the database
+
+Breaking down the Login Process
+When the login button is called, the create() Action in the Login controller is called, and in the create action, the authenticate() method in the 
+Users Model is called,passing in the user entered email and password, in the authenticate method in the Users Model, we call the findUserByEmail() method and
+if it returns a user object, then we call the password_verify() method,  passing in the password and the password_hash from the database. If it returns true
+then it should return a user object. If it returns a new object, then we call our redirect method in our core controller
+
+Leke in order to affect the pseudo elements of elements just make use of span.active:before
+
+Breaking down the Token Class in Our Web Application
+We create a class with a constructor with a default argument set to null
+If the argument is not null, the property token is set to the argument but if it is null then we call the bin2hex function passing in the 
+openssl_random_bytes method with a parameter of 16
+
+Then in the class, we also have a getValue() parameter that returns the token property
+
+Finally we have a getHash() method that returns a hash_hmac, passing in our efault algorithm to encrypt the token which is sha256, the token and the
+secret key by which we intend to encrypt this token

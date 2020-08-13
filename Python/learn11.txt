@@ -1,0 +1,31 @@
+Different machine learning algorithms represent different strategies for learning the mapping function
+
+When learning algorithms, there is also an error e that we need to take into account that is independent of the input data 
+
+This error, might be not having enough attributes to sufficiently determine the best mapping from X to Y. . This error is called am irreducible error, 
+because no matter how good we get at estimating the target functoon, we cannot reduce this error
+
+The most common type of machine learning is to learn the mapping Y=f(X) to make predictions of Y for new values of X
+
+The relationship between the inputs and outputs is called statistical inference. Inferring y from x
+
+When we learn a function, we are estimating it from the the data available. As such, there will always be error
+
+Machine learning algorithms are techniques for estimating the target function (f) to predict the value of Y based on X
+
+Different representations make different assumptions about the form of the function being learned such as whether it is linear or non-linear, the shape 
+and strucutre of the function and how best to optimize a representation to approximate it. This is why it is so important to try a suite of different
+algorithms on a machine learning problem because we cannot know before hand which one will be best.
+
+Parametric Machine Learning Algorithms
+Assumptions can greatly simplify the learning process, but can also limit what is learned. Algorithms that simplify the function to a known form are called
+parametric machine learning algorithms
+
+A learning model that summarizes data with a set of parameters of fixed size of fixed size (independent of the number of training examples) is called a 
+paramteric model. No matter how much data you throw at a parametric model it wont change its mind about how many parameters is need.
+The whole idea with parametric models is that it makes use of fixed parameters. Fixed assumptions
+
+The algorithms involve two steps
+1) Select a form for the function
+2) Learn the coefficients of the function from the training data
+

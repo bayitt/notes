@@ -1,0 +1,34 @@
+Bias refers to the assumptions made by the algorithm to make the problem easier to solve
+Variance refers to the sensitivity of a model to changes to the training data
+
+Mapping Function = Target Function
+
+The prediction error for any machine learning algorithm can be broken down into bias error, variance error and irreducible error
+
+Bias Error
+Low Bias - 
+
+Paramatric machine learning algorithms typically have high bias
+Non-parametric machine learning algorithms typically have high variance
+
+The goal of any supervised machine learning algorithm is to have low bias and low variance. It is often a battle to balance out bias and variance.
+
+Bias and variance are inversely proportional
+
+The cause of poor performance in machine learning is either overfitting or underfitting the data
+
+Overfitting refers to learning the training data too well at the expense of not generalizing well to new data
+Underfitting refers to failing the learn the problem from the training data sufficiently
+
+Overfitting is the most common problem in practice and can be addressed by using resampling methods and a held back verification dataset
+
+In machine learning, we describe the learning of the target function from training data as inductive learning. Induction refers to learning general
+concepts from specific examples.
+
+Generalization refers to how well the concepts of a machine learning model apply to specific examples not seen by the modelwhen it was learning
+The goal of a good machine learning model is to generalize well from the training data to any data from the problem domain
+
+In statistics,a fit refers to how well you approximate a target function
+
+Overfitting is more likely with nonparametric and nonlinear models that have more flexibility when learning a target model. As such, many non parametric machine
+learning algorithms include parameters to limit or constrain how much detail the model learns

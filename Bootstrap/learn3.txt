@@ -1,0 +1,36 @@
+Leke take note that by default, the flex direction in bootstrap is row. We make use of the .flex-row class to create a horizontal flex container.
+If we want it to go in the opposite direction, then you need to make use of .flex-row.reverse
+
+Similarly, we make use of the .flex-column to create a vertical flex container
+
+We make use of the flex-fill class to force flex container elements into equal widths
+
+The flex-grow determines an element's ability to grow and fill up all available space
+
+Leke remember that setting auto to any margin value is going to set the margin value to all the space available
+
+The flex-wrap class is used to add wrap to the flex container. We also have the flex-wrap-reverse
+
+x is shorthand for both left and right
+y is shorthand for top and bottom
+
+Leke take note that it is ALIGN-CONTENT and not align-items
+
+Also, Leke take note that Bootstrap also has an mx-auto class that translates to a margin 0 auto that is used to center content
+
+Apparently with Bootstrap4, box-sizing is set globally on every element to border-box
+
+Bootstrap has classes .h1 to .h6 to replicate the look and font size of the header elements when you dont want to use the header elements
+
+The .text-muted class gives the text a muted background
+
+Traditional heading elements work best inside of page content but when we need a heading to really stand out, make use of the .display classes.
+
+.display-1 through to .display-4
+
+Also take note of the .lead class
+
+The .mark and .small classes apply the same effect as the <mark></mark> and <small></small> classes
+
+Bootstrap also has several text alignment classes, such as .text-justify, .text-center, .text-left and .text-right. These classes can also take on
+breakpoint extensions to align the text differently on different devices

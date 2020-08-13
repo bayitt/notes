@@ -1,0 +1,35 @@
+Essentially, the Change Detection Mechanism detects changes to the state of an application and updates the UI accordingly
+
+Components in Angular have templates with HTML elements. When Angular renders the template, it uses DOM nodes to render each HTML element.
+
+However, it needs a place to store references to those DOM nodes and it does this in a data structure called a View. The View also stores referennces to
+the particular Component instance and the previous values of binding expressions.
+
+As the Compiler analyzes the template, it identifies properties of the DOM elements that may need to be updated during change detection.For each DOM property,
+Angular creates a binding. The binding defines the property name to update and the expression that Angular uses to obtain a new value.
+
+viewDefinition defines actual bindings for template elements and their properties. The expression used for a binding is placed in the updateRenderer function
+
+So in order to perform Change Detection, all Angular has to do is to run over all expressions for bindings. Then it compares the values generated to the values 
+in the oldValues array on the view
+
+changeDetection in Angular can be triggered completely automatically as a result of any async event in the browser. Angular is able to do this by means of a 
+library called zone.js. The Angular application bootstraps inside an NgZone. In order to avoid having notifications on an event, all we need to do is to
+run the expression outside of NgZone.  To do this, we can execute the expression inside a separate zone and we do this by calling runOutsideAngular on zone
+
+The purpose of ngAfterViewInit() is to access DOM elements after the DOM content has finished loading, much like Jquery's $(document).ready() syntax
+
+@ViewChild is a decoratos which is used to decorate a property of our component with a DOM reference
+
+The ngOnInit() lifecycle hook is executed after the component has been created
+The ngAfterViewInit() lifecycle hook is executed after the view has been loaded or created
+
+It is advisable to create properties that are DOM references inside the AfterViewInit() lifecycle hook to be safe
+
+Instead of changing elements directly in Angular, you should manipulate them indirectly
+
+To do this, we need to make use of the Angular Renderer 2 class, which can be imported from the Angular 2 Core Library. Inject an instance of Renderer2
+into the component's constructor
+
+Then we can call setStyle on the instance of Renderer2 to manipulate its styles
+

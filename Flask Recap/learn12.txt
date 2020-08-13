@@ -1,0 +1,16 @@
+If an effect gets triggered by dispatching an action is because some side effects are going to happen before calling the reducers
+The way I see it is that effects are similar to reducers. They listen for actions and then similar to what reducers do, it checks if the action is one 
+of the actions it has a case for. Then, it will perform a side effect, typically getting or sending data to an API.
+
+Finally, it will emit another action, usually an action referring to the result state of the side effect (success, error), then a reducer is going to enter in
+the scene
+
+The store can be a big object tree, so ngrx introduces selectors to be able to use only slices of the object that we need in a specific component.
+NGRX store provides us the function "select" to obtain slices of our store. 
+
+The select function accepts as an argument a pure function, this pure function is our selector, which enables us to mutate the data we are slicing off from
+our store
+
+An interface is a syntactical contract that an entity should conform to. In other words, an interface defines the syntax that any entity must adhere to.
+Interfaces define properties, methods and events. Interfaces contain only the declaration of the members, it is the responsiblity of the deriving class
+to define the members.

@@ -1,0 +1,29 @@
+Things to Note
+In order to make the page not reload, do not specify the action attribute in the form and also remember to set the button type to button
+
+Note that we can set the value of a HTML input to nothing by calling the val() method to ""
+
+The prop() method sets or returns properties and values of the selected elements
+When this method is used to return the property values, it returns the value of the FIRST matched element and viceversa for when it is used to set values
+
+JQUERY has a special formdata class of which objects can be created to represent formdata
+
+contentType is used to specify the content type of the data sent to the server
+processData: We can set this option to false, if we want whatever we send to the server to go in as whatever we want it to go as rather than as string
+Then Leke, note that whenever we have just one data item to go the server , we do not need to create an object to send it
+
+Also, whenever we need to get back the response of a php script we get it back using php_script_response
+
+The str.replace() method is used to replace strings
+
+Leke take note that we call the replace method on the string itself
+
+Leke, it is possible to wrap an ajax() method in a function and return it
+
+Leke, take note that is not possible to redirect or render a view from with JQuery
+
+Leke, if you want to check for the existence of a string in Javascript, just say if(the variable) rather than checking if it is empty
+
+Leke take note that if once you return something from a function, the function terminates
+
+The each() method in JQUERY takes a closure as its parameter and it refers to all the child element through the $(this) operatore

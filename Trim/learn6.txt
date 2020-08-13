@@ -1,0 +1,27 @@
+When parsing, we can also define our custom validators, as simple methods. These custom validators can take in the value and the name of the parameter. If it fails
+validation, we can raise a ValueError
+
+Flask-restful provides a special means to define errors so that all we have to do is raise the error in our code and flask-restful will return the error.
+We can define a dictionary of errors and set the errors to the errors keyword argument when creating our api object.
+
+Project Structure
+The basic idea of a flask_restful project directory structure is to  split your app into three main parts, the routes, the resources and any common infrastructure.
+
+fields.FormattedString()
+
+Take note that we can create nested objects inside of our response by making use of fields.Nested()
+
+Requirements of APIs
+- Use web standards where they make sense
+- It should be friendly to the developer and be accessible via the browser's address bar
+
+Separate your API into logical resources
+
+Resources should be things that make sense from the perspective of the api consumer
+
+Keep the URL format consistent and always use a plural
+
+Always use SSLs
+
+Updates and creation should return resource representations. In case of a POST that resulted in creation, use a HTTP 201 status code,  and include a location
+header that points to the url of the new resource.

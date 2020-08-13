@@ -1,0 +1,35 @@
+The $request->flash() method will flash the current input to the session so that it is available during the user's next request to the application
+
+We may also make use of the flashOnly() and flashExcept() methods
+
+Laravel also provides a global old helper for displaying flashed input in blade
+
+To retrieve a cookie value from the request, we need to make use of the cookie() method
+
+Alternatively, we may make use of the Cookie facade to access cookie values
+
+We can also chain cookies to outgoing responses in order to set them by making use of the global helper method cookie()
+
+We may determine if a file is present on the request by making use of the $request->hasFile()
+
+In order to store the uploaded image, we need to make use of the storeAs() method which takes the folder where the image is to be stored and the filename
+
+All routes and controllers should return a response to be sent back to the user's browser. Laravel provides several different ways to return responses.
+The most basic response is returning a string from a route or controller. The framework will automatically convert the string into a full HTTP response.
+
+Typically, we will be returning response instances or views. 
+
+We make use of the redirect()->away() method to redirect outside of our application
+
+The download() method may be used to generate a response that forces the user's browser to download a file at the given path. The first parameter is the
+file path in our application server, while the second parameter is the name seen by the user when he downloads the file
+
+The file() method will force the browser to display a file instead of downloading it with the download() method
+
+Laravel implementing authentication very simple. The authentication configuration file is located at config/auth.php. At its core, Laravel authentication
+facilities are made up of guards and providers. Guards define how users are authenticated for each request for example Laravel has a session guard
+for which maintains state using session storage and cookies
+
+Providers define how users are retrieved from persistent storage
+
+When building the database schema for the App\User model, we need to make sure that the password column is at least 60 characters in length

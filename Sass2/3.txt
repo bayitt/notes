@@ -1,0 +1,13 @@
+
+The $_SESSION['REQUEST_URI'] contains the url of the last visited page
+
+Breaking down the Process of Redirecting upon Login
+
+1) We need to create a getRequestedtPage() static method in our Auth class
+2) What this method does is that is assigns the current url in the address bar to a variable in the Session
+3) This method is called only when the user tries to access a restricted url that can be accessed only by an authenticated user
+4) This method is called after we have redirected the user to the login page 
+5) Then in the Login controller after the user has authenticated successfully, when the user needs to be redirected, we call another method
+rememberRequestedPage()
+6) This method checks if the return_to variable exists in the Session, and if it does, it returns the URL to redirect
+7) If the variable does not exist, it returns '', which means that the user is simply redirected Home

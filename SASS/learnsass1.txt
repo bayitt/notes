@@ -1,0 +1,41 @@
+Leke when you are writing your sass, the scss document will be what we are editing and it converts it into a css file
+
+The greeat thing about sass is that we can make use of variables to store things like colors and values,
+
+variables are declared at the top of the sass file
+
+Sass variables have to be prefixed with a dollar sign, like php variables
+
+We can also subtract values from colors incase we want to use gradients
+
+something like $cream - 100 is going to produce a draker shade of $cream
+
+We can also nest our sass, so that instead of writing our css like .grad .par1 a
+
+like 	.grad
+	{
+		font-size:20px;
+
+		.par1
+		{
+		  font-familY:Helvetica, arial, sans-serif;
+
+		   a
+		   {
+			text-decoatio
+		   }
+		}
+	}
+
+
+Mixins are like variables but for larger chunks of code
+
+Mixins are defined with the keyword @mixin like we define animations with @keyframes.
+We can even pass paramters to our mixins and treat them much like we would do functions in regular programming
+
+We can call mixins by making use of the @include keyword, like @include border-radius; since we are not passing any parameters 
+
+Selector Inheritance is used in situations where like we have two clases, that are to take on the same properties
+Rather than adding a comma like .intro, .feature after writing the css block for .intro, in .feature we can just say @extend .intro
+
+What I have seen is that sass keywords begin with an @symbol like @if

@@ -1,0 +1,44 @@
+Thing to take note of
+
+When making use of the css properties, it is better to specify it first and then with the vendor prefixes
+The border radius defines the radius of the element's corners
+Leke, note that if you specify two values in your border radius, the first value specifies the radius of the top-left and the bottom right corners while the second
+value specicfies the radius of the top right and bottom left corners
+If we specify only one value,the value is applied to all four corners
+
+The css property that we use to rotae elements is called transform :rotate()
+
+In order to animate in css3, we need to make use of the @keyframes property
+@keyframes spin{
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+
+Then in the element selector that we want to animate, we will specify a an animation property
+
+animation:spin 3s infinite
+
+The animation is either infinite or set to a specific number of times. The issue here is that the animation is not even and it slows down when its getting to the
+end, so its better if we set the animtion to be linear so it will be animation:spin 3s linear infinite
+
+In order to male use of Google webfonts, we need to import like the css file and after that we can add the link to the font whatever
+
+In order to make use of multiple background images we just need to add a second url after the first one, it is great for positioning like logos, in whcih we can then 
+specify the position
+
+In order to make use of columns in our paragraphs to create a css-style layout, we need to make use of the column-count property which we set to the number of
+columns that we want the paragraphs to be. We can also make use of the column-gap property to specify the amount pg space in pixels that we want between the 
+columns, and finally we can make use of the column-rules property to specify like the border that we want between the columns
+
+Things to note about using multiple background images, we need to place the logo first and then place the second image and then tile it
+Leke, you need to keep in mind that the background position properties value does not have a hyphen between it
+
+The clear property works when we are making use of float and we need to tell the browser to clear stack the elements on top of each other
+
+We can even position images in the sidebar by just giving it the same class
+
+Leke, note that a web design principle is that we always want the content to be light while we want the background to be dark
+
+Leke, the list-style-type can be used in place of list-style
+
+Leke, it is good CSS practice to put the full path to the selector in the CSS 

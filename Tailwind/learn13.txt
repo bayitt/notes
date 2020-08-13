@@ -1,0 +1,30 @@
+Tailwind Recap
+Tailwind is an engine for creating design systems. It aims to go beyond Bootstrap and create a design system. After calling npm init and installing tailwind,
+the next step is to call npx tailwindcss init, this will create a tailwind.config.js file in which we can specify all the relevant configurations for our project.
+Then we need to run npx tailwindcss build styles.css -o index.css. In our initial styles.css file, we need to inject the Tailwind base styles, component styles
+and utilities styles making use of the @tailwind function. All these styles are then going to be built into the index.css file.
+
+For responsive styling, Tailwind follows the same pattern as Bootstrap, with sm, md, lg and xl styles. The difference is in the breakpoints.
+sm - 640px
+md - 768px
+lg - 1024px
+xl - 1280px
+
+When adding responsive styling, instead of in Bootstrap, where we will use something like -md or -sm. In Tailwind it makes use of : notation. So, something like
+sm:, md:, xl:, lg:.
+
+Tailwind also makes it really easy to apply utilities on things like focus and hover states. This will be done in a similar manner as to the responsive styling.
+So essentially something like focus: and hover:. Tailwind also includes support for disabled, active, even and odd states. 
+
+Tailwind's set of base styles are called Preflight, and they are injected when we call @tailwind base. If I have any base styles that I want to include, I need
+to do so after @tailwind base to avoid any conflicts. 
+
+Then, for repeated code, we can extract it into its own component styling and place it outside of @tailwind components. We can then make use of the @apply
+method to apply code for other existing utilities. 
+
+Then, we can also include/add new utilities after the @tailwind utilities declaration. In order to make use of responsive variants of them, we need to wrap
+them in the @responsive decorator. To be able to make use of focus and hover variants for them, we can wrap them in @variants decorator.
+
+We can also make use of the @screen decorator to generate responsive variants of our styles.
+
+The various functions available in Tailwind are @apply, @tailwind, @theme, @screen, @responsive, @variants

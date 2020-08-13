@@ -1,0 +1,44 @@
+
+Media Types
+all- suitable for all devices
+print- intended for paged materials and documents viewed on a screen in print preview mode
+screen - intended primarily for screens
+speech - intended for speech synthesizers
+
+Laravel's configuration files are placed in config/app.php
+
+The SocialAuth facade has an authorize method that takes in the name of the provider that we are trying to authorize
+
+Breaking down the SocialAuth Process
+
+1) First we need to make use of Composer to install the package into our Project
+2) Then we need to add the Service Provider and the Alias into our app.php configuration file
+3) Then we need to create the OAuth Applications on the respective platforms
+4) Then we need to insert the settings inside the eloquent-oauth.php file'
+5) Then we need to create a route for the social media authentication
+6) In the action in the controller, we need to return SocialAuth::authorize(_
+
+Essentially there are two situations, either the user signed up normally in-site, in which case the user does not have an avatar
+
+Or He made use of social authenticationm in which case, the user does not have a password
+
+Apparently Laravel has a guest middleware which is the opposite of the Auth middleware
+
+Leke remember that with Laravel it is @extends not @extend
+
+While working as a Community Liason Officer, we had a situation in which corp members were stranded and had no place to sleep due to the fact the facilities 
+could not handle their numbers. Speaking to the corpers, I could see the anger and tiredness in their faces after undertaking such a long journey and realizing 
+that there was to be no accomondation for them. I took it upon myself to find a solution to this problem and went to speak to the Community Head to tell him about the situation.
+Fortunately, he offered to accomodate the corpers due to the fact that he had extra space in his compound. Upon breaking the news to the corp members, I could see
+the relief in their faces.
+
+Sonnet
+Elegy
+Haiku
+Ballad
+Epic
+Limerick
+Acrostic
+Concrete Poetry
+Villanelle
+Ode

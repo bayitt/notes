@@ -1,0 +1,5 @@
+Leke remember that with the twig templating Engine, that in order to extend templates, we need to specify the {% block body%} {% endblock %} and then 
+in the extended template, we need to extend the template as the first thing that we need to do
+
+Leke remember that by default, any data that we try to send by ajax is converted into a string, so in order to send any DOM content we need to set processData to false,
+essentially to tell jquery that it should not bother trying to send the data as a string

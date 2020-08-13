@@ -1,0 +1,41 @@
+PDO is a code library for accessing databases
+To connect to PDOs we need to create a new PDO object like 
+$db=new PDO('mysql:host=local;dbname=mydb','user','paswsowrd')
+
+In order to execute SQL that does returns results, we make use of the query method but in order to execute SQL that does not return results we make
+use of the exec statement The exec() function returns the number of affected rows
+
+The beauty of named parameters is that we can make use of them with sql statements that will run multiple times with different data
+In order to obtain the results of a PDO SQL Query, we need to call the fetchAll() method on the PDO object
+
+A static variable is a variable whose value is returned between calls to a method
+
+Leke when creating links the URL must be what will be inputed as the query string
+
+Things to note 
+When creating the buttons in forms Leke always remember to set the type to submit
+Also, Leke whenever you are creating the view you need to remember that the second parameter has to be an explicit array in the form [] not just making use
+of the named array variable
+
+The database connection details should be separate from the application code
+
+The process of separating application files involves creating a config class in which we specify the constants as the database parameters, then in our
+base model we need to use the config class and set the pdo slants to the constant parameters
+
+If we dont write code to handle errors and exceptions the program will just stop
+
+Internal PHP functions mainly use errors to signal a problem. Errors occur at the language level
+We can trigger errors manually using the trigger_error() function
+We can also assign functions to handle errors using the set_error_handler() function but generally errors are unrecoverable, once they occur the script will stop
+
+Exceptions are the errors that we get when dealing with classes and objects
+Exceptions cab be thrown are created manually using the throw statment
+
+We can also set exception handlers just like error handlers by making use of the set_exception_handler() function
+
+The easiest way to handle both exceptions and errors is by converting errors to exceptions. So when an error occurs, an exception is thrown instead.
+Exceptions have the added benefit of having a stack trace which is useful for debugging
+
+Stack trace-List of all the methods that the application was in the middle of executing when the exception was thrown
+
+Calling the getTraceAsString() method on an exception produces the stack trace

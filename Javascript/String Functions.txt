@@ -1,0 +1,28 @@
+PHP String Functions
+
+The strlen() function is used to determine the length of a string
+
+The str_word_count() is used to determine the number of words in a given string
+
+The strrev() function is used to obtain the reverse of any string in php
+
+The strpos() function is used to check if a string is present in another string, if it is present then in returns the string posiion, if not, it returns False
+
+The str-_replace() function is used to replace text within a string, it is the only function in which the string itself comes at the end, usually it comes at the
+beginning if the fucntion has multiple parameters
+
+ucwords() is used to convert every word in the string into uppercase
+
+strtoupper() is used to convert everything into uppercase
+
+strtolower() is used to convert everything into lowercase
+
+str_repeat() is used to repeat a given string a number of times, It takes two parameters,the string and the  number of times it is to be repeated
+
+The strcmp() function is used to compare strings, it returns greater than zero if string 1 is greater than string 2, less than 0 if string2 is greater than 
+string1, and 0 if string1 is equal to string2
+
+The substr() function is used to output part of a string, it takes three parameters, the string, the starting position and the ending position and it returns the
+string within the two endpoints
+
+The trim() function works in such a way that it is used to remove characters at both sides of the string, at both the beginning and the end 

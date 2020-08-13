@@ -1,0 +1,40 @@
+Leke remember that to add tooltips to our HTML Elements, we just the add title attribute. To add tooltips making use of the JQuery UI. All we have to do
+is to add a tooltip() method to our selector in our JQuery code. With the content property we can override the default tooltip put in the title attribute in
+our HTML. Thr track property is used to make the tooltip display anywhere we hover the mouse over on the element.
+
+We can also specify the effect property to define the effect that we want the tooltip to display whenever the user hovers over the HTML Element.
+The duration property is used with the effect property to specify how long you want the effect to take place
+Then we need third property, the show property 
+
+Some of the effects include pulsate,bounce,explode,highlight,blind
+
+Leke you need to remember that when you are specifying the effects, they need to be quoted
+Also, it seems like the show property has to come first
+
+In JQuery, we can combine effects, just like how we do with the hover() function, we just specify what it should do when we hover off the tooltip.
+
+Leke, it is possible to style the tooltip as we want it by editing the jqueryui strcuture css file
+
+To make use of accordions, just access it via the css selector and add a method of accordion
+Keep in mind that the div element must come directly after the h2 element for the accordion to work properly
+
+If you want to be able to close all the panels in the accordion at once, then we need to set the collapsible property to true
+The default event to open the accordion panel is click but we can change it by making use of the event property and setting it to whatever we want it to be
+e.g mouseover
+
+We can also specify the speed of the panel collapsing with the animate property
+
+By default the first panel is open when we first load the page, but if we want to set another panel to be open, we can make use of the active property
+heightStyle Property
+
+The various accordion properties are
+collapsible
+event
+animate
+active
+heightStyle
+
+Accordions possess icons and icons just like the show property in tooltips take a nested {} and just like how show takes properties of effect and duration,
+icons takes properties of header and activeHeader
+
+Various icon sets include ui-icon-mail-closed and ui-icon-mail-open, ui-icon-folder-collapsed and ui-icon-folder-open, ui-icon-zoomin and ui-icon-zoomout

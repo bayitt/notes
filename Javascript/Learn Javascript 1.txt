@@ -1,0 +1,36 @@
+Leke you need to take responsibility for the outcome of your life and start pursuing your passions
+
+Javascript executes or runs on your browser instead of running on the server.
+But Javascript can also run on the server with nodejs
+
+ES stands for EMASscript, It is like the overarching language of Javascript, so Javascript is like a dialect of ECMAScript.
+
+To embed Javascript in our webpage, we need to use the script tags.Just like the <?php?> for php.
+
+It is best practice to put your script tag at the end of the body tag
+
+Leke, the noscript tag is used to display messages only if Javascript is not enabled in the web browser
+
+It is common and good pracice to separate your html and your javascript and to import it, just like you do in python. For this, the script tag needs to taka
+a src attribute which is the path to the javascript file
+
+The defer attribute of the src tag is used to make all the other javascript files execute before executing the one with the defer attribute
+
+Variables are created in Javascript by using the var keyword and then the variable name
+
+Javascript does not recognize any difference between integers and float values. They are both of type "number"in Javascript.
+The typeof is used to check data-type of a variable in Javascript, just like var_dump() and type() in PHP and Python respectively
+
+Basic data types in Javascript include number, string, boolean, object
+
+We can set a variable to be undefined, but it is not advisable to do this
+
+Incase we want to set a variable to empty, instead of setting it to undefined, set it to null
+
+Remember that the === operator is used to check if the data types of two variables are equal
+
+Finally we have the NaN data type, and it stands for Not a Number. Calling typeof on this returns number, so basically,
+
+Null is of type object
+
+It is possible to have fields/variables in objects and methods/functions in objects

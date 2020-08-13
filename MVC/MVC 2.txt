@@ -1,0 +1,35 @@
+A Regular Expression describes a pattern of characters
+In PHP, the preg_match() function is used to match a string to a pattern
+Regular Expressions are defined between two / /
+In Regular Expressions, everything is a character
+
+Metacharacters are used to match specific types of characters
+\d-any digit from 0-9
+\w-any character from a-z, A-Z,0-9
+\s-any whitespace character, tab etc
+^-The start of the string
+$-The end of the string
+*-zero or more
++-one or more
+
+Leke, note that * or + comes after the string
+
+.-This will match any single character, whitespace or string
+
+The \ symbol is used to escape characters to enable us make use of them in our regexes
+
+Regular Expressions are case sensitive, putting the i character after the regex makes it case insensitive
+
+Character Sets in Regular Expressions
+[1,2,3]-This will match 1,2,3 and nothing else
+
+By putting a hyphen between them, we can match a range, like [0-9] will match any digit from 0-9
+
+Adding a caret to the beginning of a character range will negate it, meaning that it will match anything except 1,2,3 for []
+
+The preg_match() function returns 1 if the pattern is found while it returns 0 if it is false
+
+The preg_match() function can take another parameter, an array in which the first parameter is the matched string and then we can add other subgroups
+
+In order to obtain other values in our array, would need to put brackets around the sub regexes. Then in order to name them as we want
+we would need to put a ?<> containing the name that we want

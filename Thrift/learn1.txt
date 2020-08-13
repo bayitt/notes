@@ -1,0 +1,7 @@
+Leke note how with Angular, generated components and services are by default placed in the app folder. To put components inside of a folder inside
+of app, just make use of ng generate component core/home
+
+Also, Leke remember that the command to generate the app routing module in Angular is ng generate module app-routing --flat --module=app
+
+Leke remember that @HostListener() is a decorator that takes two parameters, the first parameter is the event that we are listening for on the host
+while the second parameter is the event variable

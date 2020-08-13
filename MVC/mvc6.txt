@@ -1,0 +1,22 @@
+Breaking down the process of creating the route regex
+1) First we need to convert the forward slashes in our url into escape chars and forward slashes
+2) Then we need to convert the {} pattern
+3) Then we need to add the ^ and $ delimiters
+
+Leke, remember that anytime you are making use of PHP regular expressions, the pattern needs to be enclosed in //
+
+Leke, you need to take note and be careful where you put the return false statement in a loop because it terminates the loop
+
+Leke, remember that in order to create route, we need our dispatch method
+
+Leke, take note that with abstract classes, it is the classes themselves that we are extending, not the namespaces
+
+From the constructor, we are taking in the route_params paramter and assigning it to the route_params array
+
+__call is a PHP magic method, it is called anytime a nonexistent or private method is called on an object of a class 
+
+The __call function takes two paramters, the name of the method being called and the arguments 
+
+A controller can have many actions, these actions will generally output HTML and/or redirect to other actios
+
+Action filters refer to functionality that enable us to perform some action before or after each method is called in a controller

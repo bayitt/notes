@@ -1,0 +1,40 @@
+Types of Traders
+
+Trading currencies involves the flunctuation of one currency in relation to another. In Forex, you are always dealing with two instruments or currency pairs
+
+There are two types of traders on the Forex. 
+- Consumer Traders
+They want long term ownership and is not as concerned with daily price movements
+
+- Speculative Traders
+Only concerned with daily price movement as that is where the profit is. They are also called scalpers
+
+There are costs involved to access the market which is called spread
+
+The spread is the difference between the sell and buy price of a particular currency
+
+There are spreads between all the major currencies that are traded
+
+The Major world currencies
+
+- US dollar
+- British Pound
+- Japanese Yen
+- European Euro
+- Swiss Franc
+
+Essentially, the whole idea of spreads is that whatever price that you buy a currency at, if there is a difference between your buying price and the seling price,
+the broker will make up the difference, but if the trade does not go your way then the broker will deduct the spread from your account
+
+1 pip is typically worth 10 dollars
+
+A trader's financial reward is often measured in pips which are then converted into dollars
+
+Most traders on the forex trade with what is called Leverage. This involves borrowing or using a broker's money to trade. When a trader executes trades, the trader
+is buying or selling currency in units referred to as lots(which is a set quantity of money)
+
+Types of Lots
+- Regular Lot (100 thousand dollars)
+- Mini-lot(10 thousand dollars)
+
+On a Regular lot, you get paid 10 dollars for each pip while on a mini lot, you get 1 dollar for each pip

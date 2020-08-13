@@ -1,0 +1,32 @@
+Supervised learning is the most common sub branch of machine learning today. Supervised machine learning algorithms are designed to learn by example
+When training a supervised learning algorithm, the training data will consist of inputs matched with their outputs
+
+Supervised learning can be divided into two categories, Classification and Regression
+
+Classification
+During training, a classfication algorithm will be given data points with an assigned category. The job of a classification algorithm is then to take an input value
+and assign it a category that fits into the training data
+
+Popular Classification algorithms are 
+- Linear Classifiers
+- Support Vector Machines
+- Decision Trees
+- K-Nearest Neighbor
+- Random Forest
+
+Regression is a predictive statistical process where the model attempts to find the important relationship between dependent and independent variables. The goal
+of a regression algorithm is to predict a continuous number such as sales, income and test scores. 
+
+For simple regression problems with only one feature, the model predictions are represented by the line of best fit. For models using two features, the
+plane will be used
+
+Popular Regression algorithms are 
+- Logistic Regression
+- Linear Regression
+- Polynomial Regression
+
+Unsupervised learning on the other hand is a machine learning technique, where you do not need to supervise the model. Instead, you need to allow the model to
+work on its own to discover information. They enable the performance of more complex, processing tasks compared to supervised learning, however, it is more
+unpredictable compared to other machine learning methods.
+
+Unsupervised learning is further grouped into clustering and association problems

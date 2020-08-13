@@ -1,0 +1,28 @@
+Breaking down the process of sending mails in Lumen
+- First off, we need to require the Illuminate/mail package
+- Then we need to uncomment the Providers/AppServiceProvider file in the bootstrap/app.php file
+- Then we need to head over to the usual process of sending mails
+- Then we also need to uncomment the withFacades() class in the app.php which will enable us to make use of the Mail facade to send our mails
+- You know how in Laravel we generate our mails, but in Lumen what we will do is to copy the mailable class from Laravel
+- We do the required work in our Mailable class, and in the build() method return the mail
+
+Breaking down the process of creating the token.php class
+
+- First we need to create a token property
+- Then in our constructor, we need to give it a default null $token parameter. If no token is supplied, we will create the token ourselves and 
+making use of the openssl_random_pseudo_bytes(16) method and assign it to the token property on our class
+- If the token is actually set, then we just set it to the token property straight away
+- Then we will have getToken() and getHash() methods that return the token and hashed token respectively
+
+Making Use of JWTS
+
+In order to make use of JWTs for authentication, there are several things that we need to do first
+
+We need to make use of the Validator class
+Then we also need to make use of the FireBase/JWT/JWT class
+Also, we need to make use of the FireBase/JWT/ExpiredException
+
+With JWT payloads, there are 4 different parameters to be considered. The first parameter is the 'iss' parameter which represents the issuer of the token. The
+second parameter, 'sub', represents the subject of the token. The next parameter is the 'iat' which represents the time the token was issued. The last 
+parameter is the 'exp' which represents the expiry date of the token. Then we need to call the static encode() method on the JWT class which takes in the payload
+and a second parameter which is the JWT secret

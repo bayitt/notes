@@ -1,0 +1,33 @@
+Lumen Installation
+
+Instead of using composer to install lumen, what we can do is to install the lumen installer using the command lumen global require "laravel/lumen-installer"
+
+Once installed, we can use the lumen new command to create a fresh lumen installation
+
+All of the configuration options for the Lumen framework are stored in the .env file
+
+Immediately after installation, we need to rename the .env.example file to .env. Then we also need to set the APP_KEY configuration and set it to a random string
+
+We may access configuration values by making use of the global config helper function say $value=config('app.locale'). We can even set configuration values by
+passing an array to the global config helper method config(['app.locale'=>'env'])
+
+We may access the current application method by calling the environment() method on the app instance. We may also pass arguments to the environment method
+to check if the environment matches a given value, you can even pass in multiple values and if the application environment matches any of them, it will return true
+
+All the routes in our Lumen application are to be defined in the routes/web.php file
+
+Leke you know how in Laravel, we use the Route class and call static methods to create our routes. In Lumen, we make use of a router object to creat our routes
+
+
+The router allows us to register routes that correspond to any http verb. That includes get,post, put, patch, delete and finally, options. 
+
+Anytime you like use closures to respond to routes instead of like using controllers and actions and you have route parameters. You can pass in the parameters
+to the closure much like you would pass it into the action 
+
+We can also have optional parameters in our routes. All we have to do to make use of optional parameters is to enclose it in a []. say [/{name}]. Take note
+however that it can only be at the end of the route not say at the middle
+
+Leke, you remember how instead of specifying the controller and index, you can make use of an array and specify parameters. You can make use of the 
+as key to specify the name of the route and uses to specify the controller and action for the route
+
+Just like how we have the static group method on the Route class in Laravel, we also have the group() method that we can call on the $router object

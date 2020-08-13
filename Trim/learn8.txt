@@ -1,0 +1,37 @@
+Things to take note about Flask
+- We can make use of the python-dotenv library to set important environment variables by making use of a .env file and assigning values to variables
+and when the app starts, it will automatically set it.
+
+- For me, my preferred way to set configuration variables is by doing it in a config.py file. I can then set application configuration in my .env file.
+The application configuration is then accessed in the os.getenv() 
+
+Things to keep in mind for models
+The baseclass for your models is called db.Model. The table name is automatically set for you unless overridden. Its derived from the classname converted to 
+lowercase . To override it sha, set the __tablename__ class attribute.
+
+Use column to define a column. The name of the columnis the name you assign it to. Primary keys are marked with primary_key=True
+The type of the column is the first argument to column
+
+Common flask sqlalchemy types -
+Integer
+String(size)
+Text
+DateTime
+Float
+Boolean
+PickleType
+LargeBinary	
+
+relationships are expressed with the relationship() function. To the ForeignKey() method, we are going to pass in a dot separated string specifying the 
+name of the table and its unique id. By default, the relationship() method will return a one-to-many relationship. If we want to specify a one-to-one relationship,
+we would set the uselist keyword argument to False
+
+backref is a simple way to declare a relationship on the relating class, say we have a person and an address class, and we declare an addresses relationship on the
+person model. This would create a one-to-many relationship between the person and the address model. Specifying the backref keyword argument on the person class,
+would enable the address model to access the its parent person model by accessing the person property.
+
+The lazy property has several options. The first is True/'select' which means that sqlalchemy will load the data as nexessary in one go. 
+The second is 'joined'/False tell sqlalchemy to use a join. subquery works like joined, but it uses a subquery instead of a join
+
+If we want to define a lazy status for backrefs, we can  make use of the db.backref() method which takes in two parameters, the first parameter being the name that we 
+want to use to define the relationship, and the second parameter being the lazy keyword argument.

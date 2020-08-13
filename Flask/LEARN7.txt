@@ -1,0 +1,23 @@
+Leke take note that the commit() method is on the connection object and not on the cursor
+
+Templates are files that contain static data as well as placeholders for dynamic data
+
+Jinja is autoconfigured to escape any data that is rendered in HTML templates
+
+For blueprints there are essentially two different ways of referring to them. Either, you make use of the blueprint name, which we are going to attach decorators
+to in order to bind urls to view functions, or we make use of the name that we passed in to theblueprint when creating it, which we use when registering the
+blueprint. and making use of the url_for() method
+
+Leke take note that anytime you flash an error, we can access in the template via the get_flashed_messages() method
+
+Also, take note that the add_url_rule() associates an endpoint with a url. much like a view function is associated with a url by the route() decorator
+
+I think that you should forget your original notion of what a view is. In Flask, a view or view function is the equivalent of an action in a controller
+
+The name associated with a view function is called its endpoint
+
+When using a blueprint, the name of the blueprint is prepended to the name of the function 
+
+The abort() method is going to raise a special exception that returns an HTTP statuc code	
+
+request is another variable that is automatically available in templates

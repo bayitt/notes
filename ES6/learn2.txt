@@ -1,0 +1,35 @@
+ES6 (ECMAScript 6) is a scripting language standard and specification
+
+Javascript, JScript and ActionScript are all based on the ECMAScript standard
+
+ES6 and ES2015 are the same thing
+
+Transpilers can be used to compile ES6 code into ES5
+
+Examples of these transpilers are Babel, Traceur and Closure
+
+Essentially, with let we can limit the scope of a variable to its block. Essentially, it creates block scope variables.
+
+Destructuring Assignment - This refers to the ability to extract data from arrays and objects into distinct variables
+
+Generators are functions that can be paused to yield a value and then restarted and essentially, ran as many times as possible
+
+Essentially transpilers are used to conver syntax written in another language into Javascript. They can be said to target Javscript
+
+Essentially, with let, anytime we make use of variables, we are making use of their values in that particular scope
+
+And Leke, remember that this is for the block level, blocks essentially refer to loops, selection statements
+
+Know how in php, we declare the constructor with public function __construct(). In Javascript it is declared with Constructor()
+
+With Javascript methods, we can do away with the access specifiers and the function keyword so instead of having public function register() like 
+we would have in PHP or Java, we can just call define register()
+
+In order to create static methods, all we have to do is to use the static keyword
+
+And also, with Javascript classes, properties do not have to be implicitly created before they can be assigned. In fact when they are assigned is when they are 
+created, 
+
+Also, classes can be inherited by making use of the extends keyword
+
+It appears to me that by default the child classes's calls super() already 

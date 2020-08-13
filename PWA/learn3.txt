@@ -1,0 +1,37 @@
+We can find our manifest.json file and see its details in the manifest tab in the applications tab in the developer tools
+
+Remember that Chrome is available by default on android
+
+In order to have Chrome prompt your application to install on the homescreen, it must meet several requirements
+
+- Have a web app manifest that contains several criteria
+- Have service workers registered on your site
+- be served over HTTPS
+- is visited at least twice with at least 5 minutes between visits
+
+Leke, remember that the web app manifest is not supported by all web browsers. For example, safari which does not support it. We dont have to leave it like this,
+instead there are several things that we can add. 
+
+For safari, we can add a meta tag with the name='apple-mobile-web-app-capable' and set the content attribute to yes
+
+This tells safari to treat our mobile web app like a native app and launch it in that fashion
+
+apple-mobile-web-app-capable
+apple-mobile-web-app-status-bar-style
+apple-mobile-web-app-title
+
+Essentially, the way I see it is that because the safari browser does not support the manifest.json file, we need to add a couple of fallbacks
+
+apple-mobile-web-app-capable'
+apple-mobile-web-app-status-bar-style
+apple-mobile-web-app-title
+
+Seeing as the manifest.json file is not enabled, meaning that no icons are available to the application. As such, we need to link to 
+the icons in our index.html file, we can do this by setting the rel of a link tag to apple-touch-icon and linking to it
+
+Just as for safari/ios, we make use of apple-mobile-web-app, for internet explorer, we make use of ms-application
+
+msapplication-TileImage is the icon
+msapplication-TileColor is the background image on the splashscreen
+
+There is another meta property that we have called theme-color which we use to set the theme color

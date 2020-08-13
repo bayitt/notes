@@ -1,0 +1,39 @@
+Rest API recap
+
+REST, short for Representational State Transfer is an architectural style for communiation between two applications. Usually, communication via REST is
+usually by a stateless protocol(HTTP). HTTP has verbs which represent actions, 4 of them, which are
+
+POST- This means to create new content ot send data to the server
+GET - Like it sounds, this means to fetch data from the server
+PUT - This means to update data
+DELETE - Like it sounds, it means to delete data already on the server
+
+The method to return json in Laravel is response()->json() and it takes two parameters, an array and the status code
+
+Lekek rememver that Laravel makes use of the AuthenticatesUser trait to perform login and the whole idea of traits is that there are methods inside traits
+that are not evident but are working in the background
+
+The credentials() method in the AuthenticatesUser traits returns the credentials that we want to use to carry out login. 
+
+while the sendFailedLoginResponse() is what is executed if authentication fails
+
+It appears that when making use of Laravel as a restful backend, the middleware and the guards implement api
+
+It appears to me that a major focus or the means by which Laravel uses to perform authentication is via the api_token
+
+Guards refer to how the system stores and retrieves information about your users
+
+A web guard refers to the traditional cookie store- so that web guard instructs Laravel to store and retrieve session informationthe classic way via the session.
+
+While API guards use API tokens . So we would use the API guard if we want to authenticate users and requetsa using an API token i the header
+
+Apparently, with Laravel it is possible to specify routes on our middleware and then return various information based on it
+
+The whole idea of authentication is predicated on the fact that the api_token is not null and is correct
+
+So apparently in Laravel, it is possible to target particular exceptions, just check if the exception returned is an instance of the exception you want to
+compare it against
+
+
+
+	

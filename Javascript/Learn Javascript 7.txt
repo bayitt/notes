@@ -1,0 +1,24 @@
+this does not always refer to the window object. To make sure that the window object is returned, call the bind() method on the function.
+bind() cn take arguments, the first argument is always what you want this to refer to, while the other arguments refer to the remaining arguments in the original function.
+
+Alternatively to bind(), we can mske use of the call() method, but the call() method does not need the additional () at the end
+
+With bind(), you can bind the this value and use it later, while with call() you use the this instantly
+
+We also have apply() and the difference between it and call is that it taes the additional parameters as an array
+
+Normally we can define properties in the object, but we can make use of the defineProperty() method to do this. The first parameter is the name of the object, the 
+second parampeter is the name of the property/function, while the third parameter is a nested object.
+The advantage of creating properties with defineProperty() is that they are read-only and cannot be changed. To make them editable, we need to use set another
+key in it, and set it to writable:true; There is also the enumerable value
+
+The get() function of th defineProperty() method is called whenever we try to acess the name variable
+
+With getters and setters, the get() function is called anytime we try to print the variable
+The set() function is called anytime we assign a value to a variable
+
+In order to delete items from our objects we use the delete keyword
+
+With the in keyword we can check if a field exists in an object
+
+The essential built in Object properties are delete, in , loop thru the items in the object

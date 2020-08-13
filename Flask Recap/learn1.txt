@@ -1,0 +1,36 @@
+Our entire application is an instance of the Flask class
+
+In order to get our flask application to run we need to set the FLASK_APP environment variable to the name of the app. Then we also need to
+set the FLASK_ENV variable value to development. This ensures that the server reloads on each code change.
+
+In Flask, we make use of the route() decorator to bind a function to a URL. We can add variable sections to a URL by marking sections with <>. This is the 
+Laravel equivalent of {} or the Angular equivalent of :. We can even make use of converters to specify the type of the argument like <converter:variable_name>.
+The variable is then passed into the view function
+
+Converter Types
+string -  accepts any text without a slash
+int -  accepts positive integers
+float - accepts floating point values
+path - like string but also accepts slashes
+uuid - accepts UUID strings
+
+Leke note that if we have a route that ends with a slash and we try to access it without a slash, we will be redirected to the route with a slash.
+On the other hand, if we have a route without a slash and we try to access it with the slash, we get a 404 error
+
+In order to build a url to a specific function, we make use of the url_for() function. This is similar to the route() method in Laravel, we simply pass in the 
+name of the view function for the url to the url_for() method and pass in a number of converter arguments
+
+By default, routes in Flask are configured to work only with GET requests, with the methods attribute on the route decorator, we can handle different methods
+
+We can access said method making use of request.method
+
+In order to generate urls for static files, we make use of the special endpoint/ view function name, and the special keyword argument 
+
+Flask configures the Jinja2 templating engine automatically for us. To render templates in flask, we can make use of the render_template() method.
+
+Flask will look for templates in the templates folder
+
+Inside flask, we have access to the request, session and g objects.
+
+In order to access form data, transmitted in a POST or PUT request, we can make use of the form attribute on the request class. It is a dictionary
+

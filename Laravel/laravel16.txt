@@ -1,0 +1,12 @@
+In order to output the validation errors
+
+We first need to check if the errors count is greater than 0. Then we need to loop through all the errors in $errors->all() and output it
+
+You know how we need to pass in data back to the view if there was a problem storing the data. Normally, with twig, in the controller when we re-render the view
+we just pass in the POST data backl. But to do this, Laravel provides a helper method called old, this old() method essentially represents $_POST.
+
+We cannot paginate normal array data because it is not an instance of our queryBuilder class, but Laravel provides a helpful method to paginate non-queryBuilder data
+
+We do this by making use of the Paginator trait in the Pagination class 
+
+Then to paginate it, we create a new object of the Paginator trait, passing in the array that we want to paginate and the number to paginate it by

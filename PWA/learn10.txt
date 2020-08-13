@@ -1,0 +1,6 @@
+Dynamic Caching means that you added items to your cache after service worker installation not necessarily caching dynamic content
+
+Responses can only be consumed once, meaning that they can only be used once, if we intend to make use of them again, we need to clone them via the clone()
+method available on the response object
+
+The Cache storage is more commonly used for storing files, such as images, css, js and all. It is not for storing things like json

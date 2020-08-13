@@ -1,0 +1,38 @@
+Utitlities for controlling the visiblity of an element.
+
+.visible
+.invisible
+
+For z-index
+.z-0
+.z-10
+.z-20
+.z-30
+.z-40
+.z-50
+.z-auto
+
+Flex Direction
+.flex-row
+.flex-row-reverse
+.flex-col
+.flex-col-reverse
+
+Flex Wrap
+.flex-no-wrap
+.flex-wrap
+.flex-wrap-reverse
+
+Align Items
+.items-stretch
+.items-start
+.items-center
+.items-end
+.items-baseline
+
+Align Content
+.content-start
+.content-center
+.content-end
+.content-between
+.content-around

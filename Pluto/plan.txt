@@ -1,0 +1,59 @@
+Pluto Planning
+A Flask application used to keep track of one's personal projects and ideas
+Users can add ideas, provide descriptions about them and ultimately convert them to projects by working on them
+Projects have a status that that marks whether they are completed or not. 
+
+The project is going to open up to a dashboard which contains the number of projects, completed projects, and ideas along with the lates projects you are working on
+There is also an ideas tab where users can add new ideas
+Then, a projects tab where they can add new projects
+
+Color scheme
+I want to experiment with blues this time
+#135589 - Marina
+#2A93D5 - Bondi Blue
+#3DDAD7 - Californian Coral
+#AED9DA - Chill
+#EDFAFD - Glass
+
+Database Structure
+Users
+
+id- integer | Primary Key
+name- String
+Dev Name- Stringis
+email - String
+password - String
+is_activated- Boolean
+avatar- String
+activation_token-String
+created_at-DateTime
+
+Projects
+
+id - integer | Primary Key
+name - String
+about - Text
+user_id - Integer | Foreign Key
+picture - String
+github_link- String
+is_completed - Boolean
+created_at - DateTime
+
+Ideas 
+
+id - integer | Primary Key
+name - String
+premise - String
+user_id - Integer | Foreign Key
+created_at - DateTime
+
+
+Tasks
+id - integer | Primary Key
+name - String
+user_id - Integer | Foreign Key
+project_id - Integer | Foreign Key
+is_completed - Boolean
+completed_at - DateTime
+created_at - DateTime
+created_at

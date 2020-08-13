@@ -1,0 +1,38 @@
+Every three js app, infact every real time 3D application will have the following basic components
+
+Scene - a holder for everything else. A tiny universe in which all your 3D objects live
+Camera - equivalent to a camera in the real world sense and enables you to view your scene
+canvas - HTML canvas element, starts out as a blank rectangle
+Renderer- takes in your camera and scene as input and outputs beautiful drawings or renderings onto your canvas
+
+The above 4 components merely give us the scaffolding of an application however none of them can actually be seen. We will also need to add some kind of visible object
+and this visible object is usually a box shaped mesh which has three components
+
+Mesh - This is just a holder for a Geometry and a Material and defines the position in 3D space
+
+Geometry- This defines the shape of our mesh
+Material - This defines the way that the surface of the mesh looks
+
+Real Time Graphics
+
+Essentially dealing with real time interaction from the user 
+
+Every Three js application has six points of setup
+
+This essentially involves our index.html and main.css files
+
+We create scenes in three js making use of the Scene() constructor
+
+We can also set background colors making use of the Color constructor
+
+You know how I said that the scene is like the universe for everything that we want to do. When we create additional objects and wish to add it to the
+scene, we will need to call scene.add() and if we want to remove the object from the scene, we will need to call scene.remove()
+
+There are different types of cameras available in threejs but generally we wil be making use of the PerspectiveCamera which uses perspective projection to
+set up a view of the scene
+
+Perspective projection renders a scene in much the same way that the human eye would look at stuff. Generally with the perspective camera the scene gets smaller
+and smaller as we move further and further away
+
+The other type of camera is the Orthographic camera. This uses Orthographic projection which means that objects dont get smaller as we move further away.
+This is used generally for 2D projection

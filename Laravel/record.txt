@@ -1,0 +1,23 @@
+TrackMoney
+
+An application that enables you to track your monthly income and expenditure. You can also set an amount from your monthly income that you intend to save.
+
+At the end of every month,you receive a report about your finances for that month. There is a constant timer counting down the time till the end of the month.
+
+Every time you enter an expense, it automatically makes the adjustment to your income. Also, as multiple streams of income come through. You can update your income.
+
+There are search options for you to find what you spent on particular days, and also find out the number of times you are buying a particular item.
+
+In the initial dashboard view, you can view your total income earned since you joined the platform, total expenses , total amount saved, a spreadsheet report 
+about your sum total finances.
+
+There will also be a settings tab in which you can specify if you want to receive monthly finance reports, customize your UI between light and dark themes. 
+
+Just like you can increment your income, you can also increment the amount that you intend to save. But, however you cannot decrement the amount.
+
+You can also receive financial advice in emails bi-weekly.
+
+If you do not input your daily expense, you receive an email reminding you to do so
+
+A
+

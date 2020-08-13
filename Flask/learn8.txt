@@ -1,0 +1,16 @@
+Leke take note that pip freeze > requirements.text is like package.json in Angular. It is a text file containing all dependencies
+
+When a module/file is loaded in Python, __file__ is set to its name. We can then use that with other functions to find the directory that the file 
+is located in
+
+os.environ is a dictionary that contains all the environment variables
+
+autoenv is a program that enabkes us to set commands that will run every time we cd into our directory
+
+In order to use pip outside of your virtual environment, use python -m 
+
+__file__ will give you the name of the file
+os.path.dirname() will give you the folder where the file is contained
+os.path.realpath() will give you the folder + file name
+
+__name__ is a built in variable which evaluates to the name of the current module

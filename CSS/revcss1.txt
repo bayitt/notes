@@ -1,0 +1,25 @@
+The CSS border-radius property allows us to define the radius of an element's corners
+When the border-radius property takes four values, it goes in a clockwise direction
+When the border-radius property takes three values, the first value is for the top-left corner,the second value is for the top-right and bottom left, while the last ]
+value is for the bottom-right
+When it takes two values, the first value is for the top left and bottom right corners, while the second value is for the top-right and bottom-left corners
+
+With the border radius, we can also create elliptical corners by making use of the / symbol between the two values
+
+With the css border-image property we can set an image to be used as the border-image of a block level element
+The property takes three parameters, what image to be used, where we want the image to be sliced and whether we want the image to be repeated or to be stretched
+
+For the border-image property to work, the border property needs to be set
+
+CSS allows you to add multiple background images to an HTML Element, the images are separated by commasand are stacked on top of each other
+The first image is the one that will be closest to the user that will  be on top
+
+Background-size property can have two values, contain and cover
+
+CSS Gradients allow you to display smooth transitions between two colors
+Linear Gradients-Up/Down,Left/Right
+
+The linear-gradient property takes at least two parameters, the starting color and the ending color
+We can also specify what direction we want it to go
+
+We can even have multiple colors, like really many colors as our parameters

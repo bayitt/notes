@@ -1,0 +1,9 @@
+Breaking it down
+
+The os.path.join() method is used to join two paths according to your system's operating system
+The os.path.abspath() method gives us the absolute path of a file or directory
+The os.path.dirname() gives us the name of the folder of a particular file
+__file__ returns the name of the current file
+
+
+Leke remember that in Flask, current_app is going to give you the current Flask instance, essentially your entire application

@@ -1,0 +1,36 @@
+There are four different ways of data binding
+
+From the Component to the DOM {{ value }}
+[property]="value"
+(event)=handler
+[(ngModel)]=property
+
+{{ }}- Leke remember that this means Angular's interpolating binding syntax
+
+Two way data binding is used mostly in Template driven forms
+
+Going from the component to the template is property binding. 
+
+Going from the template to the component is event binding
+
+| - pipe operator
+
+A directive is a class, with the @Directive decorator
+
+Components are also technically directives because the @Component decorator extends the @Directive decorator with the template like features
+
+Directives are typically attributes
+
+Structural directives alter layouts by adding, removing and replacing elements in the DOM
+
+*ngFor is an iterative
+
+*ngIf is a conditional
+
+Attribute directives alter the appearance or behaviour of an element. They are similar to normal HTML attributes, hence the name
+
+Forms in Angular
+
+Reactive forms are more robust, they are scalable, reusable and testable
+
+Template driven forms are more for like adding simple forms to your app. They are easy to add but do not scale well

@@ -1,0 +1,35 @@
+For box sizing. Tailwind has several utilities such as .box-border and .box-content.
+For object-fit, Tailwind has .object-cover, .object-contain, .object-none
+For display, we have .block, .inline, .inline-block, .flex.
+For positioning, we have .relative, .absolute, .sticky, .static
+In order to set the position values, we have several options such .inset-4, .inset-x, .inset-y-4. Or, we just make use of the typical .top, .bottom, .left, .right
+
+For visibility, we also have .visible, .invisible
+
+We also have overflow, .overflow-visible, .overflow-auto, .overflow-hidden and .overflow-scroll, we also have .overflow-x and .overflow-y variants
+
+For z-index, we have .z-0, .z-10, .z-20, .z-30
+
+.items-start, .items-center, .items-end, .items-stretch
+
+.text-xs, .text-sm, .text-base, .text-lg, .text-xl - .text-6xl
+
+For letter spacing, Tailwind also has several utilities such as .tracking-tighter, .tracking-tight, .tracking-normal, .tracking-wide, .tracking-wider,
+.tracking-widest
+
+For line-height, we have from .leading-3 to .leading-8
+
+Text Alignment
+.text-left, .text-center, .text-right, .text-justify
+
+Text Color
+.text-transparent, .text-black, .text-white, .text-gray-100 - .text-gray-500
+
+Tailwind makes these colors available in their color palette
+Gray, Red, Orange, Yellow, Green, Teal, Indigo, Purple, Pink
+
+Text Decoration
+.underline, .line-through, .no-underline
+
+Text Transform
+.uppercase, .lowercase, .capitalize, .normal-case

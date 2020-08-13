@@ -1,0 +1,32 @@
+Leke, the () encompasses everything inside the subregex
+
+The preg_replace() function is used to replace matched patterns with strings and it takes the format preg_replace($pattern,replacement,string)
+
+Leke, never forget that the return false statement comes after the foreach loop
+
+Leke, in order to create variables in our regular expressions we need to make use of the : symbol
+
+Controllers are classes, they contain methods that are the actions
+
+To create an object of a class in PHP, we need to make use of the new keyword and the name of the class
+
+But it is not all the time that we will know the name of the class so in cases like that we will need to make use of a variable
+
+In order to call a method and pass parameters to it, we need to make use of the call_user_func_array(), it takes two like lists as parameters,
+the first list contains the name of the object and the name of the method, while the second list contains the parameters
+
+The class_exists function is used to check if a class exists
+
+The is_callable() function is used to check if a method exists and is public and it takes an array as the parameter, with the parameters being the name of
+the object and the method name
+
+Dispatch the route
+
+Dispatching the route simply means creating the controller object and calling the method
+
+Router provides the control parameter taken from the URL
+Words in the url are separated by hyphens
+Controller names should be in StudlyCaps
+action method names are named using camelcase
+
+Leke, in order to access methods or arrays in our classes we need to make use of the $this keyword

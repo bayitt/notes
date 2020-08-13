@@ -1,0 +1,6 @@
+Primitive types are like integers, strings
+Reference types are like arrays, objects
+
+The difference between primitive types and reference types is that with primitive types when you create a copy of the variable, the entire value is copied
+so that ifyou change the original value, it does not affect the value of the copied variable but with  reference variables if you copy the variable, it is not
+the entire variable that is copied but only a pointer to the variable, so of you change the original variable value, it will become the value of the copied variable

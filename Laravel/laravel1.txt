@@ -1,0 +1,47 @@
+
+
+Leke, in order to install Laravel, we make use of the command composer create-project --prefer-dist laravel/laravel TrackTvBE "5.6*"
+
+artisan is a php command that comes with laravel that enables us to do things like viewing our application in the browser and create fast classes and generate
+stuff rapidly
+
+Laravel is an MVC Framework
+
+You know how, you go about creating your our own Router, all that long journey, with Laravel, all you need to do is to call a static get() method in the
+Route class and pass in the route and a closure
+
+Controllers are located in the app, http , controllers directory
+
+In order to generate new controllers in Laravel, we need to make use of the php artisan make:controller controller name command
+
+You know how when we pass a route to our router and we specify a second callback parameter which represents what we want to do, we specify an array parameter in
+which we specify what controller should take over
+
+So essentially, the deal with it is that we can handle routes in two ways, either directly from our router in which we just make use of a callback,
+or through a controller in which we specify the controller and method to handle the route
+
+Setting up of our database takes place in our .env file
+
+After creating our database, we need to create a model that is going to interact with that database
+
+In order to create models, we need to make use of migrations
+
+Models are also created via the php artisan make:model command
+
+We can also pass in a -m extra parameter, which means that a migration for the databse table we are creating
+
+We can find our models in the Providers Table
+
+Then we can also find our migrations in the database migrations folder
+
+Migrations are simple classes that are going to create database tables for us
+
+Migrations are made up of two functions, one up() function and one down() function
+
+Anytime we run a migration, its going to run the up() method and when we want to delete the table or change something, we run the down() function
+
+In the up() method, we have the name of the table that we wants to create, then the second parameter is a callback that contains the blueprint of the created 
+table
+
+Essentially, instead of creating tables manually in phpmyadmin, we make use of the migrations to create them
+For example, we can use $table->string('todo') to create a string field in our table

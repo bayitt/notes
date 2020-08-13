@@ -1,0 +1,28 @@
+
+We can access elements by the getElementsByTagName() method of the DOM.We can also access elements by making use of the getElementsByClassName()
+
+We can also access elements via the getElementById. Finally we have the getElementByName
+
+Then, we can also make use of the query selector by adding a '.' in front of the parameter
+
+The Query selector does not return an array, bu instead returns the first element it finds that matches the parameter.
+To return an array of all the elements that match the query,we make use of the querySelectorAll() method
+
+We can create elements in Javascript by making use of the document.createElement(). Then we can make use of the textContent method to set the value of the
+HTML Element
+
+The appendChild() method is used to add elements after the element.The problem with appendChild() is that it appends the element after the entire tag but if
+we call insertBefore(), it takes two parameters, what we want to insert and what we are inserting it after
+
+Leke note that it is firstElementChild not firstChildElement
+
+In order to delete elements, we need to call the parentElement.removeChild() method
+
+parentNode can be used in place of parentElement. Nodes are things that are elements in the DOM but can also be Elements
+
+Dialogs in Javascript
+The alert() method on the Window object is used to throw up a message to the user
+The confirm() method is used to ask the user for like a Yes or a No
+The prompt() method is used to ask he user for input
+
+Leke remember that is either the parentElement.removeChild() or it is just remove

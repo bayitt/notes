@@ -1,0 +1,19 @@
+Seeing as the job functions return job objects, we can even disable these job objects, either via the enabled property on these objects or by calling the
+schedule_removal() method on them
+
+We can even change the interval of the job by accessing the interval property on the job object
+
+903853185
+
+A handler is an instance derived from the base class telegram.ext.Handler which is responsible for the routing of different kinds of updates(text, audio, inlinewuery
+, buttin presses and more)
+
+The args property opn the Context object returns a list of space separated strings 
+
+When using the MessageHandler, it is sometimes useful to have more than one filter. This can be done using so called bit wise operators. In Python, these
+operators are &, | and ~ meaning AND, OR and NOT respectively.
+
+Filters.video, Filters.photo, Filters.document,
+Filters.forwarded
+
+Just like we have the send_message() method, we also have the send_chat_action()

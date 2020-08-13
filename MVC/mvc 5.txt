@@ -1,0 +1,32 @@
+The dirname() function is used to obtain the parent directory of a directory
+
+The __DIR__ returns the directory of a script file
+
+Breaking down the process of using the namespaces 
+We call the spl_autoload_register function
+We need to obtain the root folder,
+
+Leke, the explode() function is used to break a string into an array
+It takes three parameters, the first parameter is the separator which specifies where to break the string
+The second paramter is the string to split
+The third optional paramter specifies the number of array elements to return
+
+The strpos() function finds the first occurrence of a string inside another string
+The first paramter specifies the string to search
+The second parameter specifies the string to find
+The last optional parameter specifies where to start inside the string to find
+
+Leke, remember that after computing everything in the string function, we need to return the final url before making use of it in the dispatc=h function
+
+Leke, note that anytime that you are working with regular expressions,anytime that you have a character group, just know that you can have it to be your subgroup
+
+Abstract classes are classes in which we dont create objects directly instead, we create objects that extend these classes themselves
+
+In PHP, the keyword to create a constructor is __construct
+
+Leke, take note that in order to make use of an abstract class,we have to extend it 
+
+Leke, you know that whenever you extend a class, it means that we can make use of the methods in our derived 
+Leke, take note that the function to auto require a class is spl_autoload_register
+
+Leke when making use of the spl_autoload_register() function, don't forget that in the concatenation it is .'.php' not .'php'

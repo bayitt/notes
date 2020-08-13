@@ -1,0 +1,37 @@
+The __init__.py file serves two purposes. It serves as the application factory and it tells Python that the flaskr directory should be treated as a package
+
+__name__ is the name of the current Python module. The app needs to know where it is located to set up some paths.
+instance_relative_config=True tells the app that configuration files are relative to the instance folder. The instance folder is related outside the flaskr package
+and contains configuration information
+
+app.config.from_mapping() sets some default configuration files that the app will use
+
+SECRET_KEY is used by Flask to keep its data and all its extensions safe
+DATABASE is the path where the SQLITE database will be located
+
+app.config.from_pyfile() is used to override the default configuration with values taken from the config.py file
+
+The first thing to do when working with an SQLITE database is to connect to it
+
+In web applications, the db connection is tied to the request
+
+g is a special object that is unique for each request. It is used to store data that may be accessed by multiple functions during the request. The connection
+is stored and reused instead of creating a new connection each time get_DB is called a second time
+
+sqlite3.connect() establishes a connection to the file pointed at by the Database configuration key. This file does not have to exist yet
+
+sqlite3.Row tells the connection to return rows that behave like dicts
+
+With sql, you specify the column name, the type and the NOT NULL
+
+In Python the with keyword is used when working with unmanaged resources like file streams
+
+A view function is the code you write to respond to requests to your application
+
+A blueprint is a way to organize a group of related views and other code
+
+I think a blueprint can be likened to a controller
+
+Creating a new blueprint object requires three parameters, the name of the Blueprint, where it is defined and a url prefix
+
+Leke take note that anytime you create, update or delete from the db you need to call db.commit()

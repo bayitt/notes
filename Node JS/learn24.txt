@@ -1,0 +1,32 @@
+Different types of errors
+- Technical/Network errors
+- Expected errors
+- Bugs/logical errors
+
+Working with errors
+- Error is thrown
+
+Anytime we pass in an error object to a next() method, what happens is that express is notified that an error has occurred and it stops the execution of every
+subsequent middleware and moves straight to an error middleware
+
+So far, I have typically worked with middeware that has three parameters, but express knows a special type of middleware that has four parameters, with the 
+first parameter being the error
+
+Revising working with errors
+The whole idea is that with Javascript, errors can be thrown either in a synchronous or asynchronous manner. Synchronously, it can be handled making use 
+of a try, catch block. Asynchronously, since we are already making use of promises, we can handle the promises in the catch block.
+The whole idea is that we are handling the errors which are thrown from the then blocks. So essentially, instead of just logging the error. thus causing the
+application to be blocked, we can handle the error gracefully.
+
+We can handle the asynchronous errors thusly, we can create an error object and pass in the obtained error to the Error() constructor. we can then set the
+httpStatusCode property on the error and return the next() method with the error object as a parameter. Typically, I have only worked with express middlewares
+with three parameters. But express knows a fourth type of middleware, one with four parameters, with the first parameter being the error. 
+If next(error) is returned from a controller action, then express is going to stop the execution of every other middleware that comes after it and is going to
+go straight to the specified error middleware that has been previously defined. 
+
+Inside of async code, in order to get express to go to the error handling middleware, we have to call next()
+
+Errors and Http Response Code
+- 2xx - Success
+- 3xx - Redirects
+- 4xx - Client side error

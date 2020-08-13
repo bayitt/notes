@@ -1,0 +1,2 @@
+Leke take note that to order our queries in an ascending fashion we need to make use of the order_by() method. Then inside it we need to pass in the 
+column that we want to order it by and add in .desc() or .asc()

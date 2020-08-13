@@ -1,0 +1,40 @@
+Flask depends on the Jinja templating engine and the Werkzeug WSGI toolkit
+
+Flask dependencies
+- Werkzueg implements WSGI, the standard Python interface between applications and servers
+- Jinja is the templating engine
+- MarkUpSafe comes with Jinja and is used to escape untrusted input when rendering templates
+- ItsDangerous securely signs data to ensure its integrity. This is used to protect Flask's session cookie
+- Clik is a framework for writing command line applications
+
+Virtual Environments are independent groups of Python libraries, one for each project. Packages installed for one project will not 
+affect other projects or the operating system's packages
+
+After creating your project folder. You need to create a venv folder. Then you need to cd into the directory and then run py -3 -m venv venv.
+After this you need to activate the environment. cd venv/Scripts/activate
+
+The micro in microframework means that Flask aims to keep the core simple but accessible
+
+By convention, templates and static files are stored in subdirectories within the applications Python source tree with the names templates and static 
+respectively
+
+In order to make use of flask, we need to import the Flask class from the flask module. An instance of this app is going to be our WSGI application
+
+In order to run the application run the command, set FLASK_APP=hello.py (your application) and then run flask run
+
+If you want all the users on your network to be able to access the application on your local, you need to add the --host=0.0.0.0 
+
+Essentially, the whole idea is that Flask deals with environment variables 
+
+The route() decorator is used to bind a function to a URL
+
+You know how in Lumen and Laravel, we use {id} to create dynamic routes.In flask, we make use of <>
+
+We can even use converters to specify the type of argument we are expecting 
+
+The unique different converters that we have in flask are 
+-string
+-int
+-float
+-path(like strings but can include slashes)
+-uuid

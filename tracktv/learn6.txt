@@ -1,0 +1,25 @@
+Breaking it Down
+
+Essentially what I did is that I made the sidebar component to emit an event every time each of the links are clicked.
+
+I bound each of the anchor links's click event to an emitToggleEvent() method in the sidebar component's class. I also passed in a string descriptive of
+the various links.
+
+Then in the emitToggleEvent() method, through the previously created EventEmitter object, I emitted in the descriptive string.
+
+Then,  in the eventual home component where I am making use of the sidebar component, I created an event binding for the event emitter object. As such, every time
+an anchor link was clicked and by extension , the event was emitted , I bound it to the toggleTab() method in my home component .
+
+What will be the structure of my Database
+
+- Obviously we have the Users Table
+- Then we will need to have a Series table containing the various subscribed to tv series
+- Then we will have a pivot many to many table containing the various users and their subscribed to tv series
+
+For me typically, I like to see an engaging poster, title
+
+What are the required Tv details
+-name
+
+
+What exactl

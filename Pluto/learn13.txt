@@ -1,0 +1,25 @@
+Things to note
+
+The datetime.now() function returns the current timestamp in a datetime object	
+
+Then the strftime() can be used to format the timestamp to different date and time formats
+
+I think it means string format time
+
+%Y - Year
+%m- month
+%d - day
+%H - hour
+%M - Minute
+%S - Second
+
+
+The way I understand it is that a datetime object can be created either by the default datetime.now() method or from a timestamp using the fromtimestamp
+method
+
+Python has a built in replace method()
+
+The whole logic behind it is that when I called datetime.now(), it returns the current timestamp as a date object. Now, I can then call the strftime()
+method in the datetime class on the datetime object to format dates as I please
+
+What exactly do I want to do?

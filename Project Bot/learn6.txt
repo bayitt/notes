@@ -1,0 +1,9 @@
+RecordIt Plan
+
+A simple application to record attendances for chaplaincy meetings. The whole idea is that we have to load in the excel file containing all the names of the 
+stewards. Through this, we can see the names of all the stewards and their attendance status. 
+Then, the major feature, we can search for steward names and mark them as present. 
+Then, at the end, we can download a new excel file of all the stewards that are present, ready to be used tomorrow.
+
+
+

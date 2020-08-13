@@ -1,0 +1,15 @@
+The whole idea with foreign key relationships is that
+
+with Laravel, anytime it creates the auto increments primary key id, and by default it creates it as an unsigned data type.
+
+So essentially, the foreign key field need to be unsigned too if not there will be a data type mismatch if you try to create the foreign key
+
+Also, the whole idea with foreign keys is that a row in the parent table references a row in the child table, it's a relationship between them. So if there are 
+child rows that reference a parent row that does not exist, an exception wuill be thrown
+
+What exactly am I trying to do?
+
+I want to create suggestions based on what the user is typing in.
+
+But I dont want to do this based on every keystroke of the user. Instead, what I want to do is to autopopulate the suggestions every 
+500ms if the user is still typing

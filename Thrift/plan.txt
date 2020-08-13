@@ -1,0 +1,16 @@
+THRIFT PLANNING
+What exactly do I want to do?
+
+An expense tracking application
+
+Features
+- Expense Tracking
+- At the beginning of every month, you enter your income for the month, this amount can be increased but not decreased, you also enter an amount to be saved,
+again, this amount can be increased but not decreased
+- There is a timer counting down to the end of the month
+- Users can view the top three items of all time they spend on
+- They can also view their projected spending for the month and if they end up with a surplus or deficit
+- They can search for a particular item and view everytime they spent on it
+- They can analyze their spending via graphical means
+- They can compare spending between two months
+- They can also generate PDF spending reports for particular periods

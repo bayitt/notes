@@ -1,0 +1,24 @@
+Revising everything learnt in Laravel so far
+1) We run the laravel localhost by making use of the php artisan make command
+2) We can create controllers by calling php artisan make:controller $controllername
+3) Then in order to handle routes, all we need to do is to call instances of the static method get on the Route class
+4) The first parameter of the get method is the route that we want to match, while the second parameter can be a callback or it can
+be an array in which we specify the controller and method that are to handle the route.
+5) Models are created in Laravel by means of the php artisan make:model method
+6) We can also add the -m parameter to create a migration for the model
+7) Migrations essentially are classes that enable us to create programatically the table corresponding to the modoel
+8) After doing all this, then we need to seed the database
+9) First in ModelFactory.php, we need to call the define method on the factory object and pass in the model whose corresponding table we want to seed
+10) Then the second parameter is a Faker object that we are going to use to seed the database
+11) Then we need to create a seeder via the php artisan make:seeder command
+12) In the run() method of the seeder, we need to pass in the name of the model whose table we want to seed and the number of instances that 
+we wish to seed. Then we need to call the create() method on it
+
+Leke take note that it is php artisan migrate to successfully create the table
+
+Quirks to take note about in Laravel
+1) Objects are referenced with $, unlike with twig
+2) Object properties are also referenced with a ->, unlike twig where they are referenced with a .
+3) In the define() method called on the $factory object, we ALWAYS have to return an array containing the potentially seeded data
+4) When passing data from the model to the view in the controller, we make use of the with() method and the first parameter is the name that we want
+to use to reference it and the actual object

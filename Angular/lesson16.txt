@@ -1,0 +1,36 @@
+Leke, you know that there are other HttpClient Methods such as put(), which is used to update data and post, which is used add data
+
+The HttpClient.put() method takes three parameters, the URL, the hero object or whatever object and HttpHeaders
+
+HttpHeaders essentially is an object in which we specify the headers which essentially is specifying the Content-Type is to be application/json
+
+The tap() method essentially is the opposite to the catchError() method, and essentially it enables us to have access to whatever object or whatever
+is returned from the http request. If nothing is returned or we do not need it, we can just type an _
+
+The as keyword, can be used to create objects from like things that are not objects of the native class
+
+The filter() method loops through every item or object in an array and creates another array of items/objects that satisfy the condition
+
+Observables do nothing until something subscribes to it
+
+The whole idea is that because put() is changing data on the server, we are not returning a Hero Observable, unlike when we are posting data to the api
+
+const httpOptions={
+   headers=new HttpHeaders({'Content-Type':'application/json'})
+}
+
+The reason why it is working like that is because I have put the [(ngModel)] to enabble twi way data binding
+
+the typeof keyword in Typescript is used to return the data type of the element or object by its side
+
+Breaking it all Down
+
+http requests in Angular always return Observables, we then have to subscribe to these Observables in order to get the data or perform some computation on it
+
+Leke remember that the filter method loops through all the values in an array and only returns the values that satisfy the condition specified
+
+Just like we have the (click) event, we also have the (input) event to which we can attach a function
+
+In Angular heroes !== heroes$. heroes is a normal object while heroes$ is an Observable
+
+The async pipe subscribes to an Observable automatically so that we do not have to call subscribe() on the Observable in the Component's class

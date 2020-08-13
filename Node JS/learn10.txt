@@ -1,0 +1,23 @@
+The basic flow of a node app
+The whole idea of node/express is that after installing express and requiring it, we call the express() function and it returns a variable which is stored in an
+app variable. 
+
+Node basically works on middlewares, these middlewares take three paramaters, the request object, the response object and the next() object. If we want the request
+to proceed to the next middleware in line, we need to call the next() method.
+
+We also make use of the body-parser package for parsing our requests. That whole process of concatenating the streams of data and storing it in a buffer is carried
+out automatically by the bodyParser packagae. We make use of bodyParser in a middleware by calling app.use(bodyParser.urlencode({extended:false})). We also
+call app.use(express.static()) and pass in the path to our public folder so that we can server static assets in our app. 
+
+For templating engines, we need to call app.set() and set the view engine key and the view key to ejs and views respectively.
+
+In order to avoid bloated code, we need to split up our common routes into their different files. Say, we have admin routes, we need to put them in an admin.js
+routes file. In these route files, we are going to make use of the express.Router() object.
+For routing, making use of any of the http verbs is going to execute exact matching as opposed to making use of the .use() method which will only do inexact matching.
+Then, we can export the routes making use of either module.exports or exports. syntax.
+
+I aso learned how to make use of some node core modules. For example, the fs core module for reading and writing files. The path core module.
+The __dirname variable which returns the directory name of the file. The process.mainModule.filename property.
+
+Node JS is asynchronous and non blocking. What this means is that the code never waits for processes to finish before going to the next process. This is why
+it makes use of callbacks so much. The whole idea is that whenever its done with its process, do what I want I want you to do.

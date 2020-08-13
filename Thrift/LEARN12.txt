@@ -1,0 +1,36 @@
+Bundling tools such as Webpack and Browsify organizes and puts all your Javascript, HTML, CSS, images and everything else in between together in a handful of neat little
+files to help maeke your application run smoothly. These bundling tools come pre baked into the Angular and React CLIs	
+
+Modules is a method of organizing large bodies of code that allows the developer to segment and mentally and digest a particular part of the application.
+It gives you the ability to create bits of code in one file and create code to be used in another
+
+Building a Javascript application has more to do with minifying the current application and creating a streamlined output
+
+Bundling tools like Webpack are merely repackaging ECMAScript in a form
+
+A bundle is the output of a process that merges everything into a few, if not single file in the optimized manner
+
+The Angular CLI makes use of Webpack to put all of the application's assets, Javascript, images,css , fonts and what not into something called a dependency graph
+
+When you run Webpack on your application, it goes through your entire application and creates a code version of a dependency graph that maps out the 
+requirements for a particular block of a code
+
+Grunt and Gulp dont support images and only work with files.
+
+The benefit of having a dependency graph is that Webpack can eliminate dead assets. Webpack eliminates this and only builds the css and images that you need
+	
+
+Breaking down the process of drag and drop Image Upload
+1) First off, you need to install the ngx-file-drop module via the npm package manager
+2) Take note to specify the particular version that is compatible with your angular version
+3) Then, in the root app module, you need to import the FileDropModule from the library
+
+The whole idea behind using the Intervention/Image library is that after the image has been moved to the server, then the image needs to be resized or given the
+proper orientation and this is done by passing in the image path to the static make() method on the ImageStaticManager class and calling the orientate() and save()
+methods on it respectively
+
+Test Driven Development
+SOLID Principle
+Design Patterns
+Infrastructure
+	

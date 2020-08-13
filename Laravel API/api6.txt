@@ -1,0 +1,9 @@
+I think essentially, the important thing about a resource class is its toArray() method
+
+Remember how Resources represent a single model object transformed into json, and collections represent a collection of model objects which are transformed
+into json, essentially for when we are transforming multiple rows from our table. 
+
+Resources are created making use of the php artisan make:resource ResourceNem command, while collections can be created in two ways either by
+php artisan make:resource User --collection or with php artisan make:collection User
+
+An alternative way to create collections is by calling the static collection method on a resource

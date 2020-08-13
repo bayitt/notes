@@ -1,0 +1,27 @@
+Leke take note of the following methods on exceptions
+get_class()
+getMessage()
+getFile()
+getLine()
+
+Leke take note that errors expect the level, message, file and line parameters
+Take note of the error_reporting() function. It is a built in function
+
+PHP has various settings that can be configured e.g show and hide errors, amount of memory to use
+The current settings can be accessed via the phpinfo() command. PHP settings are stored in the php.ini file
+
+PHP can be configured to show or hide errors, or to only show errors of a certain kind
+
+Leke, its always best to divide the code in your front controller, like put all the routing code together and error and exception code together
+
+Due to the fact that we want to display different kinds of messages to developers and users, we can display generic messages to users and show more detailed 
+messages to developers by saving the complex and more detailed information in a file. And display a simpler generic message to users.
+We make use of the ini_set command to specify where we are to save the error logs and then to write a message to the file, we need to make use of the error_log()
+function
+
+When a web browser makes a requuest for a resource, it sends back a status code depending on the result
+200-OK
+404-File not found
+500-Server Error
+
+Leke take note of the getCode() method that can be called on exception objects

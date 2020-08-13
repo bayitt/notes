@@ -1,0 +1,11 @@
+In order to use toastr in Angular, we need to install ngx-toastr and angular/animations via npm. After installing, we need to add the toastr css file to our
+angular.json file. After this, we need to head over to app module and import the BrowserAnimationsModule and toastrModules respectively.
+
+Then we need to add them to our imports array in the @NgModule metadata object
+
+Breaking this down
+
+The whole idea is that catchError() ALWAYS has to return a function/closure that returns an observable
+
+I think that the deal is that if it reaches sendFailedLoginResponse(), authentication has already failed, it is all about determining the appropriate message and/or
+response

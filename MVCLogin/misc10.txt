@@ -1,0 +1,41 @@
+justify-content with a property of center is going to put all the content in the center
+A property of flex-end will position it at the end of the flex container, flex-start is the default behaviour which positions the text at the beginning
+Other properties are space-around  which gives space around the flex items while space-between gives it space between it
+
+Essentially there are two different ways of creating our menu bar,we apply the display property of flex on our ul, Then we set our justify-content 
+property to flex-start, Then we set our flex grow. Or we can set our justfiy-content to space-around
+
+The default flow of a flex container is from left to right but we can override it by setting its flex-flow property to column
+
+Whenever we set the flex-flow to go in a column, the flex basis instead if controlling the min-width, controls the minimum height'
+
+Whenever we use flexbox, we have a main axis and cross axis. When we change the flex flow to column, all we are doing is changing the direction of the axis
+The flex items always follow the direction of the main axis. The justify-content property is only ever applied to the main axis
+
+If we want the justify-content property to be displayed when the flex flow is column, we ALWAYS need to specify the height of the flex-container
+
+With justify-content, when we make use of row reverse and flex-start, the beginning becomes the end
+
+Just like justify-content affects the main axis only, align-items is going to affect the cross-axis
+
+I'm guessing that align-items cannot take properties of space-around and space-between
+
+Leke ALWAYS remember that when flex-flow is set to column or column reverse that the flex-basis sets the height
+
+ALWAYS take note of the flex-flow that we are making use of
+
+border-sizing:border-box is very useful in that it incorporates any margin or padding that we add inside of the overall width of the element
+
+Leke take note that just like flex-wrap, justify-content is applied to the flex-container
+
+The default value for the order property of each flex element is 0
+
+With the order property, the lower values come first
+
+The order property also works for negative values
+
+The whole idea behind creating navogation bars is that we dont specify the actual height,rather we use padding to get the height that we desire
+
+Also, in our parent elements , it is always best to set the initial padding and margin to 0
+
+We need to set the links display type to be block

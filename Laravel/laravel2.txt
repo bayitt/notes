@@ -1,0 +1,42 @@
+By default Laravel comes up with a User Model and a create user Migration
+
+Model Factories are what are used to generate dummy data in our databases
+
+Faker is a PHP Library that generates fake data for the user
+
+When we call the define method on a model factory instance, we need to pass in two parameters, one is the Model of the table that we want to populate with data
+and the second parameter is a callback in which we pass in an instance of Faker\Generator. Inside the call back we return an array
+
+We make use of seeders to run our factories. Like we our planting data
+
+In our seeder, we need to call a default factory() method, passing in the model whose table we are trying to populate with data, and the second parameter is the 
+number of instances of data that we want to populate the database with. Then we call a create() method on the default factory()  object.
+
+Then in order to run the seeder, we need to register the seeder by calling a call() method on $this, on the database seeder and passing in the name of the 
+seeder
+
+Breaking down the Process of Seeding the Database
+1) In the ModelFactory.php file, we need to call the define method on the factory object and pass two parameters to it. The first parameter is the Model whose
+table we are trying to populate with data
+2) Then we need to create a seeder via the php artisan make:sedder TaskTableSeeder
+3) Then in the seeder that we just created, we need to pass the name of the model that we want to populate, then we need to call the create() method on it, 
+passing in the number of seeded data
+4) Then we need to register the seeder in the database seeder by calling the call() method on $this and passing in the name of the seeder that we created
+5) Then finally we need to seed that database by calling php artisan db:seed
+
+The with() method in Laravel is used to send in data to the view from the controller. The same way that I make use of an array to pass in data from the
+controller to the view via the twig templating engine
+
+Blade Templating Engine
+
+The syntax to loop through objects is @foreach($tasks as $task) 
+
+@endforeach
+
+Eloquent is the Modeling System for Laravel
+
+Laravel Models have default methods defined for them for each of the model tables
+
+Layout files are simply the general way that an application looks. Like the general content that we are going to have across our web pages
+
+@yield and @extends are much like the {% block body %} and {% extends %} that we have in the twig templating engine 

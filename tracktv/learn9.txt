@@ -1,0 +1,20 @@
+Cron is a task scheduler in UNIX-like systems, which runs shell commands at specified intervals 
+
+If we want to schedule tasks that will be executed so often, we need to edit the Crontab 
+
+Crontab is a file that contains a list of scripts that will run periodically
+
+Crontab/Crontables contain cron jobs, each related to a specific task 
+
+Cron jobs are composed of two parts. The cron expression and the shell command to be run 
+
+php artisan make:command RegisteredUsers --command=registered:users
+
+Cron jobs are composed of two parts, the cron expression and the command to run 
+
+* * * * * - Cron Expression 
+
+Each field is an option for determining the task schedule frequency and it stands for minute, hour, day of the month, month and day of the week
+
+* * * * * - This means all possible values so the cron job is going to run eveery 
+

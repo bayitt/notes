@@ -1,0 +1,14 @@
+Name of application -  Muse
+
+Premise - A politics based social media application for individuals to meet and exchange policy discussions. Individuals create accounts, post content, follow
+other users, like content, comment on content and all. 
+
+There are two different types of users, either we have typical human users or we have bot users.
+
+Tables
+
+- Users
+- Posts
+- Images
+- Documents
+ 	

@@ -1,0 +1,11 @@
+The <router-outlet> tells the router where to display routed views
+
+The router-outlet is one of the directives that became available to the AppComponent because AppModule imports AppRoutingModule which exports 
+
+Leke note that the first parameter of the subscribe() method on an observable represents the response of the service
+
+Leke remember that after using a service, we have to register it as a provider in the app-module
+
+The redirectTo property is used to specify where a route shoukld redirecto while the pathMatch property should be set to the string 'full'
+
+{ path:'', redirectTo:'/dashboard', pathMatchL:'full' }

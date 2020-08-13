@@ -1,0 +1,30 @@
+Leke remember the difference between break dn continue. Break is used to stop loop exection, while continue is used to skip loop execution for a particular iteration
+ofthe loop.
+
+Objects in Javascript have a length property that returns the number of values in the object, much like the len() function in python and the count() function in PHP.
+
+Remember the +=
+
+In Javascript it is possible to add strings together, much like we add numbers together. Leke also, adding strings and integers together returns a string.
+Javascript performs this behaviour for any addition involving a string,whether an arrat, boolean, it combines them string wise
+
+When subtracting involving strings. Javascript tries to see if it can cast the value into a number, if it can, it performs the computation
+
+In Javascript the toFixed() method is used to round up values, much like .2f in C and C++. It is recommended to be used when working with floating point numbers.
+
+Javascfript is very good at typecasting. It does it almost automatically.
+
+Dividing by 0 in Javascript does not return an error but instead returns infinity
+
+A built in rule in Javascript is that NaN != NaN
+Another rule is that null can't be compared
+But null can be compared with undefined and undefined only
+Undefined compared with anything is always false, except when comparing it with null
+
+PHP
+The now() function is used to return the full date, while the time() function returns just the time
+
+Breaking down the process of accessing active users
+First make sure that you have a field in your table to be LastActive
+Then we need to ensure that if the sessions variable is present that the LastActive Field should be updated to the current time
+Then we need to access the number of active users, by creating an sql query for the users in which their LastActive time is greater than the time of ten minutes ago

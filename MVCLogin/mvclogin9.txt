@@ -1,0 +1,30 @@
+Breaking down the process of using making use pf Mailgun
+
+We need to make use of the Mailgun\Mailgun class
+Then we need to create our send method in our Mail class taking to, subject, text and html as parameters
+Then we need to create a new mailgun object taking the api key as the parameter , Then we need to specify our domain name.
+Then we need to call the sendMessage() method taking the domain and an array containing the paramters.
+
+Then for Mailgun, the key is what we have in the Mailgun dashboard, excluding the pubkey and the pkey
+Then our domain name is the sandbox thing
+
+Leke take note that it should be key-
+
+In order to send password resets to the user, we need to add two new fields to the user table in our database. We need to add a password_reset_hash field which is 
+of type varchar with a length of 64 and a default value of null and a unique id
+
+Then we also need to add a password_reset_expiry field which is of type datetime and has a default null value
+
+Leke you need to take note that the token is different from the hashed token
+
+Hexadecimal values refer to values that contain only numbers and hexadecimal values form A-F
+
+Leke take note of the strtotime() method which is used to convert a string from the datetime format into normal string formatiing
+
+If you do not explicitly return anything from a PHP script, it returns null
+
+
+Breaking down the process of resetting the password.
+We need to have a view for the forgotten password, with the email as the only parameter. 
+When the forgotten password button is clicked, a call to the findUserByEmail Method is via the resetPassword() method and if a user object is returned, then 
+the startPasswordReset() method is called, in which the hashed token is inserted into the database, after which the method to send the email is called 

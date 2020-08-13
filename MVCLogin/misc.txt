@@ -1,0 +1,13 @@
+What exactly have I learnt
+Whenever I am trying to perform a transition on a html element, NEVER forget to define the property I am transitioning and also to apply the clas
+directly on the element
+
+The first parameter of the translate method is the x axis, while the second paramter is the y axis
+
+Leke remember the text-align() method
+
+Leke take note that when uploading images via ajax, we need to just send the data like that instead of making use of an object
+
+Leke take note that whenever we are working with ajax, never redirect the page before returning results
+
+Leke take note that empty space counts as input for textareas

@@ -1,0 +1,46 @@
+Leke think of scope as the registry on which your variables are registered
+
+Global spce refers to the window object. It is the topmost module in which we can go in our js code
+Local scope is nested inside the global scope
+
+If you leave out the var keyword, Javascript will automatically make it a global variable
+
+It is possible to pass functions to arguments in Javascript
+
+The basic format of the forach method is array.foreach(function(element)
+					{
+						console.log(element);
+					}
+This means that for each item in the array it prints it to screen, so essentially, the parameter represents each item in the array
+
+The push() method adds to the end of the array. The pop() method returns the element being deleted
+The shift() method is used to delete the first element in the array. It also returns the element being dleted
+
+The indexOf() method is used to return the index of an element.
+The splice() method returns portions of an array and it takes two parameters, the first parameter represents the beginning position while the second parameter
+represents the number of elements that it is taking starting from the beginning element
+
+But the issue here is that the splice() method removes the elements from the array while the slice() method does not, but the slice() method works differently in
+that rather than counting the number of elements to take from the first parameter as the second parameter, it takes as the second parameter where to stop, much
+like in python
+
+Assuming we want to obtain the elements in an array that are greater than 2, we can call the filter() method on the array and just like the forEach() method, it 
+takes a function as an argument and it returns it as an array
+
+The map() method is used for computations. It also returns an array.
+
+The array.reverse() method reverses the array.
+
+Summary
+The filter() method is used for comparison
+The map() method is used for computations
+The reverse() method is used to reverse the array.
+
+The filter() and map() methods return new arrays for their results while the reverse() method changes the array permanently
+
+
+The concat() method combines two arrays
+
+The join() method uses the joining array as a separator
+
+The reduce() method reduces an array to a single value

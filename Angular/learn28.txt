@@ -1,0 +1,36 @@
+Angular Forms
+
+Angular provides two different approaches to handling user input through forms, reactive and template driven
+
+Reactive forms are more robust, they are scalable, reusable and testable. To be used if forms are a key aspect of the application
+Template driven forms are useful for adding a simple form to the application, such as an email list sign up form
+
+Easy to add but do not scale as well as reactive forms 
+
+Both reactive and template driven forms share underlying building blocks
+FormControl tracks the value and validation status of an individual form control
+FormGroup tracks the value and status for a collection of a form controls
+FormArray tracks the value and status of an array of form controls
+ControlValueAccessor creates a bridge between Angular FormControl instances and native DOM Elements
+
+Both Reactive and template driven forms both use a Form Model to track value changes Angular forms and form input elements
+
+The source of truth provides the value and status of the form element at any given time. In reactive models, the source of truth is the form model.
+
+And in this case, the form model is the form control
+
+With reactive models, the form model is explicitly defined in the component class. The reactive formdirective in this case FormControlDirective then links the 
+existing FormControl instance  to a specific form element in the view
+
+In template driven forms, the source of truth(records the current value and situation) is the template
+
+The NGMODEL directive is what links the template to the component property
+
+While in Reactive forms it is the FormControlDiective that links the FormControlInstance which is the Form Model and is the source of truth to the template
+
+Reactive - Form Model
+Template - Template
+
+With template driven forms, the ngmodeldirective takes charge
+
+Apparently it is the formControlDirective making use of the ControlValueAccessor that links the form control instance which the form model to the input element

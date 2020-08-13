@@ -1,0 +1,29 @@
+Algorithms
+
+An algorithm specifies a series of steps that perform a particular computation or task
+
+It is an unambiguous description that makes clear what is to be implemented
+It expects a defined set of inputs
+It produces a defined set of outputs
+
+A precondition refers to a requirement that an algorithm places on its inputs
+
+The impression I get really is that with algorithms, it is all fixed 
+
+- Basis Case
+- Inductive Step
+
+Leke take note that Python does not have like a false data type, instead what it has is None, and also in order to set a variable to true,
+we need to set it to True
+
+Linear Search is hardly used due to the fact that other search algorithms such as binary search and hash tables allow for faster searching comparison
+
+With Jump Search, we are going to jump be jumping in intervals from the specified index. If we reach an index whose value is greater than the searched for value
+then we will need to go back to the previous index and perform linear index from it to get the value
+
+The difference between binary search and interpolation search is that binary search always goes to the middle to check while interpolation search may
+go to different locations depending on the value of the item being searched
+
+Linear search takes place in O(n) time while binary search takes place in O(Log n) time. Jump search takes place in O(sqrt n) time
+
+Exponential Search involves finding the range where the element is present and doign binary search in the present range 

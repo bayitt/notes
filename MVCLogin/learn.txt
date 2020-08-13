@@ -1,0 +1,4 @@
+In order to disable a button in JQuery, we make use of the attr() property and set disabled to disabled
+In order to enable the button back, we need to make use of the prop() method and set disabled to false
+
+The explode method in PHP, takes three parameters, a separator to separate the string, thestring we are spearating and an optional limit paramtere

@@ -1,0 +1,51 @@
+Deleting records is very similar, instead of add(), use delete()
+
+g is a special object in Flask that is unique for each request. It is used to store data that might be accessed by multiple functions during the request
+current_app represents the current Flask instance that comprises the entire application
+
+Really what I have seen is that Flask is not opinionated, there are multiple ways to do things in Flask. It is all about selecting the way most suitable
+to you and going with it
+
+Database Structure
+Users
+
+id- integer | Primary Key
+name- String
+Dev Name- Stringis
+email - String
+password - String
+is_activated- Boolean
+avatar- String
+activation_token-String
+created_at-DateTime
+
+Projects
+
+id - integer | Primary Key
+name - String
+about - Text
+user_id - Integer | Foreign Key
+picture - String
+github_link- String
+is_completed - Boolean
+created_at - DateTime
+
+Ideas 
+
+id - integer | Primary Key
+name - String
+premise - String
+user_id - Integer | Foreign Key
+created_at - DateTime
+
+
+Tasks
+id - integer | Primary Key
+name - String
+user_id - Integer | Foreign Key
+project_id - Integer | Foreign Key
+is_completed - Boolean
+completed_at - DateTime
+created_at - DateTime
+created_at
+

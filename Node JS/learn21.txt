@@ -1,0 +1,36 @@
+To send mails in Node js, I am making use of the mailgun-js package. In order to use it, we first need to import the mailgun-js package and the pass in an object
+to it as a parameter, this object contains the apiKey and domain keys respectively, set these keys and then we need to create our data object.
+The data object consists of a from key, a to key, a text/html jey and finally a subject. In order to actually send emails, we need to call the messages() method on the
+resulting mailgun object and chain in a send method, to which we pass in our data object and a callback
+
+Node JS has a built in crypto library that we can use for cryptographic operations
+crypto has a method called randomBytes() that we can use to generate random strings. Its first parameter is a number indicating the length of the string we want
+to generate. The second parameter is a callback of which the first parameter is a potential error, while the second parameter is a buffer
+
+Breaking down the process of generating the password reset token
+First, we have to create the password reset form, we create the form with an action of '/reset', with a single email field.
+Node has a core library that we can use to generate secure random strings, this library is called crypto. 
+We import crypto and then we call the crypto.randomBytes() method, this method takes two parameters, the first being the length of the random string while the second
+is the callback which takes two parameters, err and body. In the resulting callback, we can then create the token by calling the toString() method on the 
+resulting buffer and passing in the 'hex' parameter. 
+Then, we need to find the user with the corresponding email, if the user is not found, we flash the error message to the session and return a redirect back to the
+reset form. If the user is found however, we need to set the resetToken field in the user document to the token generated from the buffer.toString('hex').
+Then, we also need to set the resetExpiration field to the current time + 1 hour or whenever. We can access the current time in Javascript by calling Date.now().
+Then we need to return user.save(). The reason why we return it is because, we need to make sure that the token and its expiry time has been set before
+sending the reset email.
+
+To carry out validation in express, we make use of a third party package called express-validator
+When importing it, we need to import a couple of sub packages, because express-validator contains a number of sub packages
+We make use of the check sub package. It is what we use for al validation logic that we need to write.
+
+The check() method that we obtain from the destructured express-validator/check object when called returns a iddleware function
+
+In HTML forms, we can add the novalidate attribute to the forms to disable validation on the forms.
+
+Essentially, with express-validator, we carry out validation in two parts. The first portion is carried out in our routes file, remember how with express 
+validation flows from left to right, so before the request hits our request handler, we can add another handler from the express-validator package.
+Before hand, we need to have imported the check property from the check sub package of expree-validator. Then we need to call check and pass in a string indicating
+the name of the field that we want to check and then chain a validation check. In this case, it was check('email').isEmail(). The next step is to proceed
+to our controller action and import the validationResult property from the check subpackage of express-validator. passing in the request object to the 
+validationResult function is going to return an errors array. We can check if any errors are present by calling isEmpty() on the returned errors variable.
+We can also transfrom the errors into a readable array to get more information about it by calling errors.array()

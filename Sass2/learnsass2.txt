@@ -1,0 +1,37 @@
+Sass Lists are essentially like arrays
+
+Then we need to make use of the @each operator to loop through the list, almost like a foreach loop
+
+@each $social in $links
+
+Essentially what #{$social} does is that when Sass complies it translates #{$social} with whatever item is in the list
+
+The nth-function is able to grab the nth-item in a list
+
+The nth function essentially is like array indexing
+
+Leke you need to have a Sass mindset, din't just rush to start writing css
+
+Sass has a built in rgba() function that enables us to get rgba values of hex values
+
+Then we also have the fade-out() method and this does relatively the same thing as the rgba() function
+
+If you don't like seeing decimal points in your css, Sass provides a round() function
+
+The round() function rounds the number to the nearest whole number
+The cell() function rounds the number up to the nearest whole number
+floor() rounds the number down to the nearest whole number 
+
+We create functions in Sass, with the @function keyword
+
+Just like we return data in our typical programming functions, we use @return to return in Sass
+
+With the lighten() and darken() functions, the first parameter is the color while the second paramter is the amount by which we are to lighten or darken the color
+
+Sass has a built in lightness() function that returns the lightness of the color parameter
+
+Essentially, with Sass, we can have lists stored in lists. Like sublists, it is in situations like this, that we make use of the nth() function
+
+If you want to like edit the values when making use of the nth function, don't include the #{}
+
+The syntax for sass for loops is @for $i(counter variable) from 1 through 4 

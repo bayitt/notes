@@ -1,0 +1,40 @@
+We can also prevent text from wrapping in Bootstrap with a .text-nowrap class
+
+With longer text that exceeds the width of its container, instead of using .text-nowrap, we can make use of the .text-truncate class
+
+.text-lowercase
+.text-uppercase
+.text-capitalize
+
+There are also several important font classes such as font-weight-bold, font-weight-normal, font-weight-light , font-italic
+
+We can also change our selection to the monospace font stack with the .text-monospace class
+
+Apparently Bootstrap has several default colors among which are
+- primary
+- secondary
+- success
+- danger
+- warning
+-info
+
+Bootstrap also provides contextula .text-dark, .text-white, .text-body
+
+We also have .text-white-50 and .text-dark-50 classes
+
+There are also contextula classes provided for background colors, among which are .bg-primary, .bg-secondary, .bg-info, .bg-primary, .bg-light, bg-white,
+.bg-dark, .bg-transparent
+
+For quoting blocks of content from other sources, we make us of the blockquote HTML element and apply the .blcokquote class. Add the .blockquote-footer class
+to denote the person that made the quote
+
+Also, take note that we can replicate the display flex on list items in navbars by making use of the .list-inline class and giving each of the list items a class
+of .list-inline-item
+
+In Bootstrap, always make sure to wrap inline snippets of code with <code>. Also, use <pre>s for multiple lines of code
+
+For indicating variables, make use of the <var> tag
+
+Make use of <kbd> tag to indicate input that is typically entered by the keyboard
+
+For indicating sample output from a program, make use of the <samp> tag

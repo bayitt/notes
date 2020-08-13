@@ -1,0 +1,25 @@
+CSS gradients let you display smooth transitions between two or more specified colors
+CSS defines two types of gradients
+
+Linear gradients- left to right, top to bottom
+Radial gradients- defined by their center
+
+Major Cities
+Tokyo
+London
+Milan
+Lagos
+Munich
+Moscow
+Sao Paulo
+Cairo
+New York
+
+Breaking down the flow
+
+On the Explore Page, we have the parent component which is the ExploreComponent 
+Then we need to have a subcomponent, the CitiesComponent which is going to contain 
+
+What Information do I need from the response?
+
+In Angular, in order to add a class, we make use of the [class.className] and assign it to a condition

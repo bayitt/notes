@@ -1,0 +1,37 @@
+The npm init command, creates a package.json file
+
+Instead of constantly typing in node app.js, we can execute a command and have that be done for us by making use of the start command
+NodeJS does not have a defined entry file, unlike with php and/or html with index.php or index.html, with Node, we can define it to be anythinh but typically
+it is app.js
+
+Essentially, start is a special script, for other scripts, we need to type npm run name
+
+For auto refresh of our node server, we can make use of a special package called nodemon
+
+npm packages which we install can be divided into development dependencies and production dependencies
+If we use npm install package-name --save. This installs it as a production dependency while if we have npm install package-name --save-dev, it installs it
+as a development dependency. A third option is -g which will install it globally on our system instead of inside the project
+
+Packages are installed in the node modules folder
+npm install will simply go through all the packages in our package.json file and install them
+
+I think the whole idea of using nodemon is that we essentially hand oe=ver control of starting the server to nodemon
+
+Types of Errors
+- Syntax Errors
+- RunTime Errors
+- Logical Errors
+
+The express package seeks to export a function
+
+Express JS is all about middleware. What middleware simply means is that an incoming request is funneled through a bunch of functions
+
+In ExpressJS, we can make use of a utility function send to send in a response back to the user.
+
+We can also just go directly and call app.listen() and specify the port on which we are listening to
+
+Essentially, if we do not call next(), the request is not allowed to proceed.
+Also, node has a very weired behaviour in which, for routing, it does not necessarily match the exact route but instead, it matches every route that begins
+with the specified route string 
+
+redirect() is another convenient method added by Express

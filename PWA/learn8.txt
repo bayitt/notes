@@ -1,0 +1,36 @@
+JSON - Javascript Object Notation. Essentially a text format that makes it easy to share data between devices such as clients and servers
+
+JSON.stringify means that we are stringifying or converting a Javascript object into json, while JSON.parse() means that we are converting json into
+a Javascript object
+
+The core things that we can set up in the object second parameter of the fetch() method are mode, indicating the mode of the request, by default it is GET but we
+can specify POST. Then we can specify headers which indicate the headers which are to be sent along with the request, finally we have body which is JSON
+
+By defaut, the mode option of the object is set to 'cors' and this means that the response should include the cors headers
+
+The whole logic wuth calling .json() on the results of the fetch api is that it parses the body of the response to json
+
+The whole idea with polyfills is that since promises and fetch are not supported by all browsers, we need  a way to provide backwards compatibility. 
+That is where they come in
+
+In order to make use of the polyfills, we first need to check if the browser supports promises by checking !window.Promise, if the promise is not present, then
+we need to set it to the 
+
+When working with web applications, there are multiple sources of caching
+
+- The Server can cache content but this is pointless for offline apps
+- The browser also manages its own cache. The issue with this cache is that we cannot manage it, we cannot tell it which assets to cache
+
+The Cache API is a separate cache storage in the browser, managed by you. It holds key value pairs, in which the key is the http request(the url) and
+the value is the response you got back
+
+The Cache API can be accessed by both service workers and normal Javascript
+
+The App Shell refers to the core part of the application such as the index.html and all the css and scripts loaded along with it. The typical way it is done is to
+cache the app shell
+
+You find out the core essence of your app and precache it while your service worker is installing
+
+You want to be conservative about what you store in the cache api because if you run out of space, the browser might clean up the cache
+
+we can access the cache api via caches

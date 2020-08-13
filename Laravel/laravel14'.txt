@@ -1,0 +1,25 @@
+It is better to make use of slugs in the routes than to use id
+
+Laravel has a helpful helper method called paginate() in which we can specify the number of psts or items that we want to grab at once
+
+An alternative way of passing data from the controller to the view in Laravel is the method used by Twig(The array method)
+
+Apparently when we make use of the paginate() method, Laravel implements the pagination automatically for us
+
+And in order to create the pagination links, all we need to do is to call the links() method on the discussions objects and it automatically creates
+the pagination links
+
+The only reason why we can call the links() method on the $discussions object is because we used the paginate() method to grab the posts from the database
+
+Laravel has a str_limit() method in which we pass in as the first paramter, the string that we want to cut and the second parameter is the number of characters that'
+we want t have
+
+
+Leke take note that the {{}} is used when we are outputting content
+
+Laravel supports smart time formatting with the toFormattedDateString() and the diffForHumans() package
+
+Leke remember that the objects that we get from the database are objects of the models representing the tables.
+So essentially we can create methods in the models and call them on these objects
+
+Leke take note that we can queue up multiple where static methods on  a model

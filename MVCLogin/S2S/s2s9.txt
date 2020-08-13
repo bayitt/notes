@@ -1,0 +1,12 @@
+Understanding The Process of Sending Mail with phpMailer and smtp
+
+1)SMTPDebug() specifies if we want to display all the information about the email sent
+2)isSMTP() specifies whether we want to make use of smtp or php's local amil function
+3) Host specifies the smtp host that we want to make use of
+4) SMTPAuth specifies our authentication
+
+APIKEY
+
+Website: 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
+
+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

@@ -1,0 +1,31 @@
+Built in Objects
+Timers and Intervals
+
+The setTimeout() function takes two parameters, the name of the function to be executed and the amount of milliseconds that it should wait before 
+executing the function. Important method to trigger events
+
+The setInterval() function also takes a function as a paramter and a time in milliseconds, It is used to execute code for the particular time you specify.
+
+To stop the setInterval() function, we will make use of the clearInterval() function
+
+The parseInt() method is used to convert variable to Integer. It can also be used to transfrom hexadecimal values to integer, we just need to add a second
+parameter to the parseInt() method, this parameter will be 16 since we are dealing with a hexadecimal system and the default is the decimal system
+
+The toString() function is used to convert a parameter into string.
+
+We can also call the length function on strings. The charAt()function can be used in place of the array indexing method
+The concat() method can also be called on strings
+The toUppercase() is used to convert strings to uppercase much like the strtoupper() function and the upper()function in PHP
+The toLowerCase() function is used to convert strings to lowercase
+the split() method also exists and it returns an array
+The trim() function is used to remove excess spaces in a string
+
+The Math object gives us access to a built in object containing math values
+The abs() method
+The round() method
+The ceil() method
+The max() method returns the largest of a list of numbers
+The min() method returns the smalles number in a list of numbers
+The random() method returns a random number between 0 and 1
+Seeing as the random method returns a decimal, to convert it to like a number between 0 and 100, we need to multiply it by 100 and then pass it to the parseInt()
+method to convert it to an integer. Instead of using this long method, we can just make use of the floor() method of the Math object which returns an integer

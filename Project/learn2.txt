@@ -1,0 +1,28 @@
+A machine learning model refers to a mathematical function capable of repeatedly modifying its function until it can make accurate predictions when
+given fresh data
+
+Before training begins, you first have to choose which data to gather and what features are to be considered important
+The data has to be balanced
+
+The gathered data is then split, say 70 percent for training and 30 percent for evaluation
+
+Before training gets underway, there will also be a data preparation step during which processes such as deduplication, normalization and error correction
+will be carried out
+
+The next step is to choose an appropriate machine learning model from the many available Each have strengths and weaknesses depending on the type of data
+
+A very important group of algorithms for both supervised and unsupervised learning are neural networks. These underlie much of machine learning
+
+Neural networks, whose structure is modeled after the brain, are interconnected layers of algorithms called neurons, which feed data into each other, with the output
+of the preceding layer being the input of the subsequent layer
+
+Each layer can be thought of as recognizing different features of the overall data
+
+The network learns to recognize each component of the numbers during the training process by gradually tweaking the importance of data as it flows between the 
+layers of network
+
+The way I understand back-propagation is that at the end of each training cycle, the system is going to work its way backwards through the neural network, 
+altering the weights attached to all of these links between layers
+
+A subset of machine learning is deep learning where neural networks are expanded into spraling networks with a huge number of layers that are trained using massive
+amounts of data.

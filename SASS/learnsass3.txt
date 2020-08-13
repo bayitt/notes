@@ -1,0 +1,32 @@
+What have I learnt so far from Sass
+
+1) Sass Variables are declared at the top of the scss file
+2) When you add a value to a color, you are making it darker
+3) Then I also learnt about nesting sass, so that we can avoid situations like header nav ul li a
+4) I also learnt about mixins. They are created with the @mixin keyword and then the mixin name and the parameter and the mixin body
+5) Mixins are called with the @include keyword
+6) Then I learnt about the @extend keyword, which is used to avoid code duplication
+7) There is also the @import keyword which we use to import other scss files
+8) Then we have the parent reference through which we can refer to pseudo elements by making use of &:
+9) Then I learnt about lists in sass and looping through them with the @each keyword
+10) Then I learnt about the nth function and how we can use it to grab a particular value from a list
+11) Finally, I learnt about some of sass's built in functions which include the rgba() function by which we can set the opacity of hex values which is
+something we cannot do with regular css
+12) There is also the percentage() function which obtains a percentage value of a calculation
+13) Finally, we have the round() function which rounds a value to the nearest whole number
+
+In order to create functions in sass, we need to make use of the @function keyword. In order to return something from a function we make use of the 
+@return keyword
+
+Sass has a built in function called lighten that takes a color value and lightens it by a percentage value that you specify
+There is another built in function called lightness that returns the percentage representing the lightness of a color
+
+There is a corresponding darken() function to lighten
+
+Sass has different output styles.
+
+We can set it by doing the usual sass --watch style.scss:style.css --style expanded. This changes the stylehsheet into an expanded format
+
+There is also the compact style. Finally we have compressed which is like the minified version of stylesheets. On the same line
+
+For loops in Sass have the format @for like @for $i from 1 through 4

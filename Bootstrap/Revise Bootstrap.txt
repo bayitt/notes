@@ -1,0 +1,33 @@
+To create Bootstrap navigation bars, we make use of tha nav tag and add navbar and navbar-default classes.
+Then we need to create another div tag with a class of navbar-header and in it we have a link tab with a class of navbar-brand.
+Then to add links to the navbar, you need to add an unordered lisyt with a class of nav navbar-nav.
+Leke do not forget that when you are creating the actual list items, that is , the navbar items, they have to be links themselves
+
+When creating the Bootstrap dropdowns, Leke do not forget that the class is dropdown toggle, while the data-toggle is dropdown
+
+Breaking down the process of creating Bootstrap Navbar
+-Create the opening and closing nav tags with a class of navbar navbar-default
+-Create a div tag with a class of navbar-header
+-In it, create a button with a class of navbar-collapse and a data-toggle of collapse. Then we need to specify the data-target with a # in fron of it
+-Inside the button tag, create three span tags each with a class of icon-bar
+-Then at the bottom, create a link tag, with a class of navabr-brand to make it stand out more
+
+-Next,we need to create a div tag, with a class of collapse navbar-collapse and navbar-right, to shift it to the right
+-Then, we specify its id
+-Then we need to create an unordered list with a class of nav navbar-nav
+-The list items in it will become the links in the navigation bar
+-Remember that the items need to be links themselves
+
+-Then to create dropdowns, the link needs to have a class of dropdown-toggle and a data-toggle of dropdown
+-Then, there needs to be an unordered list with a class of dropdown-menu
+
+We also have contextual navbar classes like navbar-text, navbar-link, navbar-form
+Leke to create the buttons that you usually see by the side, just use a nested div class of input-group-item
+To create the button that you use to access the navbar when it collapses. For the button, you use a class of navbar-toggle
+
+Bootstrap badges are used to create styling on numbers. Just add a class of badge to a span element
+We also have Bootstrap labels, same thing as panels, label label-success, label label-warning, label label-info
+
+Just like a class of pagination, we can also use a class of pager for the previous and next functionality
+In order to use the pager for pagination, we create an unordered list with a class of pager and then we create two list items inside it with classes of
+previous and next respectively

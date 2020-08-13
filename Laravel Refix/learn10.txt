@@ -1,0 +1,10 @@
+If we need to work with thousands of database records, we may make use of the chunk() method, this method retrieves a small chunk of the results each time
+and feeds each into a closure for processing. We may also stop other chunks from being processed by returning false
+
+The query builder also provides a variety of aggregate methods such as count, max, min, avg and sum. You may call any of these methods after constructing your query
+
+Instead of making use of the count() method to check if any records exists that match your query's constraints, we may make use of the exists and doesntExist method
+
+Using the select() method, we may specify a custom select clause for the query
+
+The distinct() method allows us to force the query to return distinct results

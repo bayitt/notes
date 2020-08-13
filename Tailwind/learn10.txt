@@ -1,0 +1,16 @@
+Breaking it down
+In Tailwind when we append the classes, .grid, .grid-cols-3. It means that we intend to have 3 equally sized columns in each row of the grid. 
+We can also specify the order and the start/end of the grids. If we have the .grid-cols-6 class, it means that for an element in the grid to take up the full
+width of the grid, it must have a class of col-span-6. We can also specify where the grid would start with col-start and col-end
+
+CSS grid lines start at 1, not 0. So a full width element in a .grid-cols-6 class, would start at line 1 and end at line 7.
+
+The main difference I have seen is that with grid-cols, it flows to the side but with grid-row it flows to the bottom.
+
+By default, Tailwind provides support for .grid-rows up to 6 rows as opposed to 12 with .grid-cols
+With .grid-row, we make use of .row-span instead of .col-span
+
+Gaps are utilities for controlling gutters between grid rows and columns. It is carried out in increments of 0.25rem
+To change or set the gap in all directions i.e both x and y axes, we need to make use of the .gap.
+
+For row gap, we need to make use of the .row-gap while for column gap, we make use of the .col-gap

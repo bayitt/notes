@@ -1,0 +1,33 @@
+Breaking down the process of signing up PHP
+
+1) After creating the sign up view and the user has entered their details and clicks the signup button
+2) If validation checks out 
+3) Then we need to insert the records in the database
+4) But Leke remember that we cannot insert the password like that, we need to hash the password
+5) We do that by making use of the password_hash() method which takes the password and PASSWORD_DEFAULT as paramters
+
+Leke take note that the password for their admin is Comenius2018
+
+Also, Leke take note that in the model constructor and we are trying to loop thru the posts array to create the properties, Leke take note that
+it is $this->$key not $this->key
+
+Breaking down the process of logging in
+1) After creating the login view and entering all the details, the entered data, goes to an action in the controller
+2) In the action, we call an authenticate method and pass the entered email and password
+3) In the authenticate method in the admin model, we call another findByEmail method, which checks if the email corresponds with what is in the database and
+if it does, it returns an admin object. Then with the returned object, we call the password_verify() method which checks if the entered password 
+corresponds to the salted password hash in the database.
+4) If it corresponds, then we can return the user object
+7) In the action in the Login controller, if the user object is returned
+8) Then we call the login method in the auth class, passing the user object as a parameter
+
+The whole idea behind the flash class is that there is a method called addMessages that takes a message and type. What this method does is that if a flsh_notifs
+array is not present in the session, it creates it and adds the passed message to it.
+
+Then there is also a getMessages() method, that if the flash_notifs array is present in the session it returns the array stored in it and unsets the flash_notifs
+array
+
+The whole idea behind obtaining the message stored in the flash class is that it an array of arrays
+
+Before we can make use of phpmailer, we need to require it in our project
+

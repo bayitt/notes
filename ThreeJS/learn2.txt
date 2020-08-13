@@ -1,0 +1,39 @@
+The Perspective Camera's constructor takes four parameters which together define its viewing frustrum
+
+A frustrum is a mathematical term meaning a four sided rectangular pyramid with the top cut off. When we view the camera with our frustrum, everything inside
+the frustrum is visible while everything outside it is not
+
+The first parameter is the field of view. The second parameter is the aspect which is usually the division of the width of the container by the height
+
+The third parameter is the near clipping plane while the fourth parameter is the far clipping plane
+
+The field of view (fov) parameter defines how much of the world can be seen through the camera. Most angles in threejs are specified in radians
+
+An aspect ratio of 1 is going t be a square, while an aspect ration of window.innerWidth/window.innerHeight is going to be a rectangle
+
+The .near parameter defines the near clipping parameter. Objects closer to the camera than .near will not be visible. For a perspective camera, the near
+parameter must be greater than 0 and less than the .far parameter
+
+The .far parameter defines the far clippig parameter. Objects further away from the camera will not be visible
+
+The goal is to make .near as big as possible while making .far as small as possible while keeping .far larger than .near. This way you can keep the area
+contained in the frustrum as small as possible
+
+We also need to move the camera out towards us 
+
+The coordinate system in Three Js differs from that of the typical css coordinate system. In css, when you have a positive value on the y axis it means that '
+you are moving to the top of the screen, but in three JS, it follows the typical graph system. A positive value on the y axis means it is going to the top
+of the screen
+
+In three js, 1 unit=1 meter (convention)
+
+Meshes are the most common visible objects made use of in 3D graphics and are used to display all types of 3D objects
+
+The geometry of an object defines its shape
+
+Essentially we create the geometry and the material and then use them in the mesh
+
+We make use of the BoxBufferGeometry constructor to create a new geometry. We pass in three values representing the width, height and depth
+
+After creating the geometry, we need to add a material. While the geometry tells us the shape of the object, the material like it sounds tells us the texture
+of the material. Right now, the scene is dark, so we need to add lights to the scene, but the MeshBasicMaterial is visible enough on its own

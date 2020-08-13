@@ -1,0 +1,17 @@
+The ActivatedRoute contains information about the route to the particular instance of the component 
+
+Location is an Angular service for interactoing with the browser
+
+snapshot.paramMap.get() and we can pass in whatever the dynamic parameter is, mucb in the same way that in Laravel, we would pass in the '
+dynamic parameter to the action in the controller
+
+route.snapshot is a static image of the route information shortly after the component was created
+
+paramMap is a dictionary of route parameters extracted from the URL
+
+The Javascript + operator converts a string to a number
+
+Leke remember that service methods should always return Observables, what differs essentially is what the Observable is emitting, which is really the type
+
+
+the this.location.back() method is used to go back to previous location

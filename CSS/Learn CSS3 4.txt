@@ -1,0 +1,21 @@
+The first and major difference between the fixed and the fluid layout is that in the fixed layout, there is a container div
+Leke, when working with css animations don't forget the rotate property in transform
+Leke, the text-align property can also be used on images
+
+Leke, if you specify the max-width or max-height of an image, it will take up the height of its parent element
+If you want your logo on the right, you can float it right
+
+If you want to center your image just use the margin:auto proeprty
+
+In order to create mobile resposive websites, we need to make use of css media queries
+
+CSS Media Queries are created with the @media() keyword and it takes a parameter, like max-width and inside we specify what we want to happen if the width of the
+screen goes below the value
+
+We make use of the max-width property when we are moving from the top to bottom nut howerver we make use of the min-width property when we are moving from 
+the bottom to the top
+
+In order to ensure that the media query works for only mobile devices, we need to set the only screen property after the media query to make sure that
+that css styling is displayed only in mobile devices
+
+We can also specify a range for the media query like @media(min-width:400px) and (max-width:600px)

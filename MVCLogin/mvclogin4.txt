@@ -1,0 +1,28 @@
+It's good practice to save small amounts of data to the session rather than large amounts
+
+Leke, take note of the addGlobal() method of the twig loader with which we can add traditional PHP superglobals, it takes two methods,
+what we want the global array to be named and which super global we are adding
+
+When session_start() is called, a session cookie is stored in the browser, this session cookie does not have an expiry time and as such is only deleted when
+the browser is closed
+
+session_destroy() is not enough to get rid of a session, to completely destroy the session, we need to unset all the session variables and unset the session cookie
+
+The code that we need to type to completely destroy a session
+
+$_SESSION=array();
+
+if(ini_get("session.use_cookies")) 
+{
+	$params=session_get_cookie_params();
+	setcookie(session_name(), '', time() - 42000,
+		 $params['path'],$params['domain'],$params['secure'],$params['httponly']);
+}
+
+session_destroy();
+
+A session fixation attavk is when a hacker exploits vulnerabilities in a website to gain access to user accounts
+
+We can also make use of the exit method to echo out code and leave a page
+
+Leke, take note that the REQUEST_URI parameter of the $_SERVER superglobal returns the last page that was accessed

@@ -1,0 +1,33 @@
+Reactive Forms
+
+At the base level, we have formcontrols, I think essentially, the whole idea with formcontrols is that we can link them to particular for input elements, 
+and they become the form models for their respective input elements and as a result the source of truth for the elements
+
+[formControl]
+[formGroup]
+formControlName
+formGroupName
+
+But alternatively, instead of constantly defining form control instances, we can make use of Angular's formbuilder to create formcontrol instances, so that 
+instead of having to declare a formGroup object, we can do this.fb.group
+
+We create dynamic form controls using Form Arrays
+
+We make use of the aliases property to define form arrays in a form group
+
+Models can be as simple as a
+
+An Angular form has two parts, an HTML based template and a component class to handle data and user interactions programatically
+
+Just like we would import ReactiveFormsModule for reactive forms, for template driven forms, we import the FormsModule
+
+
+The NgForm directive supplements the form element with additional features. It holds the controls you created for elements with an NgModel directive and name
+attribute and monitors their properties
+
+Leke remember that the interpolation syntax is only used when we want to output content to the view
+
+Defining name attributes is a requirement when using [(ngModel)] in combination with a form
+
+Leke drum it into your head, anytime you are making use of ngForms, each form element must take the name attribute because that is what the ngmodeldirective
+uses to create the formcontrol instances

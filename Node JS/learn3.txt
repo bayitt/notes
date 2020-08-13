@@ -1,0 +1,22 @@
+Working with files is done in two ways in node. Synchronously, in which we block any other code execution until the file is created
+
+use writeFileSync if you know that you have only a small file to write 
+
+writeFile(), apart from the name of the file and what we are writing to it, also takes in a third paramater which is a callback which should be executed
+when it finishes writing to the file. The callback receives an error object which represents 
+
+NodeJS uses only one single thread. A thread is basically like a process in your operating system
+
+Essentially, the event loop in node JS is essentially concerned with just executing certain callbacks when certain events occur. Also, our event loop only handles
+fast finishing operations. From the name sef, event loop. It is just concerned with executing things when the events occur not necessarily for executing the events.
+
+File operations and other heav duty operations are spun up and sent to a worker pool. This worker pool is responsible for heavy duty operations. The worker pool
+is kind of detached from our typical single thread. It can run multiple threads.'
+
+There is an order of precedence for execution by the event loop. First the event loop checks for timers, such as setTimeout and setInterval.Then it checks for 
+pending calbacks that need to be executed. Then we have the Poll phase, in which node js looks for new I/O events and do its best to execute their callbacks. Then 
+we have a Check phase, in which it will execute setImmediate() callbacks. Then it executes all Close callbacks
+
+We can export modules and classes in node js in two ways. The first is by storing whatever we want to export in the global module.exports exposed in node js
+
+We can also omit the module part and use just exports

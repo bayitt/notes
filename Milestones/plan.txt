@@ -1,0 +1,35 @@
+What eaxctly do I have in mind?
+A simple project to help users record the milestones and important events in their lives. Users can either record stand alone achievements or can 
+set up a project and record milestones in it.
+
+Application Flow
+The whole idea is that the user logs in, can add new stand alone milestones or new projects that contain various milestones. They can either delete these milestones
+or edit them. There is a dashboard portion in which one can see an overview of various tasks and projects.
+
+Database Schema
+users
+- _id - ObjectId
+- name - string
+- email - string
+- password - string
+- avatar - string
+- created_at - DateTime ?
+
+projects
+- _id - ObjectId
+- name - string
+- link - string
+- description - string
+- image - ?
+- created_at - DateTime ?
+- userId - ObjectId	
+
+milestones
+- _id - ObjectId
+- description - string
+- image - ?
+- isAchieved - boolean
+- timeAchieved - DateTime ?
+- userId - ?
+
+

@@ -1,0 +1,39 @@
+With an append_to_response query string, we can make multiple http requests using the same http object.
+
+Instead of having to write out multiple calls, we can instead do something like
+https://api.themoviedb.org/3/movie/157366?api_key={api_key}&append_to_response=images, videos
+
+TMDB API key
+
+a22d7a33b97250f682073a165856d1d7
+
+I think at this stage, I need to define properly the scope of what I intend to do
+
+But before that, why I'm I doing this, I am building this because I am tired of constantly having to check when next my favourite TV shows are
+airing and so I decided to automate this process
+
+It is an application that enables you to subscribe to various tv series to receive email notifications when the next episode of the series is released
+
+I think it should be really simple, it does not have to be a full blown application, We can have the dashboard view where you can see all yout subscribed to series
+
+Latest Tv Series
+
+Top Rated Tv Series
+
+Settings
+
+- (Tentatively) Receive either email or sms notifications
+- Receive the notifications either the day before, on the day it is released or when the download link is available
+- Receive download links for the episodes
+
+Color Scheme
+
+- Green
+- Orange
+
+I think it is important to stick to tv series, essentially limit the scope and not extend it
+
+Only series that are currently running in can be subscribed to obviously
+
+There is a dashboard in which you can view all the tv shows that you have subscribed to
+

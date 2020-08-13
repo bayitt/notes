@@ -1,0 +1,36 @@
+Resourceful Routing
+The main building block provided by Flask-RESTful are resources. Resources are built on top of Flask pluggable views, giving you access to multiple
+HTTP Methods just by defining methods on your resource
+
+Just like in normal Flask, if you want to return a different error code from the normal 200, just specify it as an extra return parameter.
+In the add_resource() method, we can even specify a named endpoint parameter, which we can use for the url_for method
+
+Flask-RESTful has built in support for request data validation using a library similar to argparse. This library is called reqparse
+
+The whole idea is that we import the argument from the flask_restful class, we then call reqparse.RequestParser, this gives us a parse argument
+to which we can cal the add_argument() method to specify a field that we want to validate
+
+When we call parser.add_argument(), the first parameter there represents the field that we want to check in the request body, it also has a type keyword argument
+and a descriptive help keyword argument
+
+parse_args() returns a dictionary instead of a custom data structure
+
+Calling parse_args() with the strict keyword set to True ensures that an error is thrown if the request includes arguments your parser does not define
+
+By default, all fields in your return iterable will be rendered as is. To deal with the issue of serializing, Flask-restful provides the fields module 
+and the marshal_with() decorator
+
+The whole idea is that the marshal_with() decorator is going to decorate the resource method and serialize whatever object is returned from the method into json
+
+With the requestparser, the default type is a unicode string, this will be str in Python3 and unicode in Python2
+
+If you specify the help keyword argument, it will be rendered as an error message when a type error is raised
+To require a value be passed for an argument, simply set the required keyword argument to True. For some reason if you want your argument to be stored under a 
+different tname once its passed, you can use the dest keyword argument
+
+If you want to accept multiple values for a particular field, simply set the action keyword parameter to append
+
+By default, the request parser tries to parse values from flask.Request.values and flask.Request.json. 
+Use the location argument to add_argument() to specify alternate locations to validate data from such as form, args, headers and cookies
+
+Multiple argument locations can also be specified by passing a list to location

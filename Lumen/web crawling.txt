@@ -1,0 +1,22 @@
+A web crawler is an internet bot that works by indexing the contents of a website on the internet. It is a program or a script written in computer language
+to scrape any information or data from the internet automatically
+
+4 different types of web crawlers
+
+- General Purpose Web Crawler
+
+A general purpose web crawler gathers as many pages as it can from a particular set of URLS to crawl large scale data and information. High internet speed
+and large storage space are typically required. Generally used to scrape massive data for search engines and web service providers
+
+- Focused Web Crawler
+
+This selectively crawls pages related to pre-defined topics. This is the one generally used by important search engines such as Google, Yahoo and Baidu
+
+- Incremental Web Crawler 
+
+This is a crawler that crawls only generated information in web pages
+
+- Deep Web Crawler
+
+Web pages can be divided into surface web and deep web. A surface page is a web page that can be indexed by a traditional search engine or a static page that
+can be reached by a hyperlink. Deep web is a web page that most of the content cannot be reached through static links

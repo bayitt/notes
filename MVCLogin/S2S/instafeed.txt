@@ -1,0 +1,8 @@
+With the instafeed plugin, we need to create a div with an id of instafeed, so that the instafeed plugin knows to look for it
+
+
+https://instagram.com/oauth/authorize?client_id=d1f098977699494998deece4fb8a608d&redirect_uri=http://street2schoolng.blogspot.com&response_type=token
+
+Access Token=2063123417.d1f0989.3353d031599345c089c358734f1268cf
+
+In order to make use of Instafeed, we need the userId and the access token, we can get the userId easily, while we need to generate an access token

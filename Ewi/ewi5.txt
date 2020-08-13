@@ -1,0 +1,7 @@
+Breaking down the process of creating the Follower functionality
+
+1) First we need to create the migration for the pivot table
+2) Then we need to set up the table schema
+3) Rememeber that since it is a many to many relationship we need to have two ids
+4) A follower id and a leader id
+5) Then we need to create the foreign key relationships and reference the user id in the user table

@@ -1,0 +1,16 @@
+Leke, the static where() method in Laravel is like the equivalent of the SELECT FROM table WHERE =
+
+
+Leke you know how we use this {{}} to escape HTML content, well in order to grab HTML content, we make use of {!! !!}
+
+Laravel has the min() and max() methods which do as you think, we can use it to grab the smallest or largest value in a field
+
+The whole idea with disqus is that with it, we can comment universally on websites
+
+Leke take note that whenever it is a POST request, we make use of the Request $request or request()->all().
+If it is a GET request, we make use of request('query')
+
+Migrations are used not only to create database tables, we also make use of migrations to edit the database tables
+
+You know we have the -m field to indicate that we want to create a migration for the model and how we also have the resource field to do the same for
+controllers, we can also make use of the --table field for migrations to indicate the table that we want to edit

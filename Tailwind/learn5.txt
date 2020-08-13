@@ -1,0 +1,30 @@
+By default, tailwind will look for a tailwind.config.js in the root of your project where we can define any customizations.
+
+The theme section is where you define your color palette, font stacks, type scale, border sizes, breakpoints , anything related to the visual design
+of your site
+
+The themes.screens key is where we specify the configuration of our responsiveness.
+
+The theme object contains keys for screens, colors and spacing.	
+The whole idea of customization is that we can specify the color values that are adopted by the our color classes. 
+
+If we would like to preserve the default values for a theme option but would also like to add new values, we can do so under a theme.extends key
+
+The Container refers to a component for fixing an element's width to the current breakpoint
+
+.box-border
+.box-content
+
+Display Types            
+.hidden
+.block
+.inine-block
+.inline
+.flex
+.inline-flex
+.grid
+.table
+.table-caption
+.table-cell
+.table-column
+.table-column-group

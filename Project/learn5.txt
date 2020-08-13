@@ -1,0 +1,35 @@
+Clustering and association are the two types of unsupervised learning
+
+Clustering deals with finding a structure or pattern in a collection of uncategorized data. Clustering algorithms will process your data and find
+natural clusters in them
+
+Different types of clustering
+- Exclusive (partitioning)
+In this clustering method, data are grouped in such a way that one data can belong to one cluster only. An example is K-means 
+
+- Agglomerative 
+Here, every bit of data is a cluster on its own
+
+- Overlapping
+In this technique, fuzzy sets are used to cluster data. Each data point may belong to two or more clusters with different degrees of membership.
+Data will be associated with an appropriate membership value.
+
+- Probabilistic
+This technique uses probability distribution to create the clusters
+
+
+Hierarchical Clustering
+This is an algorithm which builds a hierarchy of clusters. It begins with all the data which are assigned to a cluster of their own
+
+K-Means Clustering
+This is an iterative clustering algorithm which helps you to find the highest value for each iteration. Here, the data points are clustered into k groups.
+A larger k means smaller groups with more granularity, a larger k means larger groups with less granularity. The output of the algorithm is a group of labels.
+It assignsn 
+
+This is further divided into Agglomerative clustering and Dendrogram
+
+K-Nearest Neighbor
+This is the simplest of all machine learning classifiers. It differs from other machine learning classifiers in that it does not produce a new model. It's 
+a simple algorithm which stores all available cases and classifies new instances based on a similarity measure.
+
+Principal Components Analysis

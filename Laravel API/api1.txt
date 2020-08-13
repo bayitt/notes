@@ -1,0 +1,37 @@
+Leke take note that in order to specify what Laravel version to download, just include it in quotes and add the * extension like ""
+
+API Resources represent a way to easily transform our models into JSON responses. It acts as a transformation layer that sits between our Eloquent models and 
+the JSON responses that are actually returned by the API. API resources are made up of two entities, a resource class and a resource collection. A resource class
+represents a single model that needs to be transformed into a JSON structure, while a resource collection is used for transforming collections of models into
+a JSON structure.
+
+Both the resource class and the resource collection can be created using artisan commands
+
+We can create resources using either php artisan make:collection User for resource classes
+
+and then php artisan make:collection User --collection or php artisan make:collection UserCollection for resource collections
+
+Seeing as our API needs to be secured, meaning that every call to the API will need to be authenticated we will need to make use of a package called jwt-auth
+
+JWT stands for Javascript Web Token, first we will need to composer require the package. Then we will need to run a package to publish the package's config file
+. That will create a config/jwt.php file by which we can configure the jwt-auth package. Then we will need to run the command php artisan jwt:secret
+to generate a secret key for the package. Then we will need to use the JWTSUBJECT contract in our user model
+
+In Laravel, the static apiResource() method called on the Route class is used to generate api only routes(resourceful routes). This is because the apiResource() 
+method will unlike the resource() method generate resource only methods without the create and edit methods which are not required when dealing with apis
+
+Typically, resources will have a toArray() method that specifies the attributes that we want to be converted into JSON when sending the response
+
+I think that the --api extension when creating controllers enables us to make use of BookResource or api related functions
+
+Leke take note that the static collection() method called on a resource will create a collection of json structures 
+
+Apparently, $request->user() returns the user that made the request or sent the data in
+
+Leke you know how normally, in your routes you specify the id of the model object and then in your controller, you query for the model object whose id matches. 
+But with route model binding, you can specify the id of the model object and then instead of passing in an id parameter to your controller, you can pass in a
+model object and Laravel will automatically fetch the model object whose id matches and inject it as a dependency into the controller's action
+
+403 - Forbidden (The user is authenticated but does not have permission)
+204 - No content(The action was executed successfully but did not return any content)
+

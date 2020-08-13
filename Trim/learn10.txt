@@ -1,0 +1,8 @@
+With CORS, we can make use of the after_request header to mutate the response. The whole thing is that we need to add the proper headers to the response
+The headers to set are Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers, Access-Control-Expose-Headers
+
+All HttpClient methods return an rxs observable of something. HTTP is a request/response protoco. You make a request, and it returns a single response
+
+In general, an observable can return multiple values over time. An observable from HttpClient always emits a single value, and then completes, never to emit again
+
+To catch errors, we need to pipe the observable result from http.get() through an RXJS catchError() operator

@@ -1,0 +1,43 @@
+Leke take note of the JQUERY children() method or the find() method
+
+Then also, with PDOS, when trying to execute a LIKE statement , enclose the % in braces()
+
+Breaking down the process of remembering URLS
+
+We need to create a noAccess() method in our Auth class in which is called whenever the user tries to access a restricted page and is not logged in
+
+In this noAccess() method, we rememeber the url that the user tried to access and we store it in the session.
+Then we need to create another method called rememberURL in which if the session url is present we return it, else it returns  ''
+
+Then after logging in, we need need to redirect to the page that we stored in the session by calling the rememberURL() method from the Auth class
+
+The setInterval() method in Javascript takes two parameters, a closure and time and every time that frame occurs, the function is executed
+
+We can also name the interval and stop it making use of the clearInterval() method
+
+Another option for the animate() method is obj, time and callback, instead of obj,obj
+
+Things to take note of
+All the images in the slider must be of the same height and width
+The container div and the ul and the li must be of the same height too, but the ul must be larger 
+
+Note: Tip, try to keep all the similar code together, confgiguration code should go in one place and another seoarate
+
+It's also good to cache the DOM
+Caching the DOM involves selecting the various HTML elements just once.
+
+Then, in order for the animation to work, we need to find a way to determine what slide the slider is currently on.
+We do this by declaring a current slide variable at the top and incrementing the variable in a callback after the animate() method has  been executed.
+
+Then we can check if we are on the last slide, and if we are we set the currentslide variable back to 1 and we set the css property of the ul
+or containing slider back to 0
+
+The on() method is used to listen for an event
+
+We need to set the animate() method to a variable interval that we defined
+
+Then we also need to do this inside a function startSlider()
+
+Then we need to define a method stopSlider() in which we clear the interval making use of the clearInterval() method
+
+Leke, whenever you are working on the sliders, never forget to set the padding and margin of the unordered lists to 0

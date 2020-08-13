@@ -1,0 +1,18 @@
+Subjects essentially a source of Observable Values and Observables themselves. We can push values into Subjects by calling their next() methods
+
+Essentially, we define heroes$ as an Observable of multiple Hero Objects. Then we also need to define searchterms as a Subject. Much like an array of searchterms,
+it contains Observables and is an Observable itself.
+
+Then in the ngOnInit() lifecycle hook, we assign the component's heroes Observables to the pipe() method of the searchterms Subject property.
+
+In order to add Observables to the searchterms subject Observable, we need to call next() on it and pass in the Observable
+
+In the pipe() method called on the Subject.
+
+Essentially, with every keystroke, we are passing in the current value of the search input into the searchterm subject Observable, but because we have 
+specified a debounceTime(300), it is only every 300 milliseconds that the last value in the searchterm subject is passed in to make the same request, but
+however, if it is the same text then it does not make the request and we do this by means of the distinctUntilChanged() paramete
+
+After all this, switchMap() calls the method that we had created in our hero service to grab heroes that correspond to the search term and you know that the methof
+returns an Observable and since we had defined that this.heroes$ had been identified as such. It also overwrites any previous Hero Observables that heroes$ might
+have contained 

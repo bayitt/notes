@@ -1,0 +1,5 @@
+
+Leke with the Bootstrap navbar dont forget that it is the encompassing div that takes the class of collapse navbar-collapse and the ul must take the class
+of navbar-nav
+
+Leke note that anytime you have a dropdown item, you need to add the dropdown class to the .nav-item li

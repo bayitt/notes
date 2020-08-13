@@ -1,0 +1,36 @@
+Breaking down the process of creating the 404 Page
+
+- We need to make use of the abort method and specify the error code that we intend to abort with
+- Then we need to make use of the errorhandler decorator to return a view anytime that 404 is thrown3:04 PM 8/27/20193:04 PM 8/27/2019
+
+Using Tables to send Emails
+
+Unique Table Attributes
+align - specifies the alignment of a table according to the surrounding text(left, right and center)
+cellspacing- spacing between cells (like margin essentially)
+cellpadding - spacing inside of cells (padding)
+border - specifies if a table has borders or not
+width- width fof the table
+
+Standard email width is 640px
+
+Web Safe Fonts | Web Fonts
+
+Email Clients that support Web Fonts
+- iOS Mail
+- Apple Mail
+- Android
+- Outlook 2000
+- Outlook.com app
+- Thunderbird
+
+However, web font support depends on the email client and how the web font is embedded in the email
+
+If web fonts are not supported, it is not the end because there are fallback fonts that are going to be seen. In most cases, the fallback fonts will be
+Helvetica, Arial, or a generic sans-serif font
+
+Each email client also has a preferred or default font which users would see if your font is not suported.
+
+Apple Mail - Helvetica
+Gmail - Arial
+Microsoft Outlook - Calibri

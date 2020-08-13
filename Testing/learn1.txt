@@ -1,0 +1,41 @@
+In the world of testing and continuous testing in particular, there are two two types of automation
+
+1) Automated Testing
+2) Test Automation
+
+Automated testing is the act of conducting specific tests via automation e.g a set of regression tests as opposed to conducting them manually
+
+Test automation refers to automating the process of tracking and managing different tests
+
+The way I see it is that Test Automation is the father of automated testing
+
+Continuous testing is a relatively new approach to software testing that aims to ensure quality in all times
+
+So with continuous testing, instead of testing occuring with a bang at the end of the development process, it happens in small pieces at all times as soon as the need
+arises
+
+Software testing is an organizational process within software development in which business critical software is verified for correctness, quality and performance.
+It is used to ensure that expected business systems and product features behave correctly as expected
+
+Software testing may either be a manual or an automated process
+
+There are several fundamental levels within software testing, each examining the software functionality from a unique vantage point within the development 
+process
+
+Levels of Software Testing
+- Unit Tests
+This is the foundational level of software testing. It is the practice of implementing input and output correctness checks for individual units of code.
+The measurement unit in this case are the standalone functions or methods. The whoe idea with unit testing is that you supply a function with its required
+parameters and it returns the expected results. They are great for confirming the correctness of code that deals with monetary values.
+
+- Integration Testing
+When a software test case covers more than one unit, it is considered an integration test. When developing test cases, the lines between unit tests can quickly
+evolve into integration test
+
+- Functional Testing
+Test cases that simulate a full user experience are called functional tests or end to end tests. End to end tests use tools that simulate real human user behaviour.
+End to end tests verify correctness across all the layers of a software stack
+
+- Exploratory Testing
+This is a testing exercise in which testers are assigned a loosely defined task to achieve using the software being tested. These can even be used to motivate the
+users by offering the rewards. From the name EXPLORATORY tests.

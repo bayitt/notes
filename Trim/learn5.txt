@@ -1,0 +1,33 @@
+The crux of Flask Restful really is based on the concept of resources. Resources are built on the foundation of pluggable view functions. The whole idea is that
+we create our application as usual, which is an object of the Flask class, then we create our api object by passing in our flask app object to the Api class
+as a constructor. Then we create our resource which extends the Resource base class. Our resources can have methods which correspond to all the HTTP symbols.
+
+Then at the end, we need to call the api.add_resource() method, which takes in the resource as the first parameter, the route that corresponds to it and 
+an optional endpoint keyword parameter that we can make use of to build the url with the url_for() method.
+
+For validating, Flask-Restful provides a reqparse module, the parser can be obtained by creating an object of the RequestParser() class on it. Then we need to add
+validation rules to it, by making use of the add_argument() method. The first parameter of the add_argument() method is its name in the request field.
+We can specify a type keyword argument which we expect the field to be. Then we can also set the required keyword argument to be true, then we can also
+specify a help keyword argument, which will be the error message that will be sent back to the client. Then, say we have multiple parsers in our requests, 
+we can create a parent parser and call copy() on it to copy it. To this copied parser, we can call the add_argument() method to add another validation rule,
+we can also call the replace_argument() method and we can also call the remove_argument() method.
+
+By default, the parser stops when the first validation fails. To parse everything and create an array of errors, we need to set bundle_errors to true. We can do this
+individually on the parser or in our application configuration.
+
+When parsing, if we want to name a field differently in our arguments, we can set the dest keyword argument to rename it. Then, by default flask-restful 
+checks the request.values and request.json, if we want to specify another place to check, we can specify a location keyword argument, to either form, headers,
+cookies or wherever. If we are sending in multiple values in the request with the same name, we need to specify action='append' in the add_argument() method
+of the parser, this will result in a Python List in the parsed arguments
+
+Then for serializing data, flask-restful provides a fields class from which we can access properties, We can create a return format in the format of a Python'
+dictionay. Some common properties include field.String, fields.url, fields.DateTime. We can make use of the @marshal_with decorator to format the data, objects
+returned from a resource method in the format of the field specified. We can also specify an extra envelope keyword argument which we can make use of to 
+envelope the data. So say, a "data" envelope. Instead of making use of the @marshal_with () decorator,  we can make use of the marshal method. The marshal method
+takes in the data we want to return, the name of the resource field.
+
+Remember how in our request parser, We can even parse data into arrays by making use of fields.List(fields.String)
+
+Custom output fields let you perform your own output formatting without having to modify your internal objects directly. All you have to do is to subclass the Raw
+class on the fields class and override the format() method. Remember that classes in Python take in a first parameter of the object accessing it. The format() method
+takes in the value that is passed to it. Remember that when parsing, if it fails validation, we can access the value passed in, via the errorMsg helper, {errorMsg}

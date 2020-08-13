@@ -1,0 +1,37 @@
+By default, in Angular, the routing module class name is the AppRoutingModule and it belongs in the app-routing.module.ts.
+
+The command to generate the AppRoutingModule is ng generate module app-routing --flat --module=app
+
+The --flat command puts the generated module in the default src\app folder instead of putting it in its separate folder
+
+The --module=app command tells the CLI to put in the imports array of the AppModule
+
+In order to make routing possible, we need to import Route and RouterModule from the angular/router library
+
+In the AppRoutingModule, we do not need the declarations module in the @NgModule decorator and we can remove it and we can also remove the CommonModule in the
+imports array
+
+Then, to the exports array we need to add the RouterModule. Exporting RouterModule makes the router directives available to the AppModule components
+that will use  them
+
+Our routes array needs to be of type Routes that we imported in from the router library in the root Angular directory
+
+The routerLink attribute is similar to the href attribute and can be used to navigate between various views
+
+Breaking it down
+After importing the AppRoutingModule, we need to edit it in order to make it possible to create routes
+1) We need to remove the NgModule.declarations array because we do not need it in our router
+2) Then we need to export RouterModule in the NgModule.exports so as to make the various router directives and commands available to the components
+3) Then we need to import RouterModule.forRoot() and we need to pass in the routes module that we create to it
+4) Then we need to create a routes property, an array that is of type Router that we imported from the @angular/router library
+5) Then we can create various objects inside the array. A route essentially consists of a path and a component.
+6) Then in the app component we can create a <router-outlet></router-outlet> inside of which the routed views/components are displayed
+
+The redirectTo property specifies if a route is matched , what path is should be redirected to and the pathMatch property specifies how much it should
+match it and we can pass full to it
+
+In Angular, dynamic route parameters are created by making use of the : operator, much like how in Laravel, they are created with {} 
+
+In order to create the Hero Detail component for the dynamic routes, we need to import ActivatedRoute from the router in the Angular library
+
+and we also need to import the Location symbol from @angular/common

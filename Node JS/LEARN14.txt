@@ -1,0 +1,9 @@
+MongoDB is both the name of the company that developed Mongo DB and also the name of their most famous product
+In Mongo DB, tables are known as collections. Inside of each collection, we dont have records but instead, we have documents.
+Mongo DB is schema less, meaning that the tables dont have to be of a particular format.
+Mongo DB does not use JSON exactly but instead, it uses a variant known as BSON. Embedded documents.
+BSON - Binary JSON
+
+In Mongo DB, there are two different ways to create relations. Either nested/embedded documents or References
+Typically, we try to make use of References when there is a lot of data duplication. 
+Essentially, References are like the way Relations are used in Sql, with Joins.

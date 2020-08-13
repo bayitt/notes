@@ -1,0 +1,41 @@
+It is best to always organize our flask code. We do this by creating our app instance inside a function known as the application factory. Any configuration, 
+registration and setup the application needs will happen inside the function, then the application instance will be returned.
+
+The __init__.py file serves two purposes. It tells Python that its parent directory should be treated as a package and it also contains the application factory
+
+Remember that installing the python dot-env package does a very important thing for us. Instead of having to manually set iyr environment variables, we can
+set them up in our .env file and it will be automatically set by the library
+
+The config dictionary in flask is very important. It contains the configuration settings for our application. It is always best to set up our configuration values
+from the config.py file
+
+The base class for all the models in our app is the Model property on the db object
+
+The table name is automatically generated for us from the model name. It is derived from the class name converted to lowercase or with camel case converted
+to camel_case. To override the table name, set the __tablename__ attribute on the class
+
+We make use of the Column() attribute on the sqlalchemy object to create a column. The name of the column is the name that we assign it to.
+Primary keys are marked with the primary_key keyword argument set to true
+
+The types of the column are the first argument to the Column method. The following types are the most common
+
+db.Integer,
+db.String(),
+db.Text
+db.DateTime,
+db.Float,
+db.Boolean,
+db.PickleType,
+db.LargeBinary
+
+The most common relationships are one-to-many relationships. Relationships are created with the relationship() function
+
+There is also another data type on the db object. This is the ForeignKey() attribute. In it, we pass in the model that we want to link it to and add the 
+id field.
+
+addresses=db.relationship('Address', backref='person', lazy=True)
+
+This returns a property that returns multiple instances of the Address class. If we want it to have a one-to-one relationship, we can pass in uselist=False
+to our relationship declaration
+
+It is always a good idea to specify nullable=False to all non-nullable fields.

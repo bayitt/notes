@@ -1,0 +1,20 @@
+Middleware can also be implemented in our applications by calling the middleware() method on the controller and passing the name of the controller 
+such as $this->middleware('auth')
+
+An alternative way to reference the uses and as array in Laravel is to call the name() method on the route
+
+We also have the RedirectIfAuthenticated Middleware, and it does the opposite of the Auth Middleware. This checks if the user is successfully logged in and
+if so
+
+There is the Middleware for when our application is in maintenance mode.  It checks if the application is in maintenance mode and if it is, it displays a message.
+Remember that middleware are run/executed in every request to the server
+
+We also have the Web Middleware and the api Middleware, every route in the web Router is protected by the web middleware
+
+In order to validate our data, we need to call the validate() method on the object of the class, this validate() method takes two parameters, the
+$request object since it is form data and an array of the rules that we want to use for the validation
+
+The rules are separated by pipes
+required, max, image
+
+The $errors variable is a variable containing  validation errors that we can access in all our views 

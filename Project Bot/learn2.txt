@@ -1,0 +1,32 @@
+There are two different kinds of APIs for developers. The Bot API and the Telegram API
+
+The Bot API allows you to connect bots to their system. Telegram Bots are special accounts that do not require an additional phone number to set up.
+These accounts serve as an interface for code running somewhere on your server.
+
+Users can interact with bots by sending them messages, commands and inline requests
+
+Bots can be used to 
+- Get customized notifications and news
+- Integrate with other services
+- Accept payments from Telegram users
+- Create custom tools
+- Build single and multiplayer games
+- Build Social services
+
+The whole idea essentially is that the request => your code => Bot API => Telegram API
+
+Commands present a more flexible way to communicate with your bot. The syntax for commands is /command. Commands must always start with the / symbol
+and may not be longer than 32 characters. Commands can use letters, numbers and underscores
+
+Messages that start with a slash are always passed to the bot(along with replies to its messages and messages that @ the bot)
+
+Global Commands to the Bot
+/start - This begins interaction with the user
+/help - This returns a help message e.g a short text about what your bot can do and a list of commands
+/settings - Returns the bot's settings for this user
+
+Python-Telegram Bot
+
+The API is exposed via the telegram.Bot class
+
+The bot details can be accessed via the getMe() method called on the bot object

@@ -1,0 +1,36 @@
+React is a popular library used to create user interfaces. React is a small library that does not come with everything you need out of the box to write
+your application. The React library is small and is only used for a small part of the job. A lot of the decisions about which tools to use are left to the
+developer.
+
+React emphasizes functional programming over object oriented programming. yarn is a dependency manager similar to npm. we can make use of the yarn add and yarn
+remove commands. If a project contains a yarn.lock file, it means that it is using yarn as the dependency manager. Just like npm install, we can make use of
+yarn install or yarn to install all the dependencies.
+
+ECMA - European Computer Manufacturers Association
+Template strings honor white space.
+Arrow functions do not block off the scope of this.
+Transpiling refers to the process of converting es6 code into es5. One of the most popular tools for transpiling is Babel.
+We can transpile Javascript directly in the browser using the inline Babel transpiler. Just include the browser.js file from the Babel CDN. It will transpile
+any file with a type of "text/babel"
+
+When destructuring arrays, we can skip over unnecessary values with list matching using commas.
+
+Object Literal Enhancement is the opposite of destructuring. It is the process of restructuring or putting an object together. Say we have two global variables,
+name and road, we can simply put it together with something like { name, road } and this will create an object in the form {name:name, road:road}.
+
+I think I understand how the rest operator is made use of. While the spread operator is used to pull elements out. The rest is used to compose or put
+elements together. It can be used in a similar manner to args and kwargs in python
+
+The process of chaining then() functions to promises is known as composition
+In Javascript functions are objects and inheritance is handled through the prototype
+
+An abstract class refers to a class that cannot be instantiated but can only be substantiated
+When inheriting in OOP, we can access the super class methods and properties by making use of the super keyword.
+Javascript makes use of prototypal inheritance
+
+A Javascript module is a piece of reusable code that can be easily incorporated into other Javascript files. Javascript modules are stored in separate files,
+one module per file
+The way I see it is that Javascript modules are the equivalent of module.exports and exports. in node. To export multiple objets per module, we can make use
+of the export keyword. To export a single object like module.exports, we can make use of export default
+
+modules and module objects can be imported making use of the import keyword. Just like how we do so in angular. Like import {  } from 

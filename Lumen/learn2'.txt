@@ -1,0 +1,29 @@
+Leke note that if you want middleware to be run in every request to your application simply add it in the call to the middleware method in bootstrap/app.php
+
+Also, Leke take note that you can pass in parameters to to your middleware by adding the parameter after the middleware key say role:editor
+
+Your middleware may also need to do some work after the response has been sent to the browser. To do this, create a terminate() method in the middleware
+
+Leke, you know how you can call your middleware in the constructor. You can restrict your middleware to only particular actions in the controllerby passing in 
+an array as a second parameter to the middleware method you are calling on the constructor
+
+The path() method called on the $request object returns the URI of the request
+
+The url() method however returns the absolute path without the query string while fullUrl() returns the absolute path with the query string
+
+The method() method returns the method that was used to make the request
+
+We can also access data sent along with the request by calling the input() method on the request instance
+
+The has() method is used to check if a request contains something
+
+Instead of just accessing the file like we do normally in Laravel, we need to make use of the file() method. We can also check if it is valid by checking
+calling the isValid() method
+
+The download() method on the response() helper method can be used to generate a response that forces the users browser to download the file at the specified path
+
+The first parameter of the download() method refers to the path to the file while the second parameter represents the name seen by the user as he downloads the file
+
+Before making use of Lumen's authentication features we need to uncomment the call to comment Lumen's AuthService Provider in bootstrap/app.php
+
+Just like in Laravel, we can access the authenticated user by making use of the Auth::user() method 

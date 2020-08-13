@@ -1,0 +1,20 @@
+Express JS recap
+
+So we carry out validation in Express making use of the express-validator package. Typically, we destructure a method representing the part of the request that we
+intend to validate. We can make use of body to validate the request body, headers to validate the request headers, cookies to validate the cookies.
+We can also make use of check to validate the entire request
+
+We can make use of isLength({min  }) to validate length. isURL() to validate urls, We validate by an array of validators that resolve into validators..
+We also have .isEmail(). We can also chain an optional() method to it. We can also write custom validators by making use of the custom method and pass in 
+an arrow function. The arrow function takes in two parameters, the value of the field and an object from which we can destructure the request object.
+
+Then for multipart/form-data, express makes use of the multer package. We need to make use of multer() and pass it into a middleware. To make use of multer, 
+we need to pass in a configuration object to it. We need to pass in a storage key and a fileFilter key. For the storage key, we need to pass in a property in which 
+we are going to store multer.diskStorage() to which we are going to pass in an object containing destination and filename keys.
+
+To destination we are going to pass in an arrow function with the request, file and cb parameters. To determine destination, we can call cb() with null and the path
+that we want save the file to.
+
+To the filename, we can also pass in req, file and cb and also call cb(null, name of file)
+
+Then, for the fileFilter we also pass in an arrow function with req, file and cb as the parameters

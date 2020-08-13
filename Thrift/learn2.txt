@@ -1,0 +1,37 @@
+Recap
+
+Angular provides two different ways of working with forms, template driven forms and reactive forms, the latter is also called model driven forms
+
+With template driven forms, the dfault way to work with forms in Angular, template directives are used to build an internal representation of the form.
+With reactive forms, you build your own representation of a form in the component class
+
+
+In order to work, with reactive forms, we will need to import the ReactiveFormsModule instead of the FormsModule, so import it in your app or feature module
+
+With reactive forms, the logic is declared entirely in the component class
+
+The form is going to be treated as a FormGroup in the component class so the FormGroup directive allows us to give a name to the form group
+
+(ngSubmit) is the event that is going to be triggered upon submission of the form
+
+Each form field should have a formControlName directive with a value that will be used in the component class
+
+If a value is provided when creating, a form control, that is the value displayed in the form input
+
+we can access the value of the form controls, by making use of the form.value. 
+
+We can make things better with the help of the FormBuilder helper. The difference with the FormBuilder is that we will inject it as a dependency into
+our class
+
+myForm:FormGroup
+
+this.myForm=new FormGroup({name:new FormControl(''), email:new FormControl('')})
+
+private fb:FormBuilder
+
+this.myForm=this.fb.group({name:'', email:''})
+
+Adding Validation to our reactive form is very easy. All we need to do is to import the Validators class too, and then instead of declaring our
+form elements as strings, declare them with arrays
+
+The first value in the array is the default value in the array, while the remaining values in the array represent the particular validation constraints

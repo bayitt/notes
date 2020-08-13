@@ -1,0 +1,33 @@
+In order to make use of laravel, we need the global Laravel installer. We can install that via the command composer global require laravel/installer
+
+composer create-project --prefer-dist laravel/laravel blog
+
+php artisan serve
+
+composer create-project --prefer-dist laravel/laravel blog
+
+The first thing to do after installing Laravel is to set the application key. This can be done by making use of the php artisan key:generate command
+
+Even before that, we need to rename the .env.example file to .env
+
+The entry point of all requests to a Laravel application is the public/index.php file
+
+The first action taken by Laravel is to create an instance of the application
+
+After creating the app instance,the incoming request is sent to either the HTTP kernel or the console kernel depending on the type of request that was sent in.
+These two kernels serve as the central location through which all requests flow
+
+The Http Kernel is located in the app/Http/Kernel.php file, this file extends the Illuminate\Foundation\Http\Kernel class which defines an array
+of bootstrappers that will be run before the request is executed. These bootstrappers handle error handling, configure logging, detect app environment and
+perform other tasks
+
+The Http Kernel also defines a list of Http Middleware that all requests pass through before being handled by the application
+
+One of the most important bootstrapping actions for the Kernel is loading the service providers for your application which are located in config/app.php file
+
+Service providers are responsible for bootstrapping all of the framework's various components
+
+Once the application has been bootstrapped and all service providers have been registered, the Request will be handed off to the router for dispatching
+
+Service Providers are truly key to bootstrapping a Laravel application. The application instance is created and the service providers are registered, and the
+request is handed over to the bootstrapped app

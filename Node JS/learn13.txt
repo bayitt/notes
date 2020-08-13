@@ -1,0 +1,37 @@
+Tailwind's padding utilities
+
+Tailwind's padding scale works on the +0.25 rem scale. From p-0 to p-20. It's utilities also work a lot like Bootstrap's with the pt, pr, pl, pb.
+Horizontal padding works with .px while vertical padding works with py. Control the padding on all sides with p.
+
+In Tailwind, we can also control the negative margin of an element using the -m{side?}-{size}
+
+Width Utilities
+These utilities work or have the same width as the padding and margin utilities. 0,1,2,3,4,5,6,8,10,12,16,20
+
+Use the .w-auto to let the browser calculate and set the width for the element.
+Use the .w-screen to make an element span the entire width of the viewport
+
+The Tailwind equivalent of .container-fluid in Bootstrap is .w-screen
+
+We make use of the .w-{number} or .w-px to set an element to a fixed width. 1,2,3,4,5,6,7,8,10,12,16,20,24,32,40,48,56,64.
+
+Tailwind's equivalent of the .w-100 in Bootstrap is .w-full. Tailwind is also smart enough to make use of fractions
+
+Min-Width Utility
+.min-w-0
+.min-w-full
+
+Max-width utilities
+.max-w-full
+.max-w-screen-sm - 640px
+.max-w-screen-md - 768px
+.max-w-screen-lg - 1024px
+.max-w-screen-xl - 1280px
+
+Height works much in the same way as Width, we can set the fixed width as h-0 to h-64. We also h-auto.
+Also, use h-screen, to make an element span the entire height of the viewport. Use h-full to set an element to 100% of its parent.
+
+For controlling min-height, Tailwind has similarly to the min-w-0 and min-w-full, has the min-h-0, min-h-full. It also has the min-h-screen, which sets the
+min height of the element to be its viewport.
+
+For setting the maximum height of an element, we can make use .max-h-full and .max-h-screen

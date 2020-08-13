@@ -1,0 +1,36 @@
+Node JS is essentially about a whole lot of imports
+
+A couple of the core modules in Node JS are 
+- http
+- https
+- fs
+- path
+- os
+
+The http module can help us to launch a server and send requests. The https module can help us to launch an SSL server
+We make use of the require() method to add dependencies to our projects. require() can either be used to import a file in which case it would take the path
+to the file. Or it can be used to import a core module.
+
+The http.createServer() method is used to like it says, create a server. It takes a requestListener as a parameter
+The createServer() method actually returns a server object
+
+There is an important concept in Node js called the event loop. Our Node server keeps on running as long as there are event listeners registered.
+Since we registered the request listener, it means that the event loop/our code will always be running
+
+Node js makes use of an event driven approach to programming.
+We can exit from the event loop making use of process.exit()
+
+req.url contains the url that made the request, req.headers refers to the headers while req.method refers to the HTTP verb
+The response object contains several important methods that we can use to mutate the response we want to send back to the client
+
+The writeFile() method is used to like it says write strings to files. It takes two paremeters, the path to the file and the string to be stored in the file
+
+In Node js, data is sent in as a something called a stream. It is not available in its own say request property as in Laravel and Flask
+The request is read in multiple parts or chunks we can say
+
+A buffer is a construct that enables you to hold multiple chunks of a stream and work with them before they are released.
+The on() method allows us to listen out for certain events.
+
+The data event is fired off whenever a new chunk of the data is ready to be read.
+
+Buffer has a special method called concat which can be used to join together all the read in chunks.

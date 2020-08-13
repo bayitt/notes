@@ -1,0 +1,36 @@
+Revising What I have learnt with Sass
+
+1) Nesting in Sass
+2) The @extend directive
+3) @import directive
+4) @mixin. Mixins are like variables that we can use for reusable code
+5) @include mixin. We can even include parameters in our mixins but they are not necessary
+6) parent reference which is &:pseudo property\
+7) lists in sass can be created by using ()
+8) the @each directive that we can use to loop through a list
+9) The #{} 
+10) While and for loops in sass
+11) @for from 1 through 4
+12) @while $i<4
+13) Sass has some built in functions which include lighten, darken, rgba values for hex
+14) It also has the percentage function
+15) We can slo create our own functions by making use of the @function keyword and the @return keyword to return values from the functions
+16) We also have placeholder selectors
+17) Finally, we can make use of the @content keyword to create mixins that take parameters
+
+Revising what I have learnt from CSS Animations
+
+The transform property takes a property which is translate 
+We can have the translateX() which moves the element along the X-axis
+We also have the translateY() which moves the element along the y-axis
+
+We also have the shorthand translate() which receives the first value as the translate along the X-axis while the second value is the translate along the
+Y-axis
+
+We also have the scale property which stretcthes the element. If it is to set to a value above the 1, it stretches the element
+Also if the element is set to to a value less than -1, it also stretches the element
+
+But if the value is set to -1, it flips the element
+
+The same applies for scaleY
+

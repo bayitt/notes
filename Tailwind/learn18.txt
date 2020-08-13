@@ -1,0 +1,14 @@
+The whole idea is that Tailwind provides several utilities for working with css transitions
+
+.transition-none
+.transition-all
+.transition - border-color, background-color, color, stroke, fill, opacity, transform, box-shadow
+.transition-colors - border-color, background-color, stroke, fill
+.transition-opacity - opacity
+.transition-shadow - box-shadow
+.transition-transform - transform
+
+For transition duration, Tailwind also has several utilities such as .duration-75, .duration-100, .duration-150,
+.duration-200, .duration-300 , .duration-500, .duration-700, .duration-1000
+
+Also for transition timing, we also have .ease-linear, .ease-in, .ease-out, .ease-in-out

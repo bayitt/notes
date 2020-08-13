@@ -1,0 +1,37 @@
+SQLAlchemy is an Object Relational Mapper(ORM). It is a layer between Object oriented Python and the database schema of Postgres
+Alembic is a useful module to manage database migrations with SQLAlchemy in Python
+
+The entire Flask application is an instance of the Flask class
+
+Leke remember that __file__ returns the name of the current Python script
+
+os.path.dirname is going to return the directory name of the current Python script
+os.path.abspath returns the absolute path
+
+Each Application needs a configuration. Flask allows developers to implement their configuration using several different approaches
+
+- File Based - app.config.from_pyfile
+- Object-Based - app.config.from_object
+- Environment Variable Based - app.config.from_envvar
+- Instance Folders Based
+
+Regardless of what approach developers use all configuration values are loaded on the config attribute of the Flask class instance that is the 
+configuration dictionary
+
+From the flask_sqlalchemy we will be making use of the SALAlchemy class
+
+In our models.py file we are going to define our tables as classes
+
+The Postgresql database uri definition is : 'postgresql://DB_USER:PASSWORD@HOST/DATABASE'
+
+postgresql://user:password@host/dbname
+
+An alternative way is to define your db object in your model.py file where we are going to define the models for our tables
+
+The models for my classes, inherit from the base db.Model class
+
+Leke, make use of the db.Column() method to create a new field in the table, db.Integer is to indicate that the data type is going to be an integer
+
+db.String() is to create a string field. The String() method takes a string which represents the number of characters the field will have 
+
+The unique and nullable keywords do as you guess

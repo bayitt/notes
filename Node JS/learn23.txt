@@ -1,0 +1,5 @@
+Different types of errors
+There are different types of errors, we can have technical or network related errors. 
+We also have expected errors and finally we have bugs/logical errors.
+
+For working with errors, we can also throw errors when there are issues 

@@ -1,0 +1,36 @@
+Services is a broad category encompassing any value, function or feature that an application needs. Services should essentially be classes that do something 
+and do it well
+
+-@Component decorator
+-@Injectable decorator
+-@Directive decorator
+
+A provider is an object that tells an injector how to obtain or create a dependency
+
+With services, the main deal with them are their Injectors. Angular creates an application wide injector during the bootstrap process and whatever addtional
+injectors are needed
+
+Injectors creates dependencies and maintains a container of dependency instances that it reuses if possible
+
+A provider is an object that tells an Injector how to obtain or create a dependency
+
+I think that is why we can have a single instance of a service working across multiple components because when Angular is about creating the component and
+it sees that the component has a service dependency, it first checks the Injector to see if an instance exists already and if one does not, then it makes
+use of a provider to create the service dependency
+
+Essentially, we can register services in three different ways.
+Either we register them making use of the providedIn property in the @Injectable decorator, where we can specify providedIn:'root'.
+
+What this does, is that is makes a single shared instance of the service available to all component classes that ask for it as a dependency.
+
+Or, we can register the service in the providers propery of the @NgModule decorator object in the root app module.
+This also makes a single, shared instanced of the service available to all component classes of the Module thaT have it as a dependency
+
+
+Or finally, we can make the service available only to a particular component by specifying it in the providers property of the 
+@Component decorator metadata object
+
+What this does is that everytime that component is created, a new instance of the service is injected as a dependency rather than having it
+available to all componenets as a singleton
+
+I am going to be a world class developer!

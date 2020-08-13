@@ -1,0 +1,17 @@
+AJAX is a way that enables us to grad data from the intenet thru javascript
+
+Sending a GET Request
+we create the HTTP Object
+Then we need to specify the url
+And finally we need to specify the method
+
+Then we need to call the open() method on the XMHttpRequest object, Then we need to create an eventhandler for the readystatechange event.
+We can call the JSON.parse() method on the http.responseText to convert it to JSON format
+
+In order to make POST requests, we need to change some things, like we need to change the method to POST, then we need to set the  setRequestHeaders() function, 
+and the purpose is to let the server knwo the kind of information that we are gerring
+
+201 is the response gotten from a POST Request, since 201 means everything is fine and a new resource was just deposited
+Leke the setRequestHeader() method has to be called after the open method has been called and it takes two parameters, 'Content-Type' and
+'application/x-www-form-urlencoded'
+

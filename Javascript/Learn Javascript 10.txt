@@ -1,0 +1,19 @@
+The Date Object
+To obtain today's date, we can inherit from the default date object and print out the object toString()
+We can also pass arguments to the Date() constructor. The first parameter represents the year, the second parameter represents the month, starting from 0 while the 
+last parameter representsthe day. We can also pass a string to the constructor and it has the format Year/Month/Day
+
+We can also make use of the parse method of the Date obect to return the number of milliseconds that has passed since the epoch, 1 January, 1970.
+
+On the variabble we created , we can also call the getDate() method to return the day in the month
+
+Leke, do not forget to call the toString() method when trying to access the current date
+
+Regular Expressions are patterns used to match combinations in strings
+
+In order to make use of Regular Expressions, we need to create a string, then we need to create our Regular Expression pattern, by putting a /pattern/
+In order to call our Regex, we need to call the exec() function on the pattern and pass the string as a parameter. If it finds the patern, it returns an array
+containin the pattern, if it dies not find the pattern, it returns null. 
+
+We can also make use of the test() function to check if the string contains the pattern. We can also do it the other way around, in that we can call
+the 

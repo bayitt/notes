@@ -1,0 +1,38 @@
+Remember Angular's interpolation syntax {{}}
+
+Leke take note that templateURL != template
+
+By default, anytime we call ng generate component name, Angular generates a html tamplate for the component, we can override it with the -it extension
+
+Instead of declaring variables, they should be initialized inside the constructor
+
+
+export class Hero{
+	
+   constructor(public id:number, public name:string) { 
+	
+   }
+}
+
+The text between the interpolation braces is usually a template expression that Angular first evaluates and then converts to a string
+
+Interpolation refers to embedding expressions into marked up text
+
+Template Expressions
+
+The expression context is typically the component's instance
+
+Order of precedence
+Template Variable name
+Directive's context object
+Component's member names
+
+
+template statements are essentially methods called in the component's class
+
+statement context also refers to the component's current instance
+
+Leke remember that template reference variable != template input variable
+
+
+Leke remember that template input variables are like the variables in a loop

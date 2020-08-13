@@ -1,0 +1,3 @@
+Interpolation in Sass is not limited to the @each operator. Essentially it is used with any type of loop variable or implicit parameter
+
+I think interpolatio is used for situations where like {{}} where something nie being outputted

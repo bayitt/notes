@@ -1,0 +1,6 @@
+Breaking down the process of creating a custom Modal
+
+1) We need to set the positionof our modal class to fixed and set its top and left properties to 0 and its height and width to both 100% so that it can
+cover the entire web page.Then we need to set its color to rgba(0,0,0,0.5) to give it like a transparent background
+
+Leke take note that in order to have transparent background and non-transparent text,use rgba values for the background

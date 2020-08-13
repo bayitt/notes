@@ -1,0 +1,34 @@
+Leke take note that anytime you use 2 slashes in Python, it rounds down the result instead of returning a decimal number probably with a single slash
+The global helper method pow() is used to find a number and its exponent
+
+Also, leke take note that we can multiply strings in Python
+
+We can access substrings in Python from a string by making use of bracket notation. Python also has something called negative indexes. With the index -1
+we can access the last character in a string.
+
+We can access substrings by making use of the [f:e] index. If we name [2:6], It will print out from index 2 to index 5
+
+The len method is used to obtain the length of a string
+
+Lists are the Python equivalent of arrays.
+The append() method is much the same as array_push() in php and .push() in Javascript
+
+Python uses : for blocks of code
+
+Also, Leke remember that we can make use of the 'or' and 'and' keywords. With Python I need to let go of the previous notations of expressing logic like ==, || and
+&&. Instead, we can make use of is, or and and. Also, the in keyword is used to check if an item is present in the list
+
+In situations in which we do not know the number of parameters that a function would take We can make use of the *args parameter to contain all the parameters
+that the user specifies. In Python, there is a concept called unpacking arguments. 
+
+Sets are essentially collections of items like lists but the difference between sets and lists is that sets cannot contain duplicates. Sets are also created with
+{}, instead of [] like lists
+
+Dictionaries in Python are essentially like JSON objects with key/value pairs. In order to loop through a Python dictionary.
+
+In Python, there are four collection data types 
+
+List - A collection which is ordered and changeable. Allows for duplicate members
+Tuple- A collection which is ordered and unchangebale. Allows for duplicate members
+Set - A collection which is unordered and unindexed. Does not allow for duplicate members
+Dictionary - Unordered, changeable and indexed. No duplicate members

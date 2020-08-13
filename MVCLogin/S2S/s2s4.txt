@@ -1,0 +1,41 @@
+Breaking down the Calendar Process again
+
+1) We need to create a new Calendar object
+2) Then we can obtain the month by calling getMonth() on the returned object. This returns a number from 0-11 whic represents January to Decemeber
+3) We also obtain the current year by calling getFullYear() on the returned object
+4) Then we construct a string in the format Current Month 1 Current Year, like June 1 2018
+5) Then we pass this string as a constructor to another date object and it returns a string in the format Monday 1, 2018
+6) We obtain this string by calling .toDateString() on the returned object
+7) Then we need to obtain the first three letters of the returned string by calling substring(0,3) on the returned string
+8) Then we need to obtain the day of the week in number format by calling .indexOf() passing the three letters as a paramter
+9) Then we need to obtain the number of days in the month by passing the year, proper month value and 0 as parameters to the date constructor
+
+What I have noticed is that I can obtain different results from the date objects by passing different constructors
+
+Leke remember that Function Call != Function Declaration
+
+Leke take note that with bootstrap forms, we don't need to specify the beeakpoints
+
+Leke rememebr that it is static variables that are remembered betweeen function calls
+
+Leke remember that all the relation/table names must be lowercase
+
+In order to select mutltiple images we need to add the keyword multiple to the input type of file
+
+Leke instead of using button click to submit the form we can add an event listener to the form submit
+
+We can also call the preventDefault() method on e to prevent the default action of the form from executing. But take note that we need to pass e as
+a parameter to the closure that we pass to the submit method of the form
+
+FormData means that the form data is sent in the same format as if the data was sent via the usual form way
+
+Instead of making use of the button click to upload the form, we can make use of the submit button input in the form. Then in order to prevent the default
+action of the form, like where it will send the data to, we make use of e.preventDefault(). Take note that e is passed as a parameter to the form.submit
+closure
+
+Leke the in_array() method is used to check if a value is present in an array
+
+Leke take note that contentType refers to the type of data that is sent to the server
+processData is also set to false if we want the data that we send to the server not to go in as string if it is not a string already.
+
+Also Leke take note that when we set parameters as false, it is false NOT 'false'

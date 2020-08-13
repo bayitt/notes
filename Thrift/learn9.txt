@@ -1,0 +1,6 @@
+When we hit the initial daashboard endpoint, what information exactly do we want?.
+- final amount
+- original amount which represents the initial total income
+- We want the savings amount for the month
+- We want all your purchases for the day
+

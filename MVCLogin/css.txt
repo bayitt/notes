@@ -1,0 +1,49 @@
+Leke, note that with the width attribute we can set the width of a HTML attribute to a percentage of the total space of the parent element
+
+We can also make use of the padding property to add space inside of a form element
+
+The box-sozing:border-box makes all the form elements to align properly
+
+If we want our from to have only a bottom, we need to set the border-bottom property
+
+By making use of the :focus event, we can set the border of a form element when it is clicked on
+
+In order to position background images with css, we can set the background image of the form element and specify the background position and the bacground repeat 
+to be no repeat. Also, Leke do not forget to specify the padding
+
+With the background size property we can set it to four different values, we can set it to auto, cover in which it covers the entire size of the element and 
+contain in which it fills up the actual space. Then with the final way we can make use of two pixelated values in which the first value is the height and the
+second value is the width. With auto, the background image is displayed in its original size
+
+CSS Transitions are effects that let an HTML element gradually change from one style to another. To do this , we need to specify the HTML element that we want to 
+add an effect to and the effect of the duration.
+
+The transition will start when the specified css property changes value
+
+The four transition properties are transition-property, transition-duration, transition-delay and transition-timing-function which can be linear, ease-in, ease-out
+and ease-in-ease-out
+
+With the cursor property we can specify the type of cursor that we want to appear over a button when it is hovered upon
+
+With the translate() method, the element moves from its current position, depending on the paramters given for the X and Y position
+
+
+HTML Positioning
+A HTML Element with a fixed positioning will not move even when the page is scrolled
+
+Relatively positioned elements are positioned according to their position in the normal flow of the page
+
+
+An absolutely positioned element is positioned according to the first parent element that has a position other than static
+
+It is possible to make use of a shorthand method to account for all the padding properties
+4 values goes from top right bottom and left
+3 values is top right and bottom
+2 values means the first value is for top and bottom while the second value is for right and left
+
+Leke ALWAYS remember the text align property
+
+Leke in order to create bottom inputs, we need to remove the border property, set the background of the input to transparent and specify the border bottom
+properties
+
+Leke take note that we can even edit the placeholder properties by making use of the ::placeholder css properties

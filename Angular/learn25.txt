@@ -1,0 +1,49 @@
+Types of Data binding in Angular
+
+-One way data Source - view Target
+-One way view Target -  data Source
+- Two way via [(ngModel)]
+
+With data binding, we are no longer working with HTML attributes but DOM properties
+
+Attributes initialize DOM properties and then they are done
+
+The HTML aatribute value specifies the initial value while the DOM value property value returns the current value 
+
+In the world of Angular, the only role of Angular is to initialize elements and directive state. When we are dealing with data bindings, we are dealing
+exclusively with properties and events of the target element
+
+With property binding, either we are binding to a DOM Element's property, or we are binding to a component's property or we are binding to a directive's property
+
+In Property bindings, we are ALWAYS dealing with DOM properties and NEVER attributes
+
+With component property binding, never forget the [] because it tells Angular to evaluate the corresponding template expression that follows, if not
+Angular treats the template expression as a string 
+
+Recap
+
+I have learnt and understood template expressions, which are essentially what are evaluated with interpolations and property bindings.
+
+Template variables can esentially be template input variables which refers to placeholder variables in structural directives
+
+They can also be template reference variables which are named variables corresponding to DOM elements
+
+Now, in case there is a clash of name,s template variables will take precedence,  
+
+Also, template expressions' context and template statements' context are the current component instance. I take this to mean the current environment in
+which the template is being rendered
+
+Then I have also understood how Angular deals with DOM properties and not attributes and the fundamental difference between properties and attributes
+
+There are three types of databindings
+
+One way - data source(component) to the view (template) (property binding)
+One way - View(template) to the data source(component) (event binding)
+Two ways - via [(ngModel)]
+
+With property binding, we can either bind to a HTML element's DOM property or we can bind to a component's property or we can bind to 
+a directive's property
+
+Also, except we are binding to a string property, NEVER FORGET THE []
+
+In order to bind to attributes in Angular, instead of like [colspan]={{}}, we use [attr.colspan]=

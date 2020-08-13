@@ -1,0 +1,35 @@
+Flask Recap
+
+In order to carry out migrations with fask we are going to need severa dependencies among which include
+
+-flask_sqlalchemy
+-psycopg2
+-flask-script
+-flask-migrate
+
+The whole logic of how it works is that the sqlachemy object is what we are going to use for all our database transactions
+We need to have a model.py file in which we are going to define all our model classes. Remember that SQLAlchemy is an ORM which means that it provides an
+interface for accessing the database. Just like Laravel, we have one model representing one table. These models are going to extend the base Model class
+on the SQLAlchemy object.
+
+Relevant methods include the db.Column() method which is used to create fields in the models/tables. 
+The different types of columns include db.Integer, db.String(size), db.Text, db.Boolean, db.Float. Then we have the keyword arguments nullable, default, 
+
+We also have the db.relationship() method which we use to create the relationships between Models. The first argument in the db.relationship() method represents
+the model/table with which are creating the relationship. Then we also have the backref keyword argument which represents the inverse relationship between
+the child model and this the parent model. Finally, we have the lazy keyword argument which represents how we want the relationship to be loaded
+
+from flask_migrate import Migrate
+
+migrate=Migrate()
+
+migrate.init_app(models.db, app)
+models.db.init_app(db)
+
+from flask_script import Manager
+from flask_migrate import MigrateCommand
+from Pluto import create_app
+
+manager=Manager(create_app)
+
+manager.add_command('db', MigrateCommand)

@@ -1,0 +1,28 @@
+Leke remember that the class autoloader function is the spl_autoload_register() function and it takes a function/method as the parameter. That function takes a 
+paarameter which is the classname
+
+Leke take note that with namespaces it is a forward slash like '/', and in the class autoloader we use str_replace to convert it to '\'
+
+The preg_match() function takes three parameters, the regular expression, the route and the matches array which represents the array of things matched
+
+Note that with the routes there are two possiblities, either I specify the particular route that I want and explicitly specify the controller and action.
+Or I specify the format that I want like {controller}/{action} and this becomes the 
+
+Breaking Down the Routing Process
+1) We create the Class Autoloader that is the spl_autoload_register() function which takes a function as a parameter
+2) Then we need to create our Core Router 
+3) Then we create two arrays, the $routes array and the $params array
+4) Then we create an add() method in which we sort out the regular expressions stuff and enter the route into the routes array
+5) But there are two different circumstances, either I specify the route explicitly in whic case I enter the controller and the action
+6) Or I specify the format of the route such as {controller}/{action}, in which case the controller becomes whatever I specify whatever I specify in {controller}
+7) The action also becomes whatever I specify in {action}
+8) Then I need to create a match method
+9) In the match method, I am looping through the routes array and check each route against the user entered url
+10) If the route is matched, then it is of two different circumstances like I specified earlier before
+
+Leke take note that the __call magic method takes two parameters, the method name and the args
+Also, we need to call the action making use of the call_user_func_array(), which takes two parameters, an array containing this and the method and the args
+
+Leke remember that each word in a controller has to begin with a capital letter, while the first letter in an action has to begin with a small letter
+
+Leke the is_callable() method takes an array containing the controller object and the action

@@ -1,0 +1,34 @@
+There are several configuration settings in phpmailer
+SMTPDebug returns the technical data of the email
+isSMTP specifies whether we intend to make use of SMTP, or we want to use PHP's mail function on the server
+
+In PHP, in order to obtain the current route we need $_SERVER['REQUEST_URI']
+
+Breaking down the process of updating the posts
+
+1) I need to create an action in the admin posts controller that handles the edit action
+2) Then I need to create a function in the model to update the data
+3) In our controller, we are going to send the entire $_POST superglobal array to the model
+4) In the model, we are going to create properties from the $_POST variables
+5) Then we are going to create our sql queries and prepare statemtents
+
+
+Leke take note that in order to create radio buttons in bootstrap, we need to put the input inside the label with a class of radio inline, Also
+Leke take note that the radsio buttons have to have the same name but different values
+
+Leke  note that in order to get the value of a checked input element we use input:checked
+
+Leke take note that the scrollTop() function takes the page to the top of the page
+
+The isNan() function in Javascript checks if the passed string is a not a number
+
+How did I solve the problem of form validation
+1) I created a validation() method that is executed when the form is submitted
+2) What the validation method does is that it checks all the text elements on the page to make sure that they are not empty
+3) If any one is empty it adds a message that the field cannot be empty
+4) Then I also created two methods to check the phonenumber field specifically, the checkphoneno() and checkphoneval() methods
+5) The checkphoneno() method checks the length of the value, and returns false if it nots equal to 11
+6) If its not equal to 11, it adds the error message after the phone field'
+7) Also, the checkphoneval() method checks if what is in the phone field is a number, if it is, it returns true, else it adds an error message
+
+The search method in Javascript determines if a string can be found in another string, it returns -1 if the string can be found

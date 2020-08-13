@@ -1,0 +1,19 @@
+
+In situations in which we don't know the number of parameters that a function would take. We can make use of the *args parameter to contain all the
+parameters that the user specifies
+
+In Python, there is a concept called unpacking arguments, Instead of having to specify the arguments manually. What you can do is to pass in a list
+to the functio. Just make sure to include an * before the list when you pass it in as the parameter. And Python will unpack it and pass in the individual 
+values into the method
+
+Sets are essentially collections of items like lists but the difference between sets and lists is that sets cannot have duplicates
+
+Sets are also created with curly braces, {}, instead of [] like lists
+
+Dictionaries in Python are essentially like JSON objects with key/value pairs
+
+In order to loop through a Python dictionary, you need to make use of two values, like k and v for key and value
+
+Leke what kind of life do you want to live?, What kind of impact do you want to make?. Do you want to be doing local Champion?
+
+You are a solutions provider, solve problems, build things

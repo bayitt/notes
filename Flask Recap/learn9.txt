@@ -1,0 +1,33 @@
+Flask provides a special flash() method that we can use to flash messages, just like req.flash() in node. We can add an optional second category to specify like
+danger, success, info or the likes.
+
+Python projects use packages to organize code into multiple modules that can be imported where needed
+
+A Flask application is an instance of the Flask class. Everything about this application, such as configuration and URLs, will be registered with this class.
+Instead of creating a Flask instance globally, you will create it inside a function. This function is known as the application factory
+
+__init__.py serves double duty, it will contain the application factory, and it tells Python that the flaskr directory should be treated as a package
+
+g is a special object that is unique for each request
+current_app is another special object that points to the Flask application handling the request
+
+A view function is the code you write to respond to requests in your application
+
+A blueprint is a way to organize a group of related views and other code. Rather than registering views and other code directly with an application, they are
+registered with a blueprint
+
+from werkzeug.security import check_password_hash, generate_password_hash
+
+When creating Blueprint objects, the first parameter is the name of the blueprint, the second parameter is __name__ which identifies the name of the file while
+the third parameter is a url_prefix
+
+We register blueprints in Flask, by calling register_blueprint() on our application factory
+
+The check_password_hash() takes in two parameters, the password from the database and the password passed in by the user.
+
+We can store things in the session and flask will automatically store it in the browser's cookie and will sign it using the secret_key that we specified in the app's
+configuration. We can access it by calling get() on the session object
+
+clear() can be called on the session to clear it
+
+before_app_request is a special decorator that can be used to execute something before every request to our application

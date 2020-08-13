@@ -1,0 +1,32 @@
+We can make use of the url_for() method to also build paths for static files also, simply call the url_for() method and pass in the special static keyword
+as the first parameter and add a filename keyword argument. With this, Flask will go and look inside of the static folder inside of your package or next to 
+your module for the file
+
+To render a template , we can make use of the render_template() method. All you have to do is to provide the name of the template and the variable you want
+to pass in. This is similar to the res.render() method in node with the locals object being the keyword arguments.
+
+Inside of templates, we also have access to the request, session and g objects as well as the get_flashed_messages() function
+
+In order to access form data, we can make use of the form attribute on the request object
+To access parameters submitted in the URL, we can make use of the args attribute on the request object
+
+Uploaded files are stored in memory or at a temporary location on the filesystem. You can access those files by looking at the files attribute on the
+request object. Each uploaded file is stored in that dictionary. It behaves just like a standard Python file object but also has a save() method that allows
+you to store that file on the filesystem of the server. 
+
+If we want to know how the file was named on the client before it was uploaded to your application, you access that making use of the filename attribute.
+If we want it to be secure, we can make use of the secure_filename() method imported from werkzeug.utils class
+
+In order to access cookies, we can make use of the cookies attribute. To set cookies, we can make use of the set_cookie() method of the response objects.
+The cookies attribute of request objectsis a dictionary with all the cookies the client transmits
+
+We can make use of the make_response() method to like it says make a response and then call set_cookie()
+
+To redirect a user to another endpoint, we make use of the redirect() function, to abort a request early on with an error code, make use of the abort() function
+
+Say we want to create a 404 page, we need to make use of a special errorhandler() decorator as opposed to a route() decorator, 
+we decorate a view function, in which we return the template and the special error code, 404 in this case
+
+The return value from a view function, is automatically converted into a response object for us. If the return value is a string, its converted into a response 
+object with the string as a response body. If its a dict, a response object is created using jsonify
+

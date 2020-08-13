@@ -1,0 +1,19 @@
+Useful pdfKit methods 
+
+fontSize()
+text()
+
+In order to add images to PDFKit documents, simply pass an image path, or data uri with base 64 encoded data to the image method along with some optional
+arguments. PDFKit supports the jpeg and png formats
+
+The image will be scaled according to the following options
+- neither width nor height is provided - image is rendered at full size
+- width provided but not height - 
+
+We can modify the position of text by passing in X and y coordinates to the text method after the text itself.
+If you want to move up or down lines, just call the moveDown or moveUp method with the number of lines you'd like to move
+
+When line wrapping is enabled, you can choose a text justifcation. There are four options: left, center, right and justify
+
+The crypto module has a randomBytes() method that takes in two parameters, the first is the length of the bytes while the second parameter is a calback
+with the error and buffer as parameters. We can call bugger.toHext

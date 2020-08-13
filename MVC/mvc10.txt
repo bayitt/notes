@@ -1,0 +1,11 @@
+PHP is essentially a code library for accessing databases
+
+To make use of it, we need to create a PDO object in a try block
+Executing SQL that does not return results , we make use of the exec() function, instead we make use of the query() function
+
+Leke, take note that when working with the templating engines, that when you open a for loop, you have to close it
+
+Leke, take note that when we are working in the same directory as the namespace that we do not need the extra backslash \
+
+Remember that each Model corresponds to each table in the database
+Remember that each Class corresponds to a single Controller with the class methods as the actions

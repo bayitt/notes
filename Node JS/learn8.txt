@@ -1,0 +1,34 @@
+The redirect() method called on the response object does what it says it does, it redirects to a different route.
+
+The whole idea with Express is that unlike when we were using vanilla JS. Where we had to manually create our request body by adding all the request chunks 
+together. With Express, the entire request is already available in the body field on the request object.
+
+In order to be able to parse the incoming request body. we need to call globally the bodyParser.urlencoded() method
+
+In order to limit route execution to only GET requests we can make use of app.get() instead of using app.use()
+
+The respective app.get, app.post methods will do an exact match with the route string
+We make use of the status() method in Express to set the status code of a response.
+
+For situations in which we have common prefixes in our routes. We can add the prefix string as a first parameter
+
+Instead of making use of the send() method to send back dummy HTML content to the user. We can make use of the sendFile method.
+The problem with using an absolute path for the file is that it tries to find it from the document root of our operating system
+The __dirname property returns the absolute path of the parent directory of that file.
+
+In Node Js, process.mainModule refers to the entry point of our application. Typically, it will be app.js.
+path.dirname() returns the absolute path of the file passed in
+
+The whole idea is that by default, no folder in a node project is accessible for read access. Thus, in order to grant read access to our public folder
+and be able to access whatever css files, we may have contained in there, we need to make use of the express.static() middleware. To this middleware,we pass in 
+the path to our public folder.
+
+app.set() allows us to set values globally on our Express applicatio
+The 'view engine' key allows us to tell Express that for dynamic content, it should make use of the view engine specified
+
+Remember how we used the send() method to send dummy html content and sendFile() to send static, unchanged files. For dynamic files, we are going to make use
+of the render() method.
+
+The render() method takes two parameters. The first is the name of the file, while the second is an object containing data to be sent in to the template.
+
+In EJS, in order to output content, we are going to make use of the <%= %> notation.

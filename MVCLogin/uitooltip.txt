@@ -1,0 +1,16 @@
+Leke remember that in HTML, in order to set a tooltip, we need to make use of the title attribute
+
+Leke take note that you need to include the css files for the jquery ui
+
+The content property of the jquery ui tooltip is used to override the default text set in the tooltip
+
+We can also make the tooltip property remain as we move across the html element. Just set the track property to true
+
+We can make use of the effect property to specify what effect we want whenever the element is hovered upon
+
+In order for the effect to be displayed , we need to make use of the show property and refer it to an object contanining the effect and the duration
+
+Some of the applicable effects include pulsate, fadeIn, bounce, explode
+
+Leke take note that the show and hide properties are entire objects of their own and they refer to objects too
+

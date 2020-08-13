@@ -1,0 +1,36 @@
+Dependency Injection
+A technique where one object or static method supplies the dependencies of another object. A dependency is an object that can used.
+
+With functions in Typescript, like onSelect():void{}. That void indicates the return type of the function
+
+Before you can use the Service to inject data into the Component, we must first register the service as a provider of this data
+
+Injectors are what are responsible for choosing and injecting the provider where required
+
+Constructors in Angular should be restricted to assigning class properties to constructor parameters. Instead of calling it in the constructor,
+call it in the ngOnInit()
+
+Breaking it Down
+Essentially services are like intermediaries. Components are only meant to present data and not to grab the data.
+
+services are created via the Angular CLI, ng generate service hero
+
+This creates a hero.service.ts file that exports a HeroService class, The hero.service.ts file
+
+The Service file uses the @Injectable() decorator because it is injecting the data or dependency
+
+Angular's HttpClient Methods return RxJs Observables
+
+Observable<Hero[]>
+
+Like this, the function returns an observable that emits a single value, an array of mock values
+
+The of() method returns an observable that emits a single values, the array of mock values
+
+The good things about using obersvables is that the operation can execute asynchronously and then we can call subscribe() on it.
+This means that subscribe() method waits for the observable to be returned which means that the operation has finished execution and then we can assign
+the returned hero array to the component's hero property
+
+Because we are assigning the property to an object of the messageService class 
+
+Leke take note that Angular binds to only public component properties

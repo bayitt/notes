@@ -1,0 +1,27 @@
+Git was created by Linus Torvalds
+
+Git is a Distributed Version Control System
+
+SCM- Software Configuration Management, Source Code Management
+
+Snapshot versions
+
+Earlier, people used to work with Centralized Version Control Systems (CVCs)
+
+A repository is a place where you have all your code
+
+With a DVCS, on your laptop you have a local repository while on the server, there is a remote repository
+
+Trunk Based Development 
+
+Commit simply means save
+
+Different web based options for git include github, gitlab, bitbucket
+
+Readme files have a special extension called .md which means markdown
+
+Everytime you create a new file in a repo, you are doing a commit
+
+Commit will overwrite it
+
+So essentially commits are on the same branch while branch means on a different branch

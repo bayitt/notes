@@ -1,0 +1,34 @@
+Essentially, with Tailwind, we can apply base styles making use of the @apply directive. Simply do this after the @tailwind base directive and before the
+@tailwind components directive to avoid specificity issues.
+
+Add custom component styles before our utilities
+
+Tailwind Recap
+
+So I have been learning about Tailwind. Tailwind is actually very similar to Boostrap. Its breakpoints are sm - 640, md- 768, lg - 1024 and xl - 1280.
+While Bootstrap makes use of md-, sm- , lg-, xl-. Tailwind makes use of md:, sm:, lg:, xl:. Then, Tailwind has pseudo variants. These are essentially the
+various pseudo-classes. These include focus:, disabled:, active:, hover:. 
+
+In order to make use of Tailwind, we need to create a css file and then make use of the tailwind cli to run npx tailwindcss command to create the tailwind.config.js
+file. Then finally, to create the css file, we need to run the npx tailwindcss build index.css -o styles.css command to create the css file.
+
+For our base styles, we need to create them after the @tailwind base directive and before the @tailwind components directive. 
+Custom component classes are to be added after the @tailwind components directive and before the @tailwind components directive.
+Custom utilities are to be added after all three directives.
+
+If we would like to create responsive variants of your own utiities based on the breakpoints defined in our tailwind.config.js file, wrap your utilities
+in the @responsive directive.
+If we would like to create 
+
+If we would like to create pseudo class variants of your own utilities, wrap ypur utilities in the @variants directive.
+
+Preflight is an opinionated set of base styles for Tailwind projects.
+
+Tailwind automatically injects these styles when you include @tailwind base in your css.
+
+Use @apply to inline any existing utility classes into your own custom CSS. 
+
+The @screen directive allows us to create media queries that reference your breakpoints by name instead of duplicating your own values in your own css.
+@screen sm {
+
+} 

@@ -1,0 +1,8 @@
+fetchOne() returns a single result from a query, fetchAll() returns all the results from a query
+
+Apparently, there is a before_app_request decorator that registers a function that is going to run before the view function, no matter what URL is expected
+
+With this we can register a method that is going to be run before every request and store the user in the g object.
+Remember that the g object exists for the duration of the request
+
+With the clear() method, we can clear a session

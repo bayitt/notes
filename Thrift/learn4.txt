@@ -1,0 +1,31 @@
+Leke take note that the validation  paramaters for reactive form elements go inside an array of their own
+
+Http Interceptor
+
+With HTTP Interception, you declare interceptors that inspect and transform HTTP requests from your application to the server. The same interceptors may
+also inspect and transform the server's responses on the way back to the application
+
+Interceptors can perform a variety of implicit tasks from authentication to logging
+
+In order to write an interceptor, we need to declare a class that implements the intercept method of the HttpInterceptor Interface
+
+The intercept() method transforms a request into an observable that eventually returns the HTTP response
+
+Most interceptors inspect the request on the way in and forward the perhaps altered request to the handle() method of the next object interface which implements
+the HttpHandler interface
+
+The next object represents the next interceptor in the chain of interceptors
+
+HttpInterceptors should be provided in the root app module, as a side effect of importing the HttpClientModule as well
+
+In order to provide our HttpInterceptors, we ned to uimport the HTTP_INterceptor token from @angular/common/http
+
+{provide:HTTP_INTERCEPTORS, useClass:NoopInterceptor, multi:true}
+
+The multi:true setting tells Angular that HTTP_INTERCEPTORS is a token for a multiprovider that injects an array of values
+
+Instead of doing this and having to add this obejct everytime you have a HTTP Interceptor, consider creating a barrel file that gathers all the interceptor providers
+into an httpInterceptorProviders array
+
+requests are immutable and as such we cannot change them in our interceptors, in order to make a change, we need to clone the request first and modify it
+before passing it into next.handle()

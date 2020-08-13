@@ -1,0 +1,20 @@
+Remember that in Laravel in order to get beautiful date formatting, all we need to do is to call either the diffForHumans() or toFormattedDateString() methods 
+on the timestamp fields. These methods are available in the Carbon package that comes shipped with Laravel
+
+Leke take note that calling the string method on the Blueprint instance creates a varchar field, while calling the text() method on the Blueprint instance
+creates a text field.
+
+Leke you need to calm down, all these dudes that are very good at this, they do not have two brains. LOVER ERRORS
+
+The php artisan make:notification command creates a new notification class for us to work with
+
+Mailtrap.io essentially is a service that enables us to get emails/trap emails from our application. It is used to confirm that our application is working
+
+Leke, learn 
+
+Laravel has a notification class, and in this notification class, we have a static send() method that takes two parameters. The first parameter is
+the array of objects, while the second parameter is the notification class that we created but make sure to indicate the proper namespace
+
+Leke remember that on store and update, we have to call the save() methods
+
+Leke take note that if you are querying objects in relationships, you use the (), as if it is a function

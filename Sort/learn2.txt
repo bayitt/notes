@@ -1,0 +1,14 @@
+The @angular/cdk/drag-drop package from the Angular Component Development Kit provides you the functionality to easily create drag and drop
+interfaces with full flexiblity
+
+Then we need to import the DragDropModule in our root app module and add it to our list of imports
+
+Important things to note
+- We can add the cdkDrag directive to elements to make them draggable
+- When outside of a cdkDropListElement, draggable elements can be moved freely around the page
+- We can add cdkDropList elements to constrain where elements may be dropped
+
+- Adding cdkDropList around a set of cdkDrag elements groups the draggables into a reorderable collection
+
+The cdkDropList directive supports transferring dragged items between two connected drop zones. We can connect two or more cdkDropList instances together
+by setting the cdkDropListConnectedTo property or by wrapping the elements in an element with the cdkDropListGroup attribute

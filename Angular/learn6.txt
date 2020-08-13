@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+
+Essentially, in Angular, <router-outlet> is where the current matched path's component is displayed
+
+With Git, nearly every operation is local, reverting a file to its state a month ago can be done locally by pulling its history from your local database
+
+Three Main States of Git
+committed - means that the data is stored in your local database
+modified- means that you have changed the file but have not committed into your local database
+staged- means that you have marked a modified file in its current version to go into your next commit snapshot
+
+Apparently, $(window).scrollTop() is similar to window.pageYOffset in that it returns the vertical position of the element from the top of the page
+
+Essentially, $(document).height() returns the whole height of the document object. That is, the whole height including the parts that are hidden.
+
+while $(window).height() returns the height of the window
+
+The whole idea in Laravel is that pagination is dine automatically, Laravel automatically knows how to paginate based on the value of the $page GET variable
+
+The JQuery animate method takes three arguments. The first parameter is a params object where you specify the parameters that you want to animate.
+The second parameter is the speed that the animation is to take place for while the third parameter is a callback or closure that you want to execute
+after the animations are done executing
+
+The speed property can either be slow, fast or in milliseconds

@@ -1,0 +1,10 @@
+Leke take note of orderBy, groupBy, DB::raw() in Laravel
+
+Breaking down the process of Sending Mails with Mailgun in Laravel
+1) First we need to set the mail host as smtp.mailgun.org
+2) Then we need to set the mail port as 587
+3) Then we need to set the mail username as postmaster@domain-name
+4) Then we need to mail password to the password set in mailgun
+5) Then we need to set the mailgun domain and mailgun secret
+
+Flee Immorality!

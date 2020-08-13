@@ -1,0 +1,33 @@
+Heroku lets you run your application with a customizable configuration - the configuration sits outside of your application code and can be changed independently
+of it. The configuration for can application is stored in config vars. 
+
+In order to set a configuration key, make use of the heroku config:set
+The configuration is exposed to a running application via environment variables.
+
+The Heroku platform does not just load a dyno with just the most recent slug. It also loads the dyno with any config variables you may have assigned to the 
+application. The combination of slug and configuration is called a release.
+
+Make use of the 'heroku releases' command to see the audit trail of release deploys
+
+Every time you deploy a new version of an application, a new slug is created and a release is generated. As heroku contains a store of the previous releases of
+your application, it's very easy to rollback and deploy a previous release with heroku releases:rollback v102
+
+The dyno manager is responsible for keeping dynos running. 
+
+Applications that use the free dyno type will sleep. When a sleeping application receives HTTP traffic, it will be awakened -  causing a delay of a few seconds. Using
+one of the other dyno types will avoid sleeping
+
+Applications typically make use of add-ons to provide backing services such as databases, queuing and caching systems, storage, email services and more.
+Add-ons are provided as services by Heroku and third parties. addons can be added by making use of the heroku addons:create heroku-redis:hobby-dev
+
+Releases are then your slug + config vars + add-ons
+
+heroku logs gives you the logs of your application
+
+The dynos that run process types named web are different in one way from all other dynos. They will receive HTTP traffic. Heroku's HTTP routers distribute
+incoming requests for your application across your running web dynos. So scaling an app's capacity to handle web traffic involves scaling the number
+of web dynos
+
+heroku ps:scale web+5
+
+After installing the heroku cli, we can make use of the heroku command from our shell

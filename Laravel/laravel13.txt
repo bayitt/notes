@@ -1,0 +1,34 @@
+Breaking down the process of Social Authentication in Laravel
+1) We need to require the package from github via composer
+2) Then we need to register the Provider in app.php
+3) Then we need to register the alias in config\app.php
+4) Then we need to run php artisan migrate
+5) Then we need to create a route to match the authentication for whatever networks that we want to use
+6) Then after accessing that route, we will be asked to grant access, that is to authorize our application
+7) After authorization, it redirects to the route that we specified and 
+
+The same way that we have the --resource suffix to add to controllers that creates all the CRUD methods for us, we all have the static resource() method
+which is called on the Route class. It takes two parameters, the first parameter, is what we want as the prefix or commonality between 
+all the routes, while the second parameter is the controller that is going to handle the routes
+
+Leke take note that the validation error messages don't appear automatically, you have to specify them.
+Also take note of the static create() method that we use to populate the tables with the models
+
+Whenever we are making use of the Resource() method, we need to make sure that update requests are put requests.
+To do this, Laravel provides a helper method method_field() to which we can pass PUT to specify that it is a PUT REQUEST
+
+Essentially the whole idea is that whenever we make use of the static resource() method of the Route class to create the CRUD requests
+For the update and delete requests we need to change them to PUT and DELETE requests and we need to set them appropriately making use of the method_field() 
+methods in the form. But make sure to set the form method to be POST, else it is going to go thru as a GET request. 
+
+POST requests are used to submit data while GET requests are used to pass data as a query
+
+The AppServiceProvider class is where we register stuff that we want to load/get as soon as the application loads
+
+In the boot() method of the AppServiceProvider class, we call the share() method on the View class and pass in the channels or required data
+
+Essentially, routes with the same names can be differentiated by what kinds of requests they are, whether GET, POST, PUT or DELETE  
+
+Leke, drum it into your head, the difference between get and post requests
+
+Take note that the id() method o

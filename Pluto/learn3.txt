@@ -1,0 +1,46 @@
+db.DateTime is another type of field
+
+Take note tha there is also another keyword argument, default which represents the default value of the field
+
+In order to override the table name, make sure to set the __tablename__ attribute
+
+We make use of db.Column to define a column. The name of the column is the name that we assign it to but if we want to assign it a different name, we can
+provide an optional first argument which is a string with the desired column name. Primary keys are marked with primary_key=True
+
+Column Types
+
+db.Integer()
+db.String(size)
+db.Text()
+db.DateTime()
+db.Float()
+db.Boolean()
+db.PickleType()
+db.LargeBinary()
+
+Relationships are expressed with the relationship() function
+
+db.relationship() is essentially the equivalent of hasMany() in Laravel. It takes in several parameters, the first of which is the name of the Model that we are
+creating the relationship with, the second parameter is backref, which represents the table itslef. while we also pass in lazy=True
+
+By default it creates a one-to-many relationship but if we intend it to be one-to-many relationship we need to pass in uselist and set it to False
+
+We create foreign keys in Flask with the ForeignKey() method to which we pass in the table.id which we are referencing
+
+backref is a simple way to declare the reverse relationship on the other model on which you are defining the relationship
+
+the lazy property defines when SQLAlchemy will load the data from the database
+
+'select'-True, the default
+'joined'-False, tells SQLAlchemy to load the relationship in the same query using a JOIN statement
+
+lazy reflects when the reverse relationship is loaded. If you set it to true, it loads it when you request for it, if it is set to false, it loads it as a join
+when the parent is loaded
+
+Inserting data using SQLAlchemy is a three step process
+
+- Create the Python Model Object
+- Add it to the session
+- Commit it to the session
+
+The session here is not the Flask session, but rather the Flask SQLAlchemy one. It is essentialy a beefed up version of a database transaction

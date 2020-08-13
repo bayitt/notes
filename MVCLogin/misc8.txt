@@ -1,0 +1,17 @@
+Breaking down the process of creating the tooltip
+
+We are calling the each() method on the .post class, and looping through all its instances,
+
+When the page initially loads, all the .post instances on the page are looped through and each id is sent via an ajax request to a returnDetails action
+in the posts action. The category name and the number of comments are returned from the ajax request.
+
+Things to Note
+1) We need to call the tooltip() method originally before making any ajax requests so as to make the transition and display easier
+Also in the each method we need to store the particular .post instance we are on in an over variable so that we can be able to refer to it later
+when we are setting the tooltip
+
+Leke for ratings, it is always best to make use of the glyphicon-star class which is not empty, and set the color
+
+The prevAll() method selects all the sibling elements behind it
+
+The data() method enables us to associate arbitary data in Jquery with a DOM object

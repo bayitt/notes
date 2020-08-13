@@ -1,0 +1,33 @@
+Whitspace
+These are utilities for controlling an element's whitespace property
+
+.whitespace-normal, .whitespace-no-wrap, .whitespace-pre, .whitespace-pre-line, .whitespace-pre-wrap
+
+Use .whitespace-normal to cause text to wrap normally within an element. Newlines and spaces will be collapsed.
+.whitespace-no-wrap to prevent text from wrapping within an element. Newlines and spaces will be collapsed.
+.whitespace-pre to prevent newlines and spaces from being collapsed. Text will not be wrapped.
+
+Utilities for controlling word breaks in elements
+.break-normal, .break-words, .break-all, .truncate
+
+Essentially, with .break-normal, its only going to break at the end of the word. 
+
+Use .truncate to truncate overflowing text with a ...
+
+Background Attachment - Utilities for controlling how a background image behaves when scrolling
+.bg-fixed - 
+.bg-local - scroll the background image with the container and the viewport
+.bg-scroll - scroll the background image with the viewport but not the container
+
+Background Repeat Utilities
+.bg-repeat
+.bg-no-repeat
+.bg-repeat-x
+.bg-repeat-y
+.bg-repeat-round
+.bg-repeat-space
+
+Background Size
+.bg-auto
+.bg-cover
+.bg-contain

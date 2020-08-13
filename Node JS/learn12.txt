@@ -1,0 +1,29 @@
+Tailwind Recap
+For Tailwind's flex utilities we have .flex, .flex-row, .flex-column, .flex-row-reverse, .flex-column-reverse
+
+For aligning items across the container's cross axis, we have the following utilities,
+.items-start, .items-center, .items-end, .items-stretch
+
+Similarly to align-items, we also have the .content set of classes,
+.content-start, .content-between, .content-around, .content-center, .content-end
+
+For justify content which involves aligning items across the container's main axis
+.justify-start, .justify-center, .justify-end, .justify-between, .justify-around
+
+In order to align individual flex items across the container's cross axis
+.self-start, .self-center, .self-end, .self-stretch
+
+Tailwind follows a grid system for its responsive utilities. For column based utilities, it has a class style of .grid .grid-cols-5. What the above class means
+that if no other class is applied, the grid is to have 5 equal columns on each row. If we want appropriate different sizes to the different container elements,
+we do so by making use of the .col-span- classes. Unlike in Bootstrap, in which if we want a container element to span the entire container, we would say col-12.
+With Tailwind, the child element would have to span the entire .col-span, so for a parent element with a class of .grid .grid-cols-5, if we wanted the child
+element to span the entire width, it would have a class of .col-span-5. Meaning span across 5 columns. We could also specify where we wanted the child element
+to start from and end at. This is akin to Bootstrap's .offset classes. However, when doing this, it is important to keep in mind that when counting, it does not start
+from 0 but rather at 1. So for a parent element with .grid-cols-5. It would start from 1 and end with 6, while for .grid-cols-8, it would start from 1 and end at 9.
+
+Just like Tailwind has spacing utilities for columns, if you wanted to go in the opposite direction and arrange elements according to rows, this can be done by making
+use of a .grid .grid-rows-. Unlike with columns that have a limit of 12. Rows have a limit of 6. All these can however be modified in the tailwind.config.js
+file. We can also make use of a .row-span- to specify the amount of space that each child element should take. We can also specify .row-start and .row-end.
+
+Finally, we have the .gap class, to specify the amount of space in the gutters in both x and y directions. for x direction we make use of .col-gap while
+for y direction, we make use of .row-gap

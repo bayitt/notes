@@ -1,0 +1,25 @@
+Cookies and Sessions Recap
+Cookies and sessions go hand in hand. Cookies are stored on the client while sessions are stored on the server. The way it works is that the session id is stored
+on the client in a cookie. If the code requests sensitive session information, the session middleware is going to check for the session id stored in a middleware.
+Then it is going to check if that id corresponds to an id in the sessions collections. If it does, it checks for the particular information requested.
+
+Essentially, they both work together actually. For managing sessions, we make use of a special node package called express-session. For managing our sessions in
+our mongodb database, we make use of another package called connect-mongodb-session. This manages our sessions in the collectio in the database.
+
+Also, we cannot store our models in our sessions with all their ensuing methods. Instead, these models are parsed and only their data is stored instead.
+To combat this, we can add a middleware and making use of the stored session id, we can retrieve our actual model
+
+Breaking down the process of authentication flow
+We have our form with our various fields. We send in the data to our controller action. Then we need to access the various fields making use
+of the various request body parameters. We first check if the user already exists making use of the findOne() method on the User instance.
+If the user exists, we redirect to the login page because the user already exists. If not we create the user object and call save() on it
+
+The name of the package that we are going to use for encryption is bcryptjs
+The actual method that we are going to use for the hashing is called bcrypt.hash(). It takes two parameters, which are the string that we intend to hash and the
+salts, meaning the number of times that we want to hash the password. It returns a promise which means that we can chain in another then block tpo it
+
+bcryptjs also has a convenient compare() helper method that we can use when authenticating. It takes in two parameters, the first parameter is the password
+typed by the user in the form while the second parameter is the hashed password from the database.
+
+The whole idea is that in Node, we can specify as many route handlers as we want for a particular route. Route Handler execution flows from left to right in Node.
+As such, if we want to include middlware protection, we can add the middleware function before the route handler for the particular route,

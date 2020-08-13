@@ -1,0 +1,7 @@
+Breaking Down The Process of Signing Up
+
+1) We need to have a create() action in our signup controller. In this action, we will be passing the POST super global array as a constructor to our user object
+2) In our User constructor, we will create class properties from the passed in POST data
+3) In our controller, then we will call the save method in our user controller
+4) In the save method, it calls the validate() method and this checks if our data checks out
+5) If it does, then it saves the data in the database and returns true

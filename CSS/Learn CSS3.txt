@@ -1,0 +1,38 @@
+Progressive Enhancement- Newer browsers get more features to make the webpage look more modern
+
+Vendor prefixes are attachments that we make to our css properties to target specific browsers\
+
+Mozilla's vendor prefix is moz, like -moz-
+Border Radius works with IE 9and 10, Firefox Verson 4 upwards, Chrome Verson 5 upwards
+
+Leke, if you do not want a list to display the ordering, just set the list-style property to none
+
+Leke, when specifying full properties it goes clockwise, like from the topleft to the top right to the down right and finally to the down left.
+Leke, if you do not specify the full properties, it will apply the property to the other. Leke, if you want the border radius property to work for unsupported 
+browseres, just add the vendor prefix to the css property
+
+IE10 is the first IE browser to support text shadow, apart from that every other major browser supports text-shadow
+
+text-shadow accepts four different values, the first value is the x value, the second values is the y values, the third value is the blur radius while the final value
+is the color. It is also possible to chain text-shadow values.
+
+The difference between text-shadow and box-shadow is that text-shadow is for text while box-shadow is for block level elements
+
+Leke, note that if the opacity is set to 0, the shadow is going to be sharp. Box shadows also have a fourth pixelated value which is the size of the border.
+If we want the box shadow to come from the left that is the box shadow should be inside, all we have to do is to add the inset keyword to the beginning of the properties
+
+Leke, it is possible to have the box shadow on only one side , just set the side that you want to set it to to 0px and then specify a negative spread value
+
+webkit is the vendor prefix for Google Chrome
+
+There is a way to prevent padding from adding to the width of the element so that if we specify that the width of the element should be 800px, the width will be
+800px irrespective of the padding that we have on the element.
+
+CSS Gradients
+In order to make css gradients we need to specify the background-image property and :-moz-linear-gradient(top,white,#333)
+
+The basic format for a css transition is what are we going to transition, how long isit going to take and howis it going to look
+Some of the look effects include ease-in ease-out linear. In order to make use of css transitions we need to specify a hover property.
+It is possible for us to chain transitions. It is also possible for us to specify a delay on the transiton by putting a time in seconds after the effect
+
+Leke, keep in mind that if you want the background-image to span across the entire webpage, you have to set the background-size to cover

@@ -1,0 +1,35 @@
+Breaking down the process of dispatching the route
+We need to call the match function on the route to ensure that we have a pattern that matches it
+Then we need to access the $params array to get the controller
+Then we need to call the class_exists function on the controller to ensure that we have the class
+Then we need to access the action from the $params array
+Then we need to create a controller object
+Then we need to call the is_callable() function on the controller object and the action
+If this returns true, then we need to call the action/method from the object
+
+Leke, take note that the first letter of every sub controller name is written in capital letter
+Also, the action names are in camelcase
+
+A namespace is like a folder or a directory. It is defined with the namespace keyword at the top of the class file
+
+Namespaces can also be nested, separated with a backslash
+
+To make use of a class in a namespace, you just add the namespace like a directory before the class name
+
+Classes without a specified namespace are in the root namespace, and to create objects of them, we need the \
+
+The use statement allows us to import the class into the current namespace
+Like import statements in python
+
+We can even create aliases to name our classes, making use of the as keyword
+
+Rather than making use of a whole lot of require statements, we can configure php to load our classes automatically on demand
+
+To add an autoload function, we add the spl_autoload_register function
+
+The spl_autoload_register() takes a closure as a parameter, and inside the closure we require the class file
+
+It is good convention to name our namespaces with the same name as the containing folder
+
+PHP looks for classes relative to the current namespace. 
+

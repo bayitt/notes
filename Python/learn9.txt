@@ -1,0 +1,34 @@
+Inheritance
+
+Inheritance allows us to define a class that inherits all the methods and properties from another class
+
+The parent class is the class being inherited from, all called the base class. The child class is the class that inherits from another class. It is called 
+the dervied class
+
+In order to create a derived class, all we have to do is to pass in the Parent class as a parameter to the derived class
+
+Use the pass keyword in a derived class when you do not want to create any other properties or methods
+
+Python Iterators
+
+- An iterator is an object that contains a countable number of values
+- An iterator is an object that can be iterated upon, meaning that you can traverse through all the values
+
+Technically, it is an object implements the iterator protocol, and consists of the methods __iter__() and __next__()
+
+List, tuples, sets and dictionaries are all iterable objects
+
+Also, strings too are iterators
+
+I think with Iterators, what it does is that it tells us what happens under the hood when we loop through lists, tuples and strings.
+
+Apparently, what happens is that an iterator object is created via the iter() method and then the next() method is called everytime in the loop
+
+Lastly, we make use of the stopIteration statement to raise an error if the iteration is done a specified number of times
+
+Modules
+
+Consider a module to be the same as a code library
+A file containing a set of functions you want to include in your application
+
+The dir() function is a function that can be used to list all the function names or variable names in a module

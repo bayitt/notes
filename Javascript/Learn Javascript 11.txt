@@ -1,0 +1,36 @@
+Document Object Model
+
+Essentially, the window consists of the entire tab. The Window object stores the Location object. The browser takes renders the HTML to the DOM
+
+We can access the Width of the window by making use of the window.innerWidth method. The DOM is contained in the window object.
+We dont even need the window part to access the merhod because it is the global scope,
+Then the outerWidth method is used to access the total screen width
+
+We also have innerHeight and outerHeight
+
+Another useful property is localStorage which will save certain values in your application provided your application is running. To store values, we call the
+setItem() method of localStorage and it takes two parameters, the key and the value. To access values stored in the local storage,we call the getItem()
+method of localStorage() and pass the kay to it
+
+sessionStorage() can also be used for the same purposesp but the difference is that after the tab is closed, localStorage still exists while if the tab is closed
+the sessionStorage() data is deleted.
+
+The window object also has a location property, It also has a document property that returns the DOM.
+The window.open() function tries to open the website url passed to the function
+
+The different properties of the location object are pathname, to access the relative path of the window object
+We also have the reload() method which causes the webpage to reload, then we have the location.replace() in which we pass a string to access
+
+We can access the page url with the document.url property
+We can also use the document.title property to access the title of the page
+We can make use of the document.body property to access the body of the HTML
+
+We can make use of the document.body.children property to access an array of all the HTML tags present on the page
+
+Each HTML element in the body is transformed into its individual object with its properties
+
+Traversing the DOM
+Instead of using the array methods to access the DOM elements, we can traverse the DOM, we can make use of the firstChild property and this will return 
+the whitespace, so to access the first HTML element we need to make use of the firstElementChild property.
+The nextElementSibling is used to access the next HTML element when traversing the DOM
+Then the parentElement is used to access the parent Element

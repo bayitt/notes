@@ -1,0 +1,12 @@
+In our template, we can access each form control's value and validity as well as the value and validity of the form as a whole
+
+We can access the value of the particular form control in the template by making use of the myForm.get('name').value
+
+This is quite neat. Apparently we can query and check if form controls have particular errors such as error or minlengh. We can do this by making use
+of the hasError() method check
+
+Instead of making use of the get() method to access the form controls, we can also make use of the controls object on the form
+
+Just as we can make use of the hasErrors() method, we can also make use of the errors object on the individual form controls properties
+
+The invalid state is if our form is invalid

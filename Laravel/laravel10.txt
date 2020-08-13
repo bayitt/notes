@@ -1,0 +1,36 @@
+
+Leke take note that anytime we make use of the static create method to insert new data into the database, we can assign it to a variable
+
+For One-to-One relationships, we return $this->hasOne() and for the opposite relationship we have $this->belongsTo()
+
+So really, once there is a One present in the relationship, inevitably one in the relationship is going to  belong to the other
+
+Leke take note that we have a static nullable() method that we can call on the table fields in the migration as we are creatng them such that if its value
+is not specified when inputing the data its value is null
+
+Leke take note that anytime we have changes that we want to effect to our database schema, we make use of the command php artisan migrate
+
+The php artisan make:middleware is used to create custom middleware that we wish to use in our application
+
+In order to make use of our custom middleware, we need to register it in our kernel
+
+The auth::user() method is used to check if a user is successfully authenticated
+
+Apparently, the above stated method grabs the currently authenticated user
+
+We need to register our middleware in the Route/Group Middleware
+
+Leke remember that we can also chain middleware methods to the specific routes
+
+Even in our views, we can access the authenticated user
+
+Leke take note that just like we have an image validation to check if it is an image, we also have url to make sure that the passed data is a url
+
+Leke remember that with relationships we can access the child in the relationship as objects. But in order to add new data in the child tables, we access them as 
+methods. For one to one relationships, we call a normal save() method but with many-to-many relationships we make use of attach() to insert and sync() to update
+
+Note that anytime that you change data, like update() , you need to call the save() method on the object
+
+Whenever you are filling in fields and you specify that it should be a url don't forget to include the http
+
+Rather than doing Auth::user()->id to get the id of the Authenticated user, we have a helper method Auth::id() to grab the id directly

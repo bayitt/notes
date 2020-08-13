@@ -1,0 +1,25 @@
+Top 25 Bash commands
+- ls - list directory contents
+- echo - prints text to the terminal window
+- touch file_name(s) - creates a file
+- mkdir - This is used to create directories. Any number of directories can be created with the command
+- grep - This is used to search text for patterns specified by the user
+- man - Print manual or get help for a command
+- pwd - Print working directory
+- cd
+- mv - This is used to move or rename directories
+- rmdir - This will remove empty directories
+- rm - This will remove directories whether they are empty or not
+- less - This allows you to view files without opening an editor
+- > - This enables us to echo content into files
+- cat - create files, display them, combine copies of them
+- head - This displays the first 10 lines of a file
+- tail - This displays the last 10 lines of a file
+- exit - This will close the terminal
+- history - Identify past commands
+- cp - copy paste
+
+Custom bash commands by making use of the alias command alias shortcut = "command" 
+
+We can prevent the browser from caching content by making use of the Cache-Control header and setting it to no-store
+

@@ -1,0 +1,39 @@
+The Button Group enables us to group a series of buttons together on a single line with the button group
+
+For a basic example, wrap a group of buttons with the .btn class in a .btn-group div
+
+We can also make use of the .btn-toolbar class to group together a group of .btn-group
+
+Also, instead of specifiying the button size on each individual button, we can just make use of the .btn-group-lg or .btn-group-sm
+
+Place a .btn-group inside of another .btn-group when you want a dropdown mixed with buttons
+
+Finally, to create a stack of vertical buttons instead of the usual way, make use of the .btn-group-vertical class
+
+Cards are the Bootstrap4 replacements for panels, wells and thumbnails in Bootstrap3
+
+Cards have no natural width at first but take up the width of their parent container
+
+We have the initial .card class, then we have the .card-img-top class for the image inside of the card, then we have the .card-body, then inside of the .card-body
+we have the .card-title and the .card-text
+
+The building block of a card is the .card-body. Use it whenever you need a padded section within a card
+
+Links inside of a card are placed next to each other by making use of a .card-link while subtitles are made use of  by adding a .card-subtitle to a heading
+
+The .card-header is used much in a way as we had .panel-header or .panel-heading
+
+We can create list groups inside of cards by making use of the .list-group class and the .list-group-flush class, then for the li items we make use of the
+.list-group-item
+
+Just as we have .card-header, we also have .card-footer
+
+We can even make use of Bootstrap's available sizing utilities to quickly set a card's width
+
+.w-75, .w-50
+
+Just like we can have images with .card-img-top, we can also have .card-img-bottom
+
+We can also make use of our card image as an overlay, for this, we would make use of the .card-img class without the .-top or .-bottom extensions
+
+When we do this, the image takes up the full space of the card, and then we would make use of the .card-img-overlay to place content on the image

@@ -1,0 +1,28 @@
+Apparently, there are also border contextual classes, that we can make use of to set the border of components, such as .border-primary, .border-secondary,
+.border-success, .border-danger
+
+Apply the .bg-transparent class to remove background color
+
+Leke remember that you make use of .card-text whenever you want padded content inside of .card-body
+
+Just like with .btn-group, anytime you make use of .card-group, the cards will line up and attach themselves much like buttons do inside of .btn-group
+
+If you don't want the cards to line up, make use of .card-deck
+
+The collapse Javascript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements that you toggle
+
+Collapsing an element will animate its height from its current value to 0
+
+You can either use a link with the href attribute or a button with a data-target attibute
+
+Essentially, whatever element that you want to collapse, you need to give it a class of collapse and a unique ID
+
+Then you need to set either set the href attribute of the anchor link to the id of the collapsed div or you set the data-toggle attribute of the button to the
+collapsed div id
+
+Leke NEVER EVER forget the data-toggle attribute which you must set to collapse. Also DO NOT forget the data-target attribute and href attribute which you must
+set to the id of the collapsed div
+
+The .btn-link class can be used to make a button look like a link, much like we have the .card-link class 
+
+Anytime you are making use of accordions, with the collapsed div, you need to specify the data-parent attribute and set it to the id of the accordion 

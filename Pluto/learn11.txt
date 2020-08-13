@@ -1,0 +1,23 @@
+Leke remember that in Jquery, the way to access the files stored in a file input is by accessing the prop attribute on the file input
+
+Then in order to preview images in the browser, we need to make use of a filereader object. We create this object much like how we would create a date object
+
+Then we need to call the onload method on the reader object and set the src attribute of the image to the img source
+and then we need to call the readAsDataURL method and load in the object in the prop
+
+Leke remember that in flask, the entire application is an instance of the Flask class, since we are making use of an application factory, we are going to
+create our app and then register all our extensions with it via the init_app() method
+
+Uploaded files are stored in memory or a temporary location on the filesystem. You can access those files by looking at the files attribute on the request object
+
+Just like we can access all POST or PUT data in the form attribute on the request object, we can also access all the uploaded files in the files attribute
+in the request object
+
+Uploaded files behave like typical files except that they have a save() method that
+
+The rsplit() function in Python splits a string starting from the right
+
+Going over it again
+
+The way it works is that the files dictionary on the request object contains all the files in the form. 
+

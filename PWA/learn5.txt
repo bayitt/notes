@@ -1,0 +1,25 @@
+If service workers are not responding to any events, it means that they are in a state of termination. If an event is triggered, it is woken up and put in an idle state
+
+There are two different types of caches. The cache made use of by the service workers and the cache made use of the browser
+
+Rememeber how service workers are scoped?, as such service workers only work on files in their relative folders. That is why we need to add our service workers
+to our root folder
+
+It is important to register your service worker in every page in your application
+
+Apparently, in Javascript we can make use of the in keyword to check if a property is in anobject
+
+navigator is a keyword in Javascript representing the bropwser
+
+Then we need to call the register method on the serviceWorker property in the navigator object. The register() method returns a promise
+
+Asynchronous actions are actions that don't immediately finish or execute. register() is an async action
+
+The register() method of the serviceWorker also takes an object parameter, in this object parameter, we can specify the scope. Even though typically, since
+it is in the root folder of our application its scope is all the files in our application, with the scope property we can further limit it as we want 
+
+Service workers only work on pages served via https 
+
+Service workers are all about events
+
+We refer to service workers with the self keyword

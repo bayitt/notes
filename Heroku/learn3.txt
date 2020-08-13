@@ -1,0 +1,18 @@
+Breaking down the process of deploying an Angular app to Heroku
+
+- We first need to make sure that we are logged in to heroku via the CLI. This is done by installing the CLI and running heroku login
+- We first need to head over to our to our heroku dashboard and create an application
+- Specify its name and create
+- Then we need to connect it to our github account and a particular repository
+- Then we need to connect it to our master branch and set up automatic deployment
+- Then we need to head back to our angular app and add the angular cli and compiler to our dependencies. Add typescript to
+- Then we need to add the "heroku-postbuild" command to our npm scripts and specify ng build --prod like we would do normally
+- Then we need to add the "engines" key to our package.json and specify our node and npm versions so that heroku knows what versions to know to use to build
+our app
+- Then we need to install express and path
+- Then we need to add server.js to our app root. In it we specify the dist folder as a place where our app can access files by making use of the express.static()
+middleware
+- Then we need to specify a route handler for the / route in which we send the index file generated from the build
+- Then we need to push our changes
+- My hypothesis for why this works the way it does is that anytime heroku receives a new change, it triggers a new build using the command specified in
+heroku-postbuild

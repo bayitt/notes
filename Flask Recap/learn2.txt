@@ -1,0 +1,26 @@
+In order to access query string values passed in the request, we can access them in the args attribute
+
+Uploaded files in flask are stored in the files dictionary on the request object.
+The uploaded file is merely the container for the content, we still need to keep in mind to check for whether the file is empty or not.
+
+We can access the secure_filename() method from the werkzeug.utils module. We can access the name of the uploaded object making use of the
+filename attribute on it.
+
+In order to access cookies, we can make use of the cookies() attribute on the request object.  To set cookies, we can set them making use of the
+set_cookie() method of response objects
+
+In order to redirect users to other urls, we can make use of the redirect() method and pass in the url building method url_for().
+In order to abort a request early with an error code, we make use of the abort() method
+
+In order to customize the 404 page, we can do so making use of the errorhandler() decorator and pass in our error code to it. Then, to the view function, we
+pass in the error, return the rendered template in it, with the error code.
+
+The return value from view functions is always automatically converted into a response object. If the return value is a string it is converted into a response object
+with the string as response body, a 200 OK status code and a text/html mimetype. If the return value is a dict, jsonify() is called to prodcue a response.
+
+If we return dictionaries from our views in flask, it will convert it into JSON
+
+In addition to the request object, there is also a second object called session which allows you to store information specific to a user from one request to another.
+This is implemented on top of cookies and signs the cookies cryptographically
+
+In order to make use of cookies, we must have set a secret key

@@ -1,0 +1,33 @@
+CSS Border Images
+With the CSS border-image, you can set an image to be used as the border around an element.
+
+The property has three parts
+- The image to be used as the border
+- Where to slice the image
+- Define whether the middle sections should be repeated or stretched
+
+The border image property takes the image and slices it into nine sections, like a tic tac toe board. It then places the corners at the corners,
+and the middle sections are repeated or stretched as you specify.
+
+Take note that in order for us to use border-image we must have the border set.
+
+space means that the image should be repeated, while stretch means that the image should be stretched
+
+CSS allows us to add multiple background images to an element, through the background-image property. The different background images are separated by commas, 
+and the images are stacked on top of each other, where the first image is closest to the user. Just like how the background images are separated by commas,
+all the other background properties are also separated by commas
+
+The cass background-origin property specifies where the background image is positioned. The property takes three different values:
+border-box
+padding-box
+content-box
+
+padding-box is the default and it makes sure that the image starts from inside the element, with border-box, it ensures that the image starts
+from the border, while with content-box, the image starts from the content
+
+background-clip property specifies the painting area of the background
+border-box - the background is painted to the outside edge of the border
+padding-box - background is painted to the 
+
+background clip and background origin are actually really simiar. The difference is that background-origin is used for background images while background-clip
+is used for mere backgrounds. With background-origin, padding-box is the default while for background-clip border-box is the default

@@ -1,0 +1,11 @@
+Breaking down the process of resetting the password
+
+We need to add a link to the forget password view. Then from the view, after the user has entered the email. A method is called that checks if the email
+is present in the database and if an email is present, then the password_rest_hash and the reset_expiry fields are updated. Then a method is called that
+sends the email. Then from the mail, an action is added to process the link and from the action. In the action, the token is extracted and checked, to see if 
+its hashed value is present in the database and if it is, then a the reset password view is displayed, and if not an exception is thrown. Then after the user has
+entered the new password, a new action is executed in hwi
+
+Leke the exit keyword is very important
+
+Leke remember to always validate on the server because client side validation can always bypassed

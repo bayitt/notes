@@ -1,0 +1,22 @@
+Continuous delivery leverages all the afore mentioned strategies to create a seamless pipeline that automatically delivers completed code tasks
+
+Automated software testing refers to the application of software toools to automate a human driven manual process of reviewing and validating a software product.
+
+Continuous Integration(CI) is responsible for running automated tests against any new code changes and verifying that those code changes do not break established 
+features or introduce any new bugs. CD is triggered once the continuous integration step passes the automated test plan
+
+The way I see it yeah, Continouos Integration works in tandem and with Continuos delivery
+
+E2E testing tools capture and replay user actions
+
+Performance tests when used in the context of software development refer to the speed and responsiveness at which a software project reacts
+
+Apparently, there is another type of test called Functional testing which is remarkably similar to Integration testing. While Integration testing seeks to
+ensure that the various modules and services in your application are working together. Such as for example that you are able to interact with your database
+while functional testing seeks to make sure that we are getting the right output from the databases
+
+Acceptance tests are another type of test which is carried out to ensure that a system satisfies its business requirements. It requires the entire
+system to be up and running
+
+While our tests can be executed via script from the terminal, you can have them be continually executed by a CI server like Bamboo or a cloud service like 
+BitBucket Pipelines

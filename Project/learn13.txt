@@ -1,0 +1,35 @@
+Logistic Regression Model
+Logistic Regression is the term used for the function at the core of the method, the logistic function. 
+
+The logistic function, also called the sigmoid function was developed by statisticians to describe properties of population growth in ecology, rising quickly
+and maxing out at the carrying capacity of the environment. It's an S shaped curve that can take any real valued number and maps it into a value between 0 and 1,
+but never exactly at those limits.
+
+Logistic Function = 1/1 + e_value
+
+e = exponential
+value is the actual numerical value that we want to transform
+
+A key difference from linear regression is that the output value being modeled is a binary value (0 or 1) rather than a numeric value
+
+Logistic Regression models the probability of the default class (e.g the first class). The probability prediction that the logistic prediction model makes must
+be transformed into a binary value, 0 or 1 in order to make a crsip prediction
+
+Odds are calculated as the ratio of the probability of the event divided by the probability of the event not happening
+
+We could transform our logistic function to a linear one because at its root the logistic function is a linear method,
+
+ln(odds)= B0 + B1 * X
+
+The left hand side is known as the log odds or the probit
+
+The coefficients of the logistic regression algorithm must be estimated from our training data. This is done using maximum likelihood estimation.
+Just like gradient descent is a learning algorithm, so also we have maximum likelihood algorithm. 
+
+The best coefficients would result in a model that would predict a value very close to 1 (e.g male) for the default class and a value very close to 0 for the
+other class
+
+The new coefficient values can be calculated by making use of the formula 
+b = b + alpha * error * predicted_y * (1 - predicted_y) * x
+
+The global keyword is used to access global variables inside functions and methods

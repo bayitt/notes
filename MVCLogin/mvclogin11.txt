@@ -1,0 +1,24 @@
+
+Breaking down the process of securely resetting the password
+
+First we need to create a link to a view enabling the user to enter their email addresses
+When the user enters the email address and clicks reset password, an action is called that checks if the user is registered
+
+Then a call is made to the method in our user model to insert the password_reset_hash into the database, then a call is made to the method to send the email
+containing the url to reset password. When all this is done, a view is displayed telling the user to check his email for the reset link.
+
+Then we need to insert the route containing the token into the routing table, Then we need to create the action to handle the link and display a reset password page,
+
+After the user has typed out his password and clicks submit, we need to check if the token in the link is the hashed token which is stored in our database.
+
+If a user object is returned ,then we need to verify the password(Server side validation).If verification is successful, then we need to update the database with the
+password and set the password_reset_hash fields and the reset_expiry fields back to null(Remember that their defualt valuies)
+
+Leke, we can also specify boolean fields in our database
+
+The <dl> definition list HTML element is a semantically accessible way of displaying table data
+
+Leke, the autofocus attribute ensures that typing begins from the field in which the attribute is entered
+
+Leke take note of this header('Content-Type : application/json')
+echo json_encode(function name)

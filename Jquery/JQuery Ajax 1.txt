@@ -1,0 +1,19 @@
+The JQuery load() method is used to load data from the server and puts the returned data into a selected element
+$(selector).load(URL,data,callback)
+
+The URL specifies the required URL that you wish to load
+The optional data parameter specifies a set of query string values that you wish to send along with the request
+The optional callback parameter is a function to be executed after the load event
+The optional callback parameter can have different parameters
+
+responseTxt-contains the resulti content if tyeh call succeeds
+statusText-contains the status of the call
+xhr-contains the resulting XMLHttpRequestObject
+
+In JQuery the xhr.status is the equivalent of http.status in Javascript while xhr.statusText is the text equivalent like OK
+
+The GET method is basically used to get data from the server and it can also return cached data.
+The POST method can also be used to get data from the server, but it cannot return cached data. It is used to send data along to the server
+
+The first parameter with the $.get() method is the URL, while the second parameter is the callback, what function should be executed after the get request
+has been made.The first parameter with the callback is the data, what is returned from the call while the second parameter is the status

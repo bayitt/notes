@@ -1,0 +1,41 @@
+Javascript Objects
+
+With objects,we always have key value pairs like python dictionaries
+
+The this keyword is just like the self keyword in Python OOP
+
+We can create objects alternatively using the object constructor
+
+We can create another object b;y means of the new() keyword. Using the new keyword returns an empty object
+
+Prototypes are like inheritance in Javascript
+
+Objects have prototypes and then we can create new objects based on the prototypes.
+
+The argument of the object.create() function specifies which protoype we want to create for the object being created
+
+In summary, Javascipt objects can be created in three different ways
+1) Using the Javascript Object Notation
+2) Using the new keyword
+3) Using prototypes to inherit other objects
+
+All Javascript objects have a default protoype which is object.prototype
+There is an unsafe method to access an objects's prototype which is __proto__
+
+The object prototype contains both the hidden functions and the fields, properties of the object
+
+The static method getPrototypeOf()can be used inplace of __proto__
+
+We can also make use of Constructor Functions to create Objects
+
+Leke to access the prototype of the original function, use .prototype
+
+'this'  represents the global scope or the window object
+
+When  using constrcutorfunctions and you specify the same name for the variable/function, The one in the function overrdies the one in the prototype
+
+Leke, the flow of execution is that it checks the constructor function first before checking the prototype
+
+The instanceof keyword is used to check if an object is an instance of a constructor function.
+
+To create an object that does not inherit from the default object prototype we use the object.create() method with a parameter of null

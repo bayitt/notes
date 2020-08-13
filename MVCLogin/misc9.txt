@@ -1,0 +1,4 @@
+Leke take note that with PDOs ,it is catch that we are catching not excepting
+
+In php, to round a number up to the nearest integer, we make use of the ceil() function
+To round a number down to the nearest interger, we makeuse of the floor() function

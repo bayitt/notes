@@ -1,0 +1,36 @@
+Parametric algorithms involve two steps
+
+1) Select a form for the function
+2) Learn the coefficients of the function from the training data
+
+Assuming the functional form of a line greatly simplifies the learning process. The whole idea really is that we select a form of the function that we want
+and this function already has its known parameters and what it needs
+
+Often the assumed functional form is a linear combination of the input variables and as such parametric machine learning algorithms are often called
+linear machine learning algorithms
+
+The problem with parametric learning algorithms, the actual unknown underlying function may not be a linear functio like a line. It could be almost a line
+and require some minor transformationof the input data to work right. Or it could be nothing like a line in which case the assumption s wrong
+and the approach will produce poor results.
+
+Some examples of Parametric Machine Learning Algorithms are Logistic Regression, Linear Discriminant Analysis, Perceptron
+
+Benefits of Parametric Machine Learning Algorithms are 
+- They are simpler
+- They are faster
+- They require less data and can work well even if the data is not to the best fit
+
+Limitations of Parametric Machine Learning Algorithms are
+- Constrained 
+- Limited Complexity
+- Poor Fit
+
+Non Parametric Machine Learning Algorithms
+Algorithms that do not make strong assumptions about the form of the mapping function are called non parametric machine learning algorithms By not making
+asumptions, they are free to learn any functional form from the training data
+
+Non parametric methods are good when you have a lot of data and no prior knowledge, and when you dont want to worry too much about choosing just the right
+features
+
+Non paramateric methods seek to best fit the training data in constructing the mapping form, whilst maintaining some ability to generalize unseen dat. As such, 
+they are able to fit a large number of functional forms

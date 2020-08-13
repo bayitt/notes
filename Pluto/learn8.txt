@@ -1,0 +1,23 @@
+If you want to know how a file was named on the client before it was named, you need to make use of the filename attribute on the file. However take note that
+this is not safe and as such, you need to make use of the secure_filename() method to prevent any issues
+
+The cookies attribute of request objects is a dictionary with all the cookies that the client transmits
+
+In order to set cookies manually, we need to make use of the set_cookie() method of response objects. We can create respone objects by making use of the 
+make_response() from flask
+
+We can make use of the errorhandler decorator to customize the response to a particular error code
+
+But when returning the response to error codes, we need to add the 404 error code if not Flask will assume that it is 200 and as such that all went well 
+
+In order to use sessions to cryptographically sign your application data, you need to set a secret key
+
+In order to access the categories parameter of the flash() method simply add the with_categories extension in the get_flashed_messages(with_categories=true)
+in our template 
+
+In order to access data from our database, Flask SqlAlchemy provides a query attribute on our Model classes. When we access it, we will get a new query object
+over all records. We can then use the filter() method to filter the records before calling all() or first() 
+
+Other forms of complex queries exist such as making use of endWith or order_by
+
+If we want to access a user by primary key, we make use of the get() method

@@ -1,0 +1,34 @@
+Align Self
+Utilities for controlling how an individual flex item is positioned along its container's cross axis.
+The way I see it is that in a flex container, we can make use of the align self utility to position an individual element.
+
+.self-auto
+.self-start
+.self-end
+.self-center
+.self-stretch
+
+Justify Content
+These are utilities for controlling how flex items are positioned along a container's main axis.
+.justify-start
+.justify-between
+.justify-end
+.justify-center
+.justify-around
+
+Grid Template Columns
+Utilities for specifying the columns in a grid layout
+.grid-cols-1 - .grid-cols-12
+
+Working with responsive code in Tailwind works differently than in Bootstrap. In Bootstrap, we literaly have to write out all the containers.
+In Tailwind, what we do is that we specify grid-col-n to generate n columns of the same size.
+
+Grid Column Start/End
+.col-auto
+.col-span-1
+.col-span-2
+.col-span-3
+
+I think I understand it. We make use of the col-span attribute to indicate how much of the grid we want the column to take.
+We can make use of the col-start attribute to specify where we want our column to start from
+

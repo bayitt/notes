@@ -1,0 +1,15 @@
+using ngIf on a component will invoke the relevant lifecycle hooks such as ngOnInit,ngOnDestroy
+
+*ngIf and else makes use of template referencing variables to reference other DOM elements that are to be displayed in the else block of an if/else 
+expression
+
+Leke, never forget to specify the body margin and padding to 0
+
+The contents of an ng-template never render until its expression evaluates to true
+
+Along with *ngIf and if/else, we can also have if/then/else. It is similar to if/else, except that we make reference to a templatevariable
+which we do in the then block
+
+All innercontent that we use in sn <ng-container> tag will be ignored
+
+Arrays in Javascript can be emptied by setting its length to 0

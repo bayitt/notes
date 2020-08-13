@@ -1,0 +1,4 @@
+Breaking down the process of persisting data in Flask sessions
+- We need to set the PERMANENT_SESSION_LIFETIME option in the config dictionary 
+
+Then we need to make use of the before_request decorator and call a method everytime in which we set session.permanent=True
