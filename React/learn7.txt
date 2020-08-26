@@ -1,0 +1,40 @@
+Handling events with React elements is very similar to handling events in DOM elements. There are some syntax differences. React events are named using camelCase,
+rather than lowercase. With JSX, you pass a function as the event handler. Another difference is that you cannot return false to prevent default behavior in React.
+You must call preventDefault directly.
+
+When using React, you generally do not need to call addEventListener to add listeners to add listeners to a DOM element after it has been created. Instead,
+just provide a listener when the element is initially rendered.
+
+Essentially, what I understand from all this is that you know how in function components we can specify event handlers, by just specifying it as something like
+{ }. To be able to do the same in class components, we need to specify the event handler as a variable in the constructor. 
+
+In Javascript, class methods are not bound. As such it is necessary to bind this to the callback to get it to be able to work in the callback
+
+Inside a loop, it is common to want to pass an extra parameter to an event handler. 
+
+React Recap
+React makes use of JSX, an extension to Javascript, JSX compiles down via Babel into React.createElement. This results into React elements. React elements are
+first class elements. They can be passed to functions as parameters, returned from functions, compiled into arrays. Everything that normal Javascript variables and
+expressions can do, they can do. With JSX, attributes can be specified with string literals, like "", while expressions can be specified with {}. It is actually
+very powerful really because, variables can be assigned to JSX. Every thing a normal language can do really. JSX is typically enclosed in () for multiple lines
+for readability purposes and to avoid the temptation of adding the closing semi-colon like typical Javascript lines. 
+
+Leke, drum it into your head that JSX is not HTML!, it looks and feels like HTML but it is not HTML. JSX is like a parent for DOM tags and components. The whole idea
+is that if JSX, sees something beginning with a small letter, it identifies it as a DOM tag, but if it sees a capital letter, it identifies it as a component which
+must be in scope. 
+
+React renders elements and components by means of the render method of ReactDOM. The first parameter of the render() method is the JSX element that we want to display,
+whether DOM tag or component. The second parameter is the div that we want to render the JSX into.
+
+So far, I have encountered two different types of components, the first is functional component while the second is class components. Functional components essentially
+only render data. All they do is to return JSX. They accept props as their only parameter. Then, we also have class components, these allow us to flex more and
+also if there is more computation to be done. If we specify the constructor in a class component, we need to call super(props) which enables the constructor specified
+in the React.Component parent class to be called. Also, its only in the constructor that we can specify this.state to specify items or elements in the state. In React,
+there is also the principle of lifecycle methods, similarly to lifecycle hoooks in Angular. With lifecycle methods, we can hook into the various states of the
+components to do different things. We have componentDidMount() and componentWillUnmount(). State elements in React can be modified independently meaning that
+anytime we call setState(), the changes get merged. Another thing to note is that with React, state changes may occur asynchronously. What this means is that 
+its not advisable to try to modify the state with state elements. To do this, make use of another form of the setState() method that takes a function to which
+the two parameters are state and props enabling us to make use of them in a safe manner.
+
+With class components, this is not bound to it, so typically what happens is that we call bind(this) on the event handler.
+Also, another important thing to note is that in React, event handlers are camelCase.

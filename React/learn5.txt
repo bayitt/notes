@@ -1,0 +1,32 @@
+React elements are first class Javascript objects, we can pass them around in our applications. To render multiple items in React, we can use an array of React 
+elements
+
+When we render a list, React stores some information about each rendered list items. When we update a list, React needs to determine what has changed.
+We could have added, removed, re-arranged or updated the list's items. Essentially, React needs a key for each list item. Keys tell React about the identity
+of each component which allows React to maintain state  between re-renders. key is a special and reserved property in React, along with ref, a more advanced feature
+
+When an element is created, React extracts the key property and stores the key directly on the returned element. The way I understand this is that by default, 
+React makes use of the key property to uniquely identify components, but we can also specify the key property by ourselves. In fact, it is strongly recommended
+when building dynamic lists.
+
+The setState() method does not necessarily have to set the state of all the state eleents. It can set the state of some of them.
+JSX is a syntax extension to Javascript. JSX produces React elements.
+
+It is not required, but when using JSX and the JSX extends over multiple lines, it is recommended to wrap JSX in parentheses. This is done in order to avoid
+the pitfalls of automatic semicolon insertion.
+
+After compilation, JSX expressions become regular Javascript function calls and evaluate to Javascript objects. This means that we can make use of JSX inside of
+if statements and for loops, assign it to variables, accept it as arguments, and return it from functions.
+
+We may use quotes to specify string literals as attributes. We may also use curly braces to embed a Javascript expression in an attribute. Do not use both then
+
+Also, REACT DOM makes use of camelCase property naming. It's not HTML, it is JSX!. JSX prevents injection attacks.
+Babel compiles JSX down to React.createElement() calls. Leke, drum it into your head. It is not HTML, neither is it Javascript, it is JSX!
+
+The objects that React.createElement() creates are called React elements, and React reads them and makes use of them to construct the DOM
+
+Components are made up of React elements. Applications built with React usually have a single root DOM node. To render a React element into a root DOM node, 
+pass both into ReactDOM.render(). React elements are immutable, once you create an element, you can't change it's children.
+
+React only changes what is necessary. React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to
+bring the DOM to the desired state.

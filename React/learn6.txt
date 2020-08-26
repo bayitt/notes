@@ -1,0 +1,32 @@
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Contextually, components are like Javascript functions.
+They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen. React elements represent DOM tags,
+elements can also represent user defined components.
+
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this
+object "props". React treats components starting with lowercase letters as DOM tags, while it treats those starting with capital letters as components.
+
+It is recommended to name props from the component's own point of view rather than the context from which it is used.
+
+A good rule of thumb is that if a part of your UI is used several times(Button, panel or avatar), or is complex enough on its own(App, FeedStory, Component), it
+is a good candidate to be extracted to a separate component.
+
+When you declare a component as a function or a class it must never modify its own props. All React components must act like pure functions with respect to
+their props. State is similar to props, but is private and fully controlled by the component
+
+In applications with many components, it is very important to free up resources taken up by the components when they are destroyed.
+
+When a component is created in React, the component is mounted, just like how in Angular, the component is initialized. When the component is destroyed, this 
+means that the component is unmounted. The respective methods are componentDidMount() and componentWillUnmount(). They are called lifecycle methods whereas in
+Angular, they are called lifecycle hooks.
+
+The componentDidMount() method runs after the component output has been rendered to the DOM.
+
+Three things to know about setState()
+- Do not modify state directly. The only place where we can make use of setState() is in the constructor.
+- state updates may be asynchronous. Essentially, do not rely on this.props and this.state for calculating the next state. To fix it, make use of a second form of
+the setState() method, this form takes a function as an argument, instead of an object, the respective parameters of the function are the state and the props.
+The function needs to return an object, which represents the values in the state which are changed.
+- state updates are merged. what this means is that state elements can be updated independently.
+
+State is local or encapsulated. It is not accessible to any component other than the one that owns and sets it. Top-down or unidirectional flow. Any state is always
+owned by some specific component, and any data or UI derived from that state can only affect components below them in the tree.
