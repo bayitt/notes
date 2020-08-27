@@ -1,0 +1,45 @@
+Inside a loop, it is common to want to pass an extra parameter to an event handler. In React, you can create distinct components that encapsulate behavior as
+you need. In Javascript, there's nothing like *ngIf. Simply use if() like how you would normally do in Javascript. You can use variables to store elements.
+
+In Javscript, true && expression always evaluates to true while false && expression always evaluates to false. We can also make use of the ternary expression
+to conditionaly render small blocks of text.
+
+In React, you can map arrays into list of elements. Keys help React identify which items have changed, are added, or are removed. Keys should be given to the 
+elements inside the array to give the elements a stable identity. Note that the second parameter in the array.map() method is the index of the element in the array
+
+A good rule of thumb is that elements inside the map() call need keys. Keys used within arrays should be unique among their siblings. However they do not need
+to be globally unique. We can use the same keys when we produce different arrays.
+
+JSX allows the embedding of any expression in curly braces. So we could inline the map() result.
+
+With a controlled component, the input's value is always driven by the React state. Leke note that event handlers in React automatically take on event as
+their parameter
+
+The file input tag is an uncontrolled component as opposed to the input, textarea and select tags.
+
+We could also specify a name attribute on the html inputs that we can get later on in the event handler. This is quite similar to reactive forms in Angular in
+which we specify formControlName on the form input. In React, sharing state is accomplished by moving it up to the closest common ancestors of the components that
+need it. This is called lifting state up.
+
+React Recap
+Class methods in Javascript don't have this naturally bound to them. So typically, what happens in React is that the bind(this) method is called on event handlers
+in the class constructor. This enables this to be made use of in the constructor. Also, when rendering dynamic loops and methods to be called in the loops, it is
+important to add the synthetic event and pass it in as a second parameter.
+
+Also, with React we can conditionally render stuff based on different conditions. It works much the same way as normal if loops in Javascript. Another option is to
+embed expressions in JSX itself. This is done by making use of {}. We can do something like {messages.length > 0 && <div className='leke'>message</div>}.
+We can do this because Javascript always evaluates true && expression as true and false && expression as false. So, in the above example, if messages.length > 0 
+is true then that block of code is printed out. We can also make use of the ternary expression to conditionally display stuff. Again, it needs to be put inside the 
+braces {}.
+
+Then, also we have lists and keys. By default, when components are generated in React, they have a key attribute that React uses to compare the component and 
+decide if the component is to re-render. However, when rendering dynamic lists or should I say arrays, we need to specify a unique key. Typically, this key can 
+be the id of the item coming in from the backend. If the key is not specified, React is going to by default use the index of the element in the array. This is not
+recommended because it can cause issues when re-rendering. Also, it is important to take note that the key attribute matters most in the context of the surrounding
+array. Then, with forms, React makes use of a concept called controlled components which I have touched on before. The whole idea is that the source of truth should
+come from the component that is rendering the form. All the form components, the inputs, the select tag, the textarea they are controlled by the component. 
+The source of truth at every point in time is from the component. Another important thing to note is that event handlers in React class components automatically
+take the synthetic event parameter. This is injected automatically by React. Also, all form components have an onChange event which is fired when of course when
+the component content changes. Also, Leke remember the ES6 [] computed property. Similarly, remember how with Angular's reactive forms, we make use of the 
+formControlName to link a form directive to  a form element. We can do something similar in React by making use of the name attribute on the form element and 
+then accessing it in our event handler by means of the name sub-property on the event.target property

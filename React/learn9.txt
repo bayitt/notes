@@ -1,0 +1,15 @@
+There should be a single source of truth for any data that changes in a React application. If something can be derived from either props or state , it probably
+should not be in the state. React has a powerful composition model, and it is recommended to use composition instead of inheritance to reuse code between components.
+
+Containment
+Some components do not know their children ahead of time. This is especially common for components like Sidebar or Dialog that represent generic boxes.
+It is recommended that such components use the special children prop to pass children elements directly into their output. 
+The way I understand this is that on a norms you know how components are self-contained and just display their contents. Well sometimes, components may not know
+what they are to contain. Imagine having an empty div tag initially in the component definition because you don't know the contents of the component. With 
+React, you can simply pass in {props.children} and when you want to display the component like <Sidebar />, you make use of <Sidebar> </Sidebar> and in between
+pass in JSX, like how you would normally do with a normal HTML tag. JSX enables us to treat components like normal tags. Remember how I said that JSX serves as like
+a parent with DOM tags and component tags.
+
+If you do not want to make use of props.children, we can make use of different conventions by passing components in as props. Components should ideally do one thing.
+
+State is reserved only for interactivity. props are used for static versions of applications
