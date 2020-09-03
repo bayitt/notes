@@ -13,3 +13,7 @@ a parent with DOM tags and component tags.
 If you do not want to make use of props.children, we can make use of different conventions by passing components in as props. Components should ideally do one thing.
 
 State is reserved only for interactivity. props are used for static versions of applications
+
+From what I can understand sha, React apps follow the standard format of having an app component inside of which the entire application is rendered. Inside
+of React Router, in the app component different components are displayed as the thing is routed.
+

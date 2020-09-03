@@ -1,0 +1,10 @@
+To install react-router, make use of the command npm install react-router-dom
+
+In order to make use of react-router, we first need to make several imports from it. These imports include BrowserRouter as Router, Switch, Route and Link.
+These imports are made from "react-router-dom". In a sense I see, Link as being similar to routerLink in Angular
+
+Then we make use of the Switch component to route between different components. I think Switch is the equivalent of <router-outlet></router-outlet> in Angular.
+Then inside of the Switch component, we are going to make use of the Route component and pass in a path props and inside of the Route component we pass in the
+component to be rendered as a child
+
+The hierachy aspect of JSX is very important. There must compulsorily be a hierachy to React elements

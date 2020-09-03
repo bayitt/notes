@@ -1,0 +1,16 @@
+Domain Name System (DNS) records are basically mapping files that tell the DNS server which IP address each domain is associated with, and how to handle
+requests sent to each domain. The most widely used DNS records are
+
+- A - specifies IP addresses corresponding to your domain and its subdomains
+- MX - specifies where the emails for your domain should be delivered
+- CNAME - specifies redirects from your domain or subdomain to other domains/subdomains
+- TXT - These records are used to store text based information related to your domain. One of the most common uses is for SPF data
+- SRV - SRV(service) records point one domain to another domain using a specific destination port. SRV consists of
+- service - the name of the service in question
+- proto - the protoco of the service (usually TCP or UDP)
+- name
+- ttl - time to live
+- priority
+- weight
+- port
+- target

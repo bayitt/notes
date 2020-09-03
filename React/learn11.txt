@@ -1,0 +1,15 @@
+React Recap
+The way I understand it, JSX is like this parent, to which normal dom tags and component tags are children. If the tag starts with a small letter, JSX treats
+it as a normal dom tag, while it starts with a capital letter, React treats it like a component which must be in scope.
+
+With forms, the source of truth is from the component. Essentially, what happens is that we can set in the state values corresponding to each input.
+
+Also, in React we make use of the map() method to map elements to arrays of JSX elements. Remember that JSX elements compile down into React elements.
+React elements are first class elements and can be assigned to variables, returned from functions, passed as parameters. In React, mutable state is typically kept
+in the state property of components.  Note that form handler methods by default take the event as a parameter by default
+
+The target property in the event object represents the HTML element.
+
+In React, sharing state is often accomplished by moving it up to the closest common ancestor of the components that do it.
+State in React is reserved only for interactivity
+

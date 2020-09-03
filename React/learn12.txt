@@ -1,0 +1,37 @@
+So in order to install react-router, we need to run npm install react-router-dom. In order to make use of React Router, we are going to import BrowserRouter, 
+Switch, Route and Link from react-router-dom. The way I see this yeah, is that the Router component is like the initial App component in Angular. While
+the Switch component is the equivalent of <router-outlet></router-outlet>. While the <Link> component is like routerLink in Angular. Behind the scenes, Link
+renders an a element with a href attribute. Also, Leke remember that JSX must always be a hierachy of elements.
+
+The way I understand this is that the useRouteMatch().path represents the string pattern that needs to be mcatched while useRouteMatch().url represents the
+url that matched the pattern. The way I understand this is that in React, or with the React router, routing builds declaratively
+
+The way I understand it, useParams() is the Angular equivalent of ActivatedRoute in Angular. There are three primary categories of components in React router,
+routers like BrowserRouter and HashRouter
+route matchers like Route and Switch
+navigation like Link, NavLink and Redirect
+
+At the core of every React Router application should be a router component. For web projects, React provides BrowserRouter and HashRouter, the main difference
+is the way they store the URL and communicate with your web server.
+
+A browser router uses regular URL paths. These are generally the best looking URLS but they require your server to be configured correctly. Specifically, your 
+web server needs to serve the same page at all URLS that are managed client side by the React Router. A hash router stores the current location in the hash portion
+of your url. The hash is never sent to the server.
+
+Typically, wrap your top level App element in a router.
+
+There are two route matching components, Switch and Route. When a Switch is rendered, it searches through its children Route elements, to find the one whose
+path matches the current URL. Put routes with much more specific(typically longer routes) before less specific ones.
+
+If you want to do exact matching on a route, you can add the exact keyword. In React, there are various ways we can consume REST APIs in our applications, these 
+ways include using the Javascript inbuilt fetch() method and Axios which is a promise based HTTP client for the browser and node.js
+
+The fetch() API is an inbuild Javascript method for getting resources from a server or an API endpoint. The fetch() API method always takes in a compulsory
+argument, which is the path or URL to the resource you want to fetch. It returns a promise that points to the response from the request
+
+Things to note about the fetch() api
+- The promise returned from a fetch request will not reject when there is a HTTP error, no matter the nature of the response status, instead it will resolve the
+request normally and set the ok status. A request will only be rejected because of network failure or is something is preventing the request from completing
+- fetch() will not allow the use of cross site cookies that is you cannot carry out a cross site session using fetch()
+- fetch() will also not send cookies by default unelss you set the credentials in the init option
+
