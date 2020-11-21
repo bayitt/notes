@@ -1,0 +1,35 @@
+React is a declarative, efficient and flexible Javascript library for building user interfaces. It lets you compose complex UIs from small and isolated
+pieces of code called components. React has a few different kinds of components but the first to take note of is the React.Component subclass
+A component takes in parameters, called props and returns a hierachy of views to display via the render method.
+
+The render() method in class components returns a React element which is a light weight description of what to render. React developers use a special syntax 
+called JSX. JSX is a syntax extension to Javascript. JSX produces React elements. You can put any valid Javascript expression inside the curly braces in JSX.
+
+Seeing as JSX expressions compile down into React elements which compile down into regular Javascript objects. We may make use of quotes to specify
+string literals as attributes. We may also make use of curly braces to embed Javascript expressions to an attribute.
+
+Essentially, everything we are dealing with in React is not HTML, neither is it Javascript. Rather, it is a mix of both. 
+To render a React element into a root DOM node, pass both meaning the React element and the root dom node into ReactDOM.render()
+
+React elements are immutable. Once you create an element, you can't change its children or attributes.
+React DOM compares the element and its children to the previous one and only applies the DOM updates necessary to bring the DOM to the desired state
+
+Conceptually, components are like Javascript functions. They accept arbitrary inputs(called props) and return React elements describing what should appear
+on the screen
+
+The simplest way to define a component is to define a function. React elements can also represent user defined components. When React sees an element representing
+a user defined component, it passes JSX attributes and children to this component as a single object, we call this object props.
+
+All React components must act like pure functions with respect to their props.
+State is similar to props but is private and fully controlled by the component
+
+Class components should always call the base constructor with props
+
+Just like how Angular has lifecycle methods with ngOnInit() and ngOnDestroy() or ngOnChanges(), React also has its own lifecycle methods too with 
+componentDidMount() and componentWillUnmount()
+
+Do not modify state in a React component directly
+The only place where you can assign this.state is in the constructor
+
+React makes use of a top-down or unidrectional data flow. Any state is always owned by some specific component, and any data or UI derived from that state
+can only affect components below them in the tree

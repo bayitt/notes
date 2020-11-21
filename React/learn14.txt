@@ -1,0 +1,26 @@
+Refs provide a way to access DOM nodes or React elements created in the render method. Typically, props are the only way that parent components interact with
+their children. To modify a child, you re-render it with a new prop
+
+Good use cases for refs
+- Managing focus, text selection or media payback
+- Triggering imperative animations
+- Integrating with third party DOM libraries
+
+Refs are created using React.createRef() and are attached to React elements via the ref attribute.
+When a ref is passed to an element in render(), a reference to the node becomes accessible at the current attribute of the ref
+
+When the ref attribute is used on an HTML element, the ref receives the underlying DOM element
+When it is used on a custom class component the ref object receives the mounted instance of the component as its current attribute
+
+You many not use the ref attribute on a function component. I see it as the React equivalent of the @ViewChild() directive
+
+Breaking down the use of the react-to-pdf package
+- We need to import the Pdf component from the react-to-pdf package. 
+- The package makes use of a ref, so we will need to create a custom ref which we are going to attach to the dom element whose contents we want to download as pdf
+- Do this by making use of the ref attribute on the dom element and setting it to the prior created ref
+- Then we need to render the Pdf component previously imported, the Pdf component takes in a targetRef prop which we are going to set to that prior created ref
+- Then we need to set the filename prop to whatever filename we want. Then we need to create an arrow function in which we will return a DOM element whose 
+onClick method will be the destructured download method. 
+
+The create-react-app provides one with a boilerplate service worker.
+In order to add pwa support for your react app, we first need to register the service worker in the index.js file

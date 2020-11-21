@@ -1,0 +1,51 @@
+What exactly do I want to build?
+
+Nota - a simple application to make notes.
+
+What can it do?
+- Users can make notes using wysiwyg functionality
+- Users can view, edit and delete these notes
+- I also want to implement versioning, similar to git
+- everytime the user edits and saves the note, what the user saved becomes the current note
+- the user can view all the previous versions of the note
+- the user can also revert to previous versions
+- user can delete versions
+- user can download notes 
+
+Backend structure
+users
+- _id - BSON
+- name - string
+- email (unique) - string
+- avatar - string				                 resources - users, notes, versions
+- password - string
+- created_at - date
+
+notes
+- _id - BSON
+- user_id - BSON
+- title - string
+- content - string
+- created_at - date
+- updated_at - date
+- versions - [
+   hash - string
+   content - string
+   created_at = date
+]
+
+activities
+- _id - BSON
+- note_id - BSON
+- note_title - string
+- action - number
+- created_at - date
+
+images
+- _id - BSON
+- note_id - BSON
+- path - string
+
+
+for express, we make use of the jsonwebtoken for creating json web tokens, we make use of the sign() method on the jsonwebtoken package. It takes three parameters,
+an object containing the data we want to store, a secret key for encrypting and decrypting and an expiresIn

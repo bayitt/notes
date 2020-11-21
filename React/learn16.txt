@@ -1,0 +1,17 @@
+React events are named using camelCase, rather than lowercase. With JSX, you pass a function by reference as the event handler, rather than a string.
+We may embed expressions in JSX by wrapping them in curly braces. In Javascript, true && expression always evaluates to expression and false && expression 
+always evaluates to false.
+
+In React, a key is a special string attribute you need to include when creating lists of elements.
+Controlled components
+When you need to handle multiple controlled input elements, you can add a name attribute to each element and let the handler choose what to do based on the 
+value of event.target.name
+If something can  be derived from either props or state, it probably should not be in the state
+
+We can make use of a special children prop to pass in children props in case we don't know what they are going to be ahead of time.
+Remember Leke that it is not HTML, or Javascript, it is JSX
+
+React makes use of a special package called axios for making api calls
+The axios.create() method is the method to take note of. It takes an object inside of which we specify the baseUrl and the headers
+
+We make use of the react-router-dom package for navigating between routes in a react app
