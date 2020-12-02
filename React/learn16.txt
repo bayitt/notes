@@ -15,3 +15,5 @@ React makes use of a special package called axios for making api calls
 The axios.create() method is the method to take note of. It takes an object inside of which we specify the baseUrl and the headers
 
 We make use of the react-router-dom package for navigating between routes in a react app
+
+Breaking down the process of creating guarded routes in react with react router dom

@@ -1,0 +1,29 @@
+Python libraries like requests and BeatifulSoup are powerful tools for web scraping.
+Web scraping is the process of gathering information from the internet. One useful package for web scraping that we can find in Python's standard library
+is urllib. In particular the urllib.request module contains a function called urlopen() that can be used to open a url within a program
+
+urlopen() returns a HttpResponse object. In order to obtain the HTML from the page, we need to chain the read() and decode() methods to the HTTPResponseObject.
+One way to extract information from a web page's HTML is to use string methods.
+
+Regular expressions or regexes are patterns that can be used to search for text within a string. Python supports regular expressions through the re standard 
+library. They use special characters called metacharacters to denote different patterns.
+
+Remember that * stands for 0 or more of whatever comes before the asterisk.
++ stands for 1 or more of whatever comes before the asterisk
+
+the re.findall() method takes in two parameters, the first parameter is what you want to match while the second parameter is the string that you want to search
+for the pattern. Pattern matching with re is case sensitive, if we want it to be case insensitive, we pass in a third paramater which is re.IGNORECASE
+You can make use of a period(.) to stand for any single character in a regular expression.
+
+The combination of a.*c can be used to stand for any number of strings seeing as . stands for a single character and * stands for zero or more.
+
+Often we make use of re.search() to search for a particular pattern inside a string. This is somewhat more complicated than re.findall() because it returns an
+object called a MatchObject that stores different groups of data. This is because there might be matches inside of other matches and re.search() returns
+every possible result. Calling group() on a match object is going to return the first and most inclusive result
+
+There is also another important regular expression method which is sub() like re.sub(). This works similarly to the string replace() method except that for the 
+string to check, it makes use of a regular expression instead of a typical string which is how the string replace() works.
+
+Python's regular expressions are greedy, meaning that they by default they try to find the longest possible match when characters like * are used.
+Alternatively, we can make use of the ? symbol which informs Python to make use of non-greedy matching.
+

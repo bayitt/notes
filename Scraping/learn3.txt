@@ -1,0 +1,16 @@
+Take note of the preetify() method on the beautiful soup object to preetify the soup text
+Simple ways to navigate a beautiful soup object
+- soup.title - this returns the title tag object
+- soup.title.name - returns the name of the title tag object, which is obviously title
+- soup.title.string - returns the string content of the title tag
+- soup.title.parent.name
+
+Apparently, with beautiful soup, anytime you want to access the p or a object or essentially any type of tag in it, it returns the first occurence of that
+tag in it. We can also make use of the find() method. It works much the same way as passing in a second keyword parameter to the find_all() method
+
+BeautifulSoup transforms a complex HTML document into a complex tree of Python objects. But you will only have to deal with four kinds of objects.
+Tag, NavigableString, BeautifulSoup, and Comment
+
+A Tag object corresponds to an XML or HTML tag in the original document.
+We can access a tag object's attribute dictionary by making use of .attrs.
+

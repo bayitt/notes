@@ -1,0 +1,9 @@
+By default, find_all() carries out recursive searching, meaning that it checks all the tag descendants. If we dont want this and we want it to only check
+direct descendants like .contents, we set the recursive keyword parameter to False. 
+
+Sometimes you only want to find one result, if so, make use of the find() method. If find_all() cannot find anything, it returns an empty list while 
+if find() cannot find anything, it returns None
+
+find_all() and find() work their way down a tag's descendants while find_parents() and find_parent() do the opposite and work their way 
+
+find_next_sibings(). find_next_sibling()

@@ -1,0 +1,36 @@
+If there's one thing inside a tag, we can still look at the string by making use of the .strings generator. These strings tend to have a lot of
+whitespace, you can remove the whitespace by using the stripped_strings() generator instead
+
+.parents is like the opposite of .descendants. With it you can go up the document tree, getting all the parents in the process
+There are also .next_sibling and .previous_sibling methods to traverse sideways o the tree, similarly to jquery's .next() and .prev() 
+
+We can also iterate over a tag's siblings with .next_siblings and .previous_siblings. Leke drum it into your head that they are not methods instead they are attributes
+I think that the difference between find_all() and find is that find_all() returns a list while find() returns the particular Tag or NavigableString object
+
+next_element and previous_element are preety similar to next_siblings and previous_sibling but they work slightly differently. They display the elements that 
+were parsed just before and just after. We also have next_elements and previous_elements
+
+Different kinds of filters in BeautifulSoup Search API
+- The simplest filter is a string
+- Regular expression
+- A list. If you pass in a list, BeautifulSoup will perform a string match against any item in that list
+- True. This matches all the tags in the document.
+- A function. If none of the other matches work for you, define a function that takes an element as its only argument. The function should return True if 
+the argument matches and False otherwise.
+
+Leke take note of the has_attr() method. If you pass in a function to filter on a specific attribute ike href, the argument passed into the function
+wi be the attribute and not the whole tag
+
+The find_all() method looks through a tag's descendants and retrieves all descendants that match your filters
+Any argument to the find_all() method will be turned into a filter on one of a tag's attributes. BeautifulSoup is actually very powerful. Just as you can filter
+the name attribute with strings, lists, functions, True or regular expression. We can also do the same thing for attributes.
+
+You can't filter for the name attribute because BeautifulSoup uses the name attribute to store the name of the tag. To deal with this, pass in a dictionary
+to the attrs attribute.
+In order to search by css class, we make use of the class_ attribute to filter.
+By default, the find_all() method is setup to filter for tags, but by making use of the string keyword argument, we can search for specific strings.
+As with the name and keyword arguments, you can pass in a string, regular expression, list, function or True.
+string can also be treated as an attribute for filtering tags like the normal id, class_, src, href and more
+
+find_all() returns all the tags and strings that match your filters. This can take a while if the document is large. pass in a limit keyword argument
+to limit the number of results returned

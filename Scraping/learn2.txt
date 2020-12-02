@@ -1,0 +1,29 @@
+When creating a BeautifulSoup object, we pass in two parameters which are the string and the python parser to use behind the scenes.
+
+BeautifulSoup objects have a .get_text() object that can be used to extract all the text from the object and strip it of all the tags.
+We can make use of the find_all() method to extract all the instances of a html tag on the page.
+
+We may think that what the find_all() object returns is a list of strings but they are actually Tag objects. Tag objects typically have a name property
+that returns a string containing the HTML tag type.
+We can also access the HTML attributes of the Tag objects by putting them in square brackets like we were trying to access values in a dictionary
+
+Certain tags in HTML documents can be accessed by properties of the Tag object. For example we can access the title by just going straight and accessing
+soup.title
+
+Beautiful Soup also automatically cleans up tags for us, removing spaces and other stuffs.
+
+One of the more useful features of BeautifulSoup is the ability to search for specific kinds of tags whose attributes match certain values.
+To do this, we can add an additional keyword argument to the find_all() argument. The lxml library is somewhat more trickier to use but offers far more flexibility
+than BeautifulSoup for parsing HTML documents.
+
+MechanicalBrowser enables us to interact with forms and click buttons or links. In essence, it installs what is known as a headless browser which is a web browser
+with no graphical interface. This browser is controlled programatically via a Python program
+
+MechanicalSoup uses BeautifulSoup to parse the HTML from the request. page has a soup attribute that represents a Beautifulsoup object
+
+With the select() method in MechanicalSoup we can select various elements on the page
+
+Other important methods are get() and submit()
+
+Essentially the select() method works like document.getElement() in Javascript, we can literally pass in html elements, classes, ids and everything we can
+do with document.getElementBy
