@@ -10,4 +10,4 @@ Anyways. Away from all that mushy mushy stuff. To clone this repository, navigat
 git clone https://github.com/olamileke/notes
 ```
 
-I hope it is helpful to xyz person out there.
+I sure hope it is helpful to xyz person out there.
