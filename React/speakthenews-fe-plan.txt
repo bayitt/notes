@@ -1,0 +1,8 @@
+What exactly do I want to build?
+
+A frontend application to consume the speakthenews rest api.
+Requirements
+- The user should be able to add multiple news links
+- The user should be able to hear all these links play out like an album or playlist
+- He should be able to skip forward or go backwards as the news is being read out
+- He should be able to go forward or backward on the news links

@@ -1,0 +1,31 @@
+Flask-Restful is essentially a wrapper on top of the original Flask application. Remember how Flask has the concept of view functions. Just like the whole
+MVC stuff, routes mapping to blueprints which contain view functions a la controllers and methods. Flask-Restful has built in support for request data validation
+using a library similar to argparse. Calling parse_args() with the strict keyword parameter set to True will make sure that an error is thrown if the
+request includes arguments that your parser does not define.
+
+You use the fields module to describe the structure of your response. By default, flask-Restful looks for values in the flask.Request.values dict. The 
+flask.Request.dict is a combination of the flask.Request.json and flask.Request.args dictionaries. Always make sure to add the required keyword argument
+and set it to true
+
+If you want to accept multiple values for a key as a list, you can pass action='append'. If you want your argument stored under a different name once it is parsed
+we can make use of the dest keyword argument. Multiple argument locations can be specified by passing a list to location
+Instead of rewriting arguments, you can write a parent parser containing all the shared arguments and then extend the parser with copy(). We can also overwrite
+any argument in the parent with replace_argument(), or remove it completely with remove_argument()
+
+The default way errors are handled by the RequestParser is to abort on the first error that occured. To invoke a RequestParser with the bundling errors option,
+pass in the argument bundler_errors and set it to True in the RequestParser constructor. The other option is to set it in the application config.
+
+Just like how we have dest with the parser to rename request params from their external representations to their internal ones, we also have the attribute keyword
+to rename internal representations to their external ones. We can also specify default values in case the value is not present in the response
+For writing custom validators, if it fails validation, we can raise a ValueError.
+
+For custom parsers, we can also pass in the name of the parameter as the second parameter after the value
+To support other representations (xml, csv, html) you can make use of the representation() decorator. There is a property on the Resource class called method_decorators
+You can subclass the resource. Alternatively, we can specify a dictionary of iterables that map to HTTP methods and the decorators will only apply to
+matching requests
+
+Sometimes you may want to do something special when an error occurs - log to a file, send an email, in that case, we are going to make use of the 
+got_request_exception.connect(). The first parameter to it is the exception handler that we want to use to handle it, while the second parameter is the app
+object
+
+formattedString is a special type of field that is primarily used to interpolate the response into other values

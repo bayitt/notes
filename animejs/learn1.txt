@@ -1,0 +1,33 @@
+Anime.js is a very lightweight Javascript animation engine, 14kb minified. Anime provides a very simple API for animating elements. You start by creating an
+anime object and passing it a plain Javascript object describing your animation. 
+The following is the anatomy of an animation object
+Animation Targets: div, .box, #sky
+Animatable Properties: height, opacity, color, translateX
+Property Parameters: duration, delay, easing, etc
+Animation Properties: loop, direction, autoplay
+
+These are the following arguments that we pass in to the anime constructor. We use targets to tell Anime how to find elements on the page
+Property values - By specifying a single numeric value for a property, Anime is going to assume that you want to use the element's unit(unitless). It will also
+use the element's initial default value for the animation. You can specify the initial value of the property explicitly by setting the value to an array.
+For example, you can animate the x position from 50 to 200 by simply using an array translateX:[50,200].
+The most common animation properties are duration and easing functions. You can set the duration of the animation using the duration property. By default it
+is set to 1000ms.
+
+Using the easing function, we can determine how values would change over time. It is by default set to easeOutElastic.
+In Anime JS, you have fine grained control over each property transition by using an object
+
+There are different types of selectors in anime js
+- CSS Selector
+- DOM Node or NodeList
+- An array containing mixed types
+
+Any CSS property can be animated. However, most css properties will cause layout changes or repaint, and will result in choppy animation. As a result, prioritoze
+opacity and CSS transforms as much as possible.
+
+Any object property containing a numerical value can also be animated. Any DOM aatributes containing numerical attributes can be animated
+
+The various property parameters are
+- duration
+- delay
+- end delay - this is like the delay at the end of the animation for animations that repeat
+- round - round up numbered values to a particular value

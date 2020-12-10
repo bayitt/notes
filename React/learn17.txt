@@ -1,0 +1,32 @@
+Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class. useState is the first hook I am going to learn
+about. useState is a hook. We call it inside a function component to add some local state to it. React will preseve this state between re-renders.
+useState returns a pair: the current state value and a function that lets you update it. We can call this function from an event handler or somewhere else.
+It's similar to this.setState in a class, except that it does not merge the old and new states together.
+The only argument to useState is the initial state. The essential idea behind useState() is that unlike with class components in which the state is an object
+containing the various state variables, with the useState() hook, the state variables are all separate and not compiled together as object keys.
+
+React assumes that if you use useState many times, you do it in the same order during every render.
+Hooks are functions that let you hook into React state and lifecycle features from function components. Hooks don't work inside classes, rather they let you use
+React without classes. You can also create your own hooks to reuse stateful behaviour between different components.
+
+The useEffect hook serves the same purpose as componentDidMount, componentDidUpdate and componentWillUnMount in React classes, but unified into a single API.
+When you call setEffect, you are telling React to run your "effect" function after flushing changes to the DOM. Effects are declared inside the component
+so they have access to its props and state. By default, React runs effects after every render - including the first render
+
+Hooks are Javascript functions but they impose two additional rules
+- Only call Hooks at the top level. Don't call hooks inside loops, conditions, or nested functions
+- Only call Hooks from React function components
+
+Effects may also optionally specify how to clean up after them by returning a function. Think of the useEffect hook as componentDidMount, componentDidUpdate
+and componentWillUnmount combined. There are two common kinds of side effects and they are those that require cleanup and those that do not require cleanup.
+
+With useEffect instead of thinking in terms of mounting and updating, we might find it easier to think that effects happen after every render.
+Unlike componentDidMount or componentDidUpdate, effects scheduled with useEffect don't block the browser from updating the screen
+
+If your effect returns a function, React is going to run it when it is time to clean up. Note that the effect cleanup phase happens after every re-render,
+and not just once during re-rendering. Remember how with the componentDidUpdate() lifecycle hook, if we only wanted to carry out our action after the 
+action happened, we could compare with the previous props and the previous state. With the useEffect hook, we can pass in an array containing the value that
+we intend to compare it with. The array is essentially an array of state variables.
+
+If a function's name starts with "use" and it calls other hooks, we say it is a custom hook. The useSomething naming convention is how the linter plugin 
+is able to find bugs in the code using Hooks 
