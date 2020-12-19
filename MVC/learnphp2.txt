@@ -1,0 +1,30 @@
+Use the is_int() method to check if a certain variable is an integer.
+Use the is_float() function to check if the type of a variable is a float
+php also has nan, make use of is_nan() to check if a value is not a number
+the is_numeric() function is used to check whether a value or a variable is numeric or not. That means whether a number or a numeric string
+
+For casting a string or float to an integer, make use of the (int)
+
+PHP has a set of mathematical functions that allows you to perform mathematical tasks on numbers
+pi() returns the value of PI
+The min() and max() functions can be used to find the highest or lowest value in a list of arguments
+abs() returns the absolute value
+sqrt(), round()
+The rand() function generates a random number. To gain more control over the random number, we can add the optional min and max parameters to specify the range
+to obtain the random number from
+
+constants in php do not begin with $ like normal variables. Instead, they begin with letters or the underscore symbol _. Also, unlike variables, constants
+are automatically global across the script. To create a constant, we make use of the define() function like
+define(name, value, case-insensitive). In php7, you can create an array constant making use of the define() function.
+
+Essentially, what the spaceship operator does is that it returns the difference between x and y depending on if the difference is less than zero, equal to zero or
+greater than zero. <=>
+
+xor - returns true if x or y is true but not both
+
+Null coalescing is similar to the ternary operator. The difference is that while ternary operator checks a condition and then returns two different values depending,
+the null coalescing operator assigns the value of the variable to the first one if the variable exists and the value is not Null
+
+The === operator returns true if the variables are the same and they are of the same type
+The !== operator returns false if the variables are either not the same or they are not of the same type
+The xor operator returns true if either of the conditions is true but not both. or returns true if either or both are true

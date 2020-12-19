@@ -1,0 +1,28 @@
+The === operator checks if two values are not only equal but also have the same types. For example 2 === '2' will return false.
+!= and <> are the same thing. They both stand for not equal.
+<=> - The spaceship operator. This returns an integer which represents the difference between $x and $y. The difference is either positive, zero or greater than zero.
+
+xor differs from or in that xor returns true if either of the conditions specified are true but n0ot if both are true. with or it returns true if either/both
+of the conditions specified are true.
+
+concatenation. concatenation assignment
+
+Apparently. the spaceship operator is a means of checking whether a value is either greater than, equal or less than a value.
+It returns -1 if $x < $y, 0 if $x == $y, and 1 if $x > $y. 
+
+We can even access dictionary keys and values in php with foreach loops with $i => $value
+PHP has over 1000 built in functions that can be called directly, from within a script, to perform a specific task.
+In PHP 7, type declarations were added. This gives us an option to specify the expected data type when declaring a function, and by adding the strict declaration,
+it will throw a Fatal error of the data type mismatches. We add the strict option by adding declare(strict_type=1) after the opening <?php tag.
+Apparently, the typing is only for function parameters
+
+Just like with Typescript, we can also specify a return type for functions, just add : type just before the opening brace for the function.
+We can pass in arguments by reference in php by adding the & operator.
+
+In php, the array() function is used to create an array. In php, there are three types of arrays
+- indexed arrays
+- associative arrays
+- multidimensional arrays
+
+The count() function is used to return the length of an array. Associative arrays are like the php equivalent of objects in Javascript
+Take note of the sort() and rsort() methods, sort() sorts the array in ascending order while rsort() sorts the array in descending order

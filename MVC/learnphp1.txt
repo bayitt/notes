@@ -1,0 +1,38 @@
+php files begin with a .php file extension. we can open <?php ?> blocks all on the page and execute code. php variables begin with dollar symbols.
+concatenation in php is carried out with the . operator. single line comments are created with // or # while multi line comments are carried out with 
+/**/ like in css. Variable names in php are case sensitive
+
+Global Scope in php
+A variable declared outside a function has a global scope and can only be accessed outside a function
+
+Local Scope in php
+A variable declared within a function has a local scope and can only be accessed within that function 
+
+The global keyword is used to access a global variable from within a function. PHP also stores all global variables within an super global array called $GLOBALS[index]
+. The array is also accessible from within functions and can be used to global variables directly.
+
+Normally when a function is completed/executed all of its variables are deleted. However, sometimes we want a local variable not to be deleted. We need it for a further
+job. To do this, use the static keyword when you first declare the variable.
+
+echo() and print() are more or less the same. They are both used to output data to the screen. echo has no return value while print has a return value of 1 so it can
+be used in expressions. echo is marginally faster than print.
+
+php supports the following data types
+- String
+- Integer
+- Float
+- Boolean
+- Array
+- Object
+- NULL
+- Resource
+
+The var_dump() method in php returns the data type and the value of the variable
+
+Common String methods in php
+- strlen() returns the length of a string
+- str_word_count() returns the number of words in a string
+- strrev() reverses a string
+- strpos() searches for a specific text within a string. If a match is found, the position of the first match is returned. If no match is found, it returns false.
+- str_replace() replaces text within a string. It takes three parameters, the first parameter is the string to replace it with, the second parameter is the 
+string to be found and the last parameter is the parent string
