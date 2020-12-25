@@ -1,0 +1,33 @@
+The fread() function reads from an open file. The first parameter of fread() contains the name of the file to read from and the second parameter is the
+size of the file to read
+
+The fclose() function is used to close an open file
+The fgets() function is used to read a single line from a file.
+The feof() function checks if the end of the file has been reached
+The fgetc() is used to read a single character from a file.
+
+A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page 
+with a browser, it will send the cookie to. With php, you can create and retrieve cookie values.
+
+A cookie is created with the setcookie() function. setcookie(name, value, expire, path, domain, secure, httponly);
+only the name parameter is required, all the other parameters are optional
+
+the time() method returns the current unix timestamp. We can make use of the $_COOKIE superglobal and access its value via the name as an index on the $_COOKIE 
+super global.
+
+To delete a cookie, make use of the setcookie() function with an expiration date in the past.
+A session is a way to store information in variables to be used across multiple pages. By default, session variables last until the user closes the browser.
+In php, sessions are started with the session_start() function. session variables are set with the global session $_SESSION
+
+php filters are used to validate and sanitize external input
+The filter_list() function is used to list what the php filter extension offers
+The filter_var() function both validates and sanitizes data. The filter_var() function filters a single variable with a specified filter. It takes two pieces 
+of data. The variable you want to check and the type of check
+
+FILTER_SANITIZE_STRING
+FILTER_VALIDATE_INT
+FILTER_VALIDATE_IP
+FILTER_SANITIZE_EMAIL
+FILTER_VALIDATE_EMAIL
+FILTER_SANITIZE_URL
+FILTER_VALIDATE_URL

@@ -1,0 +1,30 @@
+Interfaces allow you to specify what methods a class should implement. Interfaces make it easy to use a variety of different classes in the same way. When one
+or more classes use the same interface, it is referred to as polymorphism. Interfaces are declared with the interface keyword and are made use of by classes with
+the implements keyword. It sounds a lot like interfaces are just a collection of method definitions which classes can impleent(inherit)
+
+All methods in an interface are abstract and are public. Also, classes can implement an interface and also inherit from other classes.
+Plus, interfaces cannot contain properties while abstract classes can
+
+- Abstract classes are classes that contain at least one abstract method
+- Abstract classes can contain properties
+- Abstract methods are essentially method definitions. It defines the template of the method, from its parameters to its return types
+- The child class methods of abstract classes must have the same name, parameters and return types. Their access modifiers can also be either the same or less
+restrictive from the original abstract method definition
+- For interfaces, they are essentially collections of abstract methods. The abstract keyword is not required when declaring interface methods
+- For classes that implement interfaces, they must implement ALL the interface methods. Apart from implementing the interfaces, they can also extend other classes
+
+PHP only supports single inheritance: a child can inherit from only a single parent. If a class needs to inherit multiple behaviors OOP traits is the way to go.
+
+To call a static method from a child class, use the parent keyword.
+
+Namespaces are qualifiers that solve two different processes.
+- They allow for better organization by grouping classes that work together to perform a task.
+- They allow the same name to be used for more than one class.
+
+Namespaces are declared at the beginning of a file using the namespace keyword. A namespace declaration must be the first thing in the PHP file.
+For further organization, it is quite possible to have nested namespaces.
+
+To access classes from outside a namespace, the class needs to have the namespace attached to it.
+
+An iterable can be defined as any value which can be looped through with a foreach loop. iterables are essentiall arrays, absolutely anything that we can loop
+through

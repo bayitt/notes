@@ -1,0 +1,33 @@
+An exception can be defined as an object that describes an error or unexpected behavior of a PHP script. Exceptions are a good way to stop a function when
+it comes across data that it cannot use.
+
+The throw statement allows a user defined function or method to throw an exception. When an exception is thrown, the code after it will not be executed.
+The whole idea is that exceptions and the try catch work together. with php, we have to explicitly throw the exception, unlike with Javascript that we dont have
+to be explicit, if an error occured, it will just enter the catch block, with php, we have to throw the exception
+
+The Exception object contains nformation about the error or unexpected behavior that tyhe function encountered
+new Exception(message, previous)
+
+Exception object methods
+- getMessage() - Returns a string describing why the exception was thrown
+- getPrevious() - If this exception was triggered by another one, this method returns the previous exception. Else, it returns null
+- getCode() - Returns the exception code
+- getFile() - Returns the full path of the file in which the exception was thrown
+- getLine() - Returns the line number of the code in which the exception was thrown
+
+The $this keyword in php is only available inside of methods. We can make use of the instanceof keyword to check if an object belongs to a class
+A destructor is called when the object is destroyed or the script is stopped or exited
+
+its not just properties that can be protected or private. methods can also be protected or private
+
+The final keyword in php can be used to prevent class overriding.
+constants are defined inside classes with the const keyword. We can access constants outside the class by making use of the scope resolution operator ::
+much ike static methods. To access the constants inside the class however, we would make use of the self:: keyword
+
+Abstract classes and methods are when the parent class has a named method or methods but needs its child classes to fill out the tasks. An abstract class is a 
+class that contains at least one abstract method. An abstract method is a method that is declared but is not implemented in the code.
+
+When inheriting from an abstract class, the child class method must be defined with the same name and the same or a less restricted access modifier. Also, the type
+and number of required arguments must be the same. But we can define or add additional optional arguments
+
+So essentially with abstract classes and methods we can have different implementations of the same method

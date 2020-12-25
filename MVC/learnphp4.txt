@@ -1,0 +1,31 @@
+Superglobals were introduced in PHP 4.1, and are built in variables that are always availabe in all scopes. The superglobal variables are
+- $GLOBALS
+- $_SERVER
+- $_REQUEST
+- $_POST
+- $_GET
+- $_FILES
+- $_ENV
+- $_COOKIE
+- $_SESSION
+
+$_SERVER is a PHP super global variable which holds information about headers, paths and script locations
+$_SERVER['PHP_SELF'] - Returns the name of the currently executing script
+$_SERVER['SERVER_ADDR']- Returns the IP address of the host server
+$_SERVER['SERVER_NAME'] - Returns the name of the host server (e.g www.3schools.com)
+$_SERVER['SERVER_PROTOCOL'] - Returns the name and revision of the information protocol(such as HTTP/1.1) 
+$_SERVER['REQUEST_METHOD'] - Returns the request method used to access the page
+$_SERVER['REQUEST_TIME'] - Returns the timestamp of the start of the request
+$_SERVER['HTTP_HOST'] - Returns the Host header from the current request
+$_SERVER['HTTPS'] - Is the current script being accessed through HTTPS?
+$_SERVER['REMOTE_ADDR'] - Returns the IP address from which the user is accessing the page
+$_SERVER['REMOTE_HOST'] - Returns the host name from which the user is acessing the page
+$_server['SCRIPT_FILENAME] - Returns the absolute pathname of the currently executing script
+$_SERVER['SCRIPT_NAME'] - Returns the path of the current script
+$_SERVER['SCRIPT_URI] - Returns the URI of the current page
+
+$_REQUEST is a PHP super global variable which is used to collect data after submitting an HTML form.
+$_POST is a PHP super global variable which is used to collect form data after submitting an HTML form with a method of "POST"
+$_GET is a PHP super global variable which is used to collect form data after submitting an HTML form with method="get"
+
+

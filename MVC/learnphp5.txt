@@ -1,0 +1,39 @@
+The php date() function formats a timestamp to a more readable date and time. It takes two parameters, the format that we would like to format it into and 
+the timestamp. For formatting, we have
+- d - Represents the day of the month(1 - 31)
+- m - represents a month (1-12)
+- Y- represents a year(in 4 digits)
+l - represents a day of the week
+
+H - 24 hour format of an hour(00 to 23)
+h - 12 hour format of an hour with leading zeros (01 to 12)
+i - Minutes with leading zeros (00 to 59)
+s - seconds with leading zeros (00 to 59)
+a - am or pm
+
+Note that the php date() function will return the current date/time of the server. If the time you got back from the code is incorrect, the server is
+probably set in another country so we need to set the current timezone. We can make use of the date_default_timezone_set() method to set it. 
+
+The php mktime() function returns the Unix timestamp for a date. The mktime parameters are like mktime(hour, minute, second, month, day, year)
+mktime() is like the equivalent of Date.now() in Javascript
+The strtotime() function is also used to convert a human readable string into a Unix timestamp
+
+The include() and require() statements are identical except that require() will produce a fatal error and stop the script while include() will only
+produce a warning
+
+PHP file handling
+- readfile() function reads a file and writes it to the output buffer
+The readfile() function is useful if all you want to do is open up a file and read its contents
+A better way to open a file is with the fopen() method. It provides more options than the readfile() method
+The first parameter of fopen() contains the name of the file that we want to open and the second parameter indicates which mode we want to ope the file in.
+We can also generate a message that can be returned if we are unable to open the file.
+
+files may be opened in one of the following modes
+r - open a file for read only
+w- open a file for write only - overwrites the existign data in the file
+a - open a file for write only (essentially append) - the existing data in the file is preserved
+x - creates a new file for write only. returns false and an error if the file does not exist
+r+ - opens a file for read and write
+w+ - opens a file for read and write
+a+ - opens a file for read and write
+x+ - creates a new file for read and write
