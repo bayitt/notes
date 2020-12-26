@@ -1,0 +1,37 @@
+Autoloading allows us to use PHP classes without the need to require() or include() them and is considered a hallmark of modern day programming.
+Composer autoloading can work in two different ways. Either through direct autoloading of classes or through the use of PSR standards.
+
+Direct autoloading works by adding an autoload key in our composer.json file and specifying a classmap key in it which points to an array containing 
+all the classes and files that we intend to autoload.
+
+The better way however is to autoload our classes with PSR-4. The following are the steps
+- Put the classes that we want to autoload into a dedicated directory(e.g src)
+- Give all the classes inside the src directory the same directory
+- Point the namespace to the folder in the psr-4 key in the autoload key in composer.json
+- Note however that the namespace must compulsorily end with \\
+- Update the composer autoloader with composer dumpautoload -o
+
+Webhooks are one way that apps can send automated messages or information to other apps. It's how Paypal tells your accounting app when your clients pay you.
+how Twilio routes phone calls to your number
+
+There are two ways your apps can communicate with each other to share information: polling and webhooks. With polling your app has to constantly ask for information
+but with webhooks your app is automatically provided with the new information. Webhooks are automated messages sent from apps when something unique happens.
+
+Technically, webhooks are user defined callbacks made with HTTP
+
+AWS Lambda
+The custom runtime API is a simple interface to enable lambda function execution in any programming language or a specific language version. The custom
+runtime API requires an executable text file called a bootstrap. The bootstrap file is responsible for the communication between your code and the 
+Lambda environment.
+
+Serverless architecture is a model in which the cloud service provider is responsible for executing the code by dynamically allocating resources.
+The code is generally executed in stateless containers and can be triggered by various events(HTTP request, crons, download of a document) etc. It usually
+comes in the form of a function, so serverless is also sometimes called Functions as a Service or Faas.
+
+Serverless architecture can be useful in several cases 
+- web hooks
+- multimedia processing
+- variable traffic
+- scheduled tasks
+- IOT
+- Event Streaming

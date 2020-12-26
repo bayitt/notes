@@ -1,0 +1,34 @@
+We can install Laravel in the following way. We install the global laravel installer with composer global require laravel/installer.
+We then create a new laravel application with the laravel new command.
+
+All of the configuration files for the Laravel framework are stored in the config directory.
+The entry point to a Laravel application is the public/index.php file. All requests are directed to this file by your web server(Apache/nginx) configuration.
+The index.php file first loads the Composer generated autoloader definition and then retrieves an instance of the Laravel application from bootstrap/app.php.
+Next the incoming request is sent either to the HTTP kernel or to the console kernel depending on the type of request thhat is entering the application. These 
+two ketrnels serve as the central locations through which all requests flow through.
+
+The Http Kernel defines an array of HTTP middleware that all requests must pass through before being handled by the application. These middleware handle reading
+and writing the HTTP session, determining if the application is in maintenance mode, verifying the CSRF token, and more. The method signature for the HTTP kernel's
+handle method is quite simple, it receives a request and returns a response.
+
+One of the most important kernel bootstrapping actions is loading the service providers for your application. All of the service providers for your application are
+configured in the config/app.php configuratio's file providers array.
+
+Laravel will iterate through each of the providers and instantiate them. After instantiating them, the register method will be called on all of the providers.
+Then, once all of the providers have been registered, the boot method will be called on each provider.
+
+Service providers are responsible for bootstrapping all of the framework's various components such as the database, queue, validation and routing components.
+Essentially, every major feature offered by Laravel is bootstrapped and configured by a service provider.
+
+The RouteServiceProvider loads the route files contained within your application's routes directory. 
+
+Laravel makes use of the DotEnv php library. In a fresh laravel install, the .env.example file is automatically copied to .env
+If you need to define an environment variable with a value that contains spaces, you may do so by enclosing the value in double spaces.
+
+The current application environment is determined by the APP_ENV variable from the .env file. We may also access the value via the static environment() method
+on the App class. We may also pass in arguments to the environment variable to determine if the environment matches a given value. e.g App::environment('local') or
+App::environment(['local', 'staging']).
+
+We may also easily access configuration values using the global config helper function from anywhere in the application. Do so using dot notation for example
+config('app.timezone'), we may also pass in an additional parameter that is returned if the configuration option does not exist. 
+Also, to set configuration values at runtime, pass in an associative array to the config() helper function 
