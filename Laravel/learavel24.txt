@@ -1,0 +1,5 @@
+By default, Laravel provides the TrimStrings and ConvertEmptyStringsToNull middleware in your application's global middleware stack. These middleware will
+automatically trim all incoming string fields on the request as well as convert any empty string fields to null.
+
+We may retrieve uploaded files from an IlluminateHttpRequest instance using the file() method or using dynamic properties. We can check if a file is present making
+use of the hasFile() method. We can check if there was no problem uploading the file making use of the isValid() method

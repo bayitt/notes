@@ -1,0 +1,29 @@
+Named routes allow for the convenient generation of URLs or redirects for specific routes. We may specify a name for a route by chaining the name() method on the
+route instance. Once you have assigned a name to a given route, you may use the route's name  when generating urls or redirects via the Laravel's route and
+redirect helper functions.
+
+Route groups allow you to share route attributes, such as middleware across a large number of routes without needing to define those attributes on each individual
+route.
+
+To assign middleware to all routes within a group, you may use the middleware method before defining the group. Middleware are executed in in the order that they
+are defined in the array.
+
+Route groups may also be used to handle subdomain routing. Subdomains may be assigned route parameters just like route URIs, allowing you to capture a portion 
+of the subdomain. The prefix() method may be used to prefix each route in the group with a given URI. The name() method may be used to prefix each route
+name in the group with a given string. Laravel route model binding provides a convenient way to automatically inject the model instances directly into your
+routes. Laravel automatically resolves Eloquent models defined in route or controller actions whose type hinted variable names match a route segment name.
+The deal is that by default, Route model binding works with the id field in the model, If we want to make use of a different field, we need to specify it like
+{user:email} to make Laravel inject the user that has the specified email address into the closure or controller action
+
+If you would like model binding to always use a database column other than id when retrieving a given model class, you may override the getRouteKeyName() method
+on the Eloquent model
+
+Everything that I have just listed up here is for implicit route model binding in which we follow assumptions that Laravel is going to assume. If we want to be explicit
+and specify that we want xyz route parameter to specify xyz model, in the boot() method of our RouteServiceProvider, we can call the Route::model() method
+and specify a route parameter and a corresponding model that we want to be returned.
+
+If you want to define your own route binding logic, make use of the bind() method
+
+We can make use of the Route::fallback() method, we may define a route that will be executed when no other route matches the incoming request. Typically,
+unhandled requests will automatically render a 404 page via your application's exception handler. The fallback route() should be the last route registered
+in your application.

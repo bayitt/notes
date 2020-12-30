@@ -1,0 +1,34 @@
+Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application. All middleware are octaed in the App\Http\Middleware
+directory. To create a new middleware, use the make:middleware artisan command. It is best to think of middleware as a series of layers of HTTP requests that must
+pass through before they hit your application. Each layer can examine the request and even reject it entirely.
+
+All middleware are resolved via the service container, so we may type hint any dependencies we need within a middleware's constructor. If we want a middleware to
+run for every request to our application, we need to list the middleware class in the $middleware property of your App\Http\Kernel.php class.
+
+If we intend to assign middleware to specific routes, we first need to assign the middleware a key in your application's App\Http\kernel.php. We may add our own custom
+middleware to the associative array property $routeMiddleware. Just like how we can specify middleware to our routes by chaining the middleware() method and passing
+in the name of the middleware or array containing the middleware entries. For groups of routes, we can specify that a route should not have the middleware
+applied to it with the withoutMiddleware() method.
+
+Just like how with the $routeMiddleware property, we can specify middleware that we can assign to routes, with the $middleware groups, we can specify groups of middlew
+ares.
+
+Instead of making use of $routeMiddleware, which has no control over the order, we can make use of $middlewarePriority. We can also pass in parameters to our 
+middleware. Just pass it after the request and closure objects. Middleware parameters may be specified when defining the route, by separating the name of
+the middleware and the parameter with a :, multiple parameters can be specified with a comma.
+
+Sometimes a middleware may need to do some work after the HTTP response has been sent to the browser. If you define a terminate method on your middleware.
+The terminate method should take both the request and the response. When calling the terminate method on your middleware, Laravel will resolve a fresh instance
+of the middleware from the service container. If we would like to resolve the same middleware from the container make use of the singleton methof to return the
+same instance.
+
+Laravel's Illuminate\HttpRequest class provides an object oriented way to interact with the current HTTP request being handled b your application
+
+$request->path() - this returns the request's path information.
+This is() method helps us to verify that the incoming request path matches a give path, we may make use of the wildcard character (*)
+Using the routeIs() method, we can verify that the incoming request is matching a named route. We can also get the url of the current request by making use of the
+url() or the fullUrl() method. The url() method returns the url without the query string, while the fullUrl() method returns it with the query string
+
+The $request->method() will return the HTTP verb used in the request while we can use isMethod() to check if the verb matches a particular one.
+We can also access a particular request header by making use of the $request-header() method, we can also pass in a second parameter if the header is null
+The hasHeader() method can be used to check if a given header is present in the request

@@ -1,0 +1,35 @@
+The ip() method may be used to access the ip address that the request is originating from. Laravel provides several methods for inspecting the incoming request's
+requested content types via the Accept header. First, we may make use of the getAcceptableContentTypes() content types to return an array of all the content types
+accepted by the request. The accepts() method accepts an array of content types and returns true if any of the content types are accepted by the request, otherwise, 
+it returns false
+
+We may make use of the prefers method to determine which content type out of an array of content types is most preferred by the request
+Use the $request->expectsJson() method to quickly determine if an incoming request expects a JSON response.
+
+To get all of an incoming request's data, we may make use of the $request->all() method, we can do this irrespective of whether it is a html form or an XHR request.
+Regardless of the HTTP verb, the input() method may be used to access input. We may pass a default value as the second argument to the input method. When working
+with forms that contain array inputs, we may make use of dot notation to access the arrays. Call the input() method without any params to get all of the inputs
+as an associative array. While the input() data returns the contents of the entire request including the query string, the query() method only retrieves values
+from the query string. We may also call the query() method to return all the query string values as an associative array.
+
+When dealing with elements like checkboxes, our application may receive values that look like string, we may make use of the $request->boolean() method
+to retrieve these values as boolean. We can also access the request properties one time via dynamic properties. 
+
+If we need to retrieve a subset of input data, we can make use of the only() and except() methods and pass in an array of inputs to get or exclude.
+We may make use of the has() method to determine if a value is present on the request. We may even pass in an array to determine if all the specified inputs 
+are present. We can make use of the hasAny() to check if any of the params are present on the input
+
+We can make use of the $request->filled() method to check if a property exists in the input and is not empty, WE can make use of the whenHas() and whenFilled()
+methods to execute closures when inputs are either present or filled in the request.
+
+To determine if a given key is absent from the request, we can make use of  $request->missing().
+Laravel allows you to keep input from one request to another. The flash() method will flash the current input to the session so that it is available during the
+user's next request to the application. We may also make use of the flashOnly() and flashExcept() methods to flash a subset of the request data to the session
+
+Seeing as we often want to flash input into the session and then redirect to the previous page, we may easily chain a redirect with old input making use of the 
+withInput() method
+
+To retrieve flashed input from the previous session, invoke the old method on an instance of Illuminate\HttpRequest. Laravel also provides a global old() helper.
+
+All cookies created by the Laravel framework are encrypted and signed with an authentication token, meaning they will be considered invalid if they have been
+changed by the client. To retrieve a cookie value from the request, access the cookie() method on a request instance

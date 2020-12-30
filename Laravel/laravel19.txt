@@ -1,0 +1,32 @@
+The Laravel service container is a powerful tool for managing class dependencies and performing dependency injection. Dependency injection is a fancy phrase
+that essentially means that class dependencies are injected into the class via the constructor or in some cases, "setter methods".
+
+I think I understand what the service container is all about. The deal is that imagine if for your functions and methods, you neeed to pass in objects
+or implementations of several classes. It would be too much work to do this, but with the Laravel service container simply type hint your dependency and Laravel
+will automatically resolve that dependecy and inject an object of that class.
+
+There are two situations in which we would manualy interact with the service container. First, if we write a class that implements an interface and wish to 
+typehint that interface on a route or class constructor. Secondly, if you are writing a Laravel package that you plan to share with other developers.
+
+Almost all of your service container bindings will be registered within service providers. Within a service provider, you always have access to the container
+via the $this->app property. We can register a binding using the bind() method, passing the class or interface name that we wish to register, along with a closure that 
+returns an instance of the class. Note that the resolver takes the container as a dependency and we can make use of it to resolve sub-dependencies.
+
+Typically, we interact with the service container in service providers but if we don't want to do so, we can make use of the App facade.
+There is no need to bind classes into the container if they do not depend on any interfaces.
+
+The singleton() method works much like the bind() method except that the class is resolved once, so that the same object is returned on subsequent calls into the
+container
+
+We can also bind an existing object instance into the container making use of the instance method.
+
+Facades provide a static interface to classes that are available in the appllication's service container. All of Laravel's facades are defined in the 
+Illuminate\Support\Facades namespace. To compliment facades, Laravel offers a variety of global helper functions that make it even easier to interact with
+common Laravel functions. Some of the common helper functions you may interact with are view, response, url, config.
+
+Many facades perform the same corresponding functions of global helper functions. 
+Facades and helper functions more or less go together. Underneath the hood, helper functions are actually calling the facades.
+
+In a Laravel application, a facade is a class that provides access to an object from the container. Laravel's facades and any custom facades you create 
+will extend the base Illuminate\Support\Facades\Facade class. The Facade base class makes use of the __callStatic() magic method to defer calls from your facade
+to an object resolved from the container

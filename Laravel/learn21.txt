@@ -1,0 +1,22 @@
+Laravel includes powerful and customizable rate limiting services that we may use to resrict the amount of traffic for a given route or group of routes. 
+To get started, define rate limiter configurations that meet your application's needs. Typically, this should be done within the configureRateLimiting method
+of your application's RouteServiceProvider class.
+
+Rate limiters are defined using the RateLimiter facade's for method. The for method accepts a name for the rate limiter and a closure that returns the limit
+configuration that should apply to routes that are assigned to the rate limiter. If the incoming request exceeds the specified rate limit, a response with a 
+429 status code is automatically returned by Laravel.
+
+Rate limiters may be attached to routes or route groups using the throttle middleware, then specify the name of the rate limiter you wish to assign to that 
+route or group of routes
+
+HTML forms do not support PUT, PATCH or DELETE actions. So, when defining PUT, PATCH or DELETE routes that are called from a form, we need to define 
+hidden fields with the request types values. For convenience, we may make use of the @method blade directive.
+
+Make use of the Route::current() method to get the current route instace, while, we make use of the Route::currentRouteName() method to access the name of the
+current route and finally the Route::currentRouteAction() to get the route action.
+
+Laravel can automatically respond to CORS OPTIONS HTTP requests with values that you can configure. All CORS settings may be configured in your application's
+config/cors.php configuration file.
+
+Just like how we can run php artisan config:cache to cache all of our application's configurations at deploy time to speed it up, we can also run php artisan
+route:cache at deploy time to similarly speed things up. Use the php artisan route:clear command to clear the route cache.

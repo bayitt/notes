@@ -1,0 +1,34 @@
+The most basic Laravel routes accept a URI and a closure. All Laravel routes are defined in your route files which are located in the routes directory.
+These files are automatically loaded by your application's RouteServiceProvider. The routes/web.php defines routes that are for your web interface. These routes
+are assigned the web middleware group which provides features like session state and CSRF protection. The routes in api.php are stateless and are assigned the
+api middleware group.
+
+Routes defined in the routes/api.php file are nested within a route group by the RouteServiceProvider . Within this group, the '/api/ prefix is automatically
+applied so you do not need to manually apply it to every route in the file.. You may modify this by modifying your RouteServiceProvider class.
+The router allows you to register routes that respond to any HTTP verb.
+
+Sometimes, we may need to register a route that responds to multiple HTTP verbs, we may do so making use of the match() method and pass in an array of matching 
+HTTP verbs. If we need to match a route with any HTTP verb, we do so with the any() method
+
+Any HTML forms pointing to POST, PUT, PATCH or DELETE routes that are defined in the web routes file needs to include a CSRF token field. Otherwise, the request 
+will be rejected.
+
+If you are defining a route that redirects to another URI, you may use the Route::redirect method. By default, the redirect method returns a 302 status code.
+We can customize the status code using the optional third parameter. Alternatively, we may use the permanentRedirect method to return a 301 status code.
+When using route parameters in Laravel, the destination and status parameters are reserved.
+
+If your route only needs to return a view, we may make use of the Route::view() method to return a view. The first parameter is the route, while the second 
+parameter is the view, an optional third parameter is data to send to the view
+
+We can define route parameters if we need to capture segments of the URI. These route params can now be passed on to the closures that come after. Route 
+parameters are always enclosed in curly braces like {}. If your route has dependencies that you would like the Laravel service container to automatically inject into
+your function and also have route parameters, list out your route parameters first. If the route parameter is going to be optional, we can place a  ? after the
+parameter name but still in the {}, Just ensure to make sure that when you pass in the parameter value to your closure, it is a default parameter
+
+We may also constrain the format of our route parameters by using the where parameter on a route instance. The where() method accepts the parameter and a 
+regular expression defining how the parameter should be constrained. For ease, Laravel has defined some helper methods so that we do not have to write out
+our own regular expression such as whereNumber(), whereAlpha(), whereALphaNumeric(), whereUuid()
+
+If you would like a route parameter to always be constrained by a given regular expression, we may make use of the pattern() and call it in the boot() method of
+the RouteServiceProvider 
+
