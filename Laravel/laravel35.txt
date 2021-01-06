@@ -1,0 +1,35 @@
+Laravel includes Eloquent, an object-relational mapper that makes it enjoyable to intract with your database. When using Eloquent, each database table has a 
+corresponding Model that is used to interact with that table.We make use of the php artisan make:model to generate a new model. If you would like to generate
+a table migration when generating the model, do so with the -m option. We can generate various classes when generating models,
+
+--factory or -f to generate a model and factory class.
+--seed or -s to generate a model and a seeder class.
+--controller or -c to generate a model and a cpontroller class
+-mfsc to generate a model, migration, factory, seeder and controller
+
+Table Conventions
+By convention, the snake case, plural name of the model class will be used the database table name. Alternatively, we can specify the $table property in the
+class to specify the class name by ourselves. Eloquent will assume that each model's corresponding table has a primary key column named id. 
+To override this, we can define a protected $primaryKey property and set it to the field that we want as the primary key.
+
+Also, Eloquent automatically assumes that the primary key is an incrementing integer, which means that Eloquent automatically cast the primary key to an
+integer. If you wish to use a non incrementing or a non numeric primary key, you must define the public $incrementing propery to false.
+
+By default, Eloquent expects created_at and updated_at columns to exist n your model's corresponding database table. If you do not want these properties, set
+the $timestamps property on your model to false.
+
+By default, a newly instantiated model instance is not going to contain any attribute values. If you would like to define the default values for some
+of your model's attributes, you must define an $attributes array containing your default data.
+
+By default, a newly instantiated model will not contain any attribute values. If you would like to define default values for some of our model's attributes.
+We can define an $attributes property (array) on our model. Think of each Eloquent model as a ppowerful query builder allowing you to fluently query the database
+associated with the model's associated table. The model's all() method will retrieve all the records from the model's associated table.
+We can chain additional constraints to queries and then invoke the get() method to retrieve the results.
+
+If you already have an instance of an Eloquent model that was retrieved from the database, we can refresh the model making use of the fresh() and refresh() methods
+to re-retrieve the data from the database. This can happen if we retrieved the instance and do some computations that mutated it. In this case, we can
+easily call fresh() or refresh() methods. The fresh() method will reload the particular db instance while the refresh() method will reload it with all of its
+relationships.
+
+Eloquent methods do not return plain php arrays. Instead, they return collections. The Collections class provides a variety of helpful methods for
+interacting with data collections. For example the reject method may be used to reject queru results based on the result of a closure. like a map or filter

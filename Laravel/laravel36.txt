@@ -1,0 +1,37 @@
+Instead of using the all() or get() methods which may attempt to load thousands of Eloquent records into memory. We can make use of the chunk method to deal with 
+large models more efficiently. The chunk method will retrieve a subset of Eloquent models and pass them into a closure for processing.
+
+Similar to the chunk method, the cursor method may be used to significantly reduce your application's memory consumption. The cursor() method is only going
+to execute a single database query. However, the individual Eloquent models will not be hydrated(retrieved) until they are iterated over. Therefore, only one
+Eloquent model is kept in memory at a time. The cursor() returns an Illuminate\Support\LazyCollection instance. Lazy collections allow you to use many of the
+collection methods available on typical Laravel collections while only loading a single model into memory at a time.
+
+In addition to retrieving all the records matching a given query, we can retrieve single records making use of the find, first or firstWhere methods.
+find() retrieves models by its primary key.
+
+Sometimes, we may wish to retrieve the first result of a query or perform some other action if no results are found. We can make use of the firstOr() method,
+the firstOr() method takes a closure as its parameter. If the query does not exist, the result of the query is returned. 
+
+Sometimes, we may want to throw exceptions if models are not found. This is particularly useful in routes or controllers. The findOrFail and firstOrFail methods
+can be used.
+
+The firstOrCreate method will attempt to locate a database record using the given column/value pairs. If the model cannot be found in the database, a record
+will be inserted with the attributes resulting from merging the first array argument with the optional second array argument. The firstOrNew method
+will attempt to locate a record in the database using the given attributes. However, if a model is not found, a new model instance will be created.
+
+We can also make use of the count, sum, max or other aggregate methods provided by the Laravel query builder.
+To insert a new record in the database, instantiate a new model instance and call the save() method on it.
+Alternatively, we can make use of the create() method to save a new model.
+
+However, before making use of the create() method, we need to specify a protected $fillable property in our model. To update a model, retrieve its values, 
+change a property and call the save() method on it
+
+Mass updates can also be done on models the update() method. Eloquent provides the isDirty, isClean and wasChanged methods to examine the internal state of your 
+model and detrmine how its attributes have changed from when the model was originally retrieved.
+The isDirty() method is used to check if any of the model's attributes have been changed since the model was retrieved.You may pass a specific attribute
+to check if it has been changed since the model was retrieved. isClean() returns true if the model has not been changed since it was last retrieved, we can also
+pass in an attribute to the isClean() method to check for a particular field.
+The wasChanged() method checks if any of the attributes were changed when the model was last saved within the current request cycle.
+
+The getOriginal() method can be used to get the original value of an attribute or all the attributes  when it was originally retrieved, irrespective of whether
+it has been changed or not. 

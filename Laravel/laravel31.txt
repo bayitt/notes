@@ -1,0 +1,33 @@
+The @yield directive is used to display the contents of a section. The @section() directive that ends with @endsection directive is used to define a section, while
+if it ends with the @show directive it yields its contents automatically, we can make use of the @parent directive to append content. The @yield directive
+also contains a second default parameter which can be returned if the section is never defined
+
+We can make use of the @error directive to check if an error exists in the @errors array 
+We can make use of the @php @endphp directive to embed raw php into our view
+
+There are two approaches to writing components, we can make use of class based components and anonymous components. To create an anonymous component, we can
+make use of the make:component command. Components are automatically located in the app\view\components directory and in the resources/views/components 
+directory
+
+To display a component, we may make use of a Blade component tag within one of our Blade templates. Blade component tags start with the string x- followed by
+the kebab-case name of the component class. If the component class is nested deeper within the App\View\Components directory, we may make use of the . character
+to indicate directory nesting. We may pass data to blade components making use of HTML attributes. Hard coded, primitive values may be passed to the component
+using simple HTML attribute strings. PHP expressions and variables should be passed to the component via attributes that use the : character as a prefix.
+
+You should define the component's required data in its class constructor. Component constructor arguments should be specified using camelCase, while kebab-case
+should be used when referencing the argument names in your HTML attributes.
+
+We can also define public methods on our component classes and call these from our template and simply add the $ sign like it was a normal variable.
+We can also have access to our component name, attributes and slot from our render method, we need to simply return a closure. This closure is going to have 
+an array passed into it, we can access the componentName, attributes and slot from it.
+
+All attributes that are not a part of the constructor are automatically added to the $attributes array. This attributes array is made avaiable inside of 
+our component
+
+Laravel provides several helpers to assist us in generating URLS for our application. These helpers are primarily helpful in building links in our templates and 
+API responses, or when generating redirect responses to another part of our application. The url helper may be used to generate arbitary URLs for your application.
+Essentially, instead of having to type out the full request, we can have the url helper generate the prefix.
+
+url()->current() returns the current url without the query string
+url()->full() returns the current url including the query string
+url()->previous() returns the url for the previous request. Each of these methods may also be accessed via the URL facade.

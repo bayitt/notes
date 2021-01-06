@@ -1,0 +1,32 @@
+If we are redirecting to a route with an ID parameter that is being populated from an Eloquent model, we may pass the model itself. The ID will be extracted
+automatically. Sometimes, we may need to redirect to a domain outside of our application, we can make use of the away() method.
+
+Remember how we can make use of the $request->flash() method or redirect()->route()->withInput() method to flask request data to the session. We can make use
+of the with() method to flash any data to the session
+
+If we need control over the response's status and headers but also need to return a view as the response' content, we can chain the view() method to an empty
+response call
+
+response()->json(). The download() method may be used to generate a response that forces the user's browser to download the file at the given path. The
+second parameter to the download() method is the name that will be seen by the browser when the file has been downloaded. Finally, we may pass an array of headers
+as the third parameter.
+
+The file() method may be used to display a file, such as an image or a PDF, directly in the user's browser instead of initiating a download. This method accepts
+the path to the file as the first argument and an array of headers as its second argument
+
+If we want to define a custom response that we can re-use in a variety of routes and controllers, we can make use of macro method on the Response facade. Typically,
+we should call this method from the boot method of one of our application's service providers such as the AppService Provider
+
+Laravel provides several approaches to validate your application's incoming data. It is most common to use the validate method on the $request object.
+If validation fails during a traditional HTTP request, a redirect response to the previous url will be returned while if it is an XHR request, a JSON response
+containing the validation error messages will be returned. The validation rules are passed into the validate() method of the $request->validate().
+
+Sometimes, we may want to stop running validation rules on an attribute after the first validation failure. To do so, assign the bail rule to the attribute.
+An $errors variable is shared with all of your application's views by the Illuminate\View\Middleware\ShareErrorsFromSession middleware.
+
+We can also customize the error messages for each validation rule by going to the resources/lang/en/validation.php file
+When it is an xhr request, instead Laravel generates a JSON response with a 422 validation error. We may make use of the @error directive to display the 
+$error message
+
+Seeing as Laravel has the TrimStrings and ConvertEmptyStringsToNull middleware. Because of this, we need to mark our optiona request fields as nullable if 
+we do not want to consider null values as invalid

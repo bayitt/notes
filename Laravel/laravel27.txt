@@ -1,0 +1,33 @@
+When you start a new Laravel project, error and exception handling is already configured for you. The App\Exceptions\Handler class is where all exceptions 
+thrown by your application are logged and then rendered to the user. The debug option in your config/app.php file determines how much information about an error
+is actually displayed to the user.
+
+The Handler class contains a register method where we may register custo exception reporting and rendering callbacks. Exception reporting is used to log exceptions
+or send them to an external service like Flare, Bugsnag or Sentry. 
+
+If we need to report different types of exceptions in different ways we may make use of the reportable method to register a closure that should be executed when
+an exception of a given type needs to be reported. Even if we define a custom way to report our callbacks, the error will still be logged by Laravel's default
+logging configuration, to stop this we can chain a stop() method to the reportable() method or return false from the closure.
+
+Artisan is the command line interface included with Laravel. Artisan exists at the root of your application as the artisan script and provides a number of helpful 
+commands that can assist you while you build your application. To view a list of all artisan commands make use of the php artisan list command.
+
+Every command also includes a help screen which precedes the command which describes and displays the command;s available arguments and options.
+Tinker allows you to interact with your entire Laravel application on the command line including your Eloquent models, jobs, events and more.
+
+Tinker utilizes an "allow" list to determine which Artisan commands are allowed to be run within its shell. By default, we can run the clear-compiled, down, env,
+inspire, migrate, optimize and up commands. If you would like to add more commands, we can add it to the commands array in our tinker.php configuration file
+
+In addition to the commands provided with Artisan, we can build our own custom commands. Commands are typically stored in the App\Console\Commands directory.
+Commands can be created with the php artisan make:command command. After generating your command, you should define appropriate values for the signature 
+and description properties. These will be used when your command is displayed with the php artisan list command. The signature command also allows us to
+define our command's input expectations. The handle method will be called when your command is executed. We can also access arguments passed into the command
+with the argument method
+
+At its core, Laravel's authentication facilities are made up of guards and providers. Guards define how users are authenticated for each request. For example, Laravel
+ships with a session guard which maintains state using sessions and cookies. Providers define how data is retrieved from your persistent storage.
+Laravel ships with support for retrieveing users using Eloquent and the database query builder. The application's authentication configuration file is
+located at config/auth.php. 
+
+By default, Laravel includes an App\Models\User Eloquent model in your app\models directory. This model may be used with the default Eloquent authentication
+builder. When building the database schema for the App\Models\User model, make sure that the password column is at least 60 characters in length.

@@ -1,0 +1,30 @@
+By default all Laravel resource controller actions have a route name, however we can override these names by passing a names array with our desired route names.
+We can also rename the route parameters by passing an associative array to parameter names.
+
+We can also localize Resource URIs, to whatever name that we intend to supply. We can make use of the Route::resourceVerbs([]) to localize the names of the urls.
+If we need to add additional routes to a resource controller beyond what is defined already, we need to define it before we define the resource() method
+
+views separate your controller/application logic from your presentation logic and are stored in the resources/views directory.
+You may create a view by placing a file with a .blade.php file extension in your resources/views directory.
+Views may be returned making use of the global view helper function or the View facade.
+
+Using the View facade's first method, we can return the first view that exists in an array of views.
+We can use the exists() method to check if a view exists.
+
+Apart from sending in an array of data to the view, we can chain with() methods to send data in pieces to the view.
+Occasionally, we may need to send data to all views, we can do so with the View::share() method, we can call this method inside of the boot() method the 
+AppServiceProvider or we may create our own service provider to do so.
+
+View composers are callbacks or class methods that are called when a view is rendered. If you have data that you want to be bound to a view each time that
+view is rendered, a view composer can help you organize that logic into a single location. View composers may prove particularly useful if the same view
+is returned by multiple routes or controllers within your application and always needs a particular piece of data, Typically view composers will be
+called within service providers. If we are making use of a class based view composer, we need to define a public compose method. We need to type hint the current
+view instance as a param on the compose() method.
+
+The methods are passed to the compose() method of the View facade. We can even pass in multiple views to be handled by the same view composer. Just pass in
+an array as the first param of the compose() method.
+The composer() method also accepts a wildcard, allowing us to attach a view composer to all views.
+
+View creators are similar to composers except that they execute immediately the view is instantiated and not when the view is about to render.
+php artisan view:cache - do only when about to deploy
+

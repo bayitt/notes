@@ -1,0 +1,36 @@
+Cross site request forgeries are a type of malicious exploit whereby unauthorized commands are performed on behalf of an authenticated user. To avoid CSRF ,
+we need to inspect every incoming POST, PUT, PATCH or DELETE request for a secret session value that the malicious application is unable to access.
+
+Laravel automatically generates a CSRF token for each active user session managed by the application. This token is used to verify that the person actually making
+the request is the authenticated user.
+
+For convenience, simply make use of the Blade @csrf directive to generate the hidden token input field. Seeing as it is the VerifyCsrfToken middleware that
+does the csrf check, if we want to exclude a route from being checked for csrf, we can simply add the route to the protected $except property of the
+VerifyCsrfToken middleware.
+
+In addition to checking for POST parameter forms for csrf, the VerifyCsrfToken middleware also checks for the X-CSRF-TOKEN request header. We can add it to our form
+making use of the meta tag.
+
+If a controller action is particularly complex, we might find it convenient to dedicate an entire controller class to that single action. To do this,
+we may define a single __invoke method within the controller.
+When registering routes for single action controllers, we do not need to specify a controller method, Instead, we may simply pass the name of the controller to 
+the router. We may generate an nvokable controller by specifying the --invokable option on the make:controller command.
+
+We may specify middleware from our routes file by chaining the middleware() method on our Rouute facade or alternatively, we can call middleware inside of our
+controller constructors. Controllers also allow us to register middleware using a closure. This provides a convenient way to define an inline middleware
+for a single controller without defining an entire middleware class.
+
+We can add the --resource option when creating controllers to have Laravel create controllers with all the HTTP verbs set up as actions.
+When defining our routes, we can then define Route::resource and pass in our resource/collection to have every single HTTP verb that matches the route map to 
+the controller action. We can view all of our application's routes by running the route:list command.
+
+If we are making use of route model binding with our resource, we can specify a model option like -- 
+
+We can also have partial resource routes by chaining the only() and except() methods.
+When declaring resource routes that will be consumed by APIs, we will commonly want to exclude routes that present HTML templates such as create and edit.
+For convenience, we may make use of the apiResource() method to automatically exclude these routes.
+
+To quickly generate an api resource controller that does not include the create or edit methods, we can make use of the --api param when  executing the make
+controller method.
+
+We can also specify nested resources with dot notation

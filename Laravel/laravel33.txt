@@ -1,0 +1,35 @@
+To determine if an item is present in the session and is not null, we may make use of the has() method, if we want to check if the item exists whether null or not,
+we can make use of the exists() method. The push() method may be used to push a value onto a session item that is an array. The pull() method will
+retrieve and delete a single item from the session. We can also call the $request->session()->flash() method
+
+The forget() method is going to remove a piece of data from the session. We can remove multiple session items by passing an array to forget().
+We can remove all session items by caling flush()
+
+Reegenrating the session is often done to prevent session fixation attacks. Laravel automatically regenerates the session ID during authentication but
+if we intend to for whatever reason do it by ourselves, we can call $request->session()->regenerate()
+
+Notable php string functions
+- implode() - this function returns a string from the elements of an array
+- join() - this is an alias for implode. they are essentially the same thing
+- ltrim() - removes whitespace from the left side of a string
+- rtrim() - removes whitespace from the right side of a string
+- str_repeat() - repeats the string a specified number of times
+- str_replace() - 
+- str_split() - splits a string into an array
+- str_word_count()
+- strlen()
+- trim()
+- explode()
+
+PHP Array functions
+The array_flip() method flips all keys and values in an associative array
+The array_key_exists() property checks if a specified key exists in the array
+The array_keys() method returns all the keys of the array in an array
+array_map()
+array_merge() merges two arrays into one
+array_push()
+array_reverse()
+array_shift() removes the first element from the array and returns its value
+array_slice()
+array_sum()
+array_unique()

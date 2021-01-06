@@ -1,0 +1,36 @@
+Laravel allows us to easily created signed urls to named routes. These URLS have a signature hash appended to the query string which allows Laravel toverify
+that the url has not been modified since it was created. Do this via the signedRoute() method on the URL facade. If we would like to generate a temporary
+signed route that expires after a specified amount of time, we can use the temporarySignedRoute() method. The temporarySignedRoute() takes the time 
+param after the route name
+
+To verify that an incoming request has a valid signature, we may make use of the hasValidSignature() method. Alternatively, we can add the ValidateSignatureMidleware
+to the route. We can make use of the URL::defaults() method to set url information, we can do so from a closure
+
+Setting URL defaults can interfere with Laravel's handling of implicit model bindings. Therefore, we need to prioritize our middleare and make sure that it is
+called first before the SubstituteBindings middleware
+
+Since HTTP driven applications are stateless, sessions provide a way to store information about users across multiple requests. Your application's session
+configuration file is located in config/session.php file.
+
+By default, Laravel is configured to use the file session driver, which will work well for many applications. If your application will be load balanced across
+multiple servers, you should use a centralized store that all servers can access, such as a Redis or a database.
+
+The session driver configuration defines where session data will be stored for each request. Laravel ships with several great drivers out of the box.
+
+file - sessions are stored in storage/framework/sessions
+cookie - sessions are stored in secure, encrypted cookies
+databases - sessions are stored in a relational database
+memcached/redis - sessions are stored in one of those fast, cache based stores
+dynamodb - sessions are stored in AWS DynamoDB
+array - sessions are stored in a PHP array and will not be persisted
+
+If we are making use of a database to store our sessions, we can make use of the php artisan session:table to create the migration of the session table.
+There are two ways of working with sessions in Laravel. Either via the session helper of via the request instance.
+
+We can call the $request->session()->get() method to get an item from the session. We can pass in an optional second parameter which will be returned if said
+item does not exist in the session. 
+We can also make use of the global session() helper, we can retrieve items from the session like session(), we can also store data in the session by passing in
+an associative array.
+
+If we want to retrieve all the data in the session, we can make use of the all() method. We can determine if a particular item exists in the session with the has()
+method like $request->session()->has() or $request->session()->get(). We can put data in the session with the put() method
