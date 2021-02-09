@@ -1,0 +1,33 @@
+A polymorphic relationship allows the child model to belong to more than one type of model using a single association.
+Take note of the morphTo() and morphOne() methods. The way polymorphism works is that we specify an _id and _type on the child model.
+
+We can then define the method on the child model and return $this->morphOne(). By default, Laravel is going to use the fully qualified class name to store
+the type of the related model. A good approach would be to decouple these values from the application's internal structure.
+
+We can do this by defining a morphMap on the Relation class. We can register it in the boot() method of our app service provider class.
+When retrieveing relationships, we can limit our results based on the existence of a relationship. We can do this by making use of the has() and orHas() method.
+Just like how we can make use of the has() method, we can also make use of the doesntHave() method
+
+Sometimes we may want to count the number of related models without having to load it. We can do this by making use of the withCount() method and passing in the 
+name of the relationship. The withCount method will place a {relation}_count attribute on each model. By passing an array to the withCount() method, we can add the 
+counts of multiple relations.
+
+Using the loadCount() method, we can get the count of the relationship after the model has already been retrieved.
+
+All Eloquent methods that return more than one model result will return instances of the Illuminate\Database\Eloquent\Collection class including results retrieved
+via the get method or accessed via a relationship. Collections are much more powerful than arrays and expose a variety of map/reduce operations that may be 
+chained using an intuitive interface. We can even chain map() calls on them.
+
+The contains method may be used to determine if a given model instance is contained by the collection. This method accepts a primary key or model instance.
+The diff() method returns all of the models that are not present in the given collection.
+The except() method returns all of the models that do not have the given primary keys
+The find() method returns that model that has a primary key matching the given key. If a model instance is passed, find will attempt to find a model
+matching the primary key. If key is an array of keys, find will return all models which have a primary key in the array.
+The intersect method returns all of the models that are present in both collections.
+The load method loads the given relationships for all models in the collection.
+The modelKeys() method returns an array of all the primary keys in the collection
+The makeVisible() method makes atributes visible that are typically hidden on each model in the collection.
+The makeHidden() method makes attributes hidden that are typically visible on each model in the collection.
+The only() method returns all of the models that have the given primary key
+The toQuery() method returns an Eloquent builder instance containing a whereIn, which we can build upon  by simply chaining other builder commands
+The unqiue() method returns all of the unique models in the collection

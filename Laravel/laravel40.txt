@@ -1,0 +1,27 @@
+Accessors, mutators and attribute casting allow you to transform Eloquent attribute values when you retrieve or set them on model instances.
+An accessor transforms an Eloquent attribute when it is accessed. An accessor transforms an Eloquent attribute value when it is accessed. To define an accessor,
+create a get{Attribute}Attribute method on your model where {Attribute} is the "studly" cased name of the column you wish to access.
+
+A mutator transforms an Eloquent attribute value when it is set. To define a mutator, define a set{Attribute}Attribute on your model.
+Attribute casting provides functionalitiy similar to accessors and mutators without requiring you to define any additional methods on your model. Instead, your 
+model's $casts property provides a convenient method of converting attributes to common data types. The $casts property should be an array where the keyis the name
+of the attribute being cast and the value is the type you wish to cast the column to. The supported cast types are
+- array
+- boolean
+- collection
+- date
+- datetime
+- decimal
+- double
+- encrypted
+- encrypted:array
+- encrypted:collection
+- encrypted:object
+- float
+- integer
+- object
+- real
+- string
+- timestamp
+
+Attributes that are null will not be cast.
