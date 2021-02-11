@@ -1,0 +1,38 @@
+Eloquent models are protected against mass assignment vulnerabilities by default. The updateOrCreate method. To delete a model, we can call the delete() method on 
+it. We can also delete models by the static destroy() method. We can even pass in arrays to delete multiple model objects.
+In addition, Laravel can also soft delete models. When  models are soft deleted, they are actually not deleted, rather a deleted_at attribute is set on the model
+indicating the date and time at which the model was deleted. To enable soft deletes for a model, add the Illuminate\Database\Eloquent\SoftDeletes trait to your
+model. You also need to add the deleted_at column to your database table. To determine if a model instance has been soft deleted, we can make use of the
+trashed() method. To restore a soft deleted model, we can call the restore() method on a model instance.
+
+We can make use of the withTrashed() method on Eloquent models to include soft deleted models. We can make use of the forceDelete() method to permanently
+remove a soft deleted model from the database table. The onlyTrashed() method will retrieve only soft deleted models.
+
+We may create an unsaved copy of an existing model instance using the replicate() method. This method is particularly useful when you have model instances
+that share many of the same attributes.
+
+Global scopes allow you to add constraints to all queries for a given model. Writing global scopes involves defining a class that implements the 
+Illuminate\Database\Eloquent\Scope interface. The Scope interface requires you to implement one method;apply. To assign a global scope to a model, we need to override
+the model's booted method and invoke the model's addGlobalScope() method. The addGlobalScope takes in an instance of your scope as its only argument.
+We can also make use of anonymous global scopes by passing a closure to the static::GlobalScope() method, the first parameter should be the name of the scope,
+while the second parameter should be a closure that take in a Builder type hinted dependency. If you would like to remove a global scope for a particular query
+we can chain the withoutGlobalScope method to it. If you would like to remove all or some of the query's global scopes, we can use the withoutGlobalScopes method
+on the query.
+
+Local scopes allow you to define common sets of query constraints that you may easily re-use throughout your application. Just like how if I have data that
+is frequently shared across my application, I can easily define a View composer or creattor. We can define local scopes for queries that are regularly run.
+Simply define a method in the Eloquent model and prefix it with scope. It's almost like defining our own custom query builder instance.
+
+Sometimes we may wish to define a scope that acceps parameters. To get started, just add your additonal parameters to your scope method's signature
+
+Sometimes, we may need to quickly check if two models are the same. The is method can be used to quickly verify if two models have the same primary key, table
+and database connection
+
+Eloquent models dispatch several events llowing you to hook into the following moments in a model's lifecycle: retrieved, created, creating, updating, updated,
+saving, saved, deleting, deleted, restoring, restored, and replicating
+
+To start listening for model events, define a $dispatchesEvent property on your Eloquent model. This property maps various points of the Eloquent model's
+lifecycle to your own event classes.
+
+Intead of using custom event classes, we can register closures that execute when various event models are dispatched. Typically, we should register these
+closures in the booted() method of our Eloquent model.

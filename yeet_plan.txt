@@ -1,0 +1,43 @@
+Yeet Planning - What exactly do I intend to build
+
+A reminder tool for stocks and cryptocurrencies. It is going to have two components, a web application and an accompanying telegram bot. The web application will
+enable users to signup and subscribe to stocks and cryptocurrencies. It is essentially a subscription based system. It is going to have the following tables
+
+- users
+id - integer
+name - varchar/string
+email - varchar/string | unique
+avatar - varchar/string | nullable
+activation_token - varchar/string | nullable
+password - varchar/string
+telegram_id - integer | nullable 
+created_at - datetime
+updated_at - datetime
+
+- stocks
+id - integer
+symbol - varchar/string | unique
+created_at - datetime
+updated_at - datetime
+
+- cryptocurrencies
+id - integer
+symbol - varchar/string | unique
+created_at - datetime
+updated_at - datetime
+
+subscriptions
+id - integer
+user_id - integer
+market_id - integer
+market_type - string
+created_at - datetime
+updated_at - datetime
+
+The Telegram bot will enable the user to receive notifications about all the stocks and cryptocurrencies he/she is subscribed to. The user can authenticate via the bot.
+To avoid having to query the database each time, once you authenticate, the user's telegram ID is added to the JSON file.
+
+- The user can authenticate via the bot
+- The user can view a list of all the symbols he is subscribed to
+- The user can change their telegram details
+- The user can receive notifications about their subscriptions

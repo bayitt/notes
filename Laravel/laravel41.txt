@@ -1,0 +1,39 @@
+At its core, Laravel's authentication facilities are made up of guards and providers. Guards define how users are authenticated for each request. For example, we
+have the Laravel session guard which maintains state using session storage and guards. Providers define how users are retrieved from your persistent storage.
+Your application's authentication configuration file is located at config/auth.php.
+
+By default, Laravel adds a User.php Eloquent model. When building the schema for said model, make sure that the password column is at least 60 characters in length.
+Also, verify that the users table contains a nullable remember_token string of 100 characters
+
+Laravel includes built in authentication and session services which are typically assessed via the Auth and Session facades.
+The attempt method on the Auth facade is normally used to handle authentication attempts from your application's login form. If authentication is successful, we need
+to regenerate the user's session to avoid session fixation attempts.
+
+The intended method provided by Laravel's redirector will redirect the user to the URL they were attempting to access before being intercepted by the authentication
+middleware
+
+If we wish, we can also specify extra conditions to the authentication query in addition to the user's email and password, we can do this by passing in an array
+to the attempt() method on the auth facade.
+
+The configuration for Laravel's database services is located in your application's config/database.php file. For convenience, Laravel supports a single database url
+option instead of having to type out all of the configuration options one by one. Just set the DATABASE_URL option in the env file.
+
+When writing our database configuration, the sticky option is an optional value that can be allowed the immediate reading of records that have been written to the
+database during the current request cycle. Once we have configured your database connection, you may run queries using the DB facade. The DB facade provides 
+methods for each type of query: select, update, insert, delete and statement. The first method passed to the select method is the SQL query while the second 
+argument is any parameter bindings that need to be bound to the query. The select method will always return an array of results. Each result within the array will 
+be a PHP stdClass object representing an object from the database.
+
+We can also make use of named bindings when executing the query and pass in an associative array as the second parameter.
+The update method always returns the number of rows affected by the query. Like update, the delete method returns the number of rows affected
+
+Some database statements do not return any value. For statements like this we can make use of the statement method
+
+If your application defines multiple connections in your config/databae.php configuration file, we can access each connection via the connection method provided
+by the db facade. The connection name passed ti the connection method should be one of the connections listed in config/database.php
+We may access the raw, underlying PDO instance of a connection using the getPDO method on a connection instancw
+
+If we would like to specify a closure that is executed for every single query executed by our application, we may invoke the listen() method on the DB facade.
+We can do this in the boot() method of our service provider.
+
+

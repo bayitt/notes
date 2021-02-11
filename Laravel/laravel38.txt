@@ -1,0 +1,44 @@
+Eloquent makes managing and working with database relationships easy and supports a variety of common relationships like
+- One to One
+- One to many
+- Many to Many
+- Has One Through
+- Has Many Through
+- One To One (Polymorphic)
+- One To Many (Polymorphic)
+
+Eloquent relationships are defined as methods on your Eloquent model classes. 
+To define a one-to-one relationship, we need to define a method in the model and return $this->hasOne(). Once the relationship is defined, we may retrieve the
+related record using Eloquent's dynamic properties. Dynamic properties allow you to access relationship methods as if they were properties defined on the model.
+
+Eloquent determines the foreign key of the relationship based on the parent model. If we want to use a different field as the foreign key, simply pass it in as
+the second parameter. If you would like the relationship to use a different primary key other than the id or $primaryKey defined, we can specify a third 
+parameter. We can define the inverse of a hasOne relationship using the belongsTo.
+
+One To Many relationships are defined using the $this->hasMany() method
+
+The belongsTo, hasOne, hasOneThrough and morphOne relationships allow you to define a default model that will be returned if the given relationship is null.
+This pattern is often referred to as the NullObject pattern. For example with models, if the relationship returns null, we can chain a withDefault() method.
+This withDefault() method is going to return an empty object of the model. If we want to populate it with some data, we can pass in an array just like how we
+would do when using the static create() method
+
+A hasOneThrough model indicates that the declaring model can be matched with one instance of another model by proceeding through a third model.
+The hasOneThrough() method takes two parameters, the first parameter is the final model that we wish to access, while the second parameter is the intervening 
+model between them.
+
+The hasManyThrough() relation works much in the same way as the hasOneThrough(). The first parameter represents the model of the final class to obtain while the
+second class represents the intervening model
+
+To define many to many relationships, three database tables are needed: users, roles and a role_user table(pivot table). The pivot table is derived from an 
+alphabetic concatenation of both model names and must contain in this case, a user_id and role_id table
+
+Many to Many relationships are defined by writing a method that returns the results of the belongsToMany() method. We can specify the name of the table by passing
+in a second parameter to the belongsToMany method. The third argument is the name of the foreign key of the model on which you are calling the method, the
+fourth argument is the 
+
+If we want to access the pivot or intermediate table, we can do so via the pivot() method. If we want to retrieve the pivot table with timestamps, we can simply
+add the withTimeStamps() method.
+
+We can also customize the pivot attribute name, we can do this with the as() method
+
+We can also filter the results returned by belongsToMany relationship queries using wherePivot, wherePivotIn and wherePivotNotIn methods

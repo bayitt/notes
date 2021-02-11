@@ -1,0 +1,31 @@
+Available methods on the schema builder
+- bigIncrements()
+- bigInteger()
+- binary() - blob
+- boolean()
+- char()
+- datetime()
+- date
+- double
+- increments()
+- integer()
+- morphs
+- string() 
+- text()
+- timestamps()
+
+Column Modifiers
+- nullable()
+- autoIncrement()
+- default()
+- from() - sets the starting value of an autoincrementing column
+- unsigned()
+
+Before modifying columns, we must make use of the doctrine/drbal dependency. We can update column attributes making use of the change() method.
+To rename a column, we make use of the renameColumn() method on the Schema facade. To delete a column, we make use of the dropColumn() method.
+
+Laravel provides several convenient methods related to dropping common types of columns
+dropMorphs()
+dropRememberToken()
+dropSoftDeletes()
+dropTimestamps()

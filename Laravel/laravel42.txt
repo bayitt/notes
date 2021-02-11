@@ -1,0 +1,35 @@
+We can make use of the transaction method provided by the DB facade to run a set of operations within a database transaction. The transaction method accepts an
+optional second argument which defines the number of times a transaction should be retried when a deadlock occurs. Once these attempts have been exhausted,
+an exception will be thrown. If we want to connect to our database's CLI, we can make use of the db Artisan command.
+
+The Laravel Schema facade provides database agnostic support for creating and manipulating tables across all of Laravel's supported database systems.
+We may make use of the php artisan make:migration command to generate a database migration. The --table and --create options may be used to indicate the name of
+the table and whether or not the migration will be creating a new table. 
+
+As build your application, you may accumulate more and more migrations over time. This can lead to the database/migrations directory becoming bloated with
+potentially hundreds of migrations. If we like, we can squash our migration into a single file by running the php artisan schema:dump command.
+
+A migration class contains two methods up and down. The up method is used to add new methods, columns and indexes to your databases while the down method should
+reverse the operations performed by the up method.
+
+To run all of your application's outstansing migrations, run the php artisan migrate command. Some migration operations are destructive meaning that they may cause
+you to lose data. In order to protect you from running these commands against your production database, you will be prompted for confirmation before those commands
+are executed. To force these commands to run without a prompt, use the --force flag
+
+To roll back the latest migration, we are going to run the php artisan migrate:rollback command. If we want to roll back the last 4 migrations, we are going add
+the --step option, something like php artisan migrate:rollback --step=4. The migrate:reset command is going to roll back all of your application's 
+migrations.
+
+The migrate:refresh command is going to rollback all your migrations and re run them. It essentially, recreates your database.
+
+We can also roll back and re migrate a limited number of migrations by adding the --step option
+
+To create a new database, use the create method on the Schema facade. The first parameter of the create method is the name of the table while the second parameter
+is a closure that accepts a Blueprint object
+
+We can check for the existence of tables or columns making use of the hasTable() and hasColumn() methods. The table() method may be used to update existing tables.
+It takes the same parameters as the create() method
+
+To rename an existing table, we make use of the rename() method on the Schema facade.
+
+To drop an existing table, we make use of the drop() or dropIfExists() method
