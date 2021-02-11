@@ -1,0 +1,16 @@
+React JSS integrates JSS with our React app to style components. It helps us to write css with JS and allows us to describe styles in a more descriptive, 
+conflict-free and reusable way.
+
+Benefits compared to using the Core JSS Package
+- Dynamic Theming - allows context based theme propagation and runtime updates
+- Critical CSS Extraction - only CSS from rendered components gets extracted
+- Lazy evaluation - style sheets are created when a component mounts and removed when a component is unmounted
+- The static part of the stylesheet is going to be shared among all elements
+- Function values and rules are updated automatically 
+
+We can define our react-jss styles by using createUseStyles function from react-jss
+React JSS enables us to make use of props in our styles easily
+
+Javascript provides a matchMedia method on the window object. The matchMedia method returns a MediaQueryList object representing the parsed results 
+of the specified media query. Basically, this MediaQueryList object is what we actually use to determine when the document matches the media query,
+or to monitor a document to detect when it matches or stops matching the media query.

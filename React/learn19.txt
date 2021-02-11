@@ -1,0 +1,20 @@
+Context provides a way to pass data through the component tree without having to pass props manually down at every level.
+Every COntext object comes with a Provider React component that allows consuming components to subscribe to context changes. The Provider component
+accepts a value prop to be passed to consuming components that are descendants of this Provider. Providers can also be nested to override values deeper 
+within the tree. All consumers that are descendants of a provider will re render whenever the Provider's value prop changes.
+
+The contextType property on a class can be assigned a context object created by React.createContext(). This lets you consume the nearest current value of that 
+Context type by using this.context.
+
+Context.Consumer is a React component that subscribes to context changes. This lets you subscribe to a context within a function component. It requires a function
+as a child. The function receives the current context value and returns a React node.
+
+Error boundaries are React components that catch Javascript errors anywhere in their child component tree, log those errors and display a fallback UI
+instead of the component tree thayt crashed. Error boundaries catch errors during rendering, in lifecycle methods and in constructors of the tree below them.
+
+Error boundaries do not catch errors for event handlers, asynchronous code, server side rendering and errors thrown in the error boundary itself.
+
+A class component becomes an error boundary if it defines either or both of the lifecycle methods static getDerivedStateFromError() or componentDidCatch().
+Use getDerivedStateFromError() to render a fallback UI and componentDidCatch() to log error information.
+
+Only class components can be error boundaries/
