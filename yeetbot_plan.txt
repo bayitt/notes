@@ -1,0 +1,9 @@
+Yeetbot plan
+Accompanying bot for the Yeet app. Written in Python via the python-telegram-bot library. 
+What should the bot be able to do ?
+- Enable users to set their telegram IDs (authenticate)
+- Display a list of all stocks and cryptocurrencies they are subscribed to
+- Display a list of stocks users are subscribed to
+- Display a list of cryptocurrencies users are subscribed to
+- Message users every night at 8:00PM with stock and trade price roundups
+- Update their Telegram IDs

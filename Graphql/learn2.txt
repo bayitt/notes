@@ -1,0 +1,8 @@
+GraphQL requests are executed on the server with the following information. The schema of the GraphQL service, GraphQL document which contains operation definitions
+like selection sets and fields. The server goes through the following steps
+- Parsing the document
+- Identify the operation to execute (if more than one)
+- Validate the request and returns errors if fails
+- Execute the operation (query/mutation/subscription)
+
+Imagine resolvers as functions that contain instructions on how to process a particular field based on the context.
