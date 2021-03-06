@@ -1,0 +1,37 @@
+Instead of defining your own resolver manually, you can just rely on Lighthouse to build the query for you. The @all directive will assume the name of your model
+to be the same as the to be the same as the return type of the Field you are trying to resolve and automatically uses Eloquent to resolve the field.
+
+We can leverage the @paginate directive to query a large list of models in chunks. Lighthouse provides directives such as @eq to enhance your queries with additional
+constraints. Directives that query models such as @all or @first, allow us to reuse scopes, simply pass in an array to the scopes.
+The easiest way to create data on your server is to use the @create directive
+We can also update a model with the @update directive
+
+Use the @upsert directive to update a model with a given id or create it if it does not exist
+Similarly, we can delete users making use of the @delete directive
+
+We can also define Eloquent relationships in our schema by simply adding the name of the relationship as a field in the type definitions
+Use the @hasOne directive to define a one-to-one relationship between two types in your schema. The inverse relationship can be defined through the @belongsTo
+directive
+Also make use of the @hasMany directive to define one-to-many relationships between types in our schema
+To define many-to-many relationships we make use of the @belongsToMany directive to set it up
+
+When you define a relation, Lighthouse assumes that the field and the relationship method have the same name. If you need to name your field differently, simply
+specify the name of the relationship as a named parameter to the hasOne, belongsTo, hasMany or belongsToMany directives.
+
+Lighthouse reads your schema from a single entrypoint, typically schema.graphql. 
+With Lighthouse, we can import our types by making use of the #import keyword
+
+You know how we typically specify all our queries inside of our root query type definition. Instead of doing that, we can simply extend our Query type and the 
+queries that we specified inside of that are merged with the original Query definition.
+
+As all GraphQL requests are served at a single HTTP endpoint, middleware added through the lighthouse.php config will run for all queries against your server
+Make use of the @guard directive to require authentication for a single field. If you need to guard multiple fields, use @guard on a type or an extend type
+definition
+
+Lighthouse provides a very simple way to return the currently authenticated user. Simply add a query field that returns your user object type and decorate it
+with the @auth directive.
+
+Lighthouse allows you to use Laravel's validation for your queries and mutations. The simplest way to do this is by making use of the @rules directive.
+We can also customize the error message for a particular argument.
+When you are passing in an array as an argument to a field, we can apply validation on the array itself, using @rulesForArray. We can also combine it
+with the normal @rules to validate the contents of the array

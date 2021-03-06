@@ -1,0 +1,3 @@
+Validator classes can be reused on field definitions or input types within your schema. We make use of the @validator directive with them. Lighthouse makes use
+of a simple naming convention for validator classes, simply make use of the name of the input type and append Validator. Generate the validator with the
+php artisan lighthouse:validator command. In the Validator class, all the rules() method has to do is to return an array of rules;

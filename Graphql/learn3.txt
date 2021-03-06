@@ -1,0 +1,36 @@
+Apollo is a platform for building a data graph, a communication layer that seamlessly connects your application clients (such as React and ios) to your backend 
+services.
+
+A data graph sits between application clients and backend services, facilitating the flow of data between them.
+Every data graph uses a schema to define the types of data it includes. Your GraphQl schema defines what types of data a client can read and write to your 
+application. Schema are strongly typed. Schemas in GraphQL are written in GraphQL's schema definition language. Most of the definitions in a GraphQL schema
+are object types. Object types are similar to the concept of models in backend architecture. 
+
+Each type is a collection of fields and each field has a type of its own. A field's type can either be an object type or a scalar type. A scalar type is a 
+primitive type like ID, String, Boolean, Int or Float.
+
+We define our data graph's supported queries as fields of a special type called the Query type.
+To enable clients to modify data, our schema needs to define some mutations.
+
+Apollo provides a DataSource class that we can extend to handle interaction logic for a particular type of data source. 
+The Promise.all method takes in an array of promises and returns a single promise that resolves to an array of the results.
+A resolver is a function that is responsible for populating the data for a single field in your schema. A resolver function returns one of the following,
+data of the type required by the resolver's corresponding schema field. A promise that fulfills
+
+Resolver functions can opionally accept four positional arguments
+parent - return value of the resolver for this field's parent
+args - all GraphQL arguments provided for this field
+context - information shared across all resolvers that execute for a particular operation
+info - information about the execution state of the operation
+
+With resolvers, we can pass in an _ to the first parent parameter to indicate that we are not making use of it, while we can pass in an __ to the second
+argument to indicate that we are not making use of it.
+
+We can import ApolloClient, gql and NormalizedCacheObject from '@apollo/client'. The ApolloClient requires two parameters, a cache object and uri
+pointing to the backend. We can easily destructure the data, loading and error params from a useQuery response
+
+ApolloClient provides a fetchMore helper function to assist with paginated queries. It enables you to make the same query with different values for variables.
+By default, Apollo Client stores query results in its cache. If you query for data that is already in the cache, Apollo Client can return that data without
+needing to fetch it pver the network, but if we want the data to always be fresh, we can easily specify a fetchPolicy of network-only meaning that it wont be cached,
+
+The default fetch policy is cache first
