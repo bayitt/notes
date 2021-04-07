@@ -1,0 +1,8 @@
+First Contentful Paint
+This is when the browser renders the first bit of content from the DOM, providing the first bit of feedback to the user that the page is actually 
+loading.
+
+First Input Delay
+FID measures the time from when a user interacts with a page (i.e when they click a link, tap on a button or use custom, Javascript powered control)
+to the time when the browser is actually able to begin processing event handlers in response to that interaction. The lower the better.
+To provide a good, user experience, sites should be able to provide a good FID of 100 milliseconds or less.
