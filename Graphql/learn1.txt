@@ -1,0 +1,39 @@
+GraphQL is a modern alternative to the REST based architecture. It allows for requesting specific data that a client needs departing from the fixed data structure.
+approach. At its core, GraphQL is a language for querying databases from client side applications. On the backend, GraphQL specifies to the API how to present 
+the data to the client.
+
+GraphQL Basics
+A GraphQL server provides a client with a predefined schema - a model of the data that can be requested from the server. In other words the schema serves as the 
+middleground between the client and the server while defining how to access the data.
+This schema is written in schema definition language. The basic components of a GraphQL schema are called types, objects that can be queried on the server and
+the fields that they have. The schema defines what kinds of queries are allowed to be made.
+
+Once a GraphQL operation reaches the backend application, it is interpreted against the entire schema there, and resolved with data for the front end application. 
+Based on the graph data modeling with the schema at its core, Graphql has three primary operations
+- Query for reading data
+- Mutation for writing data
+- Subscription for automatically receiving real time data over time.
+
+REST endpoints are similar to GraphQL fields, as they are entry points into the data that calls functions on the server.
+A basic GraphQL application is comprised of a GraphQL client, GraphQL gateway, GraphQL server, and a database-to-GraphQL server
+The GraphQL query is sent as a string inside of a JSON object. The response object is always inside of the data key.
+
+Think of the data your API returns as a graph.
+Every GraphQL request, success or error should return a 200. The content of a GraphQL request string is called the GraphQL document.
+
+A GraphQL field describes a discrete piece of information. This information could be simple or complex with relationships between data.
+GraphQL queries can also be parameterized with variables for easy reuse and construction of queries on the client side. The variables are defined at the top of the
+operation. Variables in Graphql start with a $ sign much like in php.
+
+GraphQL Aliases
+Fragments make GraphQL even more reusable. If there are some parts of your document that reuses the same set of fields on a given type, then fragments can be 
+powerful.
+
+Directives are identifiers which add additional functionality without affecting the value of the response but can affect what response comes back from the 
+server. Example directives are @deprecated @skip @include.
+
+A GraphQL server supports introspection over its schema using the same GraphQL query language. A server exposes the following introspection queries on the Query
+operation type. __schema, __type, __typename. Introspection queries start with __.
+
+If we want to get something back from a mutation, we can simply make use of the returning keyword.
+! in Graphql means that an input is mandatory.

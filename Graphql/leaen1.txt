@@ -1,0 +1,33 @@
+In order to install Lighthouse in our Laravel project, we are going to run the following command - composer require nuwave/lighthouse. Lighthouse includes a 
+default schema to get you going right away. Publish it using the following command - php artisan vendor:publish --tag=lighthouse-schema.
+
+Lighthouse comes with sensible configuration defaults that work out of the box. Should you feel thhe need to change your configuration, we can publish the
+configuration file with php artisan vendor:publish --tag=lighthouse-config. This configuration file will be placed in lighthouse/config.php.
+
+A schema defines the capabilities of a GraphQL server. Much like a database schema, it describes the structure and the types your API can return.
+Types are the primary building blocks of a GraphQL schema. They define the capabilities of your API and the kind of data you can get from it.
+There can be up to 3 special root types in a GraphQL schema. They define the root fields that a query may have.
+
+Each GraphQL schema must have a Query type which contains the queries offers. Think of queries as REST resources which can take arguments and returns a fixed result.
+
+Different types
+- Object Type - These define the resources of your API and are closely related to Eloquent models. They must have a unique name and contain a set of fields.
+- Scalar types are the most basic elements of a GraphQL schema. There are a few built in scalars such as String or Int. We can define our own scalars by running 
+php artisan lighthouse:scalar 
+- Enums are types with a restricted set of values. They are defined as a list of UPPERCASE string keys. We can define the actual values via the @enum directive
+- Input types can be used to describe complex objects for field arguments. They are similar to object types but are defined with the input keyword
+- The GraphQL interface type is similar to a PHP interface. It defines a set of common fields that all implementing types must also provide.
+Object types can implement interfaces given that they provide all of its fields.
+- A union is an abstract type that simply enumerates other Object types. They are similar to interfaces in that they can return different types but they cannot have 
+fields defined
+
+The entry points to any GraphQL API are the fields of the root types Query, Mutation and Subscription. Every field has a function associated with it that is called
+when that field is requested as part of a query. This function is called a resolver. By default, Lighthouse looks for a class with the capitalized name of the field
+in App\\GraphQL\Queries or App\GraphQL\Mutations and calls its __invoke function with the usual resolver arguments. lighthouse:query and lighthouse:mutation
+commands. The second argument of the resolver function is an associative array of the arguments that are passed to the query. We can even provide default
+arguments to our queries and mutations.
+
+The first argument of each resolver is the return value of the parent field.
+Directives are the primary way to add functionality to our GraphQL schema. Directives always begin with an @symbol followed by a unique name
+
+Eloquent models typically map directly to GraphQL object types.
