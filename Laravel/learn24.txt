@@ -1,0 +1,35 @@
+By default, a newly instantiated Eloquent model, will not contain any values, in order to specify some default attributes, we can do so by specifying an
+$attributes property on the model. If you already have an exisiting instance of a model from the database, you may refresh the model by making use of the fresh()
+and refresh() methods, the fresh() method is going to retrieve the model again from the database. 
+
+Laravel provides seveal useful methods like isDirty(), isClean(), wasChanged() and getOriginal(). We can make use of the truncate() method to delete all of the
+a model's associated database records. To determine if a given model instance has been soft deleted, we can make use of the trashed() method. To restore a soft
+deleted model, we can make use of the restore() method. The SoftDeletes trait also provides a withTrashed() method, with which soft deleted models can be included
+in queries. 
+
+We can make use of the forceDelete() method to remove a soft deleted model.
+
+We can create an unsaved copy of an existing model instance using the replicate() method.
+
+Writing a global scope is as simple as writing a class that implements the Illuminate\Database\Eloquent\Scope interface. The Scope interface requires that you
+implement one method apply(). The apply method may add where constraints or other types of clauses to the query.
+
+To assign a global scope to a model, you need to override the booted() method of the model and invoke the model's addGlobalScope method
+
+If you would like to remove a global scope for a model, we can make use of the withoutGlobalScope method on a query.
+
+We can easily define local scopes on our models, local scopes refer to queries that we frequently make, we can do this by defining a method on our model
+and prefixing it with scope
+
+We can also pass in parameters to our local scopes.
+
+We can also make use of the is() and isNot() methods to determine if two models are the same or not.
+
+If you have like 100 migrations, you can squash them all into one file by running the php artisan schema:dump command.
+
+php artisan migrate:rollback rolls back the latest migration, I can add the --step option to specify the number of previous migrations to roll back
+php artisan migrate:reset will rollback all your migrations
+php artisan migrate:refresh will rollback your migrations and re run migrate on them
+migrate:fresh will drop all tables and re-run the migration
+
+We can make use of the hasTable and hasColumn methods on the Schema facade to check for the existence of a table and a column on a table

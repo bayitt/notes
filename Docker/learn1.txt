@@ -1,0 +1,27 @@
+Docker
+Compatibility Matrix issue is called the matrix from hell. With Docker we can containerize applications and run each service with its own dependencies in separate containers.
+
+- Containers
+These are completely isolated environments that can have their own processes. They are self isolated and all doing their own seprate things except that they share the same OS kernel
+They are not a new concept and have existed for years prior to Docker. Different types of containers are LXC and LXD. Docker uses LXC containers.
+
+- Operating Systems
+Operating systems like Ubuntu, Fedora all consist of the same thing, an OS kernel and a set of software. The OS kernel is responsible for interacting with the hardware. While the OS kernel
+is the same, in this case Linux, it is the set of software on top of it, that makes all these operating systems different. These software may consist of a user interface, file system, drivers
+and the likes
+Debian, Fedora, CentOS are all different distributions of the same OS kernel (Linux).
+
+- Differences between Containers and Virtual Machines
+While with containers, we have the hardware infrastructure and then the OS kernel and then Docker installed on the OS and finally, the set of software running inside of the container inside of Docker
+With Virtual Machines, we have the Hypervisor communicating with the Hardware infrastructure and then we have the OS kernel inside of the Virtual Machine
+
+Many companies have their applications available as packages in a registry called DockerHub
+
+- Containers vs Images
+An image is like a package or template of an application. They are used to create one or more containers. While containers are running instances of images that are isolated and have their own environments and set of processes
+
+Docker has two editions
+- The Community Edition (free)
+- The Enterprise Edition 
+
+The Community Edition is available on Linux, Mac and Windows and also available on cloud platforms like AWS and Azure

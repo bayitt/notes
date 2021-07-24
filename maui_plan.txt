@@ -3,12 +3,13 @@ What do I want to build?
 A platform on which I can record my daily expenses and access and generate information based on said responses. Every month, users should be able to upload their
 income for the month and upload expenses for the month. Every single new expense that they upload should deduct from the overall amount. 
 
+- Users should be able to view expenses for a particular day
 - Users should be able to view expenses for a particular week
 - Users should be able to view expenses for a particular month
 - Users should be able to compare two weeks
 - Users should be able to compare two months
 - Users should be able to download expenses for any time period in excel format
-- Users should be able to view analytics such as items they have spent the most on, overall amount deposited on the platform, overall amount spent
+- Users should be able to view analytics such as items they have  spent the most on, overall amount deposited on the platform, overall amount spent
 - Users should be able to receive emailed notifications about their spending habits at the end of every month
 
 Database

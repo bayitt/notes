@@ -1,0 +1,47 @@
+For Chakra UI to work properly, you need to set up the ChakraProvider at the root of your application. If you need to customize the default chakra theme to
+match your design requirements. ChakraUI provides an extendTheme function that deep merges the default theme with your customizations
+The Chakra-UI provider takes in some default props
+resetCss
+theme
+colorModeManager
+portalZIndex
+
+npm install @chakra-ui/icons
+
+Chakra UI Design Principles
+- Style props - All component styles can be overriden or extended via style props to reduce the use of the css prop or styled(). Compose new components from Box.
+- Simplicity
+- Composition
+- Accessibility
+- Dark Mode
+
+Style props are a way to alter the style of a component simply by passing props to it
+Margin/Padding
+Colors/Background Color
+- color
+- bg, background
+- bgColor
+- opacity
+
+Chakra UI also includes a Text component that we can make use of to add text to our app
+- fontFamily
+- fontSize
+- fontWeight
+- lineHeight
+- letterSpacing
+- textAlign
+- textTransform
+- textDecoration
+
+Layout, Width and Height
+- w, width
+- h, height
+- minW, minWidth
+- maxW, maxWidth
+- minH, minHeight
+- maxH, maxHeight
+- d, display
+- verticalAlign
+- overflow
+- overflowX
+- overflowY

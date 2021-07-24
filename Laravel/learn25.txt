@@ -1,0 +1,13 @@
+We have Schema::create() and Schema::table() methods. We can rename tables making use of the Schema::rename($from, $to) methods.
+
+Column Modifiers
+- nullable()
+- after()
+- autoIncrement()
+- default()
+- first()
+
+The after() method is also available, meaning that we can make use of it not just as a column modifier but also as a method.
+Anytime you want to change a column, after making your change, simply chain change() to it.
+
+Make use of the renameColumn($from, $to) to rename a column in a table. Make use of the dropColumn() method to drop a column from a table

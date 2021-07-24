@@ -1,0 +1,26 @@
+GraphQL Subscriptions
+Subscriptions are a way to push data from the server to the clients that choose to listen to real time messages from the server. Subscriptions are similar to
+queries in that they specify a set of fields to be delivered to the client, but instead of delivering a single answer, a result is sent everytime a particular
+event happens on the server without the client needing to resend that request.
+
+This can be achieved when the client opens a bi-directional communication channel with the server and sends a subscription query that specifies which event it is
+interested in. When an event is triggered, the server executes the stored GRAPHQL query, and the result is sent through the same communication channel established
+byt the client. 
+
+The client can unsubscribe by sending a message to the server. The server can also unsubscribe at any time due to errors or timeout. Another difference between
+queries/mutations and subscriptions is that subscriptions are stateful, and thus require maintaining the GRAPHQL document, variables and context over the
+lifetime of the subscription
+
+Because subscription updates are usually pushed by the server (instead of polled by the client), they make use of the websocket protocol instead of HTTP
+
+Nuwave/Lighthouse Subscription Examples
+The first step is to add the subscriptions service provider to the providers array in config/app.php.
+Then, in the lighthouse config in lighthouse.php, we need to set the subscriptions version to 2, to the latest.
+
+Subscriptions do not expire by themselves. Unless you delete a subscription, it will continue to broadcast events after the client has disconnected. The 
+easiest way to expire subscriptions automatically is to use the env LIGHTHOUSE_CACHE_TTL to set an expiration time in seconds.
+
+Define your subscriptions as fields on the root Subscription type in your schema.
+All subscription field classes must implement the abstract class NuWave\Lighthouse\Schema\Types\GraphQlSubscription and implement two methods authorize and filter.
+
+The currently logged in user can be accessed via the $subscriber->context->user() method

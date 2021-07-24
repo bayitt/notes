@@ -1,0 +1,36 @@
+What do I want to build ? 
+
+Links - A Cliq style application in which we can have teams and within the teams we can have chats and group chats. 
+
+Flow - Users can join the app and signup/create a team. Then, they can invite other members to their team. Users can chat with other members in their team
+and in group chats that belong to specific teams
+
+Database Structure
+
+Teams							Conversations
+- id - int						- id - int
+- admin_id - User Foreign Key				
+- name - string
+- description - string
+- picture - string
+- created_at - string
+- updated_at - string
+
+Users
+- id - int
+- first_name - string
+- last_name - string
+- email - string
+- email_verified_at - timestamp | NULL
+- avatar - string | NULL
+- created_at - timestamp
+- updated_at - timestamp
+
+Rooms
+- id - int
+- admin_id - User Foreign Key
+- name - string
+- picture - string
+- members - JSON (Array of User IDs)
+- created_at - timestamp
+- updated_at - timestamp

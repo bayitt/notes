@@ -1,0 +1,20 @@
+Laravel includes the ability to seed your database with test data using seed classes. All seed classes are stored in the database/seeders directory. By default,
+a DatabaseSeeder class is defined for you. From this class, you may make use of the call method to run other seed classes. Note that Mass Assignment protection
+is automatically disabled during database seeding. To generate a seeder, execute the php artisan make:seeder command. The generated seeder is placed in the
+database/seeders directory. A seeder class only contains one method by default, the run method. This method is called when the php artisan db:seed command is run.
+
+We can make use of model factories to conveniently generate large amounts of database records. To create a factory, we can make use of the php artisan make:factory
+command. The --model option when creating factories can be specified to indicate the model that the factory is created for.
+
+State manipulation methods allow you to define discrete modifications that can be applied to your factories in any combination.
+Factory callbacks are registered using the afterMaking and afterCreating methods and allow you to perform additional tasks after making or creating a model. 
+Register these callbacks by defining a configure() method on your factory class.
+
+Once you have defined your factories, you may use the static factory() method provided by making use of the HasFactory trait in your model.
+We can define as many models making use of the count() method chained to the make() method. 
+
+We can also apply our state transformation to the models that we are creating by simply calling the method on the factory()->make().
+If you would like to override some of the default attributes, we can simply pass in an array of attributes to the make() or create() method.
+
+The call method accepts an array of seeders which specifies an order in which the seeders are to be run. We can seed our database with the php artisan make:seeder
+command. If we only want to seed a particular individual seeder, we can add a --class option

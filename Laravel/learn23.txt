@@ -1,0 +1,14 @@
+Laravel also has the latestOfMany and oldestOfMany relationship methods to retrieve the latest and oldest related models of a relationship.
+Also making use of the ofMany() methods, we can sort the related models. With many to many relationships, we can access the pivot table by accessing the pivot
+attribute on the related model. Instead of making use of the pivot attribute, we can instead make use of the as method to name the relationship as it fits its
+purpose in our application.
+
+We can also filter the results returned by many-to-many relationships by making use of wherePivot, wherePivotIn, wherePivotNotIn, wherePivotBetween, 
+wherePivotNotBetween, wherePivotNull, wherePivotNotNull.
+
+We can also define custom models to represent the intermediate table of your many-to-many relationship
+
+We can also query for relationship existence like
+- we can make use of the has method to filter for relationships. nested has statements may be constructed making use of dot notation
+- whereHas, or whereHas
+- doesntHave, orDoesntHave

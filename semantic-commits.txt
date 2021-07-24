@@ -1,0 +1,16 @@
+The Conventional Commits specification is a lightweight specification on top of commit messages. It provides an easy set of rules for creating an explicit
+commit history, which makes it easier to write automated tools on top of.
+Commit messages should be structured as follows:
+
+<type>[optional scope]: <description>
+[optional body]
+[optional footer(s)]
+
+Different Types
+fix - a commit of the type fix patches a bug in your codebase (this correlates with PATCH in semantic versioning)
+feat - a commit of the type feat introduces a new feature to your codebase(this correlates with MINOR in semantic versioning)
+BREAKING CHANGE - a commit that has a footer BREAKING CHANGE:. or appends a ! after the type/scope, introduces a breaking API change.
+A breaking change can be part of commits of any type
+Other types apart from fix and feat are allowed. For example, we can have build:, chore:, ci:, docs:, style:, refactor:, perf: and test:
+
+A scope may be added to a commit's type, to provide additinal contextual information about the commit
