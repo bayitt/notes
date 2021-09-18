@@ -1,0 +1,12 @@
+Pydantic is a Python library to perform data validation. You declare the shape of the data as classes with attributes. And each attribute has a type.
+
+The command uvicorn main:app --reload
+
+- main - this refers to the python file/module being run
+- app - the object created inside of main.py , the FastAPI object
+- --reload - the option used to reload the server after code changes, only to be used in development
+
+- A schema is a definition or description of something. Not the code that implements it, just an abstract description
+- OPENAPI is a specification that dictates how to define a schema for your API
+
+In OpenAPI, each of the HTTP methods is called an operation

@@ -1,0 +1,16 @@
+If you have a path operation taht receives a path parameter, but you want the possible valid path parameter
+values to be predefined, we can make use of a standard Python Enum. 
+
+To do this, we are going to create a class that is going to inherit from both str and Enum
+
+With FastAPI, when you declare other function parameters that are not path of the path parameters,
+they are automatically interpreted as query parameters
+
+To declare a request body, you need to make use of Pydantic models with all their power and benefits
+
+note the following Python methods
+- dict() - generates a new dictionary
+- ** - this is like spread in javascript
+- update() - pass in a key value pair
+
+For validating data, we are going to make use of the Query module from FastAPI

@@ -1,0 +1,31 @@
+Running several threads is similar to running several different programs concurrently, but with the following benefits
+- Multiple threads within a process share the same data space with the main thread and can therefore share information or communicate with other as opposed to running multiple programs
+- Threads are also sometimes called light weight processes and do not require much memory overhad
+
+A thread has a beginning, an execution sequence and a conclusion. It has an instruction pointer that keeps track of where within its context its running
+- It can be preemptted(interrupted)
+- It can temporarily be put on hold
+
+Python had an old thread module that was used in Python 2.4, but there is a newer threading module being used in Python 3+. The threading module exposes all the methods of the old
+thread module and provides some additional methods
+- threading.activeCount() - Returns the number of thread objects that are active
+- threading.currentThread() - Returns the number of thread objects in the caller's thread control
+- threading.enumerate() - Returns a list of all thread objects that are currently active
+
+In addition to the methods, the threading module also has the Thread class that implements threading. The methods provided by the Thread class include the following
+- run() - the run method is the entry point for a thread
+- start() - the start method starts a thread by calling the run method
+- join() - the join method waits for a thread to terminate
+- isAlive() - this checks if a thread is still executing
+- getName() - this returns the name of a thread
+- setName() - this sets the name of a thread
+
+I think a better description for the join() method is that it waits for the thread to complete. Then, we can make use of lock objects to prevent thread execution
+I'm realizing that when threads are executing, we can reference them by their names, much like variables
+
+The Queue module allows you to create a new queue object that can hold a specific number of items. There are the following methods to control the Queue
+- get() - This method removes and returns an item from the queue
+- put() - The put adds items to a queue
+- qsize() - This returns the current number of items in the queue
+- empty() - Returns true if the queue is empty
+- full() - Returns true if the queue is full

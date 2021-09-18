@@ -1,0 +1,13 @@
+Breaking down what I need to do to implement this
+- I query the db for a list of all the subscriptions in the app that are stocks
+- I query the API for the current, updated prices of the stocks
+- I store the returned data from the API
+- I create threads based on all the telegram users I have in the app and compose their information and return it to them
+
+Important things to know about the Python Requests library
+- we can access the status code of the response by accessing the status_code property on the response
+- we can access the raw response in bytes by accessing the content property on the response
+- we can access the text response by accessing the text property on the response
+- we can access the response as a python dictionary by accessing the json() method on the response
+- we can pass in query params by passing in a params keyword argument to requests.get
+- we can also pass in a headers keyword argument to requests.get

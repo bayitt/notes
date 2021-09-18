@@ -1,0 +1,40 @@
+FastAPI is a modern, fast (high performance) web framework for building APIs with Python3.6 based on standard
+Python type hints.
+
+The key features are:
+- fast
+- fast to code
+- fewer bugs
+- intuitive
+- easy
+- short
+- standards based
+
+FastAPI stands on the shoulders of giants, 
+- Starlette for the web parts
+- Pydantic for the data parts
+
+We run our FastAPI applications with uvicorn main:app --reload
+Access the docs for your application via the /docs and the /redoc routes
+
+Python has support for optional type hints. These type hints are a special syntax that allow declaring the type of a variable
+The standard python types are 
+- int
+- float
+- bool
+- bytes
+- str
+
+To declare those types and the internal types, we can make use of the standard Python module typing
+Define a list of strings in Python with List[str]
+
+We would declare tuples and sets in similar ways. By importing Tuple and Set from typing
+
+Type parameters refer to the parameters which are passed to a type. 
+
+In order to declare a typed dictionary, we would do so like Dict[str, float]
+
+Finally, we can make use of Optional to declare that a variable has a tpype, but that it is optional, meaning that it may not
+exist
+
+Those types that take type parameters are called Generic types, or Generics. These are List, Tuple, Set, Dict, Optional and others
