@@ -1,0 +1,41 @@
+Types of Tests
+
+Unit Tests
+These test only a single part of your implementation. A unit. No dependencies or integrations, no framework specifics. They are like a method that returns a link in a language.
+
+Integration Tests
+At some point your code communicates with a database, file system or another third party. It could even be another module in your app. This type of implementation should be tested by
+integration tests. They typically have a more complicated setup that involves preparing testing environments, initializing dependencies, and so on.
+
+Functional Tests
+Unit tests and integration tests give you confidence that your code works. Functional tests look at the app from the user's point of view and tests that the system works as expected.
+
+Unit Tests typically from a large proportion of the testing in your app. Typically, they are small and they are executed automatically.
+
+Jest is a Javascript testing framework. It's a tool that enables automatic unit testing, provides code coverage and lets us easily mock objects.
+
+We can write tests in the same file but it is general good practice to separate them and put them into separate files.
+
+The common naming patterns for tests are {filename}.test.js and {filename}.spec.js
+
+In order to test, we need to import the function that we want to test. Every test is defined as an invocation of the test() function. The first parameter is the name of the test for
+reference . The other parameter is an arrow function where we call the function we want to test and specify which result we expect.
+
+If we want to mock like a service, we need to make use of jest's mock method, with the first parameter represents the path to the imported module or object we are trying to mock.
+The second parameter is an arrow functions that returns the mock. Any method or variable we dont care about, we can easily make use of jest.fn() to mock it.
+
+Code coverage will tell you how big a portion of your code is covered by unit tests. To see the code coverage for your app, simply type jest --coverage in the terminal
+
+Jest has a lot of different matchers, one of which is toBe
+
+We can also specify a different matcher, like .not.toBe
+
+There are other matchers, for example toBeNull, toBeUndefined, toBeDefined, toBeTruthy, toBeFalsy
+
+If you want to compare an object or an array, you need to make use of toStrictEqual
+
+More matchers are toBeLessThan, toBeGreaterThan, toBeLessThanOrEqual, toBeGreaterThanOrEqual
+
+to match regular expressions in Jest, we make use of the toMatch() matcher
+
+For arrays, we can make use of a matcher called toContain

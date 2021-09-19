@@ -1,0 +1,12 @@
+When dealing with asynchronous data, we need to make use of expect.assertions, and the number of assertions we are expecting which is 1.
+When dealing with asynchronouse data, always make sure to have expect.assertions() and to wait for the asynchronous operation to wrap up
+
+Jest also has something like lifecycle methods that can be run before or after each test.
+We can make use of like the beforeEach() and afterEach() lifecycle methods to do things after each test, If we want to do something specific after all the tests run, then, we can
+make use of beforeAll() and afterAll()
+
+If we want to be more granular with what is run before or after each test, like beforeEach runs before every test while beforeAll only runs before all tests, we can make use of 
+the describe() method. Essentially, the way I see it is that describe is like a context aware environment, you can define your test inside of the describe callback, and define your
+beforeEach() inside it
+
+With the --watchAll flag on jest, we can have greater control over how we want the tests to run
