@@ -1,0 +1,47 @@
+For Chakra UI to work correctly, you need to setup the ChakraProvider at the root of your application.
+If you need to customize the default chakra theme to match your design requirements, we can extend the theme from @chakra-ui/react.
+
+The following are the ChakraProvider props
+- resetCSS
+- theme
+- colorModeManager
+- portalZIndex
+
+Style Props are a way to alter the style of a component by simply passing props to it.
+
+m - margin
+- mt, mr, ml, mb, mx, my
+- p, pt, pb, pr, pl, px, py
+
+Color and Background Color
+color, bg, background, bgColor, opacity
+
+Gradient
+bgGradient, bgClip, backgroundClip
+
+Typography
+fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, textAlign, fontStyle, textTransform, textDecoration
+
+Layout, Width and Height
+w|width, h|height, minW|minWidth, minH|minHeight, maxH|maxHeight, d|display, overflow, overflowX, overflowY
+
+Flexbox
+alignItems|align, alignContent, justifyItems, justifyContent|*justify, flexWrap|*wrap, flexDirection, flexDir|*direction, flexGrow, flexShrink, flexBasis, justifySelf
+
+Background
+bg|background, bgImage|backgroundImage, bgSize|backgroundSize, bgRepeat|backgroundRepeat, bgAttachment|backgroundAttachment
+
+Border
+border, borderWidth, borderStyle, borderColor
+
+Position
+post|position, zIndex, top, left, right, bottom
+
+Shadow
+textShadow, boxShadow
+
+Pseudo
+_hover, _focus, _active
+
+Other style props include 
+animation, appearance, transform, cursor, transition, objectFit, objectPosition

@@ -1,0 +1,20 @@
+The Text component is used to render text and paragraphs within an interface. It renders a <p> tag by default. We can override the element that gets rendered by passing as the as prop.
+The Heading component is used for rendering headlines. It renders a <h2> tag by default.
+
+Breadcrumbs or breadcrumb navigation can help enhance how users navigate to previous page levels of a website. Chakra UI exports 4 breadcrumb related components.
+- Breadcrumb
+- BreadcrumbItem
+- BreadcrumbLink
+- BreadcrumbSeparator
+
+Make use of an isCurrentPage prop on the BreadcrumbItem that matches the current path. Make use of the separator prop on the Breadcrumb, We can even make use of an icon as the separator
+
+Links are accessible elements primarily used for navigation. This component is styled to resemble a hyperlink and semantically renders an <a> tag.
+
+Link overlay provides a semantic way to wrap elements (cards, blog posts, articles) etc in a link
+
+The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon
+
+Avoid passing onClick handlers to icons, if you need a clickable icon, make use of the IconButton component
+
+To use icons from third party libraries, import the Icon component from chakra ui and pass the as prop to it

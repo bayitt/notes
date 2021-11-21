@@ -1,0 +1,28 @@
+Badges are used to highlight an item's status for quick recognition. We can get badge variants with subtle, solid and outlined
+- Badge
+- Close Button
+
+Dividers are used to divide content in a list or group. Pass the orientation prop and set it to horizontal or vertical.
+kbd component
+
+The List component is used to display list items. It renders a <ul /> element by default. The List component accepts a spacing prop
+
+The table component comes in three variants, simple, striped and unstyled.
+
+Chakra UI exports 5 tag related components
+- Tag
+- TagLabel
+- TagLeftIcon
+- TagRightIcon
+- TagCloseButton
+
+The Tag component is used for items that need to be labeled, categorized or organized using keywords that describe them.
+
+The CircularProgress component is used to indicate the progress of determinate and indeterminate processes.
+We can specify the value of the progress for determinate processes and a thickness prop. We can also make use of a <CircularProgressLabel /> component.
+Set an indeterminate prop
+
+We can also make use of the Progress component as opposed to the CircularProgress component. Add the hasStripe prop
+To show an animated Progress component, add the isDeterminate prop
+
+Skeleton is used to display the loading state of some components

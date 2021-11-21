@@ -1,0 +1,15 @@
+This is the command to install chakra-ui
+yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+
+Chakra ui has a container component which has some default parameters.
+
+Chakra UI has its own design system and every design system has its own design tokens, colors, fonts, spacing units etc. We can make use of style props to access those design tokens
+that are a part of Chakra UI
+
+For Chakra UI, we can convert spacing values into pixels by multiplying them by 4, or vice-versa by dividing them by 4.
+
+Chakra UI, V-stack component
+
+Chakra UI has a heading component, that we can make use of for headers.
+
+Chakra UI's simple grid is the normal display: grid, while we have the GridItem component

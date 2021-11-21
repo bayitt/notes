@@ -1,0 +1,51 @@
+If you want to run a specific version of an image, add a colon. Something like docker run redis:4.0. That 4.0 is what is known as a tag. If you dont specify a tag, docker is going to
+assume the tag is latest which is the latest version of the software
+
+By default, a docker container does not listen to any inputs, even though you are attached to its console.
+
+If you want to be able to accept input, you must map the standard input of your host to your docker container.
+
+The -i parameter is for interactive mode. The -t stands for a pseudo terminal, meaning that with -it, we can access the container's terminal
+
+The underlying host upon which docker is installed is called the docker host or the docker engine
+
+Every Docker container gets an IP address assigned to it automatically
+
+When a web service is running inside of a docker container, we can access the web service either through the IP address of the docker container or by mapping the port on which the 
+service is running inside of the docker container to a port on the docker host. We can do this by making use of the -p parameter 
+
+Say we were to create a mysql container, the data in it is stored in /var/lib/mysql
+
+A docker container has its own isolated file system
+
+Just like how we can map a port on the local docker host to the port inside of the container. We can also map a directory inside of our local docker host to a directory inside of our
+docker container. We do this by making use of the -v parameter
+
+If we want to see specific details about a docker container, we make use of the docker inspect command
+
+docker logs 
+
+We can make use of the -e paramater to set an environment variable
+
+We can create/build our image by running the docker build Dockerfile. Specify the name of the image wth -t
+
+After creating our image, we can push it to docker hub by making use of the docker push command
+
+If the Dockerfile we are using is in the same directory, we can do so by making use of the docker build . command, its going to find and make use of the Dockerfile in the current 
+directory. If the dockerfile we are trying to use is not in the same directory, we can specify its path or the name with the -f paramater
+
+Dockerfile is a text file written in a specific format that Docker can understand, it has an instructions => arguments format
+
+Anything in uppercase is an instruction
+
+Every image must be based either off of an OS or off an image that was created which is based off on OS
+
+All Dockerfiles must start with the FROM instruction
+
+The COPY instruction copies files from the local system into the container
+
+ENTRYPOINT allows us to specify a command that will be run when the image is ran as a container
+
+When Docker builds an image, it builds it in a layered architecture, each line of instruction creates a new layer in the Docker image with just the changes from the previous line
+
+Take note of the docker history command

@@ -1,0 +1,44 @@
+Docker uses storage drivers to enable layered architecture. Some of the common storage drivers are
+- AUFS
+- ZFS
+- BTRFS
+- Device Mapper
+- Overlay
+- Overlay2
+
+The selection of the storage driver to use is dependent on the OS used. For example, with Ubuntu, AUFS is the storage driver user
+
+With docker compose we can create a configuration file in yaml format called docker-compose.yml
+
+We can make use of a --link option to link containers to each other
+
+The --link option works in much the same way as the -p or -v command. redis:redis. The part before the colon represents the name of the container running on the docker host that
+we are trying to link while the part after the colon represents the name of the host inside of the container we are trying to link it to
+
+Take note of the WORKDIR, ADD and EXPOSE instructions
+
+When building a docker compose file, the first step is to create a dictionary of container names. Then we specify which image each container is pointing to.
+When constructing our docker-compose file, if it is our own application, we can easily specify a build config option and tell it to point to a directory where we want to be built
+Make use of container_name to specify the name of the container that I want to build
+
+Version 2 of docker brought along a services section in which we specified the configuration of all the different services in our application
+
+For docker versions 2 and up. You must specify the version of docker you intend to use in the version key at the top of your app
+
+The depends_on property specifies a startup order for the container
+
+We can specify our own network by creating a networks key in the root of our docker-compose. Then, for each container, specify the network that it needs to be attached to4
+
+When you install Docker on a Linux host. You are actually installing three different components, the Docker CLI, REST API and the Docker Daemon.
+
+The Docker Daemon is a background process that manages Docker objects such as the images, containers, volumes. The Docker REST API server is the.
+
+The Docker CLI does not necessarily need to be on the same host. It could be on a different laptop and be interacting witha remote Docker engine. Simply use the -h option on the
+Docker command
+
+Docker uses namespaces to isolate workspace, process IDs, network, inter process communication, mounts and unix time sharing systems
+
+A namespace isolation technique is Process ID Namespaces
+
+Docker uses thi groups or control groups to restrict the amount of hardware resources a container can make use of. This can be done by providing a value of --cpus to the docker run 
+command. We can also set the memory that a container is allowed to use up by setting the --memory value when specifying the docker run command

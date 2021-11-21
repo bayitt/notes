@@ -1,0 +1,50 @@
+Docker Recap
+The whole idea behind containers is that with them, we can run all the different components of our application in them. Containers differ from virtual machines in the sense that unlike
+with virtual machines that come pre-packaged with operating systems, containers are lightweight because they share the underlying OS kernel of the docker host. Containers can run
+different distributions of linux. Essentially, all the containers contain are the software that differs the various operating systems from each other. 
+
+Images are used to build containers. Images can be obtained either from docker hub or they can be built from our own custom code.
+
+The docker run command runs an image and creates a container which is based on the image. If the image does not exist locally, it fetches it from docker hub and docker creates the container
+with a random name and id.
+
+The docker stop command is used to stop a container.
+
+The docker ps commands lists all running containers. Add the -a option to view all containers including those that have stopped.
+
+The docker rm command removes a container from the docker host.
+
+The docker images command lists all the images on the docker host.
+
+The docker rmi command removes an image from the docker host.
+
+The docker inspect command is used to see more information about a docker container.
+
+We can specify environment variables when running images and creating containers from them with the -e option. 
+
+We can make use of the -p option to map ports from the internal container to a port on the docker host. It's a process called port mapping.
+
+We can also make use of the -v option to map volumes and create symlinks from the docker container to the docker host.
+
+Typically, anytime we make use of the docker run command on an image to create a container, we are able to execute a command on the image. However, if we want to execute a command
+against a running docker container, we make use of the docker exec command
+
+Then, we make use of the -i option anytime we are running commands and want to be able to run the command in interactive mode.
+
+We also make use of the -t option to specify a pseudo terminal and attach the terminal of the container to a terminal on the docker host.
+
+Then, docker has three different types of networks, bridge (default), none and host. bridge is the default one to which all containers are attached to. We can create custom networks
+if we want to group all our apps in different networks. We can access the processes running inside docker containers by either accessing it on the IP address of the docker container,
+port mapping the internal port of the process running in the container to a port on the docker host and removing all or any isolation between the docker host and the container and running
+the process inside of the docker container directly on a port in the docker host.
+
+Its not all the time that we want to create our containers based on images in docker hub. Sometimes, we want to run things based on our code. In cases like this, we need a special
+type of file called a Dockerfile. This file is what is used to build the image upon which the container is based. Docker, has something called a layered architecture meaning that
+after every single successful step in the Dockerfile, the step is cached. This means that if we change something after the step in the Dockerfile, Docker can just use the 
+cached step. When things are built in the image, they cannot be changed, so think about it, how are we going to change our files. This is where volumes come in. 
+Docker creates something called a container layer on top of the layered architecture. This container layer is where all the changes we make to the files. So, with volumes we can 
+link the changes made to the files to a location outside of the container. Thus, anytime the container is destroyed, the changes are still persisted. We can do this with
+volume symlinks.
+
+Then, instead of running docker run all the time, we can make use of a docker-compose file to spin up all of our services.
+

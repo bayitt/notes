@@ -1,0 +1,60 @@
+Subscripfy Planning
+What am I trying to build?
+An application that is going to enable its users to keep track of their subscriptions to various and different online subscriptions and services. 
+Tech Stack - Next JS, GraphQL, Laravel, Python
+- Users should be able to join the app and add the various services and subscriptions that they are subscribed to. The app is automatically going to track it for them and
+deliver notifications to them whenever the subscription is about to expire.
+- Users should be able to record their subscriptions both in their primary currencies and in the currency of their subscription
+- Users should be able to view their subscription history for a particular product.
+- Users should be able to forecast the amount they would spend on subscriptions in a particular period
+
+There should also be some sort of 2FA. That if, the user logs in on an unrecognized device, they have to verify themselves essentially. 
+
+Database Structure
+Users                                                         Image
+-id - ID                                                      - id - ID
+-uuid - string                                                - url - string
+-first_name - string                                          - cloudinary_id - string, nullable
+-last_name - string                                           - parentable_id - ID
+-is_admin - boolean                                           - parentable_type - string
+-email - string,unique                                        - created_at - DateTime
+-email_confirmed_at - datetime,nullable                       - updated_at - DateTime
+-password - string                 
+- currency - string
+- timezone - string                                           Notification
+-created_at - datetime                                        - id - ID
+-updated_at - datetime                                        - notify_1week - boolean
+                                                              - notify_3days - boolean
+Product                                                       - notify_1day - boolean
+- id - ID                                                     - created_at - DateTime
+- uuid - string                                               - updated_at - DateTime
+- name - string                                               
+- created_at - string                                         Device
+- updated_at - string                                         - id - ID
+                                                              - user_id - ID
+Subscription                                                  - name - string
+- id - ID                                                     - created_at - DateTime
+- uuid - string                                               - updated_at - DateTime
+- user_id - ID
+- product_id - ID                                             AuthenticationCode
+- description - string, nullable                              - id - ID
+- is_notify - boolean      
+- is_free_trial - boolean
+- duration - int                                              - user_id - ID
+- is_active - boolean                                         - code - Integer
+- amount - float                                              - expires_at - DateTime
+- currency - string                                           - created_at - DateTime
+- created_at - datetime                                       - updated_at - DateTime
+- updated_at - datetime
+
+Renewal
+- id - ID
+- uuid - string
+- subscription_id - ID
+- currency - string
+- amount - Float, nullable
+- primary_currency_amount - Float, nullable
+- billing_date - Date
+- expiration_date - Date
+- created_at - DateTime
+- updated_at - DateTime

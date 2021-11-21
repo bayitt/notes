@@ -1,0 +1,48 @@
+Gradients are a way to have transition between two or more colors. We can add gradient support by making use of any of the following style props
+- bgGradient
+- bgClip
+- backgroundClip
+
+Chakra UI's default breakpoints - 
+sm - 30em
+md - 48em
+lg - 62em
+xl - 80em
+2xl - 96em
+
+Chakra UI has two different ways of handling responsive styling - We have the array and object methods
+
+To define custom breakpoints, install @chakra-ui/theme-tools and make use of the createBreakpoints utility
+
+Chakra Factory serves as an object of chakra enabled JSX elements, and also a function that can be used to enable custom components receive Chakra's style props.
+The whole idea is that we can use it to create Chakra JSX elements, instead of making use of Chakra components, we can compose new components making use of 
+the Chakra factory. chakra.<element> notation
+We can also make use of the chakra factory to convert non-chakra components or jsx element to chakra enabled components so you can pass style props to it.
+
+We can also attach styles and make use of the chakra factory on jsx elements as well.
+
+By default, the chakra factory only filters chakra related style props from getting to the DOM. For more fine-grained control of how and what prop should be forwarded, pass
+the shouldForwardProp prop to the chakra factory
+
+GlobalStyle is a new component in v1 that injects styles defined in theme.styles.global into the global styles of your app or website. This is like a global.css file
+
+By using ChakraProvider at the root of your application, a GlobalStyle component is automatically rendered
+
+Layer Styles allow you to save a combination of styling attributes to re-use in other components. Once created, pass the layerStyle prop to any component and
+chakra will resolve the styles accordingly
+
+Properties defined in a layer style are
+- Color or Text color
+- Background color
+- Border width and Border color
+- Box Shadow
+- Opacity
+
+Properties defined in a text style are
+- font family, weight and size
+- line height
+- letter spacing
+- text decoration
+- text underline
+
+With the sx prop, we can define css for styles that are not style props. We can also make use of the sx prop to define custom css properties

@@ -1,0 +1,39 @@
+The theme object is where you define your application's color palette, type scale, font stacks, breakpoints, border radius values and more. The theme object contains the following
+- colors
+- typography
+	- fonts (font families)
+	- fontSizes
+	- fontWeights
+	- lineHeights
+	- letterSpacings
+- space
+- sizes
+- radii
+- zIndices
+
+Chakra has a specific approach or API for styling components. The main idea is that most components have default or base styles(baseStyle), styles for different sizes(sizes) and
+styles for different visual variants(variants) and an optional defaultProps to indicate the size or variant.
+
+The Chakra UI docs highly recommends making use of a /theme folder instead of a single theme.js folder
+
+We can also apply a default color scheme to all components with the withDefaultColorScheme() method. We can do this to all components or we can specify the components we want to apply 
+this to.
+
+Just like how we can override color schemes, we can also override sizes with the withDefaultSize() theme extension. Then, we also have the withDefaultVariant() theme extension.
+And finally, the withDefaultProps() method
+
+Most component styles consist of base or default styles and modifier styles that alter its size or visual style based on some sort of properties or state. 
+Commom modifier styles include
+- Size
+- Variant
+- Color Scheme
+- Color Mode
+
+A single part component is a component that returns a single element. A multipart component is a component that has multiple parts and requires all these parts to work together
+to work correctly. This is commolny referred to as a composite component.
+
+The beautiful thing about Chakra UI is that we can also define our own custom components and pass it in to the components in our theme key. We can then consume these custom components,
+by making use of the useStyleConfig() hook. This hook accepts two parameters, the themeKey in theme.components and the props
+
+This is exactly the approach that we make use of to define multipart components, the only difference is that in the theme config, there is a parts array and we need to define 
+baseStyles, sizes and variants for the individual part components.

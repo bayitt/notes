@@ -1,0 +1,19 @@
+Chakra UI has several useful hooks, one such hook is the useColorMode hook. This hook returns a toggleColorMode method and a colorMode variable which contains the current app mode.
+There is also another useColorModeValue hook, this hook returns different values based on the color mode. The first value passed to the useColorModeValue hook is the color in light mode,
+while the second is the color in dark mode.
+
+Another way to carry out responsive styling in Chakra UI is to make usje of the useBreakpointValue hook, it accepts the responsive object syntax
+
+Some of the keys in chakra ui theme include colors, fonts, themes, components
+
+Chakra UI has a feature called theme extensions and with that we can apply styles to all instances of a component in our app, some of these theme extensions include withDefaultColorScheme,
+withDefaultVariant
+
+When overriding components in Chakra UI, we can pass in a components key to the extendTheme() method, this components key takes in an object containing all the different components
+that we want to override. For example, with the Input component, with the overrides, each size of the component has different css styles, so we can pass in sizes and then specify
+the size that we intend to override
+
+Chakra UI inputs are made up of the addon, field and element
+
+Chakra UI has a mode method that can simulate or replicate the useColorModeValue hook, with it, we can also specify two values, the first value is the light mode value while
+the second value is the dark mode value

@@ -1,0 +1,43 @@
+AspectRatio component is used to embed respondive videos and maps. It uses a vary common padding hack to achieve it.
+We make use of the maxW/maxWidth prop to control the width of the element. The src prop points to the link of the video.
+The ratio prop to control the ratio of the video or map
+
+Box is the most abstract component on top of which all other Chakr UI components are built. By default, it renders a <div /> element. We can make use of the as prop on the Box
+element to compose other html elements.
+
+Center is a layout component that centers its child within itself.
+Square is a layout component that centers its child given a size prop
+Circle is a square with round border radius
+
+Containers are used to constrain a content's width to the current breakpoint, while keeping it fluid. We can make use of the centerContent prop to center align the 
+contents of the container.
+
+Flex is Box with display:flex. It renders a <div /> element. The Spacer element creates an adjustable, empty space that can be used to tune the spacing between child elements within Flex
+
+SimpleGrid provides a friendly interface to create responsive grid layouts with ease/ It renders a div element with display:grid.
+
+The SimpleGrid components accepts column and spacing props. If we want to be more granular, we can make use of spacingX and spacingY
+
+Stack, HStack and VStack
+
+With the HStack and VStack components we can pass in a divider component and set it to the StackDivider or any custom React element
+
+Wrap is a layout component that adds a defined space between its children. It wraps its children automatically if there is no space to fit anymore on the same row.
+
+Set the size of the buttons to xs, sm, md, lg, and xl
+
+Use the variant prop to change the visual style of the button. We can set the value to solid, ghost, outline or link.
+
+We can also set leftIcon and rightIcon props on buttons, these props should be React elements and not strings
+
+We can also pass in isLoading and loadingText props to the button, We can also make use of a custom loader by passing in a spinner prop
+
+We can make use of the Stack or ButtonGroup component to group buttons. When you use the ButtonGroup component, it allows you to
+- set the size and variant of all the buttons within it
+- add spacing between the buttons
+
+We can also create attached buttons with an isAttached prop
+
+In the event that we need to create our button, we can leverage the Box as "button"
+
+Other props include isActive, isDisabled, 

@@ -1,0 +1,5 @@
+What do I plan to do
+- Switch Maui from cookie to context implementations
+- Update Milestones, Nota and Trimm to use cloudinary instead of Amazon S3
+- Work on Subscripfy
+- Learn Testing in PHP/Laravel

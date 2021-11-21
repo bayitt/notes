@@ -1,0 +1,52 @@
+Compatibility Matrix - Matrix from hell
+
+Containers are completely isolated environments. They can have their own processes, services,
+network interfaces and mounts except that they share the same OS kernel.
+
+Docker utilizes Aleksey environments.
+
+Operating systems like Ubuntu, Fedora and CentOS. They all consist of two things, an OS kernel and a set of software. The OS kernel is what is responsible for interacting with the 
+underlying hardware while the software above it is what makes the OS above it different. The software above consists of UI, compilers
+
+The main purpose of Docker is to package and containerize applications and to ship them and run them anywhere anytime
+
+Virtual Machines run and contain their own operating systems. But with containers, they share the same operating system kernel
+
+An image is a package or a template that is used to create one or more containers. Containers are running instances of images that are isolated and have their own environments and processes.
+
+Before, the development and operations teams used to work separately. The development team would build the application and then hand it over to the operations team for deployment.
+But with Docker, the development and operation teams work together to produce a DockerFile with both of their instructions and this DockerFile is used to create an image of the 
+application.
+
+Docker has two editions, the Community edition and the enterprise edition.
+
+Community Edition is free
+
+The docker run command is used to run a container from an image
+
+The docker ps command shows the list of all the running containers
+
+The docker ps command lists all the running containers. The docker ps -a lists all the containers including those that have exited
+
+To stop a container, make use of the docker stop command. Provide either the id or name of the container to the docker stop command
+
+Use the docker rm command to remove a stopped container
+
+Run the docker images command to see a list of all the images running on our host
+
+To remove an image run the docker rmi command with the name of the image
+
+Use the docker pull command to only install an image and not run it
+
+Unlike with virtual machines, containers are not meant to host an operating system. They are only meant to be responsible for a particular service or application such as your webserver
+or your database or app.
+
+Once the process inside of your container stops running, your container exits. A container only lives as long as the process inside it is running.
+
+Make use of the docker exec command to execute a command on your running container
+
+When you run a docker command, it runs in the foreground, meaning that you will see the output in the terminal
+
+Make use of the -d option to run your application in the background in detached mode
+
+If you are specifying the name or id of any docker container, all you have to do is to specify the first few characters of the name or id
