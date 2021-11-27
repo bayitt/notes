@@ -1,0 +1,43 @@
+Typer Recap
+Typer is a Python tool for building Command Line Applications. By default, typer provides --help and other commands for completion.
+With typer, CLI arguments are arguments that are required and must come in a particular order while CLI options are not required and can come in any order.
+Python has several standard Python types. These include
+- str
+- float
+- bool
+- bytes
+- int
+
+the python typing module also enables us to type several more complex data structures, these data structures include List[], Dict[], Tuple[], Set.
+
+Also, if we want to provide documentation for our typer command, we can add a docstring to the beginning of the method
+
+We can make use of typer.echo() to print stuff out to the screen. The reason to use typer.echo() instead of print() is that is applies some color corrections in case the terminal 
+is misconfigured, and it will properly output color if its supported.
+
+We can create colored strings to print to output to the terminal with typer.style(). typer.style() returns strings that we can pass to the console with typer.echo.
+
+We can pass in the following arguments to typer.style
+- fg
+- bg
+- bold
+- dim
+- underline
+
+There is a shorter method to style and echo at the same time and this is done by means of the secho method.
+
+The way printing works underneath is that the operating system (Linux, Windows, MacOS) treats what we print as if our CLI programwas writing text to a virtual file called standard output.
+When our code prints things, its actually writing to this virtual file of standard output.
+
+And there's another virtual file called standard error that is normally used for errors. There is literally no difference between the both of them, standard output and standard error.
+We can print to standard error by setting the err parameter when running typer.echo. There is literally no difference between using standard output and standard error.
+
+Also, when you write in the keyboard of your termninal, your operating system writes it to a virtual file called standard input.
+
+If we want our application to gracefully exit, we can raise a typer.Exit() exception.
+typer.Exit() takes an optional code parameter. This parameter by default is 0 but we can pass in a different parameter to code.
+We can make use of typer.Abort() if we do not want to make use of typer.Exit(). The difference is that typer.Abort() is much more explicit and will print Aborted! to the screen
+
+We can make use of typer.Argument() to make CLI arguments optional, because the argument npw has a default argument of typer.Argument()
+
+We can also make use of the help argument on typer.Argument() to generate the docs for a function instead of making use of docstrings

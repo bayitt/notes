@@ -1,0 +1,40 @@
+Typer Recap
+I learnt about typer.Exit() with an optional code parameter while we also have typer.Abort(). 
+Then, remember how we said that CLI arguments are required while CLI options are not required. But with typer.Argument(), we can make arguments optional. But with typer.Argument(...)
+it is going to work in the same way and be required. Then, we can pass in several arguments to typer.Argument() to customize how it works. With the help argument, we can specify
+the help text that we want to be displayed for the argument. Then, we can also pass in a default parameter to typer.Argument(). We can set it that the default argument is not going to 
+show with show_default set to false. 
+
+We can also specify that we want to set an argument from the command line by making use of the envvar argument and that will try to fetch it from the command line, we can also pass
+in an array to envvar and have it fetch from the list array. We can hide the environment variables with show_envvar set to false. Then, we also have the metavar argument
+
+To make a CLI option required pass ... to Typer.Option
+
+It's also possible to, instead of displaying an error if a required option is missing, prompt the user for it with prompt set to True.
+
+We can also set a custom prompt, passing the string that we want to use instead of making of the name.
+
+In some cases, if we want the user to type something and then confirm it, we can do so by setting confirmarion_prompt to true. With a CLI option, we can entirely hide the text with the
+hide_input option set to true. If we want to customize the name of an option in the terminal, we can pass in the seond positional argument
+
+A short name is a CLI option name with a single dash -, instead of 2 and a single letter like -n instead of --name. When you have a couple of CLI options, we have the option of grouping
+them together
+
+In some cases, you might want to have some custom logic for a specific CLI parameter that is executed with the value received from the terminal
+
+typer.BadParameter
+
+When you create a Typer application, it uses Click underneath. And every Click application has a special object called Context that is normally hidden. But you can access the context
+by declaring a function parameter of type typer.Context
+
+ctx.resilient_parsing
+
+We can access the specific CallbackParam object by typing a param with typer.CallbackParam and accessing the object
+
+typer.BadParameter prints the error to standard error and not to standard output, as such it does not break output
+
+For most cases, we can mark CLI parameters when we have callbacks, if we want certain parameters to be executed before others
+
+is_eager
+
+We can make use of autocompletion to provide autocompletion for a CLI option

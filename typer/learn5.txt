@@ -1,0 +1,40 @@
+What did I learn last in Typer
+- We can make CLI options required in Typer by making use of the typer.Option() method. Just like how with typer.Argument() we can specify the help keyword argument, we can do so with
+typer.Option(). We can also customize how we want the CLI option to appear with all the positional arguments that occur after the default value. Also if the user
+does not enter a cli option we can prompt them by setting the prompt keyword argument to True. We can also repeat it with confirmation_prompt set to true. We can also for things like
+passwords, hide the input by setting the hide_input keyword option to True
+
+With autocompletion, the way it works is that typer via click is going to ping our CLI app, much in the way GraphQL can be pinged for the schema. But this causes an issue when a CLI option
+has a callback because its going to try to execute the callback which is going to cause an issue/error. To avoid this, we are going to access the resilient_parsing option on the 
+typer.Context object. Then, we can also access information about the current CLI option that is being set with the typer.CallbackParam.
+
+Also, by default, typer CLI options are evaluated in order, to make a CLI option be executed and parsed before another, we need to set the is_eager keyword param to True
+
+I can have autocompletion on an overall script to tell the user the different commands that can be executed on the script.
+I can also run autocompletion on -- to give me all the possible CLI options on the script.\Finally I can also provide autocompletion on a CLI option to know the possible options that can
+be passed to it. For autocompletion, right now the approach is to return a list of str, but we can return a list of tuples, with the first item in the tuple being the autocompleted
+text while the second item in the tuple is the help text.
+
+Instead of creating and returning a list inside of our autocompletion function, we can make use of the yield() method.
+
+We can have CLI options accept multiple options, with this, it will be turned into a string
+
+Typer allows you to create CLI programs with commands also known as subcommands 
+
+A typer.Typer app with subcommands is more or less the equivalent of a Click Group. A typer.Typer app is not a Click group, but it provides the equivalent functionality
+
+Essentially the whole idea is that typer registers the decorated functions in your code
+
+If we specify only one single command in our application, typer is going to default to calling and working like the typer.run 
+Typer converts functions(commands), CLI parameters (arguments and options), replacing the _ with -
+
+the @app.command() decorator takes the help parameter which can be used to override the docstrings used for the help
+
+The first positional argument passed to @app.command() is the name of the command, if we dont want the command name to be auto generated
+
+Since by creating an app object, it means that we intend to create groups of commands or subcommands how are we going to pass like global options to our CLI. We can do this by means
+of the @app.callback() decorator
+
+Just like how we would attach a callback to typer.Option(), we can also attach a callback to the overall typer object used in our app. This does the same thing as @app.callback
+
+If you specified a callback when creating the typer app, we can override it with @app.callback()

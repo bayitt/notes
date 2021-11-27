@@ -1,0 +1,10 @@
+We can pass the show_default value to make sure that the default value is not shown in the terminal. We can also pass to the show_default a string to use to show as the show_default option
+We can customize the displayed meta variable in the terminal. By default, it is the argument in uppercase. But we can customize it with the metavar argument to typer.Argument()
+
+We can also hide an argument from displayed in the help section. We can do this by setting hidden to True on typer.Argument()
+
+We can also configure a CLI argument to to read from an environment value by making use of the envvar parameter for typer.Argument().
+
+We can also pass in a list of environment values that will be used to fetch
+
+By default environment values are going to be shown in the help for an argument but can be disabled with show_envvar set to False
