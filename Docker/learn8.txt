@@ -1,0 +1,12 @@
+Breaking down what I have done so far with digitalocean
+- Create the digitalocean droplet
+- we will need to specify a means of authenticating to the droplet. ideally, we should make use of ssh
+- we can generate an ssh key woth ssh-keygen, this will generate id_rsa and id_rsa.pub files in the .ssh folder 
+- we will get the ip address of the droplet 
+- we can access the droplet with ssh root@ip-address-of-the-droplet
+- once we enter the server, note that essentially a server is a system without a UI.
+- when we enter the server, we need to create another user if we do not want to use root
+- we can do this with the sudo usermod -aG username command
+- then since its an entirely new OS in a sense, we need to install docker and docker-compose on the server, follow the respective guides to do this
+- with that I can cd into the folder of my user and run the respective git operations to start work
+

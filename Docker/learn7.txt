@@ -1,0 +1,15 @@
+In Linux, we can add a user by making use of the adduser command. We can make this user a sudo user by making use of the usermod -aG sudo Olamileke command
+
+Deployment Options
+- We can either make use of the rsync command. This command is available natively with macOs and Linux but with windows we will have to make use of like FTP or cwrsync with windows.
+The format for the rsync command is rsync (options) (location) (destination). We can make use of it to transfer files from one  location to another or from one machine to a remote
+machine.
+
+The options for rsync are
+
+a - transfers all files inside of the current directory
+v - verbose (gives us a decent amount of console output to tell us what is going on)
+z - transfers the files and folders as zipped content to reduce bandwidth
+h - transforms any byte values into more human readable formats
+
+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
