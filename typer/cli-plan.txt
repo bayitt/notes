@@ -1,0 +1,17 @@
+What exactly do I want to build?
+A CLI tool for the Maui application
+
+What should it be able to do ?
+- Users should be able to authenticate
+- Users should be able to add expenses, both for the current day and any day that they specify
+- Users should be able to view expenses, by default for the current day and for any day they specify
+- Users should be able to search for expenses
+- Users should be able to view an overview of their maui history
+- Users should be able to download expenses for a particular day, or month (tentative)
+
+Mapping Out this User flow
+- If the User types out the default command without any additional command, it tries to authenticate the user
+- It opens up the login page of the Maui app
+- If the user is logged in successfully, a message should be displayed telling that they have logged into the Maui CLI
+- They should also get a corresponding email
+- They should also be logged into the Maui CLI

@@ -1,0 +1,18 @@
+First things first. After buying the domain name, we first need to create A Name records for the root and www domains in namecheap. For the root domain, the host should be @ while
+for the www domain, the host should be www.
+After this, we will need to add the digitalocean name servers to the custom dns for our domain. these will be ns1digitalocean.com, up until ns3.
+
+Then, we need to head over to the DigitalOcean control panel and connect our droplet to our domain. We will be doing exactly the same thing we did in namecheap in adding the a name records.
+
+Certbot's webroot plugin is used to obtain certificates for our domain. This plugin depends on the HTTP-01 validation method, which uses a HTTP request to prove that Certbot can access
+resources from a server that responds to a given domain name.
+
+When defining services in our docker-compose.yml file, we can make use of the command parameter to specify the command that we want to be executed when the container starts. Just like
+how when we are doing docker run and we add the extra command at the end which would replace the CMD
+
+Enabling SSL in our nginx configuration will involve adding an HTTP redirect to HTTPs and specifying our SSL certificate and key locations. It will also involve specifying our
+Diffie-Helman group, which we will use for Perfect Forward Secrecy
+
+We can generate our key with the openssl command like sudo openssl dhparam -out path-to-folder
+
+nginx - $host$request_uri

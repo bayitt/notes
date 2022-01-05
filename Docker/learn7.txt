@@ -12,4 +12,3 @@ v - verbose (gives us a decent amount of console output to tell us what is going
 z - transfers the files and folders as zipped content to reduce bandwidth
 h - transforms any byte values into more human readable formats
 
-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

@@ -1,0 +1,24 @@
+With Typer, we can use several data types for the CLI options and CLI arguments, and we can also add various data validation requirements too
+
+When you declare a CLI parameter with some type Typer is going to convert the data received in the command line to that data type.
+
+We can define numeric validations with max and min rules for int and flot parameters. We might want to instead of displaying an error and having the prohram break, we might want
+to make use of the closest valid value in which case, we can make use of clamp=True
+
+By default, if we have a boolean CLI option like force, typer is going to generate something like --force/--no-force, but we can customize it by specifying a positional argument.
+But assuming we want to customize the opposite way, meaning the true and falsy ways, we can do something like --accept/--reject
+
+Python has a standard UUID library
+
+We can also type our Typer Options and Arguments with enums, we can do this by making use og Python's standard enum.Enum library. We can declare a class that subclasses, the Enum library
+and declare the different enum values as properties on the class. We can also  ake use of the case_sensitive keyword param 
+
+In order to have subcommands, we are going to create each subcommand as its own separate typer app and then import it into the main typer app and make use of the add_typer()
+method on the typer object
+
+Remember how when defining callbacks, we can override the callback passed to the typer.Typer() constructor with the @app.callback() decorator. It works the same with sub typer apps, 
+except that the callback passed to the add_typer() method takes overall precedence and overrides all other previosuly defined callbacks
+
+In as much as we have this defined order of precedence with the callbacks, anytime we set name and help explicitly for our typer apps, it overrides it everywhere else
+
+Essentially with typer the name refers to the name used to refer to the command while help refers to the help text for the particular command

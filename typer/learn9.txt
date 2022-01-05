@@ -1,0 +1,28 @@
+Yesterday I learnt about typer.Option. With typer.Option, we can make CLI options required by passing an ellipses to typer.Option. We can do a lot of the same things we can do with
+typer.Argument() with typer.Option. We can pass specify the help text to be displayed with the help keyword parameter, this is going to be the help text that is going to be displayed when
+the --help option is run for the particular command.
+
+For typer.Argument(), we have the default value, show_default which can be boolean or text, envvar for environmental variables, metavar 
+For typer.Option(), we have help, customizable names, callback, autocompletion.
+
+For autocompletion, we can either return a list of strings or a list of tuples (yield). For callbacks, they can accept parameters of type typer.Context, with this we can check for
+resilient_parsing which occurs when the CLI program is checking for autocompletion. We also have CallbackParam, which we can use to check for the particular CLI option that\is being 
+executed for in the callback. Also, by default CLI options are executed in the order that they are defined, we can override this by making use of an is_eager keyword parameter and
+setting it to True.
+
+Also, thus far we have been creating CLI apps that only have one commands, as such we have been defining our single command and running it with typer.run, but most times our applocatopms
+are going to have multiple commands, we can do this by creating a typer.Typer object and running app. We can decorate our different commands with the @app.command() decorator.
+When our CLI app has only a single command and we run it explicitly with typer.run, what is happening is that underneath typer is creating the typer.Typer() object and decorating
+our single command.
+
+Remember how we can make use of docstrings to specify the help message for our function, we can override this by specifying the help keyword on the @app.command() decorator.
+
+Then, imagine we wanted to execute a callback against every single command, we can do so with the @app.callback() decorator
+
+With typer, if we want to create a CLI app with a single command but we still want it to be a command/subcommand, we can add a callback and pass
+
+We can access the current command that is being executed via the typer context with the ctx.invoked_subcommand
+
+By default, the app callback is executed right before the command, but we can make it execute even without it with the invoke_without_command keyword param set to True
+
+ctx.args

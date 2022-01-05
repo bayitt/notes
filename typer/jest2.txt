@@ -1,0 +1,37 @@
+Most eays of comparing numbers have matcher equivalents
+
+- toBeGreaterThan
+- toBeGreaterThanOrEqual
+- toBeLessThan
+- toBeLessThanOrEqual
+
+for floating point equality use toBeCloseTo
+
+We can check strings against regular expressions with toMatch
+
+We can check if an array or iterable contains a particular item using toContain
+
+With asynchronous code, Jest needs to know when the code it is testing has finished completion, before it can move on to another test. Jest has several ways to handle this.
+By default, Jest tests complete once they reach the end of their execution. We can tell jest to wait until something happens before proceeding to something else. 
+Jest test functions can accept a done callback that we can make use of to tell Jest to proceed with the other tests
+
+Instead of making use of this done/callback approach, we can make use of a promises approach, we can have our function return a promise and hook into into the promise returned with .then()
+. If our test expects the promise/ async operation to fail, we can make use of the catch. Then, if we are expecting the test to fail, we can make use of expect.assertions if not a 
+successful promise is going to pass the test
+
+Instead of making use of .then() and .catch() to hook into the promise, we can make use of .resolves and .rejects. We can also make use of async and await in our test
+
+Often while writing tests, we have setup work that needs to happen before tests run, and some finishing work that needs to happen after tests run.
+If we have work that we need to do repeatedly for many tests, we can make use of beforeEach and afterEach. In these, we can execute stuff before and after each test. But if, instead of running
+before/after each test, we want to do this before and after all our tests. 
+
+By default, the beforeAll and afterAll blocks apply to all the tests in a file, but we can group tests together making use of a describe block. When they are inside of a describe block,
+the beforeAll and afterAll blocks only apply to the tests within the block
+
+Note that with describe blocks, the top level beforeEach is executed before the nested beforeEach
+
+Jest executes all describe handlers in a test file before it executes any of the actual tests. This is another reason to do setup and teardown inside of before* and after* handlers.
+Once the describe handlers are complete, Jest executes the tests serially in the order in which they were encountered in the collection phase waiting for each to finish and
+be tidied up before moving to the next one.
+
+To run only one test in a test suite at a time, instead of making use of the test method, make use of the test.only method

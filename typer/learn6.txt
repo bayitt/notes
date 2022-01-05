@@ -1,0 +1,36 @@
+If we want our typer CLI app to have a single command and still be able to be addressed by that command, all we have to do is define an app callback and let it pass.
+
+Typer Recap
+- We can provide autocompletion to our CLI options by making use of the autocomplete/autocompletion keyword argument on the typer.Option() method. This autocomplete is going to be a
+function/method. We can make use of either a list of strings that we are going to make use of for autocompletion. Or we can make use of a list of tuples in which the first item in the
+tuple is the string to be matched while the second is the help text, this help text is going to be used/be visible if we are making use of zsh, powershell or the likes but in bash
+it is not going to be visible. Either in the autocomplete method we return a list of strings/tuples or we can make use of the in built Python yield method which is going to return an
+iterable generator.
+
+- We can also pass in an array of parameters to the same CLI option, and we can access these options via the typer.Context object via the ctx.params dictionary
+
+- We can split up our application into a bunch of different commands. Typically, we make use of the typer.run() method to run our function but that is for if we have a single command
+CLI application. Typically, CLI applications are going to have multiple different commands. To do this, we are going to create a Typer object, app = typer.Typer(). With this typer app
+object, we are going to decorate our various functions which are going to be mapped into the different commands. These commands can take their different CLI parameters (arguments and 
+commands). This whole process of creating a Typer object and decorating it with @app.command() is what happens internally with the typer.run() command. 
+
+- You know how typically typer is going to map the function name to the name of the command, replacing - with _. well, we can be more explicit and specify the name that we want for the
+name of the command. We can do this by setting the positional argument on the @app.command() decorator. We can also override the help text on a command if one has been specified as a 
+docstring, by specifying the help keyword argument on the @app.command() decorator.
+
+- We can also specify the name/help text that we want to be displayed when the CLI app is launched. We can do this by setting the positional argument in the Typer class constructor.
+
+- We can specify callbacks that we want to be executed on every single command to the CLI application. We can do this by setting the keyword callback parameter to the Typer constructor
+
+- We can override the default callback passed to the Typer constructor by making use of the @app.callback() decorator
+
+- Finally, by default if our CLI app has only a single command, Typer is going to default to executing it as a module, so to avoid this, we can define a callback and in the callback,
+simply pass
+
+Make use of the invoked_subcommand property on the typer context object to determine the subcommand that is being executed
+
+By default, the typer callback is executed right before whatever command the user types is executed. But we can make it execute without a command by setting the invoke_without_command
+keyword argument to true
+
+We can pass configurations for the context when creating a command or callback. we can do this by passing a dictionary of settings with the different parameters. 
+context_settings = {"allow_extra_args":True, "ignore_unknown_options":True}

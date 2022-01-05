@@ -1,0 +1,39 @@
+Mock functions allow you to test the links between code by erasing the actual implementation of a function, capturing calls to the function (and the parameters passed to those calls),
+capturing instances of constructor functions when instantiated with new, and allowing test time configuration of return values.
+
+There are two ways to mock functions: Either by creating a mock function to use in test code, or writing a manual mock to override a module dependency.
+
+Mock functions, also known as spies are special functions that allow us to track how a particular function is called by external code. Instead, of just testing the output of the
+function, we can gain additional function about how the function was used. By using mock functions, we can know the following
+- The number of calls it received
+- Argument values received on each invocation
+- The context value or this value on each invocation
+- How the function exited and what values were produced
+
+Higher order functions are functions that operate on other functions, either by receiving them as arguments or returning them as values.
+
+Hmm, I think its making sense. The whole idea behind mocking 
+
+There are several ways to create mock functions in Jest, The jest.fn method allows us to create a new mock function directly. If you are mocking an object method, you can use jest.spyOn,
+and if you want to mock an entire module, you can make use of jest.mock
+
+jest.fn can receive an optional functional implementation, which will be executed transparently. It means that running the mock will work just as if you were running the original
+functional implementation. Internally jest.fn is going to track all the calls and will perform the execution of the implementation function itself.
+
+The jest.fn method is by itself a higher order function that creates and returns new, unused mock functions. The mock property is a fundamental property of the mock functions returned
+by jest.fn. The object contains three important properties, calls, instances and results.
+
+In the calls property, it wil store the arguments used in each call. The instances property will store the this instance used on each invocation and the results array will store
+how and with which value the function exited after each invocation.
+
+In the results property, Jest stores each result of the function as objects that have two properties: type and value. Type can either be 'return' or can be 'thrown'.
+The value property will contain the return value or the error thrown
+
+Jest provides a set of custom matchers to check expectations about how the function was called 
+- toBeCalled()
+- toBeCalledTimes(n)
+- toBeCalledWith(arg1, arg2, ...)
+- lastCalledWith(arg1, arg2)
+
+You know how so far we have passed in actual implementations to jest.fn, but we dont have to do that, we can make Jest return particular values with the different values
+by making use of the mockReturnValueOnce()

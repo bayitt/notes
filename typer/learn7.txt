@@ -1,0 +1,11 @@
+You can define numeric validations with min and max values for int and float. Instead of displaying an error if the validation fails, we can specify a clamp parameter that the value should
+be instead of the error
+
+We can make a CLI option work as a counter by setting the count keyword parameter to True.
+
+You know how when we specify a boolean CLI option like --formal, typer is goijng to generate --forma;/--noformal and if we want to customize this, we can specify the name
+we want it to take as a positional argument after the default value. Well, what if we want to specify the True and False states. We can do so with something like --formal/--no-formal
+
+There is a UUID type we can make use of by importing from the standard uuid Pythin library
+
+We can also type a CLI parameter as a Pythjon datetime. It will accept a datetime in the format Y-m-d Y-m-dTH-M-S and Y-m-d H M S

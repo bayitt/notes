@@ -1,0 +1,41 @@
+Jest Recap. What did I learn about Jest yesterday
+With Jest, the expect() function returns expectation objects and we cant do anything with expectation objects but call matchers on them. The different expectation objects are listed thus
+
+- toBe - we make use of the toBe() method to check for exact equality
+- toEqual - this is used with objects, toBe is not going to work because of object reference
+
+We can also chain not on our matchers to return the inverse on these matchers
+
+- toBeDefined
+- toBeUndefined
+- toBeNull
+- toBeTruthy
+- toBeFalsy
+
+Then, for numbers we have the following matchers for numbers
+- toBeLessThan
+- toBeGreaterThan
+- toBeLessThanOrEqual
+- toBeGreaterThanOrEqual
+
+Then, for floats we can make use of the toBeClose matcher to match floats or doubles
+While for strings, we can make use of the toMatch matcher to match regular expressions or strings
+
+For arrays, we can make use of the toContain matcher to check if something is contained inside of the array
+
+Then, for asynchronous code, there are three different approaches to it. we can either make use of the callback approach, in which case we are going to pass in a callback to the async
+function and do whatever we want to do, then we are done we can call the jest done method. With this, in a sense, we are hooking the test and telling it not to proceed until the 
+async operation is completed.
+
+Another approach is to return a promise from the test function and then hook into the promise with .then() and .catch(), if we expect the test to fail, we need to call expect.assertions(1)
+
+We can also make use of .resolves and rejects if we are going to resolve/reject the promise from the function. Finally, we can also make use of async/await
+
+Then, for setting up and tearing down, Jest provides several important methods. We have the beforeEach, afterEach, beforeAll and afterAll methods.
+
+We can make use of the beforeAll and afterAll methods if we have setup that we intend to do before and after all the tests. But what if we have setup that we want to do before and after
+some of the tests, in this case, we can make use of a describe block to logically group tests together. Then, for order of execution, the beforeEach and afterEach of parent blocks
+takes precedence over the beforeEach and afterEach of child nested blocks. Then, it os advisable to put code you want to be executed inside of the beforeEach and afterEach handlers.
+because if it is not, jest is just going to execute it like that.
+
+The way jest works is that it executes the code it sees inside of describe blocks and then executes the tests it finds in the collection phase.

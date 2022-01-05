@@ -1,0 +1,30 @@
+Typer Recap
+
+CLI parameters comprise of CLI arguments and CLI options. The whole idea of the way it works is that if we want a CLI parameter to be a CLI option meaning that it should not be required,
+all we have to do is to give it a default value. Then, CLI options can come in absolutely any order, unlike CLI arguments that must come in a particular order.
+
+We can stop program execution in typer by making use of typer.Exit() or typer.Abort(). We can also document our commands in typer by making use of docstrings.
+
+Remember how we explained that CLI arguments in typer are by default required. We can override this paradigm by setting the default value of a CLI argument to typer.Argument(). If
+we want the default behavior of an argument to be retained in that it is required. We can do so by passing an ellipsis to typer.Argument(). If we pass in anything other than an ellipses,
+the CLI argument becomes non-required. We can also pass in help text for the CLI argument by making use of the help keyword argument, this is going to customize the help text displayed
+for the CLI argument. 
+
+Also, by default, the default value for a CLI argument is displayed in the help text. We can stop this by setting the show_default keyword parameter to False, if we also want a different
+value for the default value, we can set it as a string with the show_default keyword parameter. Then, if we do not want a CLI argument to be displayed in the --help command, we can
+set the hidden keyword parameter to True.
+
+We can also customize the name of the CLI argument when it is displayed in the terminal by means of the metavar keyword parameter. We can also specify that a CLI argument should be
+read from the environmental variables by making use of the envvar keyword parameter
+
+prompt and confirmation_prompt
+
+with typer.Option(), all the positional arguments passed in after the initial default value represent the possible name/flags/switches for the CLI option
+
+The typer.BadParameter exception is special, it shows the error with the parameter that generated it
+
+typer.Context
+
+ctx.resilient_parsing means that your CLI program is fishing for completion
+
+typer.CallbackParam
