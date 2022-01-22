@@ -1,0 +1,13 @@
+Simply put, Nest JS provides decorators for all of the supported HTTP methods, 
+- @GET
+- @POST
+- @PUT
+- @PATCH
+- @DELETE
+- @ALL
+
+Http Status codes are always 200 by default, except for POST requests which are 201, but we can easily customize this with the @HttpCode decorator.
+To specify a custom header, we can either make use of the @Header decorator or a library specific implementation and call the res.send
+
+We can also make use of the @Redirect() decorator and specify the redirect destination and the status code, if the redirect is going to be dynamically determined, we can return 
+an object with the url and the statusCode from the object. Just like with React, we can make use of : to indicate paths with dynamic parameters

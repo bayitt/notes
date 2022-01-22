@@ -1,0 +1,25 @@
+Yesterday I learnt about mocking functions in Jest, the whole idea is that we can make use of mock functions to spy on other function implementations and examine how the other function
+was called. We can also mock other external dependencies with Jest, you know how the whole idea behind what we are doing is to define unit tests. Test the different, smaller, parts of
+our application, we are not really concerned with the larger parts so we can mock external dependencies with Jest.
+
+There are three different types of mock functions, we have jest.fn which we can make use of to mock functions, jest.spiesOn for object methods and finally jest.mock which we can make
+use of to mock entire modules.
+
+Mocked functions have a special .mock property which contains special information about the state of the mocked function. The different properties available in the mock property
+are calls, instances and results. The calls property contains information about the different parameters used when the function was called in the different times while the instances
+property is an array that contains the various this instances of the function used in the different calls. Finally, results is an object containing the different returns of the different
+calls of the function. The object contains the type of the return meaning either return or error and the value.
+
+Then we are creating our mock functions, we can pass in an actual implementation of a function that is going to be executed and Jest is going to track that function's exection.
+Alternatively, we dont need to pass in any actual function implementation and instead we can make use of the mockReturnValueOnce. We can also make use of the mockResolvedValue to mock 
+modules
+
+The mockImplementation method is useful for when we want to define the default implementation of a mock function that is created from another module.
+Essentially for default exports
+
+We can also provide a mock name for our mock functions which will be displayed in the test error output
+
+Custom Matchers for Functions
+- toHaveBeenCalled()
+- toHaveBeenCalledWith()
+- toHaveBeenLastCalledWith()

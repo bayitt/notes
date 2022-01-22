@@ -1,0 +1,1 @@
+The @Injectable() decorator attaches metadata which declares that the service is a class that can be managed by the Nest IOC container

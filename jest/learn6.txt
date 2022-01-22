@@ -1,0 +1,19 @@
+Last time on Jest
+I learnt and understood the importance of mocking functions. The whole idea behind mocks or spies is that we can make use of them to spy on other functions. There are two different
+occasions in which we will want to mock our functions, when we mock our functions in test code and when we want to mock modules. The deal with mock functions is that they have a special
+mock property with which we can inspect the state of the mock. This mock property has three different properties, they include calls, instances and results. Calls is an array of arrays
+that contains the different arguments in the different calls. instances contain the different this instances of the function which are called, while results is an array of objects
+containing type and value properties, type is either return or error while value is what was returned.
+
+Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly. A typical snapshot test case renders a UI component, takes a snapshot
+and then compares it to a reference snapshot file stored alongside the test. The test will fail if the two snapshots do not match.
+
+jest --updateSnapshot
+toMatchSnapshot()
+toMatchInlineSnapshot()
+
+jest.requireActual()
+
+The whole idea behind the way this thing works is that we typically want to have an __tests__ folder inside of our different folders inside of which we write our tests and then
+we have an __mocks__ folder inside of which we are going to mock our diffeerent functions, then inside of our test we can make use of jest.mock(), and jest is going to make use
+of the function that we defined inside of our __mocks__ folder, we can also make use of jest.requireActual

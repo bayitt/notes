@@ -1,0 +1,41 @@
+Yesterday I started learning about nest js. Nest JS's architecture is heavily inspired by Angular. 
+We can generate new Nest JS apps with nest new app-name. This generates a controller, test file and module file. 
+Then, the entry point to a nest js app is the main.ts file. Inside of this main.ts file is an async bootstrap function inside of which our application is bootstrapped. We are going
+to make use of the static create method from the NestFactory class from @nesjs/common/core. This app object returned constituyes our entire application.
+
+Then, NestJS is built on top of Express or Fastify, by default Express is the default framework selected. If you want to make use of Fastify, simply select the NestFastifyApplication
+interface. 
+
+Nest JS works on the concept of classes and decorators, there is not a particular routes file where all the routes in the app live. Instead, the way it works is that we decorate
+our controllers with the @Controller decorator to which we can pass an optional route prefix. This @Controller decorator is what Nest JS is going to use to generate a route map
+for our application with all the routes in it. 
+
+Then, in order to generate the endpoint we are going to make use of the different @GET, @POST, @PUT, @OPTIONS routes, we simply decorate our methods and pass in an optional route to it.
+Then, with requests we typically want to access request data and we can do so with the @Request decorator. You remember how dependency injections work, simply decorate the parameter
+and automatically Nest JS is going to inject the particular parameter, if we want to import the type, we can do by importing { Request } from 'express'.
+
+We dont necessarily need to import the whole Request object, we can make use of @Body for the request body, @Param for request params, @Query for the request query, @Headers for the
+request headers
+
+We can implement sub domain routing with Nest JS by passing in a host parameter to the @Controller({ }) decorator.
+
+Just like with dynamic paths, and how we can specify dynamic ones with :, we can also do the same with subdomains. Nest JS also provides a @HostParam decorator to access the dynamic
+subdomain
+
+Just like in Nest JS, everything is shared across requests, it makes use of a singleton architectural pattern in which it is the same instance which is being injected everywhere
+
+Every async function has to return a promise.
+
+Data Transfer Object Schema. A DTO is an object that defines how data is going to be sent over the network. The DTO schema can be defined by either making use of interfaces or 
+classes but classes are what are recommended because if we make use of interfaces, when the application is compiled, Nest cannot refer to it at runtime
+
+Controllers must always belong to a module
+
+Be careful with making use of platform specific implementations because it makes your code less easier to test. In order to avoid this, we can set the passThrough option on the 
+@Res() decorator to true and return an empty array which is going to allow us make use of the platform specific way and leave the rest to Nest JS
+
+Providers are a fundamental concept in Nest JS. Many of the basic Nest classes may be treated as a provider - services, repositories, factories, helpers and so on. The main idea of providers
+is that they can be injected as a dependency, this means that objects can create various relationships with each other, and the function of wiring instances of objects can largely be
+delegated to the Nest runtime system
+
+Controllers should handle HTTP requests and delegate more complex tasks to providers. Providers are plain Javascript classes that are declared as Providers in a module

@@ -1,0 +1,39 @@
+Nest JS can be used with both Typescript and Javascript. To us Nest JS with vanilla Javascript, we are going to need a Babel compiler.
+
+The core files in a Nest JS application
+- controller
+- test
+- module - the root module for the application
+- service
+
+The entry point to a Nest JS application is the src/main.ts file  which uses the core NestFactory function to create a Nest application instance.
+The main.ts file includes an async bootstrap function.
+
+To create a Nest application instance we are going to make use of the core NestFactory class which exposes a few static methods. Technically, Nest JS is able to work with any Node
+framework once an adapter is created.
+
+NextExpressApplication and NestFastifyApplication.
+
+Controllers are responsible for handling incoming requests and returning responses to the client. In order to create a basic controller in Nest JS, we make use of classes and decorators.
+Decorators associate classes with required metadata and enable Nest to create a route map.
+
+For quickly generating a CRUD controller, we can generate it with the Nest CLI with nest g resource [name]. We can specify an optional path prefix by passing a prefix to the Controller
+decorator. Nest employs two different options for manipulating responses
+- The standard way is for if like an array is returned, Nest is going to serialize it to JSON but if a primitive is what is returned, it returns it like that. Essentially, simply
+return whatever you want to return and Nest is going to convert it. To access the client request details, we can make use of the @Req decorator
+
+The request object represents the HTTP object and has properties for the request query string, parameters, HTTP headers and body. In most cases, its not necessary to grab these
+properties manually. We can instead make use of dedicated decorators instead, such as @Body() or @Query()
+
+Out of the box decorators that Nest JS provides
+- @Request(), @Req()
+- @Response(), @Res()
+- @Next() - next
+- @Session() - req.session
+- @Param(key?: string) - req.params
+- @Body(key?: string) - req.body
+- @Query(key?: string) - req.query
+- @Headers(name?: string) - req.headers
+- @Ip - req.ip
+- @HostParam - req.host
+

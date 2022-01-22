@@ -1,0 +1,43 @@
+@HttpCode() decorator, every async function has to return a promise. Controllers always belong to a module.
+
+Providers are plain Javascript classes that are declared as providers in a module
+
+Providers normally have a lifetime("scope") synchronized with the application life cycle. When the application is bootstrapped, every dependency must be resolved, and therefore
+every provider has to be instantiated. Similarly, when the application shuts down, each provider will be destroyed
+
+Constructor based Injection
+
+A module is a class annotated with a @Module decorator. The @Module() decorator provides metadata that Nest makes use of to organize the application structure.
+
+Each application has at least one module, a root module. The root module is the starting point that Nest uses to build the application graph - the internal data structure Nest uses to
+resolve module and provider relationships and dependencies.
+
+The Nest JS docs emphasizes that modules are strongly recommended as an effective way to organize your components. The @Module decorator takes a single object whose properties
+describe the module
+- providers - the providers that will be instantiated by the Nest injector and that may be shared across this module
+- controllers - the set of controllers in this module which have to be instantiated
+- imports - the list of imported modules that export the providers which are required in this module
+- exports - the subset of providers that are exported by this module and should be available in other modules which import this module. You can either use the provider itself or 
+just its token
+
+Oh I understand it now, the whole idea is that a module encapsulates providers by default, take for example I have a BooksModule inside of which I have defined a BooksService Provider,
+if I want to make use of this BooksService provider in a different module, say a PagesModule, I will need to add it to the exports array property of the BooksModule while inside
+of the PagesModule, I will need to add the BooksModule to the imports array property
+
+A feature module simply organizes code relevant for a specific feature, keeping code organized and establishing clear boundaries.
+
+In Nest, modules are singletons by default, and thus you can share the same instance of any provider between multiple modules effortlessly.
+
+Every module is automatically a shared module. Once created, it can be re-used by any module
+
+Modules can not only export their internal providers, they can also re-export their imported modules
+
+A module class can also inject providers as well (for something like configuration), however module classes cannot themselves be injected due to circular dependency
+
+Unlike in Angular, in which providers are global by default, with Nest, providers are encapsulated inside of their modules and can only be accessed if the provider has been exported
+from the module. If we have a provider that we need to be global aka be accessed without needing to be exported, we can make use of the @Global() decorator
+
+Nest JS also has dynamic modules, meaning that instead of having a pre-defined module, we can compute it dynamically. In order to make a dynamic module global, simply set
+global to true in the returned module object
+
+The dynamic module can be configured by making use of the forRoot() method

@@ -1,0 +1,21 @@
+FingerPrint JS
+
+Open source browser finger printing service with the most accurate identification rate on the web. FingerprintJS aids developers in building first-in-class fraud detection with flexible
+APIs capable of identifying fraudsters even when they attempt to conceal their identity online.
+
+Major deal with FingerPrint JS - Enabling the accurate identification of evry browser navigating to a website or app, without the cost of increased friction for customers.
+
+They have a popular open source browser fingerprinting library.
+
+FingerprintPro - a cloud hosted Saas version of the service that amps up identification accuracy using additonal client and server side techniques combined with the most advanced 
+machine learning and AI tools available for browser identification.
+
+Fingerprint JS's technology is used by software engineering teams to
+- protect login pages from automated attacks and phishing attempts
+- providing data to payment processors to catch more fraud
+- account sharing detection and prevention for saas and subscription services
+- securing cryptocurrency exchanges, a popular target for credit card fraud and brute force exchanges
+- preventing malicious users from trolling online communities
+- restricting cheaters access to online games and services
+
+32 million dollar series B in November, 2021
