@@ -1,0 +1,41 @@
+Nest JS has a default, built in exception layer that is used to catch exceptions, if your application throws an exception that is not recognized by your application, its going
+to return that default built in exception like { status, error }. Then, Nest JS provides a built in HttpException class that we can make use of to throw exceptions, the HttpException
+constructor except two parameters, the response and the status code. I think it will likely just be best for me to override the entire response from the HttpException and pass in my
+own object and that is going to be returned.
+
+Then, we can make use of Nest JS's exception filters to essentially customize and override the return response. The Filter needs to extend the Exception filter class, but if
+we want to override the base exception, it is the BaseExceptionFilter interface that we need to extend and implement the catch method.
+
+Then, Nest JS provides a catch decorator in which we can specify which exception that we are trying to customize. We can pass in either a single exception or a comma seperated list
+to the Catch decorator. If we do not pass an exception to the Catch decorator, then that filter is going to work for every single exception. Then, exception filters can be scoped
+to either route handlers, controllers or global. This scoping can be done by means of the @UseFilters() decorator. If we want the filter to be global, we can make use of the
+useGlobalFiltes() method on the INestApplication inteface but the drawback of this approach is that if our filter needs a dependency to be injected, we cannot make use of this 
+useGlobalFilters() approach because it is not attached to any module. To get around this, add the exception filter to any module as a provider.
+
+Remember Leke that Providers is a catch all word for anything that can be injected, services, repositories, factories. The whole idea with it is that we want to leave that whole aspect
+of wiring up relationships between the different modules can be left to Nest's run time system.
+
+A pipe is a class annotated with the @Injectable() decorator. Pipes should implement the PipeTransform interface. Pipes have two typical use cases
+- transformation : transform input data to the desired form (e.g string to integer)
+- validation : evaluate input data and if valid, simply pass it through unchanged, otherwise throw an exception
+
+In both cases, pipes operate on the arguments being processed by a controller route handler. Nest interposes a pipe just before a controller route handler is called, and the pipe receives
+the arguments destined for the controller route handler (method) and operates on them. Any transformation or validation operation takes place on them after which the route handler is
+invoked with any potentially transformed arguments.
+
+Nest comes with a number of built in pipes that you can use out of the box. We can also build our own custom pipes.
+
+Nest comes with eight pipes out of the box
+- ValidationPipe
+- ParseIntPipe
+- ParseFloatPipe
+- ParseBoolPipe
+- ParseArrayPipe
+- ParseUuidPipe
+- ParseEnumPipe
+- DefaultValuePipe
+
+In order to make use of a pipe, we need to bind an instance of the pipe class to the appropriate context. As always with Nest, its advisable to pass in a class so that the process
+of instantiation can be left to Nest's runtime but assuming we wanted to customize the behavior of the pipe, we can just as easily pass in an instance of the pipe.
+
+The PipeTransform interface has a transform() method in the signature and the transform method takes in two parameters, the value and the metadata

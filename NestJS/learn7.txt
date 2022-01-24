@@ -1,0 +1,42 @@
+Nest provides a set of standard exceptions that inherit from the base HttpException.
+- BadRequestException
+- UnauthorizedException
+- NotFoundException
+- ForbiddenException
+- NotAcceptableException
+- RequestTimeoutException
+
+ExceptionFilters allow you to control the exact flow of content and the content of the response sent back to the client. I think the whole idea of exception filters is that we can
+take granular control of the exception
+
+All exception filters should implement the generic ExceptionFilter<T> interface where T is the type of the exception. ArgumentsHost is a powerful utility that we can make use of
+to obtain the current request and response objects that are being passed to the original request handler.
+
+We can apply the filter we created to either a controller action by making use of the @UseFilter() decorator and pass in the created filter. It is advisable to pass in the class
+instead of an instance because if we pass in the class, we are leaving the handling up to Nest and it can reuse the instances it creates in other places in the app.
+
+Exception filters can be scoped at different levels, method-scoped, controller scoped or global scoped.
+
+If we wanted to make the filter controller scoped, we would apply the @UseFilter() decorator to the controller. If we wanted it to be global scoped, we would do it in the 
+async bootstrap function that is the entrypoint to the application. Remember how if we wanted to apply global middleware we would make use of the use() method which is exposed
+on the NestApplicationFactory instance. For exception filters, we would make use of the useGlobalFilter() method.
+
+But the problem with useGlobalFilters() is that it cannot inject dependencies since it is registered outside of any module. In order to solve this, we can register a global scoped
+filter directly from any module by adding it to the providers array as an object with the provide and useClass properties.
+
+In order to catch every exception type, remember how from the exception filter definition, we would specify the exception we were trying to catch with the @Catch() decorator,
+or pass in a comma separated list if we wanted to catch multiple exceptions, if we left the @Catch() decorator empty, it would catch every single exception type.
+
+If we want to extend the built in global exception filter, we can do so by extending the BaseExceptionFilter
+
+A pipe is a class which is annotated with the @Injectable() decorator. Pipes should implement the PipeTransform interface
+
+Pipes have two typical use cases
+- transformation - transform input data to the desired form (e.g from string to integer)
+- validation - evaluate input data, and if valid, simply pass it through unchanged and if not, throw an exception
+
+In both cases, pipes operate on the arguments being processed by a controller route handler. Nest imposes a pipe just before a method is invokedm, and the pipe recieves the arguments
+destined for the method and operates on them. Any transformation or validation operation takes place at that time, after which the route handler is invokes with any(potentially)
+transformed arguments
+
+Nest comes with a number of built in pipes that one can use out of the box, we can also create our own pipes

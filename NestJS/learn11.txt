@@ -1,0 +1,26 @@
+What did I learn about Nest JS yesterday
+Nest Pipes
+The whole idea with Nest pipes is that we can make use of them to either transform or validate data. Pipes are simply classes that are decorated with the @Injectable() decorator
+and implement the PipeTransform interface. The PipeTransform interface has a transform method.
+
+Nest provides several, in built pipes such as the ParseIntPipe, ParseUuidPipe, ParseArrayPipe, ParseBooleanPipe. We can simply use these pipes to transform our data for example, to
+transform strings to integer. Simply specify the pipe next to the route controller method. And Nest is going to transform the string passed in as a query parameter into integer.
+
+Then, we can create our own validation pipes to transform data. Remember that any custom pipes we create must implement the PipeTransform interface. Also, remember that pipes in the
+exception layer. Meaning that they operate on the inputs intended for the route controller's handlers. They operate after middlewares and interceptors but just before controller
+handlers. If the entered in data fails validation, we can easily throw exceptions inside of our pipes.
+
+Then, Nest provides several ways of implementing validation, we can either make use of the joi validation library in which we pass in our own custom schema. But I think that the
+recommended way that I will use will be to make use of the class-validators and class-transform libraries. With this we can actually decorate our data transfer object and specify the
+validation directly on it and with the plainToClass method we can transform the passed in value from the user into a typed schema and implement our validation.
+
+Then, we can make use of the @UsePipes() decorator to apply a validation pipe. Validation pipes can be action scoped, controller scoped or global scoped.
+If the pipe is global scoped, then we will need to make use of the useGlobalPipes() method on the INestApplicationInterface method. But the issue with this approach is that because
+the pipe is not attached to any module, we cannot inject any dependencies. Remember that dependencies that can be injected are only those that exist in the same module as the class.
+
+To get around this, what we can do is to attach the pipe as a provider and make use of the useClass method.
+
+Guards are classes that are decorated with the @Injectable() decorator and implement the canActivate interface. The canActivate method essentially needs to return true or false.
+With traditional Express applications, authentication and authorization are done inside of middleware, but with Nest, its advised to delegate authentication to middleware because
+middleware is a one time thing and it has no need to be context aware. But something like Guards have access to the ExecutionContext in which it can be aware of whatever is coming next
+in the execution cycle.

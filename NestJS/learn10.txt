@@ -1,0 +1,20 @@
+We also have the @UsePipes() decorator that we can make use of to bind ValidationPipes to constructor methods. An alternative way is to make use of the class-validator and class-transform
+libraries to implement our validation. The advantage of this method is that we dont need to define an entirely different schema as we have to do with Joi's approach.
+
+Pipes can also be parameter scoped, method scoped, controller scoped or global scoped
+
+useGlobalPipes. If we want to define a default value for our pipe values, we can make use of the DefaultValue() pipe
+
+A guard is a class annotated with the @Injectable() decorator. Guards must implement the CanActivate interface
+
+Guards have a singular responsiblity. They determine whether a given request will be handled by the route handler or not, depending on certain conditions such as permissions, roles, ACL
+etc. In traditional Express applications, things like authorization and authentication are typically handled by middleware. Middleware/
+
+Guards have access to the ExecutionContext.
+
+Guards are executed after each middleware but before any interceptor or pipe
+The canActivate() method should return boolean
+
+Make use of the @useGuards() decorator
+
+Nest provides the way to set metadata for routes by making use of the @setMetadata decorator

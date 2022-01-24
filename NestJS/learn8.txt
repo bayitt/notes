@@ -1,0 +1,14 @@
+Pipes run inside the exception zone. This means that when a pipe throws an exception, it is handled by the exceptions layer (global exceptions filter and any exception filters) that
+are applied in the current context.
+
+Nest comes with eight pipes out of the box
+- ValidationPipe
+- ParseIntPipe
+- ParseFloatPipe
+- ParseBoolPipe
+- ParseArrayPipe
+- ParseUUIDPipe
+- ParseEnumPipe
+- DefaultValuePipe
+
+They are all exported from the @nestjs/common pipe
