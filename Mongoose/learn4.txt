@@ -1,0 +1,44 @@
+SchemaTypes handle definition of path defaults, validation, getters and setters, field selection defaults for queries, and other general characteristics for Mongoose document properties.
+Just like how a Schema is a configuration for a collection, so is a SchemaType, a configuration for a property in the collection.
+
+Anytime Mongoose sees type:, it assumes that you are trying to define a SchemaType
+
+You can declare a schema type using the type directly or with an object with the type property. We can also add or specify several more properties to a path
+
+Schema Type Options that work for all types
+- required - boolean or function
+- default - function or value
+- select - 
+- validate - adds a validator function for the property
+- get - defines a custom getter for this function using Object.defineProperty()
+- set - defines a custom setter for this function using Object.defineProperty()
+- alias - defines a virtual for this property
+- immutable
+- transform
+
+getters and setters are essentially like accessors and mutators in Eloquent
+
+We can also define MongoDB indexes using schema type options
+- index
+- unique
+- sparse
+
+String Schema Type Options
+- lowercase
+- uppercase
+- trim
+- match
+- enum
+- minLength
+- maxLength
+- populate
+
+Number Schema Type Options
+- min
+- max
+- enum
+- populate
+
+Date Schema Type Options
+- min
+- max

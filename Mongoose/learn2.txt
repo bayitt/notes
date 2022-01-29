@@ -1,0 +1,17 @@
+Mojngoose provides an interface for accessing MongoDB collections. The whole idea is that with Mongoose we can create our schemas which we make use of to define our collections. 
+We can then define models which are based off of these schemas which we can then make use of to interact with the different documents (rows) in the collection.
+
+We make use of the mongoose.schema() method and pass in an object representing our schema. We can make use of the schema#add method to adjust our schema later on.
+The accepted types in Mongoose respectively are
+
+Then we can create our model with the mongoose.model() method. We can also add methods to the model with the mongoose.models method. It is also very important to remember to call the
+save() method on the model after creating it.
+
+We dont necessarily need to use Schema.methods to define method instances on our documents, we can also make use of the Schema.method() helper
+
+Do not declare methods using ES6 Arrow functions. Arrow functions explicitly prevent binding this.
+
+We can also add static functions to our models. There are two ways to do this. By means of the statics property on the schema object just like with methods or with the static helper
+just like with the method helper.
+
+We can also add query helper functions, which are like instance methods but for mongoose queries

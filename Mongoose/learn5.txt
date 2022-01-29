@@ -1,0 +1,4 @@
+If you must modify Date types making use of built in methods, it is advisable to make use of the markModified method on the field before calling save().
+
+mongoose.ObjectId, mongoose.Mixed, Schema.Types.Mixed. Arrays of Schema types are called primitive arrays while Arrays of subdocuments are also called document arrays.
+With Mongoose/MongoDB, arrays have an implicit value of []. To overwrite this, we can set the default to undefined

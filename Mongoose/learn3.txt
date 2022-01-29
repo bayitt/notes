@@ -1,0 +1,39 @@
+Remember Leke that with Mongoose, String is a shorthand for { type: String }
+Schemas not only define the structure of your document, they also define document instance methods, static Model methods, compound indexes, and document lifecycle hooks called middleware.
+By default, Mongoose adds an _id property to your schemas.
+
+Do not declare statics using arrow functions because arrow functions dont have this bound within their context. With custom schema methods, this refers to the current row/document that
+the model represents. We can access the particular model with mongoose.model(). With custom statics this refers to the entire model
+
+Query Helpers
+We can also add query helper functions, which are like instance methods but for mongoose queries. They help you to extend mongoose's chainable query builder api.
+
+Indexes support the efficient execution of queries in MongoDB. Without indexes, MongoDB must perform a collection scan i.e scan every document in a collection, to select those documents
+that match the query statement. If an appropriate index exists for the query, MongoDB can use the index to limit the number of documents that it must inspect.
+
+Indexes are special data structures that store a small portion of the collection's data set in an easy to traverse form
+
+Virtuals are document properties that you can get and set but that do not get persisted to the database. The getters are useful for formatting or combining fields while setters are useful
+for decomposing a single value into several values for storage.
+
+Virtuals are essentially the mongoose equivalent of Laravel appends
+
+If we make use of toJson() or toObject(), Mongoose is not going to include the virtuals.
+
+We can also make use of virtual setters, say the data is coming in via the fullName property, and we want to separate it into firstname and lastname, we will make use of a setter
+
+Virtual property setters are applied before validation
+
+Aliases are a particular type of virtual where the getters and the setters seamlessly get and set another property. This is handy for saving network bandwidth, so we can convert a short
+property name stored in the database into a longer name for code readability. In the schema definition, simply declare the alias property and from then, we can easily access the 
+document property via the alias
+
+Schemas have a few, configurable options which can be passed to the constructor or to the set method
+
+Here are all the different configurable options
+- autoIndex - By default, Mongoose's init() function creates all the indexes defined in your schema by calling Model.createIndexes() after you successfully connect to MongoDB. Creating
+indexes automatically is great for development and test environments. But indexes can also cause significant load on your production database. If we want to manage indexes carefully,
+we can set autoIndex to true.
+- timestamps - this tells mongoose to assign createdAt and updatedAt fields to your schema
+
+Note: Go back to read up on MongoDB indexes and Mongoose's configurable options
