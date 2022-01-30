@@ -1,0 +1,46 @@
+What did I learn about yesterday with Mongoose?
+The whole idea is that your schema is essentially the configuration for your collection. Your collection is essentially your database table if we were to relate it to SQL. We pass in our
+configuration for our different properties/fields in our collection and pass in a second, optional configuration to configure Mongoose for that collection. Then, Models are fancy 
+constructors which are compiled from our schemas. We define our schema, define all the methods which the models should have with either the models object on the schema or with the model
+helper on the schema, define all the static methods with statics or with the static method helper. Define all of our query helpers with the query property and then compile it into our 
+model with mongoose.model(), The first parameter to mongoose.model() should be the singular, title case name of the collection and mongoose is going to resolve it into the name of the
+collection. For example, Tank is going to become tanks, Car is going to become cars.
+
+Then, the whole idea is that in Mongoose, your collection is a tree with the different fields/properties in your collection becoming paths/branches. With that in mind, Mongoose has 
+a concept called a SchemaType, SchemaTypes are essentiially the representation of the different properties in your schema. SchemaTypes can be denoted by either assigning the field/property
+in question the particular type or assigning it an object containing the type and then passing in other configuration options inside of the object. Mongoose can perform validation for
+you on the data which is entering your database. There are certain options which can pass as part of the options, for example, we can pass in required, min, max, default values
+getters and setters,  aliases and others. Its essentially similar to the concept of all the configurations of what we would typically do in migrations.
+
+Also, Mongoose has the concept of virtuals, virtuals are similar to Eloquent's concept of $appends, with virtuals we can compose fields that are not necessarily a part of your schema
+but essentially "append" them to our schema. But note, that we cannot query by virtuals since they do not, technically exist in the database.
+
+Then, with Date SchemaTypes, if we want to update them based on their values we need to make sure to call the markModified() method on the model, same thing with when we try to update
+mixed types. This is because Mongoose cannot natively track changes on date and mixed SchemaTypes.
+
+There are two different kinds of errors that can occur when connecting to mongodb databases with mongoose. Either an error occurs when trying to connect to the database initially, in
+this case, we can make use of the normal try, catch to handle the error. But if the error occurs when a connection had already been established, we can make use of the on method on the
+mongoose.connect() method to listen for errors on the connection and handle appropriately.
+By default, with Mongoose even if a connection has not already been established, mongoose models are going to try to carry out their different operations. This is because, by default
+the bufferCommands configuration option is set to true. We can set this to false and in doing this, this will cause mongoose models to wait until a connection has been established before 
+trying to perform their operations. But if bufferCommands is now set to true, we then need to set autoCreate to false because mongoose automatically tries to create the collections when
+the app is started since bufferCommands is set to true. With this, we need to create the collection by ourselves with mongoose.model.createCollection()
+
+Mongoose provides several static model methods to enable the fetching and updating of data. For example, we have updateMany(), updateOne, deleteOne(), deleteMany(), findOne(), find()
+and others. The deal with this different methods is that they return mongoose Query objects. Now with these mongoose queries, there are two different triggers for them. Its either
+we pass in a callback to the query. What this does is that as soon as mongoose sees that callback, it executes the query and passes the result back to the callback. Callbacks
+passed to mongoose queries always have the format of callback(error, result). If there was an error executing the query, error will populated while result will not be. But if the query
+executed successfully, error will not be populated while result will be populated. Now, with mongoose queries, its either we make use of MongoDB's native syntax, meaning a JSON document
+to execute our query or we make use of a query builder. Query builder is similar to Eloquent's concept of query builders.
+
+Then, we also have something called query casting. The whole idea is that for example if we are trying to find something by _id, obviously the _id we pass in to the filter is going to
+be a string but _id in our mongoose database is an ObjectId, so what happens is that mongoose is going to try to cast whatever type we passed in to whatever type that the field/property
+is in the database. By default, if mongoose encounters a property in the filter that does not exist in the database, it just ignores it and does not bother to cast anything, but if
+we dont want this, in the schema options object, we can set strictQuery to true. This will cause mongoose to remove non-existing properties from the filter. But if we want Mongoose
+to throw an excception if we try to filter by a property that does not exist, we can easily set strictQuery to 'throw'.
+
+Then, finally, while it is advised to always make use of save() to update objects, Mongoose provides a really useful findOneAndUpdate() method, we make use of this method to find a 
+document, and update it. By default, the findOneAndUpdate() method returns the document before it was updated, to get the new, updated document we can set new to true in an optional.
+second object options paramater to findOneAndUpdate(). We can also use the findOneAndUpdate() method like Eloquent's firstOrCreate() method, meaning that if the document it is querying
+for does not exist, it should merge the filter and update objects together and return a new document. This can be done by setting the upsert option to true in the optional second
+options object.

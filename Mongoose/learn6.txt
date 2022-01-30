@@ -1,0 +1,41 @@
+Document and Model are distinct classes in Mongoose. The Model class is a subclass of the Document class. When you use the Model constructor, you create a new document
+
+DocumentNotFoundError
+
+update(), updateMany(), findOneAndUpdate(). The deal with the save() middleware is that it executes the validation and middleware, while update(), updateMany() and findOneAndUpdate()
+do not execute the validation and middleware
+
+Subdocuments are documents embedded in other documents. In Mongoose, this means that you can nest schemas in other schemas. Mongoose has two different notions of subdocuments, arrays
+of subdocuments and one single, nested subdocument
+
+Subdocuments are similar to normal documents. Nested schemas can have middleware, custom validation logic, virtuals and any other feature that top level schemas use. The major
+difference is that subdocuments are not saved individually, they are saved whenever their top level document is saved.
+
+Subdocuments have save and validate middleware just like top level documents. Calling save() on the top level document triggers save() on the subdocument.
+Subdocument's save and validate middleware execute before the top level document's save but after the top level document's validate method
+
+With nested child paths, the child path can never ever be undefined but with subdocument children, they can be undefined. Subdocument paths are undefined by default.
+
+Mongoose models provide several static helpers for CRUD operations. Each of these functions returns a mongoose Query object
+- Model.deleteMany
+- Model.deleteOne()
+- Model.updateMany()
+- Model.updateOne()
+- Model.replaceOne()
+- Model.find()
+- Model.findById()
+- Model.findByIdAndDelete()
+- Model.findByIdAndRemove()
+- Model.findOne()
+- Model.findOneAndDelete()
+- Model.findOneAndRemove()
+- Model.findOneAndUpdate()
+
+A mongoose query can be executed in two ways
+- First, if you pass in a callback function, Mongoose will execute the query asynchronously and pass the results to the callback
+- A query also has a .then() function, and thus can be used as a promise
+
+
+When executing a query with a callback function, you specify your query as a JSON document. The JSON's document's syntax is the same as the MongoDB shell. All callbacks in Mongoose have
+the pattern (error, result). What result is depends on the query, for findOne, it is a potentially null single document, find() a list of documents, count() the number of documents,
+update() the number of documents affected

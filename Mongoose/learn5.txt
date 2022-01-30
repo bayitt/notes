@@ -2,3 +2,39 @@ If you must modify Date types making use of built in methods, it is advisable to
 
 mongoose.ObjectId, mongoose.Mixed, Schema.Types.Mixed. Arrays of Schema types are called primitive arrays while Arrays of subdocuments are also called document arrays.
 With Mongoose/MongoDB, arrays have an implicit value of []. To overwrite this, we can set the default to undefined
+
+You can connect to Mongoose with the mongoose.connect() method
+
+Mongoose lets you start using your models immediately, without waiting for a connection to your MongoDB database to be established. This is because Mongoose buffers function calls 
+internally. I am guessing what this means is that Mongoose is going to wait until the connection is established before carrying out your model operations. To turn this off, set bufferCommands
+to false on your mongoose model options
+
+Another setting that Mongoose has is autoCreate, Mongoose autocreates collections if autoCreate is set to true which by default it is. Since we have set bufferCommands to false, 
+make sure to set autoCreate to false also. Thus, when and where we are defininf our models, we need to call Model.createCollection() since autoCreate has been set to false.
+
+There are two classes of errors that can occur with mongoose.connect().
+- Error on initial connection
+- Error after initial connection has been established
+
+To handle initial connection errors, we can make use of try, catch or .catch of a promise
+To handle errors after a connection has been established, we need to listen for error events on the connection. The connect method also accepts a second options object which defines
+the configuration
+
+Models are fancy constructors which are compiled from schema definitions. An instance of a model is called a document. Models are responsible for creating and reading documents
+from an underlying MongoDB database.
+
+When you call mongoose.model() on a schema, mongoose compiles a model for you.
+
+The first argument to mongoose.model() is the singular name of the collection that this model is supposed to represent. Mongoose automatically looks for the plural, lowercase version
+of your model name.
+
+Models have an insertMany() method that accepts an array of objects
+
+Documents can be retrieved using a model's find, findById, fineOne or where static methods
+
+Models have static delete and deleteOne() methods for removing all documents matching a given filter
+
+updateOne()
+
+Change streams provide a way for you to listen to all inserts and updates going through your MongoDB database. Change streans do not work unless you are connected to a MongoDB replica
+set

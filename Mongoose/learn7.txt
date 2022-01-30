@@ -1,0 +1,21 @@
+A Query object enables you to build up a query using chaining syntax, rather than specifying a JSON object. Mongoose queries are not promises. They have a .then() function for co and
+async/await as a convenience. However unlike promises, calling a query's then() can execute the query multiple times.
+
+we can stream query results from MongoDB. Just call the Query#cursor() function to return an instance of QueryCursor.
+
+Leke, see it like this, the callback passed to the exec() function and the .then/await methods are triggers for the queries. Mongoose automatically carries out query casting for us.
+For example, something like _id that is passed in to the filter as a string, when Mongoose executes the query, it is going to cast _id to an objecId
+
+By default, Mongoose does not cast filter properties that are not in your schema, if we want it to remove filter properties that are not in the schema, when defining the schema, 
+we can set the strictQuery option to true and Mongoose is going to remove the property from the filtered properties. If we want Mongoose to throw an error if we pass in a property
+that does not exist in our schema, we can set strictQuery to 'throw'
+
+findOneAndUpdate
+With Mongoose, save() is the recommended way of updating documents, but in some cases, we might want to make use of findOneAndUpdate()
+This finds the first document that matches a given filter, applies an update and returns the document. By default, findOneAndUpdate() returns the document as it was before the update
+was applied. If we want the findOneAndUpdate() method to return the document after it has been updated, we need to specify the new option as true in the optional third options
+parameter to the method
+
+findOneAndUpdate() is atomic, meaning that we can assume that the document does not change in between the time that it was found and it was updated
+
+Making use of the upsert option,  we can use findOneAndUpdate() to upsert
