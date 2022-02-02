@@ -1,0 +1,42 @@
+Mongoose has a powerful alternative to MongoDB's join like $lookup operator. This alternative is called populate(). This lets you reference documents in other collections.
+
+Population is the process of automatically replacing the specified paths in the document with document(s) from other collection(s). With population, ObjectId, Number, String and Buffer
+are all valid as refs but we are advised to always use ObjectIds unless you are an advanced user.
+
+Populated paths are no longer set to their original _id when we call populate with mongoose's query builder, their value is replaced with the mongoose document returned from the database
+by performing a separate query before returning the results. Array of refs work in the same way, just call the populate method on the query and an array of documents will be returned
+in place of the original _ids. 
+
+Instead of calling populate(), we can manually populate a property by setting it to a document.
+
+You can call the model.populated() method to check whether a field is populated. If populated() returns a truthy value, you can assume the field is populated
+
+We can also call the depopulate() method
+
+When there's no document, the populated property/path is going to be null. If the populated property is supposed to represent an array, it will just return an empty array instead.
+If we only want a few, specific fields from the populate query, we can pass in what we want as the second parameter to the populate() method with it being either a string, object,
+or array of strings.
+
+Essentially, we can have syntax like this - .populate('author', 'name') or something like .populate({ path:'author', match:{}, select:'', options:{} })
+perDocumentLimit
+
+If you want to populate an existing mongoose document and want to populate some of its paths, we can make use of the populate method on the document itself.
+The Document#populate() method does not support chaining. You need to call populate() multiple times or pass in an array of paths, to populate multiple paths
+
+We can even populate across multiple levels, by passing in an extra populate configuration option to the populate object.
+
+Cross database population. This involves setting the actual model as the ref, instead of before in which we would specify the string to represent the ref. We can even pass in the model
+to the populate method in the query builder if we do not have access to the model when the schema is being defined.
+
+Then, thus far, all the examples we have gone through involve a single ref but what it its like a polymorphic relationship in which the ref could be one of several different models.
+In this case, we are going to make use of what is called a dynamic refPath. This involves combining the on and onModel paths when defining our schema
+
+The Principle of Least Cardinality states that one-to-many relationships should be stored on the many side
+
+Virtual populate() means calling populate() on a virtual property that has a ref option. Keep in mind that virtuals are not included in toJSON() and toObject() output by default.
+If you want virtuals to be included, set virtuals to true in your toJson and toObject. If we are making use of virtual populate, we need to include the foreigjn field in the select
+field.
+
+With populate virtuals, if we only want to fetch the count, all we need to do is to set count to true in the virtual definition
+
+We can also populate in either pre or post hooks

@@ -1,0 +1,25 @@
+An interceptor is a class annotated with the @Injectable() decorator. Interceptors should implement the NestInterceptor interface. Interceptors have a useful set of capabilities
+which are inspired by the Aspect Oriented Programming (AOP) technique. They make it possible to
+- bind extra logic before/after method execution
+- transform the result returned from a function
+- transform the exception thrown from a function
+- extend the basic function behavior
+- completely override a function depending on specific functions (e.g caching)
+
+Each interceptor implements the intercept() method. The first argument is the ExecutionContext instance (exactly the same object as for guards). The ExecutionContext inherits
+from ArgumentHosts.
+
+The second argument is what is called a CallHandler. The CallHandler interface implements the handle() method which you can use to invoke the route handler method. If you dont call the
+handle() method in your implementation of the intercept() method, the route handler method wont be executed at all.
+
+This approach means that the intercept() method effectively wraps the request/response stream. Because the handle() method returns an observable, we can use powerful rxJS operators
+to further manipulate the response. The invocation of the route handler is called a Pointcut, indicating that its the point at which our additional logic is inserted
+
+In order to make use of interceptors, we need to make use of the UseInterceptors() method which is exported from nestjs/common
+
+app.useGlobalInterceptors()
+
+An ES2016 decorator is an expression which returns a function and can take a target, name and property descriptor as arguments. You apply it by prefixing the decorator with an @ character
+and placing this at the very top of what you are trying to decorate. Decorators can be defined for either a class, a method or a property.
+
+createParamDecorator. Decorator composition.

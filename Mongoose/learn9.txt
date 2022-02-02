@@ -1,0 +1,21 @@
+Validation is middleware. Mongoose registers validation as a pre('save') hook on every schema by default. You can disable automatic validation before save by setting the validateBeforeSave
+option. You can manually run validation with doc.validate(callback) or doc.validateSync(). You can also manually mark a field as invalid (causing validation to fail) by calling 
+doc.invalidate(). Validators are not run on undefined values
+
+You can configure error messages for individual validators in your schema, we can do this in two ways. Either by making use of array syntax, with the vlaue we want to validate by
+and the second parameter being the validation message. Or we can make use of an object with the values and message properties. Mongoose also supports rudimentary templating with {VALUE}
+interpolating the passed in value
+
+Custom validation is declared by passing a validate object with a validator function that returns true or false and a message property that should be returned if validation fails.
+Errors returned after failed validation contain an errors object whose values are ValidationError objects. Each ValidationError object has kind, path, value and message properties.
+A ValidationError object may also have a reason property
+
+We dont necessarily need to specify our custom validators on the SchemaType. We can also specify it after the schema has been defined by calling the path() method on it and calling 
+validate().
+
+Before running validators, Mongoose is going to attempt to coerce values to the correct type. This process os called casting the document. If casting fails for a given path, the 
+error.errors object will contain a  CastError object. Casting runs before validation and validation does not run if casting fails
+
+Mongoose also supports validation for update, updateOne(), updateMany() or findOneAndUpdate()
+
+https://portal-spa.s3.us-west-1.amazonaws.com/fournine/bGHLhQCGpaUadjMcJUgsQGKgZJFn55nsRfiRIfhdR.png

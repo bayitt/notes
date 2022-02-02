@@ -1,0 +1,24 @@
+What did I learn about yesterday?
+I learnt about mongoose middleware. The whole idea is that mongoose has pre and post hooks with which we can execute different actions at the different points of the cycle. Mongoose
+has four different types of middleware. It has document middleware, query middleware, aggregate middleware and finally model middleware. Examples of the document middleware include
+save, validate, remove, update. Then, the deal is that for example, with the remove middleware, since there is both a document and query remove middleware, if you specify the 
+remove middleware on a schema/model with schema.pre(), mongoose by default will assume that it is for the document middleware, if we want to specify the remove for the query middleware,
+we will need to pass in a second arguments option, and specify whether the middleware should be activated for the query and for the document. Note that both options need to be specified.
+
+The inverse is the case for the deleteOne() and updateOne() middlewares, for these by default, mongoose assumes that it is for the query middleware instead of for the document middleware.
+Just like with the previous middleware, if we want to specify it for the document middleware, we need to pass in the second configuration object and specify for both the document
+and query.
+
+Middlewares are used for atomizing logic. Carrying out actions on relationships. With document middleware, this refers to the particular document on which the particular operation is being
+carried out while for query middleware, this refers to the particular query being executed. Middleware functions work in different ways, if just one parameter us passed to the function,
+that parameter is assumed to be the next() paramater through which the request can be forwarded to the next middleware in the sequence. If two parameters are passed to the middleware
+function, mongoose, assumes that the first parameter is the this in the operation. Its typically used for post middleware. If three parameters are passed, mongoose assumes that the
+first parameter is the error being thrown. Always make sure to call next() so that the request can be forwarded to the next middleware in the sequence.
+
+Then, init is the only synchronous hook.
+
+MongoDB has a $lookup operator which we can use to build relationships, but mongoose has a much more powerful option called the populate() method. With the populate() method, we can 
+essentially generate one-to-one or one-to-many relationships. The whole idea is that when we are defining the schema, say for example an author that has many stories, we can define
+the stories path as an array of object ids and set the ref property in the SchemaType object to 'Story'. Thus, essentially we can store an array of _ids in the database and anytime
+we want to load the relationship, we need to call the populate() method on the query builder. What this does is that mongoose is going to load the relationships. We can check if
+a model has been populated with the populated() method and specify the column, we can also depopulate on the model to depopulate.

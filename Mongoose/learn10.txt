@@ -1,0 +1,38 @@
+Middleware (also called pre and post hooks) are functions which are passed control during the execution of asynchronous functions. Middleware is specified on the schema level and are
+useful for writing plugins. Mongoose has 4 types of middleware, document middleware, model middleware, aggregate middleware and query middleware.
+In document middleware functions, this refers to the document, while in model or query middleware, this refers to the query being executed.
+
+Aggregate middleware is for MyModel.aggregate(). Aggregate middleware executes when you call exec() on an aggregate object. In aggregate middleware, this refers to the aggregation object
+All middleware types support pre and post hooks.
+
+Essentially, middleware are quite similar to model events in Eloquent
+
+The deal is that there are both remove document and query middlewares, so by default, if you register a schema.pre('remove') event, it registers on the document, but if we want it to run
+on the query middleware, we need to specify that instead, and we can do so with schema.pre('remove', { query: true, document: false }). But however, for updateOne and deleteOne middleware
+it is the query middleware that mongoose automatically records, and if we are trying to record it for the document middleware
+
+The create() function fires save() hooks
+
+Pre middleware functions are executed one after the other. In the middleware, the next() call does not stop the rest of your middleware from executing, if we dont want the middleware
+to continue executing, we need to actually return next()
+
+Middleware are useful for atomizing logic. They can be used to for example
+- complex validation
+- removing dependent documents
+- asynchronouse defaults
+- asynchronous tasks that a certain action triggers
+
+If any pre hooks error out, Mongoose will not execute subsequent middleware or the hooked function. Mongoose will instead pass an error to the callback and/or reject the returned promise.
+Inside of the pre hooks, if you call next() with an argument, that argument is assumed to be an error
+
+post middleware are executed after the hooked method and all of its pre middleware have been executed
+
+If your post hook function takes at least 2 parameters, mongoose will assume the second parameter is a next() function that you will call to trigger the next middleware in the sequence
+The save() function triggers validate() hooks, this is because mongoose has a schema.pre('save') hook that calls validate(). This means that all pre and post validate hooks get called
+before any pre save hooks.
+
+Error handling middleware is middleware that takes one extra special parameter which is the error parameter, just like the middleware in express, with the extra error parameter
+
+Leke take note of the aggregating pipelines concept.
+
+Only the init hook is synchronous out of all the mongoose hooks
