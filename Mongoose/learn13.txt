@@ -1,0 +1,22 @@
+Transactions allow you to execute multiple operations in isolation and potentially undo all the operations if one of them fails. To create a transaction, you first need to create a session
+using Mongoose#startSession or Connection#startSession. In practice, you should use either the session.withTransaction()  helper or Connection#transaction() function to run a transaction.
+
+The session#withTransaction() helper handles - creating a transaction, committing the transaction if it succeeds, aborting the transaction if it throws an error, retrying in the event
+of a transient transaction error.
+
+Mongoose introduced officially supported Typescript bindings in v5.11.0. To get started with Mongoose in typescript, you need to
+- Create an interface representing a document in MongoDB
+- Create a schema corresponding to the document interface
+- Create a model
+- Connect to MongoDB
+
+As the developer, you are responsible for ensuring that your document interface lines up with your mongoose schema. Say for example we have a user model of type IUser, the user model
+constructor is going to return an instance of HydratedDocument<IUser>. IUser is a document interface that represents the raw object structure that User objects look like in MongoDB.
+HydratedDocument<IUser> represents a hydrated Mongoose document with methods, virtuals and other Mongoose specific features.
+
+To define a type of ObjectId in the document interface, you should use Types.ObjectId, while in the schema definition, we need to use ObjectId or Schema.Types.ObjectId. Alternatively,
+the document interface that we create can extend the Mongoose Document interface. The official Mongoose documentation recommends not extending Document.
+
+Mongoose models do not have an explicit generic parameter for statics. If your model has statics, its recommended to create an interface that extends Mongoose's Model interface
+
+In Typescript, Mongoose's model takes 3 generic parameters, The DocType, TQueryHelpers type and the TMethods type

@@ -22,3 +22,19 @@ essentially generate one-to-one or one-to-many relationships. The whole idea is 
 the stories path as an array of object ids and set the ref property in the SchemaType object to 'Story'. Thus, essentially we can store an array of _ids in the database and anytime
 we want to load the relationship, we need to call the populate() method on the query builder. What this does is that mongoose is going to load the relationships. We can check if
 a model has been populated with the populated() method and specify the column, we can also depopulate on the model to depopulate.
+
+Discriminators are a schema inheritance mechanism. They enable you to have multiple models with overlapping schemas on top of the same underlying MongoDB collection. The whole idea is that with
+model dicriminators, we can have like inheritance with our models, we can have a base model and have our child models inherit from them. The discriminator() function takes three parameters
+, a model name, a discriminator schema which will be merged with the schema of the base model and an optional key, which defaults to the name of the model.
+
+The way mongoose tells the difference between the different discriminator models is by the discriminator key which is __t by default but we can change/customize this by setting the
+discriminatorKey option in our mongoose schema options.
+
+Schemas are pluggable, that is, they allow for applying pre-packaged capabilities to extend their capabilities. Plugins are a tool for reusing logic in multiple schemas
+
+The mongoose global helper has a plugin method
+
+Cool plugins to take note of
+- mongoose-autopopulate
+- mongoose-learn-virtuals
+- mongoose-cast-aggregation

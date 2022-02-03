@@ -1,0 +1,31 @@
+Nest JS supports two methods for integrating with MongoDB databases. We can either make use of the built in TypeORM module or make use of Mongoose. Nest makes use of the @nestjs/mongoose
+package.
+
+Import the MongooseModule from '@nestjs/mongoose'. Add the call to the MongooseModule.forRoot() method in the imports array of the AppModule.
+Schemas can be created with Nest JS decorators, or with Mongoose manually. Using decorators to create schemas greatly reduces boilerplate and improves overall code readability.
+
+The @Schema() decorator marks a class as a schema definition. The @Schema() decorator accepts a single argument which is the typical options object which we would pass as the second
+argument to the mongoose.schema() constructor. The @Prop() decorator defines a property or path in the document. Schema types can typically be automatically inferred due to typescript,
+metadata and reflection capabilities. However, in more complex scenarios in which the type cannot be automatically inferred, e.g for arrays or nested object structures, types must
+be indicated explicitly. Alternatively, the @Prop() decorator accepts an options object with which we can configure the SchemaType or path
+
+Finally, the raw schema definition can also be passed to the decorator. This is useful, for example, when a property represents a nested object which is not defined as a class.
+
+MongooseModule provides a forFeature() method to configure the module, including defining which models should be registered in the current scope. If you want to use the models in another 
+module, add MongooseModule to the exports section of the module and import the module in the imports array of the other module where you want to make use of it.
+
+We can inject our model into our service making use of the @InjectModel() decorator
+
+At times, we may need to access the native Mongoose connection object. We can inject the Mongoose Connection by making use of the @InjectConnection() decorator. We can also connect
+multiple databases to our mongoose. In this case, naming the connection becomes mandatory and we can do so with the connectionName property. With a setup like this, anytime you call
+mongoose.forFeature, as the second parameter, you have to specify the connection that you want to use. We can also inject the Connection for a particular connection.
+
+To register hooks in Nest JS, we need to make use of the forFeatureAsync() method of MongooseModule along with a factory provider e.g useFactory. With this technique, you can access
+a schema object, then use the pre() and post() method to register a hook on that schema. Like other factory providers, our factory function can be async and can inject dependencies
+through inject
+
+We can also register our plugins inside of the useFactory() methods, the same schema.plugin() method
+
+To register a plugin for all schemas at once, we can register it on the connection object in the connection factory of MongooseModule.forRoot()
+
+When you need to pass module options asynchronously we can make use of the MongooseModule.forRootAync() option instead of the typical MongooseModule.forRoot()
