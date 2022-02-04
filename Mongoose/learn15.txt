@@ -1,0 +1,35 @@
+What did I learn about yesterday?
+Nest JS provides a @nestjs/mongoose package which is essentially a wrapper around mongoose with methods and ways provided by the package to do mongoose things in a nest js kind of way.
+The major class with which we interact with is the MongooseModule class which provides several methods. First things first, in the AppModule, in the imports array, we need to register
+or essentially connect to our mongodb database, which we would typically do with mongoose.connect(). To the MongooseModule.forRoot(), we would pass in every thing that we would typically
+pass to mongoose.connect(), which is firstly the url of the mongodb database and an optional, second object to represent a confuguration object.
+
+We can make use of the @Schema() decorator to decorate our class. Anytime Nest JS sees a class decorated with the @Schema() decorator, it knows that alright this is a schema definition.
+
+We also need to define the interface for the Document. Remember how I read that anytime you are using Mongoose with typescript, you can define your document interface and have it
+extend the default Document interface from mongoose. But the mongoose document says this is generally not recommended. Then finally we can create and export our schema with the 
+SchemaFactory.createForClass() method. With the @Schema() decorator, we can pass in all the configuration that we would pass in as the optional second parameter to mongoose.schema().
+
+Then, we also have the @Prop() decorator which we can make use of to decorate the fields in our class definition. Typically, if the SchemaType is primitive, we can get away with inferring
+the type with the @Prop() decorator, but if we wanted to do more complicated thingsm we can then make use of the @Prop() decorator. To the @Prop() decorator, we can pass everything that
+we would typically pass to the path in the SchemaType to define it. We can also define refs that we can make use of population.
+
+Then, remember how Nest JS has the concept of feature modules in which we encapsulate and keep all of the logic for our applications together with modules. Inside of the imports array
+of our module, we can then compile our schema into our model. We make use of the MongooseModule.forFeature(). We will register our module inside of this method, and specify the name
+and schema. We can then inject our model into our service by making use of the @InjectModel() decorator from @nestjs/mongoose and specifying the name property on the deorated class.
+
+We can also inject the current mongoose connection by making use of the @InjectConnection() method from the @nestjs/mongoose package. Also, if we want to make use of the model that we have
+defined inside of the feature module, just like with other providers, we can simply add the MongooseModule to the exports array and with that, we can have whatever model that was defined
+in other modules that import the module. 
+
+Then, we can make use of multiple connections. We can do this by importing multiple MongooseModule.forRoot() method calls in the root app module. Just that, with these, we need to pass
+connectionName to specify the name that represents the connection. And when, we are creating the schema with MongooseModule.forFeature(), we need to add the name to specify the connection
+that we are creating the model for. Then, also when making use of the @InjectConnection() decorator, we need to specify the name of the connection whose mongoose object we are trying to fetch.
+
+Also, with middleware and plugins, we can do every single thing that we can do with typical mongoose. To do this in nest js, we would make use of a factory function inside of the 
+forFeatureAsync() method of MongooseModule instead of the typical forFeature() method. With the useFactory() method we can even do async stuff and specify all the pre and post hooks.
+We can also define our plugins with the plugin method on the schema. We always need to make sure to return the schema from our useFactory() method. We can also inject dependencies
+with the import and inject arrays on the factory.
+
+Also, instead of the MongooseModule.forRoot() method which we typically use. If we needed to do some computations to determine the connection, we can make use of the forRootAsync() 
+method and utilize an async useFactory() method to return an object containing the uri
