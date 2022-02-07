@@ -1,0 +1,25 @@
+Passport is the most popular node js authentication library. It's straightforward to integrate this library with a Nest application using the @nestjs/passport package. At a high level,
+Passport executes a series of steps to
+- authenticate a user by verifying their credentials (such as username/password, JSON WEB token) or identity token from an identity provider.
+- Manage authenticated state
+- Attach information about the authenticated user to the Request object for further use in route handlers
+
+Passport provides a strategy called passport-local that implements a username/password authentication mechanism
+
+For any passport strategy that you choose, we will always need @nestjs/passport and the passport packages. Then, we will need to install the package for the specific strategy e.g
+passport-jwt or passport-local. In addition, we can also always install the types definition for the particular strategy that we are using.
+
+With @nestjs/passport, you configure a Passport strategy by extending the PassportStrategy class.
+
+Passport automatically creates a user object based on the value that we return from the validate() method and assigns it to the Request object.
+
+The @nestjs/jwt package is a utility package that helps with JWT manipulation. The passport-jwt package is the package that implements the jwt strategy. The package provides a 
+JWTService class which provides a sign method that we can use to encrypt and generate valid JWT tokens
+
+The signup route should return the newly created user object along with a JWT token.
+
+Nest JS provides the PartialType utility to return a class in which all the fields in the class are optional. The PartialTypes method is exported from thhe @nest-js/mapped-types
+package. The PickType() function constructs a new type (class) by picking a set of properties from an input type. The OmitType() function constructs a type by picking all properties
+from an input type and then removing a particular set of keys.
+
+We can also generate a type that is a combination of two types with the IntersectionType() function
