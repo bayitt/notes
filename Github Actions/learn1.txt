@@ -1,0 +1,30 @@
+Github Actions
+Developer Workflow use cases. Most common workflow use case is for CI/CD. Github Actions is a platform to automate developer workflows. Github Actions is more than just CI/CD. CI/CD
+is just one of the many developer workflows that can be automated with Github Actions.
+
+With Github Actions, everytime something happens in or to your repository (events), You can configure a corresponding action to be executed in response. Other third party applications
+that we have integrated our application can also have events. You want to listen for the event, then trigger the workflow in which the corresponding action is executed.
+
+A chain or combination of actions is called a workflow
+
+CI/CD Workflow - Once you commit your code, it test your code, builds the artifact and pushes the build to a storage mechanism and then deploys
+
+AWS Container Registry
+
+A basic github workflow file will have an optional name which describes what the workflow is all about, an on section which defines the different events that the workflows are listening
+for. and then a required jobs section which defines the different jobs to be executed.
+
+The actions/ path in github is where predefined actions are located/hosted. Make use of the uses attribute to use a predefined action
+uses selects an action while run runs a command. 
+
+Workflows for github are executed on github's servers. For every new job that you setup, a fresh, new server/virtual environment will be setup for the job. By default, these jobs
+run in parallel but say we want to publish a new release of our app after the build step. In this case, we would want the publish job to be ran after the build job. In this case,
+we can specify a needs parameter in the publish job. This is like depends_on in docker-compose. The runs-on parameter in the job specifies the OS that you want the job
+to be tested on. It comes in three, different versions, ubuntu, windows and mac-os. So syay you have an application that runs in three different environments, we can simulate and test
+in these environments.
+
+Make use of strategy-matrix if we need to specify multiple of versions of something in our workflow file
+
+String interpolation - ${{}}
+
+In yml, if we want to execute multiline or linked commands, we can do so with a pipe |
