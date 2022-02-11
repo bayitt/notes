@@ -1,0 +1,40 @@
+Bash Shell Scripting Definition
+- Bash
+Bash is a command language interpreter. It is widely available on various operating systems and is a default command interpreter on most GNU/Linux systems. The name is an acronym for
+the Bourne Again Shell.
+
+- Shell
+Shell is a macro processor which allows for the interactive or non interactive command execution
+
+- Scripting
+This allows for automatic command execution that would otherwise be executed interactively one by one
+
+Terminal windows contain shell and shell allows you by the use of commands to interact with your computer, hence retrieve or store data, process information and various other simple
+or even extremely complex commands
+
+You can make a file executable by making use of the chmod +x command
+
+Bash is the default interpreter for many Linux/GNU based systems. To see your default interpreter, make use of the echo $SHELL command. To see which bash is being made use of, we can 
+make use of the which bash command.
+
+To define your script's interpreter as bash, first locate a full path to its executable binary using the which command and prefix it with a shebang #! and insert it as the first line of
+your script
+
+By default, any newly created files are not executable regardless of its file extension suffix
+
+Make use of the file command to view information about a file
+
+Execute cd to instantly navigate to your user home directory from any location
+
+Additionally, most commands accept so called options and arguments. Command options are used to modify command's behavior to produce alternative output results and are prefixed by -
+
+Command Substitution
+A technique in which the output of a command is assigned to a variable
+
+Never name your private variables using UPPERCASE letters. This is because uppercase letters are reserved for internal shell variables and you run the risk of overwriting the internal
+variables.
+
+# is used to represent comments in bash scripts. Every line starting with # except for the shebang line is taken as a comment and is not executed inside of the script.
+
+Normally commands executed on GNU/Linux command line either produce output, require input or throw an error. Every time you execute a command, three possible outcomes might occur. The
+first is that the command will produce an expected output, second, the command will generate an error, and lastly your command might not produce any output at all.

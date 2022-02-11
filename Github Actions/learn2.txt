@@ -1,0 +1,14 @@
+What did I learn about yesterday?
+
+Github Actions consist of events, actions and workflows. Events are preety self descriptive. The whole idea is that with github actions, you can respond to the different events taking
+place in your repository. Actions represent the different, unique steps taken to respond to a particular event. A combination of actions is known as a job. So essentially, we can
+run multiple jobs to respond to particular events. 
+
+Now, Github already provides different prebuild actions templates that we can make use of. I should also say, action files are written in .yml. Now workflow files consist of an optional
+name, a required "on" parameter which represents the different events that the workflow is supposed to be executed on. We also have a jobs section which represents the different jobs
+that we want to be executed on the different events. The thing with these jobs is that they run in parallel. Essentially, what happens is that github spins up different servers
+for the different jobs and executes them.
+
+I can also define my own github action by simply creating a repository with an action.yml files. matrix is used essentially when you want to use multiple options for your configuration.
+
+A single Docker Hub repository can hold many Docker images, stored as tags
