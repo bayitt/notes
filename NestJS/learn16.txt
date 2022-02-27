@@ -1,0 +1,22 @@
+For a dynamic module, all properties of the module options object are optional except module. In Nest JS, almost everything is shared across incoming requests. Injection scopes
+provide a mechanism to obtain the desired provider lifetime behavior.
+
+Provider Scope
+A provider can have any of the following scopes
+- DEFAULT - 
+A single instance of the provider is shared across the entire application. The instance lifetime is tied directly to the application lifecycle. Once the application has been bootstrapped,
+all singleton providers have been instantiated. Single scope is used by default.
+
+- REQUEST -
+A new instance of the provider is created exclusively for each incoming request. The instance is garbage collected after the request has finished processing
+
+- TRANSIENT - 
+Transient providers are not shared across consumers. Each consumer that injects a transient provider will receive a new, dedictaed instance.
+Specify Injection scope by passing the scope property to the @Injectable() decorator options object. For custom providers, we can specify the scope in the longhand object
+
+Scope.DEFAULT, Scope.REQUEST, Scope.TRANSIENT. Import the Scope enum from @nestjs/common. 
+
+Controllers also have scopes that we can specify by passing into the @Controller() decorator
+
+In a HTTP server based application, you may want to access a reference to the original request object when making use of request-scoped providers. You can do this by making use of the
+REQUEST object. In GraphQL based applications, you inject CONTEXT instead of REQUEST

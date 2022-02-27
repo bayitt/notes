@@ -1,0 +1,39 @@
+Dependency Injection is an Inversion of Control (IOC) technique wherein you delegate the instantiation of dependencies to the IOC container (In this case, the NestJS runtime system), instead
+of doing it in your own code imperatively. But sometimes we may not necessarily want the Nest IOC to handle this instantiation and creation for us. We may want to do it by ourselves. 
+Several examples of these include
+- You may want to create a custom instance instead of having Nest instantiate (or return a cached instance) of a class.
+- You may want to re-use an existing class in a second dependency
+- You want to override a class with a mock version for testing
+
+Nest allows you to define custom providers to handle these cases.
+
+The useValue syntax is useful for injecting a constant value, putting an external library into the Nest IOC, or replacing a real implementation with a mock object.
+useValue requres a value that has the same interface as the class that is is replacing.
+
+We also do not necessarily need to make use of the dependency name as the provider token, that is the provide aspect in the { provide:, useClass: }. We can decide that we want to make
+use of a string as the provide token. In this case, when injecting the dependency, we would need to specify @Inject(''), by specifying the string corresponding to the provider token
+
+The useClass syntax allows you to dynamically determine a class that a token should resolve to.
+The useFactory syntax allows for creating providers dynamically. The actual provider will be supplied by the value returned from the factory function. The factory function can be as 
+simple or complex as required. A simple factory may not depend on any other providers. A more complex factory can itself inject other providers to complete its result. For the latter
+case, the factory provider syntax has a pair of related mechanisms
+- The factory function can accept optional arguments
+- The optional inject property accepts an array of providers that Nest will resolve and pass as arguments to the factory function during the instantiation process.
+
+The useExisting syntax allows you to create aliases for existing providers. This creates two ways to access the same provider.
+
+If both dependencies are specified with SINGLELTON scope, they will both resolve to the same instance
+
+While providers often supply services, they are not limited to that usage. A provider can supply any value, for example, a provider may supply an array of configuration objects based
+on the current environment
+
+Asynchronous Providers
+At the times, the start of the application should be delayed until certain one or more asynchronous tasks are executed. For example, you may not want to start accepting requests until
+the connection with the database has been established. You can achieve this using asynchronous providers. The syntax for this is to make use of async/awaot with the useFactory syntax
+, 
+Static Module Binding
+
+Dynamic Modules can provide an API for importning one module into another, and customizing the behaviors and properties of that module when it is imported, as opposed to using static bindings
+Dynamic Modules give us the ability to pass parameters into the module being imported so we can change its behavior. A DynamicModule is nothing more than a module created at runtime,
+with the exact same properties as a static module, plus one additional property called module. The said module property serves as the name of the module, and should be the same as the
+class name of the module

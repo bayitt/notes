@@ -32,3 +32,19 @@ rating - float
 text - string
 created_at - datetime
 deleted_at - datetime
+
+Tokens
+jamesjackson@yahoo.com
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjA5NWM1NjJkMWI5Nzc3NDQ0MWVmM2EiLCJpYXQiOjE2NDUyMTY3OTIsImV4cCI6MTY0NTM4OTU5Mn0.VMKFQP8Q8tMbcoIh5yvAx0ImxMpqjI5aup-bG_-c7lw
+
+olamileke.devs@gmail.com
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjAxODIxNWZhNTk0MTMxMWMyYzJmNzUiLCJpYXQiOjE2NDUwNDIzOTgsImV4cCI6MTY0NTIxNTE5OH0.0wMdn4AxEOnLGWTg68Bz1_CjJK31b0axnL7ZE_GX1Fk
+
+j.martinez@ymail.com
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjBhYmY0MjFjOWUxYTAxZTA3OGIwNjciLCJpYXQiOjE2NDUyMTYwMTAsImV4cCI6MTY0NTM4ODgxMH0.1zz51dNE_4BfUTjo9AYg4yNW2OGbNiRuSun8yxOJ1rU
+
+olamileke.dev@gmail.com	
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjEyYWM5ZjMxNmFjMTEyODNhYjUzNmMiLCJpYXQiOjE2NDUzOTEwMDcsImV4cCI6MTY0NTU2MzgwN30.zIhdOaQAet-vZnbdrO7F4uW9iRaGhz1R91SYDvpK_wU
+
+What exactly do I want to do?
+The idea is that the user's different devices should be stored in an array on the user model. 

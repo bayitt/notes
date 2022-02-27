@@ -1,0 +1,26 @@
+Positional parameters are assigned via command line arguments and are accessed within a script as $1, $2, $3 ... $N. During the script execution, any additional items supplied after the 
+program name are considered arguments and are available during the script execution.
+
+With $#, we can print the number of supplied arguments while with $*, we can print all the supplied arguments
+
+We can make false/nullish checks in Bash scripts just as we would do in normal programming languages with !. 
+The -z option returns true if the length of a string is 0
+
+You can terminate a bash script execution with exit and specify the code like exit 1
+
+fi is used to terminate a conditional expression
+
+Bash scripts basically have three different types of loops
+- For loops
+- While Loops
+- Until Loops
+
+To redefine or reassign variables, make use of the let keyword
+
+When performing arithmetical/mathematical operations, we need to wrap the operation inside of brackets. But with the expr operator, we dont need to wrap the operation inside of brackets
+but we must not forget to escape the asterisk for mathematical operations
+
+It seems like with the expr command, it does not return the output
+
+expr and let work well with integers but not so much for decimals. To cover for that, we can make use of the bc command. By default, the bc command returns integers but we can specify
+a scale of decimal places that we want it to return

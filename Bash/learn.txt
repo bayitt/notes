@@ -1,0 +1,11 @@
+Standard Output (stdout)
+Standard Error Output (stderr)
+
+The > notation allows us to redirect stdout to a file whereas 2> notation is used to redirect stderr and &> is used to redirect both stdout and stderr
+The bash shell also features an input descriptor which is called stdin. Generally, terminal input comes from a keyboard. Any keystroke you type is accepted as stdin
+
+Bash Script functions are defined by making use of the function keyword
+
+Internal Variables
+- $BASH_VERSION
+- $HOME3

@@ -1,0 +1,39 @@
+What did I learn about Bash yesterday?
+
+Bash is essentially the default interpreter for most GNU/Linux based systems. Shell is a macro processor that enables you to communicate with your computer system. Terminal windows contain
+shell which enables us to interact with the computer system by making use of different commands such as man, ls, pwd and others.
+
+To view the interpreter which is being made use of on your computer system, we are going to make use of the echo $SHELL command. That is going to return the location of the interpreter
+being made use of on the computer system. We can also access the location of the bash interpreter on the computer system with the which bash command. Typically, these two commands return
+/bin/bash since bash is the default interpreter made use of on GNU/Linux based systems.
+
+Bash scripts enable us to automate a lot of the work being done in servers. With bash scripts we can execute logic all the different commands that we would normally do via the terminal.
+Bash scripts can be executed with bash. Simply use bash script name. Typically though, you want to exeute the script by itself and set the default interpreter that should be made use of.
+Specify the default interpreter that should be used by making use of a shebang definition at the top of the bash script. 
+
+Also take note of the date, cal, man commands. 
+
+We can also define variables inside of bash scripts and access them by making use of the $ syntax. Bash scripts also have this concept called command substitution in which a command
+is executed in the background and then assigned to a variable. This is done via the $() syntax. It also has another concept called parameter exapansion in which we can make use of a 
+self contained variable in an expression. This is done via the ${} syntax.
+
+The terminal also has the concept of stdin, stdout and stderr. Commands executed in the terminal can either return error or normal output. If it returns an error, it gets stored in
+stdout. If it returns normal output, it gets stored inside of stdout. Also, input is captured from the terminal via stdin. Instead of having these different outputs printed to the terminal,
+we can redirect this output into a file. For standard output, stdout, we can redirect it with >. For standard error, stderr, we can redirect it with 2>. While, we can make use of &> to
+redirect both stdout and stderr.
+
+We can also define functions in our bash scripts to extract out logic. We define functions by making use of the function keyword and defining the function body
+
+Numeric and String Comparisons
+- less than: -lt, <
+- greater than: -gt, >
+- equal: -eq, =
+- not equal: -ne, != 
+- less than or equal: -le
+- greater than or equal: -ge
+
+In Bash, we can use $? to check for the value of the previously evaluated expression. If you want to evaluate an expression in Bash, you need to wrap it i square brackets/
+
+Apparently, in Bash and unlike with typical programming languages, 0 means true while 1 means false
+
+Conditionals in Bash scripts work with the if, then, else construct
