@@ -1,0 +1,37 @@
+Circular Dependency
+A circular dependency occurs when two classes depend on each other. For example, class A needs class B. And class B depends on class A. Circular dependencies can arise in Nest JS between
+modules and providers.
+
+A forward reference allows Nest to reference classes which are not yet defined using the forwardRef() utility function
+
+Nest provides the ModuleRef class to navigate the internal list of providers and obtain a reference to any provider using its injection token as a lookup key. The ModuleRef class also
+provides a way to dynamically instantiate both static and scoped providers.
+
+ModuleRef instances have get() methods. This method retrieves a provider, controller, or injectable (e.g a guard or an interceptor) that exists (has been instantiated) in the current
+module using the injection token/instance.
+
+To retrieve a provider from the global context, for example, if the provider has been injected in a different module, pass the strict: false option as the second argument to the get()
+method
+
+Essentially, I think ModuleRef is the nuclear option. It provides a way to effectively bypass the typical import mechanism and get your different dependencies drect
+from the internal list of providers in the Nest IOC
+
+The ModuleRef instance has a get() method. This method retrieves a provider, controller, or injectable (e.g guard, interceptor) that exists (has been instantiated in the current module)
+using its injection token/class name. To retrieve a provider from a global context i.e if the provider has been injected in a different module pass the { strict: false } option as a
+second argument to get()
+
+To dynamically resolve a scoped provider (transient or request scoped), use the resolve method, passing the provider's injection token as an argument.
+The resolve() method returns a unique instance of the provider, from its own DI container sub-tree. Each sub-tree has a unique context identifier. Thus, if you call this method more than
+once and compare instance references, you will see that they are not equal.
+
+To generate a single instance across multiple resolve() calls, and ensure that they share the same generated DI container sub tree, you can pass in a context identifier to the resolve 
+method. Use the ContextIdFactory class to generate a valid context identifier
+
+Manually generated context identifiers with ContextIdFactory.create() represent DI subtrees in which REQUEST provider is undefined as they are not instantiated and managed by the
+Nest dependency injection system.
+
+ModuleRef#egisterRequestByContextId() method
+
+To dynamically instantiate a class that wasnt previously registered as a provider, use the module reference's create() method
+
+onModuleInit()
