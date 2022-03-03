@@ -1,0 +1,31 @@
+Lazy Loading Modules
+By default, modules are eagerly loaded, which means that as soon as the application loads, so do all the modules whether they are immeidately necessary. While this is fine for most 
+applications, it may become a bootleneck for apps/workers which are running in the serverless environment, where the statup latency is crucial.
+
+Lazy loading can help decrease bootstrap time by loading only modules required by the specific serverless function invocation. In addition, we can also load other modules asynchronously
+once the serverless function is warmto speed up the bootstrap time for subsequent calls even further (deferred modules registration).
+
+To load modules on demand, Nest provides the LazyModuleLoader class that can be injected in the normal way. Alternatively, you can get an instance of the LazyModuleLoader provider 
+from within your application bootstrap file by calling app.get() and passing in a LazyModuleLoader reference.
+
+Lazy loaded modules are cached upon the first LazyModuleLoader#load method
+
+Nest provides several utility classes that help make it easy to write applications that function across multiple application contexts e.g Nest HTTP Server based, microservices and
+websockets application contexts. These utilities provide information about the current execution context which can be used to build generic guards, filters and interceptors
+that can work across a broad set of controllers, methods and execution contexts.
+
+Two example classes of these are ArgumentsHost and ExecutionContext
+
+The ArgumentsHost class provides methods for retrieving the arguments which are passed to a route handler. It allows choosing the appropriate context e.g HTTP, RPC, or websockets
+to retrieve the arguments from
+
+host.getType(). host.getArgs(). host.getArgByIndex()
+
+ExecutionContext extends ArgumentHost, providing additional details about the current execution process.
+The getHandler() method of the execution context class returns information about the route handler for the request, while the getClass() method returns information about the type
+of the controller
+
+A Nest application, as well as every application element, has a lifecycle which is managed by Nest. Nest provides lifecycle hooks which give visibility into key lifecycle events, 
+and the ability to act(run registered code on your module, injectable or controller) when they occur
+
+We can divide the overall lifecycle into three phases, initializing, running and terminating

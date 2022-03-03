@@ -1,0 +1,35 @@
+BackMeUp Plan
+What exacly do I want to build ?
+A simple application through which I can make automated backups of the storage data in my various, different bots. I am building this for my bots but I dont want to tie it too much to 
+the bots. In the future I could have more applications that I desire to backup which are not necessarily bots. I want to be able to have the last one week record for backups for
+the different services.
+
+How should it work?
+Everytime a new request comes in to backup information for a particular service, it needs to backup the information and delete all the information for that service which is more than a
+week old. Ideally, I also want to integrate this with a notification service (bot) which should be messaging me anytime a new backup is made.
+
+Database Structure
+Users
+- _id - ObjectId
+- name - string
+- email - string
+- password - string
+- avatar - string
+- created_at - datetime
+- updated_at - datetime
+
+Services
+- _id - ObjectId
+- user - ObjectId | User
+- name - string
+- description - string | nullable
+- created_at - datetime
+- updated_at - datetime
+
+Backups
+- _id - ObjectId
+- service - ObjectId | Service
+- name - string
+- value - string
+- created_at - datetime
+- updated_at - datetime
