@@ -1,0 +1,32 @@
+GlobalStyle is a new component in v1 that injects styles defined in theme.styles.global into the global styles of your app or website.
+
+By using ChakraProvider at the root of your application, Chakra automatically renders a GlobalStyle component which reads the styles in theme.styles.global and passes the styles
+to Emotion's global component. The styles in theme.styles.global can either be a normal object or a function. Inside this function, we have access to the colorMode and theme
+
+In most projects you might find yourself repeating specific text properties (font size, font weight, line height) or layer properties (bg, color, shadow). This can be painful as your
+application grows in size. Using textStyle and layerStyle props can help you keep things organized and consistent
+
+Properties defined in a layerStyle
+- color or text color
+- background color
+- border width and border color
+- box shadow
+- opacity
+
+Basically all the different css color stylings along with box shadow and opacity
+
+Properties defined in a textStyle
+- font family, weight, style
+- line height
+- letter spacing
+- text decoration
+- text transform
+
+Basically all the fonts along with line heights, letter spacing, text decoration and text transform
+
+With sx you can provide any valid css to an element and utilize tokens from your theme to ensure consistency and that your are utilizing constraint based design principles when 
+styling your application. This prop provides a superset of CSS(contains all CSS properties in addition to custom ones). Basically, the sx prop is like the nuclear option.
+
+Custom CSS properties can also be defined by making use of the sx prop
+
+In Chakra UI, the & in selector will get resolved to a unique className that is assigned the component you put sx on

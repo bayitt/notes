@@ -1,0 +1,43 @@
+Redux is simply a store to store the state of the variables in your app. Redux creates a process and procedures to interact with the store so that components will not just update
+or read the store randomly.
+
+In short, Redux is a way to manage the state or it can be called a cache or storage that can be accessed by all components with a structured way. It has to be accessed via a reducer and
+actions
+
+Essentially from your component, you dispatch actions which are picked up by reducers which then mutate your global store.
+
+A reducer is nothing but a pure function that takes the currentState and action that returns a new, updated global state
+
+redux.createStore(), store.getState()
+
+the reducer is just a function with a switch statement to decide which action to execute according to the action type.
+
+The simplest way to test a value is with exact equality
+
+toBe() uses Object.is() to test exact equality. If you want to make use of exact equality, make use of toEqual instead.
+
+You can also test for the opposite of a matcher with .not.toBe()
+
+Sometimes, you want to distinguish between undefined, null and false
+
+- toBeNull
+- toBeUnDefined
+- toBeDefined
+- toBeTruthy
+- toBeFalsy
+
+Numbers
+- toBeGreaterThan
+- toBeGreaterThanOrEqual
+- toBeLessThan
+- toBeLessThanOrEqual
+
+For floating point equality, we make use of toBeCloseTo
+
+You can check strings against regular expressions with toMatch
+
+You can check if an array or iterable contains a particular item
+
+If you want to test if a particular function throws an exception, use toThrow
+
+.resolves()/.rejects() matcher

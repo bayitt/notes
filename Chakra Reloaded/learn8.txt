@@ -1,0 +1,41 @@
+The Input component is a component that is used to get user input in a text field. The Input component comes in four sizes, the default is md.
+The input component comes in 4 variants
+- outline
+- unstyled
+- flushed
+- filled
+
+Like Bootstrap, you can add addons to the left and right of the Input component. Chakra UI exports InputGroup, InputLeftAddOn and InputRightAddOn to help with this use case.
+In some cases, we might need to have icons or buttons inside of the input component. Chakra UI exports InputLeftElement and InputRightElement to help with this use case.
+If the element is an icon or text, you can pass pointerEvents and set it as none to ensure that clicking them focuses on the input.
+
+To customize the border color of the input when it is focused or when there is an error in the input, we can set the focusBorderColor and errorBorderColor props. The placeholder of an
+input can be styled by making use of the _placeholder prop. The placeholders for Chakra UI have default opacity of 0.6
+
+The NumberInput component is similar to the Input component but it has controls for incrementing or decrementing values
+
+Unlike other components, when making use of the Radio component, we are likely going to be making use of it all the time with the RadioGroup component since natively with radio inputs
+only one is supposed to be selected at once.
+
+With the Select icon in Chakra UI we can customize the icon by passing an icon prop to the component.
+
+Badges are used to highlight an item's status for quick recognition
+
+The List component is used to display list items. It renders an <ul> by default
+
+Add icons to the list items by making use of the <ListIcon /> component
+
+The CircularProgress component is used to indicate the progress for determinate and indeterminate processes.
+For determinate processes, we can pass the value prop to the component as a number. We can also specify the size and thickness props. We can also make use of the CircularProgressLabel
+component
+
+Progress is used to display the progress status for a task that takes a long time or consists of several steps. Just like with the CircularProgress component, we can pass the value
+prop to determine the progress. We can also make use of the size prop to determine the height of the progress bar or we could set the height manually by ourselves.
+
+We can also set the isIndeterminate prop to make it indeterminate
+
+Skeleton is used to display the loading state of some components
+
+Skeleton, SkeletonCircle, SkeletonText
+
+You can prevent the skeleton from rendering with the isLoaded prop

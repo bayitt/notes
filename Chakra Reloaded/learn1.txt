@@ -1,0 +1,56 @@
+After installing Chakra UI, you need to setup the ChakraProvider in the root of your application. The props which are available to the ChakraProvider are the following
+- resetCSS - automatically includes <ResetCss />
+- theme - optional custom theme
+- colorModeManager
+- portalZIndex
+
+Style props are a way to alter the style of a component by simply passing props to it. It helps to save time by providing helpful shorthand ways to style components.
+
+Margin and Padding
+m, margin   
+mt, marginTop
+mr, marginRight
+ml, marginLeft
+p, padding
+pt, paddingTop
+pr, paddingRight,
+pl, paddingLeft
+
+Color and Background Color
+color,
+bg, background
+bgColor,
+opacity
+
+Gradient
+bgGradient
+bgClip, backgroundClip
+
+Typography
+fontFamily
+fontSize
+fontWeight
+lineHeight
+letterSpacing
+textAlign
+fontStyle
+textTransform
+textDecoration
+
+Layout, width and height
+w, width
+h, height
+minW, minWidth
+maxW, maxWidth
+minH, minHeight
+maxH, maxHeight
+d, display
+overflow
+overflowX
+overflowY
+
+FlexBox - With this, we can either make use of the display prop which is set on the <Box /> component or make use of the inbuilt <Flex /> component
+alignItems, *align
+justifyContent, *justify
+flexWrap, * wrap
+flexDirection, *direction

@@ -1,0 +1,36 @@
+AspectRatio
+The AspectRatio component is used to embed responsive videos and maps
+
+Box is the most abstract component on top of which all other Chakra UI components are built. By default, it renders a <div /> element. The Box component is useful because it helps
+with 3 most common use cases 
+- Create responsive layouts with ease
+- Provides a shorthand way to pass styles via props. bg instead of backgroundColor
+- Compose new components and allow for overrides by making use of the as prop
+
+Center is a layout component that centers its child within itself.
+
+Center - centers its child given width and height
+Square - centers its child given size
+Circle - a Square with round border-radius
+
+Containers are used to constrain a content's width to the current breakpoint while keeping it fluid. By default, it sets the max-width of the content to 60ch but we can customize this
+by passing custom maxWidth values or changing the container size tokens defined in theme.sizes.container. Use the centerContent prop to center the content inside of a container
+
+Flex is Box with display: flex. The Spacer component creates an adjustable, empty space that can be used to tune the spacing between child elements within Flex
+
+Flex and Spacer vs Grid and Stack
+- In HStack, the children will have equal spacing between them but they wont span the entire width of the container
+- With Flex and Spacer, the children will span the entire width of the container and will also have equal spacing between them
+
+SimpleGrid provides a friendly interface to create responsive grid layouts with ease. It renders a div element with display: grid. Specify the columns and spacing props.
+To have more granular control over the spacing for both the rows and the columns, make sure to specify the spacingX and spacingY props.
+
+Stack is a layout component that makes it easy to stack elements together and apply a space between them. It makes use of a modified version of the CSS lobotomized owl selector
+to add spacing between its children
+
+To stack elements in the horizontal or vertical direction only, use the HStack or VStack components. You can also make use of the stack component as well and pass the direction prop.
+
+In some cases, you might want to add dividers between stacked elements. Pass the divider prop and set its value to the StackedDivider or any other custom React element
+
+Wrap is a layout component that adds a defined space between its children, It wraps its children automatically if there is no space anymore to fit any more in the same row. Think of it
+as a smarter flex-wrap with spacing support

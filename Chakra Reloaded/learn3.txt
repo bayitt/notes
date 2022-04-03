@@ -1,0 +1,40 @@
+Chakra UI converts theme tokens (colors, font sizes) to CSS Custom properties (also known as CSS Variables). Every single value in the Chakra theme file is converted to a CSS variable.
+When you make use of style props or the sx prop with a theme value, chakra is going to generate the css for you with the specified CSS variable
+
+The :root pseudo class represents the top level of the HTML Document
+
+Chakra UI supports conditional semantic tokens for every scale (colors, font sizes) etc. This allows one to change the value of a token depending on the environment, like dark mode,
+direction and other CSS selectors.
+
+A semantic token value can either be a String | SemanticValue. The string value is used as reference to another token in the same scale
+
+The object notation SemanticValue allows you to define the default value and conditional keys. The condition can be one of the chakra pseudo selectors or a custom CSS selector
+
+Chakra UI supports responsive styles out of the box. Instead of manually adding @media() queries and nested queries all throughout your code. Chakra UI allows you to provide
+object and array values to add mobile-first responsive styles.
+
+Chakra's default breakpoints are
+sm - 30em
+md - 48em
+lg -62em
+xl - 80em
+2xl - 96em
+
+All style props accept arrays as values for mobile first responsive styles
+
+Pass null to any unneeded breakpoint to avoid generating unnecessary CSS
+
+The Chakra Factory serves as an object of chakra enabled elements, and also a function that can be used to enable custom components receive chakra style props.
+I think the whole idea with the chakra factory is that with the chakra factory we can create our own base html elements with theme aware style props making use of the chakra.<element>
+notation
+
+This reduces the need to create custom component wrappers and name them. This syntax is available for common html elements
+
+While the chakra factory function is a function that converts non-chakra components or JSX Elements to chakra enabled components so that you can pass style props to them
+
+Ensure the non-chakra component accepts className as props for this to work correctly
+
+In some cases, we might need to attach specific styles to the component wrapped in the chakra factory. In this case, pass the styles as an object second parameter
+
+We can also make use of the chakra factory on JSX elements. By default, the chakra factory only filters chakra related style props from geting to the DOM. For more fine grained
+control over what prop gets passed to the DOM, we can make use of the shouldForwardProp option

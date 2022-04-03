@@ -33,3 +33,6 @@ Backups
 - value - string
 - created_at - datetime
 - updated_at - datetime
+
+User token for olamileke.dev@gmail.com
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjJlMTlhNTIzOGM5NmM5ODc3MDYyM2MiLCJpYXQiOjE2NDgyOTg4NTIsImV4cCI6MTY0ODU1ODA1Mn0._Wku7hYGdgJCwla6K3m9nosBtQ8l_dTm_MwbLhzsHHM

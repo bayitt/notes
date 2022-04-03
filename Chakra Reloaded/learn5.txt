@@ -1,0 +1,31 @@
+The theme object is where you define your application's color palette, type scale, font stacks, border radius value and more.
+
+To manage typography options, the theme object supports the following keys
+- fonts
+- fontSizes
+- fontWeights
+- lineHeights
+- letterSpacings
+
+To extend or override a token in the default theme, import the extendTheme function and add the keys you would like to override
+
+Chakra has a specific approach or API for styling components. The main idea is that most components have default or base styles (baseStyle), styles for different sizes (sizes) and
+styles for diffeent visual variants (variants) and an optional defaultProps to indicate the default size or variant.
+
+You can apply a default colorScheme to all components with the withDefaultColorScheme() method. There is also a withDefaultSize() method. Also a withDefaultVariant() and 
+withDefaultProps() methods
+
+A single part component is a component that returns a single element.
+
+A multipart component is a component that has multiple parts, and requires these parts to work correctly.
+
+The useStyleConfig hook is used to consume styles and make them available to custom components that are not a part of Chakra UI.
+
+The _css prop in Chakara UI has the same API as the sx prop but has lower priority
+
+Styling multipart components in Chakra UI is quite similar to styling single part components except that we need to specify a parts key in the config for its composite elements.
+
+The useMultiStyleConfig hook
+
+The whole idea is that when you make use of a multipart component, you make use of the useMultiStyleConfig hook and then internally wrap the parts of the component in a StylesProvider
+and finally inside of the part/child component, you can make use of the useStyles hook to grab its styles.

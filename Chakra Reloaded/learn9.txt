@@ -1,0 +1,41 @@
+The Text component is used to render text and paragraphs within an interface. It renders a p tag by default.
+Pass the isTruncated prop to render an ellipsis when the text exceeds the width of the viewport or maxWidth prop. Likewise, if you would like to truncate the text after a specific number
+of lines, pass the noOfLines prop and set it to the desired number of lines.
+
+To override the element that gets rendered, pass the as prop
+
+Headings are used for rendering headlines. Heading composes Box so you can use all the style props and add responsive styles as well. It renders an <h2> tag by default.
+
+Pass the as prop to render a different heading element. Just like the Text component, we can also pass the isTruncated prop to render an ellipsis when the heading exceeds the width of
+the viewport
+
+Chakra UI exports 4 breadcrumb related components
+- Breadcrumb - The parent container for breadcrumbs
+- BreadcrumbItem - Individual breadcrumb element containing a link and divider
+- BreadcrumbLink - The breadcrumb link
+- BreadcrumbSeparator - The visual separator between each breadcrumb
+
+Change the separator being used in the breadcrumb by passing a string to the separator prop on the parent Breadcrumb component. We can even pass an actual React element as the separator
+
+To use Breadcrumb with a routing library like Reach Router or React Router, all you need to do is to pass the as prop to the BreadcrumbLink component.
+
+LinkOverlay provides a semantic way to wrap elements (cards, blog post, articles) in a link
+
+The Avatar component is used to represent a user, and displays the profile picture, initials or fallback icon. Chakra UI exports 3 avatar related components 
+- Avatar - The image that represents the user
+- AvatarBadge - A wrapper that displays its content on the right corner of the avatar
+- AvatarGroup - A wrapper to stack multiple Avatars together
+
+If there is an error loading the src of the avatar, there are 2 fallbacks
+- If there's a name prop, Chakra will generate the initials along with a random, accessible background image 
+- If there's no name prop, Chakra makes use of a default avatar
+
+You can also customize the background color and icon of the fallback to match your design requirements
+
+In some cases, you might need to stack avatars as a group, in this case, make use of the AvatarGroup component
+
+The Image component is used to display images. The size of the image can be adjusted by making use of the boxSize prop. You can set the border radius of the image with the borderRadius 
+prop
+
+The Image component allows you to provide a fallback placeholder. The placeholder is displayed when the fallback or fallbackSrc prop is provided. The image provided in src is 
+currently loading, an error occured while loading the image in src or if no src prop is passed.

@@ -1,0 +1,43 @@
+Background
+bgImage, backgroundImage
+bgPosition, backgroundPosition
+bgRepeat, backgroundRepeat
+bgAttachment, backgroundAttachment
+
+Borders
+border
+borderWidth
+borderStyle
+
+BorderRadius
+borderRadius
+
+Position
+pos, position
+zIndex
+top
+right
+bottom
+left
+
+Shadows
+textShadow
+shadow, boxShadow
+
+Specify pseudo styles with the _ prefix
+
+Asides all the common style props listed above, all components will accept the following props
+- animation
+- appearance
+- content
+- transform
+- transformOrigin
+- visibility
+- whitespace
+- userSelect
+- pointerEvents
+- wordBreak
+- overflowWrap
+- textOverflow
+
+The as prop is a feature that allows you to pass in an HTML tag or component to be rendered

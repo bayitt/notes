@@ -1,0 +1,40 @@
+The Button component is used to trigger an action or event such as submitting a form, opening a dialog or canceling an action, or performing a delete operation.
+The ButtonGroup component is used to group buttons whose actions are related.
+
+Use the size prop to change the size of the button. You can set the value to xs, sm, md or lg.
+Use the variant prop to change the visual style of the button. You can set the value to solid, ghost, outline or link
+
+You can add left and right icons to the Button component using the leftIcon and rightIcon options. Pass the isLoading prop to show its loading state. By default, the button will show
+a spinner and leave the button's width unchanged. You can also pass the loadingText prop to show a spinner and the loading text.
+
+We can also pass the spinner prop to make use of custom loaders when the application state is loading. When loadingText is present, you can change the placement of the spinner element
+to either start or end
+
+Chakra has also included the colors for common social media platforms and you can simply use them via the colorScheme prop
+
+You can use the Stack or ButtonGroup component to group buttons. When you use the ButtonGroup component, it allows you to set the size and variant of all the buttons inside it and
+also to set the spacing between the buttons. We can also group buttons together with the ButtonGroup component by passing the isAttached prop.
+
+IconButton component
+
+The Checkbox component is used in forms when a user needs to select multiple values from options. The Checkbox props are
+- defaultChecked
+- isDisabled
+- isInvalid
+
+Chakra UI also makes it possible to customize the spacing between the checkbox and the label text with the spacing prop. We can also customizse the color and size of the check icon
+with the iconColor and iconSize props.
+
+Just like how the checkbox accepts defaultChecked prop, the CheckboxGroup component accepts the defaultValue prop
+
+FormControl provides context such as isInvalid, isDisabled and isRequired to form elements
+
+Chakra UI exports 4 components for form control
+- FormControl - The wrapper that provides context and functionality for all childrren
+- FormLabel - The label of a form section
+- FormHelperText - The message that tells users more details about the form section
+- FormErrorMessage - The message that shows up when an error occurs
+
+isInvalid, isRequired
+
+IconButton composes the Button component except that it renders only an icon
