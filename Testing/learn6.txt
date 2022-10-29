@@ -1,0 +1,19 @@
+One specific thing to do is to test component props
+
+(component).props() to access a component's internal props
+
+With Enzyme, we can execute find() operations similarly to document.getElementById(), document.getElementByClassName().
+We can also check the state of components to check if an error exists in it
+
+Snapshot testing captures the code of a component at a moment in time, in order to compare it to a reference snapshot file stored alongside the test. It is used to keep track of changes
+to an app's UI.
+
+To convert an Enzyme wrapper to a format that is compatible witn Jest snapshot testing, we need to make use of enzyme-to-json
+
+Make use of the toMatchSnapshot() method to test snapshots
+
+Make use of jest.fn() to mock a function
+
+toHaveBeenCalled(), toHaveBeenCalledTimes()
+
+mock.mockReturnValue()

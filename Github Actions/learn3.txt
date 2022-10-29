@@ -1,0 +1,36 @@
+Github Actions is a continuous integration and delivery (CI/CD) platform that allows you to automate your build, test and deployment pipeline. You can create workflows that build and
+test every pull request to your repository, or deploy merged pull requests to production.
+
+Github Actions goes beyond just DevOps and lets you run workflows when other events happen in your repository.
+
+You can configure a Github Actions workflow to be triggered when an event occurs in your repository such as a pull request being opened or an issue being created. Your workflow contains
+one or more jobs which can run in sequential order or in parallel. Each job will run in its own virtual machine runner or inside a container, and has one or more steps that either runs 
+a script that you define or runs an action, which is a reusable extension that can simplify your workflow.
+
+A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked into your repository and will run when triggered by an event in
+your repository, or they can be triggered manually, or at a defined schedule. 
+
+An event is a specific activity in a repository that triggers a workflow run.
+
+A job is a set of steps in a workflow that execute in the same runner (virtual machine). Each step is either a shell script that will be executed or an action that will be run. Steps are
+executed in order and are dependent on each other. Since each step is executed on the same runner, you can share data from one step to another. For example, you can have a step that 
+builds your application followed by a step that tests the application that was built.
+
+An action is a custom application for the Github Actions platform that performs a complex but frequently repeated task.
+
+A runner is a server that runs your workflows when they are triggered. Each runner can run a single job at a time. Github provides Ubuntu Linux, Microsoft Windows and MacOs runners to run
+your workflows
+
+When your workflow is triggered, a workflow run is triggered that executes the workflow. After a workflow run has started, you can see a visualization graph of the run's progress and 
+and view each step's activity on Github.
+
+Oh mad, you can even apparently do stuff like define your actions as variables in your workflow file.
+
+We can specify custom environment variables by making use of the env key in a step. You can also run scripts and shell commands 
+
+If your job generates files that you want to share with another job in the same workflow, or if you want to save the files for future reference, you can store them in Github as artifacts.
+Artifacts are the files created when you build and test your code. For example, artifacts might include binary or package files, test results screenshots or log files. Artifacts are
+associated with the workflow run where they were created and can be used by another job. All actions and workflows called from within that run have write access to that run's artifacts.
+
+Use actions to upload and download artifacts
+

@@ -1,0 +1,34 @@
+The goal for mocking is to replace something we do not control with something that we do. The Mock Function provides features to
+- Capture Calls
+- Set return values
+- Change the implementation
+
+The simplest way to create a mock function instance is with jest.fn() 
+
+expect(mock).toHaveBeenCalled()
+expect(mock).toHaveBeenCalledTimes(1)
+expect(mock).toHaveBeenCalledWith()
+
+jest.fn(() => "bar")
+jest.fn().mockImplementation(() => "bar")
+
+We can also do things like call mockImplementationOnce()
+
+We can even apart from doing things like jest.fn(() => ) or jest.fn().mockImplementation(() => ), we can go straight and do mockReturnValue
+
+We can even do promise resolution with .resolves()
+
+One of the common ways to use the Mock function is by passing it directly as an argument to the function you are testing
+
+Three main types of Module and Function mocking in Jest
+- jest.fn - Mock a function
+- jest.mock - Mock a module
+- jest.spyOn - Spy or mock a function
+
+The most basic way of mocking a function is to reassign a function to the Mock function. Then anywhere the re-assigned functions are used, the Mock will be called instead of the original
+function
+
+jest.mock is the most common use case of jest testing in which you mock all the functions/methods contained in a particular module. The only disadvantage of this is that it becomes hard
+to access the original implementation of the module. For those use cases, we can make use of spyOn
+
+Make use of the mockRestore() method to restore the original implementation of a function

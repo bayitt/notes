@@ -1,0 +1,47 @@
+React Testing
+Jest, Enzyme
+
+Testing is a line by line review of how your code will work. A suite of tests for an application comprises various bits of code to verify whether an application is executing succeessfully
+without an error.
+
+Why do we test
+- To prevent regression. Regression is the re-appearance of a bug that had been previously fixed
+- It ensures the functionality of complex components and modular applications
+- Its required for the effective performance of a software application or product
+
+Types of Tests
+- Unit Test
+Here, individual units or components of the software are tested. A unit might be an individual function, method or procedure. A unit test isolates a section of code and verifies its
+correctness, in order to validate that each unit of the software's code performs as expected
+
+- Component Testing
+This verifies the functionality of an individual part of the application. Testing each module without considering integration with other components is referred to as component testing
+
+- Snapshot Testing
+
+Jest fits into a broader category of utilities known as test runners
+
+Enzyme is a library that is used to test React applications. Its designed to test components and it makes it possible to write assertions that simulate actions that confirm whether
+the UI is working corretly.
+
+- it or test - You pass a function to this method, and the test runner would execute that function as a block of tests
+- describe - this optional method is for grouping any number of it or test statements
+- expect - this is the condition that the test needs to pass
+- mount - this mounts the full DOM, including the child components of the parent component, in which we are running the tests
+- shallow - This renders only the individual components that we are testing. It does not render child components
+
+With Jest, any files found in any directory with the name __test__, Jest will try to run it. The second rule is that Jest will recognize any files with the suffix .spec.js or .test.js
+
+Skipping or isolating a test means that when Jest runs, a specific marked test is not run
+
+Jest has a nice feature called watch mode. To run Jest in watch mode, you can make use of npm test -- --watch or jest --watch
+
+A mock is a convincing duplicate of an object or module without any real workings. It can be created by Jest automatically or manually.
+
+Mocking reduces the number of dependencies i.e the number of related files that have to be loaded and parsed when a test is run. So using a lot of mocks make your tests run quickly.
+
+Mock functions are also known as spies because they allow you spy on the behavior of a function that is called directly by some other code.
+
+There are two ways to mock a function, either by creating a mock function to use it in test code or by writing a manual mock to override a module dependency
+
+Manual mocks are used to stub out functionality with mock data

@@ -1,0 +1,39 @@
+To install django, make use of the command python -m pip install django. Make sure to run the command inside of the already created virtual machine.
+
+Although you can use Django without a database, it comes with an object relational mapper in which you describe your database layout in Python code. Basically, something similar to 
+Laravel with Eloquent and how you can represent your different tables making use of Models. Data => Model syntax.
+
+python manage.py makemigrations
+python manage.py migrate
+
+Its the same idea as Flask really. Unlike with Laravel in which I would write out the migrations myself, with Django (as with Flask), there's a single models.py file in which you define
+all the models for your application. When you run python manage.py makemigrations, django has a look at the models.py file and generates migrations that implement the changes you just
+made. You then run python manage.py migrate and it will run the migrations. Basically the django equivalent of php artisan:migrate
+
+The ORM mapper exposes several methods to access data from the database. For example, make use of the Model.objects.all() method get all the rows that exist in the table. Similarly,
+we can create new model objects by creating objects of the model. But remember that until you call save on the newly created object, it has not been persisted to the database. Only until
+after calling save() is it persisted and does it have an id.
+
+Django provides a rich database lookup API. Model.objects.get(id=1), Model.objects.get(full_name_startsWith=''), Model.objects.get(full_name_contains='')
+
+Change an object by altering its attributes and calling save()
+
+Delete an object with delete()
+
+Django has this admin feature with which one can scaffold an administrative, production ready admin interface that lets authenticated users add, change and delete objects. The only
+step for this is to register your model in the admin site. I guess this is like a UI means or way of sort seeding your database.
+
+Register the different models in the admin site in admin.py. basically admin.site.register.
+
+To design urls for an app, you create a Python module called a URLconf. Basically, a table of contents for your app. It contains a mapping between url patterns and Python callback functions.
+
+Python callback functions are called views. Each view gets passed a request object - which contains request metadata, and the values captured in the pattern
+
+Each view is responsible for doing one of two things: Returning an HttpResponse object containing the content for the requested page, or raising an exception such as Http404.
+
+Generally a view retrieves data according to parameters, loads a template and renders the template with the retrieved data.
+
+from django.shortcuts import render
+
+Django has a template search path, which allows you to minimize redundancy among templates. In your Django settings, you specify a list of directories to check for templates with DIRS.
+If a template doesnt exist in the first directory, it checks the second directory and so on.

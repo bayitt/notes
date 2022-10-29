@@ -1,0 +1,10 @@
+django-admin startproject project-name
+python manage.py startapp app-name
+python manage.py makemigrations app-name
+python manage.py migrate
+python manage.py sqlmigrate app-name migration-number
+python manage.py check
+python manage.py shell
+python manage.py createsuperuser
+
+A view is a type of web page in your Django application that generally serves a specific function and has a specific template 

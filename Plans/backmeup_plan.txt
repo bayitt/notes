@@ -6,7 +6,14 @@ the different services.
 
 How should it work?
 Everytime a new request comes in to backup information for a particular service, it needs to backup the information and delete all the information for that service which is more than a
-week old. Ideally, I also want to integrate this with a notification service (bot) which should be messaging me anytime a new backup is made.
+week old. Ideally, I also want to integrate this with different notification services (bot) and/or emails which should be messaging me anytime a new backup is made. 
+
+There also needs to be Authorization in which users can generate different tokens that they can use to authenticate the different backup requests. Another feature although this is a nice to
+have is that if users can specify the specify the specific ip addresses that backups for resources can be made from
+
+What Needs to happen
+I am trying to define the actual storage mechanism. The whole idea is that it should be a unique uuid link. Something like https://backmeup-api.olamileke.me/123f-fhfh7-sjsjs-dhdhd7
+The token which should be used to authenticate this request should be an api-key from the service's defined API keys
 
 Database Structure
 Users
@@ -36,3 +43,10 @@ Backups
 
 User token for olamileke.dev@gmail.com
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MjJlMTlhNTIzOGM5NmM5ODc3MDYyM2MiLCJpYXQiOjE2NDgyOTg4NTIsImV4cCI6MTY0ODU1ODA1Mn0._Wku7hYGdgJCwla6K3m9nosBtQ8l_dTm_MwbLhzsHHM
+
+
+My thinking behind this notifications p is that basically users can select the notification channels that they would like to integrate with their application and also the different
+actions/events for which they would like to receive notifications for. The different events can be:
+- When a backup request is made with wrong credentials
+- A backup request is made from an unauthorized IP address
+- A backup request is successful

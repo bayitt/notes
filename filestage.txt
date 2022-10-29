@@ -1,0 +1,32 @@
+First things first 
+- I think the user interface can be much improved. I realized that there needs to be a differentiation between every single todo, having no speace/demarcation between the todos was kind
+of confusing because I didnt know which todo I was picking up. I remember how with Jira, there's a clear sepration between the different todos.
+- I should have added the spinner upon the network request being made like with the other requests
+- Ideally, you always want the backend to be the source of truth. I should have waited until the successful network request completion before updating the global state so that if it
+failed, the state would not be updated
+- I put the draggable attribute on the wrong element
+- One cause of the issue was that the memoized handleDrop function was not noting changes made to the todos due to the fact that sometimes it can be tricky for react to
+note changes in array of objects.
+Especially when its not when say a new todo has been created or deleted. I solved this issue by stringifying the todos and having the memoized function listen to that. With that
+its easier for React to track changes to this stringified variable
+- Another (the main) cause of the issue was that when I was swapping out the dragged and dropped todos, I was not updating their created_at timestamps. They were still the same old values
+- To optimze for the API, since with this implementation its absolutely important that the created_at timestamp is unique for each todo, we need to execute a check inside of the 
+UPDATE TODO for if a different todo exists with the same timestamp, it should fail
+- Add check that if the active index and hovered index are the same return
+
+toBe, toEqual, not, toBeUndefined, toBeDefined, toBeTruthy, toBeNull, toBeFalsy, toContain, toMatch, toBeCloseTo, toHaveBeenCalled, toHaveBeenCalledTimes, toHaveBeenCalledWith
+
+Enzyme
+- .props()
+- .find()
+- .toJson()
+- toMatchSnapshot()
+
+My thinking behind the testing p is that
+- I want to write a test first for if the component renders correctly. That is the normal mount().
+- Then I want to test that there are two different inputs and a button in the component. One of type text and another of type date
+- Then I test the onchange of the text input
+- Then I test the onchange of the date input
+- Then I want to test the button click of the component, for this I am going to create Jest spy of the useCreateTodo method
+- Then I want to render a dummy provider with a test component and render p tags depending on the number of todos
+- Have one for if it succeeds and another for if it fails

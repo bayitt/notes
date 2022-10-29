@@ -1,0 +1,31 @@
+We can make use of expressions to programatically set environment variables in workflow files and access contexts. An expression can be any combination of literal values, references to
+a context or functions. You can combine literals, context references and functions using operators.
+
+Expressions are commonly used with the conditional if keyword in a workflow file to determine whether a step should run. You need to use specific syntax to tell Github to evaluate
+an expression rather than treat it as a string ${{ <expression> }}
+
+Literal data types to use with expressions in Github actions
+- boolean
+- null
+- number
+- string
+
+Github performs loose equality comparisons. If the types do not match, Github coerces the type to a number. Github also ignores case when comparing strings. Objects and arrays are
+only considered equal when they are the same instance.
+
+Github offers a set of built in functions that you can use in expressions. Some functions cast data types to a string to perform comparisons.
+
+- contains(search, item)
+- startsWith(searchString, searchValue)
+- endsWith(searchString, searchValue)
+- format - works basically just like format in Python
+- join(array, optionalSeparator)
+- toJSON - this returns a preety print JSON representation of value. You can use this information to debug the information provided in contexts.
+
+Status Check Functions
+- success - returns true when none of the previous steps have failed or been canceled.
+- always - causes the step to always execute, and returns true, even when canceled. A job or step will not run when a critical failure prevents the task from running. For example, if
+getting sources failed.
+- cancelled - returns true if the workflow was canceled
+- failure - returns true when any previous step of a job fails. If you have a chain of dependent jobs, failure() returns true when any ancestor job fails.
+We can also include extra conditions for a step to run after a failure, but you must still include failure

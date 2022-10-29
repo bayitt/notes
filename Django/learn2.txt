@@ -1,0 +1,39 @@
+In order to start up a django project, run the command django-admin startproject project-name
+
+Things to note about the django-admin startproject command
+- The outer mysite/ root directory is a container for your project. Its name doesnt matter to Django, you can rename it to anything you want.
+- manage.py - A command line utility that lets you interact with this Django project in various ways
+- The inner mysite/ directory is the actual Python package for your project. Its the name is the Python package name you'll need to import anything within it
+- settings.py - Settings/configuration for the Django project
+- urls.py - URL declarations for your project; a table of contents for your Django powered site
+
+Use the command python manage.py runserver to run your development server
+
+Each application you write in django consists of a Python package that follows a certain convention.
+
+Projects vs Apps
+An app is a web application that does something - e.g a blog system, a database of public records or a small app. A project is a collection of configuration and apps for a particular
+website. A project can contain multiple apps. An app can be in multiple projects.
+
+I take this to mean that a Django project can basically contain multiple services or applications in it
+
+from django.http import HttpResponse
+
+the path() function which we make use of to define the different urls for the Django app with urlpatterns has three different parameters. The url (route), the view function it maps to
+and the name of the route.
+
+Hmm, thinking about it now. I think the whole apps idea is quite similar to Nest JS with the concept of feature modules. You basically break up your application into different modules
+and then import it into the root module.
+
+the django.urls package has a handy method called include() with which we can "include" the urls of the apps defined in the project.
+
+mysite/settings.py. This is a normal Python module with module-level variables representing Django settings. By default, the configuration uses SQlite.
+
+The INSTALLED_APPS setting in mysite/settings.py  holds the name of all Django applications that are activated in this Django instance. Apps can be used in multiple projects, and you
+can package and distribute them for use by other projects. By default, INSTALLED_APPS contains the following apps
+- django.contrib.admin - the admin site
+- django.contrib.auth - An authentication system
+- django.contrib.contenttypes - A framework for content types
+- django.contrib.sessions - A session framework
+- django.contrib.messages - A messaging framework
+- django.contrib.staticfiles - A framework for managing static files

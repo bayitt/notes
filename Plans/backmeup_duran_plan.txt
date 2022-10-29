@@ -1,0 +1,22 @@
+Planning for Duran
+Duran is going to be the dedicated backup microservice for backmeup. The whole idea is that from the different bots, its going to be duran that they are hitting in order to backup
+the different files. Essentially, duran has just one job to back stuff up.
+
+Its going to have a single /:uuid route with the uuid representing the uuid of the resource which is to be backed up. All the required validations are going to be needed to be carried out.
+Validations such as 
+- Validating that a valid API token is being used
+- Validating that the resource is not turned off
+- Validating that the backup request is being made from a valid IP if the resource has IPs that are specified for it
+
+Then, depending on the settings of the service, emails are to be sent out to notify the owner of the service if any of the validation fails
+
+Of course the endpoint also needs to verify that the request contains a single file which represents the backup.
+
+Then, once all validation is successful, duran is going to upload the file to cloudinary. Ideally, I want the folder structure in cloudinary to be something like
+olamileke.f@gmail.com/service_:uuid/resource_:uuid/backup. So basically, me sef I want to be able to navigate the folder structure myself i.e human readable.
+
+Once it has backedup the file successfully, it needs to dispatch an email to the admin that the resource was backedup successfully if the admin has that notification setting enabled 
+ofcourse.
+
+Also, probably for the future sha, there is going to need to be a DELETE /:uuid endpoint which if its hit is going to delete all the backups of the resource in cloudinary.
+There is also going to be a DELETE /services/:uuid endpoint which if hit is going to delete all the resources and backups of the service in cloudinary
