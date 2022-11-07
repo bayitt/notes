@@ -1,0 +1,6 @@
+Basically, each generic view needs to know what model its going to be acting on. This is provided making use of the model attribute. While the DetailView generic view expects the
+primary key value captured from the URL to be called "pk" so we need to make sure the route definition in the URLConf is updated to show that.
+
+Also, by default the DetailView generic view uses a template called <app name>/<model name>_detail.html. To customize this, we can make use of the template_name attribute to tell the
+view system to make use of a particular template. The ListView generic template is similar, except that the template generated has the format <app name>/<model name>_list.html.
+We can similarly customize with the template_name attribute

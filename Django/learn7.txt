@@ -1,0 +1,41 @@
+Django recap
+
+Last time I learned about Django views. Views are basically Python functions or methods (Class based views) that return Http responses. The sole purpose of views is to either return
+a HttpResponse or throw an exception if something is wrong with the request. Basically from your urlconf, you will define the route that should be mapped to the view function and optionally
+specify a name. The typical flow is urlConf => view function => Template.
+
+In order to render/return templates from our views, we can either make use of the loader function imported from django.template and use its get_template() method to get the template
+and then return the template as a parameter passed to the HttpResponse constructor.
+
+Django also provides a useful shortcut to return templates from our view functions, simply do
+
+from django.shortcuts import render
+
+in a forloop in Django templates, you can access the current counter of the loop with forloop.counter.
+
+All internal forms in a Djago app should make use of the csrf_token tag to prevent cross site request forgery attacks
+
+request.POST is a dictionary like object which is available on the request object and contains information sent along in a POST request
+request.GET is similar but contains information sent along in a GET request
+
+Two new things I just learnt about Python. With a try, except block, we can listen for multiple exceptions by simply wrapping them in a tuple. For example, if we wanted to listen
+for both KeyError and a DoesNotExist on a model, we can easily do something like
+
+try:
+    //
+except (KeyError, Model.DoesNotExist):
+
+The other new thing I learnt is that with Python, you can not only execute a finally block with a try, except block which I am already familiar with from other languages but you can
+add an else block. So in normal situations in which after the try, except, I would continue with code execution after it. Instead, I can put that code inside of an else block
+
+Key Tip:
+After dealing with POST data, its best practice to return a HTTP redirect to avoid data being submitted twice if a user hits the back button in the browser
+
+Django - Generic Views System
+I guess this is Django's version of template inheritance in which you can avoid having to duplicate the content of your templates especially when can be so similar so you can define
+a sort of inheritance system
+
+From what I can see, the whole idea is that really because most views/applications follow the well trodden path of you grab parameters from the route URL, fetch information
+from the database based on these parameters and return/render templates. Django's idea is to abstract that into system in a sense. Just like how with a method like get_object_or_404
+we can just pass the model and any aritrary number of keyword arguments to query the db, we can also make use of this generic views system and in a sense reduce the number of boilerplate
+code we have to write seeing as its mostly the same thing really.

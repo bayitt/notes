@@ -8,3 +8,34 @@ python manage.py shell
 python manage.py createsuperuser
 
 A view is a type of web page in your Django application that generally serves a specific function and has a specific template 
+
+Django Recap
+The first idea or thing to know with Django is the way it works with models. Unlike with Laravel in which we literally write out our migrations by ourselves, in Django, what you do is
+outline all the models in your application in a models.py file. You then run the command python manage.py makemigrations and Django is going to have a look at your models.py file and will
+generate migrations for you in a migrations folder. You then run the command python manage.py migrate and Django will apply these migrations for you.
+
+Django also provides this cool feature in which if you need to populate your database with data, you can do so via an admin interface instead of doing so via code which is what you would
+do in database seeding. Simply register the model that you have defined in your admin.py file
+
+from django.contrib import admin
+from .models import News
+
+admin.sites.register(News)
+
+Then, for routing in Django, in order to sort of provide a table of contents for your application, or to define its routes. you need to basically provide something called a urlconf.
+You do this inside of the urls.py file in your app and in it you define a urlpatterns list variable. We make use of the path method exported from the django.urls package.
+
+The path method takes several parameters, the first of which is a path/regex defining the format of the route, a corresponding view function which the route is supposed to map to
+and a name variable with which we can access the route from anywhere in the app.
+
+View functions in Django are essentially the equivalent of controller actions in Laravel. They accept the current request instance as the first positional argument and keyword 
+parameters representing the different route parameters. View functions basically exist to do one of two things. To return Http responses or throw exceptions if invalid data is passed in.
+
+In order to begin a new project in Django, we need to run the command django-admin startproject project-name. This is going to scaffold a brand new django project for us. Django is kind
+of weird with this. Its going to create a nested subfolder and an outer folder with the project name that you specified. Apparently, you can name the outer folder anything you want
+but the inner folder name is going to be what you are going to use to refer to the package/project. Basically its package name.
+
+Inside of this new project scaffolding, one of the key things to look at is the settings.py file. This file contains all the relevant configuration for your Django application suuch as
+the database engine to make use of with this Django project. Another important thing to look for is the INSTALLED_APPS list. This is the list that contains all the apps which this
+project contains. By default, there are a few defaults set there already. Not every one of them is required sha, you can take out ones you dont want or need. Then, as the next step,
+you need to run python manage.py makemigrations. This will create the required database tables that these INSTALLED_APPS need

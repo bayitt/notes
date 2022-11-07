@@ -1,0 +1,37 @@
+A view is a type of web page in your Django application that generally serves a specific function and has a specific function and has a specific template.
+
+In Django, web pages and other content are delivered by views. Each view is represented by a Python function (or method, in the case of class based views)
+
+Your project's template setting describes how Django will load and render templates. The default settings file configures a DjangoTemplates backend whose APP_DIRS option is set to True.
+By convention, DjangoTemplates looks for a templates subdirectory in each of the INSTALLED_APPS.
+
+Basically, the entire flow is to 
+- go from route
+- Django loads up the view function that corresponds to the route
+- Fetch data from database
+- Load up the template
+- Return the Http Response containing the template
+
+But instead of doing the whole loader.get_template() and then returning HttpResponse(template.render(context, request)). Django provides a shortcut for us to do this. We can simply do
+
+from django.shortcuts import render.
+
+Just like how Laravel has a ModelNotFoundException that is thrown when a model is not found, duhhh, Django has something similar called a DoesNotExist exception.
+
+Use the Http404 class from django.http to throw 404 exceptions.
+
+Just like how Django provides the render() shortcut instead of having to do loader.get_templates() and then return HttpResponse(template.render()). It also provides a get_object_or_404()
+method with which we can avoid having to do the try except with Model.DoesNotExist.
+
+There is also a get_list_or_404() method which performs the same function except it makes use of filter() to fetch multiple objects. It raises the 404 exception if the returned query
+list is empty.
+
+Remember how we can define names for our routes in our urlconf. we can make use of the names in our templates with a format like this 
+<a href="{% url 'detail' question.id %}">Visit site </a>
+
+Think about it, with this url template tag I just made use of to point to a route without using its explicit url. But you know how you can have multiple apps in a django project. So
+what if, two routes in different apps have the same name. How are we going to tell Django to differentiate between them ?, that is where namespacing comes in. In the urls.py file for
+an app, we need to set an app_name property, and then when making use of the url template tag, we need to add the namespace. In this case, something like
+
+{% url 'polls:detail' detail.id %}
+

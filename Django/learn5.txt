@@ -1,0 +1,28 @@
+Something important to take note of is Django's delineation between a project and an app. A project is basically a complete "project" or application. Or we can also see it as a collection
+of configuration for a complete application while an application is sort of a service under this project. A project can contain multiple apps while an app can be made use of in multiple
+projects and packaged separately.
+
+To create an app, run the python manage.py startapp app-name command. When a new app is created, remember how with Django the core thing is the project and the app needs to be registered
+under the project in settings.py. So we basically need to add this app we just created to the INSTALLED_APPS list in settings.py.
+
+With the python manage.py sqlmigrate command you can see the sql which is going to be executed for a migration. For example, if you wanted to see the sql which is to be executed for 
+the first migration in a polls app. Simply run the command, python manage.py sqlmigrate polls 0001 and the SQL for the migration would be printed out to the terminal.
+
+Then, we can also run the command python manage.py check command to run a general check on our django app and make sure all is fine. 
+
+Django also has a shell application through which we can access our database much like we do with Tinker in Laravel. Simply run the command python manage.py shell to access it.
+
+So far, I have encountered two methods on Django models. filter and get. I liken filter() to get() in Laravel in cases when we need to fetch multiple models or results. Django
+also provides several useful filters. For example if we wanted to find all the resources whose name starts with "Lekki", we can do something like 
+Resources.objects.filter(name__startswith='Lekki'). If we wanted to find the first resource that matched this condition, we would do Resources.objects.get(name__startswith='Lekki').
+
+Note that however, when the results are printed to the terminal, it does not look human readable. To get rid of this, we need to define a string representation of the model. This is a Python
+thing and not a Django thing. Simply define a __str__() method on the Resource model and specify what should be returned. Also, just like how with Laravel we can define accessors on our 
+models to append values to the original model schema, we can also do something similar with Django. Just like unlike with Laravel, in which say we append a published_at property to a 
+news model and access it as $news->published_at property. With Django, you literally have to call the method. So something like news.published_at(). 
+
+Several examples of Django Field classes when writing migrations are CharField(), ForeignKey(), IntegerField(). Some of these fields have required arguments such as the CharField() class
+which requires a max_length keyword argument, while others are optional such as the default keyword argument on IntegerField().
+
+Just like how with Laravel, we can create foreign key associations on the foreign key relationship. For example, api keys that belong to a resource, can be created with
+resource->apiKeys()->create([]). We can do something similar in Django with resource.apiKey_set.create(). Django defines a set pool to hold the opposite end of a foreign key relationship.
