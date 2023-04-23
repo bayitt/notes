@@ -1,0 +1,8 @@
+The Server Response object (often abbreviated as res) includes a set of Express js like helper methods to improve the developer experience and increase the speed of creating new 
+endpoints. The included helpers are
+
+- res.status (code) - A function to set the status code. Code must be a valid HTTP code.
+- res.json (body) - Sends a JSON response. Body must be a serializable object
+- res.send(body) - Sends the HTTP response. body can be a string, an object or a Buffer
+- res.redirect([status], path) - Redirects to a specified path or URL. status must be a valid HTTP Status Code.
+- res.revalidate(urlPath) - Revalidate a page on demand using getStaticProps 

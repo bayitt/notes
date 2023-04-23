@@ -1,0 +1,31 @@
+There are several, popular webservers in use but nginx is the most popular with a market share of 32%
+
+use nginx -v to check the nginx version
+
+- service nginx start
+- service nginx stop
+- nginx -h (see all the possible nginx commands) 
+- nginx -t (executes a test on the nginx configuration)
+- nginx -T (executes said test just like above but also dumps/ouputs the nginx configuration)
+
+nginx also has this concept of signals, we can make use of different signals in nginx, something like nginx -s stop does the same thing as service nginx stop. other possible signals
+include quit, reload and more
+
+the default nginx directory is /usr/share/nginx/html
+
+nginx has a master process which handles the startup and shutdown of the overall service. this master process spawns several child/worker processes. Basically, its the role of the master
+process to process the request and serve connections
+
+nginx employs an event based model and os dependent mechanisms to effectively and efficiently distribute requests among the worker processes. The worker processes wait on listening 
+sockets and accept incoming connections.
+
+The worker connections refers to the number of connections that each worker process can simultaneously manage.
+
+Also, the nginx configuration handles or determines the amount of worker processes that are spawned by the master process. If this value is set to auto, nginx is going to check for the
+number of CPU cores running on the machine and spawn a number of processes that corresponds to this number of CPU cores.
+
+A server block is a way to tell nginx that we want it to listen on a port and when it finds something on that port, it should execute a particular action.
+
+Port 53 is a special port used in DNS servers to forward traffic
+
+DNS Resource Record

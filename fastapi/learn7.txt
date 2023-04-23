@@ -1,0 +1,17 @@
+Just like how we can declare more validations and metadata for query parameters with Query, you can declare the same type of validations and metadata for path parameters with Path.
+
+When you declare a Python function and pass as the first parameter *, Python is going to know that all the parameters should be treated as keyword arguments instead of positional arguments
+
+With Query and Path, you can declare number constraints, ge - greater than or equal, gt - greater than, le - less than or equal, lt - less than
+
+With FastAPI, we can also declare body parameters as optional, by setting its default to None.
+
+When there is more than one body parameter in the function (two parameters that are Pydantic models). So, it will then use the parameter names as keys (field names) in the body
+
+Just like how there is a Query and Path to define extra data for query and path parameters, FastAPI provides an equivalent Body.
+
+By default, when you have only a single body parameter (parameter whose type is of Pydantic), FastAPI is going to expect its body directly. But if you want it to act the way it does when
+there are multiple body parameters, in which case, it expects the data literally, we'll need to make use of the Body() function and pass embed to True as a keyword argument.
+
+Same way we can declare additional validation and metadata in path operation function parameters with Query, Path and Body, you can declare validation and metadata inside of Pydantic's
+models using Pydantic's Field. We can declare things like title, description, max_length, gt, lt, le, ge on each field in a Pydantic class. 

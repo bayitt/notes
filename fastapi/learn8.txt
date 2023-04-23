@@ -1,0 +1,36 @@
+FastAPI Recap
+
+FastAPI is a Python framework for creating really fast, rapid APIs. With FastAPI we have path operation decorators and path operation functions, the decorators "decorate" the functions
+while the functions are what is executed when the endpoint is matched. I think its really slick how FastAPI makes use of Python's native typing functionalities to do things like validation
+, request parsing and automated generation of schemas.
+
+If we want to indicate route parameters with FastAPI, we do so using Python's formatted string syntax. We can then declare the route paremeter as a parameter in the path operation function.
+
+Then, there are three different kinds of parameters passed to the path operation function
+- route parameters
+- query parameters
+- body parameters
+
+These parameters can be ordered in any matter in the path operation function, FastAPI automatically knows which is which. If its not a route parameter, then its either a query 
+parameter or body parameter. If its of a basic type such as int, float, str or bool, then FastAPI assumes that its a query parameter. If its type is of a Pydantic model, then FastAPI 
+treats it as a body parameter. 
+
+FastAPI also provides several important functions for documentation and validation. These include Query(), Body(). These functions are to typically to be used in conjunction with 
+Annotated from the standard Python library. Typically, the type of the parameter is specified as the first argument to Annotated, while the second parameter is the function Query() or
+Body()
+
+With FastAPI, you can define, validate, document and use arbitrarily deeply nested models (due to Pydantic).
+
+Each attribute of a Pydantic model has a type. But that type itself can be another Pydantic model. So, we can declare deeply nested JSON objects with specific attribute names, types and
+validations
+
+Apart from normal singular types like str, int, float, we can also make use of more complex, singular types that inherit from str. Basically, what this means is that we have other types
+that we make use of for validation for example url validation
+
+We can also make use of Pydantic models as subtypes of list, set.
+
+You can declare examples of the data that your app is to receive. For example, if you have a Pydantic model and you want to be able to specify an example object for the model which will
+be used in the documentation. We can do this with Config and schema_extra from Pydantic.
+
+Also, just like how we can make use of Field() from Pydantic to define documentation and validation for the individual Pydantic models, we can also make use of it to specify the example
+value for the field to be made use of with the documentation.

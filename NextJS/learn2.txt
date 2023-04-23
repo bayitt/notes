@@ -1,0 +1,31 @@
+Next JS allows you to create or update static pages after you have built your site. Incremental Static Regenration enables you to use static generation on a per page basis, withou
+needing to rebuild the entire site.
+
+Next JS allows you to import css files from a Javascript file. This is possible because CSS extends the concept of import beyond Javascript. In order to add a global stylesheet to your
+application, simply import it inside of pages/_app.js and automatically it becomes available throughout your entire application. 
+
+Hmm, from this, what I understand is that due to the global nature of css stylesheets and in order to avoid conflicts, these imports may only be done from pages/_app.js.
+
+However, importing styles from node modules can be done from anywhere in your application.
+
+Next JS also supports CSS Modules making use of the [name].module.css file naming convention. CSS Modules locally scope CSS by creating a unique class name. This allows you to use the
+same CSS class name in different files without worring about collisions.
+
+If your Next JS application makes use of multiple layouts, you can add a property getLayout to your page, allowing you to return a React component for the layout.
+
+Reconciliation - the process by which React understands which elements have changed.
+
+The Next JS Image component, next/image is an extension of the HTML <img> element , evolved for the modern web. Apparently the Next Image component can automatically determine the width
+and height of local image files passed in.
+
+To protect your application from malicious users, you must define a list of remote hostnames you intend to use with the next/image component.
+
+A loader is a function that generates the URLs for your image. It modifies the provided src and generates multiple URLs to request the image at different sizes. These multiple URLs are 
+are used in the automatic srcset generation, so that visitors to your site will be served an image that is the right size for their viewport. The default loader for Next JS applications
+makes use of the built in Image Optimization API, which optimizes images from anywhere on the web and then serves them directly from the Next. js web server. If you want, you can write
+your own loader function with a few lines of Javascript.
+
+You can define a loader per image with the loader prop, or at the application level with the loaderFile configuration.
+
+You should also add the priority property to the image that will be the largest contentful paint element for each page. Doing so allows Next JS to specially prioritize the image for loading
+(e.g through preload tags or priority hints)

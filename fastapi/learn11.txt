@@ -1,0 +1,37 @@
+To return Http responses with errors to your client you use HttpException. There might be situations in which we need to add extra, custom headers to the HTTP error. we can simply pass
+a dictiomary to the headers keyword argument of HttpException.
+
+Just like how Nest JS has the concept of exception filters with which we can define specific filters for specific errors, we can do the same with FastAPI and define custom exception
+handlers for specific exceptions, so that when the exception is raised anywhere in the application, that exception handler that we defined is called.
+
+FastAPI has some default exception handlers, these handlers are in charge of returning the default JSON responses when you raise an HTTPException and when the request has invalid data.
+We can override these default exception handlers with our own.
+
+If you want to use the exception along with the same default exception handlers from FastAPI, we can easily import them for use from fastapi.exception_handlers
+
+There are several parameters that you can pass to your path operation decorator to configure it. 
+We can define the HTTP, status code to be used in the response of your path operation.
+We can also add tags to our path operation decorator, this is a list of str and it will be added to the OpenAPI schema and used by the automatic documentation interface. 
+We can also add summary and description. As descriptions tend to be long and cover multiple lines, we can declare the path operation description in the function docstring and FastAPI
+will read it from there. We can also write markdown in the docstring description. 
+We can also specify the response_description in the path operation decorator.
+Finally, we can mark a path operation as deprecated in the path operation decorator.
+
+There are some cases where we might need to convert a data type (like a Pydantic model) to something compatible with JSON (like a dict, or list). For example, if you need to store it in
+a database. For this, FastAPI provides a jsonable_encoder() function.
+
+In Pydandic, you can create a copy of the model making use of .copy(), we can also update a pydantic model by passing a dictionary to its the update keyword argument of the copy() method
+
+FastAPI has a very powerful but intuitive dependency injection system. It is designed to be very simple to use, and makes it very easy for any developer to integrate other components
+with FastAPI.
+
+The key factor with Fast API's DI system is that a dependency should be a callable. A callable in Python is anything that Python can call like a function.
+
+You can create dependencies that have sub-dependencies. They can be as deep as you need them to be. FastAPI will take care of solving them.
+
+The way I see this dependency graph thing with FastAPI is that essentially you can have a long line or chain of functions executed both before and after the path operation function
+and in these functions/callables you have access to anything from the header, cookie, body, query. anything from the request basically.
+
+By default, dependencies in FastAPI are singletons. FastAPI creates them once and stores them in a cache for re-use on subsequent requests. If we want the opposite behavior however and
+want the dependeny to be recreated on every single request, set the keyword argument use_cache to False on Depends().
+ 

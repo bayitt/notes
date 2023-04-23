@@ -1,0 +1,15 @@
+When using any of Path(), Query(), Header(), Cookie(), Body(), Form(), File() you can also declare a data example or a group of examples that will be added to OpenAPI
+
+Additional data types that we can make use of with FastAPI. These include:
+- uuid
+- datetime.datetime
+- datetime.date
+- datetime.time
+- datetime.timedelta
+- frozenset
+- Decimal
+
+You can also define Cookie parameters in the same way that you define Query and Path parameters
+You can also define Header parameters in the same way that you define Query and Path parameters. Header also has a special behavior. Since most headers make use of hyphens that
+separate them but Python does not allow variable names like that. So what Header does is that it converts snake_case header variables to title, hyphen case.
+If we want to disable this behavior, we can pass convert_underscores to False to the Header() function

@@ -1,0 +1,37 @@
+Referential actions are policies that define how a referenced record is handled by the database when you run an update or delete query. Basically cascadeOnUpdate and cascadeOnDelete.
+They are defined in the @relation attribute and map to the actions on the foreign key attribute in the underlying database. If you do not specify a referential action, Prisma falls back
+to a default.
+
+Prisma supports the following referential actions
+- Cascade
+- Restrict
+- NoAction
+- SetNull
+- SetDefault
+
+If you do not specify a referential action, Prisma makes use of the following defaults
+onDelete - Optional Relations (SetNull) | Mandatory Relations (Restrict)
+OnUpdate - Optional Relations (Cascade) | Mandatory Relations (Cascade)
+
+Things to note though
+- Referential actions are not supported on implicit many-to-many relations. To use referential actions, you must define an explicit many to many relation and define the referential actions
+on the pivot table
+- Certain combinations of referential actions and required/optional relations are incompatible. For example, using SetNull on a required relation will lead to database errors when deleting
+referenced records because the non-nullable constraint will be violated
+
+When working with many to many relationships between models, Prisma provides two different ways of implementing this
+- An explicit approach
+- An implicit approach
+
+The explicit approach involves defining our own pivot table by ourselves along with a corresponding model for it, for example, to create a many to many relationship between posts and tags,
+we would define something like a PostsOnTags model and define all the fields that we want inside of the model along with the relations for both the posts and tags. In this explicit
+approach, we can both access and link the two models either through the model that corresponds to the pivot table or by going through the different models.
+
+The implicit approach is more similar to Laravel's default approach for implementing many to many relationships in which we would do several things that follow the framework's convention
+so that the framework can pick it up. Just like how in Laravel, if we wanted to create a many to many relationship between posts and tags, and we would define a post_tag pivot table,
+in Prisma, it would be a _PostToTag table, the convention is an underscore followed by the first word between the table names that comes alphabetically, then a To and the second word.
+
+The next assumption is that there are exactly two foreign key columns representing the two different models. These two models must be named A and B respectively with A representing the
+column that comes first alphabetically while B represents the column that comes second alphabetically. Lastly, there must be a unique index defined on both foreign key columns
+and a non unique index defined on B
+

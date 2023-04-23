@@ -1,0 +1,56 @@
+Blog Plan
+What exactly am I trying to build ?
+A simple blog through which I can write and post articles. Articles should have categories and also have tags.
+
+- I should be able to create/draft/publish blog posts
+- I should be able to create categories and link them to posts
+- I should be able to view posts by categories
+- I should be able to link posts to tags 
+- I should be able to view posts by tags
+
+The stack for this project
+- Frontend - Typescript, React, Next JS, Chakra UI
+- Backend - Nest JS, Prisma, Postgresql
+
+Database Schema
+
+Articles
+id - pk
+uuid - string
+category_id - foreign key
+title - string
+slug - string
+status - boolean
+featured_image - string
+content - text
+created_at - timestamp
+updated_at - timestamp
+
+Categories
+id - pk
+uuid - string
+name - string
+slug - string
+created_at - timestamp
+updated_at - timestamp
+
+Tags
+id - pk
+uuid - pk
+name - string
+created_at - timestamp
+updated_at - timestamp
+
+
+article_tag
+id - pk
+article_id - fk
+tag_id - fk
+
+redirects
+- id - pk
+- uuid - string
+- link - string
+- post_id - fk
+- created_at - timestampre
+- updated_at - timestamp

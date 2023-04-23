@@ -1,0 +1,38 @@
+Next JS Recap
+Next JS is a React framework used for building frontend web applications. Basically, how Next JS works is that it pre-renders every single page. Pre-rendering every single page involves
+having a bit of HTML available for the page along with a minimal amount of Javascript for the page. When the page is then requested for, that minimal Javascript is then executed which
+then makes the page responsive and interactive in a process known as hydration.
+
+Next JS has two different methods of pre-rendering which are
+- Static Generation: The pre-rendering occurs at build time
+- Server Side Generation: The pre-rendering occurs before every single request
+
+With static generation, you need to export a getStaticProps function from the page. With dynamic statically generated pages, Next JS also provides a getStaticPaths function. With this
+function, you can basically specify the different pages that you want statically generated.
+
+With Static Generation, we can also do something called ISR (Incremental Static Generation). What this means is that initially we can serve a version of the page at build time and then
+after a number of seconds specified via the revalidate parameter, Next JS will execute the getStaticProps method in the background and swap out the contents on the page.
+
+Next JS also provides on demand revalidation.
+
+We can also do some fancy things with getStaticPaths(). For example, if we dont want to generate the pages at build time, we can return an empty array for params and then specify
+blocking for the fallback parameter. What this means is that subsequently, if a request is made for the page, it will first server side render it and then add it to its internal list 
+of built pages. If you specify fallback to be false, any request to that page which has not been built will result in a 404.
+
+Apparently, in Next JS, environment variables work in two different ways. With environment variables for the Node JS environment, simply add them in as you want while for environment
+variables that are to be available in the browser, they need to be prefixed with NEXT_PUBLIC_.
+
+The Script component, next/script allows you to optimally load third party scripts anywhere in your Next JS application. It is an extension of the HTML <script> element and enables you
+to choose between multiple loading strategies to fit your use case. If you want to load a script in a particular page of your application, simply drop it in the particular page while
+if you want to load it for every single page in your application, drop it in _app.js.
+
+Script Strategies
+- beforeInteractive: Load the script before any Next.js code and before any page hydration occurs
+- afterInteractive: (default) Load the script early but after some hydration on the page occurs
+- lazyOnload: Load the script later during browser idle time
+- worker (experimental): Load the script in a web worker
+
+Event Handlers can be used with the Script component to execute additional code after a certain event occurs
+- onLoad: Execute code after the script has finished loading
+- onReady: Execute code after the script has finished loading and after every time the component is mounted.
+- onError: Execute code if the script has failed to load

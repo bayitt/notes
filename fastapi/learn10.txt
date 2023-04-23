@@ -1,0 +1,38 @@
+You can declare thr type used for the response by annotating the path operation function return type.
+
+We can make use of the response_model parameter in any of the path operations to specify the return type of its path operation function
+
+If you declare both response_model and a return type, response_model is going to take priority over the return type
+
+Response models can also have default values. We can make use of the response_model_exclude_unset parameter and set it to True to avoid including default values in the response
+
+Pydantic models have a dict() method that returns a dict with the model's data
+
+You can declare a response to be the union of two types, that means, the response could be any of the two. It will be defined in OpenAPI with anyOf.
+
+When defining a Union, include the most specific type first, followed by the less specific type.
+
+The same way you can specify a response model, you can also declare the HTTP status code used for the response with parameter status_code in any of the path operations.
+
+Just like how NestJS offers the HttpStatus enum as a convenience for HTTP status codes, FastAPI also offers something similar with status
+
+When you need to receive form fields instead of JSON, you can use Form.
+
+Then, to deal with files, FastAPI provides two different options, its either we make use of File or we make use of UploadedFile. We can make use of File which is a class that inherits
+directly from Form. This is best used when the uploaded file is small and can easily be stored in memory. Just like with the other path operation types, we need to make use of Annotated
+to declare its type and the fact that its a file, if not FastAPI will assume that its a query parameter. We can declare the type as bytes and receive it as bytes inside of the path
+operation function.
+
+
+However, using UploadFile has several advantages over using bytes
+- You dont have to use File() in the default value of the parameter
+- It uses a "spooled" file (this is a file stored in memory up to a certain size limit, after which it is stored on disk)
+- This means that it works well for large files like images, videos, large binaries without consuming all the data
+- You can get metadata from the uploaded file
+- It has a file like async interface
+- It exposes an actual Python SpooledTemporaryFile object that you can pass to other libraries that expect a file like object
+
+UploadFile has the following atributes
+- filename
+- content_type
+- file

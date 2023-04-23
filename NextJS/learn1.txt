@@ -1,0 +1,35 @@
+In Next.js, a page is a React component exported from a .js, .jsx or, .ts or .tsx file in the pages directory. Each page is associated with a route based on its file name.
+
+By default, Next JS prerenders every page. This means that Next JS generates HTML for every page in advance, instead of having it done by client side Javascript. Pre-rendering can result
+in better performance and SEO. Each generated HTML is associated with minimal Javascript code necessary for that page. When a page is loaded by the browser, its Javascript code runs and
+makes that page fully interactive (This process is called hydration).
+
+Next JS has two forms of Pre-rendering - Static Generation and Server side rendering. The difference between the both of them is when the HTML is generated
+- Static Generation - The HTML is generated at build time and will be re-used upon each request.
+- Server side Rendering - The HTML is generated at each request
+
+The default pre-rendering method used in Next JS is static generation. If a page does not require any external data, then it is statically generated. However, a page may require external
+data but is also needed to be statically generated. In this case, we may make use of two different functions that Next JS provides which are 
+- getStaticProps - your page content depends on external data
+- getStaticPaths - your page paths depend on external data
+
+getStaticProps is straightforward, with that you can pre-render a page by fetching its contents at build time.
+getStaticPaths is similar in that, with it, we can pre-render pages with dynamic routes. Say we had a dynamic route in our application, posts/[id].tsx meaning that this page could match
+posts/1, posts/2, posts/3 and more. Basically, from this page, we can export a getStaticPaths function that will return an array of routes that should be pre-rendered. For example,
+return { params: [{ id: 1 }, { id: 2 }, { id: 3 } ]  }. It's also important to export a getStaticProps function in the same page. What this means is that the page will generated for posts
+with ids 1, 2 and 3
+
+To use server side rendering on a page, you need to export an async function called getServerSideProps. This function will be called by the server upon each request.
+
+getServerSideProps runs only the server side and never in the browsser. If a page uses getServerSideProps, then:
+- When you request this page directly, getServerSideProps runs at request time, and the page will be pre-rendered with the return props
+- When you request this page on client side transitions through next/link or next/router, Next JS sends an API request to the server, which runs getServerSideProps
+
+If an error is thrown inside getServerSideProps, it will show the pages/500.js file. During development, this file will not be used and the dev overlay will be shown instead
+
+When combined with Incremental Static Regeneration, getStaticProps will run in the background while the stale page is being revalidated, and the fresh page is served to the browser.
+getStaticProps does not have access to the incoming request (such as query parameters or HTTP headers) as it generates static . If you need access to request for yout page, consider
+using Middleware in addition to getStaticProps.
+
+We can also use getStaticPaths in conjunction with the fallback parameter. Basically, what this means is that the page is only going to be built upon initial render
+

@@ -1,0 +1,36 @@
+Next JS has a file system based router built on the concept of pages. When a file is added to the pages directory, its automatically available as a route. The files inside the pages
+directly can be used to define most common patterns.
+
+The router will automatically route files named index to the root of the directory.
+
+The router supports nested files. If you create a nested folder structure, files will automatically be routed in the same way still.
+
+To match a dynamic segment, you can use the bracket syntax. This allows you to match named parameters.
+
+The Next JS router allows you to do client side route transitions between pages, similar to a page application.
+
+Take note that predefined routes take precedence over dynamic routes, and dynamic routes over catch all routes.
+
+next/link should be able to cover most of your routing needs, but you can also do client side navigations without it, by making use of the useRouter() hook and the push() method
+exposed via its interface
+
+Shallow routing allows you to change the URL without running data fetching methods such as getServerSideProps, getStaticProps and getInitialProps. You'll receive the updated pathname
+and the query via the router object, without losing state. To enable shallow routing, set the shallow option to true.
+
+Take note however that Shallow routing only works for URL changes on the current page.
+
+API routes provide a solution to build your API with Next JS. Any file inside the folder pages/api is mapped to /api/* and will be treated as an API endpoint instead of as a page.
+They are server side bundles and wont increase the size of your client side bundle.
+
+API routes will be affected by the pageExtensions configuration in next.config.js. For an API route to work, you need to export a function as default a.k.a a request handler which then
+receives the following parameters
+
+req: http.IncomingMessage
+res: http.ServerResponse 
+
+API routes support dynamic routes, and follow the same naming rules used for pages. API routes provide built in request helpers which parse the incoming request
+- req.cookies - An object containing the cookies sent over by the request. Defaults to {}
+- req.query - An object containing the query string. Defaults to {}
+- req.body - An object containing the body parsed by content-type, or null if no body was sent
+
+Every API route can export a config object to change the default configuration. The api object includes all config options available for API routes. bodyParser is automatically enabled.

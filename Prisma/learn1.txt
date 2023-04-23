@@ -1,0 +1,35 @@
+The npx prisma init command does two things
+- It creates a new directory called prisma that contains a file called schema.prisma, which contains the prisma schema with your database connection variable and schema models
+- Creates the .env file in the root of directory of your project which is used for defininig environment variables(such as your database connection)
+
+Models in the Prisma schema have two purposes
+- Represent the tables in the underlying database
+- Serve as the foundations for the generated Prisma Client API
+
+npx prisma migrate dev --name init
+This command does two things
+- It creates a new SQL migration file in the prisma/migrations folder
+- It runs the SQL migration file against the database
+
+npx prisma migrate reset - this is the equivalent of php artisan migrate:fresh
+npx prisma migrate status - php artisan migrate:status
+npx prisma migrate deploy - php artisan migrate
+
+Prisma exposes a create() method on its models similarly to the static create() method in Eloquent
+
+Make use of the findMany() query to retrieve all the records for a particular model.
+
+By default, Prisma only returns the scalar results of queries, meaning the top level fields on the model and no relations. To load up a relation with a query, you have to tell Prisma
+to include it via the include option which we can specify on queries.
+
+Basically, the whole idea really is that the schema.prisma file serves as one big model definition for all the models in our application.
+
+Prisma Schema Language is a language that Prisma uses to define your database schema. The schema.prisma file has three main components 
+- Data Source - Specifies your database connection
+- Generator - Indicates that you want to generate Prisma Client, a type safe query builder for your database 
+- Data Model - This defines your database models. Each model will be mapped to a corresponding table in the database
+
+The upsert() function for Prisma Client
+findUnique()
+update()
+delete()
