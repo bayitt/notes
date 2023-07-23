@@ -1,0 +1,38 @@
+A directive's job is to reactively apply updates to the DOM when the value of its expression changes.
+v-html
+v-bind
+v-if
+v-on
+
+It's possible to use a Javascript expression in a directive argument by wrapping it in square brackets []
+
+Modifiers are special postfixes denoted by a dot, which indicates that a directive should be bound in some special way. For example, the .prevent modifier tells the v-on directive to call
+event.preventDefault() on the triggered event.
+
+With the Options API, we use the data option to declare reactive state for a component. The option value should be a function that returns an object. While, in the Composition API the
+recommended way to declare reactive state is by using the ref() function. Avoid defining state variables that start with $ and _. these are reserved by Vue.
+
+In Vue, state is deeply reactive by default. This means you can expect changes to be detected even when you mutate nested objects or arrays.
+
+When you mutate reactive state, the DOM is updated automatically. However, it should be noted that the DOM updates are not applied asynchronously. Instead, Vue buffers them until the 
+next tick in the update cycle to ensure that each component updates only once no matter how many state changes you have made.
+
+With the Composition API, in order to be able to access refs in a component's template, declare and return them from a component's setup() function. You can also mutate a ref directly
+in event handlers. There is also another way to declare reactive state, with the reactive() API. Unlike a ref which wraps the inner value in a special object, reactive() makes an object 
+itself reactive.
+
+ref() is recommended over the reactive() api.
+
+For complex logic that involves reactive data, it is recommended to make use of a computed property. For the Options API, just like how we can have a methods property in the options 
+object, we can also have a computed property in the options object. But thinking about it, we can just as easily make use of a method to define the computed method. The difference
+is that computed properties are cached based on their reactive dependencies. A computed property will only re-evaluate when some of its reactive dependencies have changed.
+
+Computed properties are by default getter only. If you attempt to assign a new value to a computed property, you will receive a runtime warning. In the rare cases, where you need a 
+"writable" computed property, you can create one by defining a getter and setter for the computed property.
+
+:class is short for v-bind:class
+
+Also, apparently in Vue, you can pass classes to the component where it is used. These classes will automatically be applied to the root element of the component. But note that this only
+applies to components with a single root element.
+
+If your component has multiple root elements, you would need to define which element will receive this class. You can do this using the $attrs component property.

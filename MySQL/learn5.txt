@@ -1,0 +1,31 @@
+The words key and index mean the same thing. Every secondary index contains a pointer back to the primary index.
+
+Putting an explain before running an sql command is the equivalent of console.log. With that, you can access meta information about the query
+
+Cardinality is basically a concept that refers to how many possible distinct values are there. MySQL makes use of this principle when confronted with multiple indexes and its trying to
+pick which to use. Its going to pick the one with the higher/highest cardinality.
+
+Note: A column without a lot of unique values is probably not a good choice to index
+
+There is also the concept of prefix indexes. The idea is that you cant have really long string indexes. At a point, doesnt make sense for performance reasons to have for example a 255 
+character long index. This is where prefix indexes come in. We can tell MySQL that it should only index a particular length of the string or text.
+
+A drawback of prefix index is that we cant make use of it for sorting.
+
+Composite indexes help us to combine multiple indexes into one. But there are several, important rules regarding composite indexes the first of which is that the order in which you
+define the composite index is really important. You can only make use of the composite index if you define a query in which the columns are used in that exact order.
+Another rule is that composite indexes cannot be made use of in range queries. As a result, the index stops when it encounters a range condition in a query.
+
+A covering index describes a situation where an index covers the entire set of needs for a particular query. Basically, it supplies everything that a particular query needs. It covers
+the query in a sense.
+What happens is that all the information needed by the query is available inside the index. Remember that an index is its own different data structure which contains a copy of the data
+in the table. If all the information needed by a query is available in the index, its obviously going to be much faster
+
+With functional or function based indexes, we define our indexes on functions instead of directly on columns like we've been seeing.
+
+When adding a full text index, you need to add the fulltext keyword to the index definition. Fulltext indexes are not created with b-trees and they take a while to create.
+To implement a full text search in MySQL. Do something like
+
+select * from table where MATCH(column1, column2, column3) AGAINST(expression)
+
+To make an index invisible means to tell MySQL to stop using it for any queries. MySQL is going to act like it does not exist which makes it a great way to test before deleting indexes.

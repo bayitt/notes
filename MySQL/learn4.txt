@@ -1,0 +1,40 @@
+Unexpected Column Types
+
+There's actually no boolean keyword, what happens when you make use of the column keyword boolean is that mysql under the hood creates a tinyint(1) column.
+Also, when you put a number into the database with leading zeros, it comes out without the zeros.
+
+Generated columns are columns which are generated based on the value of other columns. They can be defoned maing use of the AS syntax. We can pass in a formula to AS which is going to 
+represent how the column is to be computed or generated.
+
+Note that generated columns have to be non deterministic. Which means that we have to define formulas that are ALWAYS going to return the same value. Not functions like now() or rand()
+which can return different values.
+
+Generated columns can be defined as either VIRTUAL or STORED. STORED means that its calculated at creation/update time and stored on disk in the database, while VIRTUAL means that it
+is computed when that row is fetched. So in a sense, its a question of tradeoffs really. You can store the value in the db and not ever have to compute it or you can save the space and
+compute it everytime its needed. VIRTUAL is the default.
+
+At its core, migrations are folders full of SQL statements
+
+Indexes
+When it comes to performance, indexes are a whole lot more important than the schema. They are the best way to ensure that your queries are performant which means that your application 
+is performant. Indexes are an entirely separate data structure. Separate from your table (which btw is an index of its own). It maintains acopy of part of your data. Indexes also
+maintain pointers back to the row.
+
+Rules for creating indexes
+- Create as many indexes as you need
+- Create as few as you can get away with
+
+You know how we say look at your data to define or determine what your schema should look like. For indexes, we need to look at our queries to determine what our indexes should be.
+
+B+ Trees are the underlying data structure behind most indexes in MySQL.
+
+Without an index on a column, MySQL must begin with the first row and then read through the entire table to find the relevant rows. Basically, indexes create a secondary data structure
+that is optimized for finding things quickly.
+
+A unique index is auto created for primary keys are created automatically for primary keys while it will always be declared as non nullable.
+A secondary key is any key or index on a table that is not the primary key
+
+The primary key index is the root index of the table. It is basically the entire table. Unlike other indexes that contain just the column value, the primary key indexes contain the
+entire row. Its called a clustered index. You get one per table which is why its the primary key.
+
+MySQL tables have to have primary keys. If you dont, MySQL will create one internally and make use of it.

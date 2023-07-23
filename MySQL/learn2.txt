@@ -1,0 +1,36 @@
+Strings
+There are a bunch of different ways to store and represent strings in MySQL among which are the following
+- char
+- varchar
+- Binary
+- varbinary
+- blob
+- text
+- enum
+- set
+
+char - if you have data that is of fixed length, for example prefixes. If I define a char(100) column and insert Leke into it, MySQL is going to add 96 characters to it, to ensure it 
+reaches 100
+
+A character set defines the set of characters that is allowed to go into the column. utf8 and utfmb4 are the most frequently used charsets. utf8 supports 3 bytes per character while
+utfmb4 supports 4 bytes per character (the default)
+
+A collation is a set of rules that defines how to compare two strings
+
+Thr Binary and VarBinary columns store bytes instead of characters (char and varchar)
+
+The Text column is a character column that can hold huge amounts of data. Seeing as its a character column, it has a character set and collation.
+Blob is a text column that can hold huge amounts of data. It does not have a character set or collation.
+
+Basically we can group the columns like this
+char     binary
+varchar  varbinary
+text     blob
+
+Text and Blob themselves are a family of columns just like int (TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT) (TINYBLOB, BLOB, MEDIUMBLOB, LONGBLOB)
+
+You cant index on a TEXT column
+
+An Enum field is a special field that represents a string but is stored as an integer. Its useful for when there's a specific list of values that can go into a column. Its cool
+because you get the readability of a string with the storage of an integer. But perhaps the major drawback of Enum columns is that when sorting, it sorts by the underlying integer
+values instead of by the string

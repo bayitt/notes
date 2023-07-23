@@ -1,0 +1,29 @@
+With Vue JS, the problem of prop drilling can be solved by making use of provide() and inject(). A parent component can serve as a dependency provider for all its descendants. Any component
+in the descendant tree, regardless of how deep it is can inject dependencies provided by components up its parent chain. To provide data to a component's descendants via the Composition
+API, make use of the provide() function provided by Vue. In addition to providing data in a component, we can also provide at the app level by calling the provide() function on the app
+instance.
+
+To inject data provided by an ancestor component, use the inject() function. If we want to make an injected property work with optional providers, we need to declare a default value,
+similar to props.
+
+When making use of reactive provide / inject values, it is recommended to keep any mutations to reactive state inside of the provider whenever possible. There may be times when we need
+to update the data from an injector component. In such cases, it is recommended to provide a function that is responsible for mutating the state. Finally, you can wrap the provided
+value with readonly() if you want to ensure that the data passed through provide cannot be mutated by the injector component.
+
+In the context of Vue applications, a composable is a function that leverages Vue's Composition API to encapsulate and reuse stateful logic. From what I can see, composables are sort
+of similar to hooks. Just like with hooks, composable function names start with use.
+
+toValue is a function in Vue that unwraps potential refs or getters.
+
+Custom directives are mainly intended for reusing logic that involves low-level DOM access on plain elements. A directive definition object can provide several hook functions (all optional)
+- created
+- beforeMount
+- mounted
+- beforeUpdate
+- updated
+- beforeUnmount
+- unmounted
+
+Directive hooks are passed the following arguments
+- the element the directive is bound to
+- binding - an object containing the following properties (value, oldValue, arg, modifiers, instance and dir)

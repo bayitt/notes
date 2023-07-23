@@ -1,0 +1,40 @@
+Vue is a Javascript framework for building user interfaces. It's built on top of standard HTML, CSS and Javascript and provides a declarative and component based programming model that
+helps you efficiently develop user interfaces, be they simple or complex.
+
+In most build tool enabled Vue projects, Vue components are authored using an HTML like file format called Single-File Components (also known as *.vue files), abbreviated as SFC.A Vue
+SFC as the name suggests, encapsulates the component's logic (Javascript), template (HTML) and styles (CSS) in a single file.
+
+Vue components can be authored in two different API styles: Options API and Composition API.
+
+With the Options API, we define a component's logic using an object of options such as data, methods and mounted. Properties defined by options are exposed on this inside functions, which
+points to the component's instance.
+Properties returned from data() become reactive state and will be exposed on this. This basically how state properties are defined with the Options API. Basically the Options API 
+equivalent of useState() in react.
+
+Methods are functions that mutate state and trigger updates. They can be bound as event handlers in templates.
+
+And finally lifecycle hooks which are called at different stages of a component's lifecycle. For example with mounted() which is called when the component is mounted.
+
+With the Composition API, we define a component's logic using imported API functions. In SFCs, the Composition API is typically used with <script setup>. The setup attribute is a hint that
+makes Vue perform compile time transforms that enable us to use the Composition API with less boilerplate. Basically, it looks like the Composition API more closely resembles React's
+paradigm of making use of imported API functions. For example, we can define state properties with the ref() function, or make use of the defined onMounted method from vue.
+
+Every Vue application starts by creating a new application instance with the createApp function. The object being passed into the createApp function is a component. Every app requires
+a root component that can contain other components as children.
+
+An application instance wont render anything until its mount() method is called. It expects a container argument, which can be an actual DOM element or a selector string.
+
+The application instance exposes a .config object that allows us to configure a few app level options, for example, defining an app-level error handler that captures errors from all 
+descendant components. It also provides a few methods for registering app-scoped assets. For example, registering a component.
+
+The createApp API allows multiple Vue applications to co-exist on the same page, each with its own scope for configuration and global assets.
+
+Vue uses an HTML based template syntax that allows you to declaratively bind the rendered DOM to the underlying component's instance data.
+
+The most basic form of data binding is text interpolation using the mustache syntax (Double curly braces). The mustache syntax interprets the data as plain text not HTML. In order to 
+output real HTML, you will need to use the v-html directive.
+
+v-html attribut is called a directive and in Vue, directives are prefixed with v-.
+
+The mustache syntax cannot be used inside HTML attributes. Instead, use a v-bind directive. Because v-bind is so commonly used, it has a shorthand syntax. Simply add a colon before the
+HTML attribute definition.

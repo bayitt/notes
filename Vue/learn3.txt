@@ -1,0 +1,45 @@
+The directive v-if is used to conditionally render a block. The block will only be rendered if the directive's expression returns a truthy value.
+We can use the v-else directive to indicate an "else" block for v-if. There's also a v-else-if directive to handle, if, else if and else expressions.
+
+Vue also has the <template> element which can be likened to React.Fragment in React, it can serve as an invisible wrapper to wrap multiple elements in the code but will not appear in the
+DOM.
+
+Another option for conditionally displaying an element is the v-show directive. The usage is largely the same except that with v-show, the element is rendered in the DOM but is hidden
+with CSS. With v-if, the element is not rendered in the DOM at all. v-show cannot be used with v-else and does not support the <template> element. Generally speaking, v-if has higher
+toggle costs, while v-show has higher initial render costs. Basically, if an element is going to be toggled often, we are better off going with v-show.
+
+It is not recommended to use v-if with v-for on the same element due to implicit precedence. We can use the v-for directive to render a list of items based on an array. It requires a 
+special syntax in the form of item in items. We can also use of as the delimiter instead of in.
+
+You can also use v-for to interate through the properties of an object. The iteration order will be based on the result of calling Object.keys() on the object. It looks like Vue 
+automatically checks if you are trying to loop through an object and implicitly calls Object.keys() for you.
+v-for can also take an integer. In this case, it will repeat that template that many times, based on a range of 1...n.
+Just like how in React, we can specify a key attribute that React can use to track the elements, we can also do the same thing with a :key directive when looping
+
+Props can be passed in Vue with the : syntax.
+
+We can use the v-on directive, which we typically shorten to the @ symbol, to listen to DOM events and run some Javascript when they are triggered
+There are two different types of event handlers in React. Inline handlers and Method handlers. In an inline handler, if we need to access the event, we can make use of the special
+$event variable or make use of an inline arrow function.
+
+Its a common need to call functions like event.preventDefault() or event.stopPropagation() inside event handlers. Although, this can be easily done inside methods, it would be better to
+if the methods can be purely about data logic rather than having to deal with DOM event details. To address this problem, Vue provides event modifiers for v-on. Modifiers are directives
+postfixes denoted by a dot.7
+
+- .stop
+- .prevent
+- .self
+- .capture
+- .once
+- .passive
+
+Vue also allows adding key modifiers for v-on or @ when listening for keyboard events. @keyup.enter, @keyup.page-down
+- .enter
+- .tab
+- .delete
+- .esc
+- .space
+- .up
+- .down
+- .left
+- .right

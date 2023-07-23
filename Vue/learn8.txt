@@ -1,0 +1,34 @@
+Each Vue component instance goes through a series of initialization steps when its created, for example, it needs to set up data observation, compile the template, mount the instance to
+the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their own code at specific stages.
+
+For example, the onMounted hook can be used to run code after the component has finished the initial rendering and created the DOM nodes. There are other hooks which will be called at
+different stages of the instance's lifecycle, with the most commonly used being onMounted, onUpdated, and onUnmounted.
+
+beforeCreate, beforeMount, onMount, beforeUpdate, onUpdate, beforeUnmount, unmounted
+
+With Vue, we can use the watch option/function to trigger a function whenever a reactive property changes. Basically with the Options API, just like how you can specify methods, computed
+, we can specify a watch property which points to an object of methods. Simply specify the name of the reactive property and point it to a function that you want executed. The function
+you want executed will accept two parameters, the initial value of the reactive parameter while the second value represents the new value. For the Composition API, simply
+call the watch function and pass as the first parameter, the reactive property while the second parameter represents a callback which is executed with the first parameter representing
+the old value of the reactive property and the second parameter represents the new value of the reactive property
+
+watch is shallow by default, the callback will only trigger when the watched property has been assigned a new value, it wont trigger on nested property changes. If you want the callback
+to fire on all nested mutations, you need to use a deep watcher. We can make ue of a deep watcher with the options API by passing an object to the reactive property name and setting deep
+to true as part of the object's params.
+
+watch is lazy by default, the callback wont be called until the watched source has changed. But in some cases, we may want the same callback logic to be run eagerly, for example we may want
+to fetch some initial data, and then re-fetch the data when relevant state changes. We can force a watcher's callback to be executed immediately by declaring it as an object with a handler
+function and the immediate: true option.
+
+It is also possible to imperatively create watchers using the $watch instance method
+
+With Vue, there may be cases where we need direct access to the underlying DOM elements. To achieve this, we can make use of the special ref attribute. With the Options API, the resulting
+ref is exposed on this.$refs. Note that you can only access the ref after the component is mounted. When ref is used inside of a v-for, the resulting ref value will be an array containing
+the corresponding elements.
+
+ref can also be used on a child component. In this case, the reference will be that of a component instance. The referenced instance will be identical to the component's this which means
+that from the parent component, via the ref can access all the properties and methods of the child component. We can make use of the expose option to limit what the parent component 
+can access from the child component.
+
+With the composition API, components making use of <script setup> are private by default. A parent component referencing a child component using <script setup> wont be able to access 
+anything unless the child component chooses to expose a public interface using the defineExpose() macro

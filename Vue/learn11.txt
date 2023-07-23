@@ -1,0 +1,28 @@
+A custom directive is defined as an object containing lifecycle hooks similar to those of a component. Custom directives should only be used when the desired functionality can only
+be achieved via direct DOM manipulation. A directive definition object can provide several hook functions (all optional).
+
+- created
+- beforeMount
+- mounted
+- beforeUpdate
+- updated
+- beforeUnmount
+- unmounted
+
+Directive hooks are passed these arguments:
+- el: the element the directive is bound to
+- binding: an object containing the following properties
+	- value: the value passed to the directive
+	- oldValue: the previous value. only available in beforeUpdate and updated
+	- arg: the argument passed to the directive
+	- modifiers: an object containing modifiers, if any
+	- instance: the instance of the component where the directive is used
+	- dir: the directive definition object
+- vnode: the underlying VNode representing the bound element
+- prevNode: the VNode representing the bound element from the previous render. Only available in the beforeUpdate and updated hooks.
+
+It is common for a custom directive to have the same behavior for mounted and updated, with no need for the other hooks. In such cases, we can define the directive as a function
+When used on components, custom directives will always apply to a component's root node, similarly to fallthrough attributes.
+
+Plugins are self-contained code that usually add app level functionality to Vue. A plugin is defined as either an object that exposes an install() method, or simply a function that acts
+as the install function itself.

@@ -1,0 +1,11 @@
+FastAPI doesnt require you to use a SQL(relational) database. The file __init__.py tells Python that the folder is a package.
+
+FastAPI provides a convenience tool to structure your application while keeping all the flexibility. This is the equibalent of Flask's blueprints
+
+Just like how express has a router with which we can break up all of the routes into our application into their respective modules, FastAPI also provides APIRouter() with which we can
+do the same thing. Also, just like how in NestJS, we can register common parameters for all the actions in the @Collection() decorator, we can do the same thing with APIRouter().
+
+Make use of the include_router() method on the FastAPI object to include a defined router just like how we would do app.use() in Express
+
+With FastAPI, we can define background tasks to be run after returning a response. This is useful for operations that need to happen after a request, but that the client doesnt really
+have to be waiting for the operation to complete before receiving the response 

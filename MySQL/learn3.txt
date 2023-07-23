@@ -1,0 +1,24 @@
+Date 
+There are 5 different date types in MySQL and they are
+- Date
+- DateTime
+- Timestamp
+- Year
+- Time
+
+Obviously, if you need to store just a date without time, you are better served going with a Date column. But if you need to store the time along with the date, then there are 2 different 
+options, DateTime or Timestamp. Now the key difference between these 2 columns is their size, The DateTime column is 8 bytes while the Timestamp is 4 bytes. Apart from that, the timestamp
+column has a limit of 2038 which is commonly called the 2038 problem.
+
+Another difference is with timezones. With the DateTime column, MySQL does nothing to help you with it. Whatever you store in the column is what is returned. But with timestamp, when
+the value is going into the database, MySQL converts it to UTC and when the value is being returned, it attempts to convert it into your timezone
+
+One thing I've realized is that the key thing about these different columns is their size not necessarily what you can see inside the column. Basically, the wider the possible range of 
+values for a column, the more size in bytes the column is going to take.
+
+Note: You cannot index a JSON column, you can index a key of the JSON, or a part of the JSON document but you cannot index the entire JSON column
+
+Guidelines for using JSON Columns
+- Don't use a JSON column to avoid having to define a proper schema
+- Use it in situations when you have payloads that are not well defined, say you are storing information received from an external API or webhook
+- Generally, situations in which the schema is not well defined

@@ -1,0 +1,31 @@
+What exactly am I trying to build ?
+
+A dedicated service that handles any and everything related to emails in my different side projects. The respective side projects/applications need to be able to connect to this service
+anytime they want to send emails to users. My thinking is that each project gets an api key that authenticates the email requests. Also, each mail action needs to have a unique identifier.
+
+Database Structure
+Application
+- uuid (string) (pk)
+- name (string)
+- api_key (string) (nullable)
+- layout (string) (nullable)
+- created_at (datetime)
+- updated_at (datetime)
+
+Credentials
+- uuid (string) (pk)
+- application_uuid (string) (nullable)
+- type (int)
+- values (JSON)
+- created_at (datetime)
+- nullable (datetime)
+
+Email
+- uuid (string) (pk)
+- application_uuid (string) (fk)
+- name (string)
+- template (string)
+- variables (array) (nullable)
+- created_at (datetime)
+- updated_at (datetime)
+

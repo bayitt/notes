@@ -1,0 +1,39 @@
+Just like in React, a method handler automatically receives the native DOM Event object that triggers it. Instead of binding directly to a method name, we can also call methods in an
+inline handler. This allows us to pass the method custom arguments instead of the native event. Sometimes, we also need to access the original DOM event in an inline handler. You can pass
+it into a method using the special $event variable, or use an inline arrow function.
+
+Vue event modifiers for the v-on directive
+- .stop
+- .prevent
+- .self
+- .capture
+- .once
+- .passive
+
+When listening for keyboard events, we often need to check for specific keys. Vue allows adding key modifiers for v-on or @ when listening for key events. Vue provides aliases for the most
+commonly used keys
+- .enter
+- .tab
+- .delete
+- .esc
+- .space
+- .up
+- .down
+- .left
+- .right
+
+v-model can be used on inputs of different types, textarea and select elements. It expands automatically to different DOM property and event pairs based on the element it is used on
+- input with text types and textarea elements use the value property and input event
+- input type checkbox and radio use the checked property and change event
+- select uses value as a prop and the change event
+
+v-model will ignore the initial value, checked or selected attributes found on any form elements. It will always treat the current bound Javascript state as the source of truth.
+We can also bind multiple checkboxes to the same array or Set value
+
+Typically with checkboxes, the value is either true or false but with Vue we can assign different values to the true and false states with :true-value and :false-value
+v-model also supports value bindings of non string values as well. We can literally set objects to value literals.
+
+By default, v-model syncs the input with the data after each input event. We can add the lazy modifier to instead sync after change events. 
+If you want user input to be automatically typecast as a number, you can add the number modifier to your v-model managed inputs
+If you want whitespace to be trimmed automatically from user input, you can add the trim modifier to your v-model managed inputs
+

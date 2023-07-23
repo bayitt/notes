@@ -1,0 +1,36 @@
+Props are custom attributes you can register on a component. To declare a prop on our component, we can make use of the defineProps() macros. Parent components can choose to listen to
+any event on the child component instance with v-on or @. Then, the child component can emit an event on itself by calling the built in $emit method.
+
+Alternatively, we can make use of the defineEmits macro to declare emitted events. Similarly to defineProps, its only usable in <script setup> and does not neeed to be imported.
+
+Just like how we have the children property in React, we can do same in Vue with the custom <slot /> component.
+
+Also, with Vue we can define dynamic components. Sort of how we would make use of a switch, case statement to render components depending on a condition. Vue provides a built in
+<component> element to which we can pass an :is attribute which represents the component to be rendered.
+
+A Vue component needs to be registered so that Vue knows where to locate its implementation when it is encountered in a template. There are two ways to register components: global and 
+local.
+
+We can make components available globally in the current Vue application using the app.component() method. The app.component() method can also be chained.
+
+Local registration scopes the availabilty of the registered components to the current component only. It makes the dependency relationship more explicit and is more tree shaking friendly.
+
+prop names should be declared using camelCase. Also, apparently the convention when passing props to child components is to make use of kebab-case.
+
+If you want to pass all the properties of an object as props, you can use v-bind without an argument.
+
+A fallthrough attribute is an attribute or v-on event listener that is passed to a component but is not explicitly declared in the receiving component's props or emits. Common examples
+of this include class, style and id attributes. When a component renders a single root element, fallthrough attributes will be automatically added to the root element's attributes.
+
+If you do not want a component to automatically inherit attributes, you can set inheritAttrs to false in the component's options. The common scenario for disabling attribute inheritance
+is when attributes need to be applied to other elements besides the root node. By setting the inheritAttrs option to false, you can take full control over where the fallthrough
+attributes should be applied. These fallthrough attributes can then be accessed in template expressions with $attrs. The $attrs object includes all attributes that are not declared by
+the component's props or emits options.
+
+If needed, you can access a component's fallthrough attributes in <script setup> using the useAttrs() API.
+
+In order to define fallback content for the <slot> component, we can render the content in between the <slot> tags. There are times when it's useful to have multiple slot outlets in a 
+single component. For example, in a BaseLayout component that renders multiple sections of the page. For cases like these, the <slot> element has a special attribute, name, which can
+be used to assign a unique ID to different slots so you can determine where content should be rendered.
+
+The special v-slot directive which has a # shorthand. So v-slot:header can be shortened to #header.

@@ -1,0 +1,32 @@
+3 Guiding Principle for Building Schemas
+
+- Keep your columns small (What is the smallest data type that can hold all of your data)
+- Pick the simplest column type. If your data is numeric, dont use a string, if your data is a date, use a date type not a string
+- Keep it honest. Look at the data and design a schema that fits its reality. If the column is not nullable, dont make it nullable
+
+The more compact the data is, the faster it is for the database to access it
+
+Integers
+There are 5 different column types that can be used to store integers
+- TinyInt - 1 byte (-128 - 127) (0-255)
+- SmallInt - 2 bytes (-32768 - 32767) (0 - 65535)
+- MediumInt - 3 bytes (-8388608 - 8388607) (0 - 16777215)
+- Int - 4 bytes (-2147483648 - 2147483647) (0 - 4294967295)
+- BigInt - 8 bytes (-2^63 - 2^63-1) (0 - 2^64-1)
+
+The only difference between all of them is how much data they can each store. With Int fields, there might be the temptation to define a column as something like INT(3), thinking that
+in doing this you are constraining the length of the int field to 3. But it doesnt work like that, when you put a number in brackets like that, all you are defining is the display width.
+So, for example, if you put a value of 1 in that column, it would be displayed as 001. It does not affect the underlying the storage space assigned to the column.
+
+
+Decimals
+There are 4 decimal column types and they are
+- Decimal
+- Numeric (This is just an alias for Decimal and probably doesnt count/can be ignored)
+- Float
+- Double
+
+Float and Double are floating point meaning that they are approximate values while Decimal is Fixed point. The idea is that for Float and Double which are approximate, they are going to
+round up/down the values which you insert in them, this means that if you were dealing with currency or monetary values which need to be exact, you are better off using Decimal.
+
+With a syntax of decimal(10, 2). This means that you are defining a decimal column with a max of 10 digits with 2 of the digits coming after the decimal place

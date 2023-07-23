@@ -1,0 +1,27 @@
+When dealing with forms on the frontend, we often need to sync the state of form input elements with corresponding state in Javascript. It can be cumbersome to manually wire up 
+value bindings and change event listeners. Which is why Vue provides the v-model syntax. v-model can be used on inputs of different types , textarea and select elements. It automatically
+expands to different DOM property and event pairs based on the element it is used on.
+
+- input with text type and textarea elements use the value property and the input event.
+- input with type checkbox and type radio use checked property and change event
+- select uses value as a prop and change as its event
+
+We can also bind multiple checkboxes to the same array or Set value
+
+Vue also provides a mechanism to bind values to dynamic properties on the current active instance. For example, we can make use of true-value and false-value to bind custom values to
+the reactive values. Note that true-value and false-value only work with v-model
+
+By default, for example with text inputs and textarea, v-model syncs the input with the data after each input event. You can add the lazy modifier to instead sync after change events
+If you want your user input to be automatically typecast as a number, you can add the .number modifier to your v-model managed inputs.
+If you want whitespace to be automatically trimmed from your user input, you can add the trim modifier to your v-model managed inputs
+
+Vue also has the concept of lifecycle hooks much like in React with componentDidMount and componentDidUpdate in class components and useEffect() with hooks.
+For example, the mounted hook can be used to run code after the component has finished the initial rendering and created the DOM nodes.
+
+mounted for the Options API and onMounted for the Composition API. Other hooks include updated and unmounted. Avoid using arrow functions when declaring lifecycle hooks because they dont
+have access to the this context. We also have beforeMount, beforeUpdate, beforeUnmount.
+
+There are cases where we might need to perform side effects in reaction to state changes - for example mutating the DOM, or changing another piece of state based on the result of an
+async operation. With the Options API we can use the watch option to trigger a function whenever a reactive property changes. the watch option should be specified just like methods 
+or computed, a property, pointing to an object of functions. With the Composition API, we can also make use of the watch function from vue, and specify the reactive property as the 
+first argument, along with an arrow function which will be executed every time the reactive property changes.

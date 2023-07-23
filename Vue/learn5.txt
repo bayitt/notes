@@ -1,0 +1,36 @@
+In most build-tool-enabled Vue projects, we author Vue components using an HTML like format called Single File Component. Vue components can be authored in two different styles, Options
+API and Composition API. With the Options API, we define a component's logic using an object of options such as data, methods and mounted. Properties defined by options are exposed
+on this inside functions, which points to the component instance. With the Composition API, we define a component's logic using imported API functions. In SFC's, the Composition API
+is typically used with <script setup>
+
+Every Vue application starts by creating a new application instance with the createApp function. The object we pass into createApp is a component. Every app requires a root component 
+that can contain other components as children. An application instance wont render anything until its .mount() method is called. It expects a container argument , which can either be a
+DOM element or a selector string. The template for the root component is usually a part of the component itself, but it is also possible to provide the template separately by writing
+it directly inside the mount container. Vue will automatically use the container's innerHTML as the template if the root component does not already have a template option.
+
+The application instance exposes a .config object that allows us to configure a few app level options, for example, defining an app level error handler that captures errors from all
+descendant components. It also provides a few methods for registering app scoped assets. For example, registering a component
+
+Vue uses an HTML based template syntax that allows you to delcaratively bind the rendered DOM to the underlying component instance's data.
+The most basic form of data binding is text interpolation using the Mustache syntax {{  }}. The double mustaches interprete the data as plain text, not HTML. In order to output real HTML,
+you will need to use the v-html directive. The v-html attribute is called a directive. Directives are prefixed with v- to indicate that they are special attributes provided by Vue.
+
+Mustaches cannot be used inside HTML attributes. Instead use a v-bind directive. If a bound value is null or undefined, then the attribute will be removed from the rendered element. 
+Because v-bind is so commonly used, it has a dedicated shorthand syntax. Instead of v-bind:id="dynamicId", we can easily do something like :id="dynamicId".
+
+if you have a Javascript object representing multiple valid HTML attributes, we can bind them to a single element by using v-bind without an argument.
+
+It is possible to call a component-exposed method inside a binding expression. Functions called inside binding expressions will be called every time the component updates, so they should
+not have side effects, such as changing data or triggering asynchronous expressions.
+
+Template expressions are sandboxed and only have access to a restricted list of globals. Directive attribute values are expected to be single Javascript expressions (with the exception
+of v-for, v-on and v-slot). A directive's job is to reactively apply updates to the DOM when the value of its expression changes. Some attributes can take an argument denoted by a colon
+after the directive name. Just like we have the : shorthand syntax for the v-bind attribute, we also have the @ shorthand syntax for the v-on attribute.
+
+It is also possible to use a Javascript expression in a directive argument by wrapping it in square brackets. Dynamic arguments are expected to evaluate to a string, with the exception 
+of null. The special value of null can be used to explicitly remove the binding. Any other string value will trigger a warning.
+
+Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in a special way.
+
+For complex logic that includes reactive data, it is recommended to use a computed property. With the Options API, just like how we have a methods property in the object pointing to
+an object of methods for that component, we also have a computed property in the object pointing to an object of computed properties for that component.

@@ -1,0 +1,38 @@
+Alternatively, instead of declaring a computed property, we can just as easily declare and make use of a function but the difference between them is that the computed properties are 
+cached based on their reactive dependencies. A computed property will only re-evaluate when some of its reactive dependencies have changed. See it as basically a useEffect with each
+of its reactive dependencies in the dependency array. While a method/function invocation will always run the function whenever a re-render happens.
+
+Computed properties are by default getter only. If you attempt to assign a new value to a computed property, you will receive a runtime warning. In the rare cases where you need a writable
+computed property, you can create one by providing both a getter and a setter.
+
+Vue provides special enhancements when v-bind is used with class and style. In addition to strings, the expressions can also evaluate to objects or arrays.
+We can pass an object to :class to dynamically toggle classes. In addition, the :class directive can also co-exist with the plain class attribute. We can also set :class to an object.
+
+We can also bind :class to an array to apply a list of classes.
+
+When you use the class attribute on a component with a single root element, those classes will be added to the component's root element and merged with any existing class already on it.
+If your component has multiple root elements, you would need to define which element will receive that class. You can do this using the $attrs component property.
+
+The v-if directive is used to conditionally render a block. The block will only be rendered if the directive's expression returns a truthy value. We can also make use of the v-else 
+directive to indicate an "else block" for v-if. Note that a v-else element must immediately follow a v-if or a v-else-if element, otherwise it will not be recognized. Just like how in
+React, we can make use of React.Fragment to wrap elements that dont necessarily need a parent, we can do the same thing in Vue with <template>. Another option for conditionally displaying
+an element is the v-show directive. The usage is largely the same as with v-if but the difference is that an element with v-show will always be rendered and remain in the DOM, v-show
+only toggles the display CSS property of the element. v-show does not support the <template> element neither does it work with v-else.
+
+Generally speaking, v-if has higher toggle costs while v-show has higher initial render costs. So prefer v-show if you need to toggle something very often, and prefer v-if the condition
+is unlikely to change at runtime.
+
+We can use the v-for directive to render a list of items based on an array. We can do child in parent or child of parent.
+
+We can also use v-for to iterate through the properties of an object. The iteration order will be based on the result of calling Object.keys() on the object. By default the first parameter
+is the value while the second parameter is the key. We can also add an optional third parameter which represents the index.
+
+v-for can also take an integer. Just like how we can make use of <template> to wrap a block of elements with v-if, we can also use <template> with v-for.
+
+Just like how we can specify the key attribute in react on mapped values, we can do the same with Vue with the :key attribute.
+
+Vue is able to detect when a reactive array's mutation methods are called and trigger necessary updates. These mutation methods are push(), pop(), shift(), unshift(), splice(), sort()
+and reverse()
+
+We can use the v-on directive, which we typically shorten to the @ symbol, to listen to DOM events and run some Javascript when they are triggered. Handler values can be one of the 
+following: Inline handlers or Method handlers
