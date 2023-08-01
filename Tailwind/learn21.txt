@@ -1,0 +1,35 @@
+When nesting groups, you can style something based on the state of a specific parent group by giving that parent a unique group name using a group/{name} class, and including that name
+in modifiers using classes like group-hover/{name}
+
+When you need to style an element based on the state of a sibling element, mark the sibling with the peer class, and use peer-* modifiers like peer-invalid to style the target element.
+peer-focus, peer-required, peer-disabled. Just like with groups, we can when having multiple peers, we can style something based on the state of a specific peer by giving that peer a 
+unique name using a peer/name class. You can style the ::before and ::after pseudo elements using the before and after modifiers
+
+Style the placeholder text of any input or text area making use of the placeholder modifier
+Style the button in file inputs making use of the file modifier
+Style the counters or bullets in lists making use of the marker modifier
+Style the active text selection using the selection modifier
+
+Style the first line in a block of content using the first-line modifier, and the first letter using the first-letter modifier.
+Use the portrait and landscape modifiers to conditionally add styles when the viewport is in a specific orientation.
+Use the print modifier to conditionally add styles when the document is being printed
+
+Just like arbitrary values let you use custom values with your utility classes, arbitrary variants let you write custom selector modifiers directly in your HTML. Arbitrary variants
+are just css selectors wrapped in square brackets.
+
+If you need spaces in your selector, you can make use of an underscore
+
+By default, styles applied by rules like md:flex will apply at that breakpoint and stay applied at larger breakpoints. If you'd like to apply a utility only when a specific breakpoint
+range is active, stack a responsive modifier like md with a max-* modifier to limit that style to a specific range.
+
+If you need to use a one-off responsive breakpoint that doesnt make sense to include in your theme, use the min or max modifiers to generate a custom breakpoint on the fly using any
+arbitrary value.
+
+If you want to change things like your color palette, spacing scale, typography scale or breakpoints, add your customizations to the theme section of your tailwind.config.js file.
+
+Just like how we can make use of arbitrary values for responsive design and arbitrary custom modifiers, we can do the same for literally everything in the framework, including things
+like background colors, font sizes, pseudo element content and more. It's basically like inline styles. It's even possible to use the theme function to reference the design tokens in
+your tailwind.config.js file.
+
+Also, if you ever need to use a CSS property that Tailwind does not include a utility for outside the box, you can also use square bracket notation to write completely arbitrary CSS.
+

@@ -1,0 +1,39 @@
+Plugins let you register new styles for Tailwind to inject into the user's stylesheet using Javascript instead of CSS.
+
+The presets option lets you specify a different configuration to use as your base, making it easy to package a set of customizations that you'd like to reuse across projects. If you want
+to erase the default configuration and start afresh, simply set presets to an empty array.
+
+Aspect Ratio (Utilities for controlling the aspect ratio of an element)
+- aspect-auto (aspect-ratio: auto)
+- aspect-square (aspect-ratio: 1/1)
+- aspect-video (aspect-ratio: 16/9)
+
+Box Sizing - (box-border, box-content)
+
+Display - (block, inline-block, inline, flex, table, inline-table, table-caption, table-cell, table-column, table-column-group, table-footer-group, table-header-group, table-row-group,
+table-row, flow-root, grid, inline-grid, contents, list-item , hidden)
+
+Floats - (float-right, float-left, float-none)
+
+Clear - (clear-left, clear-right, clear-both, clear-none)
+
+Object Fit - (object-contain, object-cover, object-fill, object-none, object-scale-down)
+
+Object Position - (object-bottom, object-center, object-left, object-left-botttom, object-left-top, object-right, objecct-right-bottom, object-right-top, object-top)
+
+Overflow (overflow-auto, overflow-hidden, overflow-clip, overflow-visible, overflow-scroll)
+
+Overscroll (overscroll-auto, overscroll-contain, overscroll-none)
+
+Position (static, fixed, absolute, relative, sticky)
+
+Visibility (visible, invisible, collapse)
+
+z-index (z-0, z-10, z-20, z-30, z-40, z-50, z-auto)
+
+Flex Direction (flex-row, flex-row-reverse, flex-col, flex-col-reverse)
+
+Flex Wrap (flex-wrap, flex-wrap-reverse, flex-nowrap)
+
+Flex (flex-initial (allow a flex item to shrink but not grow taking into account its final size), flex-1 (allow a flex item to grow and shrink as needed, ignoring its initial size),
+flex-auto (grow and shrink as needed, taking into account its initial size), flex-none (prevent a flex item from shrinking or growing))

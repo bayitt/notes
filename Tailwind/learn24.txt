@@ -1,0 +1,40 @@
+Flex Grow (grow, grow-0)
+
+Flex Shrink (shrink, shrink-0)
+
+Order (order-1 - order-12, order-first, order-last, order-none)
+
+Gap (gap, gap-x-*, gap-y-*)
+
+Justify Content (justify-normal, justify-start, justify-end, justify-center, justify-between, justify-around, justify-evenly, justify-stretch)
+
+Align Content (content-normal, content-center, content-start, content-end, content-between, content-around, content-envenly, content-baseline, content-stretch)
+
+Align Items (items-start, items-end, items-center, items-baseline, items-stretch)
+
+Align Self (self-auto, self-start, self-end, self-center, self-stretch, self-baseline)
+
+Padding - (p-(l,r,t,b))
+
+Margin - (m-(l,r,t,b))
+
+Width - (w-full, w-screen, w-auto)
+
+Min Width - (min-w-0, min-w-full, min-w-min, min-w-max, min-w-fit)
+
+Max Width - (max-w-0, max-w-none)
+
+Height - (h-full, h-screen, h-min, h-max, h-fit)
+
+Min Height - (min-h-0, min-h-full, min-h-screen, min-h-min, min-h-max, min-h-fit)
+
+Font Family - (font-sans, font-serif, font-mono)
+
+Font Size - (text-xs, text-sm, text-base, text-lg, text-xl, text-2xl, text-3xl, text-4xl, text-9xl)
+
+Font Style - (italic, not-italic)
+
+Font Weight - (font-thin, font-extralight, font-light, font-normal, font-medium, font-semibold, font-bold, font-extrabold, font-black)
+
+Letter Spacing - (tracking-tighter, tracking-tight, tracking-normal, tracking-wide, tracking-wider, tracking-widest)
+

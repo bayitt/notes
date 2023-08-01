@@ -1,0 +1,21 @@
+Background Repeat - (bg-repeat, bg-no-repeat, bg-repeat-x, bg-repeat-y, bg-repeat-round, bg-repeat-space)
+
+Background Size - (bg-auto, bg-cover, bg-contain)
+
+Border Radius - (rounded-none, rounded-sm, rounded, rounded-md, rounded-lg, rounded-xl, rounded-2xl, rounded-3xl, rounded-full)
+
+Border Width - (border-0, border-2, border-4, border-8, border, border-x, border-y, divide-{x,y}-{width})
+
+Border Color - (border-inherit, border-current, border-transparent)
+
+Border Style - (border-solid, border-dashed, border-dotted, border-double, border-hidden, border-none)
+
+Divide Style - (divide-solid, divide-dashed, divide-dotted, divide-double, divide-none)
+
+Outline Width - (outline-0, outline-1, outline-2, outline-4, outline-8)
+
+Outline Style - (outline-none, outline, outline-dashed, outline-dotted, outline-double)
+
+Outline Offset - (outline-offset-0, outline-offset-1, outline-offset-2, outline-offset-4, outline-offset-8)
+
+Ring Width - (ring-0, ring-1, ring-2, ring, ring-4, ring-8, ring-inset)

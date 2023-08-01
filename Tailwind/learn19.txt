@@ -1,0 +1,38 @@
+Use the command npx tailwindcss init -p to generate your tailwind.config.js and postcss.config.js files. Create a ./src/index.css file and use the @tailwind directive to include
+Tailwind's 'base', 'components' and 'utilities'. Tailwind will swap these directives out at build time with all of the styles it generates based on your configured design system.
+
+With Tailwind, you style elements by applying pre-existing classes direcly in your HTML. The biggest maintainability concern when using a utility first approach is managing commonly 
+repeated utility combinations. This is easily solved by extracting components, usually as template partials or components. You can also make use of Tailwind's @apply feature to create
+CSS abstractions around common utility patterns.
+
+There are five breakpoints by default, inspired by common device resolutions
+- sm (min width 640px)
+- md (min width 768px)
+- lg (min width 1024px)
+- xl (min width 1280px)
+- 2xl (min width 1536px)
+
+You can completely customize your breakpoints in your tailwind.config.js file
+
+Similarly to how Tailwind handles responsive design, styling elements on hover, focus and more can be accomplished by prefixing utilities with the appropriate state variant. By default,
+the hover variant is enabled for the following core plugins.
+- backgroundColor
+- backgroundOpacity
+- borderColor
+- borderOpacity 
+- boxShadow
+- gradientColorStops
+- opacity
+- rotate
+- scale
+- skew
+- textColor
+- textDecoration
+- textOpacity
+- translate
+
+You can control whether hover variants are enabled for a plugin in the variants section of your tailwind.config.js file.
+Note that by default the active variant is not enabled for any core plugin.
+
+hover, focus, group-focus, group-hover, focus-within, visited, disabled, checked, first, last, odd, even
+

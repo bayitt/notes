@@ -1,0 +1,40 @@
+Directives are custom Tailwind specific at-rules you can use in your CSS that offer special functionality for Tailwind specific projects.
+- @tailwind
+- @layer
+- @apply
+- @config
+
+Tailwind also adds a few custom functions you can use in your css to access Tailwind specific values. These functions are evaluated at build time, and replaced by static values in your
+final CSS.
+
+- theme()
+- screen()
+
+By default, tailwind will look for an optional tailwind.config.js file at the root of your project where you can define any customizations
+
+npx tailwindcss -c ./tailwindcss-config.js -i input.css -o output.css
+
+The content section of the tailwind.config.js file is where you configure the paths to all of your HTML templates, JS components and any other files that contain Tailwind class names.
+The theme section is where you define your color palette, fonts, type scale, border sizes,breakpoints anything related to the visual design of your site.
+The plugins section allows you to register plugins with Tailwind that can be used to generate extra utilities, components, base styles or custom variants
+The presets section allows you to specify your own custom base configuration instead of using Tailwind's default base configuration
+The prefix option allows you to add a custom prefix to all of Tailwind's generated utility classes
+The important option lets you control whether or not Tailwind's utilities should be marked with !important
+
+You can also make any Tailwind utility important by adding a ! character to the beginning. The ! always goes at the beginning of the utility name.
+
+It can often be useful to reference your configuration values in your own client side Javascript, for example to access some of your theme values when dynamically applying inline styles
+in a React or Vue component. To make this easy, Tailwind provides a resolveConfig helper you can use to generate a fully merged version of your configuration object.
+
+The theme object contains keys for screens, colors and spacing as well as a key for each customizable core plugin. If you'd like to preserve the default values for a theme option but also
+add new values, add your extensions under the extend key in the theme section of your configuration file.
+
+If you need to reference another value in your theme, you can do so by providing a closure instead of a static value. The closure will receive an object that includes a theme function
+that you can use to look up other values in your theme using dot notation.
+
+If you'd like to reference a value in the default theme for any reason you can import it from tailwindcss/defaultTheme
+
+If you want to work with max width breakpoints instead of min-width, you can specify your screens as objects with a max key. Make sure to list max width breakpoints in descending order
+so that they override each other as expected.
+
+If you want your breakpoints to specify both a min-width and max-width, use the min and max keys together/

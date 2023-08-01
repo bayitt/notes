@@ -1,0 +1,12 @@
+To make dark mode styling as easy as possible, Tailwind also includes a dark variant that lets you style your site differently when dark mode is enabled. Due to file size considerations,
+the dark mode variant is not enabled in Tailwind by default. To enable it, set the darkMode variant in your tailwind.config.js file to media.
+
+If you want to support toggling dark mode manually instead of relying on the operating system preference, use the class strategy instead of the media strategy. Now instead of dark:class
+being applied based on prefers-color-scheme, they will be applied whenever dark class is present earlier in the HTML tree.
+
+When making use of the class strategy, the specificity of dark mode utilities will be higher than regular utilities because the selector contains an extra class.
+
+Tailwind includes a set of useful base styles out of the box that are called Preflight. Preflight should be good for most projects, but in case you want to add some extra classes, simply
+make use of the @layer base directive. Tailwind will shift any styles placed there to the @tailwind base to avoid unintended specificity issues.
+
+To also avoid unintended specificity issues, its recommended to wrap custom component styles with the @layer components directive to tell Tailwind what layer those styles belong to.
