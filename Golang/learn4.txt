@@ -1,0 +1,36 @@
+The float data types are used to store positive and negative numbers with a decimal point, like 35.3, -2.24, or 3597.34987. It has two keywords
+
+- float32 (size of 32bits) it has a range of -3.4e+38 to 3.4e+38.
+- flat64 (64 bits) it has a range of -1.7e+308 to +1.7e+308.
+
+The default type for float is float64. If you do not specify a type, the type will be float64
+
+For strings, they must be double quoted, single quotes dont work like in other languages
+
+Arrays are used to store multiple values of the same type in a single variable, instead of declaring separate variables for each value. Arrays can be declared in Go with the two standard
+syntax (var) and :=. To declare an array with a fixed length, its something like
+
+var array1 = [3] int { 10, 15, 20 };
+
+While to declare an array with an inferred length, its something like
+
+array2 := [...] float32 { 10.5, 11.10, 60.78 };
+
+If an array or one of its elements has not been initialized in the code, it is assigned the default value of its type
+
+It's also possible to initialize only specific elements in an array. The below example initializes only the second and third elements in an array
+
+array1 := [5] int { 1:10, 2:40 };
+
+The len() function is used to find the length of an array
+
+Slices are similar to arrays, but are more powerful and flexible. Like arrays, slices are used to store multiple values of the same type in a single variable. However, unlike arrays, the
+length of a slice can grow and shrink as you see fit. In Go, there are several ways to create a slice
+- Using the [] datatype {values} format
+- Create a slice from an array
+- Using the make() function
+
+In Go, there are two functions that can be used to return the length and capacity of a slice. The len() function returns the length of the slice (the number of elements in the slice)
+while the cap() function returns the capacity of the slice (the number of elements the slice can grow or shrink to)
+
+make([]type, length, capacity)

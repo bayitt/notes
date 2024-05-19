@@ -1,0 +1,46 @@
+You can run code before and after your Slim application to manipulate the Request and Response objects as you see fit. This is called middleware.
+
+Middleware implements the PSR-15 Middleware Interface
+- Psr\Http\Message\ServerRequestInterface - The PSR-7 request object
+- Psr\Http\Server\RequestHandlerInterface - The PSR-15 request handler object
+
+It can do whatever is appropriate with these objects. The only hard requirement is that a middleware must return an instance of Psr\Http\Message\ResponseInterface. Each middleware should
+invoke the next middleware and pass it the Request object as an argument.
+To 
+Use the add() method on the Slim application instance to add middleware to your app. You can also add middleware on specific routes by chaining the add() method on the route method (get,
+post, patch, put, delete). Or on route groups by chaining it to the group() method.
+
+Slim uses an optional dependency container to prepare, manage and inject application dependencies. Slim supports containers that implement PSR-11 like PHP-DI. Just create your container
+instance and call the static setContainer() method on the AppFactory class before creating your app. In order to add a service to your container, call the set() method on your
+container object. 
+
+We can also fetch services from your container explicitly as well as from inside a Slim application route by making use of the $this->get() method call. To test if a service exists in
+the container before using it, use the has() method
+
+In PHP Slim, warnings and notices are not caught by default. To catch them, custom logic has to be implemented.
+
+Just like with other frameworks, we can define an exceptions filter/layer which catches all the exceptions in our application, formats them in the manner that we so desire and returns
+the error.
+
+Your Slim app's routes and middleware are given a PSR-7 request object that represents the current HTTP request received by your web server. The request object implements the 
+PSR-7 ServerRequestInterface with which you can inspect and manipulate the HTTP request method, headers and body.
+
+$request->getMethod()
+
+It is possible to fake or override the HTTP request method. This is useful, for example if you want to mimic a PUT request using a traditional web browser that only supports GET or POST
+requests. To enable request method overriding, the Method Overriding middleware must be injected into your application. There are two ways to override the HTTP request method. You can 
+include a METHOD parameter in a POST requests body. The HTTP request must use the application/x-www-form-urlencoded content type. You can also override the HTTP request method with  
+a custom X-Http-Method-Override HTTP request header.
+
+The $request->getUri() is a method that returns the uri object for the request. The uri object itself exposes a few useful methods such as
+- $uri->getScheme()
+- $uri->getAuthority()
+- $uri->getUserInfo
+- $uri->getHost()
+- $uri->getPort()
+- $uri->getPath()
+- $uri->getQuery()
+- $uri->getFragment()
+
+You can get the query parameters as an associative array on the Request object with getQueryParams()
+ 

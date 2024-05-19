@@ -1,0 +1,38 @@
+Each Slim framework application has an error handler that receives all uncaught PHP exceptions. This error handler also receives the current HTTP request and response objects. The error
+handler must prepare and return an appropriate Response object to be returned to the HTTP client.
+
+If you would like to pipe in custom error logging to the default ErrorHandler that ships with Slim, there are two ways to do it. With the first method, you can simply extend ErrorHandler
+and stub the logError() method.
+
+In Slim, Error Handling is also decoupled from Error Rendering. The core ErrorHandler extends the AbstractErrorHandler class which has been completely refactored. By default it will call
+the appropriate ErrorRenderer for the supported content types. The core ErrorHandler class defines renderers for the following content types.
+- application/json
+- application/xml and text/xml
+- text/html
+- text/plain
+
+For any content type, you can register your own error renderer. So first define a new error renderer that implements \Slim\Interfaces\ErrorRendererInterface
+
+The Method Overriding Middleware enables you to use the X-Http-Method-Override request header or the request body parameter _METHOD to override an incoming request's method. The 
+middleware should be placed after the routing middleware has been added.
+
+The Output Buffering Middleware enables you to switch between two modes of output buffering: APPEND (default) and PREPEND. The APPEND mode will use the existing response body to append
+the contents. The PREPEND mode will create a new response body object and prepend the contents to the output from the existing response body.
+
+It's very common in web APIs to send data in JSON or XML format. Out of the box, PSR-7 implementations do not support these formats, you have to decode the Request object's getBody()
+yourself. As this is a common requirement, Slim4 provides BodyParsingMiddleware to handle this task. Its recommended to put the body parsing middleware before the call to 
+addErrorMiddleware.
+
+The Content Length Middleware will automatically append a Content-Length header to the response. This middleware should be placed on the end of the middleware stack so that it gets 
+executed first and exited last.
+
+Slim treats a URL pattern with a trailing slash as different to one without. That is, /user and /user/ are different and so can have different callbacks attached.
+
+If you ever need to get access to the current route within your application, you'll need to instantiate the RouteContext object using the incoming ServerRequestInterface. From there, 
+you can get the route via $routeContext->getRoute()
+
+One of the biggest changes in PHP8 is the Attributes support. Attributes help to add metadata to PHP functions, parameters, classes, class methods, constants, properties, closures and
+even anonymous classes. This metadata can be fetched programatically and provides a pragmatic approach to resolve the attributes elsewhere in the code. Attributes are declared with
+#[ and ] braces.
+
+A PHP attribute is a standard PHP class, declared with #[Attribute] attribute

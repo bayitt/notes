@@ -1,0 +1,38 @@
+Every HTTP request has headers. These are metadata that describe the HTTP request but are not visible in the request's body. Slim's PSR-7 request object provides several methods to 
+inspect its headers.
+
+We can fetch all HTTP request headers as an associative array with the PSR-7 request object's getHeaders() method. The resultant associative array's keys are the header name and its 
+values are themselves a numeric array of string values for their respective header names.
+
+- $request->getHeaders()
+- $request->getHeader("name") - header values as an array
+- $request->getHeaderLine("name") - header values as a comma separated line
+- $request->hasHeader()
+- $request->getParsedBody()
+- $request->getBody() = This is preferable if the incoming HTTP request size is unknown or too large for available memory (Psr\Http\Message\StreamInterface)
+
+The Psr\Http\Message\StreamInterface instance provides the following methods to read and iterate its underlying resource
+- getSize()
+- tell()
+- eof()
+- isSeekable()
+- seek()
+- rewind()
+- isWritable()
+- write($string)
+- isReadable()
+- read($length)
+- getContents()
+- getMetadata($key = null)
+
+$request->getUploadedFiles() - Returns an associative array keyed by the name of the input element.
+
+Each object in the $request->getUploadedFiles() array is an instance of Psr\Http\Message\UploadedFileInterface and supports the following methods
+- getStream()
+- moveTo($targetPath)
+- getSize()
+- getError()
+- getClientFilename()
+- getClientMediaType()
+
+To fetch data related to the incoming request environment, make use of the getServerParams() method on the request object.

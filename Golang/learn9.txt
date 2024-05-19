@@ -1,0 +1,17 @@
+You can access map elements by 
+value = map_name[key]
+
+Updating or adding elements are done by:
+map_name[key] = value
+
+Removing elements is done using the delete() function
+
+You can check if a certain key exists in a map using
+
+val, ok := map_name[key]
+
+Maps are references to hash tables. If two mao variables refer to the same hash table, changing the contents of one variable affects the contents of the other.
+
+You can make use of the range keyword to iterate over maps. Maps are unordered data structures. If you need to iterate over a map in a specific order,you must have a separate data
+structure that specifies that order
+

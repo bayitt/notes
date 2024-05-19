@@ -1,0 +1,39 @@
+We can append elements to the end of a slice using the append() function.
+
+mySlice1 := append(mySlice1, 10, 20)
+
+We can also append entire slices onto another by making use of the append() method too. Very similar to the concat() method in Javascript.
+
+mySlice1 := append(mySlice1, mySlice2...)
+
+You'll notice the "..." after mySlice2. I assume that this is the Golang equivalent of the spread operator in JS. Spreading out the different values in the slice into the other slice 
+and combining it.
+
+When using slices, Go loads all the underlying elements into memory. The way I understand this is that as you are slicing the slices, Go is still keeping the space for the elements which
+is how it knows to keep the capacity. Essentially, if a slice has a length of 5 and a capacity of 8, Golang is reserving space for the remaining 3 elements which may not exist yet.
+
+Basically, if you have a large array and you want to make use of a small subset, instead of slicing which will still reserve space for the capacity, its much better to make use of the
+copy function which will instead create an array with the exact same length and capacity.
+
+Operators are used to perform operations on variables and values
+
+Arithmetic Operators
+- +
+- -
+- *
+- /
+- %
+- ++
+- -- 
+
+Assignment Operators
+- =
+- +=
+- -=
+- *=
+- /=
+- &=
+- |=
+- ^=
+- >>=
+- <<=

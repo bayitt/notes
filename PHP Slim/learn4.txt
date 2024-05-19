@@ -1,0 +1,42 @@
+Your Slim app's routes and middleware are given a PSR-7 response object that represents the current HTTP response to be returned to the client. The response object implements the PSR-7
+ResponseInterface with which you can inspect and manipulate the HTTP response status, headers and body.
+
+Every HTTP response has a numeric status code . The status code identifies the type of HTTP response to be returned to the client. The PSR-7 response object's default status code is 200.
+- $response->getStatusCode()
+
+You can copy a PSR-7 response object and assign a new status code like this:
+$newResponse = $response->withStatus(302);
+
+- $response->getHeaders()
+- $response->getHeader()
+- $response->getHeaderLine()
+- $response->hasHeader()
+
+You can set a header value with the PSR-7 response object's withHeader($name, $value) method
+You can append a header value with the PSR-7 response object's withAddedHeader($name, $value) method
+You can remove a header with the response object's withoutHeader($name) method
+
+You can also replace the PSR-7 response object's body with an entirely new StreamInterface instance. This is particularly useful when you want to pipe content from a remote destination 
+(e.g the filesystem or a remote API) into the HTTP response. You can replace the PSR-7 Response object's body with its withBody(StreamInterface $body) method. It's argument MUST be 
+an instance of Psr\Http\Message\StreamInterface
+
+You can redirect the HTTP client by making use of the Location header.
+
+The Slim framework's router is built on top of the Fast Route component
+
+We can add routes that handles all HTTP request methods with the Slim application's any() method.
+
+We can also add a route that handles multiple HTTP request methods with the Slim application's map() method.
+
+There are two ways to write content to the HTTP response
+- Using the $response->getBody()->write() method
+- Simply echo() content from the route callback. This content will be appended or prepended to the current HTTP response object if you add the Output buffering middleware.
+
+You can add a route that redirects GET HTTP requests to a different URL with the Slim application's redirect() method. It accepts three arguments
+- The route pattern (with optional named placeholders) to redirect from
+- The location to redirect to
+- The HTTP status code to use (optional, 302 if unset)
+
+Route pattern placeholders in PHP slim are wrapped in curly braces. For example => {name}. If you want the placeholder to be optional, simply wrap it in square brackets []
+Multiple optional parameters are supported by nesting.
+For unlimitied optional parameters, we can make use of the :.* operator

@@ -1,0 +1,42 @@
+Go is a cross platform, open source programming language. It can be used to create high performance applications. It is a fast, statically typed compiled language known for its simplicity
+and efficiency. It's syntax is similar to C++.
+
+Golang is used for
+- Web development (server side)
+- Developing network based programs 
+- Developing cross platform enterprise applications
+- Cloud native development
+
+Why use Go ?
+- Go is fun and easy to learn
+- Go has fast run time and compilation time
+- Go has memory management
+- Go works on different platforms (Windows, Mac, Linux, Raspberry Pi etc)
+
+
+A Go file consists of the following parts
+- Package declaration
+- Import packages
+- Functions
+- Statements and Expressions
+
+In Go, every program is part of a package. We define this using the package keyword. In Golang, any executable code belongs to the main package.
+
+In Golang, statements are separated by ending a line (hitting the Enter key) or by a semicolon ;.
+
+Also, in Golang, the left curly bracket ({) cannnot come at the start of a line
+
+Go supports single line and multi line comments. Single line comments start with (//). Multi line comments start with /* and end with */.
+
+In Go, there are different types of variables, for example:
+- int (stores integers, whole numbers such as 123 or -123)
+- float32 - (stores floating point numbers, with decimals, such as 19.99 or -19.99)
+- string - (stores text, such as "Hello World". String values are surrounded by double quotes)
+- bool - stores values with two states: true or false
+
+There are two ways to declare a variable in Golang, either with the var keyword or with the := sign
+
+With the var keyword, we use it followed by the variable name and type. Like var variablename type = value.
+
+Or with the := sign, in which case it is variablename := value. In this case, the type of the variable is inferred by the compiler from the value.
+ 

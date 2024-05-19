@@ -1,0 +1,39 @@
+A function is a block of statements that can be used repeatedly in a program. A function will not execute automatically when a page loads. A function will be executed by a call to the
+function. Functions are declared in Golang with the func keyword.
+
+- Function names must start with letters
+- Function names can only contain alphanumeric characters and underscores
+- Function names are case sensitive
+- Function names cannot contain spaces
+- If the function name consiste, of multiple words, techniques for multi word variable naming can be used
+
+Information can be passed to functions as parameters. Parameters act as variables inside the function.
+
+func functionName(param1 type, param2 type, param3 type) {
+   // code to be executed here
+}
+
+If you want the function to return a value, you need to define the data type of the return value (such as int, string, etc) and also use the return keyword inside the function.
+
+In Go, you can name the return value of a function. Go functions can also return multiple values. Just declare them and assign them inside the function.
+
+Golang has this convention in which if you want to "destructure" or unpack a "tuple", something with multiple values basically. You can simply make use of an underscore (_).
+
+Golang also accepts recursion functions. A function is recursive if it calls itself and reaches a stop condition.
+
+A struct (short for structure) is used to create a collection of members of different data types, into a single variable. While arrays are used to store multiple values of the same 
+data type into a single variable, structs are used to store multiple values of different data types into a single variable. A struct can be useful for grouping data together to create
+records. I think structs are the Golang equivalent of classes in other programming languages in how they can have "properties" of different data types. To declare a struct in Go, use
+the type and struct keywords like
+
+type Person struct {
+  name string;
+  age int;
+  job string;
+  salary int;
+}
+
+To access any member of a structure, use the dot operator (.) between the structure variable name and the structure member. We can also pass structs as function arguments.
+
+
+

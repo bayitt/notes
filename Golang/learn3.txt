@@ -1,0 +1,35 @@
+The Println() function is similar to Print() except that a whitespace is added by default between the arguments and a newline is added at the end.
+
+The Printf() function first formats its argument based on the given formatting verb and then prints them. There are two different formatting verbs used
+- %v is used to print the value of the arguments
+- %#v is used to print the value in Go syntax format
+- %T is used to print the type of the arguments
+- %% prints the % sign
+
+Go has three basic data types
+- bool
+- Numeric (integer, float)
+- string
+
+Integer data types are used to store a whole number without decimals, like -35, 50 or 1345000. It has two categories
+- Signed Integers - can store both positive and negative values
+- Unsigned Integers - can store only non-negative values
+
+The default type for integer is int. If you do not specify a type, the type will be int
+
+Go has five keywords/types of signed integer
+- int (size depends on platforms. 32bits in 32 bit systems and 64bit in 64bit systems). Has a range from -2147483648 to 2147483647 in 32 bit systems and
+ -9223372036854775808 to 9223372036854775807 in 64 bit systems
+- int8 (8bits/1 byte) -128 to 127
+- int16 (16bits/2 bytes) -32768 to 32767
+- int32 (32bits/4 bytes) -2147483648 to 2147483647
+- int64 (64bits/8 bytes) -9223372036854775808 to 9223372036854775807
+
+Unsigned integers, declared with one of the unit keywords, can only store non-negative values
+- unit (size depends on platforms, 32 bits in 32bit systems and 64bits in 64 bit systems) 0 to 4294967295 in 32 bit systems and 0 to 18446744073709551615 in 64 bit systems
+- unit8 (8bits/1byte) - 0 to 255
+- unit16 (16bits/2 bytes) - 0 to 65535
+- unit32 (32bits/4 bytes) - 0 to 4294967295
+- unit64 (64bits/ 8 bytes) - 0 to 18446744073709551615
+
+The type of integer to choose, depends on the value the variable has to store

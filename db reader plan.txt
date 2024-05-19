@@ -1,0 +1,19 @@
+What exactly am I trying to build ?
+
+A simple application through which I can record my blood sugar readings. I want to be able to upload a blood sugar reading for the current date and if possible for a different date
+and have it recorded. I also want to be able to plot charts for the sugar readings, maybe for a particular week and a particular month. Authentication should be via magic links, no
+need for a users table. This application is going to be written in Vue with a PHP Slim backend.
+
+Tables
+Readings
+- id (int)
+- uuid (string)
+- value (int)
+- created_at (timestamp)
+- updated_at (timestamp)
+
+Magic Links
+- id
+- uuid
+- created_at (timestamp)
+- expires_at (timestamp)

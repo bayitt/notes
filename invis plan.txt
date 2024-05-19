@@ -1,0 +1,37 @@
+What exactly am I trying to build ?
+
+A simple status page through which I can be kept apprised of the status of all my different applications. I want to be able to come to it, and it shows me all the different applications
+and their different child services along with their status. It's going to be written in Vue JS along with Tailwind CSS for styling.
+
+Here are all the different applications that need to be monitored
+Dome
+- Dome (usedo.me)
+- Gello (app.usedo.me)
+- Zilch (api.usedo.me) (done)
+- duran (backups.usedo.me) (done)
+
+Maui
+- Maui (mauii.xyz) 
+- maui-api - (api.mauii.xyz) (done)
+- mauibot - (bot.mauii.xyz)
+
+Yeet
+- Yeet (theyeetapp.com) (done)
+- Yeetbot (bot.theyeetapp.com)
+
+Bayitt
+- Pluto (blog.olamileke.dev)
+- Noir (api.olamileke.dev) (done)
+- Crest (to.olamileke.dev) (done)
+- Cyclone (cyclone.olamileke.dev) (done)
+- Notify (notify.olamileke.dev) (done)
+
+Bots
+- FactsonFactsBot (t.me/factsonfactsbot)
+- Newsondemandbot (t.me/news_on_demand_bot)
+- Politicalnewsbot (t.me/a_news_bot)
+
+My thinking with this is that its a simple one pager application that shows the status of all the different applications outlined above. It shows a simple green or red icon depending on
+if the application is currently up or down. For the different backend applications, my thinking is to expose a ping query or endpoint (GraphQL or Rest) which returns a simple status
+parameter. For frontend applications, I'm thinking to build a simple FastAPI application that I can use to scrape the contents of the webpage and use that to determine if the app is
+up or not. Actually, no need for that. I can just download the HTML and inspect the HTML for some specified text.

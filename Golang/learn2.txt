@@ -1,0 +1,40 @@
+It is not possible to declare a variable using :=, without assigning a value to it.
+
+With the var syntax, you can declare it with or without the type. If you dont specify the type, it is going to be inferred just like with the := operator.
+
+In Golang, all variables are initialized. So, if you declare a variable without an initial value, its value will be set to the default value of its type.
+
+For string, its default value is an empty string
+For int and float32, its default value is 0
+For bool, its default value is false
+
+The var keyword can be used inside and outside functions while the := symbol can only be used inside functions
+
+In Golang, it is possible to declare multiple variables in the same line. This works for both the var syntax and the := symbol.
+Something like var a, b, c = 40, "test", false or a, b, c := 40, "test", false. In a sense, its almost like unpacking tuples in Python. This example I just listed out with the var syntax
+has different variable types. But assuming the variables have the same type, we can add it in like var a, b, c int = 40, 32, 55
+
+Go Variable Naming Rules
+- A variable name must start with a letter or an underscore character (_)
+- A variable name cannot start with a digit
+- A variable name can only contain alphanumeric characters and underscores
+- Variable names are case sensitive (age, Age and AGE are three different variables)
+- There is no limit on the length of a variable name
+- A variable name cannot contain spaces
+- Variable names cannot be any of the reserved Go keywords
+
+If a variable should have a fixed value that cannot be changed, you can use the const keyword. The value of a constant must be assigned when you declare it.
+
+const CONSTNAME type = value
+
+- Constant names follow the same naming rules as variables
+- Constant names are usually written in uppercase letters (for easy identification and differentiation from variables)
+- Constants can be declared both inside and outside of a function
+
+Golang has three functions to output text
+- Print()
+- Println()
+- Printf()
+
+The Print() function prints its arguments with their default format. If we want to print the arguments in new lines, we need to use \n. It's also possible to use one Print() call to
+print multiple variables. Something like fmt.Print(i, "\n", j). The Print() method inserts a space between the arguments if neither are strings.

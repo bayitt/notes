@@ -1,0 +1,34 @@
+Comparison Operators
+- ==
+- !=
+- >
+- <
+- >=
+- <=
+
+Logical Operators
+- &&
+- ||
+- !
+
+Bitwise Operators (Used on binary numbers)
+- &
+- |
+- ^
+- <<
+- >>
+
+Golang also has the if, else if and else statements which are used to execute blocks of code conditionally. We can also have nested if statements just like with other languages.
+
+The switch statement is used to select one of many code blocks to be executed. It similar to the ones in C, C++, Java, Javascript and PHP. The difference is that it only runs the
+matched case so it does not need a break statement.The default keyword is also optional with the switch statement in Golang, it specifies some code to run if there is no case match
+
+All the case values should have the same type as the switch expression. Otherwise, the compiler will raise an error.
+
+Golang also has something called a multi-case switch statement. With this, we can have multiple values for each case in the switch statement. You can almost think of it as an
+array.includes() call. You can check if the case matches multiple values.
+
+The for loop is the only loop available in Golang. The continue statement is used to skip one or more iterations in the loop. It then continues with the next iteration in the loop.
+The break statement is used to break/terminate the loop execution
+
+The range keyword is used to more easily iterate over an array, slice or map. It returns both the index and the value.
