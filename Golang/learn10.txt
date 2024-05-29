@@ -1,0 +1,40 @@
+When your Golang code imports packages contained in other modules, you manage those dependencies through your code's own module. That module is defined by a go.mod file that tracks
+the modules that provide those packages. That go.mod file stays with your code. I think this is Golang's equivalent of package.json.
+
+go mod init
+
+A package in Golang is a way to group functions, and its made up of all the files in the same directory. A main function executes by default when you run the main package.
+
+Apparently with golan you can just add the imports to your code, and run the go mod tidy command and it will search your code for the modules which have not been installed and auto install
+them.
+
+go.sum file is the golang equivalent of yarn.lock or composer.lock
+
+Modules in Golang are a way to collect one or more related packages for a discrete and useful set of functions. For example, you might create a module with packages that have functions
+for doing financial analysis so that others writing financial applications can do your work.
+
+In Golang, a function whose name starts with a capital letter can be called by a function not in the same package. This is known in Golang as an exported name.
+
+go mod edit -replace
+
+go run . finds the main function in the current directory and executes it.
+
+error is a type on its own in Golang
+
+Go standard library errors, log
+
+log.SetPrefix()
+log.SetFlags();
+log.Fatal();
+
+Go's built in support for unit testing makes it easier to test as you go. Specifically, using naming conventions, Go's testing package and the go test command, you can quickly write
+and execute commands.
+
+Ending a file's name with _test.go tells the go command that this file contains test functions. Test function names have the format TestName, where Name says something about the specific 
+test. Also, test functions take a pointer to the testing package's testing.T type as a parameter. You use this parameter for reporting and logging from a test.
+
+go test -v. Running go test without the -v flag includes information only for tests that fail.
+
+go build command compiles the package, along with their dependencies but does not install the result
+go install command compiles and install the package
+go list -f '{{.Target}}'
