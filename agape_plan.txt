@@ -1,0 +1,11 @@
+What is my plan with Agape ?
+
+A simple application with which I can send Grace (my baby) emails everyday with the message "I love you Grace, never forget that". The email's subject will be something like
+"Today's Language is German". The idea is that I'll download a JSON of all the different possible languages and their translations of that saying. The issue I am currently facing is how to
+persist the current counter. I need a way to store it so that every day when it sends the email, it knows which language it is grabbing next. My plan is to store the current index in a 
+JSON file with the keys - index, language and date.
+
+My intention is to expose a single endpoint which I will trigger from one of the bots, in this endpoint, I will check the next language to be sent, fetch it from the JSON of languages,
+send it to Grace, trigger another email to myself that today's message has been sent. Then update the JSON of the current index in its own JSON file.
+
+For the emails, I intend to use Resend.

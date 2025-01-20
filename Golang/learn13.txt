@@ -1,0 +1,16 @@
+A Go file consists of the following parts:
+- Package declaration
+- Import Package
+- Functions
+- Statements and Expressions
+
+Single line comments are denoted with //
+Multi line comments are denoted with /* */
+
+In Go there are two ways to declare variables
+- With the var keyword
+- With the := keyword
+
+In Go all variables are initialized. So if you declare a variable without an initial value, its value will be set to the default value of its type.
+
+Difference between arrays and slices is that the length of slices can grow and shrink as one sees fit.

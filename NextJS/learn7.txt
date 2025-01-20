@@ -1,0 +1,33 @@
+
+In the app directory, you can modify the head elements such as title and meta using the Metadata APIs. Metadata can be defined by exporting a metadata object or generateMetadata function
+in a layout.js or page.js file.
+
+There are four ways to navigate in Next JS
+- Using the <Link /> component
+- Using the useRouter hook (Client components)
+- Using the redirect function (Server components) 
+- Using the native history API
+
+usePathname() hook (Client components)
+
+The default behavior of the Next JS App router is to scroll to the top of a new route or to maintain the scroll position for forwards and backwards navigation. If you'd like to disable
+this behavior, you can pass scroll={false} to the <Link /> component or set scroll: false to router.push() or router.replace()
+
+Prefetching is a way to preload a route in the background before a user visits it. There are two ways routes are prefetched in Next JS
+- <Link /> component - Routes are automatically prefetched as they become visible in the viewport
+- router.prefetch() - The useRouter() hook can be used to prefetch routes programatically
+
+Next has an in memory client side cache called the Router cache.
+
+Error components must be client components. To handle errors within the root layout or template, use a variation of error.js called global-error.js. It's important to note that 
+global-error.js must define its own <html> and <body> tags.
+
+We can wrap a folder name in parentheses to define it as a route group - (folderName). They are useful for organizing route segments and project files into logical groups without affecting
+the URL path structure. It's like a nullable folder that does not appear in the eventual generated route. We can use it to define multiple root layouts, define different layouts for
+route segments on the same level, or opt specific routes on the same level into specific layouts.
+
+Private folders can be created by prefixing a folder with an underscore _
+
+Dynamic segments can be created in Next JS by wrapping a folder's name in square brackets []. They are passed as the params prop to layout, page, route and generateMetadata functions.
+The generateStaticParams function can be used in combination with dynamic route segments to statically generate routes at build time instead of on demand at run time.
+

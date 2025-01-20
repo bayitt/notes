@@ -1,0 +1,10 @@
+Monitoring Bot Plan
+
+What exactly am I building ?
+I want to build a Telegram bot that I can use to monitor my different applications and their uptime. What I basically want it to do is to query the /ping endpoint of the different 
+applications and message me three times daily to let me know whether the application is up or not. I also want it to check the SSL certificates expiry of the different certificates
+start alerting me when the certificates are less than 10 days to expiry.
+
+Basically, it should trigger the notifications and check at 10am and 10pm.
+
+I also want to be able to check for uptime and expiry for specific applications, via specific commands.

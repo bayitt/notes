@@ -1,0 +1,38 @@
+Run the following commands to setup Prisma
+- npx prisma - This invokes the Prisma CLI
+- npx prisma init - This creates a new directory called prisma that contains a schema.prisma file, which contains the Prisma schema with your database connection variable and schema models.
+It also creates the .env file in the root of the project, which is used for defining environment variables.
+
+Notable directives to note in Prisma schema migrations
+- @id
+- @default
+- @updatedAt
+- @relation
+- @unique
+
+Notable functions to note in Prisma schema migrations
+- autoincrement()
+- now()
+- uuid()
+
+To indicate optional fields on the tables, add a question mark (?) after the field name. Also, the table relationships are also defined on the schema.prisma file. Similarly to how the
+relationships are defined in the model in Laravel.
+
+npx prisma migrate dev --name init - This generates a new SQL migration file based on the difference between the schema.prisma file and the current state of the database and then it 
+runs the generated SQL migration file against the database. The npx prisma generate command is called under the hood after the npx prisma migrate dev --name init command is run. 
+This is the command that generates the types to match the different database tables.
+
+The npx prisma db push command works similarly to the npx prisma migrate dev command except that it generates migration files which can be committed to version control and used to
+view the history of changes made to the database. Basically, Leke always use npx prisma migrate dev.
+
+Prisma ORM is an open source next generation ORM consisting of
+- Prisma Client
+- Prisma Migrate
+- Prisma Studio
+
+A Data model in Prisma is basically a collection of models. Models have two major functions
+- Represent tables in relational databases or collections in MongoDB
+- Provide the foundation for the queries in the Prisma Client API
+
+Note that Prisma generates the corresponding types for the schema at the /node_modules/.prisma/client folder. Anytime the data model is changed, npx prisma generate needs to be re-ran
+to ensure the code and types in it are automatically updated.

@@ -1,0 +1,28 @@
+There are 4 ways you can fetch data in Next JS
+- On the server, with fetch
+- On the server, with third party libraries
+- On the client, via a route handler
+- On the client, with third party libraries
+
+Next JS extends the native fetch request to allow you to configure the caching and revalidating behavior for each fetch request on the server. React extends fetch to automatically 
+memoize fetch requests while rendering a React component tree.
+
+By default, Next JS automatically caches the returned value of fetch in the Data Cache on the server. This means that the data can be fetched at build time or request time, cached and 
+reused on each data request. However, there are exceptions such as when fetch requests are used inside a server action or used inside a route handler that uses the POST method.
+
+Revalidation is the process of purging the data cache and re-fetching the latest data. This is useful for when your data changes and you want to ensure that you are showing the latest
+information. Cached data can be revalidated in two ways
+- Time based revalidation
+- On-demand revalidation
+
+Server functions are asynchronous functions that are executed on the server. They can be used in server and client components to handle form submissions and data mutations in Next JS
+applications. A server action can be defined with the React "use server" directive. You can pass the directive at the top of an async function to mark the function as a server function,
+or at the top of a separate file to mark all the exports of the file as server actions.
+
+There are three different server rendering strategies in Next JS
+- Static Rendering
+- Dynamic Rendering
+- Streaming
+
+To use Client components, you can add the React "use client" directive at the top of of a file, above your imports. "use client" is used to declare a boundary between a Server and Client
+component modules. This means that by defining a "use client" in a file, all other modules imported into it, including child components, are considered part of the client bundle.

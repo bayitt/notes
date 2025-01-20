@@ -1,0 +1,16 @@
+With structs in go, we can do things like define tags for them which will specify what the field's name is going to be when it is serialized into JSON. Without them, the JSON would use the
+struct field's default value.
+
+gin.Context is the most important part of Gin. It carries request details, validates and serializes JSON, and more. (Despite the similar name, this is different from Go's built in context
+package). Call Context.IndentedJSON to serialize the struct into JSON and add it to the response. The function's first argument is the HTTP status code you want to send to the client.
+We have for example, the StatusOK constant from the net/http package to indicate the 200 OK response. Apart from Context.IndentedJSON, we also have Context.JSON which produces compact
+JSON. In practice, the indented form is much easier to work with when debugging and the size difference is small.
+
+Initializa a Gin router using Default. router.Run()
+
+Use the go get . command to get all the depdendencies for code in the current working directory.
+
+http.StatusCreated, context.BindJSON(&struct). We can use the BindJSON method to bind incoming JSON to a struct of a particular type. Also, in Golang, you can declare variables in an if
+statement before executing your comparison/check. Use context.Param() to retrieve dynamic parameters from a route.
+
+http.StatusNotFound, gin.H

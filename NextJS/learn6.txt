@@ -1,0 +1,38 @@
+The Next JS App Router introduces a new model for building applications using React's latest features such as server components, streaming with actions and server actions. Unlike with the
+pages router that has the _app.tsx and _document.tsx files which we use to define global components for the entire app. The App router has something similar which is the layout.tsx file.
+In this, you put the components which you want to appear on all the pages like the nav and the footer.
+
+In the layout, you intnetionally cannot access the raw request object. However, you can access headers and cookies through server only functions. You can also set cookies. Layouts also
+do not re-render. They can be cached and reused to avoid unnecessary computation when navigating between pages.
+
+With Parallel routes, you can access multiple pages in the same route. By default, pages are server components. You can access the route segments through the params prop and the URL search
+params through the searchParams prop for a page. If you are using client components, we can make use of the usePathname, useSelectedLayoutSegment and useSelectedLayoutSegments.
+
+You can make use of redirect to redirect from a page to a relative or absolute URL. redirect is a temporary (307) redirect while permanentRedirect (308) is a permanent redirect.
+
+You can set cookies in server actions or route handlers using the cookies function.
+
+The App router takes priority over the pages router. Routes across directories should not resolve to the same URL path and will cause a build time error to prevent conflicts.
+
+By default, components inside app are server components. This is a performance optimization and aloows you to easily adopt them, and you can also use client components.
+
+Next js provides a set of special files to create UI with specific behavior in nested routes
+- layout - shared UI for a segment and its children
+- page - unique UI of a route and makes routes publicly accessible
+- loading - loading UI for a segment and its children
+- not-found - not found UI for a segment and its children
+- error - Error UI for a segment and its children
+- global-error - global error UI
+- route - server side API endpoint
+- template - specialized re-rendered layout UI
+- default - Fallback UI for parallel routes
+
+A layout is UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive and do not re-render. You can define a layout by exporting a React
+component from a layout.js file. The component should accept a children prop that will be populated with a child layout (if it exists) or a page during rendering.
+
+The root layout is defined at the top level of the app directory and applies to all routes. The layout is required and must contain html and body tags, allowing you to modify the
+initial HTML returned from the server.
+
+Templates are similar to layouts in that they wrap each child layout or page. Unlike layouts that persist across routes and maintain state, templates create a new instance for each of their 
+children on navigation. This means that when a user navigates between routes that share a template, a new instance of the component is mounted, DOM elements are recreated, state is not
+preserved and effects are re-synchronized.

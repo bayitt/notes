@@ -1,0 +1,5 @@
+Data Modelling refers to the process of defining the shape and structure of the objects in an application, these objects are often called application models. Make use of the create()
+method on the generated prisma type and pass in a data object to create a new database record. The createMany() query does the same thing as create() but for multiple records. Basically
+data expects an array instead of an object with create(). Make use of the createManyAndReturn() method to create many records and return the resulting objects.
+
+Make use of the findByUnique() method to find a record by its unique identifier or ID.

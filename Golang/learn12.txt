@@ -1,0 +1,32 @@
+Struct tags are small pieces of metadata attached to the fields of a struct that provide instructions to other Golang code that works with the struct. 
+
+It looks like the & operator is used in Golang to bind data into a specific format (say a struct). To use struct tags to accomplish something, other Golang code must be written to examine
+structs at runtime. The standard library has packages that use struct tags as part of their operations. The most popular of these is the encoding/json package.
+
+Golang provides the encoding/json package to convert data to and from JSON.
+
+json.MarshalIndent()
+json.Marshal()
+
+`json:"name,omitempty"`
+
+Use the omitempty struct tag to tell the encoding/json package to omit json values that are not set. This is because Golang by sets the value of unset variables to the default value of
+its type
+
+Some fields must be exported from structs so that other packages can correctly interact with the type. However, the nature of these fields may be sensitive, so in these circumstances,
+we would like the encoder to ignore the field entirely even when it is set. This is done using the special value - as the argument to a json: struct tag
+
+Marshalling, sometimes known as serialization is the process of transforming program data in memory into a format that can be transmitted or saved elsewhere. The json.Marshal function
+is used to convert Go data into program data
+
+I think Golang's equivalent of any is interface{}. It looks like in Golang, with the * symbol, we can declare nullable types. This is because in Golang, types (primitive particularly)
+have default values. For example string is "", while int is 0 and so on. So even if you don't declare the field, it just takes up the default value of its type. So if you want to
+specify that a field can be null, that is where the * symbol comes in. So *string, *int.
+
+The json.Unmarshal() function, essentially the opposite of the json.Marshal() function, will take JSON data and translate it back into Go data. Both the json.Marshal() and json.UnMarshal()
+methods work with bytes. json.Marshal() returns bytes which can then be cast to strings, while json.Unmarshal accepts bytes.
+
+We can do type assertions in golang with variable.(type). We can also make use of structs for unmarshaling JSON data into Go data, simply define the type of the variable you are unmarshaling
+the JSON data into as the defined struct.
+
+If a field is included on a struct used for JSON unmarshaling and isnt included in the JSON data being unmarshaled, that field is set to the default value of its type and ignored.
